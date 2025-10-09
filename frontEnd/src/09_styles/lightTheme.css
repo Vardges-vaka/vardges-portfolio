@@ -1,6 +1,10 @@
 /* Light Theme - Semantic Variable Mappings */
 [data-theme="light"] {
+  --themeToggle-color: #063df0;
+
   /* ========== BUTTON VARIABLES ========== */
+
+  --test-primary: rgb(255, 255, 255);
 
   /* Primary Button */
   --btn-primary-bg: var(--light-primary-color);

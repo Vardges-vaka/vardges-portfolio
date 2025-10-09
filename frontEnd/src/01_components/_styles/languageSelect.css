@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   user-select: none;
+  transform: scale(1.5);
 }
 
 .languageSwitcher__button {

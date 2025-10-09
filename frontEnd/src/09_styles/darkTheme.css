@@ -1,6 +1,8 @@
 /* Dark Theme - Semantic Variable Mappings */
 [data-theme="dark"] {
   /* ========== BUTTON VARIABLES ========== */
+  --test-primary: red;
+  --themeToggle-color: #f0b906;
 
   /* Primary Button */
   --btn-primary-bg: var(--dark-primary-color);
