@@ -1,0 +1,133 @@
+/* Global Button Styles */
+.ButtonGlobal_container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.ButtonGlobal_wrapper {
+  display: inline-block;
+}
+
+.ButtonGlobal {
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 1px 2px var(--shadow-main);
+}
+
+.ButtonGlobal:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ButtonGlobal:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--shadow-main);
+}
+/* Clean up - these are handled by IconGlobal component */
+
+/* Normal Version - Default/Secondary Style */
+.ButtonGlobal.normal {
+  background-color: var(--btn-normal-bg);
+  color: var(--btn-normal-text);
+  border-color: var(--btn-normal-border);
+}
+
+.ButtonGlobal.normal:hover:not(:disabled) {
+  background-color: var(--btn-normal-hover-bg);
+  color: var(--btn-normal-hover-text);
+  border-color: var(--btn-normal-hover-border);
+}
+
+.ButtonGlobal.normal:active:not(:disabled) {
+  background-color: var(--btn-normal-hover-bg);
+  color: var(--btn-normal-hover-text);
+  border-color: var(--btn-normal-hover-border);
+}
+
+/* Primary Version - Main Action Style */
+.ButtonGlobal.primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-border);
+}
+
+.ButtonGlobal.primary:hover:not(:disabled) {
+  background-color: var(--btn-primary-hover-bg);
+  color: var(--btn-primary-hover-text);
+  border-color: var(--btn-primary-hover-border);
+}
+
+.ButtonGlobal.primary:active:not(:disabled) {
+  background-color: var(--btn-primary-hover-bg);
+  color: var(--btn-primary-hover-text);
+  border-color: var(--btn-primary-hover-border);
+}
+
+/* Secondary Version - Outline Style */
+.ButtonGlobal.secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border-color: var(--btn-secondary-border);
+}
+
+.ButtonGlobal.secondary:hover:not(:disabled) {
+  background-color: var(--btn-secondary-hover-bg);
+  color: var(--btn-secondary-hover-text);
+  border-color: var(--btn-secondary-hover-border);
+}
+
+.ButtonGlobal.secondary:active:not(:disabled) {
+  background-color: var(--btn-secondary-hover-bg);
+  color: var(--btn-secondary-hover-text);
+  border-color: var(--btn-secondary-hover-border);
+}
+
+/* Light Version - Minimal/Ghost Style */
+.ButtonGlobal.light {
+  background-color: var(--btn-light-bg);
+  color: var(--btn-light-text);
+  border-color: var(--btn-light-border);
+}
+
+.ButtonGlobal.light:hover:not(:disabled) {
+  background-color: var(--btn-light-hover-bg);
+  color: var(--btn-light-hover-text);
+  border-color: var(--btn-light-hover-border);
+}
+
+.ButtonGlobal.light:active:not(:disabled) {
+  background-color: var(--btn-light-hover-bg);
+  color: var(--btn-light-hover-text);
+  border-color: var(--btn-light-hover-border);
+}
+
+/* Dark Version - High Contrast */
+.ButtonGlobal.dark {
+  background-color: var(--btn-dark-bg);
+  color: var(--btn-dark-text);
+  border-color: var(--btn-dark-border);
+}
+
+.ButtonGlobal.dark:hover:not(:disabled) {
+  background-color: var(--btn-dark-hover-bg);
+  color: var(--btn-dark-hover-text);
+  border-color: var(--btn-dark-hover-border);
+}
+
+.ButtonGlobal.dark:active:not(:disabled) {
+  background-color: var(--btn-dark-hover-bg);
+  color: var(--btn-dark-hover-text);
+  border-color: var(--btn-dark-hover-border);
+}

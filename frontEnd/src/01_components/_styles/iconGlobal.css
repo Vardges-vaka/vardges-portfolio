@@ -1,0 +1,41 @@
+.IconGlobal_Icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  color: currentColor; /* Inherit parent's text color by default */
+  flex-shrink: 0;
+}
+
+.IconGlobal_Icon_wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+}
+
+/* Version-specific icon styles - only apply when NOT inside a button */
+.IconGlobal_Icon.primary:not(.ButtonGlobal *) {
+  color: var(--icon-primary);
+}
+
+.IconGlobal_Icon.secondary:not(.ButtonGlobal *) {
+  color: var(--icon-secondary);
+}
+
+.IconGlobal_Icon.normal:not(.ButtonGlobal *) {
+  color: var(--icon-secondary);
+}
+
+.IconGlobal_Icon.light:not(.ButtonGlobal *) {
+  color: var(--icon-tertiary);
+}
+
+.IconGlobal_Icon.dark:not(.ButtonGlobal *) {
+  color: var(--text-main);
+}
+
+/* When inside buttons, always inherit the button's text color */
+.ButtonGlobal .IconGlobal_Icon {
+  color: currentColor !important;
+}

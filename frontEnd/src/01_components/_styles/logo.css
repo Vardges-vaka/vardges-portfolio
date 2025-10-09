@@ -1,0 +1,67 @@
+/* Container to center both logo and subtitle vertically */
+.Logo_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Main logo styling: larger font */
+.Logo_main {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Subtitle styling: smaller font */
+.Logo_subtitle {
+  font-size: 9px;
+  font-weight: normal;
+}
+
+/* Base styling for each letter – we hide the default fill */
+.letter {
+  position: relative;
+  display: inline-block;
+  color: transparent; /* Hide original fill */
+  margin: 0 2px;
+}
+
+/* The pseudo-element displays the animated fill */
+.letter::after {
+  content: attr(data-letter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.26);
+  animation: fillHold 12s infinite ease-in-out;
+  animation-delay: var(--delay);
+}
+
+/* Keyframes for the fill, hold, and retract animation */
+@keyframes fillHold {
+  0% {
+    width: 0;
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  10% {
+    width: 100%;
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  90% {
+    width: 100%;
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}

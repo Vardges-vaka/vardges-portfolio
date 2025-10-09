@@ -1,0 +1,17 @@
+.PublicHeader_NavBar_list {
+  display: flex;
+  gap: var(--spacing-md);
+}
+.PublicHeader_NavBar_item {
+  padding: 5px;
+  border: 1px solid var(--border-main);
+  cursor: pointer;
+  list-style: none;
+}
+.PublicHeader_NavBar_item a:visited,
+.PublicHeader_NavBar_item a:active,
+.PublicHeader_NavBar_item a:focus,
+.PublicHeader_NavBar_item a {
+  text-decoration: none !important;
+  color: black;
+}

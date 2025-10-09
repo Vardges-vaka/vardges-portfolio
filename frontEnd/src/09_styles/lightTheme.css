@@ -1,0 +1,109 @@
+/* Light Theme - Semantic Variable Mappings */
+[data-theme="light"] {
+  /* ========== BUTTON VARIABLES ========== */
+
+  /* Primary Button */
+  --btn-primary-bg: var(--light-primary-color);
+  --btn-primary-text: var(--light-bg-main-color);
+  --btn-primary-border: var(--light-primary-color);
+  --btn-primary-hover-bg: var(--light-text-main-color);
+  --btn-primary-hover-text: var(--light-bg-main-color);
+  --btn-primary-hover-border: var(--light-text-main-color);
+
+  /* Secondary Button */
+  --btn-secondary-bg: var(--light-secondary-color);
+  --btn-secondary-text: var(--light-bg-main-color);
+  --btn-secondary-border: var(--light-secondary-color);
+  --btn-secondary-hover-bg: var(--light-primary-color);
+  --btn-secondary-hover-text: var(--light-bg-main-color);
+  --btn-secondary-hover-border: var(--light-primary-color);
+
+  /* Normal Button (default/outline) */
+  --btn-normal-bg: transparent;
+  --btn-normal-text: var(--light-text-main-color);
+  --btn-normal-border: var(--light-border-color);
+  --btn-normal-hover-bg: var(--light-hover-bg-color);
+  --btn-normal-hover-text: var(--light-hover-text-color);
+  --btn-normal-hover-border: var(--light-hover-border-color);
+
+  /* Light Button (ghost/minimal) */
+  --btn-light-bg: transparent;
+  --btn-light-text: var(--light-text-secondary-color);
+  --btn-light-border: transparent;
+  --btn-light-hover-bg: var(--light-bg-secondary-color);
+  --btn-light-hover-text: var(--light-text-main-color);
+  --btn-light-hover-border: transparent;
+
+  /* Dark Button (high contrast) */
+  --btn-dark-bg: var(--light-text-main-color);
+  --btn-dark-text: var(--light-bg-main-color);
+  --btn-dark-border: var(--light-text-main-color);
+  --btn-dark-hover-bg: var(--light-text-secondary-color);
+  --btn-dark-hover-text: var(--light-bg-main-color);
+  --btn-dark-hover-border: var(--light-text-secondary-color);
+
+  /* ========== GENERAL UI VARIABLES ========== */
+
+  /* Backgrounds */
+  --bg-main: var(--light-bg-main-color);
+  --bg-secondary: var(--light-bg-secondary-color);
+  --bg-tertiary: var(--light-bg-tertiary-color);
+
+  /* Text */
+  --text-main: var(--light-text-main-color);
+  --text-secondary: var(--light-text-secondary-color);
+  --text-placeholder: var(--light-text-placeholder-color);
+
+  /* Borders */
+  --border-main: var(--light-border-color);
+  --border-hover: var(--light-hover-border-color);
+
+  /* Shadows */
+  --shadow-main: var(--light-shadow-color);
+
+  /* Brand Colors */
+  --brand-primary: var(--light-primary-color);
+  --brand-secondary: var(--light-secondary-color);
+  --brand-accent: var(--light-accent-color);
+
+  /* ========== LOADING SPINNER VARIABLES ========== */
+  --spinner-border: var(--light-border-color);
+  --spinner-primary: var(--light-primary-color);
+  --spinner-secondary: var(--light-secondary-color);
+
+  /* ========== ICON VARIABLES ========== */
+  --icon-primary: var(--light-primary-color);
+  --icon-secondary: var(--light-text-secondary-color);
+  --icon-tertiary: var(--light-text-placeholder-color);
+
+  /* ========== FIELD MESSAGE VARIABLES ========== */
+
+  --FieldMessage-hint-bg: rgba(212, 202, 202, 0.685);
+  --FieldMessage-error-bg: rgba(255, 0, 0, 0.767);
+  --FieldMessage-success-bg: rgba(42, 253, 0, 0.55);
+  --FieldMessage-warning-bg: rgba(234, 232, 110, 0.388);
+
+  --FieldMessage-hint-bg-hover: rgb(152, 145, 145);
+  --FieldMessage-error-bg-hover: rgba(255, 0, 0, 0.559);
+  --FieldMessage-success-bg-hover: rgb(42, 253, 0);
+  --FieldMessage-warning-bg-hover: rgba(255, 0, 0, 0.767);
+
+  --FieldMessage-hint-text: rgba(0, 0, 0, 0.685);
+  --FieldMessage-error-text: rgb(255, 255, 255);
+  --FieldMessage-success-text: rgba(0, 0, 0, 0.833);
+  --FieldMessage-warning-text: rgba(246, 6, 6, 0.986);
+
+  --FieldMessage-hint-text-hover: rgba(255, 255, 255, 0.685);
+  --FieldMessage-error-text-hover: rgba(0, 0, 0, 0.879);
+  --FieldMessage-success-text-hover: rgb(65, 63, 63);
+  --FieldMessage-warning-text-hover: rgb(255, 255, 255);
+
+  /* ========== INPUT GLOBAL VARIABLES ========== */
+
+  /* 
+  
+  
+  
+  
+  */
+}

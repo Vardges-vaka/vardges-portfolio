@@ -1,0 +1,57 @@
+:root {
+  /* ========== LIGHT THEME COLORS ========== */
+
+  /* 🎯 Brand Colors */
+  --light-primary-color: #2c3e50;
+  --light-secondary-color: #18bc9c;
+  --light-accent-color: #e74c3c;
+
+  /* 🧱 Background Colors */
+  --light-bg-main-color: #ffffff;
+  --light-bg-secondary-color: #f9fafb;
+  --light-bg-tertiary-color: #f0f2f5;
+
+  /* 📝 Text Colors */
+  --light-text-main-color: #1a1a1a;
+  --light-text-secondary-color: #4a4a4a;
+  --light-text-placeholder-color: #9ca3af;
+
+  /* 📏 Border Colors */
+  --light-border-color: #e5e7eb;
+
+  /* 🕶️ Shadow */
+  --light-shadow-color: rgba(0, 0, 0, 0.05);
+
+  /* 🎯 Hover States */
+  --light-hover-bg-color: #f3f4f6;
+  --light-hover-text-color: #111827;
+  --light-hover-border-color: #d1d5db;
+
+  /* ========== DARK THEME COLORS ========== */
+
+  /* 🎯 Brand Colors */
+  --dark-primary-color: #5c008b; /* Background / Primary */
+  --dark-secondary-color: #8e008b; /* CTA / Secondary */
+  --dark-accent-color: #ff8300; /* Accent or warning */
+
+  /* 🧱 Background Colors */
+  --dark-bg-main-color: #5c008b;
+  --dark-bg-secondary-color: #2e005d;
+  --dark-bg-tertiary-color: #8e008b;
+
+  /* 📝 Text Colors */
+  --dark-text-main-color: #ffffff;
+  --dark-text-secondary-color: #e0d4ea;
+  --dark-text-placeholder-color: #c6a0cf;
+
+  /* 📏 Border Colors */
+  --dark-border-color: #8e008b;
+
+  /* 🕶️ Shadow */
+  --dark-shadow-color: rgba(0, 0, 0, 0.6);
+
+  /* 🎯 Hover States */
+  --dark-hover-bg-color: #2e005d;
+  --dark-hover-text-color: #ff6200;
+  --dark-hover-border-color: #ff8300;
+}

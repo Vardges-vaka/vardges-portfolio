@@ -1,0 +1,226 @@
+/* Button Test Component Styles */
+.btnTest {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.btnTest__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--border-main);
+}
+
+.btnTest__header h2 {
+  color: var(--text-main);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--text-2xl);
+}
+
+.btnTest__header p {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+}
+
+/* Theme Selector Styles */
+.btnTest__themeSelector {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__themeSelector h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-main);
+}
+
+.btnTest__themeSelector__buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-md);
+}
+
+.btnTest__themeSelector p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Button Showcase Styles */
+.btnTest__buttonShowcase {
+  margin-bottom: var(--spacing-xl);
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__buttonShowcase h3 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-main);
+}
+
+.btnTest__buttonShowcase__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.btnTest__buttonShowcase__section {
+  text-align: center;
+  padding: var(--spacing-md);
+  background-color: var(--bg-main);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__buttonShowcase__section h4 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Button States Styles */
+.btnTest__buttonStates {
+  margin-bottom: var(--spacing-xl);
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__buttonStates h3 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-main);
+}
+
+.btnTest__buttonStates__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.btnTest__buttonStates__section {
+  padding: var(--spacing-md);
+  background-color: var(--bg-main);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__buttonStates__section h4 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btnTest__buttonStates__section > * + * {
+  margin-top: var(--spacing-sm);
+}
+
+/* Icon Buttons Styles */
+.btnTest__iconButtons {
+  margin-bottom: var(--spacing-xl);
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__iconButtons h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-main);
+}
+
+.btnTest__iconButtons__controls {
+  margin-bottom: var(--spacing-lg);
+}
+
+.btnTest__iconButtons__showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.btnTest__iconButtons__section {
+  padding: var(--spacing-md);
+  background-color: var(--bg-main);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__iconButtons__section h4 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btnTest__iconButtons__section > * + * {
+  margin-top: var(--spacing-sm);
+}
+
+/* Test Info Styles */
+.btnTest__info {
+  background-color: var(--bg-tertiary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-main);
+}
+
+.btnTest__info h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-main);
+}
+
+.btnTest__info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btnTest__info li {
+  padding: var(--spacing-xs) 0;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-main);
+}
+
+.btnTest__info li:last-child {
+  border-bottom: none;
+}
+
+.btnTest__info strong {
+  color: var(--text-main);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .btnTest__themeSelector__buttons {
+    flex-direction: column;
+  }
+
+  .btnTest__buttonShowcase__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btnTest__buttonStates__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btnTest__iconButtons__showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation for theme transitions */
+.btnTest * {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+

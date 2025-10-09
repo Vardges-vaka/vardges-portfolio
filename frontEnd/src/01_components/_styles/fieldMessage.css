@@ -1,0 +1,103 @@
+.FieldMessage {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 3px;
+  /* border: 1px solid rgba(0, 0, 0, 0.685); */
+  text-align: left;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+.FieldMessage:hover {
+  letter-spacing: 0.1px;
+}
+.FieldMessage.hint {
+  background-color: var(--FieldMessage-hint-bg);
+  color: var(--FieldMessage-hint-text);
+}
+.FieldMessage.error {
+  background-color: var(--FieldMessage-error-bg);
+  color: var(--FieldMessage-error-text);
+  cursor: not-allowed;
+  border: 1px solid rgba(220, 53, 69, 0.6);
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+  animation: gentleNeonGlowError 3s ease-in-out infinite alternate;
+}
+
+.FieldMessage.success {
+  background-color: var(--FieldMessage-success-bg);
+  color: var(--FieldMessage-success-text);
+}
+.FieldMessage.warning {
+  background-color: var(--FieldMessage-warning-bg);
+  color: var(--FieldMessage-warning-text);
+  /* border: 1px solid rgba(255, 193, 7, 0.6); */
+  cursor: help;
+  box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+  animation: gentleNeonGlow 3s ease-in-out infinite alternate;
+}
+
+.FieldMessage.hint:hover {
+  background-color: var(--FieldMessage-hint-bg-hover);
+  color: var(--FieldMessage-hint-text-hover);
+}
+.FieldMessage.error:hover {
+  background-color: var(--FieldMessage-error-bg-hover);
+  color: var(--FieldMessage-error-text-hover);
+  animation: none;
+}
+.FieldMessage.success:hover {
+  background-color: var(--FieldMessage-success-bg-hover);
+  color: var(--FieldMessage-success-text-hover);
+}
+.FieldMessage.warning:hover {
+  background-color: var(--FieldMessage-warning-bg-hover);
+  color: var(--FieldMessage-warning-text-hover);
+}
+
+@keyframes gentleNeonGlow {
+  from {
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+    /* border-color: rgba(255, 193, 7, 0.6); */
+  }
+  to {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+    /* border-color: rgba(255, 193, 7, 0.8); */
+  }
+}
+
+@keyframes gentleNeonGlowError {
+  from {
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+    border-color: rgba(220, 53, 69, 0.6);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
+    border-color: rgba(220, 53, 69, 0.8);
+  }
+}
+
+/* 
+
+--FieldMessage-hint-bg: rgba(212, 202, 202, 0.685);
+--FieldMessage-error-bg: rgba(212, 202, 202, 0.685);
+--FieldMessage-success-bg: rgba(212, 202, 202, 0.685);
+--FieldMessage-warning-bg: rgba(212, 202, 202, 0.685);
+
+--FieldMessage-hint-bg-hover: rgba(212, 202, 202, 0.685);
+--FieldMessage-error-bg-hover: rgba(212, 202, 202, 0.685);
+--FieldMessage-success-bg-hover: rgba(212, 202, 202, 0.685);
+--FieldMessage-warning-bg-hover: rgba(212, 202, 202, 0.685);
+
+--FieldMessage-hint-text: rgba(0, 0, 0, 0.685);
+--FieldMessage-error-text: rgba(255, 0, 0, 0.685);
+--FieldMessage-success-text: rgba(0, 255, 0, 0.685);
+--FieldMessage-warning-text: rgba(255, 208, 0, 0.986);
+
+--FieldMessage-hint-text-hover: rgba(0, 0, 0, 0.685);
+--FieldMessage-error-text-hover: rgba(255, 0, 0, 0.685);
+--FieldMessage-success-text-hover: rgba(0, 255, 0, 0.685);
+--FieldMessage-warning-text-hover: rgba(255, 208, 0, 0.986);
+
+
+*/

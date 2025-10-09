@@ -1,0 +1,100 @@
+/* Dark Theme - Semantic Variable Mappings */
+[data-theme="dark"] {
+  /* ========== BUTTON VARIABLES ========== */
+
+  /* Primary Button */
+  --btn-primary-bg: var(--dark-primary-color);
+  --btn-primary-text: var(--dark-text-main-color);
+  --btn-primary-border: var(--dark-primary-color);
+  --btn-primary-hover-bg: var(--dark-hover-bg-color);
+  --btn-primary-hover-text: var(--dark-hover-text-color);
+  --btn-primary-hover-border: var(--dark-hover-border-color);
+
+  /* Secondary Button */
+  --btn-secondary-bg: var(--dark-secondary-color);
+  --btn-secondary-text: var(--dark-text-main-color);
+  --btn-secondary-border: var(--dark-secondary-color);
+  --btn-secondary-hover-bg: var(--dark-bg-tertiary-color);
+  --btn-secondary-hover-text: var(--dark-text-main-color);
+  --btn-secondary-hover-border: var(--dark-bg-tertiary-color);
+
+  /* Normal Button (default/outline) */
+  --btn-normal-bg: transparent;
+  --btn-normal-text: var(--dark-text-main-color);
+  --btn-normal-border: var(--dark-border-color);
+  --btn-normal-hover-bg: var(--dark-hover-bg-color);
+  --btn-normal-hover-text: var(--dark-hover-text-color);
+  --btn-normal-hover-border: var(--dark-hover-border-color);
+
+  /* Light Button (ghost/minimal) */
+  --btn-light-bg: transparent;
+  --btn-light-text: var(--dark-text-secondary-color);
+  --btn-light-border: transparent;
+  --btn-light-hover-bg: var(--dark-bg-secondary-color);
+  --btn-light-hover-text: var(--dark-text-main-color);
+  --btn-light-hover-border: transparent;
+
+  /* Dark Button (high contrast) */
+  --btn-dark-bg: var(--dark-text-main-color);
+  --btn-dark-text: var(--dark-primary-color);
+  --btn-dark-border: var(--dark-text-main-color);
+  --btn-dark-hover-bg: var(--dark-text-secondary-color);
+  --btn-dark-hover-text: var(--dark-primary-color);
+  --btn-dark-hover-border: var(--dark-text-secondary-color);
+
+  /* ========== GENERAL UI VARIABLES ========== */
+
+  /* Backgrounds */
+  --bg-main: var(--dark-bg-main-color);
+  --bg-secondary: var(--dark-bg-secondary-color);
+  --bg-tertiary: var(--dark-bg-tertiary-color);
+
+  /* Text */
+  --text-main: var(--dark-text-main-color);
+  --text-secondary: var(--dark-text-secondary-color);
+  --text-placeholder: var(--dark-text-placeholder-color);
+
+  /* Borders */
+  --border-main: var(--dark-border-color);
+  --border-hover: var(--dark-hover-border-color);
+
+  /* Shadows */
+  --shadow-main: var(--dark-shadow-color);
+
+  /* Brand Colors */
+  --brand-primary: var(--dark-primary-color);
+  --brand-secondary: var(--dark-secondary-color);
+  --brand-accent: var(--dark-accent-color);
+
+  /* ========== LOADING SPINNER VARIABLES ========== */
+  --spinner-border: var(--dark-border-color);
+  --spinner-primary: var(--dark-primary-color);
+  --spinner-secondary: var(--dark-secondary-color);
+
+  /* ========== ICON VARIABLES ========== */
+  --icon-primary: var(--dark-primary-color);
+  --icon-secondary: var(--dark-text-secondary-color);
+  --icon-tertiary: var(--dark-text-placeholder-color);
+
+  /* ========== FIELD MESSAGE VARIABLES ========== */
+
+  --FieldMessage-hint-bg: rgba(212, 202, 202, 0.685);
+  --FieldMessage-error-bg: rgba(212, 202, 202, 0.685);
+  --FieldMessage-success-bg: rgba(212, 202, 202, 0.685);
+  --FieldMessage-warning-bg: rgba(212, 202, 202, 0.685);
+
+  --FieldMessage-hint-bg-hover: rgba(212, 202, 202, 0.685);
+  --FieldMessage-error-bg-hover: rgba(212, 202, 202, 0.685);
+  --FieldMessage-success-bg-hover: rgba(212, 202, 202, 0.685);
+  --FieldMessage-warning-bg-hover: rgba(212, 202, 202, 0.685);
+
+  --FieldMessage-hint-text: rgba(0, 0, 0, 0.685);
+  --FieldMessage-error-text: rgba(255, 0, 0, 0.685);
+  --FieldMessage-success-text: rgba(0, 255, 0, 0.685);
+  --FieldMessage-warning-text: rgba(255, 208, 0, 0.986);
+
+  --FieldMessage-hint-text-hover: rgba(0, 0, 0, 0.685);
+  --FieldMessage-error-text-hover: rgba(255, 0, 0, 0.685);
+  --FieldMessage-success-text-hover: rgba(0, 255, 0, 0.685);
+  --FieldMessage-warning-text-hover: rgba(255, 208, 0, 0.986);
+}

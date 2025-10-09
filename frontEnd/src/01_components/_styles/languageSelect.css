@@ -1,0 +1,123 @@
+.languageSwitcher {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+}
+
+.languageSwitcher__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: black;
+}
+.languageSwitcher__flag-img:hover,
+.languageSwitcher__button:hover {
+  background: rgba(140, 141, 140, 0.285);
+  border: none;
+  transform: scale(1.04);
+}
+
+.languageSwitcher__flag-img {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  /* border-radius: 2px; */
+  /* border: 0.5px solid rgba(0, 0, 0, 0.847); */
+}
+
+.languageSwitcher__name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.languageSwitcher__dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  left: auto;
+  z-index: 100;
+  min-width: 160px;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  background-color: rgba(159, 161, 159, 0.484);
+  border: 1px solid rgba(0, 0, 0, 0.847);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: dropdown-fade 0.2s ease;
+  color: black;
+  padding: 0px;
+}
+
+.rtl .languageSwitcher__dropdown {
+  right: auto;
+  left: 0;
+}
+
+.languageSwitcher__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.languageSwitcher__option:hover {
+  background-color: rgba(140, 141, 140, 0.285);
+  border: none;
+  transform: scale(1.05);
+  margin: 0px 4px;
+}
+
+.languageSwitcher__option.active {
+  background-color: rgba(140, 141, 140, 0.285);
+  border: none;
+  /* margin: -4px 0px; */
+  /* transform: scale(1.05); */
+  /* font-weight: 500; */
+}
+
+@keyframes dropdown-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .languageSwitcher__button {
+    padding: 6px;
+    border-radius: 4px;
+  }
+
+  .languageSwitcher__dropdown {
+    min-width: 120px;
+    right: -5px;
+  }
+
+  .languageSwitcher__option {
+    padding: 8px 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .languageSwitcher__name {
+    font-size: 12px;
+  }
+
+  .languageSwitcher__button {
+    padding: 5px 10px;
+  }
+}
