@@ -4,14 +4,25 @@
 }
 .PublicHeader_NavBar_item {
   padding: 5px;
-  border: 1px solid var(--border-main);
+  /* border: 1px solid var(--border-main); */
   cursor: pointer;
   list-style: none;
+
 }
+
+.PublicHeader_NavBar_item:hover{
+  background-color: var(--title-secondary-color-hover);
+}
+
 .PublicHeader_NavBar_item a:visited,
 .PublicHeader_NavBar_item a:active,
-.PublicHeader_NavBar_item a:focus,
+/* .PublicHeader_NavBar_item a:focus, */
 .PublicHeader_NavBar_item a {
   text-decoration: none !important;
-  color: black;
+  color: var(--title-secondary-color);
+  font-weight: 600;
+}
+.PublicHeader_NavBar_item a:focus,
+.PublicHeader_NavBar_item a:hover {
+  /* color: var(--title-secondary-color-hover); */
 }

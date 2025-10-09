@@ -1,0 +1,156 @@
+:root {
+  /* ========== LIGHT THEME COLORS ========== */
+
+  /* 🎯 Brand Colors */
+  --light-primary-color: #2c3e50;
+  --light-secondary-color: #18bc9c;
+  --light-accent-color: #e74c3c;
+
+  /* 🧱 Background Colors */
+  --light-bg-main-color: #ffffff;
+  --light-bg-secondary-color: #f9fafb;
+  --light-bg-tertiary-color: #f0f2f5;
+
+  /* 📝 Text Colors */
+  --light-text-main-color: #1a1a1a;
+  --light-text-secondary-color: #4a4a4a;
+  --light-text-placeholder-color: #9ca3af;
+
+  /* 📏 Border Colors */
+  --light-border-color: #e5e7eb;
+
+  /* 🕶️ Shadow */
+  --light-shadow-color: rgba(0, 0, 0, 0.05);
+
+  /* 🎯 Hover States */
+  --light-hover-bg-color: #f3f4f6;
+  --light-hover-text-color: #111827;
+  --light-hover-border-color: #d1d5db;
+
+  /* ========== DARK THEME COLORS ========== */
+
+  /* 🎯 Brand Colors */
+  --dark-primary-color: #5c008b; /* Background / Primary */
+  --dark-secondary-color: #8e008b; /* CTA / Secondary */
+  --dark-accent-color: #ff8300; /* Accent or warning */
+
+  /* 🧱 Background Colors */
+  --dark-bg-main-color: #5c008b;
+  --dark-bg-secondary-color: #2e005d;
+  --dark-bg-tertiary-color: #8e008b;
+
+  /* 📝 Text Colors */
+  --dark-text-main-color: #ffffff;
+  --dark-text-secondary-color: #e0d4ea;
+  --dark-text-placeholder-color: #c6a0cf;
+
+  /* 📏 Border Colors */
+  --dark-border-color: #8e008b;
+
+  /* 🕶️ Shadow */
+  --dark-shadow-color: rgba(0, 0, 0, 0.6);
+
+  /* 🎯 Hover States */
+  --dark-hover-bg-color: #2e005d;
+  --dark-hover-text-color: #ff6200;
+  --dark-hover-border-color: #ff8300;
+
+  /*! ======================================================== */
+
+  --light-bg-primary-color: rgb(255, 255, 255);
+  --light-bg-secondary-color: black;
+  --light-bg-success-color: black;
+  --light-bg-error-color: black;
+  --light-bg-primary-color-hover: rgb(225, 224, 224);
+  --light-bg-secondary-color-hover: black;
+  --light-bg-success-color-hover: black;
+  --light-bg-error-color-hover: black;
+
+  --light-text-primary-color: black;
+  --light-text-secondary-color: black;
+  --light-text-label-color: black;
+  --light-text-disabled-color: black;
+  --light-text-active-color: black;
+  --light-text-placeholder-color: black;
+  --light-text-focus-color: black;
+  --light-text-primary-hover-color: black;
+  --light-text-secondary-color-hover: black;
+  --light-text-label-color-hover: black;
+  --light-text-disabled-color-hover: black;
+  --light-text-active-color-hover: black;
+  --light-text-placeholder-color-hover: black;
+  --light-text-focus-color-hover: black;
+  --light-title-primary-color: black;
+  --light-title-secondary-color: black;
+  --light-title-label-color: black;
+  --light-title-disabled-color: black;
+  --light-title-active-color: black;
+  --light-title-placeholder-color: black;
+  --light-title-focus-color: black;
+  --light-title-primary-hover-color: black;
+  --light-title-secondary-hover-color: black;
+  --light-title-label-hover-color: black;
+  --light-title-disabled-hover-color: black;
+  --light-title-active-hover-color: black;
+  --light-title-placeholder-hover-color: black;
+  --light-title-focus-hover-color: black;
+  --light-logo-text-color: black;
+  /* --dark-logo-text-color: #37731B;  */
+  --dark-logo-text-color: #f0b906;
+
+  --dark-bg-primary-color: #571b73;
+  --dark-bg-secondary-color: black;
+  --dark-bg-success-color: black;
+  --dark-bg-error-color: black;
+
+  /* --dark-bg-primary-color-hover: #320d43; */
+  /* --dark-bg-primary-color-hover: #320d43; */
+  /* --dark-bg-primary-color-hover: #320d43; */
+  --dark-bg-primary-color-hover: #340f44;
+  --dark-bg-secondary-color-hover: black;
+  --dark-bg-success-color-hover: black;
+  --dark-bg-error-color-hover: black;
+
+  --dark-text-primary-color: white;
+  --dark-text-secondary-color: black;
+  --dark-text-label-color: black;
+  --dark-text-disabled-color: black;
+  --dark-text-active-color: black;
+  --dark-text-placeholder-color: black;
+  --dark-text-focus-color: black;
+  --dark-text-primary-hover-color: black;
+  --dark-text-secondary-color-hover: black;
+  --dark-text-label-color-hover: black;
+  --dark-text-disabled-color-hover: black;
+  --dark-text-active-color-hover: black;
+  --dark-text-placeholder-color-hover: black;
+  --dark-text-focus-color-hover: black;
+
+  --dark-title-primary-color: black;
+  /* --dark-title-secondary-color: #bb8f2f; */
+  /* --dark-title-secondary-color: #bb8f2f; */
+  /* --dark-title-secondary-color: #bb8f2f; */
+  /* --dark-title-secondary-color: #bb8f2f; */
+  /* --dark-title-secondary-color: #1B732B; */
+  --dark-title-secondary-color: #ffffff; 
+
+  --dark-title-label-color: black;
+  --dark-title-disabled-color: black;
+  --dark-title-active-color: black;
+  --dark-title-placeholder-color: black;
+  --dark-title-focus-color: black;
+
+  --dark-title-primary-hover-color: black;
+  --dark-title-secondary-hover-color: #1B7357;
+
+  --dark-title-label-hover-color: black;
+  --dark-title-disabled-hover-color: black;
+  --dark-title-active-hover-color: black;
+  --dark-title-placeholder-hover-color: black;
+  --dark-title-focus-hover-color: black;
+}
+
+/* 
+
+
+*/

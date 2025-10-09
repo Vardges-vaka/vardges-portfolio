@@ -99,4 +99,12 @@
   --FieldMessage-error-text-hover: rgba(255, 0, 0, 0.685);
   --FieldMessage-success-text-hover: rgba(0, 255, 0, 0.685);
   --FieldMessage-warning-text-hover: rgba(255, 208, 0, 0.986);
+
+  /*! ======================================================== */
+  --bg-primary: var(--dark-bg-primary-color);
+  --bg-primary-hover: var(--dark-bg-primary-color-hover);
+  --text-primary: var(--dark-text-primary-color);
+  --logo-text-color: var(--dark-logo-text-color);
+  --title-secondary-color: var(--dark-title-secondary-color);
+  --title-secondary-color-hover: var(--dark-title-secondary-hover-color);
 }

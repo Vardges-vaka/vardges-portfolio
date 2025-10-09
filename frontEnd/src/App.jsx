@@ -36,7 +36,8 @@ import "./09_styles/globalSpacing.css";
 import "./09_styles/lightTheme.css";
 import "./09_styles/darkTheme.css";
 import "./09_styles/App.css";
-
+import "./09_styles/globalColorsNew.css";
+//
 function App() {
   return (
     <ThemeProvider>

@@ -103,6 +103,13 @@
   --FieldMessage-warning-text-hover: rgb(255, 255, 255);
 
   /* ========== INPUT GLOBAL VARIABLES ========== */
+  /*! ======================================================== */
+  --bg-primary: var(--light-bg-primary-color);
+  --bg-primary-hover: var(--light-bg-primary-color-hover);
+  --text-primary: var(--light-text-primary-color);
+  --logo-text-color: var(--light-logo-text-color);
+  --title-secondary-color: var(--light-title-secondary-color);
+  --title-secondary-color-hover: var(--light-title-secondary-color-hover);
 
   /* 
   

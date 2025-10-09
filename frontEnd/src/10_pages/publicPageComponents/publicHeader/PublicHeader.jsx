@@ -2,6 +2,7 @@ import React from "react";
 import {
   Logo,
   LanguageSelect,
+  ThemeToggler,
 } from "../../../01_components/components.index.js";
 import { PublicHeader_NavBar } from "./publicHeaderComps/_publicHeaderComps.index.js";
 import "./styles/publicHeader.css";
@@ -12,14 +13,10 @@ const PublicHeader = () => {
   return (
     <div className="PublicHeader">
       <Logo />
-      {/* <PublicHeader_NavBar /> */}
-      <div className="publicHeader_right">
+      <PublicHeader_NavBar />
+      <div className="PublicHeader_right">
         <LanguageSelect />
-
-        {/* <D /> */}
-        {/* <E /> */}
-        <Toggler1 />
-        {/* <G /> */}
+        <ThemeToggler />
       </div>
     </div>
   );

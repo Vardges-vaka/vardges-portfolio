@@ -1,0 +1,53 @@
+:root {
+  /* ========== LIGHT THEME ICON COLORS ========== */
+  --icon-line-primary-color: red;
+  --light-icon-line-secondary-color: red;
+  --light-icon-line-hover-color: red;
+  --light-icon-line-focus-color: red;
+  --light-icon-line-active-color: red;
+  --light-icon-line-disabled-color: red;
+  --light-icon-bg-primary-color: red;
+  --light-icon-bg-secondary-color: red;
+  --light-icon-bg-hover-color: red;
+  --light-icon-bg-focus-color: red;
+  --light-icon-bg-active-color: red;
+  --light-icon-bg-disabled-color: red;
+  --light-icon-border-primary-color: red;
+  --light-icon-border-secondary-color: red;
+  --light-icon-border-hover-color: red;
+  --light-icon-border-focus-color: red;
+  --light-icon-border-active-color: red;
+  --light-icon-border-disabled-color: red;
+  --light-icon-boxShadow-primary-color: red;
+  --light-icon-boxShadow-secondary-color: red;
+  --light-icon-boxShadow-hover-color: red;
+  --light-icon-boxShadow-focus-color: red;
+  --light-icon-boxShadow-active-color: red;
+  --light-icon-boxShadow-disabled-color: red;
+
+  /* ========== DARK THEME ICON COLORS ========== */
+  --dark-icon-line-primary-color: red;
+  --dark-icon-line-secondary-color: red;
+  --dark-icon-line-hover-color: red;
+  --dark-icon-line-focus-color: red;
+  --dark-icon-line-active-color: red;
+  --dark-icon-line-disabled-color: red;
+  --dark-icon-bg-primary-color: red;
+  --dark-icon-bg-secondary-color: red;
+  --dark-icon-bg-hover-color: red;
+  --dark-icon-bg-focus-color: red;
+  --dark-icon-bg-active-color: red;
+  --dark-icon-bg-disabled-color: red;
+  --dark-icon-border-primary-color: red;
+  --dark-icon-border-secondary-color: red;
+  --dark-icon-border-hover-color: red;
+  --dark-icon-border-focus-color: red;
+  --dark-icon-border-active-color: red;
+  --dark-icon-border-disabled-color: red;
+  --dark-icon-boxShadow-primary-color: red;
+  --dark-icon-boxShadow-secondary-color: red;
+  --dark-icon-boxShadow-hover-color: red;
+  --dark-icon-boxShadow-focus-color: red;
+  --dark-icon-boxShadow-active-color: red;
+  --dark-icon-boxShadow-disabled-color: red;
+}
