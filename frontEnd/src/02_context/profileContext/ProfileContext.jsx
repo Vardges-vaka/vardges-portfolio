@@ -1,27 +1,49 @@
 import React, { createContext, useState, useEffect } from "react";
+import { SUPPORTED_PROFILES } from "../../08_constances/_constances.index.js";
 import PropTypes from "prop-types";
 
-// Create the Theme Context
 const ProfileContext = createContext();
 
 const ProfileProvider = ({ children }) => {
-  const [profile, setProfile] = useState("global");
+  const [profile, setProfile] = useState(() => {
+    const storedProfile = localStorage.getItem("userProfile");
+    if (storedProfile && SUPPORTED_PROFILES.includes(storedProfile)) {
+      return storedProfile;
+    }
+    return "both"; // Default profile
+  });
 
-  useEffect(() => {}, [profile]);
+  // Persist profile to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("userProfile", profile);
+    // Optional: Add data-profile attribute to body for global CSS hooks
+    document.body.setAttribute("data-profile", profile);
+  }, [profile]);
 
-  useEffect(() => {}, []);
-
-  // Toggle between light and dark themes
+  // Toggle to a new profile (with validation)
   const toggleProfile = (newProfile) => {
-    setProfile(newProfile);
+    if (SUPPORTED_PROFILES.includes(newProfile)) {
+      setProfile(newProfile);
+    } else {
+      console.warn(
+        `Invalid profile: ${newProfile}. Must be one of: ${SUPPORTED_PROFILES.join(
+          ", "
+        )}`
+      );
+    }
   };
 
   const contextValue = {
-    // Current language state
+    // Current profile state
     profile,
 
-    // Language actions
+    // Profile actions
     toggleProfile,
+
+    // Helper to check current profile
+    isDeveloper: profile === "dev" || profile === "both",
+    isHospitality: profile === "hospitality" || profile === "both",
+    isBoth: profile === "both",
   };
 
   return (

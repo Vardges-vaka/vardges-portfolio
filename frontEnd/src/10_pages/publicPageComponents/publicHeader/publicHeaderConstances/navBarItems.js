@@ -17,6 +17,7 @@ export const navBarItems = (t, language) => {
     },
     { label: t("navBar.labels.vision"), path: `/${language}/vision` },
     { label: t("navBar.labels.values"), path: `/${language}/values` },
+    { label: t("navBar.labels.contact"), path: `/${language}/contact` },
   ];
 };
 // 1. Personal Overview / Bio
@@ -27,6 +28,7 @@ export const navBarItems = (t, language) => {
 // 6. Achievements & Milestones
 // 7. Vision & Goals
 // 8. Values & Personality
+// 9. Contact
 /*
 
 

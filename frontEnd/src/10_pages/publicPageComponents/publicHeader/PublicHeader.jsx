@@ -3,6 +3,7 @@ import {
   Logo,
   LanguageSelect,
   ThemeToggler,
+  ProfileToggler,
 } from "../../../01_components/components.index.js";
 import { PublicHeader_NavBar } from "./publicHeaderComps/_publicHeaderComps.index.js";
 import "./styles/publicHeader.css";
@@ -14,7 +15,9 @@ const PublicHeader = () => {
     <div className="PublicHeader">
       <Logo />
       <PublicHeader_NavBar />
+
       <div className="PublicHeader_right">
+        <ProfileToggler />
         <LanguageSelect />
         <ThemeToggler />
       </div>

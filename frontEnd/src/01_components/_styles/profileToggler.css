@@ -1,0 +1,247 @@
+.profileToggler {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 2px;
+  width: fit-content;
+  transition: all 0.4s ease;
+  margin-right: -10px;
+}
+
+.profileToggler:hover {
+  transform: translateX(-3px);
+  transform: scale(1.15);
+  transition: all 0.4s ease;
+}
+
+.profileToggler--expanded {
+  padding-right: 145px;
+  padding-left: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profileToggler__active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 7px;
+  border: none;
+  background-color: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  min-width: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.profileToggler__active--slid {
+  opacity: 0;
+  transform: translateX(-50px);
+  pointer-events: none;
+}
+
+.profileToggler__active--hidden {
+  opacity: 0;
+  transform: translateX(-50px);
+  pointer-events: none;
+}
+
+.profileToggler__indicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  animation: blink 1.5s ease-in-out infinite;
+  box-shadow: 0 0 4px rgba(0, 255, 0, 0.6);
+  z-index: 3;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.profileToggler__options {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translate(100%, -50%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.profileToggler__options--visible {
+  transform: translate(0, -50%);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.profileToggler__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 7px;
+  border: none;
+  background-color: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  min-width: 40px;
+  position: relative;
+}
+
+.profileToggler__option:hover {
+  transform: scale(1.05);
+}
+
+.profileToggler__option--selected {
+  background-color: var(--background-hover, rgba(0, 0, 0, 0.08));
+}
+
+.profileToggler__option--locked {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.profileToggler__option--locked:hover {
+  transform: none;
+}
+
+.profileToggler__menuIndicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  animation: blink 1.5s ease-in-out infinite;
+  box-shadow: 0 0 4px rgba(0, 255, 0, 0.6);
+  z-index: 3;
+}
+
+.profileToggler__confirmBtn {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--primary-color, #007bff);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+  margin-left: 4px;
+}
+
+.profileToggler__confirmBtn:hover {
+  background-color: var(--primary-hover, #0056b3);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+.profileToggler__icon {
+  width: 24px;
+  height: 24px;
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.profileToggler__option--both {
+  padding: 4px 7px;
+  overflow: hidden;
+}
+
+.profileToggler__yinYangWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.profileToggler__yinYangWrapper .yin-yang-loader {
+  transform: scale(0.23);
+  min-height: unset;
+}
+
+.profileToggler__yinYangWrapper .yin-yang {
+  animation: rotate 3s linear infinite;
+  box-shadow: none;
+}
+
+.profileToggler__yinYangWrapper .yin-yang:hover {
+  box-shadow: none;
+}
+
+.profileToggler__yinYangWrapper .dot {
+  animation: none;
+}
+
+.profileToggler__icon--small {
+  width: 18px;
+  height: 18px;
+}
+
+.profileToggler__active:focus,
+.profileToggler__option:focus {
+  outline: 1px dashed var(--focus-color, #007bff);
+  outline-offset: 1px;
+}
+
+@media (max-width: 767px) {
+  .profileToggler__active,
+  .profileToggler__option {
+    padding: 6px 10px;
+    min-width: 44px;
+  }
+
+  .profileToggler__icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .profileToggler__icon--small {
+    width: 20px;
+    height: 20px;
+  }
+
+  .profileToggler__indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .profileToggler__active--slid {
+    transform: translateX(-8px);
+  }
+
+  .profileToggler__confirmBtn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .profileToggler__cancelBtn {
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+
+  .profileToggler--expanded {
+    padding-right: 140px;
+  }
+}

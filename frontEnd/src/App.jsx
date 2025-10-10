@@ -25,6 +25,7 @@ import {
   Education,
   Vision,
   Values,
+  Contact,
 } from "./10_pages/public/public.index.js";
 
 // ! Test
@@ -37,7 +38,7 @@ import "./09_styles/lightTheme.css";
 import "./09_styles/darkTheme.css";
 import "./09_styles/App.css";
 import "./09_styles/globalColorsNew.css";
-//
+
 function App() {
   return (
     <ThemeProvider>
@@ -113,6 +114,14 @@ function App() {
                     </LanguageRouteWrapper>
                   }
                 />
+                <Route
+                  path="/:lang/contact"
+                  element={
+                    <LanguageRouteWrapper>
+                      <Contact />
+                    </LanguageRouteWrapper>
+                  }
+                />
                 {/* // ? Fallback routes without language prefix */}
                 <Route path="/bio" element={<Bio />} />
                 <Route path="/journey" element={<Journey />} />
@@ -122,6 +131,7 @@ function App() {
                 <Route path="/achievements" element={<Achievements />} />
                 <Route path="/vision" element={<Vision />} />
                 <Route path="/values" element={<Values />} />
+                <Route path="/contact" element={<Contact />} />
               </Routes>
               <PublicFooter />
             </Suspense>

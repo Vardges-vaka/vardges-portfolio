@@ -1,28 +1,193 @@
-.PublicHeader_NavBar_list {
+/* Navigation Bar Container */
+.publicHeaderNavBar {
+  position: relative;
   display: flex;
-  gap: var(--spacing-md);
+  align-items: center;
+  height: 100%;
 }
-.PublicHeader_NavBar_item {
-  padding: 5px;
-  /* border: 1px solid var(--border-main); */
-  cursor: pointer;
+
+/* Navigation List */
+.publicHeaderNavBar__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   list-style: none;
-
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-.PublicHeader_NavBar_item:hover{
-  background-color: var(--title-secondary-color-hover);
+/* Navigation Item */
+.publicHeaderNavBar__item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.PublicHeader_NavBar_item a:visited,
-.PublicHeader_NavBar_item a:active,
-/* .PublicHeader_NavBar_item a:focus, */
-.PublicHeader_NavBar_item a {
-  text-decoration: none !important;
-  color: var(--title-secondary-color);
+/* Navigation Link */
+.publicHeaderNavBar__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: var(--title-secondary-color, #333);
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  gap: 4px;
+}
+
+/* Label Text */
+.publicHeaderNavBar__label {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* Hover Effect */
+.publicHeaderNavBar__link:hover {
+  background-color: var(--background-hover, rgba(0, 0, 0, 0.05));
+  transform: translateY(-2px);
+}
+
+.publicHeaderNavBar__link:hover .publicHeaderNavBar__label {
+  color: var(--primary-color, #007bff);
+}
+
+/* Active State */
+.publicHeaderNavBar__item--active .publicHeaderNavBar__link {
+  background-color: var(--background-secondary, rgba(0, 123, 255, 0.08));
+  color: var(--primary-color, #007bff);
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__label {
   font-weight: 600;
+  color: var(--primary-color, #007bff);
 }
-.PublicHeader_NavBar_item a:focus,
-.PublicHeader_NavBar_item a:hover {
-  /* color: var(--title-secondary-color-hover); */
+
+/* Active Indicator - Bottom Border */
+.publicHeaderNavBar__activeIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color, #007bff),
+    transparent
+  );
+  border-radius: 2px 2px 0 0;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 60%;
+    opacity: 1;
+  }
+}
+
+/* Focus State for Accessibility */
+.publicHeaderNavBar__link:focus {
+  outline: 2px solid var(--primary-color, #007bff);
+  outline-offset: 2px;
+}
+
+/* Visited Links - Keep Same Color */
+.publicHeaderNavBar__link:visited {
+  color: var(--title-secondary-color, #333);
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__link:visited {
+  color: var(--primary-color, #007bff);
+}
+
+/* Add subtle shadow on active item */
+.publicHeaderNavBar__item--active .publicHeaderNavBar__link {
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 1200px) {
+  .publicHeaderNavBar__list {
+    gap: 2px;
+  }
+
+  .publicHeaderNavBar__link {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .publicHeaderNavBar__link {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .publicHeaderNavBar__activeIndicator {
+    height: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .publicHeaderNavBar {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .publicHeaderNavBar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .publicHeaderNavBar__list {
+    gap: 4px;
+    padding: 0 8px;
+    min-width: fit-content;
+  }
+
+  .publicHeaderNavBar__link {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* Make touch targets larger on mobile */
+  .publicHeaderNavBar__item {
+    min-height: 44px;
+  }
+}
+
+/* Tablet Landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .publicHeaderNavBar__link {
+    padding: 6px 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .publicHeaderNavBar__link {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .publicHeaderNavBar__list {
+    gap: 2px;
+  }
 }
