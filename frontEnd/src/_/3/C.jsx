@@ -1,5 +1,5 @@
 import React from "react";
-import "./C.css";
+// import "./C.css";
 // import "../4/D.css";
 import {
   DeveloperIcon,

@@ -23,7 +23,7 @@ const InputGlobal = ({
   disabled = false,
   readOnly = false,
   // Global Input related props
-
+  version = "primary",
   withMessage = false,
 
   messageProps = {
@@ -208,18 +208,19 @@ const InputGlobal = ({
 withErrorMessage
 withWarningMessage
 */
-// InputGlobal.propTypes = {
-//   className: PropTypes.string,
-//   withLeftIcon: PropTypes.bool,
-//   withRightIcon: PropTypes.bool,
-//   withLabel: PropTypes.bool,
-//   withMessage: PropTypes.bool,
-//   // Props for label, leftIcon, rightIcon, message
-//   labelProps: PropTypes.object,
-//   leftIconProps: PropTypes.object,
-//   rightIconProps: PropTypes.object,
-//   messageProps: PropTypes.object,
-// };
+InputGlobal.propTypes = {
+  className: PropTypes.string,
+  withLeftIcon: PropTypes.bool,
+  withRightIcon: PropTypes.bool,
+  withLabel: PropTypes.bool,
+  withMessage: PropTypes.bool,
+  // Props for label, leftIcon, rightIcon, message
+  labelProps: PropTypes.object,
+  leftIconProps: PropTypes.object,
+  rightIconProps: PropTypes.object,
+  messageProps: PropTypes.object,
+  version: PropTypes.oneOf(["primary"]),
+};
 
 InputGlobal.displayName = "InputGlobal";
 

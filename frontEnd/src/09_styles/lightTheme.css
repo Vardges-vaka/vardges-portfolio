@@ -110,11 +110,149 @@
   --logo-text-color: var(--light-logo-text-color);
   --title-secondary-color: var(--light-title-secondary-color);
   --title-secondary-color-hover: var(--light-title-secondary-color-hover);
+  --icon-stroke-color: rgb(255, 0, 0);
+
+  --icon-stroke-color-1: var(--light-icon-stroke-color-1);
+  --icon-stroke-color-2: var(--light-icon-stroke-color-2);
+  --icon-stroke-color-3: var(--light-icon-stroke-color-3);
+  --icon-stroke-color-4: var(--light-icon-stroke-color-4);
+  --icon-stroke-color-5: var(--light-icon-stroke-color-5);
+  --icon-stroke-color-6: var(--light-icon-stroke-color-6);
+  --icon-stroke-color-7: var(--light-icon-stroke-color-7);
+  --icon-stroke-color-8: var(--light-icon-stroke-color-8);
+  --icon-stroke-color-9: var(--light-icon-stroke-color-9);
+
+  --icon-stroke-primary-color: var(--light-icon-stroke-primary-color);
+  --icon-stroke-primary-hover-color: var(
+    --light-icon-stroke-primary-hover-color
+  );
+  --icon-stroke-secondary-color: var(--light-icon-stroke-secondary-color);
+  --icon-stroke-secondary-hover-color: var(
+    --light-icon-stroke-secondary-hover-color
+  );
+
+  --input-primary-bg-color: var(--light-input-primary-bg-color);
+  --input-primary-bg-color-active: var(--light-input-primary-bg-color-active);
+  --input-primary-bg-color-disabled: var(
+    --light-input-primary-bg-color-disabled
+  );
+  --input-primary-bg-color-focus: var(--light-input-primary-bg-color-focus);
+  --input-primary-bg-color-hover: var(--light-input-primary-bg-color-hover);
+  --input-secondary-bg-color: var(--input-secondary-bg-color);
+  --input-secondary-bg-color-active: var(
+    --light-input-secondary-bg-color-active
+  );
+  --input-secondary-bg-color-disabled: var(
+    --light-input-secondary-bg-color-disabled
+  );
+  --input-secondary-bg-color-focus: var(--light-input-secondary-bg-color-focus);
+  --input-secondary-bg-color-hover: var(--light-input-secondary-bg-color-hover);
+
+  --input-primary-text-color: var(--light-input-primary-text-color);
+  --input-primary-text-color-hover: var(--light-input-primary-text-color-hover);
+  --input-primary-text-color-focus: var(--light-input-primary-text-color-focus);
+  --input-primary-label-text-color: var(--light-input-primary-label-text-color);
+  --input-primary-label-text-color-hover: var(--light-input-primary-label-text-color-hover);
+  --input-primary-hint-text-color-hover: var(--light-input-primary-hint-text-color-hover);
+  --input-primary-success-text-color-hover: var(--light-input-primary-success-text-color-hover);
+  --input-primary-warning-text-color-hover: var(--light-input-primary-warning-text-color-hover);
+  --input-primary-error-text-color-hover: var(--light-input-primary-error-text-color-hover);
+  --input-secondary-text-color: var(--light-input-secondary-text-color);
+  --input-secondary-text-color-hover: var(--light-input-secondary-text-color-hover);
+  --input-secondary-text-color-focus: var(--light-input-secondary-text-color-focus);
+  --input-secondary-label-text-color: var(--light-input-secondary-label-text-color);
+  --input-secondary-label-text-color-hover: var(--light-input-secondary-label-text-color-hover);
+  --input-secondary-hint-text-color-hover: var(--light-input-secondary-hint-text-color-hover);
+  --input-secondary-hint-text-color-hover: var(--light-input-secondary-hint-text-color-hover);
+  --input-secondary-success-text-color-hover: var(--light-input-secondary-success-text-color-hover);
+  --input-secondary-warning-text-color-hover: var(--light-input-secondary-warning-text-color-hover);
+  --input-secondary-error-text-color-hover: var(--light-input-secondary-error-text-color-hover);
+
+
+
+
+
+
+  --input-primary-placeholder-color: var(
+    --light-input-primary-placeholder-color
+  );
+  --input-primary-placeholder-color-hover: var(
+    --light-input-primary-placeholder-color-hover
+  );
+  --input-secondary-placeholder-color: var(
+    --light-input-secondary-placeholder-color
+  );
+  --input-secondary-placeholder-color-hover: var(
+    --light-input-secondary-placeholder-color-hover
+  );
+  --input-primary-placeholder-color-focus: var(
+    --light-input-primary-placeholder-color-focus
+  );
+  --input-secondary-placeholder-color-focus: var(
+    --light-input-secondary-placeholder-color-focus
+  );
+
+  --input-primary-border-color: var(--light-input-primary-border-color);
+  --input-primary-border-color-hover: var(
+    --light-input-primary-border-color-hover
+  );
+  --input-secondary-border-color: var(--light-input-secondary-border-color);
+  --input-secondary-border-color-hover: var(
+    --light-input-secondary-border-color-hover
+  );
+  --input-disabled-border-color: var(--light-input-disabled-border-color);
+  --input-disabled-border-color-hover: var(
+    --light-input-disabled-border-color-hover
+  );
+  --input-primary-border-color-focus: var(
+    --light-input-primary-border-color-focus
+  );
+  --input-secondary-border-color-focus: var(
+    --light-input-secondary-border-color-focus
+  );
+
+  --input-primary-boxShadow: var(--light-input-primary-boxShadow);
+  --input-primary-boxShadow-focus: var(--light-input-primary-boxShadow-focus);
+  --input-primary-boxShadow-hover: var(--light-input-primary-boxShadow-hover);
+  --input-primary-boxShadow-active: var(--light-input-primary-boxShadow-active);
+  --input-primary-boxShadow-disabled: var(
+    --light-input-primary-boxShadow-disabled
+  );
+  --input-secondary-boxShadow: var(--light-input-secondary-boxShadow);
+  --input-secondary-boxShadow-focus: var(
+    --light-input-secondary-boxShadow-focus
+  );
+  --input-secondary-boxShadow-hover: var(
+    --light-input-secondary-boxShadow-hover
+  );
+  --input-secondary-boxShadow-active: var(
+    --light-input-secondary-boxShadow-active
+  );
+  --input-secondary-boxShadow-disabled: var(
+    --light-input-secondary-boxShadow-disabled
+  );
 
   /* 
   
+    --light-input-primary-bg-color: #ccc8ce;
+  --light-input-primary-bg-color-active: #ccc8ce;
+  --light-input-primary-bg-color-disabled: #ccc8ce;
+  --light-input-primary-bg-color-focus: #ccc8ce;
+  --light-input-primary-bg-color-hover: #340f44;
+  --light-input-secondary-bg-color: #ccc8ce;
+  --light-input-secondary-bg-color-active: #ccc8ce;
+  --light-input-secondary-bg-color-disabled: #ccc8ce;
+  --light-input-secondary-bg-color-focus: #ccc8ce;
+  --light-input-secondary-bg-color-hover: #340f44;
   
-  
+
+
+
+
+
+
+
+
   
   */
 }

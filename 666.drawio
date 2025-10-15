@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e">
+    <diagram id="6mSRg5BUV2-YO55QxGVE" name="Page-1">
+        <mxGraphModel dx="1221" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="USER&lt;br&gt;&lt;br&gt;Name&lt;br&gt;FamilyName&lt;br&gt;CV&lt;br&gt;Projects&lt;div&gt;Socials and Contacts&lt;br&gt;Brands&lt;br&gt;Health Details&amp;nbsp;&lt;br&gt;wardrobe&lt;br&gt;Passwords&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" vertex="1" parent="1">
+                    <mxGeometry x="40" y="20" width="120" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Projects&lt;br&gt;&lt;br&gt;Name&lt;br&gt;Describtion&lt;br&gt;STart Date&lt;br&gt;End Date&amp;nbsp;&lt;div&gt;Brands&lt;br&gt;Contracts&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="20" width="120" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Brand&lt;br&gt;&lt;br&gt;Name&lt;br&gt;Tagline&lt;br&gt;Logo&lt;br&gt;Menu&lt;br&gt;Location&lt;br&gt;type&lt;br&gt;timing&lt;br&gt;outlets&lt;br&gt;competitors&lt;div&gt;Brand Book&lt;br&gt;Brand Portfolio&lt;br&gt;Brand Socials&lt;br&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="10" width="120" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Projects" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="330" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Projects" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Projects" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Projects" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="360" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

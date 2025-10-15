@@ -18,20 +18,44 @@ const PublicHeader_NavBar = () => {
   return (
     <nav className="publicHeaderNavBar">
       <ul className="publicHeaderNavBar__list">
-        {navBarItemsList.map((item) => (
-          <li
-            className={`publicHeaderNavBar__item ${
-              isActive(item.path) ? "publicHeaderNavBar__item--active" : ""
-            }`}
-            key={item.path}>
-            <Link to={item.path} className="publicHeaderNavBar__link">
-              <span className="publicHeaderNavBar__label">{item.label}</span>
-              {isActive(item.path) && (
-                <span className="publicHeaderNavBar__activeIndicator"></span>
-              )}
-            </Link>
-          </li>
-        ))}
+        {navBarItemsList.map((item, index) => {
+          const iconSrc = item.icon;
+          const active = isActive(item.path);
+
+          return (
+            <li
+              className={`publicHeaderNavBar__item ${
+                active ? "publicHeaderNavBar__item--active" : ""
+              }`}
+              key={item.path}>
+              <Link to={item.path} className="publicHeaderNavBar__link">
+                {/* Icon Container */}
+                <div className="publicHeaderNavBar__iconWrapper">
+                  <img
+                    src={iconSrc}
+                    alt={item.label}
+                    className={`publicHeaderNavBar__icon ${
+                      item.classname ? item.classname : ""
+                    }`}
+                  />
+                </div>
+
+                {/* Label - shows on hover or when active */}
+                <span
+                  className={`publicHeaderNavBar__label ${
+                    active ? "publicHeaderNavBar__label--visible" : ""
+                  }`}>
+                  {item.label}
+                </span>
+
+                {/* Active indicator bar */}
+                {active && (
+                  <span className="publicHeaderNavBar__activeIndicator"></span>
+                )}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

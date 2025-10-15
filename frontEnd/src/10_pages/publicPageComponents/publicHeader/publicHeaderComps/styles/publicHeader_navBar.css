@@ -1,4 +1,3 @@
-/* Navigation Bar Container */
 .publicHeaderNavBar {
   position: relative;
   display: flex;
@@ -6,18 +5,16 @@
   height: 100%;
 }
 
-/* Navigation List */
 .publicHeaderNavBar__list {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   list-style: none;
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-/* Navigation Item */
 .publicHeaderNavBar__item {
   position: relative;
   height: 100%;
@@ -25,118 +22,169 @@
   align-items: center;
 }
 
-/* Navigation Link */
 .publicHeaderNavBar__link {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  padding: 5px 6px;
   text-decoration: none;
-  color: var(--title-secondary-color, #333);
   font-weight: 500;
   font-size: 15px;
-  border-radius: 6px;
+  border-radius: 5px;
   transition: all 0.3s ease;
   cursor: pointer;
   height: 100%;
-  gap: 4px;
+  gap: 8px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Label Text */
+.publicHeaderNavBar__iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.publicHeaderNavBar__icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.publicHeaderNavBar__icon.ContactIcon {
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+}
+
 .publicHeaderNavBar__label {
   position: relative;
-  z-index: 1;
   white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  font-size: 14px;
 }
 
-/* Hover Effect */
+.publicHeaderNavBar__label--visible {
+  max-width: 200px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .publicHeaderNavBar__link:hover {
-  background-color: var(--background-hover, rgba(0, 0, 0, 0.05));
-  transform: translateY(-2px);
+  padding: 5px 6px;
 }
 
 .publicHeaderNavBar__link:hover .publicHeaderNavBar__label {
-  color: var(--primary-color, #007bff);
+  max-width: 200px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+  color: var(--title-secondary-color) !important;
+  letter-spacing: 2px !important;
 }
 
-/* Active State */
+.publicHeaderNavBar__link:hover .publicHeaderNavBar__icon {
+  transform: translateX(-2px);
+}
+
 .publicHeaderNavBar__item--active .publicHeaderNavBar__link {
-  background-color: var(--background-secondary, rgba(0, 123, 255, 0.08));
-  color: var(--primary-color, #007bff);
+  padding: 5px 6px;
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__icon {
+  transform: scale(1.05);
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__icon.ContactIcon {
+  transform: scale(1.1) translateY(2px);
 }
 
 .publicHeaderNavBar__item--active .publicHeaderNavBar__label {
   font-weight: 600;
-  color: var(--primary-color, #007bff);
+  color: var(--title-secondary-color) !important;
 }
 
-/* Active Indicator - Bottom Border */
 .publicHeaderNavBar__activeIndicator {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
+  width: 70%;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--primary-color, #007bff),
-    transparent
-  );
-  border-radius: 2px 2px 0 0;
-  animation: slideIn 0.3s ease-out;
+
+  border-radius: 3px 3px 0 0;
+  animation: slideInIndicator 0.3s ease-out;
 }
 
-@keyframes slideIn {
+@keyframes slideInIndicator {
   from {
     width: 0%;
     opacity: 0;
   }
   to {
-    width: 60%;
+    width: 70%;
     opacity: 1;
   }
 }
 
-/* Focus State for Accessibility */
-.publicHeaderNavBar__link:focus {
-  outline: 2px solid var(--primary-color, #007bff);
-  outline-offset: 2px;
+.publicHeaderNavBar__item--active
+  .publicHeaderNavBar__link:hover
+  .publicHeaderNavBar__icon {
+  transform: scale(1.05);
 }
 
-/* Visited Links - Keep Same Color */
+.publicHeaderNavBar__link:active {
+  transform: translateY(0) scale(0.98);
+  transition: all 0.5s ease;
+}
+
 .publicHeaderNavBar__link:visited {
   color: var(--title-secondary-color, #333);
 }
 
-.publicHeaderNavBar__item--active .publicHeaderNavBar__link:visited {
+/* .publicHeaderNavBar__item--active .publicHeaderNavBar__link:visited {
   color: var(--primary-color, #007bff);
-}
-
-/* Add subtle shadow on active item */
-.publicHeaderNavBar__item--active .publicHeaderNavBar__link {
-  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
-}
+} */
 
 /* Mobile Responsive Design */
 @media (max-width: 1200px) {
   .publicHeaderNavBar__list {
-    gap: 2px;
+    gap: 4px;
   }
 
   .publicHeaderNavBar__link {
-    padding: 6px 12px;
+    padding: 8px 10px;
     font-size: 14px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .publicHeaderNavBar__label {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 992px) {
   .publicHeaderNavBar__link {
-    padding: 6px 10px;
+    padding: 8px 10px;
     font-size: 13px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 20px;
+    height: 20px;
   }
 
   .publicHeaderNavBar__activeIndicator {
@@ -148,46 +196,112 @@
   .publicHeaderNavBar {
     width: 100%;
     overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .publicHeaderNavBar::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
   }
 
   .publicHeaderNavBar__list {
-    gap: 4px;
+    gap: 6px;
     padding: 0 8px;
     min-width: fit-content;
   }
 
   .publicHeaderNavBar__link {
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 10px;
+    flex-direction: column;
+    gap: 4px;
   }
 
-  /* Make touch targets larger on mobile */
+  /* On mobile, show icon above label on active */
+  .publicHeaderNavBar__item--active .publicHeaderNavBar__link {
+    padding: 8px 12px;
+  }
+
+  /* Always show labels on mobile for better UX */
+  .publicHeaderNavBar__label {
+    max-width: 200px;
+    opacity: 0.7;
+    transform: translateX(0);
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .publicHeaderNavBar__item--active .publicHeaderNavBar__label,
+  .publicHeaderNavBar__link:hover .publicHeaderNavBar__label {
+    opacity: 1;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 24px;
+    height: 24px;
+  }
+
   .publicHeaderNavBar__item {
     min-height: 44px;
+  }
+
+  /* Simplified animations for mobile */
+  .publicHeaderNavBar__link:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 480px) {
+  .publicHeaderNavBar__link {
+    padding: 8px;
+  }
+
+  .publicHeaderNavBar__list {
+    gap: 4px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .publicHeaderNavBar__label {
+    font-size: 10px;
   }
 }
 
 /* Tablet Landscape */
 @media (max-width: 1024px) and (orientation: landscape) {
   .publicHeaderNavBar__link {
-    padding: 6px 10px;
+    padding: 8px 12px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 22px;
+    height: 22px;
   }
 }
 
-/* Small Mobile */
-@media (max-width: 480px) {
-  .publicHeaderNavBar__link {
-    padding: 6px 10px;
-    font-size: 13px;
+/* Prefers reduced motion - accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .publicHeaderNavBar__link,
+  .publicHeaderNavBar__icon,
+  .publicHeaderNavBar__label,
+  .publicHeaderNavBar__iconWrapper {
+    transition: none;
   }
 
-  .publicHeaderNavBar__list {
-    gap: 2px;
+  .publicHeaderNavBar__activeIndicator {
+    animation: none;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .publicHeaderNavBar__item--active .publicHeaderNavBar__link {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.15),
+      rgba(0, 123, 255, 0.08)
+    );
   }
 }

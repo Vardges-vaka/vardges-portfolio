@@ -12,26 +12,36 @@ const IconGlobal = ({
   svg_src = "",
   ReactComponent = null,
   wrapperProps = {},
-  version,
+  version = "primary",
   iconProps = {},
 }) => {
   if (!isActive) {
     return null;
   }
 
-
-  
   const icon_classname = className
-    ? `IconGlobal_Icon ${version ? version : ""} ${className}`
-    : `IconGlobal_Icon ${version ? version : ""}`;
+    ? `IconGlobal_Icon ${version} ${className}`
+    : `IconGlobal_Icon ${version}`;
 
   const icon_wrapperclassname = className
-    ? `IconGlobal_Icon_wrapper ${version ? version : ""} ${className}`
-    : `IconGlobal_Icon_wrapper ${version ? version : ""}`;
+    ? `IconGlobal_Icon_wrapper ${version} ${className}`
+    : `IconGlobal_Icon_wrapper ${version}`;
 
   const renderOnlyIcon = () => {
     if (type === "lucide") {
       const Component = LucideIcons[lucid];
+      // Handle case where Lucide icon doesn't exist
+      if (!Component) {
+        console.warn(
+          `IconGlobal: Lucide icon "${lucid}" not found. Available icons:`,
+          Object.keys(LucideIcons).slice(0, 10)
+        );
+        return (
+          <span className={icon_classname} title={`Icon "${lucid}" not found`}>
+            ❓
+          </span>
+        );
+      }
       return <Component {...iconProps} className={icon_classname} />;
     } else if (type === "svg") {
       return <img src={svg_src} {...iconProps} className={icon_classname} />;
@@ -63,7 +73,7 @@ IconGlobal.propTypes = {
   ReactComponent: PropTypes.elementType, // React component
   wrapperProps: PropTypes.object, // Props for wrapper div
   iconProps: PropTypes.object, // Props for icon
-  version: PropTypes.oneOf(["normal", "primary", "secondary", "light", "dark"]),
+  version: PropTypes.oneOf(["primary", "secondary"]),
 };
 
 IconGlobal.displayName = "IconGlobal";

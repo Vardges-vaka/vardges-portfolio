@@ -1,5 +1,9 @@
 import React, { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import {
+  DARK_THEME_ICON_COLOR,
+  LIGHT_THEME_ICON_COLOR,
+} from "../../08_constances/_constances.index.js";
 
 // Create the Theme Context
 const ThemeContext = createContext();
@@ -54,12 +58,19 @@ const ThemeProvider = ({ children }) => {
     const systemTheme = getSystemPreference();
     setTheme(systemTheme);
   };
+  // const darkThemeColor = "#f0b906";
+  // const lightThemeColor = "black";
+
+  const strokeColor = isDarkMode
+    ? DARK_THEME_ICON_COLOR
+    : LIGHT_THEME_ICON_COLOR;
 
   const contextValue = {
     // Current theme state
     theme,
     isDarkMode,
     isLightMode,
+    strokeColor,
 
     // Theme actions
     toggleTheme,

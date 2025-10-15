@@ -3,14 +3,20 @@ import PropTypes from "prop-types";
 import { IconGlobal } from "../components.index.js";
 import "../_styles/fieldMessage.css";
 
-const FieldMessage = ({ isActive = false, className = "", message, type }) => {
+const FieldMessage = ({
+  isActive = false,
+  className = "",
+  message,
+  type,
+  version = "primary",
+}) => {
   console.log("isActive", isActive);
   if (!isActive) {
     return null;
   }
   const FieldMessage_classname = `FieldMessage ${type ? type : ""} ${
     className ? className : ""
-  } `;
+  } ${version}`;
 
   return <div className={FieldMessage_classname}>{message}</div>;
 };
@@ -22,7 +28,7 @@ FieldMessage.propTypes = {
   withIcon: PropTypes.bool,
   iconProps: PropTypes.object,
   iconPosition: PropTypes.oneOf(["left", "right"]),
-  version: PropTypes.oneOf(["normal", "primary", "secondary", "light", "dark"]),
+  version: PropTypes.oneOf(["primary", "secondary"]),
 };
 
 FieldMessage.displayName = "FieldMessage";

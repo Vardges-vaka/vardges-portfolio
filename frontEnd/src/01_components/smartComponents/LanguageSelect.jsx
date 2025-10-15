@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useLanguageContext } from "../../../02_context/context.index.js";
+import { useLanguageContext } from "../../02_context/context.index.js";
 import {
   ArmenianFlag,
   RussianFlag,
   BritishFlag,
   ArabicFlag,
-} from "../../../00_assets/_assets.index.js";
-import "../../_styles/languageSelect.css";
+} from "../../00_assets/_assets.index.js";
+import "../_styles/languageSelect.css";
 
 const LanguageSelect = () => {
   const { i18n, t } = useTranslation("common");

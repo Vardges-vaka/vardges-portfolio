@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useProfileContext } from "../../02_context/context.index.js";
 import { Devicon, Hospitalityicon } from "../../00_assets/_assets.index.js";
-import { C } from "../../_/AAA.js";
+import { YinYangLoader } from "../components.index.js";
 import "../_styles/profileToggler.css";
 
 const ProfileToggler = () => {
@@ -113,7 +113,7 @@ const ProfileToggler = () => {
       // both
       return (
         <div className="profileToggler__yinYangWrapper">
-          <C />
+          <YinYangLoader />
         </div>
       );
     }
