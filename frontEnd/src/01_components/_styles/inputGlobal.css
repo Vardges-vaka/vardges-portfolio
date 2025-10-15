@@ -91,9 +91,9 @@
   color: var(--input-primary-text-color) !important;
 }
 
-.GlobalInput::selection {
-  /* color: var(--input-primary-text-color-focus) !important; */
-}
+/* .GlobalInput::selection {
+  color: var(--input-primary-text-color-focus) !important;
+} */
 
 .GlobalInput:focus {
   color: var(--input-primary-text-color-focus) !important;
