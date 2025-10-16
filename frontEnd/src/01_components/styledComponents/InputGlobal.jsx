@@ -32,6 +32,10 @@ const InputGlobal = ({
     withErrorMessage: false,
     withWarningMessage: false,
     message: "",
+    hintMessage: "",
+    successMessage: "",
+    errorMessage: "",
+    warningMessage: "",
   },
 
   withLeftIcon = false,
@@ -67,14 +71,18 @@ const InputGlobal = ({
   labelProps = {
     isInline: false,
     customStyle: false,
+    title: "",
     message: "",
   },
-  // rest props
+  // rest props withLabel
   ...props
 }) => {
   let Input_classname = `GlobalInput`;
 
   const getInputClassname = () => {
+    if (version !== "primary") {
+      Input_classname += ` ${version}`;
+    }
     if (type !== "text") {
       Input_classname += ` ${type}`;
     }
@@ -146,7 +154,9 @@ const InputGlobal = ({
   return (
     <div className={Input_container_classname} {...containerProps}>
       {withLabel && (
-        <label className={Label_Input_classname}>{labelProps.message}</label>
+        <label className={Label_Input_classname} title={labelProps.title}>
+          {labelProps.message}
+        </label>
       )}
       <div className={wrapper_classname} {...wrapperProps}>
         {withLeftIcon && leftIconProps.isActive && (
@@ -167,7 +177,7 @@ const InputGlobal = ({
       </div>
       {withMessage && messageProps.withHint && (
         <FieldMessage
-          message={messageProps.message}
+          message={messageProps.hintMessage}
           isActive={true}
           type="hint"
           className={className}
@@ -175,7 +185,7 @@ const InputGlobal = ({
       )}
       {withMessage && messageProps.withSuccessMessage && (
         <FieldMessage
-          message={messageProps.message}
+          message={messageProps.successMessage}
           isActive={true}
           type="success"
           className={className}
@@ -186,12 +196,12 @@ const InputGlobal = ({
           isActive={true}
           type="error"
           className={className}
-          message={messageProps.message}
+          message={messageProps.errorMessage}
         />
       )}
       {withMessage && messageProps.withWarningMessage && (
         <FieldMessage
-          message={messageProps.message}
+          message={messageProps.warningMessage}
           isActive={true}
           type="warning"
           className={message_classname}

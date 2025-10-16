@@ -230,4 +230,25 @@
   --input-secondary-boxShadow-disabled: var(
     --dark-input-secondary-boxShadow-disabled
   );
+
+
+
+
+
+  --primary-hint-border: var(--dark-primary-hint-border);
+--primary-hint-border-hover: var(--dark-primary-hint-border-hover);
+--primary-success-border: var(--dark-primary-success-border);
+--primary-success-border-hover: var(--dark-primary-success-border-hover);
+--primary-error-border: var(--dark-primary-error-border);
+--primary-error-border-hover: var(--dark-primary-error-border-hover);
+--primary-warning-border: var(--dark-primary-warning-border);
+--primary-warning-border-hover: var(--dark-primary-warning-border-hover);
+--secondary-hint-border: var(--dark-secondary-hint-border);
+--secondary-hint-border-hover: var(--dark-secondary-hint-border-hover);
+--secondary-success-border: var(--dark-secondary-success-border);
+--secondary-success-border-hover: var(--dark-secondary-success-border-hover);
+--secondary-error-border: var(--dark-secondary-error-border);
+--secondary-error-border-hover: var(--dark-secondary-error-border-hover);
+--secondary-warning-border: var(--dark-secondary-warning-border);
+--secondary-warning-border-hover: var(--dark-secondary-warning-border-hover);
 }

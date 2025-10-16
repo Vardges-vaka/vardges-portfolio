@@ -255,4 +255,21 @@
 
   
   */
+
+  --primary-hint-border: var(--light-primary-hint-border);
+--primary-hint-border-hover: var(--light-primary-hint-border-hover);
+--primary-success-border: var(--light-primary-success-border);
+--primary-success-border-hover: var(--light-primary-success-border-hover);
+--primary-error-border: var(--light-primary-error-border);
+--primary-error-border-hover: var(--light-primary-error-border-hover);
+--primary-warning-border: var(--light-primary-warning-border);
+--primary-warning-border-hover: var(--light-primary-warning-border-hover);
+--secondary-hint-border: var(--light-secondary-hint-border);
+--secondary-hint-border-hover: var(--light-secondary-hint-border-hover);
+--secondary-success-border: var(--light-secondary-success-border);
+--secondary-success-border-hover: var(--light-secondary-success-border-hover);
+--secondary-error-border: var(--light-secondary-error-border);
+--secondary-error-border-hover: var(--light-secondary-error-border-hover);
+--secondary-warning-border: var(--light-secondary-warning-border);
+--secondary-warning-border-hover: var(--light-secondary-warning-border-hover);
 }

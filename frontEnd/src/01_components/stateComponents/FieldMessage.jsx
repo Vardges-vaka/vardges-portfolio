@@ -16,7 +16,7 @@ const FieldMessage = ({
   }
   const FieldMessage_classname = `FieldMessage ${type ? type : ""} ${
     className ? className : ""
-  } ${version}`;
+  } ${version !== "primary" ? version : ""}`;
 
   return <div className={FieldMessage_classname}>{message}</div>;
 };

@@ -80,6 +80,7 @@
   --light-text-active-color-hover: black;
   --light-text-placeholder-color-hover: black;
   --light-text-focus-color-hover: black;
+
   --light-title-primary-color: black;
   --light-title-secondary-color: black;
   --light-title-label-color: black;
@@ -94,6 +95,91 @@
   --light-title-active-hover-color: black;
   --light-title-placeholder-hover-color: black;
   --light-title-focus-hover-color: black;
+  /* ! FINAL=================  GLOBAL fieldMessage COLORS ================= */
+  --light-primary-hint-border: rgb(144, 136, 136);
+  --light-primary-success-border: rgb(47, 255, 0);
+  --light-primary-error-border: rgb(255, 0, 0);
+  --light-primary-warning-border: rgb(251, 255, 0);
+
+
+
+  --dark-primary-hint-border: rgb(199, 194, 194);
+  --dark-primary-success-border: rgb(47, 255, 0);
+  --dark-primary-error-border: rgb(255, 0, 0);
+  --dark-primary-warning-border: rgb(251, 255, 0);
+
+
+  --light-secondary-hint-border: rgb(62, 61, 61);
+  --light-secondary-success-border: rgb(47, 255, 0);
+  --light-secondary-error-border: rgb(255, 0, 0);
+  --light-secondary-warning-border: rgb(251, 255, 0);
+  --dark-secondary-hint-border: rgb(62, 61, 61);
+  --dark-secondary-success-border: rgb(47, 255, 0);
+  --dark-secondary-error-border: rgb(255, 0, 0);
+  --dark-secondary-warning-border: rgb(251, 255, 0);
+
+  /* ! FINAL================= INPUT GLOBAL COLORS ================= */
+  --light-input-primary-text-color: rgba(1, 1, 1, 0.792);
+  --light-input-primary-text-color-hover: rgb(45, 44, 44);
+  --light-input-primary-text-color-focus: rgb(0, 0, 0);
+  --light-input-primary-placeholder-color: rgba(129, 130, 128, 0.764);
+  --light-input-primary-placeholder-color-hover: rgb(74, 69, 69);
+
+  --light-input-primary-border-color: 1px solid #571b738e;
+  --light-input-primary-border-color-hover: 1px solid #560c78;
+  --light-input-primary-border-color-focus: 1px solid #480666;
+  --light-input-disabled-border-color: 1px solid #ff0000;
+  --light-input-primary-boxShadow-disabled: 0 2px 6px 0 #fc00003d,
+    0 1px 4px 0 #ff00001a;
+  --light-input-primary-boxShadow: 0 2px 8px 0 #7f3b9f29,
+    0 1.5px 4px 0 #571b730d;
+  --light-input-primary-boxShadow-hover: 0 2px 6px 0 #7f3b9f3d,
+    0 1px 4px 0 #571b731a;
+  --light-input-primary-boxShadow-focus: 0 2px 6px 0 #7f3b9f3d,
+    0 1px 4px 0 #571b731a;
+  --light-input-primary-boxShadow-active: 1px 2px 10px 1px rgb(2, 244, 38);
+  --light-input-secondary-border-color: 1px solid black;
+  --light-input-secondary-border-color-hover: 1px solid black;
+  --light-input-disabled-border-color-hover: 1px solid #7f3b9f;
+  --light-input-secondary-border-color-focus: 1px solid #7f3b9f;
+
+  --light-input-primary-label-text-color: #571b738e;
+  --light-input-primary-label-text-color-hover: #560c78;
+
+
+
+  --light-input-secondary-label-text-color: #571b738e;
+  --light-input-secondary-label-text-color-hover: white;
+
+
+  /* ! FINAL================= INPUT GLOBAL BOX SHADOWS ================= */
+
+  --light-input-secondary-boxShadow: 1px 2px 10px 1px rgb(244, 2, 2);
+  --light-input-secondary-boxShadow-focus: 1px 2px 10px 1px rgb(244, 2, 2);
+  --light-input-secondary-boxShadow-hover: 1px 2px 10px 1px rgb(244, 2, 2);
+  --light-input-secondary-boxShadow-active: 1px 2px 10px 1px rgb(244, 2, 2);
+  --light-input-secondary-boxShadow-disabled: 1px 2px 10px 1px rgb(244, 2, 2);
+
+  --light-input-primary-bg-color: rgb(241, 235, 235);
+  --light-input-primary-bg-color-active: red;
+  --light-input-primary-bg-color-disabled: red;
+  --light-input-primary-bg-color-focus: red;
+  --light-input-primary-bg-color-hover: red;
+  --light-input-secondary-bg-color: red;
+  --light-input-secondary-bg-color-active: red;
+  --light-input-secondary-bg-color-disabled: red;
+  --light-input-secondary-bg-color-focus: red;
+  --light-input-secondary-bg-color-hover: red;
+
+  --light-input-secondary-text-color: white;
+  --light-input-secondary-text-color-hover: white;
+  --light-input-secondary-text-color-focus: white;
+
+  --light-input-secondary-placeholder-color: white;
+  --light-input-secondary-placeholder-color-hover: white;
+  --light-input-primary-placeholder-color-focus: white;
+  --light-input-secondary-placeholder-color-focus: white;
+
   --light-logo-text-color: black;
 
   --light-icon-stroke-color-1: #000000;
@@ -182,17 +268,6 @@
   --dark-icon-stroke-color-8: #ff6200;
   --dark-icon-stroke-color-9: #ff8300;
 
-  --light-input-primary-bg-color: red;
-  --light-input-primary-bg-color-active: red;
-  --light-input-primary-bg-color-disabled: red;
-  --light-input-primary-bg-color-focus: red;
-  --light-input-primary-bg-color-hover: red;
-  --light-input-secondary-bg-color: red;
-  --light-input-secondary-bg-color-active: red;
-  --light-input-secondary-bg-color-disabled: red;
-  --light-input-secondary-bg-color-focus: red;
-  --light-input-secondary-bg-color-hover: red;
-
   /* ========== INPUT GLOBAL VARIABLES ========== */
   --dark-input-primary-bg-color: #1ebd8b44;
   --dark-input-primary-bg-color-active: #fffb00;
@@ -212,7 +287,7 @@
   --dark-input-secondary-text-color-hover: white;
   --dark-input-primary-text-color-focus: white;
   --dark-input-secondary-text-color-focus: white;
-  
+
   --dark-input-primary-placeholder-color: rgb(0, 0, 0);
   --dark-input-primary-placeholder-color-hover: rgb(18, 255, 1);
   --dark-input-secondary-placeholder-color: white;
@@ -235,107 +310,26 @@
   --dark-input-primary-boxShadow-active: 1px 2px 10px 1px rgb(155, 244, 2);
   --dark-input-primary-boxShadow-disabled: 1px 2px 10px 1px rgb(155, 244, 2);
 
-
   --dark-input-secondary-boxShadow: 1px 2px 10px 1px rgb(155, 244, 2);
   --dark-input-secondary-boxShadow-focus: 1px 2px 10px 1px rgb(155, 244, 2);
   --dark-input-secondary-boxShadow-hover: 1px 2px 10px 1px rgb(155, 244, 2);
   --dark-input-secondary-boxShadow-active: 1px 2px 10px 1px rgb(155, 244, 2);
   --dark-input-secondary-boxShadow-disabled: 1px 2px 10px 1px rgb(155, 244, 2);
 
-
-
-
-
-
   --dark-input-primary-text-color: rgb(106, 255, 0);
   --dark-input-primary-text-color-hover: white;
   --dark-input-primary-text-color-focus: white;
   --dark-input-primary-label-text-color: white;
   --dark-input-primary-label-text-color-hover: white;
-  --dark-input-primary-hint-text-color-hover: white;
-  --dark-input-primary-success-text-color-hover: white;
-  --dark-input-primary-warning-text-color-hover: white;
-  --dark-input-primary-error-text-color-hover: white;
+
+  
   --dark-input-secondary-text-color: white;
   --dark-input-secondary-text-color-hover: white;
   --dark-input-secondary-text-color-focus: white;
   --dark-input-secondary-label-text-color: white;
   --dark-input-secondary-label-text-color-hover: white;
-  --dark-input-secondary-hint-text-color-hover: white;
-  --dark-input-secondary-success-text-color-hover: white;
-  --dark-input-secondary-warning-text-color-hover: white;
-  --dark-input-secondary-error-text-color-hover: white;
 
-
-
-
-
-
-
-
-  --light-input-primary-text-color: rgb(255, 255, 255);
-  --light-input-primary-text-color-hover: white;
-  --light-input-primary-text-color-focus: rgb(0, 0, 0);
-  --light-input-primary-label-text-color: white;
-  --light-input-primary-label-text-color-hover: white;
-  --light-input-primary-hint-text-color-hover: white;
-  --light-input-primary-success-text-color-hover: white;
-  --light-input-primary-warning-text-color-hover: white;
-  --light-input-primary-error-text-color-hover: white;
-  --light-input-secondary-text-color: white;
-  --light-input-secondary-text-color-hover: white;
-  --light-input-secondary-text-color-focus: white;
-  --light-input-secondary-label-text-color: white;
-  --light-input-secondary-label-text-color-hover: white;
-  --light-input-secondary-hint-text-color-hover: white;
-  --light-input-secondary-success-text-color-hover: white;
-  --light-input-secondary-warning-text-color-hover: white;
-  --light-input-secondary-error-text-color-hover: white;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  --light-input-primary-placeholder-color: rgb(30, 255, 0);
-  --light-input-primary-placeholder-color-hover: white;
-  --light-input-secondary-placeholder-color: white;
-  --light-input-secondary-placeholder-color-hover: white;
-  --light-input-primary-placeholder-color-focus: white;
-  --light-input-secondary-placeholder-color-focus: white;
-
-  --light-input-primary-border-color: 1px solid black;
-  --light-input-primary-border-color-hover: 1px solid black;
-  --light-input-secondary-border-color: 1px solid black;
-  --light-input-secondary-border-color-hover: 1px solid black;
-  --light-input-disabled-border-color: 1px solid black;
-  --light-input-disabled-border-color-hover: 1px solid black;
-  --light-input-primary-border-color-focus: 1px solid black;
-  --light-input-secondary-border-color-focus: 1px solid black;
-
-
-
-  --light-input-primary-boxShadow: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-focus: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-hover: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-active: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-disabled: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-focus: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-hover: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-active: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-disabled: 1px 2px 10px 1px rgb(244, 2, 2);
+  
 
   /* 
 

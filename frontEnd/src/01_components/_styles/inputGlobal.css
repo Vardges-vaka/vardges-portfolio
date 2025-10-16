@@ -13,9 +13,28 @@
 
 
 
+--input-primary-bg-color
+--input-primary-text-color
+--input-primary-text-color-focus
+--input-primary-text-color-disabled
+--input-primary-text-color-hover
 
 
+--input-primary-boxShadow
+--input-primary-boxShadow-focus
+--input-primary-boxShadow-disabled
+--input-primary-boxShadow-hover
 
+
+--input-primary-border-color
+--input-primary-border-color-hover
+--input-primary-border-color-focus
+--input-disabled-border-color
+
+
+--input-primary-placeholder-color
+--input-primary-placeholder-color-hover
+--input-primary-placeholder-color-disabled
 
 
 
@@ -59,12 +78,16 @@
   color: var(--input-primary-text-color);
   color: var(--input-primary-text-color-hover);
   color: var(--input-primary-text-color-focus);
-  color: var(--input-primary-label-text-color);
-  color: var(--input-primary-label-text-color-hover);
+
   color: var(--input-primary-hint-text-color-hover);
   color: var(--input-primary-success-text-color-hover);
   color: var(--input-primary-warning-text-color-hover);
   color: var(--input-primary-error-text-color-hover);
+
+
+
+
+
   color: var(--input-secondary-text-color);
   color: var(--input-secondary-text-color-hover);
   color: var(--input-secondary-text-color-focus);
@@ -76,27 +99,51 @@
   color: var(--input-secondary-warning-text-color-hover);
   color: var(--input-secondary-error-text-color-hover);
 
+
+
+
+
+
+
+    color: var(--input-primary-label-text-color);
+  color: var(--input-primary-label-text-color-hover);
 */
 
 .GlobalInput {
   padding: 5px;
-  border-radius: 5px;
-  border: 2px solid green;
+  border-radius: 3px;
   margin: 0;
   min-width: 100px;
   width: max-content;
-  background-color: var(--input-primary-bg-color) !important;
-  box-shadow: var(--input-primary-boxShadow-focus) !important;
+  outline: none !important;
   border: var(--input-primary-border-color) !important;
+  background-color: var(--input-primary-bg-color) !important;
+  box-shadow: var(--input-primary-boxShadow) !important;
   color: var(--input-primary-text-color) !important;
 }
 
-/* .GlobalInput::selection {
-  color: var(--input-primary-text-color-focus) !important;
-} */
-
 .GlobalInput:focus {
   color: var(--input-primary-text-color-focus) !important;
+  box-shadow: var(--input-primary-boxShadow-focus) !important;
+  outline: none !important;
+  border: var(--input-primary-border-color-focus) !important;
+}
+
+.GlobalInput:disabled::placeholder {
+  color: var(--input-primary-placeholder-color-disabled) !important;
+}
+.GlobalInput:disabled:hover,
+.GlobalInput:disabled {
+  box-shadow: var(--input-primary-boxShadow-disabled) !important;
+  border: var(--input-disabled-border-color) !important;
+  color: var(--input-primary-text-color-disabled) !important;
+}
+
+.GlobalInput:hover {
+  outline: none !important;
+  color: var(--input-primary-text-color-hover) !important;
+  border: var(--input-primary-border-color-hover) !important;
+  box-shadow: var(--input-primary-boxShadow-hover) !important;
 }
 
 .GlobalInput::placeholder {
@@ -107,9 +154,23 @@
   color: var(--input-primary-placeholder-color-hover);
 }
 
-.GlobalInput:disabled {
-  border: 2px solid red;
+/* ! label styles */
+
+.InputGlobal_label {
+  color: var(--input-primary-label-text-color);
+  transition: all 0.3s ease-in-out;
+  /* color: var(--input-primary-label-text-color-hover); */
 }
+
+.InputGlobal_label:hover {
+  color: var(--input-primary-label-text-color-hover);
+  letter-spacing: 0.3px;
+  transform: translateX(1px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ! label styles */
+
 .GlobalInput.with-left-icon {
   padding-left: 22px;
 }
@@ -128,7 +189,6 @@
   height: 100%;
   box-sizing: border-box;
   width: max-content;
-  /* border: 1px solid red; */
   border-radius: 5px;
   gap: var(--spacing-sm);
 }
@@ -156,10 +216,6 @@
   right: 6px;
   bottom: -4px;
 }
-
-/* .GlobalInput[type="number"] {
-  -moz-appearance: textfield; // ! Firefox - Only Firefox needs this
-}*/
 
 .GlobalInput[type="number"]::-webkit-outer-spin-button,
 .GlobalInput[type="number"]::-webkit-inner-spin-button {
