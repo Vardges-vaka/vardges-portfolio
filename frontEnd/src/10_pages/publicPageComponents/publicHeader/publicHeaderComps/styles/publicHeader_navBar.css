@@ -88,7 +88,7 @@
   opacity: 1;
   transform: translateX(0);
   transition: all 0.3s ease;
-  color: var(--title-secondary-color) !important;
+  color: var(--h1-tertiary-color) !important;
   letter-spacing: 2px !important;
 }
 
@@ -110,7 +110,7 @@
 
 .publicHeaderNavBar__item--active .publicHeaderNavBar__label {
   font-weight: 600;
-  color: var(--title-secondary-color) !important;
+  color: var(--h1-tertiary-color) !important;
 }
 
 .publicHeaderNavBar__activeIndicator {
@@ -148,7 +148,7 @@
 }
 
 .publicHeaderNavBar__link:visited {
-  color: var(--title-secondary-color, #333);
+  color: var(--h1-tertiary-color, #333);
 }
 
 /* .publicHeaderNavBar__item--active .publicHeaderNavBar__link:visited {

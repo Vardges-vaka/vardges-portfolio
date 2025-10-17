@@ -5,11 +5,22 @@
   text-align: center;
 }
 body {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-primary-color);
 
   margin: 0;
   padding: 0;
 }
+
+/* 
+  --bg-primary-color
+  --text-primary-color
+  --border-primary-color
+  --boxShadow-primary-color
+  --text-primary-color-HOV
+  --border-primary-color-HOV
+  --boxShadow-primary-color-HOV
+  --bg-primary-color-HOV
+*/
 body:active {
 }
 

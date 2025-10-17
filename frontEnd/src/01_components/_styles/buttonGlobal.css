@@ -1,4 +1,116 @@
 /* Global Button Styles */
+
+/* 
+                var(--btn-primary-bg-color);                
+                var(--btn-primary-text-color);
+                var(--btn-primary-border-color);
+                var(--btn-primary-boxShadow-color);
+                var(--btn-primary-bg-color-HOV);
+                var(--btn-primary-text-color-HOV);
+                var(--btn-primary-border-color-HOV);
+                var(--btn-primary-border-color-DIS);
+
+
+
+--btn-primary-bg-color
+--btn-primary-text-color
+--btn-primary-border-color
+--btn-primary-boxShadow-color
+--btn-primary-bg-color-HOV
+--btn-primary-text-color-HOV
+--btn-primary-border-color
+
+*/
+
+.IconGlobal_Icon.ButtonGlobal_Icon {
+  width: 1rem;
+  height: 1rem;
+  /* display: inline-block; */
+  flex-shrink: 0;
+  background: transparent;
+  /* color: currentColor !important; */
+  color: var(--btn-primary-text-color) !important;
+  transition: all 0.3s ease-in-out;
+}
+.IconGlobal_Icon.ButtonGlobal_Icon.right.secondary,
+.IconGlobal_Icon.ButtonGlobal_Icon.left.secondary {
+  color: var(--btn-secondary-text-color) !important;
+}
+.IconGlobal_Icon.ButtonGlobal_Icon.right.secondary:hover,
+.IconGlobal_Icon.ButtonGlobal_Icon.left.secondary:hover {
+  color: var(--btn-secondary-text-color-HOV) !important;
+}
+
+.IconGlobal_Icon.ButtonGlobal_Icon.right.tertiary,
+.IconGlobal_Icon.ButtonGlobal_Icon.left.tertiary {
+  color: var(--btn-tertiary-text-color) !important;
+}
+.IconGlobal_Icon.ButtonGlobal_Icon.right.tertiary:hover,
+.IconGlobal_Icon.ButtonGlobal_Icon.left.tertiary:hover {
+  color: var(--btn-tertiary-text-color-HOV) !important;
+}
+.IconGlobal_Icon.ButtonGlobal_Icon:hover {
+  transition: all 0.3s ease-in-out;
+  color: var(--btn-primary-text-color-HOV) !important;
+}
+
+.IconGlobal_Icon.ButtonGlobal_Icon.right:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.IconGlobal_Icon.ButtonGlobal_Icon.left:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+.ButtonGlobal {
+  transition: all 0.2s ease;
+  padding: 5px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+
+  background-color: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  border: 1px solid var(--btn-primary-border-color);
+  box-shadow: 0 2px 8px 0 var(--btn-primary-boxShadow-color);
+}
+
+.ButtonGlobal:hover {
+  transform: scale(1.01) translateY(-1px);
+  transition: all 0.3s ease-in-out;
+  background-color: var(--btn-primary-bg-color-HOV);
+  color: var(--btn-primary-text-color-HOV);
+  border: 1px dashed var(--btn-primary-border-color);
+  letter-spacing: 0.3px;
+}
+
+.ButtonGlobal.secondary {
+  background-color: var(--btn-secondary-bg-color) !important;
+  color: var(--btn-secondary-text-color) !important;
+  border: 1px solid var(--btn-secondary-border-color) !important;
+  box-shadow: 0 2px 8px 0 var(--btn-secondary-boxShadow-color) !important;
+}
+.ButtonGlobal.tertiary {
+  background-color: var(--btn-tertiary-bg-color);
+  color: var(--btn-tertiary-text-color);
+  border: 1px solid var(--btn-tertiary-border-color);
+  box-shadow: 0 2px 8px 0 var(--btn-tertiary-boxShadow-color);
+}
+.ButtonGlobal.secondary:hover {
+  background-color: var(--btn-secondary-bg-color-HOV) !important;
+  color: var(--btn-secondary-text-color-HOV) !important;
+  border: 1px dashed var(--btn-secondary-border-color) !important;
+}
+.ButtonGlobal.tertiary:hover {
+  background-color: var(--btn-tertiary-bg-color-HOV);
+  color: var(--btn-tertiary-text-color-HOV);
+  border: 1px dashed var(--btn-tertiary-border-color);
+}
+
 .ButtonGlobal_container {
   display: flex;
   align-items: center;
@@ -7,22 +119,6 @@
 
 .ButtonGlobal_wrapper {
   display: inline-block;
-}
-
-.ButtonGlobal {
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
-  font-weight: 500;
-  font-size: var(--text-sm);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  text-decoration: none;
-  outline: none;
-  box-shadow: 0 1px 2px var(--shadow-main);
 }
 
 .ButtonGlobal:disabled {

@@ -1,11 +1,47 @@
+/* 
+
+  var(--icon-primary-bg-color);
+  var(--icon-primary-stroke-color);
+  var(--icon-primary-border-color);
+  var(--icon-primary-boxShadow);
+
+  var(--icon-primary-bg-color-HOV);
+  var(--icon-primary-stroke-color-HOV);
+  var(--icon-primary-border-color-HOV);
+  var(--icon-primary-boxShadow-HOV);
+*/
+
 .IconGlobal_Icon {
-  width: 1rem;
-  height: 1rem;
+  width: 25px;
+  height: 25px;
   display: inline-block;
-  color: currentColor; /* Inherit parent's text color by default */
   flex-shrink: 0;
+  background: transparent;
+  color: var(--icon-primary-stroke-color);
+  transition: all 0.3s ease-in-out;
 }
 
+.IconGlobal_Icon:hover {
+  color: var(--icon-primary-stroke-color-HOV);
+}
+
+
+.IconGlobal_Icon.secondary {
+  color: var(--icon-secondary-stroke-color);
+}
+.IconGlobal_Icon.tertiary {
+  color: var(--icon-tertiary-stroke-color);
+}
+
+.IconGlobal_Icon.secondary:hover {
+  color: var(--icon-secondary-stroke-color-HOV);
+}
+
+.IconGlobal_Icon.tertiary:hover {
+  color: var(--icon-tertiary-stroke-color-HOV);
+}
+
+/* !======================================================================== */
 .IconGlobal_Icon_wrapper {
   display: inline-flex;
   align-items: center;
@@ -13,9 +49,8 @@
   padding: var(--spacing-xs);
   border-radius: var(--radius-sm);
 }
-
 /* Version-specific icon styles - only apply when NOT inside a button */
-.IconGlobal_Icon.primary:not(.ButtonGlobal *) {
+/* .IconGlobal_Icon.primary:not(.ButtonGlobal *) {
   color: var(--icon-primary);
 }
 
@@ -33,7 +68,7 @@
 
 .IconGlobal_Icon.dark:not(.ButtonGlobal *) {
   color: var(--text-main);
-}
+} */
 
 /* When inside buttons, always inherit the button's text color */
 .ButtonGlobal .IconGlobal_Icon {

@@ -10,7 +10,7 @@ const ButtonGlobal = ({
   className = "",
   //   icon related props
   withIcon = false,
-  version = "normal", // normal, primary, secondary, light, dark
+  version = "primary", // primary, secondary, tertiary
   leftIcon = {
     isActive: false,
     withWrapper: false,
@@ -40,17 +40,23 @@ const ButtonGlobal = ({
   // rest props
   ...props
 }) => {
-  const Button_classname = `ButtonGlobal ${version} ${
+  const Button_classname = `ButtonGlobal ${
+    version !== "primary" ? version : ""
+  } ${className ? className : ""}`;
+
+  const ParentContainer_classname = `ButtonGlobal_container ${
+    version !== "primary" ? version : ""
+  } ${className ? className : ""}`;
+
+  const wrapper_classname = `ButtonGlobal_wrapper ${
     className ? className : ""
   }`;
 
-  const ParentContainer_classname = `ButtonGlobal_container ${version} ${
-    className ? className : ""
-  }`;
-
-  const wrapper_classname = `ButtonGlobal_wrapper ${version} ${
-    className ? className : ""
-  }`;
+  const icon_classname = (side) => {
+    return `ButtonGlobal_Icon ${side} ${version !== "primary" ? version : ""} ${
+      className ? className : ""
+    }`;
+  };
 
   const renderBtnOnly = () => {
     return (
@@ -67,7 +73,7 @@ const ButtonGlobal = ({
               <IconGlobal
                 {...leftIcon}
                 version={version}
-                className={className}
+                className={icon_classname("left")} //.IconGlobal_Icon.ButtonGlobal_Icon
               />
             )}
             {children}
@@ -75,7 +81,7 @@ const ButtonGlobal = ({
               <IconGlobal
                 {...rightIcon}
                 version={version}
-                className={className}
+                className={icon_classname("right")}
               />
             )}
           </>
@@ -119,7 +125,7 @@ ButtonGlobal.propTypes = {
   withIcon: PropTypes.bool,
 
   // Visual version
-  version: PropTypes.oneOf(["normal", "primary", "secondary", "light", "dark"]),
+  version: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
 
   // Icon configuration objects
   leftIcon: PropTypes.shape({

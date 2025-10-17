@@ -1,114 +1,3 @@
-/*
-  background-color: var(--input-primary-bg-color);
-  background-color: var(--input-primary-bg-color-active);
-  background-color: var(--input-primary-bg-color-disabled);
-  background-color: var(--input-primary-bg-color-focus);
-  background-color: var(--input-primary-bg-color-hover);
-  background-color: var(--input-secondary-bg-color);
-  background-color: var(--input-secondary-bg-color-active);
-  background-color: var(--input-secondary-bg-color-disabled);
-  background-color: var(--input-secondary-bg-color-focus);
-  background-color: var(--input-secondary-bg-color-hover);
-
-
-
-
---input-primary-bg-color
---input-primary-text-color
---input-primary-text-color-focus
---input-primary-text-color-disabled
---input-primary-text-color-hover
-
-
---input-primary-boxShadow
---input-primary-boxShadow-focus
---input-primary-boxShadow-disabled
---input-primary-boxShadow-hover
-
-
---input-primary-border-color
---input-primary-border-color-hover
---input-primary-border-color-focus
---input-disabled-border-color
-
-
---input-primary-placeholder-color
---input-primary-placeholder-color-hover
---input-primary-placeholder-color-disabled
-
-
-
-
-
-
-  border: var(--input-primary-border-color-hover);
-  border: var(--input-secondary-border-color);
-  border: var(--input-secondary-border-color-hover);
-  border: var(--input-disabled-border-color);
-  border: var(--input-disabled-border-color-hover);
-  border: var(--input-primary-border-color-focus);
-  border: var(--input-secondary-border-color-focus);
-
-
-
-
-
-
-
-  box-shadow: var(--input-primary-boxShadow-focus);
-  box-shadow: var(--input-primary-boxShadow-hover);
-  box-shadow: var(--input-primary-boxShadow-active);
-  box-shadow: var(--input-primary-boxShadow-disabled);
-  box-shadow: var(--input-secondary-boxShadow);
-  box-shadow: var(--input-secondary-boxShadow-focus);
-  box-shadow: var(--input-secondary-boxShadow-hover);
-  box-shadow: var(--input-secondary-boxShadow-active);
-  box-shadow: var(--input-secondary-boxShadow-disabled);
-
-
-
-
-
-
-
-
-
-
-
-  color: var(--input-primary-text-color);
-  color: var(--input-primary-text-color-hover);
-  color: var(--input-primary-text-color-focus);
-
-  color: var(--input-primary-hint-text-color-hover);
-  color: var(--input-primary-success-text-color-hover);
-  color: var(--input-primary-warning-text-color-hover);
-  color: var(--input-primary-error-text-color-hover);
-
-
-
-
-
-  color: var(--input-secondary-text-color);
-  color: var(--input-secondary-text-color-hover);
-  color: var(--input-secondary-text-color-focus);
-  color: var(--input-secondary-label-text-color);
-  color: var(--input-secondary-label-text-color-hover);
-  color: var(--input-secondary-hint-text-color-hover);
-  color: var(--input-secondary-hint-text-color-hover);
-  color: var(--input-secondary-success-text-color-hover);
-  color: var(--input-secondary-warning-text-color-hover);
-  color: var(--input-secondary-error-text-color-hover);
-
-
-
-
-
-
-
-    color: var(--input-primary-label-text-color);
-  color: var(--input-primary-label-text-color-hover);
-*/
-
 .GlobalInput {
   padding: 5px;
   border-radius: 3px;
@@ -123,48 +12,48 @@
 }
 
 .GlobalInput:focus {
-  color: var(--input-primary-text-color-focus) !important;
-  box-shadow: var(--input-primary-boxShadow-focus) !important;
+  color: var(--input-primary-text-color-FOC) !important;
+  box-shadow: var(--input-primary-boxShadow-FOC) !important;
   outline: none !important;
-  border: var(--input-primary-border-color-focus) !important;
+  border: var(--input-primary-border-color-FOC) !important;
 }
 
 .GlobalInput:disabled::placeholder {
-  color: var(--input-primary-placeholder-color-disabled) !important;
+  color: var(--input-primary-plHolder-color-DIS) !important;
 }
-.GlobalInput:disabled:hover,
+/* .GlobalInput:disabled:hover, */
 .GlobalInput:disabled {
-  box-shadow: var(--input-primary-boxShadow-disabled) !important;
-  border: var(--input-disabled-border-color) !important;
-  color: var(--input-primary-text-color-disabled) !important;
+  box-shadow: var(--input-primary-boxShadow-DIS) !important;
+  border: var(--input-primary-border-color-DIS) !important;
+  color: var(--input-primary-plHolder-color-DIS) !important;
 }
 
 .GlobalInput:hover {
   outline: none !important;
-  color: var(--input-primary-text-color-hover) !important;
-  border: var(--input-primary-border-color-hover) !important;
-  box-shadow: var(--input-primary-boxShadow-hover) !important;
+  color: var(--input-primary-text-color-HOV) !important;
+  border: var(--input-primary-border-color-HOV) !important;
+  box-shadow: var(--input-primary-boxShadow-HOV) !important;
 }
 
 .GlobalInput::placeholder {
-  color: var(--input-primary-placeholder-color);
+  color: var(--input-primary-plHolder-color);
 }
 
 .GlobalInput:hover::placeholder {
-  color: var(--input-primary-placeholder-color-hover);
+  color: var(--input-primary-plHolder-color-HOV);
 }
 
 /* ! label styles */
 
 .InputGlobal_label {
-  color: var(--input-primary-label-text-color);
+  color: var(--input-primary-label-text) !important;
+  font-weight: 600 !important;
   transition: all 0.3s ease-in-out;
-  /* color: var(--input-primary-label-text-color-hover); */
 }
 
 .InputGlobal_label:hover {
-  color: var(--input-primary-label-text-color-hover);
-  letter-spacing: 0.3px;
+  color: var(--input-primary-label-text-HOV) !important;
+  letter-spacing: 0.2px;
   transform: translateX(1px);
   transition: all 0.3s ease-in-out;
 }
@@ -172,10 +61,10 @@
 /* ! label styles */
 
 .GlobalInput.with-left-icon {
-  padding-left: 22px;
+  padding-left: 25px;
 }
 .GlobalInput.with-right-icon {
-  padding-right: 22px;
+  padding-right: 25px;
 }
 
 .InputGlobal_container {
@@ -199,6 +88,9 @@
 .IconGlobal_Icon_wrapper {
   padding: 0;
 }
+/* .IconGlobal_Icon.InputGlobal_icon {
+  color: var(--input-primary-border-color) !important;
+} */
 .IconGlobal_Icon_wrapper.InputGlobal_icon.right,
 .IconGlobal_Icon_wrapper.InputGlobal_icon.left {
   position: relative;
@@ -209,12 +101,28 @@
 }
 
 .IconGlobal_Icon.InputGlobal_icon.left {
-  left: 5px;
-  bottom: -4px;
+  /* color: var(--input-primary-border-color) !important; */
+  left: 5px !important;
+  bottom: -3px !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  transition: all 0.3s ease-in-out;
 }
+
+.IconGlobal_Icon.InputGlobal_icon {
+  color: var(--input-primary-icon-color) !important;
+}
+.IconGlobal_Icon.InputGlobal_icon:hover {
+  transform: scale(1.05) rotate(3deg);
+  transition: all 0.3s ease-in-out;
+}
+
 .IconGlobal_Icon.InputGlobal_icon.right {
-  right: 6px;
-  bottom: -4px;
+  right: 6px !important;
+  /* color: var(--input-primary-border-color) !important; */
+  bottom: -4px !important;
+  width: 1rem;
+  height: 1rem !important;
 }
 
 .GlobalInput[type="number"]::-webkit-outer-spin-button,

@@ -2,274 +2,125 @@
 [data-theme="light"] {
   --themeToggle-color: #063df0;
 
-  /* ========== BUTTON VARIABLES ========== */
-
-  --test-primary: rgb(255, 255, 255);
-
-  /* Primary Button */
-  --btn-primary-bg: var(--light-primary-color);
-  --btn-primary-text: var(--light-bg-main-color);
-  --btn-primary-border: var(--light-primary-color);
-  --btn-primary-hover-bg: var(--light-text-main-color);
-  --btn-primary-hover-text: var(--light-bg-main-color);
-  --btn-primary-hover-border: var(--light-text-main-color);
-
-  /* Secondary Button */
-  --btn-secondary-bg: var(--light-secondary-color);
-  --btn-secondary-text: var(--light-bg-main-color);
-  --btn-secondary-border: var(--light-secondary-color);
-  --btn-secondary-hover-bg: var(--light-primary-color);
-  --btn-secondary-hover-text: var(--light-bg-main-color);
-  --btn-secondary-hover-border: var(--light-primary-color);
-
-  /* Normal Button (default/outline) */
-  --btn-normal-bg: transparent;
-  --btn-normal-text: var(--light-text-main-color);
-  --btn-normal-border: var(--light-border-color);
-  --btn-normal-hover-bg: var(--light-hover-bg-color);
-  --btn-normal-hover-text: var(--light-hover-text-color);
-  --btn-normal-hover-border: var(--light-hover-border-color);
-
-  /* Light Button (ghost/minimal) */
-  --btn-light-bg: transparent;
-  --btn-light-text: var(--light-text-secondary-color);
-  --btn-light-border: transparent;
-  --btn-light-hover-bg: var(--light-bg-secondary-color);
-  --btn-light-hover-text: var(--light-text-main-color);
-  --btn-light-hover-border: transparent;
-
-  /* Dark Button (high contrast) */
-  --btn-dark-bg: var(--light-text-main-color);
-  --btn-dark-text: var(--light-bg-main-color);
-  --btn-dark-border: var(--light-text-main-color);
-  --btn-dark-hover-bg: var(--light-text-secondary-color);
-  --btn-dark-hover-text: var(--light-bg-main-color);
-  --btn-dark-hover-border: var(--light-text-secondary-color);
-
-  /* ========== GENERAL UI VARIABLES ========== */
-
-  /* Backgrounds */
-  --bg-main: var(--light-bg-main-color);
-  --bg-secondary: var(--light-bg-secondary-color);
-  --bg-tertiary: var(--light-bg-tertiary-color);
-
-  /* Text */
-  --text-main: var(--light-text-main-color);
-  --text-secondary: var(--light-text-secondary-color);
-  --text-placeholder: var(--light-text-placeholder-color);
-
-  /* Borders */
-  --border-main: var(--light-border-color);
-  --border-hover: var(--light-hover-border-color);
-
-  /* Shadows */
-  --shadow-main: var(--light-shadow-color);
-
-  /* Brand Colors */
-  --brand-primary: var(--light-primary-color);
-  --brand-secondary: var(--light-secondary-color);
-  --brand-accent: var(--light-accent-color);
-
-  /* ========== LOADING SPINNER VARIABLES ========== */
-  --spinner-border: var(--light-border-color);
-  --spinner-primary: var(--light-primary-color);
-  --spinner-secondary: var(--light-secondary-color);
-
-  /* ========== ICON VARIABLES ========== */
-  --icon-primary: var(--light-primary-color);
-  --icon-secondary: var(--light-text-secondary-color);
-  --icon-tertiary: var(--light-text-placeholder-color);
-
-  /* ========== FIELD MESSAGE VARIABLES ========== */
-
-  --FieldMessage-hint-bg: rgba(212, 202, 202, 0.685);
-  --FieldMessage-error-bg: rgba(255, 0, 0, 0.767);
-  --FieldMessage-success-bg: rgba(42, 253, 0, 0.55);
-  --FieldMessage-warning-bg: rgba(234, 232, 110, 0.388);
-
-  --FieldMessage-hint-bg-hover: rgb(152, 145, 145);
-  --FieldMessage-error-bg-hover: rgba(255, 0, 0, 0.559);
-  --FieldMessage-success-bg-hover: rgb(42, 253, 0);
-  --FieldMessage-warning-bg-hover: rgba(255, 0, 0, 0.767);
-
-  --FieldMessage-hint-text: rgba(0, 0, 0, 0.685);
-  --FieldMessage-error-text: rgb(255, 255, 255);
-  --FieldMessage-success-text: rgba(0, 0, 0, 0.833);
-  --FieldMessage-warning-text: rgba(246, 6, 6, 0.986);
-
-  --FieldMessage-hint-text-hover: rgba(255, 255, 255, 0.685);
-  --FieldMessage-error-text-hover: rgba(0, 0, 0, 0.879);
-  --FieldMessage-success-text-hover: rgb(65, 63, 63);
-  --FieldMessage-warning-text-hover: rgb(255, 255, 255);
-
-  /* ========== INPUT GLOBAL VARIABLES ========== */
   /*! ======================================================== */
+
+  /* ! ⬇️⬇️⬇️⬇ GLOBAL COLOR PALATE ⬇️⬇️⬇️ */
+
+  --bg-primary-color: var(--L-bg-primary-color);
+  --h1-primary-color: var(--L-h1-primary-color);
+  --h2-primary-color: var(--L-h2-primary-color);
+  --h3-primary-color: var(--L-h3-primary-color);
+  --title-primary-color: var(--L-title-primary-color);
+  --text-primary-color: var(--L-text-primary-color);
+  --border-primary-color: var(--L-border-primary-color);
+  --boxShadow-primary-color: var(--L-boxShadow-primary-color);
+  --text-primary-color-HOV: var(--L-text-primary-color-HOV);
+  --border-primary-color-HOV: var(--L-border-primary-color-HOV);
+  --boxShadow-primary-color-HOV: var(--L-boxShadow-primary-color-HOV);
+  --bg-primary-color-HOV: var(--L-bg-primary-color-HOV);
+
+  --bg-secondary-color: var(--L-bg-secondary-color);
+  --h1-secondary-color: var(--L-h1-secondary-color);
+  --h2-secondary-color: var(--L-h2-secondary-color);
+  --h3-secondary-color: var(--L-h3-secondary-color);
+  --title-secondary-color: var(--L-title-secondary-color);
+  --text-secondary-color: var(--L-text-secondary-color);
+  --border-secondary-color: var(--L-border-secondary-color);
+  --boxShadow-secondary-color: var(--L-boxShadow-secondary-color);
+  --text-secondary-color-HOV: var(--L-text-secondary-color-HOV);
+  --border-secondary-color-HOV: var(--L-border-secondary-color-HOV);
+  --boxShadow-secondary-color-HOV: var(--L-boxShadow-secondary-color-HOV);
+  --bg-secondary-color-HOV: var(--L-bg-secondary-color-HOV);
+
+  --bg-tertiary-color: var(--L-bg-tertiary-color);
+  --h1-tertiary-color: var(--L-h1-tertiary-color);
+  --h2-tertiary-color: var(--L-h2-tertiary-color);
+  --h3-tertiary-color: var(--L-h3-tertiary-color);
+  --title-tertiary-color: var(--L-title-tertiary-color);
+  --text-tertiary-color: var(--L-text-tertiary-color);
+  --border-tertiary-color: var(--L-border-tertiary-color);
+  --boxShadow-tertiary-color: var(--L-boxShadow-tertiary-color);
+  --text-tertiary-color-HOV: var(--L-text-tertiary-color-HOV);
+  --border-tertiary-color-HOV: var(--L-border-tertiary-color-HOV);
+  --boxShadow-tertiary-color-HOV: var(--L-boxShadow-tertiary-color-HOV);
+  --bg-tertiary-color-HOV: var(--L-bg-tertiary-color-HOV);
+
+  /* ! ⬆️⬆️⬆️ GLOBAL COLOR PALATE ⬆️⬆️⬆️ */
+
   --bg-primary: var(--light-bg-primary-color);
   --bg-primary-hover: var(--light-bg-primary-color-hover);
   --text-primary: var(--light-text-primary-color);
   --logo-text-color: var(--light-logo-text-color);
-  --title-secondary-color: var(--light-title-secondary-color);
-  --title-secondary-color-hover: var(--light-title-secondary-color-hover);
-  --icon-stroke-color: rgb(255, 0, 0);
 
-  --icon-stroke-color-1: var(--light-icon-stroke-color-1);
-  --icon-stroke-color-2: var(--light-icon-stroke-color-2);
-  --icon-stroke-color-3: var(--light-icon-stroke-color-3);
-  --icon-stroke-color-4: var(--light-icon-stroke-color-4);
-  --icon-stroke-color-5: var(--light-icon-stroke-color-5);
-  --icon-stroke-color-6: var(--light-icon-stroke-color-6);
-  --icon-stroke-color-7: var(--light-icon-stroke-color-7);
-  --icon-stroke-color-8: var(--light-icon-stroke-color-8);
-  --icon-stroke-color-9: var(--light-icon-stroke-color-9);
+  /* ! ⬇️⬇️⬇️⬇ ICON COLOR PALATE ⬇️⬇️⬇️ */
 
-  --icon-stroke-primary-color: var(--light-icon-stroke-primary-color);
-  --icon-stroke-primary-hover-color: var(
-    --light-icon-stroke-primary-hover-color
-  );
-  --icon-stroke-secondary-color: var(--light-icon-stroke-secondary-color);
-  --icon-stroke-secondary-hover-color: var(
-    --light-icon-stroke-secondary-hover-color
-  );
+  --icon-primary-stroke-color: var(--L-icon-primary-stroke-color);
+  --icon-primary-stroke-color-HOV: var(--L-icon-primary-stroke-color-HOV);
 
-  --input-primary-bg-color: var(--light-input-primary-bg-color);
-  --input-primary-bg-color-active: var(--light-input-primary-bg-color-active);
-  --input-primary-bg-color-disabled: var(
-    --light-input-primary-bg-color-disabled
-  );
-  --input-primary-bg-color-focus: var(--light-input-primary-bg-color-focus);
-  --input-primary-bg-color-hover: var(--light-input-primary-bg-color-hover);
-  --input-secondary-bg-color: var(--input-secondary-bg-color);
-  --input-secondary-bg-color-active: var(
-    --light-input-secondary-bg-color-active
-  );
-  --input-secondary-bg-color-disabled: var(
-    --light-input-secondary-bg-color-disabled
-  );
-  --input-secondary-bg-color-focus: var(--light-input-secondary-bg-color-focus);
-  --input-secondary-bg-color-hover: var(--light-input-secondary-bg-color-hover);
+  --icon-secondary-stroke-color: var(--L-icon-secondary-stroke-color);
+  --icon-secondary-stroke-color-HOV: var(--L-icon-secondary-stroke-color-HOV);
 
-  --input-primary-text-color: var(--light-input-primary-text-color);
-  --input-primary-text-color-hover: var(--light-input-primary-text-color-hover);
-  --input-primary-text-color-focus: var(--light-input-primary-text-color-focus);
-  --input-primary-label-text-color: var(--light-input-primary-label-text-color);
-  --input-primary-label-text-color-hover: var(--light-input-primary-label-text-color-hover);
-  --input-primary-hint-text-color-hover: var(--light-input-primary-hint-text-color-hover);
-  --input-primary-success-text-color-hover: var(--light-input-primary-success-text-color-hover);
-  --input-primary-warning-text-color-hover: var(--light-input-primary-warning-text-color-hover);
-  --input-primary-error-text-color-hover: var(--light-input-primary-error-text-color-hover);
-  --input-secondary-text-color: var(--light-input-secondary-text-color);
-  --input-secondary-text-color-hover: var(--light-input-secondary-text-color-hover);
-  --input-secondary-text-color-focus: var(--light-input-secondary-text-color-focus);
-  --input-secondary-label-text-color: var(--light-input-secondary-label-text-color);
-  --input-secondary-label-text-color-hover: var(--light-input-secondary-label-text-color-hover);
-  --input-secondary-hint-text-color-hover: var(--light-input-secondary-hint-text-color-hover);
-  --input-secondary-hint-text-color-hover: var(--light-input-secondary-hint-text-color-hover);
-  --input-secondary-success-text-color-hover: var(--light-input-secondary-success-text-color-hover);
-  --input-secondary-warning-text-color-hover: var(--light-input-secondary-warning-text-color-hover);
-  --input-secondary-error-text-color-hover: var(--light-input-secondary-error-text-color-hover);
+  --icon-tertiary-stroke-color: var(--L-icon-tertiary-stroke-color);
+  --icon-tertiary-stroke-color-HOV: var(--L-icon-tertiary-stroke-color-HOV);
+  /* ! ⬆️⬆️⬆️ ICON COLOR PALATE ⬆️⬆️⬆️ */
 
+  /* ! ⬇️⬇️⬇️===INPUT COLORS===⬇️⬇️⬇️ */
 
+  --input-primary-bg-color: var(--L-input-primary-bg-color);
+  --input-primary-text-color: var(--L-input-primary-text-color);
+  --input-primary-text-color-FOC: var(--L-input-primary-text-color-FOC);
+  --input-primary-text-color-HOV: var(--L-input-primary-text-color-HOV);
+  --input-primary-plHolder-color: var(--L-input-primary-plHolder-color);
+  --input-primary-plHolder-color-HOV: var(--L-input-primary-plHolder-color-HOV);
+  --input-primary-label-text: var(--L-input-primary-label-color);
+  --input-primary-label-text-HOV: var(--L-input-primary-label-color-HOV);
+  --input-primary-border-color: var(--L-input-primary-border-color);
+  --input-primary-icon-color: var(--L-input-primary-icon-color);
+  --input-primary-border-color-HOV: var(--L-input-primary-border-color-HOV);
+  --input-primary-border-color-FOC: var(--L-input-primary-border-color-FOC);
+  --input-primary-border-color-DIS: var(--L-input-primary-border-color-DIS);
+  --input-primary-boxShadow: var(--L-input-primary-boxShadow);
+  --input-primary-boxShadow-FOC: var(--L-input-primary-boxShadow-FOC);
+  --input-primary-boxShadow-DIS: var(--L-input-primary-boxShadow-DIS);
+  --input-primary-boxShadow-HOV: var(--L-input-primary-boxShadow-HOV);
+  --input-primary-plHolder-color-DIS: var(--L-input-primary-plHolder-color-DIS);
 
+  /* ! ⬆️⬆️⬆️===INPUT COLORS===⬆️⬆️⬆️ */
 
+  /* ! ⬇️⬇️⬇️===FIELD MESSAGE COLORS===⬇️⬇️⬇️ */
 
+  --primary-hint-border: var(--L-primary-hint-border);
+  --primary-success-border: var(--L-primary-success-border);
+  --primary-error-border: var(--L-primary-error-border);
+  --primary-warning-border: var(--L-primary-warning-border);
 
-  --input-primary-placeholder-color: var(
-    --light-input-primary-placeholder-color
-  );
-  --input-primary-placeholder-color-hover: var(
-    --light-input-primary-placeholder-color-hover
-  );
-  --input-secondary-placeholder-color: var(
-    --light-input-secondary-placeholder-color
-  );
-  --input-secondary-placeholder-color-hover: var(
-    --light-input-secondary-placeholder-color-hover
-  );
-  --input-primary-placeholder-color-focus: var(
-    --light-input-primary-placeholder-color-focus
-  );
-  --input-secondary-placeholder-color-focus: var(
-    --light-input-secondary-placeholder-color-focus
-  );
+  /* ! ⬆️⬆️⬆️===FIELD MESSAGE COLORS===⬆️⬆️⬆️ */
 
-  --input-primary-border-color: var(--light-input-primary-border-color);
-  --input-primary-border-color-hover: var(
-    --light-input-primary-border-color-hover
-  );
-  --input-secondary-border-color: var(--light-input-secondary-border-color);
-  --input-secondary-border-color-hover: var(
-    --light-input-secondary-border-color-hover
-  );
-  --input-disabled-border-color: var(--light-input-disabled-border-color);
-  --input-disabled-border-color-hover: var(
-    --light-input-disabled-border-color-hover
-  );
-  --input-primary-border-color-focus: var(
-    --light-input-primary-border-color-focus
-  );
-  --input-secondary-border-color-focus: var(
-    --light-input-secondary-border-color-focus
-  );
+  /* ! ⬇️⬇️⬇️===BUTTON COLORS===⬇️⬇️⬇️ */
 
-  --input-primary-boxShadow: var(--light-input-primary-boxShadow);
-  --input-primary-boxShadow-focus: var(--light-input-primary-boxShadow-focus);
-  --input-primary-boxShadow-hover: var(--light-input-primary-boxShadow-hover);
-  --input-primary-boxShadow-active: var(--light-input-primary-boxShadow-active);
-  --input-primary-boxShadow-disabled: var(
-    --light-input-primary-boxShadow-disabled
-  );
-  --input-secondary-boxShadow: var(--light-input-secondary-boxShadow);
-  --input-secondary-boxShadow-focus: var(
-    --light-input-secondary-boxShadow-focus
-  );
-  --input-secondary-boxShadow-hover: var(
-    --light-input-secondary-boxShadow-hover
-  );
-  --input-secondary-boxShadow-active: var(
-    --light-input-secondary-boxShadow-active
-  );
-  --input-secondary-boxShadow-disabled: var(
-    --light-input-secondary-boxShadow-disabled
-  );
+  --btn-primary-bg-color: var(--L-btn-primary-bg-color);
+  --btn-primary-text-color: var(--L-btn-primary-text-color);
+  --btn-primary-border-color: var(--L-btn-primary-border-color);
+  --btn-primary-boxShadow-color: var(--L-btn-primary-boxShadow-color);
+  --btn-primary-bg-color-HOV: var(--L-btn-primary-bg-color-HOV);
+  --btn-primary-text-color-HOV: var(--L-btn-primary-text-color-HOV);
+  --btn-primary-border-color-DIS: var(--L-btn-primary-border-color-DIS);
 
-  /* 
-  
-    --light-input-primary-bg-color: #ccc8ce;
-  --light-input-primary-bg-color-active: #ccc8ce;
-  --light-input-primary-bg-color-disabled: #ccc8ce;
-  --light-input-primary-bg-color-focus: #ccc8ce;
-  --light-input-primary-bg-color-hover: #340f44;
-  --light-input-secondary-bg-color: #ccc8ce;
-  --light-input-secondary-bg-color-active: #ccc8ce;
-  --light-input-secondary-bg-color-disabled: #ccc8ce;
-  --light-input-secondary-bg-color-focus: #ccc8ce;
-  --light-input-secondary-bg-color-hover: #340f44;
-  
+  --btn-secondary-bg-color: var(--L-btn-secondary-bg-color);
+  --btn-secondary-text-color: var(--L-btn-secondary-text-color);
+  --btn-secondary-border-color: var(--L-btn-secondary-border-color);
+  --btn-secondary-boxShadow-color: var(--L-btn-secondary-boxShadow-color);
+  --btn-secondary-bg-color-HOV: var(--L-btn-secondary-bg-color-HOV);
+  --btn-secondary-text-color-HOV: var(--L-btn-secondary-text-color-HOV);
+  --btn-secondary-border-color-DIS: var(--L-btn-secondary-border-color-DIS);
 
+  --btn-tertiary-bg-color: var(--L-btn-tertiary-bg-color);
+  --btn-tertiary-text-color: var(--L-btn-tertiary-text-color);
+  --btn-tertiary-border-color: var(--L-btn-tertiary-border-color);
+  --btn-tertiary-boxShadow-color: var(--L-btn-tertiary-boxShadow-color);
+  --btn-tertiary-bg-color-HOV: var(--L-btn-tertiary-bg-color-HOV);
+  --btn-tertiary-text-color-HOV: var(--L-btn-tertiary-text-color-HOV);
+  --btn-tertiary-border-color-DIS: var(--L-btn-tertiary-border-color-DIS);
 
-
-
-
-
-
-
-  
-  */
-
-  --primary-hint-border: var(--light-primary-hint-border);
---primary-hint-border-hover: var(--light-primary-hint-border-hover);
---primary-success-border: var(--light-primary-success-border);
---primary-success-border-hover: var(--light-primary-success-border-hover);
---primary-error-border: var(--light-primary-error-border);
---primary-error-border-hover: var(--light-primary-error-border-hover);
---primary-warning-border: var(--light-primary-warning-border);
---primary-warning-border-hover: var(--light-primary-warning-border-hover);
---secondary-hint-border: var(--light-secondary-hint-border);
---secondary-hint-border-hover: var(--light-secondary-hint-border-hover);
---secondary-success-border: var(--light-secondary-success-border);
---secondary-success-border-hover: var(--light-secondary-success-border-hover);
---secondary-error-border: var(--light-secondary-error-border);
---secondary-error-border-hover: var(--light-secondary-error-border-hover);
---secondary-warning-border: var(--light-secondary-warning-border);
---secondary-warning-border-hover: var(--light-secondary-warning-border-hover);
+  /* ! ⬆️⬆️⬆️===BUTTON COLORS===⬆️⬆️⬆️ */
 }

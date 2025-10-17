@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../_styles/loadingSpinner.css";
 
-const LoadingSpinner = ({ className = "", isActive = false, version }) => {
+const LoadingSpinner = ({ className = "", isActive = false, version = "primary" }) => {
   if (!isActive) {
     return null;
   }
-  const spinner_classname = `LoadingSpinner ${version ? version : ""} ${
+  const spinner_classname = `LoadingSpinner ${version !== "primary" ? version : ""} ${
     className ? className : ""
   }`;
 

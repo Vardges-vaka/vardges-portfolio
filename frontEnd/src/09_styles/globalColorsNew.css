@@ -2,607 +2,221 @@
   /* ========== LIGHT THEME COLORS ========== */
 
   /* 🎯 Brand Colors */
-  --light-primary-color: #2c3e50;
-  --light-secondary-color: #18bc9c;
-  --light-accent-color: #e74c3c;
 
-  /* 🧱 Background Colors */
-  --light-bg-main-color: #ffffff;
-  --light-bg-secondary-color: #f9fafb;
-  --light-bg-tertiary-color: #f0f2f5;
+  /* ! ⬇️⬇️⬇️⬇ GLOBAL COLOR PALATE ⬇️⬇️⬇️ */
 
-  /* 📝 Text Colors */
-  --light-text-main-color: #1a1a1a;
-  --light-text-secondary-color: #4a4a4a;
-  --light-text-placeholder-color: #9ca3af;
+  --D-bg-primary-color: #571b73;
+  --D-h1-primary-color: #ffffff;
+  --D-h2-primary-color: #00a6ff;
+  --D-h3-primary-color: #7bff00;
+  --D-title-primary-color: #fad901;
+  --D-text-primary-color: #dbd5de;
+  --D-border-primary-color: #fca800;
+  --D-boxShadow-primary-color: #ffffff83;
+  --D-text-primary-color-HOV: #ffffff;
+  --D-border-primary-color-HOV: #ffffff;
+  --D-boxShadow-primary-color-HOV: #ffffffcd;
+  --D-bg-primary-color-HOV: #571b73;
 
-  /* 📏 Border Colors */
-  --light-border-color: #e5e7eb;
+  --D-bg-secondary-color: #7b18a5fd;
+  --D-h1-secondary-color: #05ab1b;
+  --D-h2-secondary-color: #e1b70e;
+  --D-h3-secondary-color: #000000;
+  --D-title-secondary-color: #ffffff;
+  --D-text-secondary-color: #d8d6da;
+  --D-border-secondary-color: #ffffffb1;
+  --D-boxShadow-secondary-color: #ffffff8b;
+  --D-text-secondary-color-HOV: #ffffff;
+  --D-border-secondary-color-HOV: #ffffff;
+  --D-boxShadow-secondary-color-HOV: #ffffff;
+  --D-bg-secondary-color-HOV: #7b18a5fd;
 
-  /* 🕶️ Shadow */
-  --light-shadow-color: rgba(0, 0, 0, 0.05);
+  --D-bg-tertiary-color: #340f44;
+  --D-h1-tertiary-color: #ffffff;
+  --D-h2-tertiary-color: #ecac0a;
+  --D-h3-tertiary-color: #7bff00e0;
+  --D-title-tertiary-color: #fa9f01;
+  --D-text-tertiary-color: #dcd9dd;
+  --D-border-tertiary-color: #ff890387;
+  --D-boxShadow-tertiary-color: #ff8903ac;
+  --D-text-tertiary-color-HOV: #ffffff;
+  --D-border-tertiary-color-HOV: #fa960199;
+  --D-boxShadow-tertiary-color-HOV: #ff8903;
+  --D-bg-tertiary-color-HOV: #340f44ce;
 
-  /* 🎯 Hover States */
-  --light-hover-bg-color: #f3f4f6;
-  --light-hover-text-color: #111827;
-  --light-hover-border-color: #d1d5db;
+  --L-bg-primary-color: #eee29539;
+  --L-h1-primary-color: #171617;
+  --L-h2-primary-color: #196842;
+  --L-h3-primary-color: #8d4f0d;
+  --L-title-primary-color: #340f44;
+  --L-text-primary-color: #000000cc;
+  --L-border-primary-color: #340f44;
+  --L-boxShadow-primary-color: #340f4485;
+  --L-text-primary-color-HOV: #000000;
+  --L-border-primary-color-HOV: #571b73;
+  --L-boxShadow-primary-color-HOV: #340f44;
+  --L-bg-primary-color-HOV: #eee2957e;
 
-  /* ========== DARK THEME COLORS ========== */
+  --L-bg-secondary-color: #eee2957e;
+  --L-h1-secondary-color: #6e069d;
+  --L-h2-secondary-color: #f07706;
+  --L-h3-secondary-color: #0a36a3;
+  --L-title-secondary-color: #ab2200;
+  --L-text-secondary-color: #59595a;
+  --L-border-secondary-color: #571b73;
+  --L-boxShadow-secondary-color: #571b73;
+  --L-text-secondary-color-HOV: #430261;
+  --L-border-secondary-color-HOV: #571b73;
+  --L-boxShadow-secondary-color-HOV: #571b73;
+  --L-bg-secondary-color-HOV: #eee295b9;
 
-  /* 🎯 Brand Colors */
-  --dark-primary-color: #5c008b; /* Background / Primary */
-  --dark-secondary-color: #8e008b; /* CTA / Secondary */
-  --dark-accent-color: #ff8300; /* Accent or warning */
+  --L-bg-tertiary-color: #f0e9b8;
+  --L-h1-tertiary-color: #340f44;
+  --L-h2-tertiary-color: #000000;
+  --L-h3-tertiary-color: #ce0707;
+  --L-title-tertiary-color: #340f44;
+  --L-text-tertiary-color: #262427;
+  --L-border-tertiary-color: #571b735a;
+  --L-boxShadow-tertiary-color: #340f44c6;
+  --L-text-tertiary-color-HOV: #000000;
+  --L-border-tertiary-color-HOV: #571b73b0;
+  --L-boxShadow-tertiary-color-HOV: #571b73;
+  --L-bg-tertiary-color-HOV: #f5eba7;
 
-  /* 🧱 Background Colors */
-  --dark-bg-main-color: #5c008b;
-  --dark-bg-secondary-color: #2e005d;
-  --dark-bg-tertiary-color: #8e008b;
+  --dark-logo-text-color: #ff6200;
 
-  /* 📝 Text Colors */
-  --dark-text-main-color: #ffffff;
-  --dark-text-secondary-color: #e0d4ea;
-  --dark-text-placeholder-color: #c6a0cf;
-
-  /* 📏 Border Colors */
-  --dark-border-color: #8e008b;
-
-  /* 🕶️ Shadow */
-  --dark-shadow-color: rgba(0, 0, 0, 0.6);
-
-  /* 🎯 Hover States */
-  --dark-hover-bg-color: #2e005d;
-  --dark-hover-text-color: #ff6200;
-  --dark-hover-border-color: #ff8300;
-
-  /*! ======================================================== #f0b906 */
-
-  --light-bg-primary-color: rgb(255, 255, 255);
-  --light-bg-secondary-color: black;
-  --light-bg-success-color: black;
-  --light-bg-error-color: black;
-  --light-bg-primary-color-hover: rgb(225, 224, 224);
-  --light-bg-secondary-color-hover: black;
-  --light-bg-success-color-hover: black;
-  --light-bg-error-color-hover: black;
-
-  --light-text-primary-color: black;
-  --light-text-secondary-color: black;
-  --light-text-label-color: black;
-  --light-text-disabled-color: black;
-  --light-text-active-color: black;
-  --light-text-placeholder-color: black;
-  --light-text-focus-color: black;
-  --light-text-primary-hover-color: black;
-  --light-text-secondary-color-hover: black;
-  --light-text-label-color-hover: black;
-  --light-text-disabled-color-hover: black;
-  --light-text-active-color-hover: black;
-  --light-text-placeholder-color-hover: black;
-  --light-text-focus-color-hover: black;
-
-  --light-title-primary-color: black;
-  --light-title-secondary-color: black;
-  --light-title-label-color: black;
-  --light-title-disabled-color: black;
-  --light-title-active-color: black;
-  --light-title-placeholder-color: black;
-  --light-title-focus-color: black;
-  --light-title-primary-hover-color: black;
-  --light-title-secondary-hover-color: black;
-  --light-title-label-hover-color: black;
-  --light-title-disabled-hover-color: black;
-  --light-title-active-hover-color: black;
-  --light-title-placeholder-hover-color: black;
-  --light-title-focus-hover-color: black;
-  /* ! FINAL=================  GLOBAL fieldMessage COLORS ================= */
-  --light-primary-hint-border: rgb(144, 136, 136);
-  --light-primary-success-border: rgb(47, 255, 0);
-  --light-primary-error-border: rgb(255, 0, 0);
-  --light-primary-warning-border: rgb(251, 255, 0);
-
-
-
-  --dark-primary-hint-border: rgb(199, 194, 194);
-  --dark-primary-success-border: rgb(47, 255, 0);
-  --dark-primary-error-border: rgb(255, 0, 0);
-  --dark-primary-warning-border: rgb(251, 255, 0);
-
-
-  --light-secondary-hint-border: rgb(62, 61, 61);
-  --light-secondary-success-border: rgb(47, 255, 0);
-  --light-secondary-error-border: rgb(255, 0, 0);
-  --light-secondary-warning-border: rgb(251, 255, 0);
-  --dark-secondary-hint-border: rgb(62, 61, 61);
-  --dark-secondary-success-border: rgb(47, 255, 0);
-  --dark-secondary-error-border: rgb(255, 0, 0);
-  --dark-secondary-warning-border: rgb(251, 255, 0);
+  /* ! ⬆️⬆️⬆️ GLOBAL COLOR PALATE ⬆️⬆️⬆️ */
 
   /* ! FINAL================= INPUT GLOBAL COLORS ================= */
-  --light-input-primary-text-color: rgba(1, 1, 1, 0.792);
-  --light-input-primary-text-color-hover: rgb(45, 44, 44);
-  --light-input-primary-text-color-focus: rgb(0, 0, 0);
-  --light-input-primary-placeholder-color: rgba(129, 130, 128, 0.764);
-  --light-input-primary-placeholder-color-hover: rgb(74, 69, 69);
 
-  --light-input-primary-border-color: 1px solid #571b738e;
-  --light-input-primary-border-color-hover: 1px solid #560c78;
-  --light-input-primary-border-color-focus: 1px solid #480666;
-  --light-input-disabled-border-color: 1px solid #ff0000;
-  --light-input-primary-boxShadow-disabled: 0 2px 6px 0 #fc00003d,
-    0 1px 4px 0 #ff00001a;
-  --light-input-primary-boxShadow: 0 2px 8px 0 #7f3b9f29,
-    0 1.5px 4px 0 #571b730d;
-  --light-input-primary-boxShadow-hover: 0 2px 6px 0 #7f3b9f3d,
-    0 1px 4px 0 #571b731a;
-  --light-input-primary-boxShadow-focus: 0 2px 6px 0 #7f3b9f3d,
-    0 1px 4px 0 #571b731a;
-  --light-input-primary-boxShadow-active: 1px 2px 10px 1px rgb(2, 244, 38);
-  --light-input-secondary-border-color: 1px solid black;
-  --light-input-secondary-border-color-hover: 1px solid black;
-  --light-input-disabled-border-color-hover: 1px solid #7f3b9f;
-  --light-input-secondary-border-color-focus: 1px solid #7f3b9f;
+  --L-icon-primary-stroke-color: #571b73;
+  --L-icon-secondary-stroke-color: #10246ece;
+  --L-icon-tertiary-stroke-color: #b20d0d;
+  --L-icon-primary-stroke-color-HOV: #4e4e4d;
+  --L-icon-secondary-stroke-color-HOV: #011aa2;
+  --L-icon-tertiary-stroke-color-HOV: #ff9100;
 
-  --light-input-primary-label-text-color: #571b738e;
-  --light-input-primary-label-text-color-hover: #560c78;
-
-
-
-  --light-input-secondary-label-text-color: #571b738e;
-  --light-input-secondary-label-text-color-hover: white;
-
+  --D-icon-primary-stroke-color: rgb(251, 163, 0);
+  --D-icon-secondary-stroke-color: #0acd37;
+  --D-icon-tertiary-stroke-color: #d3d0d0;
+  --D-icon-primary-stroke-color-HOV: #d3d0d0;
+  --D-icon-secondary-stroke-color-HOV: #f1bd03;
+  --D-icon-tertiary-stroke-color-HOV: #0acd37;
 
   /* ! FINAL================= INPUT GLOBAL BOX SHADOWS ================= */
 
-  --light-input-secondary-boxShadow: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-focus: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-hover: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-active: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-disabled: 1px 2px 10px 1px rgb(244, 2, 2);
-
-  --light-input-primary-bg-color: rgb(241, 235, 235);
-  --light-input-primary-bg-color-active: red;
-  --light-input-primary-bg-color-disabled: red;
-  --light-input-primary-bg-color-focus: red;
-  --light-input-primary-bg-color-hover: red;
-  --light-input-secondary-bg-color: red;
-  --light-input-secondary-bg-color-active: red;
-  --light-input-secondary-bg-color-disabled: red;
-  --light-input-secondary-bg-color-focus: red;
-  --light-input-secondary-bg-color-hover: red;
-
-  --light-input-secondary-text-color: white;
-  --light-input-secondary-text-color-hover: white;
-  --light-input-secondary-text-color-focus: white;
-
-  --light-input-secondary-placeholder-color: white;
-  --light-input-secondary-placeholder-color-hover: white;
-  --light-input-primary-placeholder-color-focus: white;
-  --light-input-secondary-placeholder-color-focus: white;
-
-  --light-logo-text-color: black;
-
-  --light-icon-stroke-color-1: #000000;
-  --light-icon-stroke-color-2: #676262;
-  --light-icon-stroke-color-3: #4e4e4d;
-  --light-icon-stroke-color-4: #584b04;
-  --light-icon-stroke-color-5: #5e3807;
-  --light-icon-stroke-color-6: #10246ece;
-  --light-icon-stroke-color-7: #6d1e1e;
-  --light-icon-stroke-color-8: #5f087acf;
-  --light-icon-stroke-color-9: #740753;
-
-  --light-icon-stroke-primary-color: #571b73;
-  --light-icon-stroke-primary-hover-color: #4e4e4d;
-
-  --light-icon-stroke-secondary-color: #4e4e4d;
-  --light-icon-stroke-secondary-hover-color: #571b73;
-
-  /* --dark-logo-text-color: #37731B;  */
-  --dark-logo-text-color: #ff6200;
-
-  --dark-bg-primary-color: #571b73;
-  --dark-bg-secondary-color: black;
-  --dark-bg-success-color: black;
-  --dark-bg-error-color: black;
-
-  /* --dark-bg-primary-color-hover: #320d43; */
-  /* --dark-bg-primary-color-hover: #320d43; */
-  /* --dark-bg-primary-color-hover: #320d43; */
-  --dark-bg-primary-color-hover: #340f44;
-  --dark-bg-secondary-color-hover: black;
-  --dark-bg-success-color-hover: black;
-  --dark-bg-error-color-hover: black;
-
-  --dark-text-primary-color: white;
-  --dark-text-secondary-color: black;
-  --dark-text-label-color: black;
-  --dark-text-disabled-color: black;
-  --dark-text-active-color: black;
-  --dark-text-placeholder-color: black;
-  --dark-text-focus-color: black;
-  --dark-text-primary-hover-color: black;
-  --dark-text-secondary-color-hover: black;
-  --dark-text-label-color-hover: black;
-  --dark-text-disabled-color-hover: black;
-  --dark-text-active-color-hover: black;
-  --dark-text-placeholder-color-hover: black;
-  --dark-text-focus-color-hover: black;
-
-  --dark-title-primary-color: black;
-  /* --dark-title-secondary-color: #bb8f2f; */
-  /* --dark-title-secondary-color: #bb8f2f; */
-  /* --dark-title-secondary-color: #bb8f2f; */
-  /* --dark-title-secondary-color: #bb8f2f; */
-  /* --dark-title-secondary-color: #1B732B; */
-  --dark-title-secondary-color: #ffffff;
-
-  --dark-title-label-color: black;
-  --dark-title-disabled-color: black;
-  --dark-title-active-color: black;
-  --dark-title-placeholder-color: black;
-  --dark-title-focus-color: black;
-
-  --dark-title-primary-hover-color: black;
-  --dark-title-secondary-hover-color: #1b7357;
-
-  --dark-title-label-hover-color: black;
-  --dark-title-disabled-hover-color: black;
-  --dark-title-active-hover-color: black;
-  --dark-title-placeholder-hover-color: black;
-  --dark-title-focus-hover-color: black;
-
-  --dark-icon-stroke-primary-color: rgb(255, 255, 255);
-  --dark-icon-stroke-primary-hover-color: #f0b906;
-
-  --dark-icon-stroke-secondary-color: #f0b906;
-  --dark-icon-stroke-secondary-hover-color: rgb(255, 255, 255);
-
-  --dark-icon-stroke-color-1: rgb(255, 255, 255);
-  --dark-icon-stroke-color-2: #f0b906;
-  --dark-icon-stroke-color-3: #bb8f2f;
-  --dark-icon-stroke-color-4: #1b7357;
-  --dark-icon-stroke-color-5: #1b732b;
-  --dark-icon-stroke-color-6: #320d43;
-  --dark-icon-stroke-color-7: #bb8f2f;
-  --dark-icon-stroke-color-8: #ff6200;
-  --dark-icon-stroke-color-9: #ff8300;
-
-  /* ========== INPUT GLOBAL VARIABLES ========== */
-  --dark-input-primary-bg-color: #1ebd8b44;
-  --dark-input-primary-bg-color-active: #fffb00;
-  --dark-input-primary-bg-color-disabled: #fffb00;
-  --dark-input-primary-bg-color-focus: #fffb00;
-  --dark-input-primary-bg-color-hover: #fffb00;
-
-  --dark-input-secondary-bg-color: #fffb00;
-  --dark-input-secondary-bg-color-active: #fffb00;
-  --dark-input-secondary-bg-color-disabled: #fffb00;
-  --dark-input-secondary-bg-color-focus: #fffb00;
-  --dark-input-secondary-bg-color-hover: #fffb00;
-
-  --dark-input-primary-text-color: white;
-  --dark-input-primary-text-color-hover: white;
-  --dark-input-secondary-text-color: white;
-  --dark-input-secondary-text-color-hover: white;
-  --dark-input-primary-text-color-focus: white;
-  --dark-input-secondary-text-color-focus: white;
-
-  --dark-input-primary-placeholder-color: rgb(0, 0, 0);
-  --dark-input-primary-placeholder-color-hover: rgb(18, 255, 1);
-  --dark-input-secondary-placeholder-color: white;
-  --dark-input-secondary-placeholder-color-hover: white;
-  --dark-input-primary-placeholder-color-focus: white;
-  --dark-input-secondary-placeholder-color-focus: white;
-
-  --dark-input-primary-border-color: 1px solid white;
-  --dark-input-primary-border-color-hover: 1px solid white;
-  --dark-input-secondary-border-color: 1px solid white;
-  --dark-input-secondary-border-color-hover: 1px solid white;
-  --dark-input-disabled-border-color: 1px solid white;
-  --dark-input-disabled-border-color-hover: 1px solid white;
-  --dark-input-primary-border-color-focus: 1px solid white;
-  --dark-input-secondary-border-color-focus: 1px solid white;
-
-  --dark-input-primary-boxShadow: 10px 2px 10px 1px rgb(163, 255, 4);
-  --dark-input-primary-boxShadow-focus: 1px 2px 10px 1px rgb(155, 244, 2);
-  --dark-input-primary-boxShadow-hover: 1px 2px 10px 1px rgb(155, 244, 2);
-  --dark-input-primary-boxShadow-active: 1px 2px 10px 1px rgb(155, 244, 2);
-  --dark-input-primary-boxShadow-disabled: 1px 2px 10px 1px rgb(155, 244, 2);
-
-  --dark-input-secondary-boxShadow: 1px 2px 10px 1px rgb(155, 244, 2);
-  --dark-input-secondary-boxShadow-focus: 1px 2px 10px 1px rgb(155, 244, 2);
-  --dark-input-secondary-boxShadow-hover: 1px 2px 10px 1px rgb(155, 244, 2);
-  --dark-input-secondary-boxShadow-active: 1px 2px 10px 1px rgb(155, 244, 2);
-  --dark-input-secondary-boxShadow-disabled: 1px 2px 10px 1px rgb(155, 244, 2);
-
-  --dark-input-primary-text-color: rgb(106, 255, 0);
-  --dark-input-primary-text-color-hover: white;
-  --dark-input-primary-text-color-focus: white;
-  --dark-input-primary-label-text-color: white;
-  --dark-input-primary-label-text-color-hover: white;
-
-  
-  --dark-input-secondary-text-color: white;
-  --dark-input-secondary-text-color-hover: white;
-  --dark-input-secondary-text-color-focus: white;
-  --dark-input-secondary-label-text-color: white;
-  --dark-input-secondary-label-text-color-hover: white;
-
-  
-
-  /* 
-
-
-
-
-
-
---input-primary-text-color: var(--input-primary-text-color);
---input-primary-text-color-hover: var(--input-primary-text-color-hover);
---input-primary-text-color-focus: var(--input-primary-text-color-focus);
---input-primary-text-color-active: var(--input-primary-text-color-active);
---input-primary-label-text-color: var(--input-primary-label-text-color);
---input-primary-label-text-color-hover: var(--input-primary-label-text-color-hover);
---input-primary-hint-text-color-hover: var(--input-primary-hint-text-color-hover);
---input-primary-success-text-color-hover: var(--input-primary-success-text-color-hover);
---input-primary-warning-text-color-hover: var(--input-primary-warning-text-color-hover);
---input-primary-error-text-color-hover: var(--input-primary-error-text-color-hover);
---input-secondary-text-color: var(--input-secondary-text-color);
-  --input-secondary-text-color-hover: white;
-  --input-secondary-text-color-focus: white;
---input-secondary-text-color-active: var(--input-secondary-text-color-active);
---input-secondary-label-text-color: var(--input-secondary-label-text-color);
-  --input-secondary-label-text-color-hover: white;
---input-secondary-hint-text-color-hover: var(--input-secondary-hint-text-color-hover);
---input-secondary-success-text-color-hover: var(--input-secondary-success-text-color-hover);
---input-secondary-warning-text-color-hover: var(--input-secondary-warning-text-color-hover);
---input-secondary-error-text-color-hover: var(--input-secondary-error-text-color-hover);
-
-
-
-
-
-    --input-primary-text-color: var(--input-primary-text-color);
-    --input-primary-text-color-hover: var(--input-primary-text-color-hover);
-    --input-primary-text-color-focus: var(--input-primary-text-color-focus);
-    --input-primary-text-color-active: var(--input-primary-text-color-active);
-    --input-primary-label-text-color: var(--input-primary-label-text-color);
-    --input-primary-label-text-color-hover: var(--input-primary-label-text-color-hover);
-    --input-primary-hint-text-color-hover: var(--input-primary-hint-text-color-hover);
-    --input-primary-success-text-color-hover: var(--input-primary-success-text-color-hover);
-    --input-primary-warning-text-color-hover: var(--input-primary-warning-text-color-hover);
-    --input-primary-error-text-color-hover: var(--input-primary-error-text-color-hover);
-    --input-secondary-text-color: var(--input-secondary-text-color);
-    --input-secondary-text-color-hover: var(--input-secondary-text-color-hover);
-    --input-secondary-text-color-focus: var(--input-secondary-text-color-focus);
-    --input-secondary-text-color-active: var(--input-secondary-text-color-active);
-    --input-secondary-label-text-color: var(--input-secondary-label-text-color);
-    --input-secondary-label-text-color-hover: var(--input-secondary-label-text-color-hover);
-    --input-secondary-hint-text-color-hover: var(--input-secondary-hint-text-color-hover);
-    --input-secondary-hint-text-color-hover: var(--input-secondary-hint-text-color-hover);
-    --input-secondary-success-text-color-hover: var(--input-secondary-success-text-color-hover);
-    --input-secondary-warning-text-color-hover: var(--input-secondary-warning-text-color-hover);
-    --input-secondary-error-text-color-hover: var(--input-secondary-error-text-color-hover);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  --input-primary-text-color: var();
-  --input-primary-text-color-hover: var();
-  --input-secondary-text-color: var();
-  --input-secondary-text-color-hover: var();
-  --input-primary-text-color-focus: var();
-  --input-secondary-text-color-focus: var();
-
-
-
-  --input-primary-label-text-color: var();
-  --input-primary-label-text-color-hover: var();
-  --input-primary-hint-text-color-hover: var();
-  --input-primary-success-text-color-hover: var();
-  --input-primary-warning-text-color-hover: var();
-  --input-primary-error-text-color-hover: var();
-  --input-secondary-label-text-color: var();
-  --input-secondary-label-text-color-hover: var();
-  --input-secondary-hint-text-color-hover: var();
-  --input-secondary-success-text-color-hover: var();
-  --input-secondary-warning-text-color-hover: var();
-  --input-secondary-error-text-color-hover: var();
-
-
-
-
-
-
-
-
-
-
-  --input-secondary-text-color-label-hover: var();
-  --input-secondary-text-color-hint: var();
-  --input-secondary-text-color-hint-hover: var();
-  --input-secondary-text-color-hint-hover: var();
-
-
-
-
-  --input-primary-placeholder-color: var();
-  --input-primary-placeholder-color-hover: var();
-  --input-secondary-placeholder-color: var();
-  --input-secondary-placeholder-color-hover: var();
-  --input-primary-placeholder-color-focus: var();
-  --input-secondary-placeholder-color-focus: var();
-  --input-primary-border-color: var();
-  --input-primary-border-color-hover: var();
-  --input-secondary-border-color: var();
-  --input-secondary-border-color-hover: var();
-  --input-disabled-border-color: var();
-  --input-disabled-border-color-hover: var();
-  --input-primary-border-color-focus: var();
-  --input-secondary-border-color-focus: var();
-  --input-disabled-boxShadow: var();
-  --input-disabled-boxShadow-hover: var();
-  --input-primary-boxShadow-focus: var();
-  --input-secondary-boxShadow-focus: var();
-
-
-
-
-  --input-primary-label-focus: var();
-
-
-
-
-
-
-
-
-
-
-
-
-  --light-input-primary-boxShadow: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-focus: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-hover: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-active: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-primary-boxShadow-disabled: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-focus: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-hover: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-active: 1px 2px 10px 1px rgb(244, 2, 2);
-  --light-input-secondary-boxShadow-disabled: 1px 2px 10px 1px rgb(244, 2, 2);
-
-
-
-
-
-
-
-
-
-
-
-  --input-primary-boxShadow: var(  --light-input-primary-boxShadow);
-  --input-primary-boxShadow-focus: var(  --light-input-primary-boxShadow-focus);
-  --input-primary-boxShadow-hover: var(  --light-input-primary-boxShadow-hover);
-  --input-primary-boxShadow-active: var(  --light-input-primary-boxShadow-active);
-  --input-primary-boxShadow-disabled: var(  --light-input-primary-boxShadow-disabled);
-  --input-secondary-boxShadow: var(  --light-input-secondary-boxShadow);
-  --input-secondary-boxShadow-focus: var(  --light-input-secondary-boxShadow-focus);
-  --input-secondary-boxShadow-hover: var(  --light-input-secondary-boxShadow-hover);
-  --input-secondary-boxShadow-active: var(  --light-input-secondary-boxShadow-active);
-  --input-secondary-boxShadow-disabled: var(  --light-input-secondary-boxShadow-disabled);
-
-
-
-  --input-primary-boxShadow: var(  --light-input-primary-boxShadow);
-  --input-primary-boxShadow-focus: var(  --light-input-primary-boxShadow-focus);
-  --input-primary-boxShadow-hover: var(  --light-input-primary-boxShadow-hover);
-  --input-primary-boxShadow-active: var(  --light-input-primary-boxShadow-active);
-  --input-primary-boxShadow-disabled: var(  --light-input-primary-boxShadow-disabled);
-  --input-secondary-boxShadow: var(  --light-input-secondary-boxShadow);
-  --input-secondary-boxShadow-focus: var(  --light-input-secondary-boxShadow-focus);
-  --input-secondary-boxShadow-hover: var(  --light-input-secondary-boxShadow-hover);
-  --input-secondary-boxShadow-active: var(  --light-input-secondary-boxShadow-active);
-  --input-secondary-boxShadow-disabled: var(  --light-input-secondary-boxShadow-disabled);
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   --input-primary-text-color:  var(--dark-input-primary-text-color);
-   --input-primary-text-color-hover: var(--dark-input-primary-text-color-hover);
-   --input-secondary-text-color: var(--dark-input-secondary-text-color);
-   --input-secondary-text-color-hover: var(--dark-input-secondary-text-color-hover);
-   --input-primary-text-color-focus: var(--dark-input-primary-text-color-focus);
-   --input-secondary-text-color-focus: var(--dark-input-secondary-text-color-focus);
-   --input-primary-placeholder-color: var(--dark-input-primary-placeholder-color);
-   --input-primary-placeholder-color-hover: var(--dark-input-primary-placeholder-color-hover);
-   --input-secondary-placeholder-color: var(--dark-input-secondary-placeholder-color);
-   --input-secondary-placeholder-color-hover: var(--dark-input-secondary-placeholder-color-hover);
-   --input-primary-placeholder-color-focus: var(--dark-input-primary-placeholder-color-focus);
-   --input-secondary-placeholder-color-focus: var(--dark-input-secondary-placeholder-color-focus);
-   --input-primary-border-color: var(--dark-input-primary-border-color);
-   --input-primary-border-color-hover: var(--dark-input-primary-border-color-hover);
-   --input-secondary-border-color: var(--dark-input-secondary-border-color);
-   --input-secondary-border-color-hover: var(--dark-input-secondary-border-color-hover);
-   --input-disabled-border-color: var(--dark-input-disabled-border-color);
-   --input-disabled-border-color-hover: var(--dark-input-disabled-border-color-hover);
-   --input-primary-border-color-focus: var(--dark-input-primary-border-color-focus);
-   --input-secondary-border-color-focus: var(--dark-input-secondary-border-color-focus);
-   --input-disabled-boxShadow: var(--dark-input-disabled-boxShadow);
-   --input-disabled-boxShadow-hover: var(--dark-input-disabled-boxShadow-hover);
-   --input-primary-boxShadow-focus:var(--dark-input-primary-boxShadow-focus);
-   --input-secondary-boxShadow-focus:var( -dark--input-secondary-boxShadow-focus);
-
-
-
-
-
-
-
-
-
-
-*/
-
-  --dark-input-border-color: #f0b906;
-  --dark-input-border-color-hover: #340f44;
-  --dark-input-border-radius: 5px;
+  /* ! ⬇️⬇️⬇️===FIELD MESSAGE COLORS===⬇️⬇️⬇️ */
+  --L-primary-hint-border: rgb(144, 136, 136);
+  --L-primary-success-border: rgb(47, 255, 0);
+  --L-primary-error-border: rgb(255, 0, 0);
+  --L-primary-warning-border: rgb(251, 255, 0);
+
+  --D-primary-hint-border: rgb(255, 255, 255);
+  --D-primary-success-border: rgb(45, 195, 11);
+  --D-primary-error-border: rgb(255, 0, 0);
+  --D-primary-warning-border: rgb(251, 255, 0);
+
+  /* ! ⬆️⬆️⬆️===FIELD MESSAGE COLORS===⬆️⬆️⬆️ */
+
+  /* ! ⬇️⬇️⬇️===INPUT COLORS===⬇️⬇️⬇️ */
+  --L-input-primary-bg-color: rgb(241, 235, 235);
+  --L-input-primary-text-color: rgba(1, 1, 1, 0.792);
+  --L-input-primary-text-color-FOC: rgb(0, 0, 0);
+  --L-input-primary-text-color-HOV: rgb(45, 44, 44);
+  --L-input-primary-plHolder-color: rgba(129, 130, 128, 0.764);
+  --L-input-primary-plHolder-color-HOV: rgb(74, 69, 69);
+  --L-input-primary-plHolder-color-DIS: rgba(99, 97, 97, 0.707);
+  --L-input-primary-label-color: #7a10ab;
+  --L-input-primary-label-color-HOV: #560c78;
+  --L-input-primary-border-color: 1px solid #571b738e;
+  --L-input-primary-icon-color: #7c22a6;
+
+  --L-input-primary-border-color-HOV: 1px solid #560c78;
+  --L-input-primary-border-color-FOC: 1px solid #480666;
+  --L-input-primary-border-color-DIS: 1px solid #ff0000;
+  --L-input-primary-boxShadow: 0 2px 8px 0 #7f3b9f29, 0 1.5px 4px 0 #571b730d;
+  --L-input-primary-boxShadow-FOC: 0 2px 6px 0 #7f3b9f3d, 0 1px 4px 0 #571b731a;
+  --L-input-primary-boxShadow-DIS: 0 2px 6px 0 #fc00003d, 0 1px 4px 0 #ff00001a;
+  --L-input-primary-boxShadow-HOV: 0 2px 6px 0 #7f3b9f3d, 0 1px 4px 0 #571b731a;
+
+  --D-input-primary-bg-color: rgb(90, 13, 116);
+  --D-input-primary-text-color: rgba(255, 255, 255, 0.929);
+  --D-input-primary-text-color-FOC: rgb(255, 255, 255);
+  --D-input-primary-text-color-HOV: rgb(255, 196, 0);
+  --D-input-primary-plHolder-color: rgba(252, 254, 250, 0.764);
+  --D-input-primary-plHolder-color-HOV: rgb(183, 157, 11);
+  --D-input-primary-plHolder-color-DIS: rgba(255, 255, 255, 0.764);
+  --D-input-primary-label-color: #f1bd03;
+  --D-input-primary-label-color-HOV: #0acd37;
+  --D-input-primary-border-color: 1px solid #ff6200c2;
+  --D-input-primary-icon-color: #ffcc00;
+  --D-input-primary-border-color-HOV: 1px solid #2e005d;
+  --D-input-primary-border-color-FOC: 1px solid #ff8300;
+  --D-input-primary-border-color-DIS: 1px solid #ff0000;
+  --D-input-primary-boxShadow: 0 2px 8px 0 #2f005dbd, 0 1.5px 4px 0 #571b730d;
+  --D-input-primary-boxShadow-FOC: 0 2px 6px 0 #ff8300, 0 1px 4px 0 #571b731a;
+  --D-input-primary-boxShadow-DIS: 0 2px 6px 0 #ff000096, 0 1px 4px 0 #ff00001a;
+  --D-input-primary-boxShadow-HOV: 0 1px 3px 0 #ff62008f, 0 1px 2px 0 #ff6200a2;
+
+  /* ! ⬆️⬆️⬆️===INPUT COLORS===⬆️⬆️⬆️ */
+
+  /* ! ⬇️⬇️⬇️===INPUT COLORS===⬇️⬇️⬇️ */
+
+  --L-btn-primary-bg-color: #571b73;
+  --L-btn-primary-text-color: #f3f0f4e8;
+  --L-btn-primary-border-color: #ffc40077;
+  --L-btn-primary-boxShadow-color: #571b7362;
+  --L-btn-primary-bg-color-HOV: #571b73;
+  --L-btn-primary-text-color-HOV: #ffffff;
+  --L-btn-primary-border-color-DIS: #571b73;
+
+  --L-btn-secondary-bg-color: #beb9b9;
+  --L-btn-secondary-text-color: #080808;
+  --L-btn-secondary-border-color: #04040453;
+  --L-btn-secondary-boxShadow-color: #731b1b62;
+  --L-btn-secondary-bg-color-HOV: #ff0000;
+  --L-btn-secondary-text-color-HOV: #ffffff;
+  --L-btn-secondary-border-color-DIS: #ff0000;
+
+  --L-btn-tertiary-bg-color: #ffc400;
+  --L-btn-tertiary-text-color: #000000;
+  --L-btn-tertiary-border-color: #000000;
+  --L-btn-tertiary-boxShadow-color: #82671962;
+  --L-btn-tertiary-bg-color-HOV: #01f01d;
+  --L-btn-tertiary-text-color-HOV: #000000c3;
+  --L-btn-tertiary-border-color-DIS: #000000;
+
+  --D-btn-primary-bg-color: #0acd37;
+  --D-btn-primary-text-color: #ffffff;
+  --D-btn-primary-border-color: rgb(255, 255, 255);
+  --D-btn-primary-boxShadow-color: #ffffff93;
+  --D-btn-primary-bg-color-HOV: rgb(251, 163, 0);
+  --D-btn-primary-text-color-HOV: rgb(255, 255, 255);
+  --D-btn-primary-border-color-DIS: #ff0000;
+
+  --D-icon-primary-stroke-color: rgb(251, 163, 0);
+  --D-icon-secondary-stroke-color: #0acd37;
+  --D-icon-tertiary-stroke-color: #d3d0d0;
+  --D-icon-primary-stroke-color-HOV: #d3d0d0;
+  --D-icon-secondary-stroke-color-HOV: #f1bd03;
+  --D-icon-tertiary-stroke-color-HOV: #0acd37;
+
+  --D-btn-secondary-bg-color: #ff0000;
+  --D-btn-secondary-text-color: #ffffffc7;
+  --D-btn-secondary-border-color: #000000;
+  --D-btn-secondary-boxShadow-color: #571b73;
+  --D-btn-secondary-bg-color-HOV: #c11616;
+  --D-btn-secondary-text-color-HOV: #ffffff;
+  --D-btn-secondary-border-color-DIS: #ff0000;
+
+  --D-btn-tertiary-bg-color: rgb(251, 117, 0);
+  --D-btn-tertiary-text-color: #ffffff;
+  --D-btn-tertiary-border-color: #26ff00;
+  --D-btn-tertiary-boxShadow-color: #26ff00;
+  --D-btn-tertiary-icon-color: #571b73;
+  --D-btn-tertiary-bg-color-HOV: #0acd37;
+  --D-btn-tertiary-text-color-HOV: #ffffff;
+  --D-btn-tertiary-border-color-DIS: #571b73;
+
+  /* ! ⬆️⬆️⬆️===INPUT COLORS===⬆️⬆️⬆️ */
 }
-
-/* 
-
-
-#ff8300
-#f0b906
-*/

@@ -12,6 +12,7 @@
 
 .FieldMessage.hint {
   border-left: 5px solid var(--primary-hint-border);
+  opacity: 0.5;
 }
 
 .FieldMessage.error {
