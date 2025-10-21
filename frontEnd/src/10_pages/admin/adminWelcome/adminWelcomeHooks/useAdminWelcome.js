@@ -16,8 +16,7 @@ export const useAdminWelcome = () => {
   });
 
   return {
-    signup_props: {},
-    signin_props: {},
-    forgotPassword_props: {},
+    states: { activeForm: states.activeForm },
+    handlers: { handleActiveForm: handlers.handleActiveForm },
   };
 };

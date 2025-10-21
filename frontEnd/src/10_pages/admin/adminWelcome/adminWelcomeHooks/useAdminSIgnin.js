@@ -1,11 +1,17 @@
 import { useMemo, useState, useCallback, useEffect } from "react";
 
-export const useAdminSIgnin = () => {
+export const useAdminSignin = () => {
   const [adminSigninForm, setAdminSigninForm] = useState({
     email: "",
     password: "",
+    rememberMe: false,
   });
   const [isForgotPassword, setIsForgotPassword] = useState(false);
+
+  const handleSignin_submit = () => {};
+  const handleSignin_change = (e) => {
+    setAdminSigninForm({ ...adminSigninForm, [e.target.name]: e.target.value });
+  };
 
   return {
     states: {
@@ -17,9 +23,8 @@ export const useAdminSIgnin = () => {
       setIsForgotPassword,
     },
     handlers: {
-      handleSignin: () => {
-        console.log("handleSignin");
-      },
+      handleSignin_submit,
+      handleSignin_change,
     },
   };
 };

@@ -1,10 +1,47 @@
 import React from "react";
-import { useAdminSIgnin } from "../adminWelcomeHooks/useAdminSIgnin";
-import "./_styles/adminSIgnin.css";
+import { useAdminSignin } from "../adminWelcomeHooks/useAdminSignin";
+import {
+  InputGlobal,
+  PasswordInput,
+} from "../../../../01_components/components.index";
+import "./_styles/adminSignin.css";
 
-const AdminSIgnin = () => {
-  const { states, setters, handlers } = useAdminSIgnin();
-  return <div className="AdminSIgnup">AdminSIgnup</div>;
+const AdminSignin = () => {
+  const { states, setters, handlers } = useAdminSignin();
+  return (
+    <form className="AdminSignup_form">
+      <InputGlobal
+        type="email"
+        placeholder="Email"
+        name="email"
+        onChange={handlers.handleSignin_change}
+        value={states.adminSigninForm.email}
+        withLabel={true}
+        labelProps={{
+          title: "Email",
+          message: "Email",
+        }}
+        withLeftIcon={true}
+        leftIconProps={{
+          isActive: true,
+          type: "lucide",
+          lucid: "Mail",
+        }}
+        withMessage={true}
+        messageProps={{
+          withErrorMessage: false,
+          errorMessage: "",
+        }}
+      />
+      <PasswordInput
+        type="signIn"
+        placeholder="Password"
+        value={states.adminSigninForm.password}
+        name="password"
+        onChange={handlers.handleSignin_change}
+      />
+    </form>
+  );
 };
 
-export default AdminSIgnin;
+export default AdminSignin;

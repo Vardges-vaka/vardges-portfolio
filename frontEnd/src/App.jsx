@@ -29,6 +29,8 @@ import {
   Contact,
 } from "./10_pages/public/public.index.js";
 
+import AdminWelcome from "./10_pages/admin/adminWelcome/AdminWelcome.jsx";
+
 // ! Admin Routes
 import { ADMIN_ROUTES, adminDashboardRoute } from "./06_routes/adminRoutes.jsx";
 
@@ -67,6 +69,7 @@ function App() {
                 </UserProvider> */}
 
                 <Route path="/dashboard" element={AdminDashboardElement} />
+                <Route path="/admin" element={<AdminWelcome />} />
 
                 <Route path="/test" element={<Test />} />
                 <Route path="/" element={<Home />} />

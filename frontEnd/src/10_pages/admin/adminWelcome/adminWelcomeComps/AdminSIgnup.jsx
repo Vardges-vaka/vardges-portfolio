@@ -1,10 +1,10 @@
 import React from "react";
-import { useAdminSIgnup } from "../adminWelcomeHooks/useAdminSIgnup";
+import { useAdminSignup } from "../adminWelcomeHooks/useAdminSignup";
 import "./_styles/adminSIgnup.css";
 
-const AdminSIgnup = () => {
-  const { states, setters, handlers } = useAdminSIgnup();
-  return <div className="AdminSIgnup">AdminSIgnup</div>;
+const AdminSignup = () => {
+  const { states, setters, handlers } = useAdminSignup();
+  return <form className="AdminSignup">Signup</form>;
 };
 
-export default AdminSIgnup;
+export default AdminSignup;

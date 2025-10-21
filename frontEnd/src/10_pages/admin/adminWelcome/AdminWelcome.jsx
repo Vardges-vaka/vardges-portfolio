@@ -1,15 +1,27 @@
 import React from "react";
 import {
-  AdminSIgnup,
-  AdminSIgnin,
+  AdminSignup,
+  AdminSignin,
 } from "./adminWelcomeComps/_adminWelcomeComps.index";
 import "./_styles/adminWelcome.css";
-import { useAdminWelcome } from "./adminWelcomeHooks/_adminWelcomeHooks.index";
+import { useAdminWelcome } from "./adminWelcomeHooks/useAdminWelcome.js";
 
 const AdminWelcome = () => {
-  const { signup_props, signin_props, forgotPassword_props } =
-    useAdminWelcome();
-  return <div className="AdminWelcome">AdminWelcome</div>;
+  const { states, handlers } = useAdminWelcome();
+  return (
+    <div className="AdminWelcome">
+      <button data-value="signin" onClick={handlers.handleActiveForm}>
+        Signin
+      </button>
+      <button data-value="signup" onClick={handlers.handleActiveForm}>
+        Signup
+      </button>
+      <div className="AdminWelcome_form">
+        {states.activeForm === "signin" && <AdminSignin />}
+        {states.activeForm === "signup" && <AdminSignup />}
+      </div>
+    </div>
+  );
 };
 
 export default AdminWelcome;

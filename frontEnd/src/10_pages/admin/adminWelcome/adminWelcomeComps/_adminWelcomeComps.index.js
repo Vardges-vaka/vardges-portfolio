@@ -1,2 +1,2 @@
-export { default as AdminSIgnup } from "./AdminSIgnup";
-export { default as AdminSIgnin } from "./AdminSIgnin";
+export { default as AdminSignup } from "./AdminSignup";
+export { default as AdminSignin } from "./AdminSignin";

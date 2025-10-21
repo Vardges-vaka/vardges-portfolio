@@ -16,6 +16,7 @@ export const i18nConfig = {
     "achievements",
     "vision",
     "values",
+    "validators",
   ],
   defaultNS: "common",
 
