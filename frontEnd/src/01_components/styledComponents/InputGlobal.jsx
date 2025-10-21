@@ -102,7 +102,7 @@ const InputGlobal = ({
       Input_classname += ` ${className}`;
     }
 
-    console.log("Input_classname", Input_classname);
+    // console.log("Input_classname", Input_classname);
 
     return Input_classname;
   };
@@ -150,7 +150,7 @@ const InputGlobal = ({
       />
     );
   };
-  console.log("messageProps", messageProps);
+  // console.log("messageProps", messageProps);
   return (
     <div className={Input_container_classname} {...containerProps}>
       {withLabel && (

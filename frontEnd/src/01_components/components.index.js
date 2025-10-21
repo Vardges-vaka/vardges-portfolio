@@ -1,6 +1,11 @@
-export { default as ButtonGlobal } from "./styledComponents/ButtonGlobal.jsx";
 export { default as IconGlobal } from "./styledComponents/IconGlobal.jsx";
+export { default as ButtonGlobal } from "./styledComponents/ButtonGlobal.jsx";
 export { default as InputGlobal } from "./styledComponents/InputGlobal.jsx";
+
+export { default as SelectGlobal } from "./styledComponents/SelectGlobal.jsx";
+export { default as PasswordInput } from "./styledComponents/styledInputs/PasswordInput.jsx";
+export { default as CheckboxGlobal } from "./styledComponents/CheckboxGlobal.jsx";
+
 export { default as Logo } from "./styledComponents/styledLogo/Logo.jsx";
 
 // UI Icons

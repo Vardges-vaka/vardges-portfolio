@@ -18,7 +18,7 @@ const IconGlobal = ({
   if (!isActive) {
     return null;
   }
-// 
+  //
   const icon_classname = className
     ? `IconGlobal_Icon ${version !== "primary" ? version : ""} ${className}`
     : `IconGlobal_Icon ${version !== "primary" ? version : ""}`;
@@ -44,7 +44,7 @@ const IconGlobal = ({
           </span>
         );
       }
-      console.log("Component returning Lucide Icon", Component);
+      // console.log("Component returning Lucide Icon", Component);
       return <Component {...iconProps} className={icon_classname} />;
     } else if (type === "svg") {
       return <img src={svg_src} {...iconProps} className={icon_classname} />;

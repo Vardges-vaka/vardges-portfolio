@@ -10,8 +10,8 @@ const FieldMessage = ({
   type,
   version = "primary",
 }) => {
-  console.log("isActive", isActive);
-  if (!isActive) {
+  // console.log("isActive", isActive);
+  if (!isActive || !message) {
     return null;
   }
   const FieldMessage_classname = `FieldMessage ${type ? type : ""} ${

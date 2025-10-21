@@ -6,6 +6,7 @@ import {
   LanguageProvider,
   ProfileProvider,
   LanguageRouteWrapper,
+  UserProvider,
 } from "./02_context/context.index";
 
 // Components
@@ -28,6 +29,9 @@ import {
   Contact,
 } from "./10_pages/public/public.index.js";
 
+// ! Admin Routes
+import { ADMIN_ROUTES, adminDashboardRoute } from "./06_routes/adminRoutes.jsx";
+
 // ! Test
 import Test from "./Test";
 
@@ -40,6 +44,10 @@ import "./09_styles/App.css";
 import "./09_styles/globalColorsNew.css";
 
 function App() {
+  const AdminDashboardElement = (
+    <UserProvider>{adminDashboardRoute.element}</UserProvider>
+  );
+
   return (
     <ThemeProvider>
       <LanguageProvider>
@@ -48,6 +56,18 @@ function App() {
             <Suspense fallback={<p>Loading...</p>}>
               <PublicHeader />
               <Routes>
+                {/* <UserProvider>
+                  {ADMIN_ROUTES.map((route) => (
+                    <Route
+                      key={route.path}
+                      path={route.path}
+                      element={route.element}
+                    />
+                  ))}
+                </UserProvider> */}
+
+                <Route path="/dashboard" element={AdminDashboardElement} />
+
                 <Route path="/test" element={<Test />} />
                 <Route path="/" element={<Home />} />
                 <Route
