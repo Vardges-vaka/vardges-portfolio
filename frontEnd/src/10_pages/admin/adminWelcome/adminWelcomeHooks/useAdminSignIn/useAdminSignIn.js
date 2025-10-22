@@ -1,6 +1,6 @@
 import { useMemo, useState, useCallback, useEffect } from "react";
 
-export const useAdminSignin = () => {
+export const useAdminSignIn = () => {
   const [adminSigninForm, setAdminSigninForm] = useState({
     email: "",
     password: "",

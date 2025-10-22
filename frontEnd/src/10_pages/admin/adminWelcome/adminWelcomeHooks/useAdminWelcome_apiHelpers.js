@@ -7,8 +7,22 @@ import {
 
 export const useAdminWelcome_apiHelpers = () => {
   const adminSignin_submit = () => {};
-  const adminSignup_submit = () => {};
   const adminForgotPassword_submit = () => {};
+
+  const adminSignup_submit = useCallback(async (payload) => {
+    try {
+      const response = await AdminSignUp_helper(payload);
+      if (response.success) {
+        return response;
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      console.log("adminSignup_submit completed");
+    }
+
+    return response;
+  }, []);
 
   return {
     api_helpers: {

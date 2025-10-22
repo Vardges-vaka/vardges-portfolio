@@ -1,5 +1,5 @@
 import { AUTH } from "../../../../03_config/config.index.js";
-import { useTranslation } from "react-i18next";
+
 import { AdminSignUp_validator } from "../_adminAPI_validators/_adminAPI_validators.index.js";
 
 const endpoint = AUTH.SIGNUP.ENDPOINT;
@@ -8,9 +8,8 @@ const properties = AUTH.SIGNUP.PROPERTIES;
 const displayName = AUTH.SIGNUP.DISPLAY_NAME;
 const isDebug = true;
 
-const AdminSignUp_helper = async (payload) => {
-  const { t } = useTranslation("validators");
-  const { t: tCommon } = useTranslation("common");
+const AdminSignUp_helper = async (payload, t, tCommon) => {
+
   isDebug &&
     console.log(`${displayName} is [CALLED] | ENDPOINT: [${endpoint}]`);
 

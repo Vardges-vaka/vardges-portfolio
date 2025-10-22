@@ -1,5 +1,5 @@
 import React from "react";
-import { useAdminSignin } from "../adminWelcomeHooks/useAdminSignin";
+// import { useAdminSignin } from "../adminWelcomeHooks/useAdminSignIn/useAdminSignIn";
 import {
   InputGlobal,
   PasswordInput,
@@ -7,10 +7,10 @@ import {
 import "./_styles/adminSignin.css";
 
 const AdminSignin = () => {
-  const { states, setters, handlers } = useAdminSignin();
+  // const { states, setters, handlers } = useAdminSignin();
   return (
     <form className="AdminSignup_form">
-      <InputGlobal
+      {/* <InputGlobal
         type="email"
         placeholder="Email"
         name="email"
@@ -39,7 +39,7 @@ const AdminSignin = () => {
         value={states.adminSigninForm.password}
         name="password"
         onChange={handlers.handleSignin_change}
-      />
+      /> */}
     </form>
   );
 };

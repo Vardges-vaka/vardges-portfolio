@@ -1,12 +1,28 @@
+import { user_signUp_srv } from "../_utils/userCntrl_utils.index.js";
+import {
+  catch_errorHandler_cntrl,
+  validRespond,
+} from "../../../03_services/_services.index.js";
+import { setJWT_Cookie } from "../../../03_services/_services.index.js";
+const isDebug = true;
+const displayName = " | user_signUp_cntrl.js |<=>| ";
+
 const user_signUp_cntrl = async (req, res) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email });
-  if (!user) {
-    return res.status(401).json({ message: "User not found" });
-  }
-  const isPasswordCorrect = await bcrypt.compare(password, user.password);
-  if (!isPasswordCorrect) {
-    return res.status(401).json({ message: "Invalid password" });
+  isDebug && console.log(`🛑 ↘️ 🏃‍➡️ ${displayName} |<=>| [STARTED]`);
+
+  try {
+    // Pass res to service so it can set cookies/session
+    const { success, message, data, session_data, token } =
+      await user_signUp_srv(req, isDebug);
+
+    req.session.user = session_data;
+    token && setJWT_Cookie(res, token);
+
+    return validRespond(res, isDebug, displayName, success, message, data);
+  } catch (error) {
+    return catch_errorHandler_cntrl(res, displayName, isDebug, error);
+  } finally {
+    isDebug && console.log(`🚩🚩🚩${displayName}[COMPLETED]`);
   }
 };
 

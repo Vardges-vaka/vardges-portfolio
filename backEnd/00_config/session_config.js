@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import session from "express-session";
 
-import { isProduction } from "./server_config.js";
+export const isProduction = process.env.NODE_ENV === "production";
 
 dotenv.config();
 

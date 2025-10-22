@@ -14,6 +14,11 @@ const PasswordInput = ({
   newPassword = "", // For "signUp" and "change" types
   confirmPassword = "", // For "signUp" and "change" types
 
+  // Field names (allow dynamic naming)
+  currentPasswordName = "currentPassword", // For "signIn" and "change"
+  newPasswordName = "password", // For "signUp" and "change" - default to "password"
+  confirmPasswordName = "confirmPassword", // For "signUp" and "change"
+
   // Handlers
   onCurrentChange, // For "change" type
   onNewChange, // For "signUp" and "change" types
@@ -181,7 +186,7 @@ const PasswordInput = ({
           version={version}
           placeholder={t("inputs.password.placeholder.signIn")}
           value={currentPassword}
-          name="password"
+          name={currentPasswordName}
           withLabel={true}
           labelProps={{
             title: t("inputs.password.label.signIn"),
@@ -226,7 +231,7 @@ const PasswordInput = ({
             version={version}
             placeholder={t("inputs.password.placeholder.signUp")}
             value={newPassword}
-            name="newPassword"
+            name={newPasswordName}
             withLabel={true}
             labelProps={{
               title: t("inputs.password.label.new"),
@@ -266,7 +271,7 @@ const PasswordInput = ({
             version={version}
             placeholder={t("inputs.password.placeholder.repeat")}
             value={confirmPassword}
-            name="confirmPassword"
+            name={confirmPasswordName}
             withLabel={true}
             labelProps={{
               title: t("inputs.password.label.repeat"),
@@ -316,7 +321,7 @@ const PasswordInput = ({
             version={version}
             placeholder={t("inputs.password.placeholder.current")}
             value={currentPassword}
-            name="currentPassword"
+            name={currentPasswordName}
             withLabel={true}
             labelProps={{
               title: t("inputs.password.label.current"),
@@ -354,7 +359,7 @@ const PasswordInput = ({
             version={version}
             placeholder={t("inputs.password.placeholder.new")}
             value={newPassword}
-            name="newPassword"
+            name={newPasswordName}
             withLabel={true}
             labelProps={{
               title: t("inputs.password.label.new"),
@@ -394,7 +399,7 @@ const PasswordInput = ({
             version={version}
             placeholder={t("inputs.password.placeholder.repeat")}
             value={confirmPassword}
-            name="confirmPassword"
+            name={confirmPasswordName}
             withLabel={true}
             labelProps={{
               title: t("inputs.password.label.repeat"),
@@ -442,6 +447,9 @@ PasswordInput.propTypes = {
   currentPassword: PropTypes.string,
   newPassword: PropTypes.string,
   confirmPassword: PropTypes.string,
+  currentPasswordName: PropTypes.string,
+  newPasswordName: PropTypes.string,
+  confirmPasswordName: PropTypes.string,
   onCurrentChange: PropTypes.func,
   onNewChange: PropTypes.func,
   onConfirmChange: PropTypes.func,

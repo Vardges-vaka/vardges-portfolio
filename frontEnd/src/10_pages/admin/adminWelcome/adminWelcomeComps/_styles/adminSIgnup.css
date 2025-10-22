@@ -1,1 +1,48 @@
+.adminSignup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
 
+.adminSignup__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.adminSignup__checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.adminSignup__checkbox input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.adminSignup__checkbox span {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.adminSignup__message {
+  margin: 0.5rem 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .adminSignup {
+    padding: 1rem;
+    max-width: 100%;
+  }
+}

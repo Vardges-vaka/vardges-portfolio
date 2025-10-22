@@ -1,10 +1,12 @@
 import express from "express";
-
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-import { userRoutes } from "./08_routes/_routes.index.js";
 
+// !===== Routes =====
+import { userRoutes, accessRoutes } from "./08_routes/_routes.index.js";
+
+// !===== Config =====
 import {
   corsOptions,
   connectDB,
@@ -31,12 +33,13 @@ app.use(
 );
 connectDB();
 
-app.use("/api/user", userRoutes);
+app.use("/api/user", userRoutes); ///    /api/user/auth/signup
+app.use("/api/access", accessRoutes); // /api/user/auth/signup
 
 app.use(setCSPHeader);
 
 app.listen(BACKEND_PORT, () => {
-  console.log(`Server listening on port ${BACKEND_PORT}`);
+  console.log(`✅ 💻 📟 [SERVER] 🔗 [PORT: ${BACKEND_PORT}] Connected `);
 });
 
 export default app;

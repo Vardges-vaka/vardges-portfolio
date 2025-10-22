@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const settingsSchema = new mongoose.Schema(
   {
     languages: {
       english: { type: Boolean, default: true },
@@ -13,19 +13,14 @@ const userSchema = new mongoose.Schema(
       amazonSES: { type: Boolean, default: false },
       nodeMailer: { type: Boolean, default: false },
     },
-    accessControl: {
-      accessCodes: [
-        {
-          code: { type: String },
-          usedAt: { type: String },
-          usedIP: { type: String },
-        },
-      ],
+    storage: {
+      s3: { type: Boolean, default: true },
+      local: { type: Boolean, default: false },
     },
   },
   { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
+const Settings = mongoose.model("Settings", settingsSchema);
 
-export default User;
+export default Settings;

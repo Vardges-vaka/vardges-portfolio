@@ -4,7 +4,15 @@ const userSchema = new mongoose.Schema(
   {
     name: { type: String },
     password: { type: String },
-    role: { type: String },
+    email: { type: String },
+    access: {
+      role: { type: String, enum: ["guest", "user", "admin", "superAdmin"] },
+      position: { type: String },
+      usedCode: { type: String },
+      usedAt: { type: Date },
+      usedIP: { type: String },
+    },
+
     CV: {
       resume: { type: mongoose.Schema.Types.ObjectId, ref: "CV" },
       reference: { type: String },
@@ -22,20 +30,20 @@ const userSchema = new mongoose.Schema(
       },
     ],
 
-    contact: {
-      email: { type: String },
-      phone: { type: String },
-      address: { type: String },
-      website: { type: String },
-      socials: [
-        {
-          name: { type: String },
-          link: { type: String },
-          isActive: { type: Boolean, default: true },
-        },
-      ],
-      isActive: { type: Boolean, default: true },
-    },
+    // contact: {
+    //   email: { type: String },
+    //   phone: { type: String },
+    //   address: { type: String },
+    //   website: { type: String },
+    //   socials: [
+    //     {
+    //       name: { type: String },
+    //       link: { type: String },
+    //       isActive: { type: Boolean, default: true },
+    //     },
+    //   ],
+    //   isActive: { type: Boolean, default: true },
+    // },
 
     health: {},
     wardrobe: {},

@@ -1,7 +1,8 @@
 const displayName = "AdminSignUp_validator.js";
 
 export const AdminSignUp_validator = (payload, t, isDebug) => {
-  const { email, password, confirmPassword, key, rememberMe } = payload;
+  const { email, password, accessCode, rememberMe } = payload;
+  console.log("payload", payload);
   if (!email) {
     isDebug &&
       console.error(
@@ -18,28 +19,29 @@ export const AdminSignUp_validator = (payload, t, isDebug) => {
       );
     return t("passwordRequired");
   }
-  if (!validator.isEmail(email)) {
-    isDebug &&
-      console.error(`${displayName} is [VALIDATION_ERROR]`, "Invalid email");
-    return t("invalidEmail");
-  }
-  if (!confirmPassword) {
-    isDebug &&
-      console.error(
-        `${displayName} is [VALIDATION_ERROR]`,
-        "Confirm password is required"
-      );
-    return t("confirmPasswordRequired");
-  }
-  if (password !== confirmPassword) {
-    isDebug &&
-      console.error(
-        `${displayName} is [VALIDATION_ERROR]`,
-        "Passwords do not match"
-      );
-    return t("passwordsDoNotMatch");
-  }
-  if (!key) {
+  // if (!validator.isEmail(email)) {
+  //   isDebug &&
+  //     console.error(`${displayName} is [VALIDATION_ERROR]`, "Invalid email");
+  //   return t("invalidEmail");
+  // }
+  // if (!confirmPassword) {
+  //   console.log("confirmPassword", confirmPassword);
+  //   isDebug &&
+  //     console.error(
+  //       `${displayName} is [VALIDATION_ERROR]`,
+  //       "Confirm password is required"
+  //     );
+  //   return t("confirmPasswordRequired");
+  // }
+  // if (password !== confirmPassword) {
+  //   isDebug &&
+  //     console.error(
+  //       `${displayName} is [VALIDATION_ERROR]`,
+  //       "Passwords do not match"
+  //     );
+  //   return t("passwordsDoNotMatch");
+  // }
+  if (!accessCode) {
     isDebug &&
       console.error(`${displayName} is [VALIDATION_ERROR]`, "Key is required");
     return t("keyRequired");
