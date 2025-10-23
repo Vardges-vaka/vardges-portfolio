@@ -18,11 +18,11 @@ export const AdminSignIn_validator = (payload, t, isDebug) => {
       );
     return t("passwordRequired");
   }
-  if (!validator.isEmail(email)) {
-    isDebug &&
-      console.error(`${displayName} is [VALIDATION_ERROR]`, "Invalid email");
-    return t("invalidEmail");
-  }
+  // if (!validator.isEmail(email)) {
+  //   isDebug &&
+  //     console.error(`${displayName} is [VALIDATION_ERROR]`, "Invalid email");
+  //   return t("invalidEmail");
+  // }
   if (rememberMe !== true && rememberMe !== false) {
     isDebug &&
       console.error(

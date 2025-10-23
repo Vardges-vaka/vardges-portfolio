@@ -11,7 +11,12 @@ const user_signOut_cntrl = async (req, res) => {
   isDebug && console.log(`🛑 ↘️ 🏃‍➡️ ${displayName} |<=>| [STARTED]`);
 
   try {
-    const { success, message, data } = await user_signOut_srv(req, isDebug);
+    // Pass res to service for cookie clearing
+    const { success, message, data } = await user_signOut_srv(
+      req,
+      res,
+      isDebug
+    );
 
     return validRespond(res, isDebug, displayName, success, message, data);
   } catch (error) {

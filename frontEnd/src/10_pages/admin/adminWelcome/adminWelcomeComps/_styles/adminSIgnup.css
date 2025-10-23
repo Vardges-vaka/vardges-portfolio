@@ -1,48 +1,265 @@
+/* ============================================
+   ADMIN SIGN UP - Form Container
+   ============================================ */
 .adminSignup {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 2rem;
   box-sizing: border-box;
+  animation: slideInFade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Form title/heading (optional) */
+.adminSignup__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.adminSignup__subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #64748b);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Input groups for better organization */
+.adminSignup__inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.adminSignup__inputGroup--personal {
+  padding-bottom: 0.5rem;
+  /* border-bottom: 1px solid var(--border-color, #e2e8f0); */
+}
+
+/* Checkbox styling */
 .adminSignup__checkbox {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--bg-tertiary-color);
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-tertiary-color);
+}
+
+.adminSignup__checkbox:hover {
+  background-color: var(--bg-tertiary-color-HOV);
+  border-color: var(--border-tertiary-color-HOV);
+  transform: translateY(-1px);
 }
 
 .adminSignup__checkbox label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   cursor: pointer;
   user-select: none;
+  width: 100%;
+  margin: 0;
 }
 
 .adminSignup__checkbox input[type="checkbox"] {
   width: 1.25rem;
   height: 1.25rem;
   cursor: pointer;
+  accent-color: var(--brand-primary, #3b82f6);
+  flex-shrink: 0;
 }
 
 .adminSignup__checkbox span {
   font-size: 0.95rem;
-  color: var(--text-primary);
+  color: var(--title-tertiary-color);
+  font-weight: 500;
 }
 
+/* Message styling */
 .adminSignup__message {
-  margin: 0.5rem 0;
+  margin: -0.5rem 0 0.5rem 0;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Switch to Sign In Text */
+.adminSignup__switchText {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--title-secondary-color);
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  margin-left: 0.25rem;
+}
+.adminSignup__switchText:hover {
+  /* letter-spacing: 0.3px; */
+}
+
+.adminSignup__switchLink {
+  color: var(--h2-secondary-color);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.adminSignup__switchLink:hover {
+  color: var(--text-secondary-color-HOV);
+  transform: scale(1.01) translateY(-5px) rotate(1deg) !important;
+  letter-spacing: 0.8px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Submit button spacing */
+.adminSignup > .ButtonGlobal {
+  margin-top: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Input field spacing adjustments */
+.adminSignup > .InputGlobal_container,
+.adminSignup > .passwordInput {
+  width: 100%;
+}
+
+/* Helper text for access code */
+.adminSignup__helperText {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #64748b);
+  margin-top: -0.75rem;
+  padding-left: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adminSignup__helperText::before {
+  content: "ℹ️";
+  font-size: 1rem;
+}
+
+/* Divider (optional) */
+.adminSignup__divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.adminSignup__divider::before,
+.adminSignup__divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.adminSignup__divider span {
+  padding: 0 1rem;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Loading state */
+.adminSignup.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Security badge (optional decoration) */
+.adminSignup__securityBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.05) 0%,
+    rgba(59, 130, 246, 0.05) 100%
+  );
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #64748b);
+  margin-top: -0.5rem;
+}
+
+.adminSignup__securityBadge::before {
+  content: "🔒";
+  font-size: 1.1rem;
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
   .adminSignup {
-    padding: 1rem;
-    max-width: 100%;
+    gap: 1.25rem;
+  }
+
+  .adminSignup__title {
+    font-size: 1.5rem;
+  }
+
+  .adminSignup__checkbox {
+    padding: 0.6rem;
+  }
+
+  .adminSignup > .ButtonGlobal {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .adminSignup__helperText {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminSignup {
+    gap: 1rem;
+  }
+
+  .adminSignup__title {
+    font-size: 1.35rem;
+  }
+
+  .adminSignup__subtitle {
+    font-size: 0.875rem;
+  }
+
+  .adminSignup__checkbox span {
+    font-size: 0.875rem;
+  }
+
+  .adminSignup__helperText {
+    font-size: 0.75rem;
   }
 }

@@ -2,6 +2,7 @@ import { user_signIn_srv } from "../_utils/userCntrl_utils.index.js";
 import {
   catch_errorHandler_cntrl,
   validRespond,
+  setJWT_Cookie,
 } from "../../../03_services/_services.index.js";
 
 const isDebug = true;
@@ -11,7 +12,23 @@ const user_signIn_cntrl = async (req, res) => {
   isDebug && console.log(`🛑 ↘️ 🏃‍➡️ ${displayName} |<=>| [STARTED]`);
 
   try {
-    const { success, message, data } = await user_signIn_srv(req, isDebug);
+    const { success, message, data, session_data, token } =
+      await user_signIn_srv(req, isDebug);
+
+    // Set session with user data
+    if (success && session_data) {
+      req.session.user = session_data;
+      isDebug &&
+        console.log(
+          `✅${displayName}Session set for user: ${session_data._id}`
+        );
+    }
+
+    // Set JWT cookie if token exists (rememberMe was true)
+    if (success && token) {
+      setJWT_Cookie(res, token);
+      isDebug && console.log(`✅${displayName}JWT cookie set`);
+    }
 
     return validRespond(res, isDebug, displayName, success, message, data);
   } catch (error) {

@@ -1,12 +1,12 @@
 import { AUTH } from "../../../../03_config/config.index.js";
 
-const endpoint = AUTH.SIGNOUT.ENDPOINT;
-const properties = AUTH.SIGNOUT.PROPERTIES;
+const endpoint = AUTH.CHECK.ENDPOINT;
+const properties = AUTH.CHECK.PROPERTIES;
 
-const displayName = AUTH.SIGNOUT.DISPLAY_NAME;
+const displayName = AUTH.CHECK.DISPLAY_NAME;
 const isDebug = true;
 
-const AdminSignOut_helper = async (t, tCommon) => {
+const AdminAuthCheck_helper = async () => {
   isDebug &&
     console.log(`${displayName} is [CALLED] | ENDPOINT: [${endpoint}]`);
 
@@ -20,19 +20,19 @@ const AdminSignOut_helper = async (t, tCommon) => {
     isDebug &&
       console.log(`${displayName} is [BACKEND RESPONSE]`, backendResponse);
 
-    // Return backend's success status, not always true
     return {
       success: backendResponse.success || false,
-      message: backendResponse.message || tCommon("API.success"),
-      data: backendResponse.payload || backendResponse, // Backend uses 'payload' not 'data'
+      message: backendResponse.message || "Auth check completed",
+      data: backendResponse.payload || null, // Backend uses 'payload' not 'data'
     };
   } catch (error) {
     isDebug && console.error(`${displayName} is [ERROR]`, error);
     return {
       success: false,
-      message: error.message || tCommon("API.globalError"),
+      message: error.message || "Failed to check authentication",
+      data: null,
     };
   }
 };
 
-export default AdminSignOut_helper;
+export default AdminAuthCheck_helper;

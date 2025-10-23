@@ -61,6 +61,35 @@ const AUTH = {
       };
     },
   },
+
+  // AdminResetPassword_helper.js configurations
+  RESET_PASSWORD: {
+    ENDPOINT: `${BACKEND_URL}/api/user/auth/reset-password`,
+    DISPLAY_NAME: "AdminResetPassword_helper.js",
+    PROPERTIES: (payload) => {
+      return {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      };
+    },
+  },
+
+  // AdminAuthCheck_helper.js configurations
+  CHECK: {
+    ENDPOINT: `${BACKEND_URL}/api/user/auth/check`,
+    DISPLAY_NAME: "AdminAuthCheck_helper.js",
+    PROPERTIES: {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    },
+  },
 };
 
 export default AUTH;

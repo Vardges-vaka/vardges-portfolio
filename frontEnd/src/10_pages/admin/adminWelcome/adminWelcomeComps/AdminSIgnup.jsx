@@ -1,5 +1,6 @@
 import React from "react";
-import { useAdminSignup } from "../adminWelcomeHooks/useAdminSignUp/useAdminSignup.js";
+import PropTypes from "prop-types";
+import { useAdminSignup } from "../adminWelcomeHooks/useAdminSignup.js";
 import {
   InputGlobal,
   PasswordInput,
@@ -8,7 +9,7 @@ import {
 import { FieldMessage } from "../../../../01_components/stateComponents/_stateComponents.index.js";
 import "./_styles/adminSIgnup.css";
 
-const AdminSignup = () => {
+const AdminSignup = ({ onSwitchToSignin }) => {
   const { states, handlers } = useAdminSignup();
 
   return (
@@ -147,8 +148,20 @@ const AdminSignup = () => {
         }}>
         {states.isLoading ? "Signing up..." : "Sign Up"}
       </ButtonGlobal>
+
+      {/* Switch to Sign In */}
+      <div className="adminSignup__switchText">
+        Already have an account?{" "}
+        <span onClick={onSwitchToSignin} className="adminSignup__switchLink">
+          Sign In
+        </span>
+      </div>
     </form>
   );
+};
+
+AdminSignup.propTypes = {
+  onSwitchToSignin: PropTypes.func,
 };
 
 export default AdminSignup;

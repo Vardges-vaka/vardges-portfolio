@@ -10,4 +10,4 @@ export {
   generateJWT,
   verifyJWT,
 } from "./authServices.js";
-export { setJWT_Cookie } from "./cookie_srv.js";
+export { setJWT_Cookie, clearJWT_Cookie } from "./cookie_srv.js";

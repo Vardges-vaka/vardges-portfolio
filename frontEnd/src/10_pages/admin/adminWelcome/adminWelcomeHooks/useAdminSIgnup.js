@@ -1,7 +1,14 @@
 import { useState, useCallback } from "react";
-import { AdminSignUp_helper } from "../../../05_helpers/apiHelpers/_apiHelpers.index.js";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { AdminSignUp_helper } from "../../../../05_helpers/apiHelpers/_apiHelpers.index.js";
+import { useUserContext } from "../../../../02_context/context.index.js";
 
 export const useAdminSignup = () => {
+  const navigate = useNavigate();
+  const { t } = useTranslation("validators");
+  const { t: tCommon } = useTranslation("common");
+  const { login } = useUserContext();
   // Form data state
   const [adminSignupForm, setAdminSignupForm] = useState({
     email: "",
@@ -102,10 +109,21 @@ export const useAdminSignup = () => {
           rememberMe: adminSignupForm.rememberMe,
         };
 
-        const response = await AdminSignUp_helper(payload);
+        const response = await AdminSignUp_helper(payload, t, tCommon);
 
         if (response && response.success) {
           setSuccess(response.message || "Signup successful!");
+
+          // Update user context with the returned user data
+          // Backend returns: { payload: { user: { _id, name, role } } }
+          if (response.data?.user) {
+            login({
+              _id: response.data.user._id,
+              name: response.data.user.name,
+              role: response.data.user.role,
+            });
+          }
+
           // Clear form on success
           setAdminSignupForm({
             email: "",
@@ -115,6 +133,10 @@ export const useAdminSignup = () => {
             name: "",
             rememberMe: false,
           });
+          // Redirect to dashboard
+          setTimeout(() => {
+            navigate("/dashboard");
+          }, 500);
         } else {
           setError(response?.message || "Signup failed. Please try again.");
         }
@@ -125,7 +147,7 @@ export const useAdminSignup = () => {
         setIsLoading(false);
       }
     },
-    [adminSignupForm]
+    [adminSignupForm, navigate, login, t, tCommon]
   );
 
   return {

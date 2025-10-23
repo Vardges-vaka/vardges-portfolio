@@ -1,4 +1,5 @@
 import { JWT_COOKIE_OPTIONS } from "../00_config/_config.index.js";
+import { isProduction } from "../00_config/_config.index.js";
 
 export const setJWT_Cookie = (res, token) => {
   try {
@@ -10,5 +11,24 @@ export const setJWT_Cookie = (res, token) => {
     };
   } catch (error) {
     throw new Error(error.message || "Internal Server Error in setJWT_Cookie");
+  }
+};
+
+export const clearJWT_Cookie = (res) => {
+  try {
+    res.clearCookie("authToken", {
+      httpOnly: true,
+      secure: isProduction,
+      sameSite: "lax",
+    });
+    return {
+      success: true,
+      message: "JWT cookie cleared successfully",
+      data: null,
+    };
+  } catch (error) {
+    throw new Error(
+      error.message || "Internal Server Error in clearJWT_Cookie"
+    );
   }
 };

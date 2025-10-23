@@ -1,19 +1,19 @@
 import { AUTH } from "../../../../03_config/config.index.js";
-import { AdminSignIn_validator } from "../_adminAPI_validators/_adminAPI_validators.index.js";
+import { AdminForgotPassword_validator } from "../_adminAPI_validators/_adminAPI_validators.index.js";
 
-const endpoint = AUTH.SIGNIN.ENDPOINT;
-const properties = AUTH.SIGNIN.PROPERTIES;
+const endpoint = AUTH.FORGOT_PASSWORD.ENDPOINT;
+const properties = AUTH.FORGOT_PASSWORD.PROPERTIES;
 
-const displayName = AUTH.SIGNIN.DISPLAY_NAME;
+const displayName = AUTH.FORGOT_PASSWORD.DISPLAY_NAME;
 const isDebug = true;
 
-const AdminSignIn_helper = async (payload, t, tCommon) => {
+const AdminForgotPassword_helper = async (email, t, tCommon) => {
   isDebug &&
     console.log(`${displayName} is [CALLED] | ENDPOINT: [${endpoint}]`);
 
-  isDebug && console.log(`${displayName} is [PAYLOAD]`, { payload });
+  isDebug && console.log(`${displayName} is [EMAIL]`, { email });
 
-  const validationErrors = AdminSignIn_validator(payload, t, isDebug);
+  const validationErrors = AdminForgotPassword_validator(email, t, isDebug);
   if (validationErrors) {
     return {
       success: false,
@@ -22,6 +22,7 @@ const AdminSignIn_helper = async (payload, t, tCommon) => {
   }
 
   try {
+    const payload = { email };
     const response = await fetch(endpoint, { ...properties(payload) });
 
     isDebug && console.log(`${displayName} is [RESPONSE]`, response);
@@ -31,7 +32,6 @@ const AdminSignIn_helper = async (payload, t, tCommon) => {
     isDebug &&
       console.log(`${displayName} is [BACKEND RESPONSE]`, backendResponse);
 
-    // Return backend's success status, not always true
     return {
       success: backendResponse.success || false,
       message: backendResponse.message || tCommon("API.success"),
@@ -46,4 +46,4 @@ const AdminSignIn_helper = async (payload, t, tCommon) => {
   }
 };
 
-export default AdminSignIn_helper;
+export default AdminForgotPassword_helper;

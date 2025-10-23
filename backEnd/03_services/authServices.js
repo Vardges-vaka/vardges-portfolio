@@ -31,11 +31,12 @@ export const comparePassword = async (plainPassword, hashedPassword) => {
 /**
  * Generates a JWT token with user payload
  * @param {Object} payload - User data to encode {_id, name, email, role}
+ * @param {string} expiry - Optional expiry time (e.g., '30m', '1h', '7d'). Defaults to JWT_EXPIRY
  * @returns {string} JWT token
  */
-export const generateJWT = (payload) => {
+export const generateJWT = (payload, expiry = JWT_EXPIRY) => {
   return jwt.sign(payload, JWT_SECRET, {
-    expiresIn: JWT_EXPIRY,
+    expiresIn: expiry,
   });
 };
 

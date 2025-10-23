@@ -1,1 +1,333 @@
+/* ============================================
+   ADMIN SIGN IN - Container & Form
+   ============================================ */
 
+/* Container wrapper for transitions */
+.adminSignin__container {
+  width: 100%;
+  position: relative;
+}
+
+/* Form Base */
+.adminSignin {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0;
+}
+
+/* Slide In Animation */
+.adminSignin--slideIn {
+  animation: slideInFade 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Form title/heading (optional) */
+.adminSignin__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.adminSignin__subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #64748b);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Options Row (Remember Me & Forgot Password) */
+.adminSignin__optionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Checkbox styling */
+.adminSignin__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  /* background-color: var(--bg-tertiary-color) !important; */
+  border-radius: 2px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 0.5px solid var(--border-tertiary-color) !important;
+  flex: 0 1 auto;
+}
+
+.adminSignin__checkbox:hover {
+  background-color: var(--bg-tertiary-color-HOV);
+  border-color: var(--border-tertiary-color-HOV);
+  transform: translateY(-1px);
+}
+
+.adminSignin__checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+
+.adminSignin__checkbox input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  accent-color: var(--brand-primary, #3b82f6);
+  flex-shrink: 0;
+}
+
+.adminSignin__checkbox span {
+  font-size: 0.95rem;
+  color: var(--title-tertiary-color);
+  font-weight: 500;
+}
+
+/* Forgot Password Link */
+.adminSignin__forgotLink {
+  background: none;
+  border: none;
+  color: var(--brand-primary, #3b82f6);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+}
+
+.adminSignin__forgotLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0.25rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-primary, #3b82f6);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.adminSignin__forgotLink:hover::after {
+  width: 100%;
+}
+
+.adminSignin__forgotLink:hover {
+  color: var(--brand-secondary, #8b5cf6);
+  transform: translateX(2px);
+}
+
+.adminSignin__forgotLink:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Back Button */
+.adminSignin__backButton {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 0.5rem;
+}
+
+.adminSignin__backButton:hover {
+  color: var(--text-primary, #1e293b);
+  transform: translateX(-3px);
+}
+
+.adminSignin__backIcon {
+  font-size: 1.25rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.adminSignin__backButton:hover .adminSignin__backIcon {
+  transform: translateX(-3px);
+}
+
+.adminSignin__backButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Forgot Password Title Section */
+.adminSignin__forgotTitle {
+  margin-bottom: 1rem;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.adminSignin__forgotTitle h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  margin: 0 0 0.5rem 0;
+}
+
+.adminSignin__forgotTitle p {
+  font-size: 0.95rem;
+  color: var(--text-secondary, #64748b);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message styling */
+.adminSignin__message {
+  margin: -0.5rem 0 0.5rem 0;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Switch to Sign Up Text */
+.adminSignin__switchText {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--title-secondary-color);
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+.adminSignin__switchLink {
+  color: var(--h2-secondary-color);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.adminSignin__switchLink:hover {
+  color: var(--text-secondary-color-HOV);
+  transform: scale(1.01) translateY(-5px) rotate(1deg) !important;
+  letter-spacing: 0.8px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Submit button spacing */
+.adminSignin > .ButtonGlobal {
+  margin-top: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Input field spacing adjustments */
+.adminSignin > .InputGlobal_container,
+.adminSignin > .passwordInput {
+  width: 100%;
+}
+
+/* Divider (optional) */
+.adminSignin__divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.adminSignin__divider::before,
+.adminSignin__divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.adminSignin__divider span {
+  padding: 0 1rem;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.875rem;
+}
+
+/* Loading state */
+.adminSignin.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .adminSignin {
+    gap: 1.25rem;
+  }
+
+  .adminSignin__title {
+    font-size: 1.5rem;
+  }
+
+  .adminSignin__checkbox {
+    padding: 0.6rem;
+  }
+
+  .adminSignin > .ButtonGlobal {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminSignin {
+    gap: 1rem;
+  }
+
+  .adminSignin__title {
+    font-size: 1.35rem;
+  }
+
+  .adminSignin__subtitle {
+    font-size: 0.875rem;
+  }
+
+  .adminSignin__checkbox span {
+    font-size: 0.875rem;
+  }
+}

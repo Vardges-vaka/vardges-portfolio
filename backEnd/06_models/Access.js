@@ -52,6 +52,10 @@ const accessSchema = new mongoose.Schema(
         accountName: { type: String },
       },
     ],
+    blacklist: {
+      tokens: { pswReset: [String], logOut: [String] },
+      ips: [String],
+    },
   },
   { timestamps: true }
 );

@@ -32,13 +32,11 @@ export const useAdminSignup = () => {
         ...adminSignupForm,
         [e.target.name]: e.target.value,
       });
-      // Clear error when user starts typing
-      if (error) setError("");
+      error && setError("");
     },
     [adminSignupForm, error]
   );
 
-  // Handle checkbox change for rememberMe
   const handleCheckbox_change = useCallback(
     (e) => {
       setAdminSignupForm({

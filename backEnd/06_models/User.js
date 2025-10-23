@@ -48,6 +48,10 @@ const userSchema = new mongoose.Schema(
     health: {},
     wardrobe: {},
     passwords: {},
+    passwordReset: {
+      lastResetAt: { type: Date },
+      resetCount: { type: Number, default: 0 },
+    },
   },
   { timestamps: true }
 );
