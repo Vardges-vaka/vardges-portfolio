@@ -1,55 +1,32 @@
-/* ============================================
-   ADMIN WELCOME - Main Container
-   ============================================ */
+/* Form container wrapper */
 .AdminWelcome {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  /* background: linear-gradient(
-    135deg,
-    var(--bg-primary, #f5f7fa) 0%,
-    var(--bg-secondary, #e8ecf1) 100%
-  ); */
   position: relative;
   overflow: hidden;
 }
 
-/* Background decoration */
-.AdminWelcome::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -50%;
+.AdminWelcome_form {
   width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(59, 130, 246, 0.05) 0%,
-    transparent 70%
-  );
-  animation: float 20s ease-in-out infinite;
-  pointer-events: none;
+  max-width: 480px;
+  /* min-height: 400px; */
+  background: var(--bg-secondary-color);
+  border-radius: 7px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.AdminWelcome::after {
-  content: "";
-  position: absolute;
-  bottom: -50%;
-  left: -50%;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(139, 92, 246, 0.05) 0%,
-    transparent 70%
-  );
-  animation: float 25s ease-in-out infinite reverse;
-  pointer-events: none;
-}
-
+/* Animations */
 @keyframes float {
   0%,
   100% {
@@ -61,193 +38,6 @@
   66% {
     transform: translate(-20px, 20px) rotate(-5deg);
   }
-}
-
-/* ============================================
-   ANIMATED TOGGLE SWITCHER
-   ============================================ */
-
-/* Toggle Container Wrapper */
-.AdminWelcome__toggleContainer {
-  width: 100%;
-  max-width: 480px; /* Match form width */
-  padding: 0 0 1rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 3;
-}
-
-/* Main Toggle Component */
-.AdminWelcome__toggle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background: var(--bg-secondary-color, rgba(255, 255, 255, 0.95));
-  border-radius: 20px; /* Match form border-radius */
-  padding: 0; /* No padding, buttons split exactly in middle */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--border-primary-color, rgba(0, 0, 0, 0.05));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden; /* Ensure slider stays within border-radius */
-}
-
-.AdminWelcome__toggle:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
-/* Animated Sliding Background */
-.AdminWelcome__toggleSlider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%; /* Exactly half */
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--brand-primary, #3b82f6) 0%,
-    var(--brand-secondary, #8b5cf6) 100%
-  );
-  border-radius: 20px; /* Match parent border-radius */
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3),
-    0 2px 8px rgba(139, 92, 246, 0.2);
-  z-index: 1;
-  pointer-events: none; /* Don't block button clicks */
-}
-
-/* Slider Right Position */
-.AdminWelcome__toggleSlider--right {
-  left: 50%; /* Exactly half */
-  background: linear-gradient(
-    135deg,
-    var(--brand-secondary, #8b5cf6) 0%,
-    var(--brand-accent, #ec4899) 100%
-  );
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3),
-    0 2px 8px rgba(236, 72, 153, 0.2);
-}
-
-/* Toggle Buttons */
-.AdminWelcome__toggleBtn {
-  flex: 1; /* Split exactly 50/50 */
-  padding: 1rem 1.5rem;
-  margin: 0; /* No margins */
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 0; /* No individual border-radius */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--text-secondary, #64748b);
-  white-space: nowrap;
-  outline: none;
-  user-select: none;
-}
-
-/* First button gets left border-radius */
-.AdminWelcome__toggleBtn:first-of-type {
-  border-radius: 20px 0 0 20px;
-}
-
-/* Last button gets right border-radius */
-.AdminWelcome__toggleBtn:last-of-type {
-  border-radius: 0 20px 20px 0;
-}
-
-.AdminWelcome__toggleBtn:hover {
-  transform: scale(1.02);
-}
-
-.AdminWelcome__toggleBtn:active {
-  transform: scale(0.98);
-}
-
-/* Active Button State */
-.AdminWelcome__toggleBtn--active {
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.AdminWelcome__toggleBtn--active .AdminWelcome__toggleIcon {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-  animation: iconBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-/* Toggle Icon */
-.AdminWelcome__toggleIcon {
-  width: 1.25rem;
-  height: 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  opacity: 0.5;
-  pointer-events: none; /* Ensure clicks pass through to button */
-}
-
-.AdminWelcome__toggleBtn--active .AdminWelcome__toggleIcon {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-/* Toggle Text */
-.AdminWelcome__toggleText {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: all 0.3s ease;
-  pointer-events: none; /* Ensure clicks pass through to button */
-}
-
-.AdminWelcome__toggleBtn--active .AdminWelcome__toggleText {
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-/* Icon Bounce Animation */
-@keyframes iconBounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3) rotate(5deg);
-  }
-  70% {
-    transform: scale(0.9) rotate(-5deg);
-  }
-  100% {
-    transform: scale(1.1) rotate(0deg);
-  }
-}
-
-/* Form container wrapper */
-.AdminWelcome_form {
-  width: 100%;
-  max-width: 480px;
-  min-height: 400px;
-  background: var(--bg-secondary-color);
-  border-radius: 7px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  padding: 2.5rem;
-  position: relative;
-  z-index: 1;
-  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slideUp {
@@ -267,38 +57,6 @@
     padding: 1rem;
   }
 
-  .AdminWelcome__toggleContainer {
-    max-width: 380px;
-    padding: 0 0 0.75rem 0;
-  }
-
-  .AdminWelcome__toggle {
-    border-radius: 16px;
-  }
-
-  .AdminWelcome__toggleSlider {
-    border-radius: 16px;
-  }
-
-  .AdminWelcome__toggleBtn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.95rem;
-    gap: 0.4rem;
-  }
-
-  .AdminWelcome__toggleBtn:first-of-type {
-    border-radius: 16px 0 0 16px;
-  }
-
-  .AdminWelcome__toggleBtn:last-of-type {
-    border-radius: 0 16px 16px 0;
-  }
-
-  .AdminWelcome__toggleIcon {
-    width: 1.15rem;
-    height: 1.15rem;
-  }
-
   .AdminWelcome_form {
     padding: 1.75rem;
     border-radius: 16px;
@@ -311,49 +69,8 @@
     display: none;
   }
 
-  .AdminWelcome__toggleContainer {
-    max-width: 100%;
-    padding: 0 0 0.5rem 0;
-  }
-
-  .AdminWelcome__toggle {
-    border-radius: 12px;
-  }
-
-  .AdminWelcome__toggleSlider {
-    border-radius: 12px;
-  }
-
-  .AdminWelcome__toggleBtn {
-    padding: 0.65rem 1rem;
-    font-size: 0.875rem;
-    gap: 0.35rem;
-  }
-
-  .AdminWelcome__toggleBtn:first-of-type {
-    border-radius: 12px 0 0 12px;
-  }
-
-  .AdminWelcome__toggleBtn:last-of-type {
-    border-radius: 0 12px 12px 0;
-  }
-
-  .AdminWelcome__toggleIcon {
-    width: 1.05rem;
-    height: 1.05rem;
-  }
-
-  .AdminWelcome__toggleText {
-    font-size: 0.875rem;
-  }
-
   .AdminWelcome_form {
     padding: 1.25rem;
     border-radius: 16px;
   }
-}
-
-/* Smooth transition for all toggle elements */
-.AdminWelcome__toggle * {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

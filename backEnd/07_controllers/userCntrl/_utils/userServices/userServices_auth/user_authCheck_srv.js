@@ -19,7 +19,6 @@ export const user_authCheck_srv = async (req, isDebug) => {
         success: true,
         message: "Authenticated via session",
         data: {
-          _id: req.session.user._id,
           name: req.session.user.name,
           role: req.session.user.role,
         },
@@ -69,15 +68,18 @@ export const user_authCheck_srv = async (req, isDebug) => {
         data: null,
       };
     }
+    req.session.user = {
+      _id: user._id,
+      role: user.access.role,
+    };
 
     isDebug &&
-      console.log(`${displayName} User authenticated via JWT:`, decoded._id);
+      console.log(`${displayName} User authenticated via JWT:`, user.name);
 
     return {
       success: true,
       message: "Authenticated via JWT",
       data: {
-        _id: user._id,
         name: user.name,
         role: user.access.role,
       },

@@ -74,29 +74,17 @@ export const user_signUp_srv = async (req, isDebug) => {
     // Set session data
     const session_data = {
       _id: newUser._id,
-      name: newUser.name,
       role: role,
     };
     let token = null;
-    // 9. Handle authentication based on rememberMe
-    if (rememberMe) {
-      // Generate JWT and set httpOnly cookie
-      token = generateJWT({ _id: newUser._id, role: role });
+    rememberMe && (token = generateJWT({ _id: newUser._id, role: role }));
 
-      // isDebug &&
-      //   cookie_response.success &&
-      //   console.log(`✅${displayName}JWT cookie set (100 days)`);
-    }
-
-    // 10. Return success with user data (exclude password)
     return {
       success: true,
       message: "User registered successfully",
       data: {
         user: {
-          _id: newUser._id,
           name: newUser.name,
-          email: newUser.email,
           role: role,
         },
       },

@@ -17,6 +17,8 @@ export const i18nConfig = {
     "vision",
     "values",
     "validators",
+    //  Admin Translations
+    "adminWelcome",
   ],
   defaultNS: "common",
 

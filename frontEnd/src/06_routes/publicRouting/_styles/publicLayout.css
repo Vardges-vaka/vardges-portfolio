@@ -1,0 +1,20 @@
+/* Public Layout Styles */
+.publicLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.publicLayout__main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publicLayout__main {
+    /* Add any mobile-specific styles here */
+  }
+}

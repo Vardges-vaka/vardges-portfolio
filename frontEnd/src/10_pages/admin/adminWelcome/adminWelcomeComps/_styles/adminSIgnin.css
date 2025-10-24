@@ -4,18 +4,20 @@
 
 /* Container wrapper for transitions */
 .adminSignin__container {
-  width: 100%;
+  width: 100% !important;
   position: relative;
+  gap: 1.25rem !important;
+  /* padding: 100px !important; */
 }
 
-/* Form Base */
+/* Form Base  email adminSignin--slideIn*/
 .adminSignin {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  width: 100%;
+  gap: 1.25rem !important;
+  width: 100% !important;
   box-sizing: border-box;
-  padding-bottom: 0;
+  /* padding: 100px !important; */
 }
 
 /* Slide In Animation */
@@ -56,7 +58,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  width: 100%;
+  width: 100% !important;
   flex-wrap: wrap;
 }
 
@@ -106,7 +108,7 @@
 .adminSignin__forgotLink {
   background: none;
   border: none;
-  color: var(--brand-primary, #3b82f6);
+  color: var(--h2-secondary-color);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -124,16 +126,16 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--brand-primary, #3b82f6);
+  background: var(--h3-secondary-color);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adminSignin__forgotLink:hover::after {
-  width: 100%;
+  width: 100% !important;
 }
 
 .adminSignin__forgotLink:hover {
-  color: var(--brand-secondary, #8b5cf6);
+  color: var(--title-secondary-color);
   transform: translateX(2px);
 }
 
@@ -147,7 +149,7 @@
 .adminSignin__backButton {
   background: none;
   border: none;
-  color: var(--text-secondary, #64748b);
+  color: var(--text-secondary-color);
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -160,12 +162,13 @@
 }
 
 .adminSignin__backButton:hover {
-  color: var(--text-primary, #1e293b);
+  color: var(--title-secondary-color);
   transform: translateX(-3px);
 }
 
 .adminSignin__backIcon {
   font-size: 1.25rem;
+  margin-bottom: 3.5px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -188,13 +191,13 @@
 .adminSignin__forgotTitle h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary, #1e293b);
+  color: var(--title-secondary-color);
   margin: 0 0 0.5rem 0;
 }
 
 .adminSignin__forgotTitle p {
   font-size: 0.95rem;
-  color: var(--text-secondary, #64748b);
+  color: var(--text-secondary-color);
   margin: 0;
   line-height: 1.5;
 }
@@ -264,7 +267,7 @@
 /* Input field spacing adjustments */
 .adminSignin > .InputGlobal_container,
 .adminSignin > .passwordInput {
-  width: 100%;
+  width: 100% !important;
 }
 
 /* Divider (optional) */
@@ -279,12 +282,12 @@
 .adminSignin__divider::after {
   content: "";
   flex: 1;
-  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  border-bottom: 1px solid var(--border-secondary-color-HOV);
 }
 
 .adminSignin__divider span {
   padding: 0 1rem;
-  color: var(--text-secondary, #64748b);
+  color: red;
   font-size: 0.875rem;
 }
 

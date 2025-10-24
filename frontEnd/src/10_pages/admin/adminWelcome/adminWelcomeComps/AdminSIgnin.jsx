@@ -1,21 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useAdminSignIn } from "../adminWelcomeHooks/useAdminSignIn/useAdminSignIn.js";
+// import { useAdminSignIn } from "../adminWelcomeHooks/_adminWelcomeHooks.index.js";
+
 import {
   InputGlobal,
   PasswordInput,
   ButtonGlobal,
 } from "../../../../01_components/components.index.js";
 import { FieldMessage } from "../../../../01_components/stateComponents/_stateComponents.index.js";
+import AdminForgotPassword from "./adminWelcomeChildComps/AdminForgotPassword.jsx";
 import "./_styles/adminSignin.css";
 
-const AdminSignin = ({ onSwitchToSignup }) => {
-  const { states, handlers } = useAdminSignIn();
+const AdminSignin = ({ onSwitchToSignup, states, handlers, status, t }) => {
+  // const { states, handlers, status, t } = useAdminSignIn();
 
   return (
     <div className="adminSignin__container">
-      {/* Sign In Form */}
-      {!states.showForgotPassword && (
+      {states.showForgotPassword ? (
+        <AdminForgotPassword
+          onSubmit={handlers.handleForgotPassword_submit}
+          onChange={handlers.handleForgotPswdEmail_change}
+          onToggle={handlers.handleToggleForgotPassword}
+          state={states.forgotPasswordEmail}
+          status={status}
+          t={t}
+        />
+      ) : (
         <form
           className="adminSignin adminSignin--slideIn"
           onSubmit={handlers.handleSignin_submit}>
@@ -23,13 +33,13 @@ const AdminSignin = ({ onSwitchToSignup }) => {
           <InputGlobal
             type="email"
             name="email"
-            placeholder="Enter your email"
+            placeholder={t("email.placeholder")}
             value={states.adminSigninForm.email}
             onChange={handlers.handleSignin_change}
             withLabel={true}
             labelProps={{
-              title: "Email",
-              message: "Email",
+              title: t("email.label"),
+              message: t("email.message"),
             }}
             withLeftIcon={true}
             leftIconProps={{
@@ -38,10 +48,9 @@ const AdminSignin = ({ onSwitchToSignup }) => {
               lucid: "Mail",
             }}
             withMessage={false}
-            disabled={states.isLoading}
+            disabled={status.isLoading}
           />
 
-          {/* Password Input */}
           <PasswordInput
             type="signIn"
             currentPassword={states.adminSigninForm.password}
@@ -49,10 +58,9 @@ const AdminSignin = ({ onSwitchToSignup }) => {
             onPasswordChange={handlers.handleSignin_change}
             currentVisible={states.passwordVisible}
             onCurrentVisibleToggle={handlers.handlePasswordVisibility_toggle}
-            disabled={states.isLoading}
+            disabled={status.isLoading}
           />
 
-          {/* Remember Me & Forgot Password Row */}
           <div className="adminSignin__optionsRow">
             <div className="adminSignin__checkbox">
               <label>
@@ -61,9 +69,9 @@ const AdminSignin = ({ onSwitchToSignup }) => {
                   name="rememberMe"
                   checked={states.adminSigninForm.rememberMe}
                   onChange={handlers.handleCheckbox_change}
-                  disabled={states.isLoading}
+                  disabled={status.isLoading}
                 />
-                <span>Remember Me (100 days)</span>
+                <span>{t("rememberMe.label")}</span>
               </label>
             </div>
 
@@ -71,136 +79,50 @@ const AdminSignin = ({ onSwitchToSignup }) => {
               type="button"
               className="adminSignin__forgotLink"
               onClick={handlers.handleToggleForgotPassword}
-              disabled={states.isLoading}>
-              Forgot Password?
+              disabled={status.isLoading}>
+              {t("forgotPassword.label")}
             </button>
           </div>
 
-          {/* Error Message */}
-          {states.error && (
+          {status.error && (
             <FieldMessage
               isActive={true}
               type="error"
-              message={states.error}
+              message={status.error}
               className="adminSignin__message"
             />
           )}
 
-          {/* Success Message */}
-          {states.success && (
+          {status.success && (
             <FieldMessage
               isActive={true}
               type="success"
-              message={states.success}
+              message={status.success}
               className="adminSignin__message"
             />
           )}
 
-          {/* Submit Button */}
           <ButtonGlobal
             type="submit"
-            isLoading={states.isLoading}
-            disabled={states.isLoading}
+            isLoading={status.isLoading}
+            disabled={status.isLoading}
             withIcon={true}
             leftIcon={{
-              isActive: !states.isLoading,
+              isActive: !status.isLoading,
               type: "lucide",
               lucid: "LogIn",
             }}>
-            {states.isLoading ? "Signing in..." : "Sign In"}
+            {status.isLoading ? t("signin.loading") : t("signin.button")}
           </ButtonGlobal>
 
-          {/* Switch to Sign Up */}
           <div className="adminSignin__switchText">
-            Don't have an account?{" "}
+            {t("signin.dontHaveAccount")}
             <span
               onClick={onSwitchToSignup}
               className="adminSignin__switchLink">
-              Sign Up
+              {t("signup.button")}
             </span>
           </div>
-        </form>
-      )}
-
-      {/* Forgot Password Form */}
-      {states.showForgotPassword && (
-        <form
-          className="adminSignin adminSignin--slideIn adminSignin--forgotPassword"
-          onSubmit={handlers.handleForgotPassword_submit}>
-          {/* Back Button */}
-          <button
-            type="button"
-            className="adminSignin__backButton"
-            onClick={handlers.handleToggleForgotPassword}
-            disabled={states.isLoading}>
-            <span className="adminSignin__backIcon">←</span>
-            <span>Back to Sign In</span>
-          </button>
-
-          {/* Title */}
-          <div className="adminSignin__forgotTitle">
-            <h3>Reset Password</h3>
-            <p>
-              Enter your email address and we'll send you a link to reset your
-              password.
-            </p>
-          </div>
-
-          {/* Email Input */}
-          <InputGlobal
-            type="email"
-            name="forgotPasswordEmail"
-            placeholder="Enter your email"
-            value={states.forgotPasswordEmail}
-            onChange={handlers.handleForgotPasswordEmail_change}
-            withLabel={true}
-            labelProps={{
-              title: "Email Address",
-              message: "Email Address",
-            }}
-            withLeftIcon={true}
-            leftIconProps={{
-              isActive: true,
-              type: "lucide",
-              lucid: "Mail",
-            }}
-            withMessage={false}
-            disabled={states.isLoading}
-          />
-
-          {/* Error Message */}
-          {states.error && (
-            <FieldMessage
-              isActive={true}
-              type="error"
-              message={states.error}
-              className="adminSignin__message"
-            />
-          )}
-
-          {/* Success Message */}
-          {states.success && (
-            <FieldMessage
-              isActive={true}
-              type="success"
-              message={states.success}
-              className="adminSignin__message"
-            />
-          )}
-
-          {/* Submit Button */}
-          <ButtonGlobal
-            type="submit"
-            isLoading={states.isLoading}
-            disabled={states.isLoading}
-            withIcon={true}
-            leftIcon={{
-              isActive: !states.isLoading,
-              type: "lucide",
-              lucid: "Send",
-            }}>
-            {states.isLoading ? "Sending..." : "Send Reset Link"}
-          </ButtonGlobal>
         </form>
       )}
     </div>

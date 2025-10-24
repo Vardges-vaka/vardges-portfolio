@@ -88,6 +88,21 @@ const UserProvider = ({ children }) => {
   );
 };
 
+// Auth Checker Component for All Admin Routes
+// const AdminAuthChecker = ({ children }) => {
+//   const { isChecking } = useUserContext();
+
+//   if (isChecking) {
+//     return (
+//       <div className="adminLayout__loading">
+//         <p>Loading...</p>
+//       </div>
+//     );
+//   }
+
+//   return children;
+// };
+
 UserProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };

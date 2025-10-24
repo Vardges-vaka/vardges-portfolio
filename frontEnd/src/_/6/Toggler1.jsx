@@ -1,5 +1,5 @@
 import React from "react";
-import "./Toggler1.css";
+// import "./Toggler1.css";
 
 const Toggler1 = () => {
   return (

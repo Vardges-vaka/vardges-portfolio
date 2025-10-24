@@ -15,8 +15,22 @@ const user_signUp_cntrl = async (req, res) => {
     const { success, message, data, session_data, token } =
       await user_signUp_srv(req, isDebug);
 
-    req.session.user = session_data;
-    token && setJWT_Cookie(res, token);
+    // req.session.user = session_data;
+    // token && setJWT_Cookie(res, token);
+
+    if (success) {
+      if (session_data) {
+        req.session.user = session_data;
+        isDebug &&
+          console.log(
+            `✅${displayName}Session set for user: ${session_data.name}`
+          );
+      }
+      if (token) {
+        setJWT_Cookie(res, token);
+        isDebug && console.log(`✅${displayName}JWT cookie set`);
+      }
+    }
 
     return validRespond(res, isDebug, displayName, success, message, data);
   } catch (error) {

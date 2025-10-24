@@ -143,4 +143,20 @@
   --icon-tertiary-stroke-color-HOV: var(--D-icon-tertiary-stroke-color-HOV);
 
   /* ! ⬆️⬆️⬆️ ICON COLOR PALATE ⬆️⬆️⬆️ ------------------------------------------------------------------------------------------------------------------ */
+
+  /* ! ⬇️⬇️⬇️===ADMIN DASHBOARD COLORS===⬇️⬇️⬇️ */
+
+  --admin-header-bg: #1a1a1a;
+  --admin-sidebar-bg: #2d2d2d;
+  --admin-tool-icon-color: #b0b0b0;
+  --admin-tool-icon-hover: #404040;
+  --admin-tool-icon-active: #4a9eff;
+  --admin-tool-icon-active-color: #ffffff;
+  --admin-tooltip-bg: #ffffff;
+  --admin-drag-indicator: #808080;
+  --admin-sidebar-item-active: #1e3a5f;
+  --admin-sidebar-item-active-border: #4a9eff;
+  --admin-sidebar-item-active-color: #66b3ff;
+
+  /* ! ⬆️⬆️⬆️===ADMIN DASHBOARD COLORS===⬆️⬆️⬆️ */
 }

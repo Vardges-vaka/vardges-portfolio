@@ -8,9 +8,12 @@ export const auth_mddlwre = async (req, res, next) => {
   try {
     // 1. Check session first (server-side storage, most secure)
     if (req.session?.user) {
-      req.user = req.session.user;
+      // req.user = req.session.user;
       isDebug &&
-        console.log(`${displayName} User authenticated via session:`, req.user);
+        console.log(
+          `${displayName} User authenticated via session:`,
+          req.session.user
+        );
       return next();
     }
 
@@ -45,13 +48,16 @@ export const auth_mddlwre = async (req, res, next) => {
     }
 
     // 5. Attach user to request
-    req.user = {
+    req.session.user = {
       _id: decoded._id,
       role: decoded.role,
     };
 
     isDebug &&
-      console.log(`${displayName} User authenticated via JWT:`, req.user);
+      console.log(
+        `${displayName} User authenticated via JWT:`,
+        req.session.user
+      );
 
     next();
   } catch (error) {

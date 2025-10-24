@@ -1,5 +1,6 @@
 import { JWT_COOKIE_OPTIONS } from "../00_config/_config.index.js";
 import { isProduction } from "../00_config/_config.index.js";
+import { Access } from "../06_models/_models.index.js";
 
 export const setJWT_Cookie = (res, token) => {
   try {
@@ -14,7 +15,7 @@ export const setJWT_Cookie = (res, token) => {
   }
 };
 
-export const clearJWT_Cookie = (res) => {
+export const clearJWT_Cookie = async (res) => {
   try {
     res.clearCookie("authToken", {
       httpOnly: true,

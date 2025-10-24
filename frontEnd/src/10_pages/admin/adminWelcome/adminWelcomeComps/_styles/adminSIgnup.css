@@ -118,6 +118,7 @@
   font-size: 0.95rem;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  margin-left: 0.25rem;
 }
 
 .adminSignup__switchLink:hover {

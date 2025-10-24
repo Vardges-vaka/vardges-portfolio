@@ -1,140 +1,42 @@
-import { useState, useCallback } from "react";
-import { useAdminSignUp_apiHelpers } from "./useAdminSignUp_apiHelpers.js";
+import { useAdminSignUp_handlers } from "./useAdminSignUp_handlers.js";
 
-export const useAdminSignup = () => {
-  const { api_helpers } = useAdminSignUp_apiHelpers();
+export const useAdminSignup = ({
+  states,
+  setters,
+  api_helpers,
+  translations,
+  userContext,
+  navigate,
+}) => {
+  const { tValidators, tAdminWelcome } = translations;
 
-  // Form data state
-  const [adminSignupForm, setAdminSignupForm] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-    key: "",
-    name: "",
-    rememberMe: false,
+  // const { states, setters } = useAdminSignIn_states();
+  const { handlers } = useAdminSignUp_handlers({
+    states,
+    setters,
+    api_helpers,
+    userContext,
+    navigate,
+    tValidators,
   });
-
-  // UI state
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-
-  // Password visibility states
-  const [passwordVisible, setPasswordVisible] = useState({
-    new: false,
-    confirm: false,
-  });
-
-  // Handle input changes for text fields
-  const handleSignup_change = useCallback(
-    (e) => {
-      setAdminSignupForm({
-        ...adminSignupForm,
-        [e.target.name]: e.target.value,
-      });
-      error && setError("");
-    },
-    [adminSignupForm, error]
-  );
-
-  const handleCheckbox_change = useCallback(
-    (e) => {
-      setAdminSignupForm({
-        ...adminSignupForm,
-        rememberMe: e.target.checked,
-      });
-    },
-    [adminSignupForm]
-  );
-
-  // Toggle password visibility
-  const handlePasswordVisibility_toggle = useCallback((field) => {
-    setPasswordVisible((prev) => ({
-      ...prev,
-      [field]: !prev[field],
-    }));
-  }, []);
-
-  // Form submission
-  const handleSignup_submit = useCallback(
-    async (e) => {
-      e.preventDefault();
-
-      // Clear previous messages
-      setError("");
-      setSuccess("");
-
-      // Client-side validation
-      if (!adminSignupForm.name.trim()) {
-        setError("Name is required");
-        return;
-      }
-      if (!adminSignupForm.email.trim()) {
-        setError("Email is required");
-        return;
-      }
-      if (!adminSignupForm.password) {
-        setError("Password is required");
-        return;
-      }
-      if (!adminSignupForm.confirmPassword) {
-        setError("Please confirm your password");
-        return;
-      }
-      if (adminSignupForm.password !== adminSignupForm.confirmPassword) {
-        setError("Passwords do not match");
-        return;
-      }
-      if (!adminSignupForm.key.trim()) {
-        setError("Access code is required");
-        return;
-      }
-
-      // Submit to API
-      setIsLoading(true);
-      try {
-        const response = await api_helpers.adminSignUp_submit(adminSignupForm);
-
-        if (response && response.success) {
-          setSuccess(response.message || "Signup successful!");
-          // Clear form on success
-          setAdminSignupForm({
-            email: "",
-            password: "",
-            confirmPassword: "",
-            key: "",
-            name: "",
-            rememberMe: false,
-          });
-        } else {
-          setError(response?.message || "Signup failed. Please try again.");
-        }
-      } catch (err) {
-        setError("An unexpected error occurred. Please try again.");
-        console.error("Signup error:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    },
-    [adminSignupForm, api_helpers]
-  );
 
   return {
     states: {
-      adminSignupForm,
-      isLoading,
-      error,
-      success,
-      passwordVisible,
+      adminSignupForm: states.adminSignupForm,
+      isLoading: states.isLoading,
+      error: states.error,
+      success: states.success,
+      passwordVisible: states.passwordVisible,
     },
     setters: {
-      setAdminSignupForm,
+      setAdminSignupForm: setters.setAdminSignupForm,
     },
     handlers: {
-      handleSignup_submit,
-      handleSignup_change,
-      handleCheckbox_change,
-      handlePasswordVisibility_toggle,
+      handleSignup_submit: handlers.handleSignup_submit,
+      handleSignup_change: handlers.handleSignup_change,
+      handleCheckbox_change: handlers.handleCheckbox_change,
+      handlePasswordVisibility_toggle: handlers.handlePasswordVisibility_toggle,
     },
+    t: tAdminWelcome,
   };
 };

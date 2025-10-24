@@ -43,7 +43,6 @@ export const user_signIn_srv = async (req, isDebug) => {
     // 3. Create session data
     const session_data = {
       _id: user._id,
-      name: user.name,
       role: user.access.role,
     };
 
@@ -60,9 +59,7 @@ export const user_signIn_srv = async (req, isDebug) => {
       message: "Sign in successful",
       data: {
         user: {
-          _id: user._id,
           name: user.name,
-          email: user.email,
           role: user.access.role,
         },
       },

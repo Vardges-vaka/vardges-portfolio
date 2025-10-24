@@ -123,4 +123,20 @@
   --btn-tertiary-border-color-DIS: var(--L-btn-tertiary-border-color-DIS);
 
   /* ! ⬆️⬆️⬆️===BUTTON COLORS===⬆️⬆️⬆️ */
+
+  /* ! ⬇️⬇️⬇️===ADMIN DASHBOARD COLORS===⬇️⬇️⬇️ */
+
+  --admin-header-bg: #ffffff;
+  --admin-sidebar-bg: #f8f9fa;
+  --admin-tool-icon-color: #495057;
+  --admin-tool-icon-hover: #e9ecef;
+  --admin-tool-icon-active: #007bff;
+  --admin-tool-icon-active-color: #ffffff;
+  --admin-tooltip-bg: #212529;
+  --admin-drag-indicator: #6c757d;
+  --admin-sidebar-item-active: #e3f2fd;
+  --admin-sidebar-item-active-border: #2196f3;
+  --admin-sidebar-item-active-color: #1976d2;
+
+  /* ! ⬆️⬆️⬆️===ADMIN DASHBOARD COLORS===⬆️⬆️⬆️ */
 }

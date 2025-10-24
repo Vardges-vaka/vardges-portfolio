@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useAdminSignup } from "../adminWelcomeHooks/useAdminSignup.js";
 import {
   InputGlobal,
   PasswordInput,
@@ -9,22 +8,20 @@ import {
 import { FieldMessage } from "../../../../01_components/stateComponents/_stateComponents.index.js";
 import "./_styles/adminSIgnup.css";
 
-const AdminSignup = ({ onSwitchToSignin }) => {
-  const { states, handlers } = useAdminSignup();
-
+const AdminSignup = ({ onSwitchToSignin, states, handlers, t }) => {
   return (
     <form className="adminSignup" onSubmit={handlers.handleSignup_submit}>
       {/* Name Input */}
       <InputGlobal
         type="text"
         name="name"
-        placeholder="Enter your name"
+        placeholder={t("name.placeholder")}
         value={states.adminSignupForm.name}
         onChange={handlers.handleSignup_change}
         withLabel={true}
         labelProps={{
-          title: "Name",
-          message: "Name",
+          title: t("name.label"),
+          message: t("name.message"),
         }}
         withLeftIcon={true}
         leftIconProps={{
@@ -40,13 +37,13 @@ const AdminSignup = ({ onSwitchToSignin }) => {
       <InputGlobal
         type="email"
         name="email"
-        placeholder="Enter your email"
+        placeholder={t("email.placeholder")}
         value={states.adminSignupForm.email}
         onChange={handlers.handleSignup_change}
         withLabel={true}
         labelProps={{
-          title: "Email",
-          message: "Email",
+          title: t("email.label"),
+          message: t("email.message"),
         }}
         withLeftIcon={true}
         leftIconProps={{
@@ -62,13 +59,13 @@ const AdminSignup = ({ onSwitchToSignin }) => {
       <InputGlobal
         type="text"
         name="key"
-        placeholder="Enter access code"
+        placeholder={t("key.placeholder")}
         value={states.adminSignupForm.key}
         onChange={handlers.handleSignup_change}
         withLabel={true}
         labelProps={{
-          title: "Access Code",
-          message: "Access Code",
+          title: t("key.label"),
+          message: t("key.message"),
         }}
         withLeftIcon={true}
         leftIconProps={{
@@ -111,7 +108,7 @@ const AdminSignup = ({ onSwitchToSignin }) => {
             onChange={handlers.handleCheckbox_change}
             disabled={states.isLoading}
           />
-          <span>Remember Me (100 days)</span>
+          <span>{t("rememberMe.label")} </span>
         </label>
       </div>
 
@@ -146,14 +143,14 @@ const AdminSignup = ({ onSwitchToSignin }) => {
           type: "lucide",
           lucid: "UserPlus",
         }}>
-        {states.isLoading ? "Signing up..." : "Sign Up"}
+        {states.isLoading ? t("signup.loading") : t("signup.button")}
       </ButtonGlobal>
 
       {/* Switch to Sign In */}
       <div className="adminSignup__switchText">
-        Already have an account?{" "}
+        {t("signup.alreadyHaveAnAccount?")}
         <span onClick={onSwitchToSignin} className="adminSignup__switchLink">
-          Sign In
+          {t("signup.backButton")}
         </span>
       </div>
     </form>

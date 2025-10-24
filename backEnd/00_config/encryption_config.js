@@ -12,6 +12,3 @@ export const JWT_SECRET =
 export const JWT_EXPIRY = process.env.JWT_EXPIRY || "10d"; // ? 100 days fallback
 
 export const JWT_RESET_EXPIRY = process.env.JWT_RESET_EXPIRY || "30m"; // ? 30 minutes for password reset
-
-// export const FRONTEND_URL =
-//   process.env.FRONTEND_URL || "http://localhost:5173";

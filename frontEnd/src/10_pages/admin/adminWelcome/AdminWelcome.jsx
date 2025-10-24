@@ -3,34 +3,36 @@ import {
   AdminSignup,
   AdminSignin,
 } from "./adminWelcomeComps/_adminWelcomeComps.index";
-import "./_styles/adminWelcome.css";
 import { useAdminWelcome } from "./adminWelcomeHooks/useAdminWelcome.js";
+import "./_styles/adminWelcome.css";
 
 const AdminWelcome = () => {
-  const { states, handlers } = useAdminWelcome();
+  const { state, handler, signIn_props,signUp_props } = useAdminWelcome();
 
   return (
     <div className="AdminWelcome">
       {/* Form container */}
-      <div className="AdminWelcome_form" key={states.activeForm}>
-        {states.activeForm === "signin" && (
+      <div className="AdminWelcome_form" key={state}>
+        {state === "signin" && (
           <AdminSignin
             key="signin-form"
             onSwitchToSignup={() =>
-              handlers.handleActiveForm({
+              handler({
                 currentTarget: { dataset: { value: "signup" } },
               })
             }
+            {...signIn_props}
           />
         )}
-        {states.activeForm === "signup" && (
+        {state === "signup" && (
           <AdminSignup
             key="signup-form"
             onSwitchToSignin={() =>
-              handlers.handleActiveForm({
+              handler({
                 currentTarget: { dataset: { value: "signin" } },
               })
             }
+            {...signUp_props}
           />
         )}
       </div>
