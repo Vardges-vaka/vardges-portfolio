@@ -76,7 +76,7 @@ export function getLogStats(logsDir, filename) {
     const filePath = path.join(logsDir, filename);
     const content = fs.readFileSync(filePath, "utf8");
 
-    if (filename.endsWith(".json")) {
+    if (filename.endsWith(".json") || filename.endsWith(".jsonl")) {
       const lines = content.trim().split("\n");
       const stats = {
         total: lines.length,

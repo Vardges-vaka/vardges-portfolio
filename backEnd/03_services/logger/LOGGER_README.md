@@ -50,10 +50,10 @@ All logs are stored in `backEnd/_logs/`:
 - `combined.log` - All log levels (human-readable)
 - `http.log` - HTTP request/response logs (human-readable)
 
-### JSON Format (.json files)
+### JSON Lines Format (.jsonl files)
 
-- `error.json` - Error level logs (machine-readable)
-- `combined.json` - Info and above logs (machine-readable)
+- `error.jsonl` - Error level logs (machine-readable, JSON Lines format)
+- `combined.jsonl` - Info and above logs (machine-readable, JSON Lines format)
 
 ## Quick Start
 

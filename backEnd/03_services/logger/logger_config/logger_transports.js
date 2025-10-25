@@ -17,7 +17,7 @@ export const ERROR_log = new winston.transports.File({
   maxFiles: 5,
 });
 export const ERROR_json = new winston.transports.File({
-  filename: path.join(__dirname, "../../../_logs/error.jsonl"),
+  filename: path.join(__dirname, "../../../_logs/jsonl/error.jsonl"),
   level: "error",
   format: jsonFormat,
   maxsize: 5242880, // 5MB
@@ -30,7 +30,7 @@ export const COMBINED_log = new winston.transports.File({
   maxFiles: 5,
 });
 export const COMBINED_json = new winston.transports.File({
-  filename: path.join(__dirname, "../../../_logs/combined.jsonl"),
+  filename: path.join(__dirname, "../../../_logs/jsonl/combined.jsonl"),
   level: "info",
   format: jsonFormat,
   maxsize: 5242880, // 5MB
