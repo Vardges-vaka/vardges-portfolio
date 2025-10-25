@@ -11,3 +11,4 @@ export {
   verifyJWT,
 } from "./authServices.js";
 export { setJWT_Cookie, clearJWT_Cookie } from "./cookie_srv.js";
+export { default as logger } from "./logger/_logger.index.js";

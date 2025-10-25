@@ -28,7 +28,7 @@ export const user_authCheck_srv = async (req, isDebug) => {
     // 2. Check JWT cookie (remember me functionality)
     const token = req.cookies?.authToken;
     if (!token) {
-      isDebug && console.log(`${displayName} No authentication found`);
+      isDebug && console.log(`${displayName} No authentication found`, token);
       return {
         success: false,
         message: "Not authenticated",
