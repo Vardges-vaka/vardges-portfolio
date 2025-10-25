@@ -1,0 +1,15 @@
+{
+  "required": "{{field}} դաշտը պարտադիր է",
+  "invalid_email": "Էլ․ փոստի անվավեր հասցե",
+  "invalid_format": "{{field}} անվավեր ձևաչափ",
+  "min_length": "{{field}} դաշտը պետք է պարունակի առնվազն {{min}} նիշ",
+  "max_length": "{{field}} դաշտը չպետք է գերազանցի {{max}} նիշ",
+  "min_value": "{{field}} դաշտը պետք է լինի առնվազն {{min}}",
+  "max_value": "{{field}} դաշտը չպետք է գերազանցի {{max}}",
+  "must_match": "{{field}} դաշտը պետք է համընկնի {{other}} դաշտի հետ",
+  "already_exists": "{{field}} արդեն գոյություն ունի",
+  "not_found": "{{field}} չի գտնվել",
+  "invalid_credentials": "Անվավեր մուտքի տվյալներ",
+  "weak_password": "Գաղտնաբառը չափազանց թույլ է",
+  "password_mismatch": "Գաղտնաբառերը չեն համընկնում"
+}

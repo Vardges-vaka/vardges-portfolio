@@ -1,0 +1,15 @@
+{
+  "required": "{{field}} is required",
+  "invalid_email": "Invalid email address",
+  "invalid_format": "Invalid {{field}} format",
+  "min_length": "{{field}} must be at least {{min}} characters",
+  "max_length": "{{field}} must not exceed {{max}} characters",
+  "min_value": "{{field}} must be at least {{min}}",
+  "max_value": "{{field}} must not exceed {{max}}",
+  "must_match": "{{field}} must match {{other}}",
+  "already_exists": "{{field}} already exists",
+  "not_found": "{{field}} not found",
+  "invalid_credentials": "Invalid credentials",
+  "weak_password": "Password is too weak",
+  "password_mismatch": "Passwords do not match"
+}

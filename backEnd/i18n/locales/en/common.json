@@ -1,0 +1,23 @@
+{
+  "welcome": "Welcome",
+  "success": "Operation successful",
+  "error": "An error occurred",
+  "loading": "Loading...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "create": "Create",
+  "update": "Update",
+  "confirm": "Confirm",
+  "back": "Back",
+  "next": "Next",
+  "submit": "Submit",
+  "search": "Search",
+  "filter": "Filter",
+  "sort": "Sort",
+  "export": "Export",
+  "import": "Import",
+  "download": "Download",
+  "upload": "Upload"
+}

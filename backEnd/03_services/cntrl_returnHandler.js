@@ -1,18 +1,37 @@
-export const catch_errorHandler_cntrl = (res, name, isDebug, error) => {
-  const displayName = name ? `⚠️ ☠️ 🚨${name}` : "UnSpecified Controller Field";
+import { logger } from "./_services.index.js";
 
-  isDebug && console.error(`${displayName}|<=>| [catch (ERROR)]`, error);
-
-  return res.status(500).json({
-    success: false,
-    message: "Internal Server Error",
-    payload: null,
-  });
-};
+// Import error handling functionality from errorHandlers module
+export {
+  AppError,
+  createValidationError,
+  createUnauthorizedError,
+  createNotFoundError,
+  createDuplicateError,
+  createForbiddenError,
+  createRateLimitError,
+  catch_errorHandler_cntrl,
+} from "./errorHandlers/_errorHandlers.index.js";
 
 export const validRespond = (res, debug, name, success, message, data) => {
+  // Extract metadata
+  const userId = res.locals?.user?.id;
+  const statusCode = success ? 200 : 400;
+
+  // Log using Winston logger
+  if (success) {
+    logger.controller.success(name, data, {
+      statusCode,
+      userId,
+    });
+  } else {
+    logger.controller.error(name, new Error(message), {
+      statusCode,
+      userId,
+    });
+  }
+
+  // Maintain backward compatibility with console.log
   debug && console.log(`⛟📦🚚${name}[SUCCESS] ${success} |<=>| [DATA]`, data);
-  return res
-    .status(success ? 200 : 400)
-    .json({ success, message, payload: data });
+
+  return res.status(statusCode).json({ success, message, payload: data });
 };

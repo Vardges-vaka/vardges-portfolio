@@ -104,6 +104,9 @@ temp/
 *.sln
 *.sw?
 
+# Kiro IDE
+.kiro/
+
 # OS generated files
 Thumbs.db
 .DS_Store

@@ -13,6 +13,7 @@ import {
   user_forgotPassword_cntrl,
   user_resetPassword_cntrl,
   user_authCheck_cntrl,
+  user_typedErrorExample_cntrl,
 } from "../07_controllers/userCntrl/_userCntrl.index.js";
 
 // !===== validators =====
@@ -53,5 +54,6 @@ router.post(
   vld_sntzr_mddlwre(user_resetPassword_vld),
   user_resetPassword_cntrl
 );
+router.post("/auth/typed-error-example", user_typedErrorExample_cntrl);
 
 export default router;

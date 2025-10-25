@@ -14,7 +14,7 @@ const user_authCheck_cntrl = async (req, res) => {
 
     return validRespond(res, isDebug, displayName, success, message, data);
   } catch (error) {
-    return catch_errorHandler_cntrl(error, res, displayName, isDebug);
+    return catch_errorHandler_cntrl(res, displayName, isDebug, error);
   }
 };
 

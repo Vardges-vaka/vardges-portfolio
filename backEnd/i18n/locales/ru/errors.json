@@ -1,0 +1,16 @@
+{
+  "not_found": "Ресурс не найден",
+  "unauthorized": "Неавторизованный доступ",
+  "forbidden": "Доступ запрещен",
+  "server_error": "Внутренняя ошибка сервера",
+  "bad_request": "Неверный запрос",
+  "validation_failed": "Ошибка валидации",
+  "authentication_failed": "Ошибка аутентификации",
+  "token_expired": "Срок действия токена истек",
+  "token_invalid": "Недействительный токен",
+  "rate_limit_exceeded": "Слишком много запросов, попробуйте позже",
+  "database_error": "Ошибка операции с базой данных",
+  "file_upload_failed": "Ошибка загрузки файла",
+  "file_too_large": "Размер файла превышает лимит",
+  "unsupported_file_type": "Неподдерживаемый тип файла"
+}

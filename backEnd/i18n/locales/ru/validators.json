@@ -1,0 +1,15 @@
+{
+  "required": "{{field}} обязательно для заполнения",
+  "invalid_email": "Неверный адрес электронной почты",
+  "invalid_format": "Неверный формат {{field}}",
+  "min_length": "{{field}} должно содержать не менее {{min}} символов",
+  "max_length": "{{field}} не должно превышать {{max}} символов",
+  "min_value": "{{field}} должно быть не менее {{min}}",
+  "max_value": "{{field}} не должно превышать {{max}}",
+  "must_match": "{{field}} должно совпадать с {{other}}",
+  "already_exists": "{{field}} уже существует",
+  "not_found": "{{field}} не найдено",
+  "invalid_credentials": "Неверные учетные данные",
+  "weak_password": "Пароль слишком слабый",
+  "password_mismatch": "Пароли не совпадают"
+}

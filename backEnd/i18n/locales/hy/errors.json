@@ -1,0 +1,16 @@
+{
+  "not_found": "Ռեսուրսը չի գտնվել",
+  "unauthorized": "Չթույլատրված մուտք",
+  "forbidden": "Մուտքը արգելված է",
+  "server_error": "Սերվերի ներքին սխալ",
+  "bad_request": "Անվավեր հարցում",
+  "validation_failed": "Վավերացման սխալ",
+  "authentication_failed": "Նույնականացման սխալ",
+  "token_expired": "Թոքենի ժամկետը լրացել է",
+  "token_invalid": "Անվավեր թոքեն",
+  "rate_limit_exceeded": "Չափազանց շատ հարցումներ, փորձեք ավելի ուշ",
+  "database_error": "Տվյալների բազայի գործողության սխալ",
+  "file_upload_failed": "Ֆայլի վերբեռնման սխալ",
+  "file_too_large": "Ֆայլի չափը գերազանցում է սահմանաչափը",
+  "unsupported_file_type": "Չաջակցվող ֆայլի տեսակ"
+}

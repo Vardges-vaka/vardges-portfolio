@@ -1,0 +1,16 @@
+{
+  "not_found": "المورد غير موجود",
+  "unauthorized": "وصول غير مصرح به",
+  "forbidden": "الوصول محظور",
+  "server_error": "خطأ داخلي في الخادم",
+  "bad_request": "طلب غير صالح",
+  "validation_failed": "فشل التحقق",
+  "authentication_failed": "فشلت المصادقة",
+  "token_expired": "انتهت صلاحية الرمز",
+  "token_invalid": "رمز غير صالح",
+  "rate_limit_exceeded": "طلبات كثيرة جداً، يرجى المحاولة لاحقاً",
+  "database_error": "فشلت عملية قاعدة البيانات",
+  "file_upload_failed": "فشل رفع الملف",
+  "file_too_large": "حجم الملف يتجاوز الحد المسموح",
+  "unsupported_file_type": "نوع الملف غير مدعوم"
+}

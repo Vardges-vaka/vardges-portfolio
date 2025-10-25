@@ -1,0 +1,408 @@
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Email is required",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email is required\n    at createValidationError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:60:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:20:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:99:3)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 21:44:20",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "User not found",
+  "errorType": "NOT_FOUND",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: User not found\n    at createNotFoundError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:66:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:26:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:104:3)",
+  "statusCode": 404,
+  "timestamp": "2025-10-25 21:44:20",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Invalid credentials",
+  "errorType": "UNAUTHORIZED",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Invalid credentials\n    at createUnauthorizedError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:63:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:32:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:109:3)",
+  "statusCode": 401,
+  "timestamp": "2025-10-25 21:44:20",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Email already exists",
+  "errorType": "DUPLICATE_ENTRY",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email already exists\n    at createDuplicateError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:69:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:38:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:114:3)",
+  "statusCode": 409,
+  "timestamp": "2025-10-25 21:44:20",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Validation failed: invalid email format",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Validation failed: invalid email format\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:44:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:119:3)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 21:44:20",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": " | testController | ",
+  "data": {
+    "email": "success@test.com",
+    "id": "user-456",
+    "name": "Test User"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | testController |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 21:44:20",
+  "type": "controller_success",
+  "userId": "test-user-123"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:175:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 21:50:04",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:175:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 21:50:29",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:175:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 21:51:47",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Email is required",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email is required\n    at createValidationError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:60:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:20:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:99:3)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 21:52:43",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "User not found",
+  "errorType": "NOT_FOUND",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: User not found\n    at createNotFoundError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:66:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:26:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:104:3)",
+  "statusCode": 404,
+  "timestamp": "2025-10-25 21:52:43",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Invalid credentials",
+  "errorType": "UNAUTHORIZED",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Invalid credentials\n    at createUnauthorizedError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:63:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:32:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:109:3)",
+  "statusCode": 401,
+  "timestamp": "2025-10-25 21:52:43",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Email already exists",
+  "errorType": "DUPLICATE_ENTRY",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email already exists\n    at createDuplicateError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:69:3)\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:38:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:114:3)",
+  "statusCode": 409,
+  "timestamp": "2025-10-25 21:52:43",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | testController | ",
+  "error": "Validation failed: invalid email format",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "127.0.0.1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | testController |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Validation failed: invalid email format\n    at testUserService (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:44:11)\n    at testController (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:84:24)\n    at async runTests (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/testErrorHandler.js:119:3)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 21:52:43",
+  "type": "controller_error",
+  "userId": "test-user-123"
+}
+{
+  "controller": " | testController | ",
+  "data": {
+    "email": "success@test.com",
+    "id": "user-456",
+    "name": "Test User"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | testController |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 21:52:43",
+  "type": "controller_success",
+  "userId": "test-user-123"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Email is required",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email is required\n    at createValidationError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:60:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:27:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 22:00:13",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Email must be a valid email address",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email must be a valid email address\n    at createValidationError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:60:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:31:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 22:00:13",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Password is required for this action",
+  "errorType": "UNAUTHORIZED",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Password is required for this action\n    at createUnauthorizedError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:63:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:37:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 401,
+  "timestamp": "2025-10-25 22:00:13",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Invalid authentication token",
+  "errorType": "UNAUTHORIZED",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Invalid authentication token\n    at createUnauthorizedError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:63:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:42:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 401,
+  "timestamp": "2025-10-25 22:00:13",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "User with email nonexistent@example.com not found",
+  "errorType": "NOT_FOUND",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: User with email nonexistent@example.com not found\n    at createNotFoundError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:66:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:51:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:40)",
+  "statusCode": 404,
+  "timestamp": "2025-10-25 22:00:13",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_typedErrorExample_cntrl.js | |<=>| ",
+  "data": {
+    "createdAt": "2025-10-25T18:00:13.674Z",
+    "email": "existing@example.com"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 22:00:13",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_typedErrorExample_cntrl.js | |<=>| ",
+  "data": {
+    "email": "test@example.com"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 22:00:13",
+  "type": "controller_success"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Email is required",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email is required\n    at createValidationError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/errorHandlers/errorHelpers.js:24:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:27:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 22:12:52",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Email must be a valid email address",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Email must be a valid email address\n    at createValidationError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/errorHandlers/errorHelpers.js:24:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:31:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 400,
+  "timestamp": "2025-10-25 22:12:52",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Password is required for this action",
+  "errorType": "UNAUTHORIZED",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Password is required for this action\n    at createUnauthorizedError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/errorHandlers/errorHelpers.js:35:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:37:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 401,
+  "timestamp": "2025-10-25 22:12:52",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "Invalid authentication token",
+  "errorType": "UNAUTHORIZED",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: Invalid authentication token\n    at createUnauthorizedError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/errorHandlers/errorHelpers.js:35:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:42:11)\n    at user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:295:15\n    at processParams (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\index.js:582:12)",
+  "statusCode": 401,
+  "timestamp": "2025-10-25 22:12:52",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>| ",
+  "error": "User with email nonexistent@example.com not found",
+  "errorType": "NOT_FOUND",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "AppError: User with email nonexistent@example.com not found\n    at createNotFoundError (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/errorHandlers/errorHelpers.js:46:3)\n    at user_typedErrorExample_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_typedErrorExample_srv.js:51:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_typedErrorExample_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_typedErrorExample_cntrl.js:23:40)",
+  "statusCode": 404,
+  "timestamp": "2025-10-25 22:12:52",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_typedErrorExample_cntrl.js | |<=>| ",
+  "data": {
+    "createdAt": "2025-10-25T18:12:52.242Z",
+    "email": "existing@example.com"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 22:12:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_typedErrorExample_cntrl.js | |<=>| ",
+  "data": {
+    "email": "test@example.com"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_typedErrorExample_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 22:12:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges Petrosyan",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 22:21:56",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-10-25 22:24:34",
+  "type": "controller_success"
+}

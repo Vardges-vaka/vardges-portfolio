@@ -4,7 +4,17 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
 // !===== Routes =====
-import { userRoutes, accessRoutes } from "./08_routes/_routes.index.js";
+import {
+  userRoutes,
+  accessRoutes,
+  testRoutes,
+} from "./08_routes/_routes.index.js";
+
+// !===== Middlewares =====
+import {
+  i18nHandler,
+  i18nMiddleware,
+} from "./05_middlewares/_mddlwre.index.js";
 
 // !===== Config =====
 import {
@@ -24,6 +34,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(SESSION_CONFIG);
+
+// i18n middleware - must be before routes
+app.use(i18nHandler);
+app.use(i18nMiddleware);
+
 app.use(
   "/static",
   express.static("public", {
@@ -35,6 +50,7 @@ connectDB();
 
 app.use("/api/user", userRoutes); ///    /api/user/auth/signup
 app.use("/api/access", accessRoutes); // /api/user/auth/signup
+app.use("/api/test", testRoutes); // /api/test/i18n
 
 app.use(setCSPHeader);
 

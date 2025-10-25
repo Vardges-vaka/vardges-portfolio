@@ -1,0 +1,15 @@
+{
+  "required": "{{field}} مطلوب",
+  "invalid_email": "عنوان البريد الإلكتروني غير صالح",
+  "invalid_format": "تنسيق {{field}} غير صالح",
+  "min_length": "يجب أن يحتوي {{field}} على {{min}} حرفاً على الأقل",
+  "max_length": "يجب ألا يتجاوز {{field}} {{max}} حرفاً",
+  "min_value": "يجب أن يكون {{field}} {{min}} على الأقل",
+  "max_value": "يجب ألا يتجاوز {{field}} {{max}}",
+  "must_match": "يجب أن يتطابق {{field}} مع {{other}}",
+  "already_exists": "{{field}} موجود بالفعل",
+  "not_found": "{{field}} غير موجود",
+  "invalid_credentials": "بيانات الاعتماد غير صالحة",
+  "weak_password": "كلمة المرور ضعيفة جداً",
+  "password_mismatch": "كلمات المرور غير متطابقة"
+}

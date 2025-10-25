@@ -5,6 +5,7 @@ export { user_signOut_srv } from "./userServices/userServices_auth/user_signOut_
 export { user_forgotPassword_srv } from "./userServices/userServices_auth/user_forgotPassword_srv.js";
 export { user_resetPassword_srv } from "./userServices/userServices_auth/user_resetPassword_srv.js";
 export { user_authCheck_srv } from "./userServices/userServices_auth/user_authCheck_srv.js";
+export { user_typedErrorExample_srv } from "./userServices/userServices_auth/user_typedErrorExample_srv.js";
 
 // !===== Validators =====
 export { user_signUp_vld } from "./userValidators/userValidators_auth/user_signUp_vld.js";
