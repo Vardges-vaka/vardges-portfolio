@@ -1,0 +1,14 @@
+{
+  "emailRequired": "Email is required",
+  "passwordRequired": "Password is required",
+  "invalidEmail": "Invalid email",
+  "confirmPasswordRequired": "Confirm password is required",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "keyRequired": "Key is required",
+  "rememberMeMustBeBoolean": "Remember me must be a boolean",
+  "nameRequired": "Name is required"
+}
+
+
+
+

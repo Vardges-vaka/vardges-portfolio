@@ -1,0 +1,9 @@
+{
+  "emailRequired": "البريد الإلكتروني مطلوب", 
+  "passwordRequired": "كلمة المرور مطلوبة",
+  "invalidEmail": "البريد الإلكتروني غير صالح",
+  "confirmPasswordRequired": "كلمة المرور المطلوبة للتأكيد",
+  "passwordsDoNotMatch": "كلمات المرور لا تطابق",
+  "keyRequired": "المفتاح مطلوب",
+  "rememberMeMustBeBoolean": "يجب أن يكون تذكري المستخدم ذاتي النوعية"
+}

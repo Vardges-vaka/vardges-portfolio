@@ -1,0 +1,65 @@
+{
+  "email": {
+    "placeholder": "Enter your email",
+    "label": "Email",
+    "message": "Email"
+  },
+  "name": {
+    "placeholder": "Enter your name",
+    "label": "Name",
+    "message": "Name"
+  },
+  "key": {
+    "placeholder": "Enter your access code",
+    "label": "Access Code",
+    "message": "Access Code"
+  },
+  "password": {
+    "placeholder": "Enter your password",
+    "label": "Password",
+    "message": "Password"
+  },
+  "rememberMe": {
+    "label": "Remember Me",
+    "message": "Remember Me"
+  },
+  "forgotPassword": {
+    "label": "Forgot Password?",
+    "title": "Reset Password",
+    "message": "Enter your email address and we'll send you a link to reset your password.",
+    "button": "Send Reset Link",
+    "loading": "Sending..."
+  },
+  "signin": {
+    "button": "Sign In",
+    "loading": "Signing in...",
+    "backButton": "Back to Sign In",
+    "dontHaveAccount": "Don't have an account?"
+  },
+  "signup": {
+    "button": "Sign Up",
+    "loading": "Signing up...",
+    "backButton": "Back to Sign In",
+    "alreadyHaveAnAccount?": "Already have an account?"
+  },
+  "adminSignin": {
+    "forgotPassword": {
+      "success": "If an account with that email exists, a password reset link has been sent.",
+      "error": "An unexpected error occurred. Please try again.",
+      "loading": "Sending..."
+    },
+    "signin": {
+      "success": "Sign in successful!",
+      "error": "Sign in failed. Please try again.",
+      "loading": "Signing in..."
+    }
+  },
+  "adminSignup": {
+    "signup": {
+      "success": "Sign up successful!",
+      "error": "Sign up failed. Please try again.",
+      "loading": "Signing up...",
+      "errorUnexpected": "An unexpected error occurred. Please try again."
+    }
+  }
+}

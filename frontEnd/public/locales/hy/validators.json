@@ -1,0 +1,9 @@
+{
+  "emailRequired": "Հասցե պարտադրված է",
+  "passwordRequired": "Հասցե պարտադրված է",
+  "invalidEmail": "Հասցե պարտադրված է",
+  "confirmPasswordRequired": "Հասցե պարտադրված է",
+  "passwordsDoNotMatch": "Հասցե պարտադրված է",
+  "keyRequired": "Հասցե պարտադրված է",
+  "rememberMeMustBeBoolean": "Հասցե պարտադրված է"
+}

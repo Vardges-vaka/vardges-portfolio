@@ -1,0 +1,123 @@
+.Bio {
+  /**/
+  /* background-color: #1b7357; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--border-main);
+  border-radius: var(--border-radius); */
+  padding: 300px;
+  /* background-color: var(--bg-primary-hover); */
+}
+
+/*
+  color: var(--icon-stroke-color-1);
+  color: var(--icon-stroke-color-2);
+  color: var(--icon-stroke-color-3);
+  color: var(--icon-stroke-color-4);
+  color: var(--icon-stroke-color-5);
+  color: var(--icon-stroke-color-6);
+  color: var(--icon-stroke-color-7);
+  color: var(--icon-stroke-color-8);
+  color: var(--icon-stroke-color-9);
+
+
+
+    --icon-stroke-primary-color: var(--dark-icon-stroke-primary-color);
+  --icon-stroke-primary-hover-color: var(
+    --dark-icon-stroke-primary-hover-color
+  );
+  --icon-stroke-secondary-color: var(--dark-icon-stroke-secondary-color);
+  --icon-stroke-secondary-hover-color: var(
+    --dark-icon-stroke-secondary-hover-color
+  );
+*/
+
+.About {
+  color: var(--icon-stroke-primary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+
+.Achievements {
+  color: var(--icon-stroke-secondary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+
+.Experience {
+  color: var(--icon-stroke-primary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+
+.Goals {
+  color: var(--icon-stroke-secondary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+
+.Projects {
+  color: var(--icon-stroke-primary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+
+.Skills {
+  color: var(--icon-stroke-secondary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+
+.Values {
+  color: var(--icon-stroke-primary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+
+.Contact {
+  color: var(--icon-stroke-secondary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+.Education {
+  color: var(--icon-stroke-primary-color);
+  background-color: transparent !important;
+  width: 50px;
+  height: 50px;
+}
+.Education:hover {
+  color: var(--icon-stroke-primary-hover-color);
+}
+.Achievements:hover {
+  color: var(--icon-stroke-secondary-hover-color);
+}
+.Experience:hover {
+  color: var(--icon-stroke-primary-hover-color);
+}
+.Goals:hover {
+  color: var(--icon-stroke-secondary-hover-color);
+}
+.Projects:hover {
+  color: var(--icon-stroke-primary-hover-color);
+}
+.Skills:hover {
+  color: var(--icon-stroke-secondary-hover-color);
+}
+.Values:hover {
+  color: var(--icon-stroke-primary-hover-color);
+}
+.Contact:hover {
+  color: var(--icon-stroke-secondary-hover-color);
+}

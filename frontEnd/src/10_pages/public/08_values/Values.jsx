@@ -1,0 +1,924 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "./styles/values.css";
+
+const Values = ({ variant = "full" }) => {
+  const { i18n, t } = useTranslation("values");
+  const Values_classname = `Values ${variant === "full" ? "full" : "short"}`;
+  return (
+    <div className={Values_classname}>
+      {t("test")}
+      {/* <p classname="Values_text">
+        Personal Overview / Bio My name is Vardges Petrosyan, born on March 2,
+        1992, and currently based in Dubai, United Arab Emirates. I am fluent in
+        Russian, English, and Armenian, with a unique career journey that spans
+        both the hospitality industry and the world of technology. For over a
+        decade, I built my career in hospitality — starting as a bartender and
+        rising through the ranks to become a head bartender and eventually a bar
+        manager. During this time, I sharpened my people skills, business sense,
+        and operational management abilities, while gaining a deep understanding
+        of how to build, manage, and grow customer-focused businesses. In recent
+        years, I redirected my energy toward technology and software
+        development, combining my hospitality background with growing expertise
+        in full-stack development. Today, I actively work on projects that merge
+        both worlds: building software solutions for restaurants, developing
+        full-stack web applications, and experimenting with AI-powered tools. My
+        mindset is analytical, detail-oriented, and highly process-driven,
+        allowing me to break down complex problems into clear, achievable steps.
+        At the same time, my hospitality roots give me the creativity to design
+        engaging customer experiences both offline and online. My journey with
+        languages reflects the same persistence I bring into every challenge.
+        When I first came to the UAE, the only English word I knew was “ok.”
+        Realizing how essential the language was in such a diverse, global
+        environment, I dedicated myself to learning it from scratch. The process
+        was not easy — I experimented with different methods, relied on trial
+        and error, and invested enormous effort and time into improving day by
+        day. This experience not only gave me fluency but also opened me to new
+        cultural perspectives and opportunities. More importantly, it shaped my
+        dedication, persistence, and commitment — qualities I now carry into
+        every area of my personal and professional growth. Living and working in
+        Dubai further developed my cultural adaptability, enabling me to build
+        meaningful connections, understand varied perspectives, and collaborate
+        effectively across diverse teams in hospitality, business, and
+        technology. I live by a set of principles that guide my work and
+        decisions. First, I believe that reality matters more than appearances.
+        While perception has its place, I see truth and authenticity as the
+        ultimate measure of value. In a world of overwhelming information and
+        constant noise, I strive to remain grounded in what is real and
+        practical. For me, “my word is my bond” is not just a saying but a
+        standard — I do exactly what I say, no more and no less. This principle
+        has shaped my reputation for reliability and integrity. Second, I
+        believe in systems and deliberate problem-solving. I often spend
+        significant time reflecting on the nature of a problem before taking
+        action, because I recognize that choosing one path also means not
+        choosing others — and both define who we are. I typically dedicate
+        70–80% of my effort to analyzing, planning, and sharpening my approach,
+        leaving 20–30% for execution. As the saying goes, “If I had an hour to
+        chop down a tree, I’d spend the first 45 minutes sharpening my axe.”
+        This mindset reflects my conviction that preparation and clarity of
+        thought are the foundation of effective results. Looking ahead, my
+        direction is defined by problem-solving across disciplines. Whether
+        through software solutions, AI-powered tools, marketing strategies, or
+        my people skills, I am drawn to opportunities that require structured,
+        creative, and practical solutions. In technology, I see not only a
+        career path but also a means to reshape industries. In marketing, I
+        emphasize the distinction between core principles and digital extensions
+        — believing that true marketing begins with strategy and planning, while
+        tools like social media and advertising are important but secondary. In
+        hospitality, my passion will never fade. I remain open to opportunities
+        — whether as a consultant, manager, or even bartender — so long as the
+        role and team culture are meaningful. For me, the true essence of
+        hospitality lies in the people you work with, particularly the
+        leadership you report to, as culture and vision ultimately define
+        fulfillment in this field. Ultimately, my future direction is about
+        bridging technology, marketing, and hospitality with my ability to solve
+        problems in ways that are creative, disciplined, and impactful.
+        Professional Journey Narrative Overview I began in hands-on hospitality
+        roles (bartender → head bartender → bar manager), progressed into
+        multi-venue leadership and brand building, and since 2024 have layered
+        in technology and data-backed marketing to drive measurable growth.
+        Today I operate at the intersection of hospitality, core marketing, and
+        software/AI, applying systems thinking to raise standards, streamline
+        operations, and build brands. Timeline (at a glance) • 2024–Present —
+        Business Development & Marketing Manager, Vkusno (Dubai) • 2022–Present
+        — Founder, The Cocktail Tree (Dubai) • 2018–2024 — Bar Manager, BFF
+        Sports Bar (Dubai) • 2018 — Group/Outlet Management (Acting Bar Manager,
+        The 3rd Avenue Pub), Subah Group / Sheraton Al Khalidiya (Abu Dhabi) •
+        2016–2017 — Professional Development: Mixology Bus Tour, Europe (33
+        countries, 70 venues) • 2015–2016 — Head Bartender, Southern Sun – Blu
+        Sky Lounge & Grill (Abu Dhabi) • 2013–2014 — Bartender → Acting Head
+        Bartender, Miramar Al Aqah Beach Resort (Fujairah) • 2013 — Head
+        Bartender, Hotel Metropol Moscow – Shalyapin Bar (Moscow) • 2011–2013 —
+        Bar Back → Bartender, Congress Hotel – Venice Outlet Bar (Yerevan)
+        ________________________________________ Role Dossiers Vkusno — Business
+        Development & Marketing Manager Dubai, UAE | Mar 2024 – Present Scope:
+        Growth, partnerships, core marketing strategy, brand identity, and tech
+        touchpoints (website/app) for an authentic Russian cuisine brand. Key
+        responsibilities • Built and managed aggregator partnerships (Talabat,
+        Careem, Deliveroo, Noon) to streamline delivery operations and customer
+        experience. • Planned and executed integrated marketing (SEO, content,
+        social, influencer) aligned to clear objectives. • Led brand identity
+        refinement; oversaw website development and groundwork for a
+        customer-facing app. • Implemented customer feedback loops,
+        loyalty/seasonal campaigns, and capacity-aligned promotions. • Managed
+        marketing budget for efficiency and ROI. Selected contributions •
+        Connected marketing cadence with operational throughput to reduce
+        service bottlenecks. • Introduced a cohesive brand system across digital
+        surfaces to improve recognition and conversion.
+        ________________________________________ The Cocktail Tree — Founder
+        Dubai, UAE | Jan 2022 – Present Scope: Beverage consulting and training
+        concept translating mixology expertise into structured, scalable
+        services and content. Key responsibilities • Defined brand, services,
+        and training programs; positioned as a systems-driven consulting
+        partner. • Guided productized offerings for bars/restaurants; built
+        community reach and credibility. Selected contributions • Packaged
+        practical, cost-effective playbooks for beverage operations, menu
+        design, and staff training. ________________________________________ BFF
+        Sports Bar — Bar Manager Dubai, UAE | Dec 2018 – Sep 2024 Scope:
+        End-to-end bar operations, team leadership, beverage program, events,
+        and quality assurance in a high-volume venue. Key responsibilities • Led
+        staffing, training, scheduling, cost control, and service standards. •
+        Innovated beverage menus; coordinated F&B pairing with culinary team. •
+        Established operational KPIs and QA routines for continuous improvement.
+        Selected contributions • Introduced process improvements that stabilized
+        peak-hour throughput without degrading quality. • Built a guest-centric
+        culture that increased repeat visits and average check consistency.
+        ________________________________________ Subah Group / Sheraton Al
+        Khalidiya — Outlet Manager & Acting Bar Manager (The 3rd Avenue Pub) Abu
+        Dhabi, UAE | Mar 2018 – Aug 2018 Scope: Multi-outlet exposure (20+
+        venues) with direct ownership of a flagship pub. Key responsibilities •
+        Standardized operating procedures, training, and service benchmarks
+        across outlets. • Contributed to capacity planning, labor optimization,
+        and guest-experience design. Selected contributions • Rolled out team
+        training that improved service consistency across multiple venues.
+        ________________________________________ Southern Sun (Blu Sky Lounge &
+        Grill) — Head Bartender Abu Dhabi, UAE | Jan 2015 – Oct 2016 Scope: Team
+        leadership, bar operations, and beverage innovation in a dynamic
+        sports-bar setting. Highlights • Managed peak-hour service while
+        maintaining quality; mentored and developed staff. • Expanded and
+        refreshed beverage menus in line with guest profiles and venue
+        positioning. ________________________________________ Miramar Al Aqah
+        Beach Resort — Bartender → Acting Head Bartender Fujairah, UAE | Sep
+        2013 – Dec 2014 Scope: Dual-environment service (daytime beach bar;
+        nighttime club) with international clientele. Highlights • Adapted
+        service and menu to contrasting day/night formats; maintained standards
+        at volume. • Elevated guest experience through speed, breadth of offer,
+        and consistency. ________________________________________ Hotel Metropol
+        Moscow (Shalyapin Bar) — Head Bartender Moscow, Russia | Jan 2013 – Aug
+        2013 Scope: Premium beverage program with 500+ SKUs in a high-end,
+        multicultural environment. Highlights • Led a diverse bar team; owned
+        menu innovation, inventory control, and presentation standards.
+        ________________________________________ Congress Hotel (Venice Outlet
+        Bar) — Bar Back → Bartender Yerevan, Armenia | Mar 2011 – Jan 2013
+        Scope: Foundational experience across guest service, inventory
+        discipline, hygiene, and teamwork. Highlights • Progressed rapidly to
+        bartender; introduced creative, trend-aligned offerings; mentored junior
+        teammates. ________________________________________ Professional
+        Development Mixology Bus Tour — Europe Nov 2016 – May 2017 | 33
+        countries • 65 cities • 70 venues • Immersive study of regional
+        techniques, service etiquette, and venue operations. • Built a network
+        of industry contacts; broadened cultural range and innovation pipeline.
+        • Informed later leadership and training methods with globally tested
+        practices. ________________________________________ Cross-Role Themes
+        (What repeats and compounds) • Systems & Standards: Documenting
+        procedures, training teams, and enforcing QA to improve consistency. •
+        Brand Building: Shaping identity and guest experience across physical
+        and digital touchpoints. • Operational Pragmatism: Aligning demand
+        generation (campaigns/promotions) with operational capacity. • People
+        Development: Mentoring staff, raising service levels, and building
+        resilient teams. • Tech-Enabled Growth: Since 2024, integrating
+        website/app work and data-backed marketing with delivery platform Skills
+        & Expertise Technical (Web & Software) Frontend Development: I focus on
+        building modular, scalable, and user-friendly interfaces with a strong
+        foundation in JavaScript and React. My approach emphasizes clarity,
+        reusability, and performance, making sure the frontend aligns with
+        business goals and delivers a smooth customer experience. Core
+        Competencies • JavaScript (ES6+) — asynchronous programming, modular
+        code structure, DOM manipulation. • React — component-based
+        architecture, custom hooks, context API for global state management,
+        reusable UI components. • Vite — fast development server and optimized
+        build pipelines for React apps. • HTML5 & CSS3 — semantic structure and
+        responsive styling. • Bootstrap — used for quick prototyping and layout
+        before shifting to React. • i18n (internationalization) — managing
+        multilingual support and localization in frontend applications. • Figma
+        — creating and interpreting UI/UX designs, collaborating with design
+        workflows. Approach My frontend philosophy is to prioritize clarity,
+        modularity, and reusability. I structure components in a way that future
+        features can be added without major rewrites, while ensuring fast load
+        times and intuitive user experiences. Backend Development: My backend
+        expertise is centered on Node.js and Express, with a focus on building
+        secure, scalable APIs and managing complex business logic. I design
+        systems that are maintainable, well-structured, and aligned with real
+        business operations. Core Competencies • Node.js & Express — REST API
+        design, routing, middleware, authentication, error handling, and request
+        validation. • Authentication & Security — JWT authentication, password
+        hashing (middleware-based), token blacklists, and role-based access
+        control. • File Uploads — Multer integration with AWS SDK, handling
+        private storage with S3 presigned URLs. • Business Logic — schema
+        handling for users, orders, campaigns, wallet/transactions, and delivery
+        coverage areas. • Rate Limiting & Security Hardening — protections
+        against abuse, CORS configuration, and secure headers. • Email Services
+        — transactional email integration using SendGrid, Nodemailer, and Amazon
+        SES. • Real-Time Communication — socket.io for event-driven flows such
+        as live updates or notifications. Supporting Tools (Familiar) • Logging
+        & monitoring: Winston (logging), Morgan (HTTP request logging). • Task
+        scheduling: node-cron for background jobs. Approach I prioritize
+        clarity, modularity, and reliability in backend systems. Each module is
+        structured to separate concerns (routes, controllers, services,
+        middleware), making codebases easier to maintain and scale. I ensure
+        APIs are designed with both performance and security in mind, supporting
+        real-world business flows like order management, payment handling,
+        email/OTP verification, and secure asset delivery. Databases: My
+        database expertise is built around MongoDB, with Mongoose as the ODM for
+        schema modeling and application integration. I design schemas that
+        reflect real-world business flows, ensuring both flexibility and
+        performance. Core Competencies • MongoDB — NoSQL database design, CRUD
+        operations, indexing for query optimization, and handling large
+        collections. • Mongoose — schema definition, validation, pre/post
+        middleware, population for relationships, and lean queries for
+        efficiency. • Schema Design — practical models for: o Users & Admins
+        (authentication, roles, tokens) o Orders (status pipelines, items,
+        payments) o Menu Items (images, descriptions, categories) o Campaigns &
+        Discounts (percentage caps, cashback, loyalty) o Wallet & Transactions
+        (balance management, top-ups, partial payments) o Delivery Coverage
+        Areas (branch-based service zones) • Error Handling — managing
+        validation errors, duplicate keys, and schema constraints. Approach I
+        treat database design as the foundation of application reliability. My
+        focus is on creating schemas that are consistent, maintainable, and
+        secure, while keeping queries optimized for performance. By planning
+        relationships carefully, I ensure that each schema not only serves
+        immediate business logic but can scale as systems expand. Payments,
+        Messaging & Maps: I have practical experience implementing payment
+        gateways, messaging services, and location-based functionality. These
+        tools are essential for building user-friendly, real-world applications,
+        especially in the restaurant and delivery industry. Core Competencies •
+        Stripe — implemented a complete wallet system including top-ups, full
+        wallet usage for payments, refunds, saving cards, and removing saved
+        cards. • SendGrid — transactional email flows including registration,
+        verification, and notifications. • Amazon SES — cloud-based email
+        service for scalable, reliable email delivery. • Twilio / Infobip — OTP
+        verification via SMS, WhatsApp, and Telegram. • Google Maps API —
+        address search and selection during registration, map rendering, and
+        groundwork for delivery-area logic. Supporting Tools (Familiar) •
+        Nodemailer — for sending application-based emails when lighter setups
+        are sufficient. • Webhook integrations — connecting third-party services
+        for event-driven workflows. Approach I see payments, messaging, and maps
+        as core enablers of user trust and convenience. My approach is to ensure
+        secure, reliable flows that align with user expectations: seamless
+        payments, timely notifications, and accurate delivery coverage. I design
+        these integrations with scalability in mind so they can handle growth in
+        both customer base and operational complexity. Marketing & Growth
+        Marketing Foundations: My approach to marketing is built on principles
+        and strategy first, tools second. I believe true marketing begins with
+        understanding the market, defining positioning, and designing campaigns
+        that align with business capacity and customer expectations. Digital
+        tools — whether social media, SEO, or ads — are extensions of these
+        foundations, not the foundation itself. Core Competencies • Positioning
+        & Strategy — defining target markets, customer personas, and competitive
+        differentiation. • Value Proposition Design — shaping clear messaging
+        that resonates with audiences. • Campaign Planning — structuring
+        seasonal, loyalty, and promotional campaigns with measurable objectives.
+        • Offer Design — balancing discounts, caps, and perceived value to drive
+        growth without undermining margins. • Integrated Thinking — aligning
+        campaigns with operations, ensuring marketing promises can be fulfilled
+        by service capacity. • Measurement & Feedback — linking outcomes to
+        business results, not vanity metrics. Approach I emphasize systems-based
+        marketing — every campaign should be measurable, sustainable, and
+        connected to real business outcomes. My philosophy is to avoid noise and
+        focus on clarity: fewer promises, delivered consistently, create
+        stronger long-term trust and growth. Digital Marketing & Advertising: I
+        approach digital marketing as an extension of core strategy, not a
+        replacement. Tools such as social media, SEO, and CPC advertising are
+        most effective when grounded in clear positioning and measurable
+        objectives. My focus is on performance-driven campaigns that build
+        awareness, generate demand, and deliver tangible ROI. Core Competencies
+        • Search Engine Optimization (SEO) — keyword strategies, content
+        alignment, and technical optimization to drive organic traffic. •
+        Content Strategy & Execution — structuring and adapting campaigns using
+        existing assets (text, images, videos) provided by content creators.
+        While I am not a content creator myself, I specialize in transforming
+        raw materials into polished, brand-aligned campaigns. • Social Media
+        Campaigns — managing calendars, coordinating influencer collaborations,
+        and balancing organic vs. paid promotions. • CPC & Paid Ads — managing
+        budgets, bids, and ROI analysis across platforms, with hands-on
+        experience in aggregator CPC dashboards. • Email Marketing — structured
+        campaigns via SendGrid and Amazon SES for onboarding, engagement, and
+        retention. • Performance Analytics — tracking conversions,
+        cost-per-order, ROI, and aligning data with operational outcomes (not
+        just impressions or clicks). Approach I emphasize ROI and clarity in
+        digital marketing. Every campaign is designed with a measurable outcome
+        and balanced against operational realities — for example, ensuring
+        CPC-driven order growth matches kitchen capacity. By treating digital
+        tools as levers of a broader strategy, I avoid vanity metrics and focus
+        on what drives sustainable growth: conversions, retention, and customer
+        lifetime value. Aggregator Growth & Partnerships: Working with
+        aggregators is central to scaling restaurants in the UAE, and I have
+        deep, practical experience in managing partnerships with Talabat,
+        Deliveroo, Careem, Noon, and newer platforms like Keeta, Amazon 15
+        Minutes, Instashop, and Smiles by Etisalat. My role involves more than
+        uploading menus — it’s about strategic alignment between marketing
+        campaigns, operational capacity, and financial outcomes. Core
+        Competencies • Aggregator Partnerships — onboarding, negotiating
+        placements, aligning offers with platform rules, and coordinating with
+        Key Account Managers (KAMs). • CPC Campaigns & Advertising — setting
+        budgets, optimizing bids, and tracking performance through aggregator
+        dashboards. • Campaign ROI Analysis — interpreting aggregator data to
+        separate “basket value before discounts” from “net revenue after
+        promotions.” • Menu & Catalog Management — structuring items,
+        categories, and visuals to maximize conversions and ensure
+        cross-platform consistency. • Promotions & Loyalty — designing discounts
+        (e.g., 50% off with AED-30 cap), cashback campaigns, and repeat-order
+        incentives. • Cross-Platform Coordination — managing marketing and
+        offers across Talabat, Deliveroo, Careem, Noon, Keeta, Amazon 15
+        Minutes, Instashop, and Smiles. • Onboarding & Launch Marketing —
+        successfully onboarding new brands onto emerging aggregator platforms,
+        building initial visibility through advertising, discounts, and seasonal
+        campaigns. Approach I treat aggregators as growth partners, not just
+        sales channels. My method is to link advertising spend directly to ROI,
+        ensuring campaigns deliver profitable volume while respecting
+        operational limits (e.g., daily order capacity per branch). I leverage a
+        mix of established players and fast-growing platforms (Keeta, Amazon 15
+        Minutes, Instashop, Smiles) to diversify exposure and reduce dependency
+        on any single channel. By combining close monitoring of CPC dashboards
+        with strong account management relationships, I balance visibility,
+        conversion, and loyalty across multiple ecosystems. Brand Building &
+        Customer Engagement: I see branding not as logos or visuals alone, but
+        as the consistent delivery of identity, values, and customer experience
+        across every touchpoint. My role often begins with just an idea or a
+        name — and I build everything else from scratch into a professional,
+        market-ready brand. Core Competencies • Logo Design — creating
+        distinctive and scalable logos that anchor the brand identity. • Brand
+        Identity Development — refining logos, color palettes, typography, tone
+        of voice, and visual guidelines. • Brand Books & Portfolios — compiling
+        full documentation and visual systems to ensure consistent brand usage
+        across all channels. • From A to Z Brand Setup — taking an idea and
+        transforming it into a fully operational brand: o Designing logos and
+        identity systems. o Opening social media channels. o Setting up websites
+        (domain purchase, “coming soon” pages, and full builds). o Configuring
+        professional emails, email signatures, and supporting tools. • Custom
+        GPT Development — creating brand-specific GPTs in ChatGPT with tailored
+        instructions for business owners, managers, or staff. These GPTs are
+        designed for practical use, enabling businesses to handle tasks such as
+        content structuring, customer interaction templates, or internal process
+        support — all aligned with the brand’s identity and needs. •
+        Storytelling & Messaging — framing the brand’s narrative so it resonates
+        with the right audience. • Customer Experience Integration — ensuring
+        marketing campaigns, menus, delivery packaging, and digital platforms
+        reflect the same brand identity. • Loyalty & Retention Programs —
+        designing cashback, referral, and repeat-order incentives to deepen
+        engagement. • Influencer & Community Marketing — collaborating with
+        local influencers, bloggers, and communities to expand reach
+        authentically. • Cross-Channel Consistency — ensuring that aggregator
+        menus, websites, social media, and offline presence all align with the
+        same brand values. Approach I treat brand building as a system of trust
+        and consistency. My role is often end-to-end: I create the logo and
+        identity, establish the tools and platforms, and even build custom AI
+        assistants that help the brand manage tasks more efficiently. Once
+        complete, I hand over a fully functional brand package that includes
+        design, digital presence, communication tools, and AI-driven support.
+        Clients can then either manage it independently or continue working with
+        me for ongoing development and growth. By ensuring every touchpoint —
+        from emails to aggregator menus to AI tools — reflects the same
+        identity, I build brands that are professional, memorable, and scalable.
+        Data & Measurement: I believe that marketing only matters when it
+        translates into measurable business outcomes. My strength lies in
+        connecting advertising spend, campaign performance, and customer
+        behavior with actual operational and financial results. Core
+        Competencies • ROI Analysis — evaluating the effectiveness of campaigns
+        across aggregators (Talabat, Deliveroo, Careem, Noon, Keeta, Amazon 15
+        Minutes, Instashop, Smiles). • CPC & Campaign Tracking — monitoring
+        cost-per-order, return on ad spend (ROAS), and customer acquisition cost
+        (CAC). • Sales & Revenue Impact — distinguishing between gross “basket
+        value” and net revenue after discounts and capped promotions. •
+        Performance Dashboards — structuring spreadsheets and reports to compare
+        month-over-month performance, order volumes, and campaign effectiveness.
+        • Customer Retention Metrics — measuring repeat orders, loyalty program
+        uptake, and lifetime value (LTV). • Operational Alignment — ensuring
+        campaigns match delivery and kitchen capacity, preventing
+        marketing-driven bottlenecks. Approach I take a data-first mindset:
+        every marketing activity must have clear objectives and measurable
+        outcomes. I avoid vanity metrics (likes, impressions, followers) and
+        focus on what matters — orders, revenue, retention, and profitability.
+        By building simple but effective reporting systems, I provide clarity
+        not only for myself but also for managers and stakeholders, ensuring
+        that decisions are based on reality rather than assumptions. Business &
+        Operations Operational Management: My operational expertise is built
+        from years of managing high-volume hospitality venues and expanded into
+        delivery-first restaurant operations in Dubai. I specialize in creating
+        systems that ensure consistency, efficiency, and scalability — whether
+        in a busy bar, a multi-outlet hotel, or a brand onboarding onto
+        aggregators. Core Competencies • Daily Operations Oversight — managing
+        service standards, order flow, scheduling, and customer experience. •
+        Standard Operating Procedures (SOPs) — designing and implementing clear
+        workflows that reduce errors and improve consistency. • Capacity &
+        Demand Alignment — ensuring marketing campaigns and promotions match
+        service and delivery throughput to avoid bottlenecks. • Inventory &
+        Supply Chain Management — controlling stock, supplier coordination, and
+        minimizing waste. • Quality Assurance — maintaining service standards
+        through checks, customer feedback loops, and training. •
+        Cross-Functional Coordination — aligning service, marketing, delivery,
+        and partner teams for smooth execution. • Customer-Centric Service
+        Design — ensuring operations reflect the brand promise and deliver a
+        seamless customer experience. Approach I treat operations as the engine
+        that powers brand promises. A strong campaign or brand identity only
+        works if the front-line systems deliver. My approach is to analyze
+        workflows, design SOPs, and anticipate peak-demand challenges, so
+        businesses can grow without compromising service quality. Team
+        Leadership: Throughout my career, I’ve led diverse teams in
+        high-pressure environments, from large hospitality venues to business
+        development projects. My leadership style combines structured systems
+        with personal mentorship, ensuring teams are not only efficient but also
+        motivated and aligned with the brand’s vision. Core Competencies •
+        Recruitment & Onboarding — hiring staff with the right skills and
+        cultural fit, and ensuring smooth integration into operations. •
+        Training & Development — mentoring bartenders, supervisors, and
+        managers, with a focus on service standards, upselling techniques, and
+        operational efficiency. • Motivation & Retention — creating team
+        cultures that balance accountability with recognition, reducing turnover
+        and fostering loyalty. • Delegation & Responsibility — assigning clear
+        roles and expectations while encouraging ownership at every level. •
+        Conflict Resolution — handling team conflicts and customer-facing
+        challenges calmly and constructively. • Cross-Functional Leadership —
+        guiding not only hospitality teams but also collaborating with
+        designers, developers, and marketers on brand and tech projects.
+        Approach I believe leadership is about building people, not just
+        managing tasks. My philosophy is to mentor teams so they understand the
+        “why” behind their work, not just the “how.” By creating structured
+        systems, providing training, and encouraging initiative, I’ve built
+        teams that perform under pressure, adapt to challenges, and consistently
+        deliver excellent customer experiences. Financial Oversight: Financial
+        control has been a constant part of my work, from managing bar budgets
+        in hospitality to handling marketing spends and ROI analysis in brand
+        development. My approach combines practical cost control with strategic
+        allocation, ensuring that every dirham spent contributes directly to
+        growth or efficiency. Core Competencies • Budget Management — allocating
+        and monitoring budgets for operations, marketing, and advertising. •
+        Cost Control — tracking expenses, managing suppliers, and identifying
+        inefficiencies. • Revenue Alignment — connecting sales and promotions
+        with financial outcomes, separating gross basket value from net after
+        discounts and caps. • Campaign ROI Analysis — monitoring aggregator
+        dashboards and CPC campaigns to measure real returns on spend. •
+        Forecasting & Planning — projecting revenues, campaign impact, and
+        operational costs to guide decision-making. • Reporting & Transparency —
+        building clear reports that show financial impact in simple, actionable
+        formats for managers and stakeholders. Approach I approach financial
+        oversight with the belief that clarity drives confidence. I avoid vanity
+        numbers and focus on what matters: profitability, cost efficiency, and
+        sustainable growth. Whether handling daily cost control in hospitality
+        or tracking campaign ROI in restaurant delivery, I ensure that financial
+        decisions are based on real data, not assumptions. Customer Experience
+        Design: For me, customer experience is about more than just service
+        quality — it’s about ensuring that every interaction with a brand feels
+        consistent, smooth, and aligned with its promise. Drawing on my
+        hospitality background, I bring a people-first mindset, while my
+        marketing and tech experience allows me to design experiences that
+        extend seamlessly across digital and physical touchpoints. Core
+        Competencies • Service Journey Mapping — analyzing the customer journey
+        from first contact (ads, aggregators, or social) through to order
+        fulfillment and post-purchase engagement. • Consistency Across
+        Touchpoints — aligning aggregator menus, websites, emails, and brand
+        packaging so that the experience feels unified. • Feedback Loops —
+        setting up systems to capture, analyze, and act on customer feedback to
+        refine services and offerings. • Trust & Transparency — ensuring
+        communications, campaigns, and promises match what the business can
+        actually deliver. • Loyalty Integration — embedding rewards, cashback,
+        and repeat-order incentives into the customer journey to drive
+        retention. • Experience Innovation — applying creative
+        hospitality-driven touches to digital experiences, making online
+        interactions feel personal. Approach I see customer experience as the
+        bridge between brand and reality. A business can market itself well, but
+        unless the customer’s lived experience matches that story, the brand
+        loses trust. My approach is to design with empathy and discipline:
+        ensuring operational capacity matches promises, embedding
+        feedback-driven improvements, and creating journeys where customers feel
+        recognized and valued. Process Optimization: I believe that strong
+        businesses are built on clear, repeatable processes. My focus is on
+        identifying inefficiencies, designing structured workflows, and ensuring
+        that systems can scale without breaking. Whether in a bar environment, a
+        delivery-focused restaurant, or a software project, I apply systems
+        thinking to make operations leaner and more reliable. Core Competencies
+        • Workflow Analysis — mapping existing processes, spotting bottlenecks,
+        and redesigning for efficiency. • Standardization — building SOPs that
+        make performance consistent across teams and outlets. • Time & Resource
+        Efficiency — reducing wasted effort by aligning tasks, tools, and
+        people. • Technology Integration — introducing software, automation, or
+        digital tools (from POS to APIs) to improve accuracy and speed. •
+        Scalability Planning — ensuring systems are designed to handle higher
+        order volumes, new outlets, or added features without major
+        restructuring. • Continuous Improvement — setting up feedback and
+        monitoring loops so processes evolve with the business. Approach I treat
+        process optimization as an ongoing discipline, not a one-off project. My
+        method is to spend time deeply analyzing the current system, sharpen the
+        approach, and then execute. This allows me to design solutions that
+        reduce friction, improve accuracy, and create a foundation for
+        sustainable growth. Expansion & New Openings: I have extensive
+        experience in launching new outlets and building brands from zero, both
+        in hospitality and in food delivery ventures. My strength lies in
+        turning an idea into a structured business — establishing identity,
+        processes, and operations that allow the brand to scale sustainably.
+        Core Competencies • New Outlet Launches — managing bar, lounge, and
+        restaurant openings across the UAE, including staff hiring, menu
+        rollouts, and service training. • Brand Creation — transforming ideas
+        into fully operational brands with identity, positioning, and market
+        entry strategies. • Aggregator Onboarding — registering and launching
+        brands on platforms like Talabat, Deliveroo, Careem, Noon, Keeta, Amazon
+        15 Minutes, Instashop, and Smiles. • Systems Setup — establishing SOPs,
+        inventory processes, and operational workflows for new outlets. •
+        Digital Presence — creating websites, email systems, social channels,
+        and brand books to support the launch. • Pre-Opening Campaigns —
+        coordinating offers, advertising, and influencer outreach to generate
+        early traction. • Cross-Functional Alignment — ensuring operations,
+        marketing, and financial systems are in place before launch. Approach I
+        see expansion and openings as orchestrated projects where every part
+        matters — from branding and aggregator setup to staff training and
+        customer experience design. My approach is to build systematically:
+        first the identity, then the operations, and finally the marketing. This
+        ensures that new outlets and brands launch not only with visibility but
+        with long-term sustainability. Cross-Functional Coordination: My
+        strength lies in bridging the gaps between teams, ensuring that
+        marketing, operations, finance, and tech all move in sync. I’ve worked
+        in environments where a small misalignment — between a campaign and
+        delivery capacity, or between brand design and operational workflows —
+        can create major challenges. My role has often been to connect the dots,
+        anticipate risks, and keep teams coordinated. Core Competencies •
+        Marketing ↔ Operations Alignment — ensuring that promotions, CPC
+        campaigns, and aggregator pushes are backed by service capacity. • Brand
+        ↔ Tech Integration — coordinating designers, developers, and marketers
+        so websites, apps, and branding deliver a unified experience. • Finance
+        ↔ Marketing Collaboration — linking campaign budgets to ROI analysis and
+        ensuring promotions are financially sustainable. • Aggregator ↔ Business
+        Coordination — managing communications with account managers (Talabat,
+        Deliveroo, Careem, Noon, Keeta, Amazon 15 Minutes, Instashop, Smiles)
+        and aligning offers across platforms. • Team Synergy — working with
+        staff, managers, and leadership so everyone has clarity on goals and
+        responsibilities. • Problem Anticipation — spotting disconnects early
+        (e.g., overselling through promotions, delayed rollouts) and preventing
+        escalation. Approach I see cross-functional coordination as the glue
+        that holds growth together. Strong systems or creative campaigns fail if
+        they aren’t supported operationally or financially. My approach is to
+        act as the connector — aligning strategy with execution across
+        departments, ensuring communication flows smoothly, and keeping projects
+        both cohesive and realistic. Business Development: I approach business
+        development as the balance of growth opportunities, partnerships, and
+        strategy execution. My strength is in identifying untapped markets,
+        building collaborations, and shaping initiatives that create long-term
+        value. From securing aggregator partnerships to launching new concepts,
+        I work at the intersection of strategy, operations, and marketing to
+        drive sustainable growth. Core Competencies • Market Expansion —
+        researching and identifying new customer segments and geographies. •
+        Partnerships & Negotiations — building relationships with aggregators,
+        influencers, suppliers, and corporate partners. • Concept Development —
+        turning raw ideas into structured business concepts with brand identity,
+        launch strategies, and operational plans. • Multi-Brand Management —
+        overseeing multiple restaurant and beverage brands (e.g., Vkusno,
+        Cocktail Tree, Bloome, Little Almonds). • Aggregator Growth — partnering
+        with platforms (Talabat, Deliveroo, Careem, Noon, Keeta, Amazon 15
+        Minutes, Instashop, Smiles) for visibility and sales. • Strategic
+        Planning — aligning business growth with operational capacity and
+        financial sustainability. • Innovation & Diversification — exploring new
+        channels (AI tools, brand-specific GPTs, or digital-first experiences)
+        to extend business potential. Approach I view business development as
+        strategic problem-solving at scale. For me, it’s about connecting
+        opportunities with the right systems: ensuring growth is not only
+        ambitious but also executable. By combining my hospitality foundation
+        with modern marketing and tech, I create pathways for businesses to
+        expand — whether that means a new outlet, a new customer base, or a new
+        digital channel. Soft Skills & Languages Languages & Cultural
+        Adaptability: • Languages — Fluent in Russian, English, and Armenian. •
+        English Journey — Learned English from scratch upon arriving in the UAE,
+        starting with only the word “ok.” Through persistence, experimentation
+        with methods, and trial-and-error, I became fluent. This experience gave
+        me not only language skills but also resilience, adaptability, and a
+        broadened worldview. • Cultural Adaptability — Years of living and
+        working in Dubai enabled me to build meaningful connections across
+        diverse teams and industries. I can quickly adapt to multicultural
+        environments, bridging gaps between backgrounds, expectations, and ways
+        of working. Core Soft Skills • Analytical Thinking — Strong ability to
+        break down problems into smaller, structured steps before execution. •
+        Systems Thinking — Approach challenges by considering both the chosen
+        action and the options not taken, ensuring long-term clarity and
+        sustainability. • Problem-Solving — Practical, creative, and disciplined
+        solutions whether in operations, marketing, or tech. • Integrity &
+        Reliability — Guided by the principle that “my word is my bond” — I say
+        what I will do and do what I said. • Leadership & Mentorship —
+        Experienced in guiding teams in hospitality and cross-functional
+        projects, with a focus on accountability, training, and personal growth.
+        • Communication — Clear and direct in explaining strategies, processes,
+        or expectations; equally comfortable engaging with staff, customers, or
+        stakeholders. • Adaptability — Quick to adjust strategies or processes
+        in fast-changing environments, whether in hospitality operations,
+        digital projects, or tech solutions. • Persistence & Commitment —
+        Ability to commit to difficult, long-term goals and see them through (as
+        shown in both language learning and career transitions). Approach I see
+        soft skills not as “extras” but as the foundation for everything else.
+        Whether coding a backend system, leading a hospitality team, or
+        negotiating with aggregators, it is communication, reliability, and
+        adaptability that ensure results. My multilingualism and cultural
+        adaptability add a unique edge, allowing me to navigate diverse teams
+        and client bases across industries. Licenses & Certifications
+        Hospitality & Beverage • WSET Level 3 Award in Wines — advanced
+        qualification covering grape varieties, regions, winemaking, tasting,
+        and pairing. • WSET Level 3 Award in Spirits — in-depth knowledge of
+        spirits production, tasting, and global categories. • Hotel &
+        Hospitality Management — Zabeel International Institute of Management &
+        Technology (2017). Skills: Sales, Wine, Restaurant Management,
+        Budgeting, Revenue Analysis, Leadership, Pre-opening, Team Leadership,
+        Hospitality Management. Specialized Beverage Training • Exploring Drinks
+        with Food (WSET eLearning). • Serve with Spirit (WSET eLearning). • A
+        Complete Guide to Whisky: Taste and Flavour (WSET eLearning). • Batched
+        on Tap and Canned Cocktails (WSET eLearning). • Improving Your Bar Menu:
+        Tips to Boost Profits (WSET eLearning). Technology & Digital Skills •
+        Google Digital Marketing & E-Commerce Certificate — Coursera (Dec 2023).
+        Includes modules on e-commerce management, digital marketing, analytics,
+        and customer engagement. • Introduction to Prompt Engineering for
+        Generative AI — LinkedIn (2024). • Introduction to Responsible AI —
+        Google (2024). Business, Leadership & Productivity • Data Visualization:
+        Best Practices — LinkedIn (2024). • Getting Things Done (GTD Method) —
+        LinkedIn (2024). • How to Be Both Assertive and Likable — LinkedIn
+        (2024). • How to Prepare for Your Negotiations — LinkedIn (2024). •
+        Negotiation Foundations — LinkedIn (2024). • Negotiating with Agility —
+        LinkedIn (2024). • Strategic Negotiation — LinkedIn (2024). • When
+        Negotiation’s About More than Money — LinkedIn (2024). • Strategic
+        Planning Foundations — LinkedIn (2024). • Leading and Motivating People
+        with Different Personalities — LinkedIn (2024). Customer Experience &
+        Marketing • Satisfaction Guaranteed: Develop Customer Loyalty —
+        Google/Coursera. • Make the Sale: Build, Launch, and Manage E-Commerce
+        Stores — Google/Coursera. • Assess for Success: Marketing Analytics and
+        Measurement — Google/Coursera. • Think Outside the Inbox: Email
+        Marketing — Google/Coursera. • From Likes to Leads: Interact with
+        Customers — Google/Coursera. • Attract and Engage Customers with Digital
+        Marketing — Google/Coursera. • Foundations of Digital Marketing and
+        E-Commerce — Google/Coursera. Other Credentials • TIA Attestation
+        (multiple certificates uploaded). Achievements & Milestones Hospitality
+        & Brand Management Across bars, hotels, and delivery-first restaurants,
+        I’ve consistently turned complex operations into reliable, guest-centric
+        systems. At Subah Group, I gained exposure to 20+ outlets and helped
+        standardize procedures and service benchmarks so teams across venues
+        could execute with the same level of quality. Later at BFF Sports Bar, I
+        focused on the moments that matter most—peak hours. By tightening
+        service workflows, training rhythms, and quality checks, we stabilized
+        throughput at busy times without sacrificing the experience, which
+        translated into stronger repeat visits and more consistent average
+        checks. I also founded The Cocktail Tree to convert hands-on mixology
+        and operational know-how into structured, scalable playbooks. Through
+        this venture, I’ve designed menus, trained teams, and provided practical
+        systems that improve speed, consistency, and profitability. My
+        professional development has been equally disciplined: earning WSET
+        Level 3 in Wines and WSET Level 3 in Spirits deepened my technical
+        foundation and sharpened my ability to design beverage experiences that
+        stand up to expert scrutiny while remaining commercially sound.
+        Technology & Software I’ve built and shipped software that directly
+        supports real-world restaurant operations. For Vkusno, I designed the
+        architecture for a full-stack platform that includes multi-branch logic,
+        secure file handling via AWS S3 with presigned URLs, and a complete
+        wallet system (top-ups, refunds, full wallet usage for payments, and
+        saved-card management). I implemented trustworthy communications through
+        OTP flows (SMS/WhatsApp/Telegram) and transactional email via SendGrid
+        and Amazon SES, and introduced real-time capabilities with socket.io for
+        timely updates when they matter most. Beyond individual features, my
+        focus has been on coherence: schemas that map to actual business
+        processes; APIs that are secure, predictable, and easy to extend; and
+        frontends that are clear, fast, and multilingual. I’ve also created
+        custom GPTs tailored to brand owners and managers, translating brand
+        rules and operations into usable assistants that help prepare content
+        structures, draft responses, and support routine decision-making—always
+        aligned with the brand’s identity and standards. Marketing & Growth My
+        marketing work connects strategy with operational reality. I’ve managed
+        partnerships and advertising across Talabat, Deliveroo, Careem, Noon,
+        Keeta, Amazon 15 Minutes, Instashop, and Smiles by Etisalat, ensuring
+        that offers, budgets, and placements align with capacity and margin
+        goals. Rather than chasing vanity metrics, I track the numbers that
+        matter—conversion, cost-per-order, and net revenue after discounts and
+        caps—so campaigns create profitable volume rather than pressure points.
+        I’ve launched and grown brands end-to-end: shaping identity,
+        establishing presence across websites and socials, onboarding to
+        aggregators, and rolling out seasonal or loyalty campaigns. My Google
+        Digital Marketing & E-commerce certificate formalized practices I
+        already apply daily—measurement discipline, funnel thinking, and
+        customer experience alignment—so that brand recognition translates into
+        orders and retention, not just reach. Leadership & Development I build
+        teams that perform under pressure and keep improving. Across venues and
+        projects, I’ve recruited and onboarded staff, mentored bartenders and
+        supervisors into leadership roles, and created training that raises
+        service levels and confidence. I’m comfortable leading cross-functional
+        initiatives that blend brand, tech, and operations—coordinating
+        designers, developers, marketers, and front-line teams so launches feel
+        seamless to customers. A personal career milestone has been my
+        deliberate transition from hospitality specialist to full-stack
+        developer and marketing strategist. I made this shift by applying the
+        same principles I use in operations: analyze deeply, design systems,
+        then execute with discipline. That blend—people leadership, technical
+        delivery, and growth strategy—now defines my work and the value I bring
+        to brands looking to scale with consistency and trust. Vision & Goals
+        Career Vision My career vision is to establish myself as a full-stack
+        developer and AI consultant, bridging the worlds of technology,
+        hospitality, and business strategy. Having built my foundation in web
+        development — frontend, backend, databases, payments, and cloud — I see
+        the next step as deepening my expertise in AI integration. My goal is to
+        help businesses not only build functional websites and applications but
+        also harness the power of automation, personalization, and intelligent
+        tools to optimize operations and customer experiences. In the long term,
+        I envision becoming a recognized AI consultant who designs tailored
+        solutions for businesses: from custom GPTs that handle internal
+        workflows, to AI-powered analytics dashboards, to automation frameworks
+        that reduce human error and increase efficiency. This path allows me to
+        combine my systematic, problem-solving mindset with my
+        hospitality-driven focus on real customer experiences. Entrepreneurial
+        Ambitions I aim to continue expanding my multi-brand ecosystem —
+        restaurants, beverage consulting (The Cocktail Tree), cakes & flowers
+        (Bloome), kids-focused healthy food (Little Almonds), and beyond. Each
+        venture strengthens my expertise in branding, marketing, and operations
+        while giving me a live testing ground for my tech solutions. Alongside
+        this ecosystem, I plan to formalize consulting services for other
+        businesses — offering end-to-end packages that cover brand creation,
+        marketing strategy, website/app development, and AI-powered tools. The
+        vision is clear: clients should be able to arrive with nothing but an
+        idea, and leave with a fully functional, market-ready brand that is
+        scalable, professional, and future-proof. Personal Goals On a personal
+        level, I seek financial independence and the freedom to dedicate myself
+        fully to projects and ventures that align with my values and curiosity.
+        My plan is to save a year’s worth of living expenses, transition out of
+        full-time employment, and fully invest my time into building software,
+        brands, and consulting services. Beyond finance, I aim to design a
+        structured life system (“Life OS”) where my personal health,
+        professional growth, and long-term aspirations are integrated and
+        measurable. Fitness, consistent learning, and cultural adaptability
+        remain non-negotiable pillars in this system. Ultimately, my goal is not
+        only to build businesses and technology solutions, but to create a
+        lifestyle of independence, creativity, and impact — one where I can
+        solve meaningful problems, mentor others, and constantly explore new
+        frontiers of knowledge and practice. Values & Personality At the center
+        of everything I do lies a strong sense of integrity. I was raised on the
+        belief that a person’s word should mean something, and that belief has
+        carried into my professional life. When I make a commitment, I follow
+        through — no more and no less. Over time, this principle has become more
+        than a habit; it is the foundation of how I build trust with teams,
+        clients, and partners. In industries like hospitality and technology,
+        where promises can be easy but delivery difficult, I have learned that
+        reliability is what sets people apart. I also approach the world through
+        systems and structure. For me, solving problems isn’t about reacting
+        quickly, it’s about stepping back to see the whole picture. I often
+        spend most of my effort — sometimes seventy to eighty percent —
+        analyzing and preparing, sharpening my approach before I act. This way
+        of thinking has served me both behind the bar in high-pressure service
+        and later in building software systems or marketing campaigns. I believe
+        that clarity and preparation are what allow execution to be not just
+        successful, but sustainable. At the same time, my journey has also been
+        defined by persistence. When I arrived in the UAE, I knew only a single
+        English word: “ok.” I was surrounded by cultures, expectations, and
+        conversations I could not fully understand. Instead of letting that
+        define me, I took it as a challenge. Day by day, through trial and
+        error, through failed attempts and small victories, I learned.
+        Eventually I became fluent. That process taught me more than language —
+        it taught me resilience, adaptability, and the discipline to keep going
+        when results don’t come quickly. I now carry that same persistence into
+        everything I do, whether learning full-stack development from scratch or
+        taking on complex business projects that demand patience and long-term
+        effort. What drives me is not prestige or titles but problem-solving and
+        impact. I enjoy taking things that appear fragmented, whether an
+        operation, a marketing strategy, or a software project, and finding ways
+        to bring order and clarity. I am equally comfortable thinking about
+        customer experience in a restaurant or about schema design in a
+        database. For me, the reward is the same: creating something that works,
+        that lasts, and that makes life easier for the people it serves.
+        Personality-wise, I am straightforward. I prefer clear communication
+        over unnecessary complexity, and I value directness in return. I am
+        adaptable — able to move between different cultures and industries — but
+        I never lose sight of the principles that define me. My hospitality
+        background gave me a people-first mindset, while my work in technology
+        sharpened my logic and problem-solving. Together, these two sides have
+        shaped me into someone who is analytical yet human-centered, practical
+        yet creative. Ultimately, my personality is defined by balance:
+        integrity and persistence at the core, structured analysis guiding my
+        work, adaptability shaping my path, and a constant drive to build
+        solutions that matter. Projects & Ventures My projects and ventures span
+        across several industries and disciplines, reflecting both my
+        hospitality roots and my expansion into technology, marketing, and brand
+        creation. To give clarity and structure, I have organized them into four
+        main categories: 1. Tech (Websites & Software Development) Projects
+        where I design and implement full-stack web applications, integrations,
+        and digital solutions — often directly tied to real business operations.
+        These include restaurant platforms, e-commerce systems, and AI-powered
+        tools tailored to specific brands. 2. Brands (Brand Identity & Creation)
+        End-to-end brand development projects where I take an idea (sometimes
+        just a name) and build it into a fully realized, market-ready brand.
+        This includes logos, brand books, digital presence, email setups,
+        websites, and even custom GPTs designed for business management. 3. Bar
+        (Hospitality & Bar Management) Projects from my hospitality career where
+        I introduced innovations, system improvements, and creative concepts in
+        beverage operations. These highlight my ability to merge creativity,
+        operational efficiency, and team engagement to improve profitability and
+        customer experience. 4. Advertising & Marketing (Campaigns & Growth
+        Initiatives) Marketing and growth-focused projects where I structured
+        campaigns, managed aggregator advertising, introduced ROI-driven
+        strategies, and connected brand storytelling with measurable results.
+        House Crafts: Revolutionizing the Beverage Experience (BFF Sports Bar,
+        2020 – 2024) When managing BFF Sports Bar, I faced a persistent
+        challenge: draught beer wastage and limited creativity in our beverage
+        program. With 24 taps serving 12 different beers, we were discarding 2–3
+        pints per tap every morning due to overnight storage in the lines. This
+        not only ate into margins but also left little room for exciting
+        offerings beyond the standard pint. At the same time, I noticed our
+        guests were open to experimenting — especially with cocktails — but high
+        costs from imported liqueurs like Baileys or Kahlua made it difficult to
+        run cost-effective promotions. The turning point came during the
+        COVID-19 lockdown. With the bar closed but my creativity wide open, I
+        converted my home into a mixology lab. Over weeks of experimentation, I
+        began crafting house-made liqueurs, syrups, and bitters that replicated
+        premium products at a fraction of the cost. What started as an
+        experiment quickly became a movement within the bar: • Cost Control:
+        Reduced the cost of signature cocktails (e.g., Espresso Martini from AED
+        18 → AED 4–5). • Profitability: Cut overall beverage cost ratios from
+        60–70% to just 20–30%. • Sales Growth: Boosted cocktail sales from a
+        modest 30–40 per month to over 2,000. • Unique Identity: Created an
+        exclusive in-house craft line (liqueurs, bitters, and pre-batched
+        cocktails) that set us apart from competitors. Beyond the numbers, House
+        Crafts reshaped the guest experience. Regulars began associating BFF
+        Sports Bar with creative, bespoke cocktails they couldn’t get elsewhere.
+        It became a signature identity for the venue and a talking point in the
+        community. To this day, every cocktail on the menu carries the DNA of
+        House Crafts. From Old Fashioneds infused with our aromatic bitters to
+        Espresso Martinis powered by our own coffee liqueur, the project has
+        evolved into a pillar of the bar’s culture — demonstrating how
+        operational challenges can be transformed into innovation, brand
+        strength, and lasting profitability. Our Competition: Driving Creativity
+        Through Team Engagement (BFF Sports Bar, 2021 – 2022) As Bar Manager,
+        one of my ongoing challenges was slow-moving inventory — bottles and
+        ingredients that sat untouched, tying up costs and taking valuable shelf
+        space. I knew the answer wasn’t just discounts or clearance specials; it
+        had to be a creative, engaging solution that energized the team and
+        connected them to the menu in a deeper way. That’s how Our Competition
+        was born — a monthly in-house cocktail challenge designed to turn unused
+        stock into innovation, team bonding, and guest excitement. How It Worked
+        Each month I selected one underutilized product and set clear rules and
+        guidelines for bartenders to create a new cocktail using it. The process
+        became an event in itself: • Cocktail Submissions: Bartenders developed
+        recipes around the featured product, balancing creativity with cost
+        control. • Cross-Department Judging: Winners weren’t chosen by
+        management alone; staff from the kitchen, floor, and even finance joined
+        the tasting panels, ensuring inclusivity and collaboration. • Rewards:
+        The winning bartender received vouchers, gifts, or cash bonuses, and
+        their cocktail earned a place on the menu for a full month — spotlighted
+        through Buy One Get One promotions. Waiters competed to sell the most of
+        it, while kitchen staff could win recognition for pairing the best dish
+        alongside the cocktail. Impact & Results • Sales Growth: Slow-moving
+        products found new life, transformed into menu stars. Some of the
+        competition’s creations even earned a permanent spot on the cocktail
+        list. • Staff Engagement: The initiative broke silos between
+        departments, fostering collaboration, pride, and healthy rivalry. •
+        Guest Excitement: Customers loved being part of the story, often asking
+        about “the winning cocktail of the month,” which boosted repeat visits
+        and brand loyalty. • Culture Shift: The bar evolved into a place of
+        ongoing creativity and innovation, with staff more invested in both the
+        menu and the guest experience. Why It Worked Unlike top-down directives,
+        Our Competition gave staff ownership and a sense of pride. It connected
+        profitability with creativity and turned a business problem (stagnant
+        inventory) into a win-win for both the team and the guests. BFF’s Weekly
+        Tasting Experience: Turning Stock Challenges into Market Buzz (BFF
+        Sports Bar, 2020 – 2021) After the first COVID-19 lockdown, BFF Sports
+        Bar faced an unusual challenge: a stockroom full of underutilized
+        bottles — rums, gins, whiskies, wines, and specialty spirits — many of
+        which weren’t moving. Instead of treating it as a burden, I saw an
+        opportunity to transform the problem into a platform for engagement,
+        education, and branding. That’s how BFF’s Weekly Tasting Experience was
+        born. Concept & Execution Every Saturday evening, we transformed the bar
+        into a tasting arena, where I personally hosted sessions exploring
+        different categories of drinks: rums, whiskies, gins, sparkling wines,
+        craft beers, cocktails, and more. • Tastings: Guests sampled curated
+        lineups of drinks, many of which had previously struggled to sell. •
+        Pairings: Each session included complementary food pairings crafted with
+        the kitchen team to elevate the flavors. • Storytelling: I hosted each
+        event with a microphone in hand — narrating the history, craftsmanship,
+        and unique features behind every spirit or wine. • Accessibility:
+        Tastings were free for guests, creating excitement, goodwill, and
+        consistent high attendance. Impact & Results • Rapid Growth in
+        Attendance: From an initial 50–55 participants, the series quickly
+        scaled to over 200 guests every Saturday, running for nine months
+        straight. • Product Movement: Bottles that once sat stagnant became
+        highlights of the experience, boosting sales and visibility. Some items
+        even moved from being “dead stock” to menu regulars. • Market
+        Positioning: The tastings positioned BFF as more than a sports bar — it
+        became a hub for beverage education and premium experiences, attracting
+        new customers and strengthening loyalty with regulars. • Personal
+        Milestone: Hosting weekly events for 200+ people honed my public
+        speaking and presentation skills, blending entertainment with education
+        in a way that enhanced both customer experience and brand image. Why It
+        Worked The initiative combined education, entertainment, and community
+        in a way that went beyond typical bar promotions. Guests weren’t just
+        drinking; they were learning, engaging, and being part of something
+        special. At the same time, the bar solved a stock issue, elevated its
+        reputation, and generated consistent buzz in the market. The Cocktail
+        Tree Founder | Dubai, UAE | Jan 2022 – Present Overview The Cocktail
+        Tree is my personal venture — a consulting, training, and brand concept
+        that transforms years of mixology and operational expertise into
+        structured, scalable systems for bars and hospitality businesses. What
+        began as a creative outlet has grown into a practical consultancy and
+        content platform, bridging creativity with operational discipline. Scope
+        & Focus • Developed brand identity, concept, and positioning for The
+        Cocktail Tree as a unique consultancy. • Translated deep mixology
+        knowledge into structured services and playbooks for beverage
+        operations. • Built a LinkedIn community of ~5,000 followers through
+        consistent educational content around cocktails, beverages, and
+        hospitality innovation. • Delivered consulting services to bars and
+        restaurants, covering menu design, operational improvements, and staff
+        training. Key Contributions • Menu Systems: Designed cost-efficient,
+        trend-aware menus balancing creativity and profitability. • Training &
+        Development: Conducted workshops for bartenders and managers, with a
+        focus on standards, speed, and consistency. • Structured Playbooks:
+        Created reusable frameworks for beverage operations, stock management,
+        and service training. • Community Building: Shared thought leadership on
+        beverage and hospitality trends, strengthening industry credibility. •
+        Consulting Package Development: Developed structured packages for
+        hospitality businesses — combining brand creation, operational support,
+        digital presence (website, socials), and marketing strategy. Impact •
+        Helped outlets improve cost control (by aligning recipes with
+        procurement and pricing). • Enabled bar teams to increase consistency
+        and reduce training ramp-up time. • Positioned The Cocktail Tree as both
+        a brand and a service provider, demonstrating how personal expertise can
+        be scaled into a consultancy.
+      </p> */}
+    </div>
+  );
+};
+
+export default Values;

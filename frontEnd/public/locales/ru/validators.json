@@ -1,0 +1,9 @@
+{
+  "emailRequired": "Электронная почта обязательна",
+  "passwordRequired": "Пароль обязательный",
+  "invalidEmail": "Неверный электронный адрес",
+  "confirmPasswordRequired": "Подтверждение пароля обязательно",
+  "passwordsDoNotMatch": "Пароли не совпадают",
+  "keyRequired": "Ключ обязателен",
+  "rememberMeMustBeBoolean": "Запомнить меня должно быть булевым значением"
+}
