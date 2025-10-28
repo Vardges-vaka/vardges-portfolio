@@ -334,13 +334,22 @@ each directory has the following structure and functionality:
 
         here goes all the comparizon logic containing functions, just in case we we need to wrap some of our components into react.memo and we might require some custom comparizon logic.
 
+- **01[dirName].config.jsx**
+
+this is the file that imports the cutom svg strings and exports an arraey of objects for sidebar configs. and takes the t for the translations.
+
+Translations are in the frontEnd\public\locales\ar\sideBar.json file and they are added @i18n configurations. 
+
+
+
+
 #### Than each global directory has **\_[dirName].config.js** file where it exports an object which has properties that define if the console log should run or not, it is also imported in the main component of the directory.
 
 ***the components sush header, sidebar and footer you can find here: [frontEnd\src\10_pages\adminPageComps]***
 
 
 - Keep in mine that most of the components and functionality are just a placeholders
-- Some of routing is implimented
+- Some of routing is implimented already
 
 
 

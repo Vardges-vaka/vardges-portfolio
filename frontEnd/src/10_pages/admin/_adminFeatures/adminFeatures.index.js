@@ -57,7 +57,34 @@ MenuDevelopment_icon,} from ""
 
 
 
-
+{"SiteManagment": "",
+"AdminAccount": "",
+"ServerSettings": "",
+"Ai": "",
+"Health": "",
+"Calendar": "",
+"Countdown": "",
+"Projects": "",
+"To_do_list": "",
+"TravelPlanner": "",
+"CV_Generator": "",
+"EmailTools": "",
+"ExcelGenerator": "",
+"FinTracker": "",
+"PDF_image_Formatting": "",
+"CloudStorage": "",
+"Vault": "",
+"PersonalGallery": "",
+"PswManager": "",
+"MapTools": "",
+"QRCode": "",
+"TemplateGenerator": "",
+"WordCounter": "",
+"BrandBook": "",
+"BrandDevelopment": "",
+"BrandPortfolio": "",
+"CocktailDevelopment": "",
+"MenuDevelopment": "",}
 
 
 
