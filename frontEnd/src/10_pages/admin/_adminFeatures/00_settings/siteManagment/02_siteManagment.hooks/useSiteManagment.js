@@ -20,9 +20,9 @@ export const useSiteManagment = () => {
     tCommon: tCommon,
     tAdminWelcome: tAdminWelcome,
   };
-  const { states, setters } = useXXX_states();
-  const { apiHelpers } = useXXX_apiHelpers({ translations });
-  const { handlers } = useXXX_handlers({
+  const { states, setters } = useSiteManagment_states();
+  const { apiHelpers } = useSiteManagment_apiHelpers({ translations });
+  const { handlers } = useSiteManagment_handlers({
     states,
     setters,
     apiHelpers,

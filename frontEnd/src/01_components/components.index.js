@@ -29,3 +29,35 @@ export { default as YinYangLoader } from "./uiComponents/YinYangLoader";
 export { default as LanguageSelect } from "./smartComponents/LanguageSelect.jsx";
 export { default as ProfileToggler } from "./smartComponents/ProfileToggler.jsx";
 export { default as ThemeToggler } from "./smartComponents/ThemeToggler.jsx";
+
+// Dashboard Icons
+export { default as SiteManagment_icon } from "./uiComponents/dashboard_Icons/SiteManagment_icon.jsx";
+export { default as AdminAccount_icon } from "./uiComponents/dashboard_Icons/AdminAccount_icon.jsx";
+export { default as AdminSettings_icon } from "./uiComponents/dashboard_Icons/AdminSettings_icon.jsx";
+
+export { default as ServerSettings_icon } from "./uiComponents/dashboard_Icons/ServerSettings_icon.jsx";
+export { default as Ai_icon } from "./uiComponents/dashboard_Icons/Ai_icon.jsx";
+export { default as Health_icon } from "./uiComponents/dashboard_Icons/Health_icon.jsx";
+export { default as Calendar_icon } from "./uiComponents/dashboard_Icons/Calendar_icon.jsx";
+export { default as Countdown_icon } from "./uiComponents/dashboard_Icons/Countdown_icon.jsx";
+export { default as Projects_icon } from "./uiComponents/dashboard_Icons/Projects_icon.jsx";
+export { default as To_do_list_icon } from "./uiComponents/dashboard_Icons/To_do_list_icon.jsx";
+export { default as TravelPlanner_icon } from "./uiComponents/dashboard_Icons/TravelPlanner_icon.jsx";
+export { default as CV_Generator_icon } from "./uiComponents/dashboard_Icons/CV_Generator_icon.jsx";
+export { default as EmailTools_icon } from "./uiComponents/dashboard_Icons/EmailTools_icon.jsx";
+export { default as ExcelGenerator_icon } from "./uiComponents/dashboard_Icons/ExcelGenerator_icon.jsx";
+export { default as FinTracker_icon } from "./uiComponents/dashboard_Icons/FinTracker_icon.jsx";
+export { default as PDF_image_Formatting_icon } from "./uiComponents/dashboard_Icons/PDF_image_Formatting_icon.jsx";
+export { default as CloudStorage_icon } from "./uiComponents/dashboard_Icons/CloudStorage_icon.jsx";
+export { default as Vault_icon } from "./uiComponents/dashboard_Icons/Vault_icon.jsx";
+export { default as PersonalGallery_icon } from "./uiComponents/dashboard_Icons/PersonalGallery_icon.jsx";
+export { default as PswManager_icon } from "./uiComponents/dashboard_Icons/PswManager_icon.jsx";
+export { default as MapTools_icon } from "./uiComponents/dashboard_Icons/MapTools_icon.jsx";
+export { default as QRCode_icon } from "./uiComponents/dashboard_Icons/QRCode_icon.jsx";
+export { default as TemplateGenerator_icon } from "./uiComponents/dashboard_Icons/TemplateGenerator_icon.jsx";
+export { default as WordCounter_icon } from "./uiComponents/dashboard_Icons/WordCounter_icon.jsx";
+export { default as BrandBook_icon } from "./uiComponents/dashboard_Icons/BrandBook_icon.jsx";
+export { default as BrandDevelopment_icon } from "./uiComponents/dashboard_Icons/BrandDevelopment_icon.jsx";
+export { default as BrandPortfolio_icon } from "./uiComponents/dashboard_Icons/BrandPortfolio_icon.jsx";
+export { default as CocktailDevelopment_icon } from "./uiComponents/dashboard_Icons/CocktailDevelopment_icon.jsx";
+export { default as MenuDevelopment_icon } from "./uiComponents/dashboard_Icons/MenuDevelopment_icon.jsx";

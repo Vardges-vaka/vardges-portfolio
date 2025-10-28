@@ -22,7 +22,7 @@ This structure is meant to handle ~25 tools without putting 25 icons in the head
 ## 1. Header Layout
 
 ### Header Sections (left → right)
-
+0. **Settings**
 1. **Me**
 2. **Work & Planning**
 3. **Business & Docs**
@@ -337,6 +337,10 @@ each directory has the following structure and functionality:
 #### Than each global directory has **\_[dirName].config.js** file where it exports an object which has properties that define if the console log should run or not, it is also imported in the main component of the directory.
 
 ***the components sush header, sidebar and footer you can find here: [frontEnd\src\10_pages\adminPageComps]***
+
+
+- Keep in mine that most of the components and functionality are just a placeholders
+- Some of routing is implimented
 
 
 
