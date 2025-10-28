@@ -3,6 +3,7 @@ import {
   LanguageSelect,
   ThemeToggler,
 } from "../../../01_components/components.index.js";
+import { AdminHeader_NavBar } from "./adminHeader.comps/_adminHeader.comps.index.js";
 import "./_styles/adminHeader.css";
 
 const AdminHeader = () => {
