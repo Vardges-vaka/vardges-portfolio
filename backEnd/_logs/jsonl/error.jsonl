@@ -301,3 +301,311 @@
   "timestamp": "2025-10-25 22:12:52",
   "type": "controller_error"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:37:20",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:37:22",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:37:30",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:37:33",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:37:39",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:50:15",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:50:17",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:50:23",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:56:43",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:57:13",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:58:26",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:59:44",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 17:59:52",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:00:35",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:00:57",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:01:36",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:02:19",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:04:37",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:04:42",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:04:53",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:06:27",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:06:32",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:07:59",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:09:15",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:10:25",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:11:02",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:11:07",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-10-28 18:11:30",
+  "type": "controller_error"
+}

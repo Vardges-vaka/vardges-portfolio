@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useUserContext } from "../../../02_context/context.index";
 import { AdminSignOut_helper } from "../../../05_helpers/apiHelpers/_apiHelpers.index.js";
 import { useTranslation } from "react-i18next";
@@ -10,6 +10,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
   const { t } = useTranslation("validators");
   const { t: tCommon } = useTranslation("common");
+  const { section } = useParams();
 
   const handleSignOut = async () => {
     try {
@@ -31,6 +32,7 @@ const AdminDashboard = () => {
   return (
     <div className="AdminDashboard">
       <h1>AdminDashboard</h1>
+      <p>Section: {section}</p>
       <p>Welcome, {user?.name || "Guest"}</p>
       <p>Role: {user?.role || "N/A"}</p>
       <p>ID: {user?._id || "N/A"}</p>

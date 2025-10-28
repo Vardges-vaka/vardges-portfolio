@@ -19,12 +19,12 @@
   background: transparent;
   color: var(--icon-primary-stroke-color);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .IconGlobal_Icon:hover {
   color: var(--icon-primary-stroke-color-HOV);
 }
-
 
 .IconGlobal_Icon.secondary {
   color: var(--icon-secondary-stroke-color);

@@ -28,7 +28,7 @@ function App() {
           <Suspense fallback={<p>Loading...</p>}>
             <Routes>
               {/* // ! Admin Routes */}
-              <Route path="/admin/*" element={<AdminLayout />}>
+              <Route path=":lang/admin/*" element={<AdminLayout />}>
                 <Route path="*" element={<AdminRoutes />} />
               </Route>
 

@@ -61,3 +61,12 @@ export { default as BrandDevelopment_icon } from "./uiComponents/dashboard_Icons
 export { default as BrandPortfolio_icon } from "./uiComponents/dashboard_Icons/BrandPortfolio_icon.jsx";
 export { default as CocktailDevelopment_icon } from "./uiComponents/dashboard_Icons/CocktailDevelopment_icon.jsx";
 export { default as MenuDevelopment_icon } from "./uiComponents/dashboard_Icons/MenuDevelopment_icon.jsx";
+
+
+// Admin Header Icons
+export { default as Me_Icons } from "./uiComponents/dashboard_Icons/Me_Icons.jsx";
+export { default as Tools_Icons } from "./uiComponents/dashboard_Icons/Tools_Icons.jsx";
+export { default as Work_planning_Icons } from "./uiComponents/dashboard_Icons/Work_planning_Icons.jsx";
+export { default as Business_docs_Icons } from "./uiComponents/dashboard_Icons/Business_docs_Icons.jsx";
+export { default as Assets_storage_Icons } from "./uiComponents/dashboard_Icons/Assets_storage_Icons.jsx";
+export { default as Brand_product_Icons } from "./uiComponents/dashboard_Icons/Brand_product_Icons.jsx";

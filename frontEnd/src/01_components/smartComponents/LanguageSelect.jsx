@@ -10,7 +10,7 @@ import {
 } from "../../00_assets/_assets.index.js";
 import "../_styles/languageSelect.css";
 
-const LanguageSelect = () => {
+const LanguageSelect = ({ isAdmin }) => {
   const { i18n, t } = useTranslation("common");
   const { toggleLanguage } = useLanguageContext();
   const [isOpen, setIsOpen] = useState(false);

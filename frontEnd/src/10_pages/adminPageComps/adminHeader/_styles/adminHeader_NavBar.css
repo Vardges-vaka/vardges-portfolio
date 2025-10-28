@@ -1,0 +1,307 @@
+.publicHeaderNavBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.publicHeaderNavBar__list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.publicHeaderNavBar__item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.publicHeaderNavBar__link {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  gap: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.publicHeaderNavBar__iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.publicHeaderNavBar__icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.publicHeaderNavBar__icon.ContactIcon {
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+}
+
+.publicHeaderNavBar__label {
+  position: relative;
+  white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  font-size: 14px;
+}
+
+.publicHeaderNavBar__label--visible {
+  max-width: 200px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.publicHeaderNavBar__link:hover {
+  padding: 5px 6px;
+}
+
+.publicHeaderNavBar__link:hover .publicHeaderNavBar__label {
+  max-width: 200px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+  color: var(--h1-tertiary-color) !important;
+  letter-spacing: 2px !important;
+}
+
+.publicHeaderNavBar__link:hover .publicHeaderNavBar__icon {
+  transform: translateX(-2px);
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__link {
+  padding: 5px 6px;
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__icon {
+  transform: scale(1.05);
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__icon.ContactIcon {
+  transform: scale(1.1) translateY(2px);
+}
+
+.publicHeaderNavBar__item--active .publicHeaderNavBar__label {
+  font-weight: 600;
+  color: var(--h1-tertiary-color) !important;
+}
+
+.publicHeaderNavBar__activeIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 3px;
+
+  border-radius: 3px 3px 0 0;
+  animation: slideInIndicator 0.3s ease-out;
+}
+
+@keyframes slideInIndicator {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 70%;
+    opacity: 1;
+  }
+}
+
+.publicHeaderNavBar__item--active
+  .publicHeaderNavBar__link:hover
+  .publicHeaderNavBar__icon {
+  transform: scale(1.05);
+}
+
+.publicHeaderNavBar__link:active {
+  transform: translateY(0) scale(0.98);
+  transition: all 0.5s ease;
+}
+
+.publicHeaderNavBar__link:visited {
+  color: var(--h1-tertiary-color, #333);
+}
+
+/* .publicHeaderNavBar__item--active .publicHeaderNavBar__link:visited {
+  color: var(--primary-color, #007bff);
+} */
+
+/* Mobile Responsive Design */
+@media (max-width: 1200px) {
+  .publicHeaderNavBar__list {
+    gap: 4px;
+  }
+
+  .publicHeaderNavBar__link {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .publicHeaderNavBar__label {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 992px) {
+  .publicHeaderNavBar__link {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .publicHeaderNavBar__activeIndicator {
+    height: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .publicHeaderNavBar {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .publicHeaderNavBar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .publicHeaderNavBar__list {
+    gap: 6px;
+    padding: 0 8px;
+    min-width: fit-content;
+  }
+
+  .publicHeaderNavBar__link {
+    padding: 10px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* On mobile, show icon above label on active */
+  .publicHeaderNavBar__item--active .publicHeaderNavBar__link {
+    padding: 8px 12px;
+  }
+
+  /* Always show labels on mobile for better UX */
+  .publicHeaderNavBar__label {
+    max-width: 200px;
+    opacity: 0.7;
+    transform: translateX(0);
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .publicHeaderNavBar__item--active .publicHeaderNavBar__label,
+  .publicHeaderNavBar__link:hover .publicHeaderNavBar__label {
+    opacity: 1;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .publicHeaderNavBar__item {
+    min-height: 44px;
+  }
+
+  /* Simplified animations for mobile */
+  .publicHeaderNavBar__link:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 480px) {
+  .publicHeaderNavBar__link {
+    padding: 8px;
+  }
+
+  .publicHeaderNavBar__list {
+    gap: 4px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .publicHeaderNavBar__label {
+    font-size: 10px;
+  }
+}
+
+/* Tablet Landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .publicHeaderNavBar__link {
+    padding: 8px 12px;
+  }
+
+  .publicHeaderNavBar__icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Prefers reduced motion - accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .publicHeaderNavBar__link,
+  .publicHeaderNavBar__icon,
+  .publicHeaderNavBar__label,
+  .publicHeaderNavBar__iconWrapper {
+    transition: none;
+  }
+
+  .publicHeaderNavBar__activeIndicator {
+    animation: none;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .publicHeaderNavBar__item--active .publicHeaderNavBar__link {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.15),
+      rgba(0, 123, 255, 0.08)
+    );
+  }
+}
