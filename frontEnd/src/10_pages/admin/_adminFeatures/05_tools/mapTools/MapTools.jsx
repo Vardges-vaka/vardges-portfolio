@@ -16,7 +16,7 @@ import "./00_styles/mapTools.css";
 const MapTools = () => {
   return (
     <div className="MapTools">
-      <h1>MapTools</h1>
+      <h1>MapTools is rendered</h1>
     </div>
   );
 };

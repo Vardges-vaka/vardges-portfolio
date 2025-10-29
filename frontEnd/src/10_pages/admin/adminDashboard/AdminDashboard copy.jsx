@@ -1,8 +1,8 @@
 import React, { useState, lazy, Suspense, useEffect } from "react";
+
 import { useNavigate, useParams } from "react-router-dom";
 import { useUserContext } from "../../../02_context/context.index";
 import { AdminSignOut_helper } from "../../../05_helpers/apiHelpers/_apiHelpers.index.js";
-import { useAdminDashboard } from "./02_adminDashboard.hooks/_adminDashboard.hooks.index.js";
 import { useTranslation } from "react-i18next";
 import {
   settings_SIdeBar,
@@ -18,20 +18,16 @@ import { AdminSideBar } from "../../adminPageComps/_adminPageComps.index.js";
 import "./00_styles/adminDashboard.css";
 
 const AdminDashboard = () => {
-  const {
-    translations,
-    section,
-    subSection,
-    props,
-    navigate,
-    user,
-    logout,
-    states,
-    setters,
-    apiHelpers,
-    handlers,
-    i18n,
-  } = useAdminDashboard();
+  const { user, logout } = useUserContext();
+  const navigate = useNavigate();
+  const { t } = useTranslation("validators");
+  const { t: tCommon } = useTranslation("common");
+  const { t: tSideBar } = useTranslation("sideBar");
+  const { section } = useParams();
+  const [isPinned, setIsPinned] = useState(false);
+  const handlePinClick = () => {
+    setIsPinned(!isPinned);
+  };
 
   const componentMap = {
     me: {
@@ -142,16 +138,14 @@ const AdminDashboard = () => {
   };
 
   const sideBarMap = {
-    me: me_SideBar(translations.tSideBar),
-    work_planning: work_planning_SideBar(translations.tSideBar),
-    Business_docs: business_docs_SideBar(translations.tSideBar),
-    Assets_storage: assets_storage_SideBar(translations.tSideBar),
-    tools: tools_SideBar(translations.tSideBar),
-    Brand_product: brand_product_SideBar(translations.tSideBar),
-    settings: settings_SIdeBar(translations.tSideBar),
+    me: me_SideBar(tSideBar),
+    work_planning: work_planning_SideBar(tSideBar),
+    Business_docs: business_docs_SideBar(tSideBar),
+    Assets_storage: assets_storage_SideBar(tSideBar),
+    tools: tools_SideBar(tSideBar),
+    Brand_product: brand_product_SideBar(tSideBar),
+    settings: settings_SIdeBar(tSideBar),
   };
-  const [activeSubsectionY, setActiveSubsectionY] = useState(null);
-
   /*
 
 
@@ -280,75 +274,32 @@ const AdminDashboard = () => {
 
 
   */
-  useEffect(() => {
-    if (section && subSection) {
-      setActiveSubsectionY(activeSubsectionX);
-    }
-    if (!section && !subSection) {
-      setActiveSubsectionY(null);
-    }
-  }, []);
 
-  useEffect(() => {
-    if (section && subSection) {
-      setActiveSubsectionY(activeSubsectionX);
+  const handleSignOut = async () => {
+    try {
+      const response = await AdminSignOut_helper(t, tCommon);
+      if (response && response.success) {
+        console.log("Sign out successful, clearing user context...");
+        // Clear user context
+        logout();
+        // Redirect to admin welcome page
+        navigate("/admin");
+      } else {
+        console.error("Sign out failed:", response?.message);
+      }
+    } catch (error) {
+      console.error("Sign out error:", error);
     }
-    //  if (section && !subSection) {
-    //   setActiveSubsectionY(activeSubsectionX);
-    // }
-  }, [section, subSection]);
-
-  const sideBaritems = sideBarMap[section];
-  const activeSubsectionX = sideBaritems?.find(
-    (item) => item.path === subSection
-  );
-
-  const activeSubsection = () => {
-    // setActiveSubsectionY(activeSubsectionX);
-    if (!activeSubsectionX) return null;
-    console.log("path_After", activeSubsectionX.path);
-    console.log("section_After", section);
-    console.log("subSection_After", activeSubsectionX.path);
-    const Component = componentMap[section][activeSubsectionX.path];
-    return (
-      <Suspense fallback={<p>Loading...</p>}>
-        <Component />
-      </Suspense>
-    );
   };
 
   return (
     <div className="AdminDashboard">
-      {" "}
-      <div className="adminDashboard_sidebar_items_wrapper">
-        {sideBaritems?.map((item, index) => (
-          <div
-            key={index}
-            className={`adminDashboard_sidebar_item ${
-              activeSubsectionX?.path === item.path ? "active" : ""
-            }`}
-            onClick={() => {
-              navigate(
-                `/${i18n.language}/admin/dashboard/${section}/${item.path}`
-              );
-              setActiveSubsectionY(activeSubsectionX);
-            }}>
-            <img src={item.icon} alt={item.label} />
-            <h3>{item.label}</h3>
-
-            {/* <p>path: {item.path}</p> */}
-          </div>
-        ))}{" "}
-      </div>
-      <div className="adminDashboard_content_wrapper">
-        <h1>AdminDashboard</h1>
-        <p>Section: {section}</p>
-        <p>SubSection: {subSection}</p>
-        <p>Welcome, {user?.name || "Guest"}</p>
-        <p>Role: {user?.role || "N/A"}</p>
-        <p>ID: {user?._id || "N/A"}</p>
-        {activeSubsectionY && activeSubsection()}
-      </div>
+      <h1>AdminDashboard</h1>
+      <p>Section: {section}</p>
+      <p>Welcome, {user?.name || "Guest"}</p>
+      <p>Role: {user?.role || "N/A"}</p>
+      <p>ID: {user?._id || "N/A"}</p>
+      <button onClick={handleSignOut}>Sign Out</button>
     </div>
   );
 };

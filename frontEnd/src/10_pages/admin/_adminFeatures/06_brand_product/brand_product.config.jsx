@@ -7,41 +7,41 @@ import {
 } from "../../../../01_components/components.index.js";
 
 const brand_product_SideBar = (t) => {
-  [
+  return [
     {
       label: t("BrandDevelopment"),
-      path: "",
-      icon: BrandDevelopment_icon,
+      path: "BrandDevelopment",
+      icon: BrandDevelopment_icon(),
       access: ["user", "admin", "superAdmin"],
       isDefault: true,
     },
     {
       label: t("BrandPortfolio"),
-      path: "",
-      icon: BrandPortfolio_icon,
+      path: "BrandPortfolio",
+      icon: BrandPortfolio_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("BrandBook"),
-      path: "",
-      icon: BrandBook_icon,
+      path: "BrandBook",
+      icon: BrandBook_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("MenuDevelopment"),
-      path: "",
-      icon: MenuDevelopment_icon,
+      path: "MenuDevelopment",
+      icon: MenuDevelopment_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("CocktailDevelopment"),
-      path: "",
-      icon: CocktailDevelopment_icon,
+      path: "CocktailDevelopment",
+      icon: CocktailDevelopment_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
   ];
 };

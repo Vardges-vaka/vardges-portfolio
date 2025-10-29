@@ -15,7 +15,7 @@ const AdminLayout = () => {
       <div className="AdminLayout">
         <AdminAuthChecker>
           <AdminHeader />
-          <AdminSideBar />
+          {/* <AdminSideBar /> */}
           <main className="AdminLayout_main">
             <Outlet />
           </main>

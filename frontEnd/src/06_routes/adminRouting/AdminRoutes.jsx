@@ -19,7 +19,7 @@ const AdminRoutes = () => {
     <Routes>
       {/* Dashboard route - protected */}
       <Route
-        path="/dashboard/:section"
+        path="dashboard/:section?/:subSection?"
         element={
           <ProtectedAdminRoutes>
             <AdminDashboard />

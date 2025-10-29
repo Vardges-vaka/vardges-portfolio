@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import isDebug from "./CloudStorage.config.js";
+import isDebug from "./_cloudStorage.config.js";
 import { useCloudStorage } from "./02_cloudStorage.hooks/_cloudStorage.hooks.index.js";
 // import {
 //   IconGlobal,

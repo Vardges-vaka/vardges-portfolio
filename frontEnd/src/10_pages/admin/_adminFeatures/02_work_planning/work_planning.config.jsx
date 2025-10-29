@@ -7,41 +7,41 @@ import {
 } from "../../../../01_components/components.index.js";
 
 const work_planning_SideBar = (t) => {
-  [
+  return [
     {
       label: t("Calendar"),
-      path: "",
-      icon: Calendar_icon,
+      path: "Calendar",
+      icon: Calendar_icon(),
       access: ["user", "admin", "superAdmin"],
       isDefault: true,
     },
     {
       label: t("Countdown"),
-      path: "",
-      icon: Countdown_icon,
+      path: "Countdown",
+      icon: Countdown_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("Projects"),
-      path: "",
-      icon: Projects_icon,
+      path: "Projects",
+      icon: Projects_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("To_do_list"),
-      path: "",
-      icon: To_do_list_icon,
+      path: "To_do_list",
+      icon: To_do_list_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("TravelPlanner"),
-      path: "",
-      icon: TravelPlanner_icon,
+      path: "TravelPlanner",
+      icon: TravelPlanner_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
   ];
 };

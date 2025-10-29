@@ -31,34 +31,34 @@ import {
 } from "../../../../01_components/components.index.js";
 
 const settings_SIdeBar = (t) => {
-  [
+  return [
     {
       label: t("adminAcount"),
-      path: "",
-      icon: AdminAccount_icon,
+      path: "adminAcount",
+      icon: AdminAccount_icon(),
       access: ["user", "admin", "superAdmin"],
       isDefault: true,
     },
     {
       label: t("serverSettings"),
-      path: "",
-      icon: ServerSettings_icon,
+      path: "serverSettings",
+      icon: ServerSettings_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("siteManagment"),
-      path: "",
-      icon: SiteManagment_icon,
+      path: "siteManagment",
+      icon: SiteManagment_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("adminSettings"),
-      path: "",
-      icon: AdminSettings_icon,
+      path: "adminSettings",
+      icon: AdminSettings_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
   ];
 };

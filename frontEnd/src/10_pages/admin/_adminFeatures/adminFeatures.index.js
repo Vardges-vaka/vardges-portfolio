@@ -6,10 +6,6 @@ export * from "./04_assets_storage/assets_storage.index.js";
 export * from "./05_tools/tools.index.js";
 export * from "./06_brand_product/brand_product.index.js";
 
-
-
-
-
 /*
 
 settings
@@ -25,9 +21,13 @@ brand_product
 
 
 
-
-
-
+settings_SIdeBar,
+me_SideBar,
+work_planning_SideBar,
+business_docs_SideBar,
+assets_storage_SideBar,
+tools_SideBar,
+brand_product_SideBar,
 
 
 

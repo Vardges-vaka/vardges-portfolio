@@ -8,7 +8,7 @@
 // } from "../../../../../01_components/components.index.js";
 import "../00_styles/adminAccount_YYY.css";
 
-const AdminAccountYYY = () => {
+const AdminAccount_YYY = () => {
   return (
     <div>
       <h1>XXX_YYY</h1>
@@ -16,4 +16,4 @@ const AdminAccountYYY = () => {
   );
 };
 
-export default AdminAccountYYY;
+export default AdminAccount_YYY;

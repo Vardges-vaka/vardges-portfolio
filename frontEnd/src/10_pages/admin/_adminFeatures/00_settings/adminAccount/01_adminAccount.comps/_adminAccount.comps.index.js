@@ -1,1 +1,1 @@
-export { default as AdminAccountYYY } from "./AdminAccount_YYY.jsx";
+export { default as AdminAccount_YYY } from "./AdminAccount_YYY.jsx";

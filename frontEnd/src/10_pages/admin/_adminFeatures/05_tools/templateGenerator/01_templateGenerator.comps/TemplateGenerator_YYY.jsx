@@ -6,14 +6,14 @@
 //   PasswordInput,
 //   CheckboxGlobal,
 // } from "../../../../../01_components/components.index.js";
-import "../00_styles/xxx_yyy.css";
+import "../00_styles/templateGenerator_YYY.css";
 
-const XXX_YYY = () => {
+const TemplateGenerator_YYY = () => {
   return (
     <div>
-      <h1>XXX_YYY</h1>
+      <h1>TemplateGenerator_YYY</h1>
     </div>
   );
 };
 
-export default XXX_YYY;
+export default TemplateGenerator_YYY;

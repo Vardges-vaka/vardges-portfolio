@@ -14,12 +14,6 @@ const AdminHeader_NavBar = ({ t, lan }) => {
   return (
     <nav className="publicHeaderNavBar">
       <ul className="publicHeaderNavBar__list">
-        {/* {items.map((item) => (
-          <li key={item.label} onClick={() => navigate(item.to)}>
-            {item.icon}
-          </li>
-        ))} */}
-
         {items.map((item, index) => {
           const iconSrc = item.icon;
           const active = isActive(item.to);

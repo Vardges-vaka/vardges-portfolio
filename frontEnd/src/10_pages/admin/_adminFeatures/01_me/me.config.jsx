@@ -4,20 +4,20 @@ import {
 } from "../../../../01_components/components.index.js";
 
 const me_SideBar = (t) => {
-  [
+  return [
     {
       label: t("Ai"),
-      path: "",
-      icon: Ai_icon,
+      path: "Ai",
+      icon: Ai_icon(),
       access: ["user", "admin", "superAdmin"],
       isDefault: true,
     },
     {
       label: t("Health"),
-      path: "",
-      icon: Health_icon,
+      path: "Health",
+      icon: Health_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
   ];
 };

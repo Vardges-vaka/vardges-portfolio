@@ -22,34 +22,34 @@ import {
 } from "../../../../01_components/components.index.js";
 
 const tools_SideBar = (t) => {
-  [
+  return [
     {
       label: t("MapTools"),
-      path: "",
-      icon: MapTools_icon,
+      path: "MapTools",
+      icon: MapTools_icon(),
       access: ["user", "admin", "superAdmin"],
       isDefault: true,
     },
     {
       label: t("QRCode"),
-      path: "",
-      icon: QRCode_icon,
+      path: "QRCode",
+      icon: QRCode_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("TemplateGenerator"),
-      path: "",
-      icon: TemplateGenerator_icon,
+      path: "TemplateGenerator",
+      icon: TemplateGenerator_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("WordCounter"),
-      path: "",
-      icon: WordCounter_icon,
+      path: "WordCounter",
+      icon: WordCounter_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
   ];
 };

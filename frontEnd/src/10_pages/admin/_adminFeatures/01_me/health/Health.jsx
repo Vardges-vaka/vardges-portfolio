@@ -16,7 +16,7 @@ import "./00_styles/health.css";
 const Health = () => {
   return (
     <div className="Health">
-      <h1>Health</h1>
+      <h1>Health is renders</h1>
     </div>
   );
 };

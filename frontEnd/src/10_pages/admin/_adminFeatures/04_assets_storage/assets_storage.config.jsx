@@ -6,34 +6,34 @@ import {
 } from "../../../../01_components/components.index.js";
 
 const assets_storage_SideBar = (t) => {
-  [
+  return [
     {
       label: t("CloudStorage"),
-      path: "",
-      icon: CloudStorage_icon,
+      path: "CloudStorage",
+      icon: CloudStorage_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("Vault"),
-      path: "",
-      icon: Vault_icon,
+      path: "Vault",
+      icon: Vault_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("PersonalGallery"),
-      path: "",
-      icon: PersonalGallery_icon,
+      path: "PersonalGallery",
+      icon: PersonalGallery_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("PswManager"),
-      path: "",
-      icon: PswManager_icon,
+      path: "PswManager",
+      icon: PswManager_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
   ];
 };

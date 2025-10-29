@@ -11,7 +11,7 @@ const AboutIcon = () => {
 
 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
 
-<g id="SVGRepo_iconCarrier"> <g fill="none" fill-rule="evenodd"> <path d="m0 0h32v32h-32z"/> <path d="m16 0 13.8564065 8v16l-13.8564065 8-13.85640646-8v-16zm6.550845 10.6744304-6.5625807 3.489-6.56205691-3.489-.93894312 1.7658952 6.50100003 3.4561048.0002619 7.7691392h2l-.0002619-7.7701392 6.5015238-3.4551048z" fill="#202327"/> </g> </g>
+<g id="SVGRepo_iconCarrier"> <g fill="none" fill-rule="evenodd"> <path d="m0 0h32v32h-32z"/> <path d="m16 0 13.8564065 8v16l-13.8564065 8-13.85640646-8v-16zm6.550845 10.6744304-6.5625807 3.489-6.56205691-3.489-.93894312 1.7658952 6.50100003 3.4561048.0002619 7.7691392h2l-.0002619-7.7701392 6.5015238-3.4551048z" fill="${strokeColor}"/> </g> </g>
 
 </svg>
 `;
