@@ -1861,3 +1861,63 @@
   "timestamp": "2025-11-01 15:01:26",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-11-01 15:02:42",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-11-01 15:02:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-11-01 15:03:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-11-01 15:03:26",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-11-01 15:03:28",
+  "type": "controller_success"
+}
