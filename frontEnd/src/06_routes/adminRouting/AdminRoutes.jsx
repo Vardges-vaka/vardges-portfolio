@@ -13,6 +13,12 @@ const AdminWelcome = lazy(() =>
 const AdminResetPassword = lazy(() =>
   import("../../10_pages/admin/adminResetPassword/AdminResetPassword.jsx")
 );
+const Header = lazy(() =>
+  import("../../10_pages/adminPageComps/adminHeader/AdminHeader.jsx")
+);
+const Footer = lazy(() =>
+  import("../../10_pages/adminPageComps/adminFooter/AdminFooter.jsx")
+);
 
 const AdminRoutes = () => {
   return (
@@ -22,7 +28,9 @@ const AdminRoutes = () => {
         path="dashboard/:section?/:subSection?"
         element={
           <ProtectedAdminRoutes>
+            <Header />
             <AdminDashboard />
+            {/* <Footer /> */}
           </ProtectedAdminRoutes>
         }
       />

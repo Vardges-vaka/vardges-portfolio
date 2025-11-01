@@ -1,3 +1,296 @@
-.adminDashboard_sidebar_item.active {
-  border: 2px solid black;
+/* Initialize CSS custom property for sidebar width */
+:root {
+  --sidebar-width: 220px; /* Default pinned width */
+}
+
+/* ===== ADMIN SIDEBAR ROOT ===== */
+.adminSideBar {
+  position: fixed;
+  top: 45px; /* Adjust based on your header height */
+  left: 0;
+  height: 100%;
+  background-color: var(--admin-sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden; /* Clip overflow - tooltips use fixed positioning */
+}
+
+/* Pinned state - wider to show labels */
+.adminSideBar--pinned {
+  width: 220px;
+  height: 100%;
+}
+
+/* Unpinned state - narrow to show only icons */
+.adminSideBar--unpinned {
+  width: 70px;
+  height: 100%;
+}
+
+/* ===== PIN TOGGLE BUTTON ===== */
+.adminSideBar__pinToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-primary-color);
+}
+
+.adminSideBar__pinButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 8px;
+}
+
+.adminSideBar__pinButton svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--admin-tool-icon-color);
+  transition: fill 0.2s ease;
+}
+
+.adminSideBar__pinButton:hover {
+  background-color: var(--admin-tool-icon-hover);
+}
+
+.adminSideBar__pinButton:hover svg {
+  fill: var(--admin-tool-icon-active);
+}
+
+.adminSideBar__pinButton:active {
+  transform: scale(0.95);
+}
+
+/* ===== ITEMS WRAPPER ===== */
+.adminSideBar__itemsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+/* Custom scrollbar for pinned state */
+.adminSideBar--pinned .adminSideBar__itemsWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.adminSideBar--pinned .adminSideBar__itemsWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.adminSideBar--pinned .adminSideBar__itemsWrapper::-webkit-scrollbar-thumb {
+  background: var(--admin-drag-indicator);
+  border-radius: 3px;
+}
+
+.adminSideBar--pinned
+  .adminSideBar__itemsWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--admin-tool-icon-color);
+}
+
+/* ===== SIDEBAR ITEM ===== */
+.adminSideBar__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  border: 2px solid transparent;
+  /* min-height: 48px; */
+}
+
+/* Item hover state */
+.adminSideBar__item:hover {
+  background-color: var(--admin-tool-icon-hover);
+  transform: translateX(2px);
+}
+
+/* Item focus state for accessibility */
+.adminSideBar__item:focus {
+  outline: 2px solid var(--admin-tool-icon-active);
+  outline-offset: 2px;
+}
+
+/* Active item styling */
+.adminSideBar__item--active {
+  background-color: var(--admin-sidebar-item-active);
+  border-left: 2px solid var(--admin-sidebar-item-active-border);
+  padding-left: 8px; /* Compensate for border */
+}
+
+.adminSideBar__item--active .adminSideBar__itemIcon {
+  filter: brightness(1.2);
+}
+
+.adminSideBar__item--active .adminSideBar__itemLabel {
+  color: var(--admin-sidebar-item-active-color);
+  font-weight: 600;
+}
+
+/* ===== ITEM CONTENT ===== */
+.adminSideBar__itemContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Icon styling */
+.adminSideBar__itemIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: brightness(0.9);
+  transition: filter 0.2s ease;
+}
+
+.adminSideBar__item:hover .adminSideBar__itemIcon {
+  filter: brightness(1.1);
+}
+
+/* Label styling (only visible when pinned) */
+.adminSideBar__itemLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.adminSideBar__item:hover .adminSideBar__itemLabel {
+  color: var(--text-primary-color-HOV);
+}
+
+/* ===== TOOLTIP (unpinned state) ===== */
+.adminSideBar__tooltip {
+  position: fixed !important; /* Changed to fixed to escape overflow clipping */
+  left: 85px !important; /* Position to the right of unpinned sidebar (70px + 15px gap) */
+
+  /* TEMPORARY TEST: Bright colors to ensure visibility */
+  background-color: #ff0000 !important; /* Bright red - TEMPORARY */
+  color: #ffffff !important; /* White text - TEMPORARY */
+
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999999 !important; /* Very high z-index to ensure visibility */
+  pointer-events: none;
+  border: 3px solid #00ff00 !important; /* Bright green border - TEMPORARY */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-width: 100px;
+  max-width: 250px;
+  transition: opacity 0.2s ease;
+}
+
+/* Tooltip arrow */
+.adminSideBar__tooltip::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: var(--admin-sidebar-item-active-border);
+}
+
+/* Additional arrow background for better visibility */
+.adminSideBar__tooltip::after {
+  content: "";
+  position: absolute;
+  right: calc(100% + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-right-color: var(--admin-sidebar-bg);
+}
+
+@keyframes tooltipFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and smaller */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width-pinned: 180px;
+    --sidebar-width-unpinned: 60px;
+  }
+
+  .adminSideBar--pinned {
+    width: 180px;
+  }
+
+  .adminSideBar--unpinned {
+    width: 60px;
+  }
+
+  .adminSideBar__itemLabel {
+    font-size: 13px;
+  }
+
+  .adminSideBar__tooltip {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  :root {
+    --sidebar-width: 60px; /* Force collapsed on mobile */
+  }
+
+  /* Auto-collapse on mobile */
+  .adminSideBar {
+    width: 60px !important;
+  }
+
+  .adminSideBar__pinButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .adminSideBar__item {
+    padding: 10px;
+  }
+
+  .adminSideBar__itemIcon {
+    width: 20px;
+    height: 20px;
+  }
 }

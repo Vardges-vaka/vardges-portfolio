@@ -18,13 +18,13 @@ const AdminDashboard = () => {
     isDebug,
   });
   return (
-    <div className="AdminDashboard">
+    <div className="adminDashboard">
       <AdminSideBar
         sideBaritems={states.sideBaritems}
         onClick={handlers.onClickSideBarItem}
         isActive={handlers.isActive}
       />
-      <div className="adminDashboard_content_wrapper">
+      <div className="adminDashboard__contentWrapper">
         <ActiveSubsection />
       </div>
     </div>

@@ -1,41 +1,44 @@
-.AdminDashboard {
+/* ===== ADMIN DASHBOARD ROOT ===== */
+.adminDashboard {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  padding: 10px;
-  align-items: center;
+  justify-content: flex-start;
+  /* flex-direction: row; */
+  /*   min-height: calc(100vh - 60px);Full height minus header */
+  background-color: var(--bg-primary-color);
+  /* position: relative; */
+  /* align-items: start; */
 }
-/* .AdminDashboard .adminDashboard_sidebar_item{
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    padding: 10px;
-}
-.AdminDashboard .adminDashboard_sidebar_item.active{
-    background-color: #007bff;
-} */
-/* adminDashboard_sidebar_item
-active */
 
-.adminDashboard_sidebar_item img {
-  width: 25px;
-  height: 25px;
-}
-.adminDashboard_sidebar_items_wrapper {
+/* ===== CONTENT WRAPPER ===== */
+.adminDashboard__contentWrapper {
+  flex: 1;
+  /* Left margin adjusts dynamically based on sidebar width */
+  margin-left: var(--sidebar-width, 220px);
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--bg-primary-color);
+  min-height: calc(100vh - 60px);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 5px;
+  justify-content: flex-start;
 }
-.adminDashboard_sidebar_item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .adminDashboard__contentWrapper {
+    padding: 16px;
+  }
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+  .adminDashboard__contentWrapper {
+    padding: 12px;
+  }
+}
+
+/* Note: Sidebar width is dynamically handled via CSS custom property --sidebar-width 
+   which is set by the AdminSideBar component based on pin state and viewport size */

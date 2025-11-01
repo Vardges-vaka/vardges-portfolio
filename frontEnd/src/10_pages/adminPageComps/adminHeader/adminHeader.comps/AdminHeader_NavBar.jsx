@@ -1,14 +1,16 @@
 import React from "react";
 import { AdminNavBar_Items } from "../adminHeader.constances/_adminHeader.constances.index.js";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../_styles/adminHeader_NavBar.css";
 
 const AdminHeader_NavBar = ({ t, lan }) => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const { section } = useParams();
+
   const items = AdminNavBar_Items(t);
+
   const isActive = (path) => {
-    return location.pathname === `/${lan}/admin/dashboard/${path}`;
+    return section === path;
   };
 
   return (

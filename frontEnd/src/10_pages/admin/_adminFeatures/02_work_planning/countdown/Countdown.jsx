@@ -14,11 +14,7 @@ import { Countdown_YYY } from "./01_countdown.comps/_countdown.comps.index.js";
 import "./00_styles/countdown.css";
 
 const Countdown = () => {
-  return (
-    <div className="Countdown">
-      <h1>Countdown</h1>
-    </div>
-  );
+  return <p>Countdown</p>;
 };
 
 Countdown.displayName = "Countdown";
