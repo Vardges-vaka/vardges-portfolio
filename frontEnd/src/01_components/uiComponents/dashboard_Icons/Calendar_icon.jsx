@@ -1,44 +1,22 @@
 import { useThemeContext } from "../../../02_context/context.index.js";
-import "./AboutIcon.css";
 
-const AboutIcon = () => {
+const Calendar_icon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> 
+<path d="M3 9H21M7 3V5M17 3V5M6 12H8M11 12H13M16 12H18M6 15H8M11 15H13M16 15H18M6 18H8M11 18H13M16 18H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="${strokeColor}" stroke-width="2" stroke-linecap="round"/> </g>
+
+</svg>
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
 };
 
-export default AboutIcon;
+export default Calendar_icon;

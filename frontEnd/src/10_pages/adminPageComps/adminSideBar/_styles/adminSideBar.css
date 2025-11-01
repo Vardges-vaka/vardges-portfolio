@@ -1,32 +1,32 @@
-/* Initialize CSS custom property for sidebar width */
 :root {
   --sidebar-width: 220px; /* Default pinned width */
 }
 
-/* ===== ADMIN SIDEBAR ROOT ===== */
 .adminSideBar {
   position: fixed;
   top: 45px; /* Adjust based on your header height */
   left: 0;
   height: 100%;
-  background-color: var(--admin-sidebar-bg);
+  border-right: 1px solid var(--border-tertiary-color);
+  background-color: var(--bg-tertiary-color);
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px 0 var(--boxShadow-tertiary-color);
   z-index: 100;
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden; /* Clip overflow - tooltips use fixed positioning */
+  width: max-content;
 }
 
 /* Pinned state - wider to show labels */
 .adminSideBar--pinned {
-  width: 220px;
+  max-width: 220px;
   height: 100%;
 }
 
 /* Unpinned state - narrow to show only icons */
 .adminSideBar--unpinned {
-  width: 70px;
+  max-width: 70px;
   height: 100%;
 }
 
@@ -36,7 +36,7 @@
   justify-content: center;
   align-items: center;
   padding: 6px 0;
-  border-bottom: 1px solid var(--border-primary-color);
+  border-bottom: 1px dashed var(--border-primary-color);
 }
 
 .adminSideBar__pinButton {
@@ -107,32 +107,32 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 8px;
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.2s ease;
   background-color: transparent;
   border: 2px solid transparent;
-  /* min-height: 48px; */
+  width: 100%;
 }
 
 /* Item hover state */
 .adminSideBar__item:hover {
-  background-color: var(--admin-tool-icon-hover);
-  transform: translateX(2px);
+  background-color: var(--bg-tertiary-color-HOV);
+  transform: translateX(3px);
 }
 
 /* Item focus state for accessibility */
 .adminSideBar__item:focus {
-  outline: 2px solid var(--admin-tool-icon-active);
+  outline: 1px solid var(--admin-tool-icon-active);
   outline-offset: 2px;
 }
 
 /* Active item styling */
 .adminSideBar__item--active {
-  background-color: var(--admin-sidebar-item-active);
-  border-left: 2px solid var(--admin-sidebar-item-active-border);
-  padding-left: 8px; /* Compensate for border */
+  background-color: var(--bg-tertiary-color-HOV);
+  border-left: 3px solid var(--border-primary-color);
+  padding-left: 5px;
 }
 
 .adminSideBar__item--active .adminSideBar__itemIcon {
@@ -171,7 +171,7 @@
 .adminSideBar__itemLabel {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-primary-color);
+  color: var(--h1-tertiary-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -185,31 +185,25 @@
 
 /* ===== TOOLTIP (unpinned state) ===== */
 .adminSideBar__tooltip {
-  position: fixed !important; /* Changed to fixed to escape overflow clipping */
-  left: 85px !important; /* Position to the right of unpinned sidebar (70px + 15px gap) */
-
-  /* TEMPORARY TEST: Bright colors to ensure visibility */
-  background-color: #ff0000 !important; /* Bright red - TEMPORARY */
-  color: #ffffff !important; /* White text - TEMPORARY */
-
-  padding: 10px 16px;
+  position: fixed;
+  left: 85px;
+  background-color: var(--admin-sidebar-bg);
+  color: var(--text-primary-color-HOV);
+  padding: 8px 14px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
-  z-index: 999999 !important; /* Very high z-index to ensure visibility */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
   pointer-events: none;
-  border: 3px solid #00ff00 !important; /* Bright green border - TEMPORARY */
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  min-width: 100px;
+  border: 2px solid var(--admin-sidebar-item-active-border);
+  min-width: 80px;
   max-width: 250px;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease;
 }
 
-/* Tooltip arrow */
+/* Tooltip arrow - outer border */
 .adminSideBar__tooltip::before {
   content: "";
   position: absolute;
@@ -220,7 +214,7 @@
   border-right-color: var(--admin-sidebar-item-active-border);
 }
 
-/* Additional arrow background for better visibility */
+/* Tooltip arrow - inner fill */
 .adminSideBar__tooltip::after {
   content: "";
   position: absolute;
@@ -229,17 +223,6 @@
   transform: translateY(-50%);
   border: 5px solid transparent;
   border-right-color: var(--admin-sidebar-bg);
-}
-
-@keyframes tooltipFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50%) translateX(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
-  }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */

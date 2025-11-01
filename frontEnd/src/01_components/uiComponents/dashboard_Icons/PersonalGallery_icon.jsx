@@ -5,37 +5,15 @@ const AboutIcon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg fill="${strokeColor}" height="64px" width="64px" version="1.1" id="XMLID_69_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <g id="gallery"> <g> <circle cx="6" cy="6" r="2"/> </g> <g> <path d="M24,23H4v-4H0V0h20v4h4V23z M6,21h16V6h-2v13H6V21z M3.2,17H18v-1.6l-4-4.8l-3.9,4.9l-3-3L3.2,17z M2,2v13.3l4.9-5.8l3,3 L14,7.4l4,4.8V2H2z"/> </g> </g> </g>
+
+</svg>
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;

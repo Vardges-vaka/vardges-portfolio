@@ -1,44 +1,30 @@
 import { useThemeContext } from "../../../02_context/context.index.js";
-import "./AboutIcon.css";
 
-const AboutIcon = () => {
+const ExcelGenerator_icon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg 
+height="64px"
+width="64px" 
+version="1.1" 
+id="Capa_1" 
+xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+viewBox="0 0 26 26" 
+xml:space="preserve" 
+fill="${strokeColor}">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <g> <path style="fill:${strokeColor};" d="M25.162,3H16v2.984h3.031v2.031H16V10h3v2h-3v2h3v2h-3v2h3v2h-3v3h9.162 C25.623,23,26,22.609,26,22.13V3.87C26,3.391,25.623,3,25.162,3z M24,20h-4v-2h4V20z M24,16h-4v-2h4V16z M24,12h-4v-2h4V12z M24,8 h-4V6h4V8z"/> <path style="fill:${strokeColor};" d="M0,2.889v20.223L15,26V0L0,2.889z M9.488,18.08l-1.745-3.299c-0.066-0.123-0.134-0.349-0.205-0.678 H7.511C7.478,14.258,7.4,14.494,7.277,14.81l-1.751,3.27H2.807l3.228-5.064L3.082,7.951h2.776l1.448,3.037 c0.113,0.24,0.214,0.525,0.304,0.854h0.028c0.057-0.198,0.163-0.492,0.318-0.883l1.61-3.009h2.542l-3.037,5.022l3.122,5.107 L9.488,18.08L9.488,18.08z"/> </g> </g>
+
+</svg>
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
 };
 
-export default AboutIcon;
+export default ExcelGenerator_icon;

@@ -5,37 +5,17 @@ const AboutIcon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg fill="${strokeColor}" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <title>health</title> <path d="M27 28.031h-2v1.938h-4v-1.938h-11v1.938h-4v-1.938h-2c-1.105 0-2-0.896-2-2v-17c0-1.105 0.895-2 2-2h23c1.104 0 2 0.896 2 2v17c0 1.105-0.896 2-2 2zM20.999 16.031h-3.999v-4h-3v4h-4v3h4v4h3v-4h3.999v-3zM19 4.010h-6v2.021h-2v-0.979h1v-3.021h7.958v3h1.042v1h-2v-2.021z"/> </g>
+
+</svg>
+        
+
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;

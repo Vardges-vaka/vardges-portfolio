@@ -1,44 +1,22 @@
 import { useThemeContext } from "../../../02_context/context.index.js";
-import "./AboutIcon.css";
 
-const AboutIcon = () => {
+const CV_Generator_icon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg width="64px" height="64px" viewBox="-10 -5 1034 1034" 
+xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="${strokeColor}">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <path fill="${strokeColor}" d="M160 324q-67 0 -113.5 46.5t-46.5 113.5v286q0 66 46.5 113t113.5 47h680q67 0 113.5 -47t46.5 -113v-286q0 -67 -46.5 -113.5t-113.5 -46.5h-680zM320 405q33 0 51 13q4 2 6 4q23 20 23 67q0 16 -12 52q-2 4 -4.5 11.5t-3.5 8.5q-19 55 -19 65v8q1 4 1 7q2 6 6 13 q6 11 17 21h1q10 9 25 17q12 6 29 13l43 17q21 10 29 18l3 2v1l4 6v58h-395v-54q0 -16 36 -33q3 -1 9 -4q3 -1 4 -2q66 -27 83 -42q5 -4 10 -9l2 -3q1 0 1.5 -0.5t0.5 -1.5l1 -2h1l7 -15l1 -7q1 -3 1 -7.5t-7 -23.5l-9 -27q-8 -20 -11 -32q-6 -17 -7 -21q-3 -10 -4 -19 l-2 -7v-8q0 -12 2 -23v-1q2 -10 4 -17q6 -16 17 -26q2 -2 6 -4q14 -10 34 -13h16zM743 498q35 0 65 17t49 45l35 -34v108h-109l34 -34q-10 -21 -30 -34t-44 -13q-34 0 -58 24t-24 57.5t24 57.5t59 24t60 -28h64q-17 37 -50.5 59.5t-74.5 22.5q-57 0 -96.5 -39.5t-39.5 -96 t39.5 -96.5t96.5 -40z"/> </g>
+
+</svg>
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
 };
 
-export default AboutIcon;
+export default CV_Generator_icon;

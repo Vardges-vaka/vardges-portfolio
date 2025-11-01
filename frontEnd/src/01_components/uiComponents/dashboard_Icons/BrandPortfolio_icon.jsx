@@ -1,44 +1,43 @@
 import { useThemeContext } from "../../../02_context/context.index.js";
-import "./AboutIcon.css";
 
-const AboutIcon = () => {
+const BrandPortfolio_icon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg version="1.1" id="_x36_" xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" 
+xml:space="preserve" width="64px" height="64px" fill="#000000">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <g> 
+<g> <rect x="13.549" style="fill:${strokeColor};" width="484.902" height="351.746"/> 
+<path style="fill:${strokeColor};" d="M512,80.541v308.314c0,24.012-19.496,43.432-43.507,43.432H43.507 c-7.678,0-14.979-2.032-21.302-5.57c-6.925-3.914-12.721-9.635-16.56-16.56C2.032,403.909,0,396.608,0,388.854V80.541H512z"/> <g> 
+<circle style="fill:#8F7A7C;" cx="367.928" cy="168.443" r="29.34"/> 
+<circle style="fill:#8F7A7C;" cx="144.072" cy="168.443" r="29.34"/> </g> 
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="261.871" y1="-1.114859e-008" x2="261.871" y2="80.5406"> 
+<stop offset="0.0936" style="stop-color:#C4D998"/> <stop offset="0.9606" style="stop-color:#AAB587"/> 
+</linearGradient> 
+<polygon style="fill:url(#SVGID_1_);" points="510.193,80.541 46.894,80.541 46.894,40.27 45.765,40.27 13.549,0 498.451,0 494.235,5.193 466.234,40.27 465.557,41.098 466.008,41.098 498.451,70.078 "/> 
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="23.451" y1="0.0082" x2="23.451" y2="80.5576"> 
+<stop offset="0.0936" style="stop-color:#C4D998"/> <stop offset="0.9606" style="stop-color:#AAB587"/> 
+</linearGradient> <polygon style="fill:url(#SVGID_2_);" points="45.696,41.135 0.007,80.558 46.895,80.558 46.895,40.283 45.734,40.283 46.414,41.135 "/> 
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="23.451" y1="40.2829" x2="23.451" y2="145.6906"> <stop offset="0.0936" style="stop-color:#C4D998"/> 
+<stop offset="0.9606" style="stop-color:#AAB587"/> 
+</linearGradient> <polygon style="fill:url(#SVGID_3_);" points="45.696,41.135 0.007,80.558 46.895,80.558 46.895,40.283 45.734,40.283 46.414,41.135 "/> 
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="6978.3032" y1="40.2829" x2="6978.3032" y2="145.6906" gradientTransform="matrix(-1 0 0 1 7466.8521 0)"> 
+<stop offset="0.0936" style="stop-color:#C4D998"/> <stop offset="0.9606" style="stop-color:#AAB587"/> 
+</linearGradient> <polygon style="fill:url(#SVGID_4_);" points="466.303,41.135 511.993,80.558 465.105,80.558 465.105,40.283 466.266,40.283 465.586,41.135 "/> 
+<path style="fill:#8F7A7C;" d="M256.301,308.321c-68.759,0-124.699-55.939-124.699-124.698c0-6.887,5.583-12.47,12.47-12.47 c6.887,0,12.47,5.583,12.47,12.47c0,55.007,44.751,99.758,99.759,99.758c55.008,0,99.759-44.751,99.759-99.758 c0-6.887,5.583-12.47,12.47-12.47c6.887,0,12.47,5.583,12.47,12.47C381,252.382,325.06,308.321,256.301,308.321z"/> 
+<g> <path style="fill:#FFFFFF;" d="M256.301,295.422c-68.759,0-124.699-55.939-124.699-124.698c0-6.887,5.583-12.47,12.47-12.47 c6.887,0,12.47,5.583,12.47,12.47c0,55.007,44.751,99.758,99.759,99.758c55.008,0,99.759-44.751,99.759-99.758 c0-6.887,5.583-12.47,12.47-12.47c6.887,0,12.47,5.583,12.47,12.47C381,239.483,325.06,295.422,256.301,295.422z"/> </g> </g> 
+<path style="opacity:0.1;fill:#040000;" d="M511.973,80.541l-13.522-11.668V0H256v432.286h212.493 c24.012,0,43.507-19.42,43.507-43.432V80.541H511.973z"/> </g> </g>
+
+</svg>
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
 };
 
-export default AboutIcon;
+export default BrandPortfolio_icon;

@@ -1,44 +1,24 @@
 import { useThemeContext } from "../../../02_context/context.index.js";
-import "./AboutIcon.css";
 
-const AboutIcon = () => {
+const FinTracker_icon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg fill="${strokeColor}" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 236 256" 
+enable-background="new 0 0 236 256" xml:space="preserve">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> 
+<path d="M117.5,2c-12.47,0-22.63,10.16-22.63,22.63c0,12.46,10.06,22.62,22.63,22.62c12.37,0,22.62-10.16,22.62-22.62 C140.12,12.16,129.97,2,117.5,2z M146,52H89c-15.59,0-28,13.41-28,29v32h20V86c0-1.71,1.29-3,3-3s3,1.29,3,3v27h61V86 c0-1.71,1.29-3,3-3s3,1.29,3,3v27h20V81C174,65.51,161.49,52,146,52z M2,118v27h23v109h185V145h24v-27H2z M117.93,235.35 c-25.59,0-46.36-20.77-46.36-46.36c0-25.73,20.63-46.64,46.36-46.64s46.5,20.77,46.5,46.5S143.52,235.35,117.93,235.35z M122.43,184.31c-6.42-2.61-9.41-3.85-9.41-7.06c0-2.34,2.57-4.68,7.3-4.68c4.72,0,8.16,1.47,10.27,2.34l2.61-9.17 c-2.84-1.52-6.69-2.62-12.01-2.62v-7.29h-6.42v7.66c-8.58,1.74-13.26,7.29-13.26,14.35c0,7.66,5.32,11.97,13.85,14.95 c6.15,2.39,8.67,3.72,8.67,6.93c0,3.21-2.61,5.55-7.93,5.55c-4.96,0-9.63-1.75-12.61-3.21l-2.34,9.4c2.7,1.51,8.3,2.98,13.85,2.98 v7.06h6.42v-7.29c9.4-2.11,13.85-7.66,13.85-14.95C135.27,191.97,131.18,187.52,122.43,184.31z"/> </g>
+
+</svg>
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
 };
 
-export default AboutIcon;
+export default FinTracker_icon;

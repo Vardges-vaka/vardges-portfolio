@@ -1,44 +1,22 @@
 import { useThemeContext } from "../../../02_context/context.index.js";
 import "./AboutIcon.css";
 
-const AboutIcon = () => {
+const EmailTools_icon = () => {
   const { strokeColor } = useThemeContext();
 
   const svgString = `
-    <svg
-      width="64px"
-      height="64px"
-      viewBox="0 0 16 16"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="#000000">
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+<svg fill="${strokeColor}" height="64px" width="64px" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve">
 
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-      <g id="SVGRepo_iconCarrier">
-        {" "}
-        <g color="${strokeColor}" fill="${strokeColor}">
-          {" "}
-          <path
-            d="M6 0a3 3 0 100 6 3 3 0 000-6zM4.5 7A4.49 4.49 0 000 11.5v.5c0 1 1 1 1 1h6V8.875c0-.83.587-1.554 1.355-1.79A4.532 4.532 0 007.5 7zM9 9v4h1V9z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-          <path
-            d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v1h-2zm0 2h2v4h-2z"
-            style="marker:none"
-            overflow="visible"
-          />{" "}
-        </g>{" "}
-      </g>
-    </svg>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <path d="M21.5,1.1c-0.3-0.2-0.7-0.2-1,0l-2,1c-1.8,0.9-3.9,1.4-6,1.4c-2,0-3.5,1.6-3.5,3.6c0,1.1,0.5,2,1.2,2.7l2.3,4.6 c0.2,0.3,0.5,0.6,0.9,0.6h2.5c0.6,0,1-0.4,1-1v-2.5c0.5,0.2,1.1,0.4,1.6,0.7l2,1c0.1,0.1,0.3,0.1,0.5,0.1c0.2,0,0.4,0,0.5-0.1 c0.3-0.2,0.5-0.5,0.5-0.9V2C22,1.7,21.8,1.3,21.5,1.1z M20,10.7l-0.6-0.3c-0.8-0.4-1.6-0.7-2.5-1V4.9c0.9-0.3,1.7-0.6,2.5-1L20,3.6 V10.7z"/> <path d="M27,10h-3v2.3c0,1-0.5,2-1.4,2.6c-0.9,0.5-2,0.6-2.9,0.1l-0.8-0.4C18.6,16,17.4,17,15.9,17h-2.5c-1.2,0-2.2-0.6-2.7-1.7 L8.6,11c-0.3-0.3-0.5-0.6-0.7-1H5c-1.7,0-3,1.3-3,3v14c0,1.7,1.3,3,3,3h22c1.7,0,3-1.3,3-3V13C30,11.3,28.7,10,27,10z M24.7,23.2 c0.4,0.4,0.5,1,0.1,1.4C24.6,24.9,24.3,25,24,25c-0.2,0-0.5-0.1-0.7-0.2l-3.9-3.4l-2.8,2.4C16.5,23.9,16.2,24,16,24 s-0.5-0.1-0.7-0.2l-2.8-2.4l-3.9,3.4C8.5,24.9,8.2,25,8,25c-0.3,0-0.6-0.1-0.8-0.3c-0.4-0.4-0.3-1,0.1-1.4l3.7-3.2l-3.7-3.2 c-0.4-0.4-0.5-1-0.1-1.4c0.4-0.4,1-0.5,1.4-0.1l7.3,6.4l7.3-6.4c0.4-0.4,1-0.3,1.4,0.1c0.4,0.4,0.3,1-0.1,1.4L20.9,20L24.7,23.2z"/> </g>
+
+</svg>
 `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
 };
 
-export default AboutIcon;
+export default EmailTools_icon;
