@@ -13,7 +13,7 @@ const business_docs_SideBar = (t) => {
       path: "CV_Generator",
       icon: CV_Generator_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: true,
+      isDefault: false,
     },
     {
       label: t("EmailTools"),
@@ -41,7 +41,7 @@ const business_docs_SideBar = (t) => {
       path: "PDF_image_Formatting",
       icon: PDF_image_Formatting_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: false,
+      isDefault: true,
     },
   ];
 };

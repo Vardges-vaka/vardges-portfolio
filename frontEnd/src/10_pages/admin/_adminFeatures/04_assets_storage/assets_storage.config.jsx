@@ -12,7 +12,7 @@ const assets_storage_SideBar = (t) => {
       path: "CloudStorage",
       icon: CloudStorage_icon(),
       access: ["user", "admin", "superAdmin"],
-      isDefault: false,
+      isDefault: true,
     },
     {
       label: t("Vault"),

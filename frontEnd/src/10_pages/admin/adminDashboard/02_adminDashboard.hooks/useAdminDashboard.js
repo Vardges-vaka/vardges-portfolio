@@ -1,17 +1,26 @@
-import { useMemo, useState, useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useUserContext } from "../../../../02_context/context.index";
-// import isDebug from "../AdminDashboard.config.js";
+import is_Debug from "../_adminDashboard.config.js";
 import {
-  useAdminDashboard_apiHelpers,
   useAdminDashboard_handlers,
   useAdminDashboard_states,
 } from "./_adminDashboard.hooks.index.js";
 
+import {
+  settings_SIdeBar,
+  me_SideBar,
+  work_planning_SideBar,
+  business_docs_SideBar,
+  assets_storage_SideBar,
+  tools_SideBar,
+  brand_product_SideBar,
+} from "../../_adminFeatures/adminFeatures.index.js";
+
+const isDebug = is_Debug.hooks;
+
 export const useAdminDashboard = () => {
   const navigate = useNavigate();
-  const { user, logout } = useUserContext();
   const { section, subSection } = useParams();
 
   const { t: tValidators } = useTranslation("validators");
@@ -20,33 +29,63 @@ export const useAdminDashboard = () => {
   const { t: tSideBar } = useTranslation("sideBar");
   const { i18n } = useTranslation();
 
+  const sideBarMap = {
+    me: me_SideBar(tSideBar),
+    work_planning: work_planning_SideBar(tSideBar),
+    Business_docs: business_docs_SideBar(tSideBar),
+    Assets_storage: assets_storage_SideBar(tSideBar),
+    tools: tools_SideBar(tSideBar),
+    Brand_product: brand_product_SideBar(tSideBar),
+    settings: settings_SIdeBar(tSideBar),
+  };
+
   const translations = {
     tValidators: tValidators,
     tCommon: tCommon,
     tAdminWelcome: tAdminWelcome,
     tSideBar: tSideBar,
+    language: i18n.language,
   };
+
   const { states, setters } = useAdminDashboard_states();
-  const { apiHelpers } = useAdminDashboard_apiHelpers({ translations });
   const { handlers } = useAdminDashboard_handlers({
-    states,
+    states: {
+      ...states,
+      original_section: section,
+      original_subSection: subSection,
+      sideBaritems: sideBarMap[section ? section : "settings"],
+    },
     setters,
-    apiHelpers,
     translations,
+    navigate,
+    isDebug,
   });
 
+  useEffect(() => {
+    handlers.handleInitialMount(section, subSection);
+  }, []);
+
+  useEffect(() => {
+    handlers.handleSectionChange(section, subSection);
+  }, [section, subSection]);
+
   return {
-    props: {},
     translations: translations,
     navigate,
-    user,
-    logout,
-    section,
-    subSection,
-    states,
-    setters,
-    apiHelpers,
-    handlers,
-    i18n,
+    states: {
+      sideBaritems: sideBarMap[section],
+      section: section,
+      original_Path: states.subSection,
+      default_Path: states.defaultSubSection,
+    },
+    ActiveSubsection_states: {
+      section: section,
+      original_Path: states.subSection,
+      default_Path: states.defaultSubSection,
+    },
+    handlers: {
+      onClickSideBarItem: handlers.onClickSideBarItem,
+      isActive: handlers.isActive,
+    },
   };
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   LanguageSelect,
   ThemeToggler,
@@ -13,17 +13,21 @@ const AdminHeader = () => {
   const { i18n, t } = useTranslation("adminHeader");
   const location = useLocation();
   const currentLanguage = i18n.language;
-
+  const navigate = useNavigate();
   return (
     <header className="AdminLayout_header">
       <IconGlobal
         className=""
         isActive={true}
-        withWrapper={false}
         type="lucide"
         lucid="Settings"
         svg_src=""
         version="primary"
+        withWrapper={true}
+        wrapperProps={{
+          onClick: () =>
+            navigate(`/${currentLanguage}/admin/dashboard/settings`),
+        }}
         // iconProps = {}
       />
       <AdminHeader_NavBar t={t} lan={currentLanguage} />

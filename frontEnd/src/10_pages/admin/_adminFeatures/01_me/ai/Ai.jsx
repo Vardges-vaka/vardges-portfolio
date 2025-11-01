@@ -16,7 +16,7 @@ import "./00_styles/ai.css";
 const Ai = () => {
   return (
     <div className="Ai">
-      <h1>xxx</h1>
+      <h1>AI Set As default section</h1>
     </div>
   );
 };
