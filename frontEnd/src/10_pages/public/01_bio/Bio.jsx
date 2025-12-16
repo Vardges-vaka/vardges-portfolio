@@ -1,101 +1,107 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useProfileContext } from "../../../02_context/context.index.js";
+import { useBio } from "./bioHooks/_bioHooks.index.js";
 import {
-  User,
-  Award,
-  GraduationCap,
-  Briefcase,
-  Target,
-  FolderOpen,
-  Wrench,
-  Heart,
-  Mail,
-} from "lucide-react";
-
+  BioIntro,
+  PrinciplesCards,
+  LanguageJourney,
+  CareerDirection,
+} from "./bioComps/_bioComps.index.js";
+import { getProfileContent } from "../../../07_utils/_utils.index.js";
 import "./styles/bio.css";
 
-/*
-
-  User (AboutIcon),
-  Award (AchievementsIcon),
-  GraduationCap (EducationIcon),
-  Briefcase (ExperienceIcon),
-  Target (GoalsIcon),
-  FolderOpen (ProjectsIcon),
-  Wrench (SkillsIcon),
-  Heart (ValuesIcon),
-  Mail (ContactIcon),
-
-*/
-
+/**
+ * Bio Page Component
+ * Displays personal bio, principles, language journey, and career direction
+ * Content adapts based on current profile (dev/hospitality/both)
+ */
 const Bio = ({ variant = "full" }) => {
-  const { i18n, t } = useTranslation("bio");
-  const Bio_classname = `Bio ${variant === "full" ? "full" : "short"}`;
-  // Let's use navBar label keys for translation lookup; fallback to English if not available
-  const iconItems = [
-    {
-      icon: <User className="About" />,
-      labelKey: "navBar.labels.bio",
-      fallback: "Bio",
-    },
-    {
-      icon: <Award className="Achievements" />,
-      labelKey: "navBar.labels.achievements",
-      fallback: "Achievements",
-    },
+  const { profile } = useProfileContext();
+  const { bioContent, loading, error } = useBio(profile);
 
-    {
-      icon: <Briefcase className="Experience" />,
-      labelKey: "navBar.labels.journey",
-      fallback: "Journey",
-    },
-    {
-      icon: <Target className="Goals" />,
-      labelKey: "navBar.labels.vision",
-      fallback: "Vision",
-    },
-    {
-      icon: <FolderOpen className="Projects" />,
-      labelKey: "navBar.labels.projects",
-      fallback: "Projects",
-    },
-    {
-      icon: <Wrench className="Skills" />,
-      labelKey: "navBar.labels.skills",
-      fallback: "Skills",
-    },
-    {
-      icon: <Heart className="Values" />,
-      labelKey: "navBar.labels.values",
-      fallback: "Values",
-    },
-    {
-      icon: <Mail className="Contact" />,
-      labelKey: "navBar.labels.contact",
-      fallback: "Contact",
-    },
-    {
-      icon: <GraduationCap className="Education" />,
-      labelKey: "navBar.labels.education",
-      fallback: "Education",
-    },
-  ];
+  const bioClassName = `bio ${variant === "full" ? "bio--full" : "bio--short"}`;
+
+  if (loading) {
+    return (
+      <div className={bioClassName}>
+        <div className="bio__loading">Loading...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={bioClassName}>
+        <div className="bio__error">Error: {error}</div>
+      </div>
+    );
+  }
+
+  if (!bioContent) {
+    return null;
+  }
+
+  // Get profile-specific intro content
+  const introContent = getProfileContent(bioContent.intro, profile);
+  const careerContent = getProfileContent(bioContent.careerDirection, profile);
+  const isShort = variant === "short";
 
   return (
-    <div className={Bio_classname}>
-      {iconItems.map(({ icon, labelKey, fallback }, idx) => (
-        <div
-          key={idx}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            margin: "8px 0",
-            gap: "10px",
-          }}>
-          {icon}
-          <span>{t(labelKey, fallback)}</span>
-        </div>
-      ))}
+    <div className={bioClassName}>
+      <div className="bio__container">
+        {/* Header - Only show in full variant */}
+        {!isShort && (
+          <header className="bio__header">
+            <h1 className="bio__title">About Me</h1>
+          </header>
+        )}
+
+        {/* Personal Info Section - Only in full variant */}
+        {!isShort && bioContent.personalInfo && (
+          <section className="bio__personalInfo">
+            <h2 className="bio__name">{bioContent.personalInfo.name}</h2>
+            <p className="bio__location">{bioContent.personalInfo.location}</p>
+            {bioContent.personalInfo.languages && (
+              <p className="bio__languages">
+                Languages:{" "}
+                {bioContent.personalInfo.languages
+                  .map((lang) => `${lang.name} (${lang.level})`)
+                  .join(", ")}
+              </p>
+            )}
+          </section>
+        )}
+
+        {/* Intro Section */}
+        {introContent && (
+          <BioIntro data={introContent} profile={profile} variant={variant} />
+        )}
+
+        {/* Principles Section */}
+        {bioContent.principles && (
+          <PrinciplesCards
+            principles={bioContent.principles}
+            variant={variant}
+          />
+        )}
+
+        {/* Language Journey Section - Only in full variant */}
+        {!isShort && bioContent.languageJourney && (
+          <LanguageJourney
+            story={bioContent.languageJourney}
+            variant={variant}
+          />
+        )}
+
+        {/* Career Direction Section - Only in full variant */}
+        {!isShort && careerContent && (
+          <CareerDirection
+            directions={careerContent}
+            profile={profile}
+            variant={variant}
+          />
+        )}
+      </div>
     </div>
   );
 };

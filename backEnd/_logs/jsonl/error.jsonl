@@ -609,3 +609,284 @@
   "timestamp": "2025-10-28 18:11:30",
   "type": "controller_error"
 }
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:88:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:38:53",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨user_signIn_cntrl.js",
+  "error": "Operation `users.findOne()` buffering timed out after 10000ms",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨user_signIn_cntrl.js |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Operation `users.findOne()` buffering timed out after 10000ms\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_signIn_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_signIn_srv.js:70:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_signIn_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_signIn_cntrl.js:16:7)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:39:24",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:88:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:41:17",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:88:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:41:25",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:88:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:42:43",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:89:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:43:44",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:90:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:46:54",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:91:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-11-24 11:47:40",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:24:00",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:24:14",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨user_signIn_cntrl.js",
+  "error": "Operation `users.findOne()` buffering timed out after 10000ms",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨user_signIn_cntrl.js |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Operation `users.findOne()` buffering timed out after 10000ms\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_signIn_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_signIn_srv.js:70:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_signIn_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_signIn_cntrl.js:16:7)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:24:31",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:28:12",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:28:30",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:28:44",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:29:27",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:30:12",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:31:00",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:31:36",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:32:13",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨user_signIn_cntrl.js",
+  "error": "Operation `users.findOne()` buffering timed out after 10000ms",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨user_signIn_cntrl.js |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Operation `users.findOne()` buffering timed out after 10000ms\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_signIn_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_signIn_srv.js:70:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async user_signIn_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_signIn_cntrl.js:16:7)",
+  "statusCode": 500,
+  "timestamp": "2025-12-15 15:32:46",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-12-15 15:33:03",
+  "type": "controller_error"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2025-12-15 15:33:44",
+  "type": "controller_error"
+}

@@ -14,7 +14,7 @@ import ProjectsIcon from "./navBarIcons/projectsIcon.svg";
 import SkillsIcon from "./navBarIcons/projectsIcon.svg";
 import ValuesIcon from "./navBarIcons/projectsIcon.svg";
 import ContactIcon from "./navBarIcons/projectsIcon.svg";
-
+import placeholder from "./placeholder.png";
 export {
   //Flag Icons
   ArmenianFlag,
@@ -33,4 +33,5 @@ export {
   SkillsIcon,
   ValuesIcon,
   ContactIcon,
+  placeholder,
 };

@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 // Contexts
-import { ThemeProvider, LanguageProvider } from "./02_context/context.index";
+import { ThemeProvider, LanguageProvider, ProfileProvider } from "./02_context/context.index";
 
 // Layouts & Routes
 import {
@@ -24,21 +24,23 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <Router>
-          <Suspense fallback={<p>Loading...</p>}>
-            <Routes>
-              {/* // ! Admin Routes */}
-              <Route path=":lang/admin/*" element={<AdminLayout />}>
-                <Route path="*" element={<AdminRoutes />} />
-              </Route>
+        <ProfileProvider>
+          <Router>
+            <Suspense fallback={<p>Loading...</p>}>
+              <Routes>
+                {/* // ! Admin Routes */}
+                <Route path=":lang/admin/*" element={<AdminLayout />}>
+                  <Route path="*" element={<AdminRoutes />} />
+                </Route>
 
-              {/* // ! Public Routes */}
-              <Route path="/*" element={<PublicLayout />}>
-                <Route path="*" element={<PublicRoutes />} />
-              </Route>
-            </Routes>
-          </Suspense>
-        </Router>
+                {/* // ! Public Routes */}
+                <Route path="/*" element={<PublicLayout />}>
+                  <Route path="*" element={<PublicRoutes />} />
+                </Route>
+              </Routes>
+            </Suspense>
+          </Router>
+        </ProfileProvider>
       </LanguageProvider>
     </ThemeProvider>
   );

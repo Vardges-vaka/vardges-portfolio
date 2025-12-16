@@ -1,123 +1,466 @@
-.Bio {
-  /**/
-  /* background-color: #1b7357; */
+/* Bio Page Styles - Using existing CSS variables only */
+
+.bio {
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  min-height: 100vh;
+  padding: var(--spacing-md);
+}
+
+.bio__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Personal Info Section */
+.bio__personalInfo {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-primary-color);
+}
+
+.bio__name {
+  font-size: 2.5rem;
+  color: var(--h1-primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+.bio__location {
+  font-size: 1.1rem;
+  color: var(--text-secondary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.bio__languages {
+  font-size: 0.95rem;
+  color: var(--text-secondary-color);
+  font-style: italic;
+}
+
+/* Loading and Error States */
+.bio__loading,
+.bio__error {
+  text-align: center;
+  padding: var(--spacing-xl);
+  font-size: 1.2rem;
+  color: var(--text-primary-color);
+}
+
+.bio__error {
+  color: var(--primary-error-border);
+}
+
+/* BioIntro Component Styles */
+.bioIntro {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+}
+
+.bioIntro__content {
   display: flex;
-  flex-direction: row;
+  gap: var(--spacing-xl);
   align-items: center;
-  /* justify-content: center;
-  height: 100%;
+}
+
+.bioIntro--short .bioIntro__content {
+  flex-direction: column;
+}
+
+.bioIntro__text {
+  flex: 1;
+}
+
+.bioIntro__image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--boxShadow-primary-color);
+}
+
+.bioIntro__image img {
   width: 100%;
-  border: 1px solid var(--border-main);
-  border-radius: var(--border-radius); */
-  padding: 300px;
-  /* background-color: var(--bg-primary-hover); */
+  height: 100%;
+  object-fit: cover;
 }
 
-/*
-  color: var(--icon-stroke-color-1);
-  color: var(--icon-stroke-color-2);
-  color: var(--icon-stroke-color-3);
-  color: var(--icon-stroke-color-4);
-  color: var(--icon-stroke-color-5);
-  color: var(--icon-stroke-color-6);
-  color: var(--icon-stroke-color-7);
-  color: var(--icon-stroke-color-8);
-  color: var(--icon-stroke-color-9);
+.bioIntro__title {
+  font-size: 2rem;
+  color: var(--h2-primary-color);
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+}
 
+.bioIntro__description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-primary-color);
+  margin-bottom: var(--spacing-md);
+}
 
+.bioIntro__highlights {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0 0 0;
+}
 
-    --icon-stroke-primary-color: var(--dark-icon-stroke-primary-color);
-  --icon-stroke-primary-hover-color: var(
-    --dark-icon-stroke-primary-hover-color
+.bioIntro__highlight {
+  padding: var(--spacing-sm) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+  color: var(--text-primary-color);
+  font-size: 1rem;
+}
+
+.bioIntro__highlight::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--icon-primary-stroke-color);
+  font-weight: bold;
+}
+
+/* PrinciplesCards Component Styles */
+.principlesCards {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+}
+
+.principlesCards__heading {
+  font-size: 2rem;
+  color: var(--h2-primary-color);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-weight: 600;
+}
+
+.principlesCards__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.principlesCards__card {
+  background-color: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+}
+
+.principlesCards__card:hover {
+  border-color: var(--border-primary-color-HOV);
+  box-shadow: 0 4px 12px var(--boxShadow-primary-color);
+}
+
+.principlesCards__iconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--bg-primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  border: 2px solid var(--border-primary-color);
+}
+
+.principlesCards__icon {
+  color: var(--icon-primary-stroke-color);
+}
+
+.principlesCards__title {
+  font-size: 1.5rem;
+  color: var(--h3-primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.principlesCards__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.principlesCards__quote {
+  font-style: italic;
+  color: var(--text-secondary-color);
+  border-left: 3px solid var(--border-primary-color);
+  padding-left: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  font-size: 0.95rem;
+}
+
+.principlesCards__practical {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--spacing-md);
+}
+
+.principlesCards__practicalItem {
+  padding: var(--spacing-xs) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+  color: var(--text-primary-color);
+  font-size: 0.95rem;
+}
+
+.principlesCards__practicalItem::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--icon-primary-stroke-color);
+  font-weight: bold;
+}
+
+/* LanguageJourney Component Styles */
+.languageJourney {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+}
+
+.languageJourney__heading {
+  font-size: 2rem;
+  color: var(--h2-primary-color);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 600;
+}
+
+.languageJourney__content {
+  max-width: 900px;
+}
+
+.languageJourney__initial,
+.languageJourney__challenge,
+.languageJourney__impact {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.languageJourney__section {
+  margin: var(--spacing-lg) 0;
+}
+
+.languageJourney__subheading {
+  font-size: 1.3rem;
+  color: var(--h3-primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.languageJourney__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-sm) 0;
+}
+
+.languageJourney__listItem {
+  padding: var(--spacing-xs) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+  color: var(--text-primary-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.languageJourney__listItem::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--icon-primary-stroke-color);
+  font-weight: bold;
+}
+
+/* CareerDirection Component Styles */
+.careerDirection {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+}
+
+.careerDirection__heading {
+  font-size: 2rem;
+  color: var(--h2-primary-color);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 600;
+}
+
+.careerDirection__content {
+  max-width: 900px;
+}
+
+.careerDirection__title {
+  font-size: 1.5rem;
+  color: var(--h3-primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.careerDirection__description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.careerDirection__section {
+  margin: var(--spacing-lg) 0;
+}
+
+.careerDirection__subheading {
+  font-size: 1.2rem;
+  color: var(--h3-primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.careerDirection__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-sm) 0;
+}
+
+.careerDirection__listItem {
+  padding: var(--spacing-xs) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+  color: var(--text-primary-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.careerDirection__listItem::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--icon-primary-stroke-color);
+  font-weight: bold;
+}
+
+.careerDirection__list--questions .careerDirection__listItem::before {
+  content: "?";
+}
+
+.careerDirection__philosophy {
+  font-style: italic;
+  color: var(--text-secondary-color);
+  border-left: 3px solid var(--border-primary-color);
+  padding-left: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Short Variant Enhancements */
+.bio--short {
+  padding: 0;
+  background-color: transparent;
+}
+
+.bio--short .bio__container {
+  padding: 0;
+}
+
+.bio--short .bioIntro {
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary-color) 0%,
+    var(--bg-tertiary-color) 100%
   );
-  --icon-stroke-secondary-color: var(--dark-icon-stroke-secondary-color);
-  --icon-stroke-secondary-hover-color: var(
-    --dark-icon-stroke-secondary-hover-color
-  );
-*/
-
-.About {
-  color: var(--icon-stroke-primary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: var(--spacing-xl);
+  border-left: 4px solid var(--icon-primary-stroke-color);
 }
 
-.Achievements {
-  color: var(--icon-stroke-secondary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+.bio--short .bioIntro__title {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
 }
 
-.Experience {
-  color: var(--icon-stroke-primary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+.bio--short .bioIntro__description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-primary-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.Goals {
-  color: var(--icon-stroke-secondary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+.bio--short .bioIntro__highlights {
+  margin-top: var(--spacing-md);
 }
 
-.Projects {
-  color: var(--icon-stroke-primary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+.bio--short .principlesCards {
+  margin-top: var(--spacing-xl);
 }
 
-.Skills {
-  color: var(--icon-stroke-secondary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+.bio--short .principlesCards__grid {
+  gap: var(--spacing-md);
 }
 
-.Values {
-  color: var(--icon-stroke-primary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+.bio--short .principlesCards__card {
+  padding: var(--spacing-md);
+  transition: all 0.3s ease;
 }
 
-.Contact {
-  color: var(--icon-stroke-secondary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+.bio--short .principlesCards__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
-.Education {
-  color: var(--icon-stroke-primary-color);
-  background-color: transparent !important;
-  width: 50px;
-  height: 50px;
+
+.bio--short .principlesCards__title {
+  font-size: 1.1rem;
 }
-.Education:hover {
-  color: var(--icon-stroke-primary-hover-color);
+
+.bio--short .principlesCards__description {
+  font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.Achievements:hover {
-  color: var(--icon-stroke-secondary-hover-color);
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .bio {
+    padding: var(--spacing-lg);
+  }
+
+  .bio__name {
+    font-size: 3rem;
+  }
+
+  .principlesCards__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.Experience:hover {
-  color: var(--icon-stroke-primary-hover-color);
-}
-.Goals:hover {
-  color: var(--icon-stroke-secondary-hover-color);
-}
-.Projects:hover {
-  color: var(--icon-stroke-primary-hover-color);
-}
-.Skills:hover {
-  color: var(--icon-stroke-secondary-hover-color);
-}
-.Values:hover {
-  color: var(--icon-stroke-primary-hover-color);
-}
-.Contact:hover {
-  color: var(--icon-stroke-secondary-hover-color);
+
+@media (min-width: 1024px) {
+  .bio {
+    padding: var(--spacing-xl);
+  }
+
+  .principlesCards__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bio__name {
+    font-size: 3.5rem;
+  }
 }

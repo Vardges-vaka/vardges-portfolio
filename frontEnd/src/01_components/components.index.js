@@ -1,7 +1,7 @@
 export { default as IconGlobal } from "./styledComponents/IconGlobal.jsx";
 export { default as ButtonGlobal } from "./styledComponents/ButtonGlobal.jsx";
 export { default as InputGlobal } from "./styledComponents/InputGlobal.jsx";
-
+export { default as GlobalSelect } from "./styledComponents/SelectGlobal.jsx";
 export { default as SelectGlobal } from "./styledComponents/SelectGlobal.jsx";
 export { default as PasswordInput } from "./styledComponents/styledInputs/PasswordInput.jsx";
 export { default as CheckboxGlobal } from "./styledComponents/CheckboxGlobal.jsx";
@@ -61,7 +61,6 @@ export { default as BrandDevelopment_icon } from "./uiComponents/dashboard_Icons
 export { default as BrandPortfolio_icon } from "./uiComponents/dashboard_Icons/BrandPortfolio_icon.jsx";
 export { default as CocktailDevelopment_icon } from "./uiComponents/dashboard_Icons/CocktailDevelopment_icon.jsx";
 export { default as MenuDevelopment_icon } from "./uiComponents/dashboard_Icons/MenuDevelopment_icon.jsx";
-
 
 // Admin Header Icons
 export { default as Me_Icons } from "./uiComponents/dashboard_Icons/Me_Icons.jsx";

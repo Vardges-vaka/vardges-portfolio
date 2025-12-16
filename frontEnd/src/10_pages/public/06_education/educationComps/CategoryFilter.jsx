@@ -1,0 +1,72 @@
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Grid,
+  Wine,
+  GlassWater,
+  Code,
+  Briefcase,
+  TrendingUp,
+  FileCheck,
+} from "lucide-react";
+import PropTypes from "prop-types";
+
+/**
+ * CategoryFilter Component
+ * Filter buttons for education categories
+ */
+const CategoryFilter = ({ categories, activeCategory, onCategoryChange }) => {
+  const iconMap = {
+    hospitality: Wine,
+    beverage: GlassWater,
+    technology: Code,
+    business: Briefcase,
+    marketing: TrendingUp,
+    other: FileCheck,
+  };
+
+  const allCategories = [{ id: "all", title: "All Categories" }, ...categories];
+
+  return (
+    <div className="categoryFilter">
+      <h3 className="categoryFilter__title">Filter by Category</h3>
+      <div className="categoryFilter__buttons">
+        {allCategories.map((category) => {
+          const isActive =
+            (category.id === "all" && !activeCategory) ||
+            category.id === activeCategory;
+          const IconComponent =
+            category.id === "all" ? Grid : iconMap[category.id] || Grid;
+
+          return (
+            <motion.button
+              key={category.id}
+              className={`categoryFilter__button ${
+                isActive ? "categoryFilter__button--active" : ""
+              }`}
+              onClick={() => onCategoryChange(category.id)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}>
+              <IconComponent size={18} />
+              <span>{category.title}</span>
+            </motion.button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+CategoryFilter.propTypes = {
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  activeCategory: PropTypes.string,
+  onCategoryChange: PropTypes.func.isRequired,
+};
+
+export default CategoryFilter;
+

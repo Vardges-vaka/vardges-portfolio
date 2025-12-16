@@ -7,6 +7,7 @@ import {
 const displayName = " | user_authCheck_srv.js | |<=>| ";
 
 export const user_authCheck_srv = async (req, isDebug) => {
+  isDebug && console.log(`▄︻デ══━一💥${displayName}[STARTED]`);
   try {
     // 1. Check session first (most secure, server-side)
     if (req.session?.user) {
@@ -37,7 +38,10 @@ export const user_authCheck_srv = async (req, isDebug) => {
     }
 
     // 3. Check if JWT is blacklisted
+    isDebug &&
+      console.log(`${displayName} Checking blacklist for token:`, token);
     const accessDoc = await Access.findOne();
+    isDebug && console.log(`${displayName} Access document:`, accessDoc);
     if (accessDoc?.blacklist?.tokens?.logOut?.includes(token)) {
       isDebug && console.log(`${displayName} JWT token is blacklisted`);
       return {

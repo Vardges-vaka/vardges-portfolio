@@ -8,6 +8,7 @@ import {
   userRoutes,
   accessRoutes,
   testRoutes,
+  projectRoutes,
 } from "./08_routes/_routes.index.js";
 
 // !===== Middlewares =====
@@ -48,6 +49,7 @@ app.use(
 );
 connectDB();
 
+app.use("/api/admin", projectRoutes);
 app.use("/api/user", userRoutes); ///    /api/user/auth/signup
 app.use("/api/access", accessRoutes); // /api/user/auth/signup
 app.use("/api/test", testRoutes); // /api/test/i18n

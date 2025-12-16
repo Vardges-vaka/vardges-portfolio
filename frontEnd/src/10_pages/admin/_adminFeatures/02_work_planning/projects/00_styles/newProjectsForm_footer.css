@@ -1,0 +1,25 @@
+.NewProjectsForm_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100% !important;
+  gap: 10px;
+}
+.NewProjectsForm_footer button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.NewProjectsForm_footer button:disabled {
+  background-color: #f90000;
+  color: #ffffff;
+  cursor: not-allowed;
+}

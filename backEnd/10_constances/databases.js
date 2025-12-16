@@ -1,0 +1,17 @@
+export const DATABASES = [
+  "MySQL",
+  "PostgreSQL",
+  "MongoDB",
+  "SQLite",
+  "MariaDB",
+  "Microsoft SQL Server",
+  "Oracle Database",
+  "Redis",
+  "Apache Cassandra",
+  "Elasticsearch",
+  "Neo4j",
+  "IBM DB2",
+  "CouchDB",
+  "Amazon DynamoDB",
+  "Firebase Firestore",
+];

@@ -1,0 +1,169 @@
+/* Packages Container */
+.NewProjectsForm_webApp.WebApp_packages {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Label */
+.WebApp_packages__label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Section Container (Frontend/Backend) */
+.WebApp_packages__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+/* Section Title */
+.WebApp_packages__section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #4caf50;
+  margin-bottom: 1rem;
+}
+
+/* Backend Section Title */
+.WebApp_packages__section:last-child .WebApp_packages__section-title {
+  border-bottom-color: #ff9800;
+}
+
+/* Pool Title */
+.WebApp_packages__pool-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+/* Available and Selected Sections */
+.WebApp_packages__available,
+.WebApp_packages__selected {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Pool Container */
+.WebApp_packages__pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+/* Empty State */
+.WebApp_packages__empty {
+  color: #999;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+/* Package Item - Available */
+.WebApp_packages__item--available {
+  padding: 0.5rem 1rem;
+  border: 1px solid #4caf50;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #4caf50;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Courier New", monospace;
+}
+
+.WebApp_packages__item--available:hover {
+  background-color: #4caf50;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.WebApp_packages__item--available:active {
+  transform: translateY(0);
+}
+
+/* Backend Available Items */
+.WebApp_packages__section:last-child .WebApp_packages__item--available {
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.WebApp_packages__section:last-child .WebApp_packages__item--available:hover {
+  background-color: #ff9800;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(255, 152, 0, 0.3);
+}
+
+/* Package Item - Selected */
+.WebApp_packages__item--selected {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #2196f3;
+  border-radius: 20px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: "Courier New", monospace;
+}
+
+/* Backend Selected Items */
+.WebApp_packages__section:last-child .WebApp_packages__item--selected {
+  border-color: #ff9800;
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+/* Remove Button */
+.WebApp_packages__remove-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  margin-left: 0.25rem;
+}
+
+.WebApp_packages__remove-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+}
+
+.WebApp_packages__remove-btn:active {
+  transform: scale(0.95);
+}

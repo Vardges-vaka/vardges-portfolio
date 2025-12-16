@@ -1,0 +1,17 @@
+export const CLOUD_STORAGES = [
+  "AWS S3",
+  "Google Cloud Storage",
+  "Azure Blob Storage",
+  "Amazon DynamoDB",
+  "Google Cloud Firestore",
+  "Azure Cosmos DB",
+  "Backblaze B2",
+  "Oracle Cloud Object Storage",
+  "IBM Cloud Object Storage",
+  "DigitalOcean Spaces",
+  "Cloudflare R2",
+  "Wasabi",
+  "Dropbox",
+  "Google Drive",
+  "Microsoft OneDrive",
+];

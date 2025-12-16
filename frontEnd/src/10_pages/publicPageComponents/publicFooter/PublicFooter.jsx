@@ -44,43 +44,18 @@ const PublicFooter = () => {
             <h3 className="publicFooter__sectionTitle">Quick Links</h3>
             <ul className="publicFooter__links">
               <li>
-                <a href="/bio" className="publicFooter__link">
-                  Bio
+                <a href="/about" className="publicFooter__link">
+                  About
                 </a>
               </li>
               <li>
-                <a href="/journey" className="publicFooter__link">
-                  Journey
-                </a>
-              </li>
-              <li>
-                <a href="/projects" className="publicFooter__link">
-                  Projects
+                <a href="/work" className="publicFooter__link">
+                  Work
                 </a>
               </li>
               <li>
                 <a href="/skills" className="publicFooter__link">
                   Skills
-                </a>
-              </li>
-              <li>
-                <a href="/education" className="publicFooter__link">
-                  Education
-                </a>
-              </li>
-              <li>
-                <a href="/achievements" className="publicFooter__link">
-                  Achievements
-                </a>
-              </li>
-              <li>
-                <a href="/vision" className="publicFooter__link">
-                  Vision
-                </a>
-              </li>
-              <li>
-                <a href="/values" className="publicFooter__link">
-                  Values
                 </a>
               </li>
               <li>

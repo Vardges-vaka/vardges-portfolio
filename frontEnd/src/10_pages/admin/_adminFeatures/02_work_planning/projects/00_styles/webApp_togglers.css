@@ -1,0 +1,106 @@
+/* Togglers container */
+.NewProjectsForm_webApp.togglers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Individual toggler wrapper */
+.NewProjectsForm_webApp__toggler {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Toggler label text */
+.NewProjectsForm_webApp__toggler-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Toggle switch container */
+.NewProjectsForm_webApp__toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+}
+
+/* Hide default checkbox */
+.NewProjectsForm_webApp__toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Toggle slider */
+.NewProjectsForm_webApp__toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 26px;
+  transition: background-color 0.3s ease;
+}
+
+/* Slider circle */
+.NewProjectsForm_webApp__toggle-slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* When checkbox is checked */
+.NewProjectsForm_webApp__toggle-switch
+  input:checked
+  + .NewProjectsForm_webApp__toggle-slider {
+  background-color: #4caf50;
+}
+
+.NewProjectsForm_webApp__toggle-switch
+  input:checked
+  + .NewProjectsForm_webApp__toggle-slider::before {
+  transform: translateX(24px);
+}
+
+/* Hover effect */
+.NewProjectsForm_webApp__toggle-switch:hover
+  .NewProjectsForm_webApp__toggle-slider {
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Focus state for accessibility */
+.NewProjectsForm_webApp__toggle-switch
+  input:focus
+  + .NewProjectsForm_webApp__toggle-slider {
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+/* Disabled state */
+.NewProjectsForm_webApp__toggle-switch
+  input:disabled
+  + .NewProjectsForm_webApp__toggle-slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
