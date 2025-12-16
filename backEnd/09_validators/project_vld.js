@@ -100,7 +100,7 @@ export const projectType_webApp_vld = (projectInfo) => {
     message = `Cloud Storage is Wrong`;
   }
 
-  if (packages && packages.lenght) {
+  if (packages && packages.length) {
     for (let i = 0; i < packages.length; i++) {
       const pkg = packages[i];
       if (!["backEnd", "frontEnd"].includes(pkg.ref)) {
@@ -115,6 +115,8 @@ export const projectType_webApp_vld = (projectInfo) => {
       }
     }
   }
+
+  return { isValid, message: isValid ? "Web App info is valid ✅" : message };
 };
 
 export const projectType_mobileApp_vld = (projectInfo) => {

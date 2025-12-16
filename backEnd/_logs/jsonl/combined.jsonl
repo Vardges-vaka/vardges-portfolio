@@ -22486,4 +22486,99 @@
   "statusCode": 200,
   "timestamp": "2025-12-16 14:20:21",
   "type": "controller_success"
+}{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:22:44",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:22:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:23:43",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:23:43",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:24:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:24:48",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:24:57",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 14:25:01",
+  "type": "controller_success"
 }

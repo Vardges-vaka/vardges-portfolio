@@ -21,6 +21,8 @@ const projectSwitch = (type) => {
       return marketing_schema();
     case "Advertizing":
       return advertizing_schema();
+    default:
+      throw new Error(`Unsupported project type: ${type}`);
   }
 };
 

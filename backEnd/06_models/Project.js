@@ -26,7 +26,7 @@ const projectSchema = new mongoose.Schema(
 
     config: {
       isPublic: { type: Boolean, required: true },
-      priority: { type: Boolean, enum: PRIORITIES },
+      priority: { type: String, enum: PRIORITIES },
       timing: {
         startDate: { type: Date, required: true },
         endDate: { type: Date },

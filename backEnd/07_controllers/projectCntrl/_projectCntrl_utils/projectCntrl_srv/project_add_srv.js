@@ -12,7 +12,7 @@ export const project_add_srv = async (req, isDebug) => {
     // 1. Find user by email
     isDebug && console.log(`🔍${displayName}Finding user by email: ${email}`);
 
-    isDebug && console.log(`✅${displayName}User found: ${user._id}`);
+    isDebug && console.log(`✅${displayName}Project added: `);
 
     return {
       success: true,

@@ -15,7 +15,7 @@ const isDebug = true;
 export const project_add_vld = async (req) => {
   let sanitizedData = {};
 
-  const { type } = req.quiry;
+  const { type } = req.query;
 
   if (!projectType_vld(type).isValid) {
     return request_failed(

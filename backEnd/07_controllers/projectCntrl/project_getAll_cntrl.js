@@ -7,7 +7,7 @@ const isDebug = true;
 const displayName = " | project_getAll_cntrl.js |<=>| ";
 
 const project_getAll_cntrl = async (req, res) => {
-  console.log("hey");
+
   isDebug && console.log(`🛑 ↘️ 🏃‍➡️ ${displayName} |<=>| [STARTED]`);
 
   try {
