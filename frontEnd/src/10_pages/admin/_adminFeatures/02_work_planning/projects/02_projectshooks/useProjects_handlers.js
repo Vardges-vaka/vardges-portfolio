@@ -31,6 +31,7 @@ export const useProjects_handlers = ({
         ? setters.setAllProjects(projects.data.projects)
         : setters.setAllProjects([]);
     }
+    setters.setAllProjects([]);
   };
 
   const handlecurrentStateChange = useCallback(
@@ -69,12 +70,18 @@ export const useProjects_handlers = ({
     addProjects_handlers.handleConfig_stepValidation,
   ]);
 
+  const handleAddingProject = () =>
+    addProjects_handlers.handleNewAddingProject(
+      currentSession_handlers.handleSessionChange_initiation
+    );
+
   return {
     handlers: {
       fetchprojects,
       handlecurrentStateChange,
       handleProjectStepChange,
       handleNewProjects_stepValidation,
+      handleAddingProject,
       ...addProjects_handlers,
       ...currentSession_handlers,
     },

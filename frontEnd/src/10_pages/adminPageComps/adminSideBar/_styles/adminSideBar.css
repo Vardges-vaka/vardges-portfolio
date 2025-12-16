@@ -1,12 +1,12 @@
 :root {
   --sidebar-width: 220px; /* Default pinned width */
+  --sidebar-width: max-content; /* Default pinned width */
 }
 
 .adminSideBar {
-  position: fixed;
-  top: 45px; /* Adjust based on your header height */
-  left: 0;
-  height: 100%;
+  position: sticky;
+  top: 48px;
+  align-self: flex-start;
   border-right: 1px solid var(--border-tertiary-color);
   background-color: var(--bg-tertiary-color);
   display: flex;
@@ -16,18 +16,20 @@
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden; /* Clip overflow - tooltips use fixed positioning */
   width: max-content;
+  height: calc(100vh - 48px);
+  max-height: calc(1000vh - 60px);
 }
 
 /* Pinned state - wider to show labels */
 .adminSideBar--pinned {
   max-width: 220px;
-  height: 100%;
+  width: max-content !important;
 }
 
 /* Unpinned state - narrow to show only icons */
 .adminSideBar--unpinned {
   max-width: 70px;
-  height: 100%;
+  width: max-content !important;
 }
 
 /* ===== PIN TOGGLE BUTTON ===== */
@@ -200,6 +202,7 @@
   border: 2px solid var(--admin-sidebar-item-active-border);
   min-width: 80px;
   max-width: 250px;
+  width: max-content;
   transition: opacity 0.15s ease;
 }
 
@@ -232,14 +235,18 @@
   :root {
     --sidebar-width-pinned: 180px;
     --sidebar-width-unpinned: 60px;
+    --sidebar-width: max-content;
+    --sidebar-width-pinned: max-content;
   }
 
   .adminSideBar--pinned {
-    width: 180px;
+    width: var(--sidebar-width-pinned);
+    width: max-content !important;
   }
 
   .adminSideBar--unpinned {
-    width: 60px;
+    width: var(--sidebar-width-unpinned);
+    width: max-content !important;
   }
 
   .adminSideBar__itemLabel {
@@ -255,12 +262,16 @@
 /* Mobile */
 @media (max-width: 480px) {
   :root {
-    --sidebar-width: 60px; /* Force collapsed on mobile */
+    --sidebar-width-pinned: 60px;
+    --sidebar-width-unpinned: 60px;
+    --sidebar-width: max-content;
+    --sidebar-width-pinned: max-content;
   }
 
   /* Auto-collapse on mobile */
   .adminSideBar {
-    width: 60px !important;
+    width: var(--sidebar-width-pinned) !important;
+    width: max-content !important;
   }
 
   .adminSideBar__pinButton {

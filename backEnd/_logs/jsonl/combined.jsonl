@@ -22582,3 +22582,2248 @@
   "timestamp": "2025-12-16 14:25:01",
   "type": "controller_success"
 }
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:29:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:29:59",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:30:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:35:50",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:35:56",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:36:58",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:36:59",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:37:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:39:35",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:39:36",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:39:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:39:39",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:39:53",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:39:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:04",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:04",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:12",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:17",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:40:56",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:41:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:41:27",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:41:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:41:32",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:41:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:43:21",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:43:27",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:46:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:46:22",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:46:36",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:46:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:47:44",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:47:46",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:47:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:47:54",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:48:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": []
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:48:04",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_add_cntrl.js |<=>| ",
+  "data": {
+    "projectId": "6941474106ca6b5b3259789a"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_add_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 15:49:21",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:11:54",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:12:06",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:13:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:13:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:13:19",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:13:49",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:16:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:18:12",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:18:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:22:48",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:24:46",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:27:07",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:27:08",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:27:13",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:35:40",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:39:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:44:47",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:45:32",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:45:34",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges Petrosyan",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:50:03",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:50:06",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:51:56",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2025-12-16 16:54:15",
+  "type": "controller_success"
+}

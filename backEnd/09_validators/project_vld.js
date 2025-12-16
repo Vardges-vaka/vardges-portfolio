@@ -75,7 +75,7 @@ export const projectType_webApp_vld = (projectInfo) => {
   const { techStack, hasBackEnd, db, links, cloudStorage, packages } =
     projectInfo;
 
-  if (!techStack || typeof techStack !== "string") {
+  if (!techStack || techStack.length === 0) {
     isValid = false;
     message = `Tech Stack is required`;
     return { isValid, message };
@@ -214,12 +214,12 @@ export const projectConfig_timing_vld = (timing) => {
     return { isValid, message };
   }
 
-  if (startDateObj > today) {
-    isValid = false;
-    message =
-      "Project Configurations: Start date must not be a greater than today.";
-    return { isValid, message };
-  }
+  // if (startDateObj > today) {
+  //   isValid = false;
+  //   message =
+  //     "Project Configurations: Start date must not be a greater than today.";
+  //   return { isValid, message };
+  // }
 
   if (!isOngoing) {
     const endDateObj = new Date(endDate);

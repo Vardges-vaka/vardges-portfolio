@@ -7,11 +7,22 @@ const displayName = ADMIN_endpoints.PROJECT.ADD.DISPLAY_NAME;
 const isDebug = true;
 
 const Project_add = async (payload) => {
+  const { type, title, description, projectInfo, config } = payload;
+
+  // Append type as query parameter
+  const endpointWithQuery = `${endpoint}?type=${encodeURIComponent(type)}`;
+
   isDebug &&
-    console.log(`${displayName} is [CALLED] | ENDPOINT: [${endpoint}]`);
+    console.log(
+      `${displayName} is [CALLED] | ENDPOINT: [${endpointWithQuery}]`
+    );
+
+  const sanitizedData = { title, description, projectInfo, config };
 
   try {
-    const response = await fetch(endpoint, { ...properties(payload) });
+    const response = await fetch(endpointWithQuery, {
+      ...properties(sanitizedData),
+    });
 
     isDebug && console.log(`${displayName} is [RESPONSE]`, response);
 

@@ -68,17 +68,20 @@ export const useSession_handlers = ({
   }, [states.addingStep, setters.setAddingStep]);
 
   const handleSessionChange = useCallback(
-    (e) => {
+    async (handleConfirm, e) => {
       const { operation, session } = e.target.dataset;
-      if (session !== "adding") return;
+      if (session !== "adding" && session !== "confirm") return;
       if (operation === "cancel") {
         handleSessionChange_initiation();
       }
       if (operation === "start" && session === "adding") {
         handleSessionChange_adding();
       }
-      if (operation === "nextStep") {
+      if (session === "adding" && operation === "nextStep") {
         handleSessionChange_adding();
+      }
+      if (session === "confirm" && operation === "nextStep") {
+        await handleConfirm();
       }
     },
     [handleSessionChange_initiation, handleSessionChange_adding]

@@ -23,7 +23,7 @@ const NewProjectsForm_footer = ({ states, handlers }) => {
       </button>
       <button
         data-operation="nextStep"
-        data-session="adding"
+        data-session={addingStep === "config" ? "confirm" : "adding"}
         disabled={!isValid}
         onClick={handlers.onNext}>
         {addingStep === "config" ? "Add Project" : "Continue"}

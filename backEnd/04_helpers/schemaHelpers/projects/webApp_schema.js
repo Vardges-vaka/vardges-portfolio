@@ -4,12 +4,6 @@ import {
   CLOUD_STORAGES,
 } from "../../../10_constances/_constances.index.js";
 
-/*
-
-
-
-
-*/
 const webApp_schema = () => {
   return new mongoose.Schema(
     {

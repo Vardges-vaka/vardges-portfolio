@@ -47,13 +47,15 @@ export const useProjects = () => {
     handlers.handleNewProjects_stepValidation,
   ]);
 
-  
   const allSections = ["view_all", "view_one", "adding", "updating"];
   const addingSteps = ["generalInfo", "specificInfo", "config"];
 
   const ViewAll_Projects_props = {
     states: { allProjects: states.allProjects },
-    handlers: { startAddingProject: handlers.handleSessionChange },
+    handlers: {
+      startAddingProject: (e) =>
+        handlers.handleSessionChange(handlers.handleAddingProject, e),
+    },
   };
   const Adding_Project_footer_props = {
     states: {
@@ -61,8 +63,10 @@ export const useProjects = () => {
       validations: states.newProjects_validations,
     },
     handlers: {
-      onCancel: handlers.handleSessionChange,
-      onNext: handlers.handleSessionChange,
+      onCancel: (e) =>
+        handlers.handleSessionChange(handlers.handleAddingProject, e),
+      onNext: (e) =>
+        handlers.handleSessionChange(handlers.handleAddingProject, e),
     },
   };
   const Adding_Project_Header_props = {
@@ -70,7 +74,8 @@ export const useProjects = () => {
       addingStep: states.addingStep,
     },
     handlers: {
-      onCancel: handlers.handleSessionChange,
+      onCancel: (e) =>
+        handlers.handleSessionChange(handlers.handleAddingProject, e),
     },
   };
   const generalInfo_props = {

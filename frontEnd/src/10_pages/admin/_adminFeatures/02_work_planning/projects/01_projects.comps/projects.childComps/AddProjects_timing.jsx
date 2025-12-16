@@ -22,7 +22,7 @@ const AddProjects_timing = ({ states, handlers }) => {
             name="endDate"
             value={states.addingProject_config.timing.endDate}
             onChange={handlers.handleConfig_Timing_change}
-            disabled={!states.addingProject_config.timing.isOngoing}
+            disabled={states.addingProject_config.timing.isOngoing}
           />
         </div>
       </div>

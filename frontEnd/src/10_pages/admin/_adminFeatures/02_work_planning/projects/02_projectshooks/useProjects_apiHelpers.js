@@ -46,12 +46,35 @@ export const useProjects_apiHelpers = ({ translations, setGlobalError }) => {
     }
   }, []);
 
-  const addProject = useCallback(async () => {
-    try {
-    } catch (err) {
-    } finally {
-    }
-  }, []);
+  const addProject = useCallback(
+    async (payload) => {
+      try {
+        const result = await Project_add(payload);
+        isDebug &&
+          console.log(`${displayName} | addProject | [result]`, result);
+        if (result.success) {
+          return {
+            ...result,
+          };
+        } else {
+          setGlobalError({
+            isError: true,
+            message: result.message,
+          });
+          return null;
+        }
+      } catch (err) {
+        isDebug && console.log(`${displayName} | addProject | [catch]`, err);
+        setGlobalError({
+          isError: true,
+          message: err.message,
+        });
+      } finally {
+        isDebug && console.log(`${displayName} | addProject | [finally] ENDED`);
+      }
+    },
+    [setGlobalError]
+  );
 
   const updateProject = useCallback(async () => {
     try {

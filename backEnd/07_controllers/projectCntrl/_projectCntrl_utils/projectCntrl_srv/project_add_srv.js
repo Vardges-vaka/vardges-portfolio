@@ -7,18 +7,18 @@ export const project_add_srv = async (req, isDebug) => {
   isDebug && console.log(`▄︻デ══━一💥${displayName}[STARTED]`);
 
   try {
-    const { email, password, rememberMe } = req.body.sanitizedData;
+    const sanitizedProject = req.body.sanitizedData;
 
-    // 1. Find user by email
-    isDebug && console.log(`🔍${displayName}Finding user by email: ${email}`);
+    const project = new Project({ ...sanitizedProject });
+    await project.save();
 
-    isDebug && console.log(`✅${displayName}Project added: `);
+    isDebug && console.log(`✅${displayName}Project added: ${project._id}`);
 
     return {
       success: true,
       message: "Project added Successfully",
       data: {
-        prjectId: "",
+        projectId: project._id,
       },
     };
   } catch (error) {

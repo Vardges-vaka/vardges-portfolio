@@ -26,6 +26,14 @@ export const config_vld = (config) => {
       isError = true;
       return { message, isError };
     }
+    if (timing.endDate) {
+      message = "End date is not allowed if the project is ongoing";
+      isError = true;
+      return { message, isError };
+    }
+  }
+
+  if (!timing.isOngoing) {
     if (!timing.endDate) {
       message = "Add the end date";
       isError = true;
