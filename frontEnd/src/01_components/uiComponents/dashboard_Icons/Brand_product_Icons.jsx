@@ -1,5 +1,5 @@
 import { useThemeContext } from "../../../02_context/context.index.js";
-import "./AboutIcon.css";
+import "./aboutIcon.css";
 
 const AboutIcon = () => {
   const { strokeColor } = useThemeContext();
