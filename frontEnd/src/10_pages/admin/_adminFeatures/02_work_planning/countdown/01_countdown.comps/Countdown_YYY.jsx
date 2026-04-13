@@ -6,7 +6,7 @@
 //   PasswordInput,
 //   CheckboxGlobal,
 // } from "../../../../../01_components/components.index.js";
-import "../00_styles/countdown_yyy.css";
+import "../00_styles/Countdown_yyy.css";
 
 const Countdown_YYY = () => {
   return (
