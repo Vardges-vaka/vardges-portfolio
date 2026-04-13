@@ -6,7 +6,7 @@
 //   PasswordInput,
 //   CheckboxGlobal,
 // } from "../../../../../01_components/components.index.js";
-import "../00_styles/cV_Generator_yyy.css";
+import "../00_styles/CV_Generator_yyy.css";
 
 const CV_Generator_YYY = () => {
   return (

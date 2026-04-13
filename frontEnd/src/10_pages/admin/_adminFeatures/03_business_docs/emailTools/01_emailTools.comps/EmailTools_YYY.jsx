@@ -6,7 +6,7 @@
 //   PasswordInput,
 //   CheckboxGlobal,
 // } from "../../../../../01_components/components.index.js";
-import "../00_styles/emailTools_YYY.css";
+import "../00_styles/emailTools_yyy.css";
 
 const EmailTools_YYY = () => {
   return (
