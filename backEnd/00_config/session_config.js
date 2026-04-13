@@ -30,7 +30,8 @@ export const SESSION_CONFIG = session({
   cookie: {
     secure: isProduction,
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: isProduction ? "none" : "lax",
     maxAge: GLOBAL_SESSION_EXPIRY,
+    ...(isProduction && { domain: ".vardges.me" }),
   },
 });

@@ -8,7 +8,8 @@ export const JWT_COOKIE_EXPIRY =
 
 export const JWT_COOKIE_OPTIONS = {
   httpOnly: true,
-  secure: isProduction, // !important: HTTPS only in production
+  secure: isProduction,
   maxAge: JWT_COOKIE_EXPIRY,
-  sameSite: "lax",
+  sameSite: isProduction ? "none" : "lax",
+  ...(isProduction && { domain: ".vardges.me" }),
 };
