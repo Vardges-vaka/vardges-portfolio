@@ -18,6 +18,8 @@ export const SESSION_CONFIG = session({
       console.warn("⚠️  Using default SESSION_SECRET (dev only)");
       return "dev-fallback-secret-change-in-production";
     }
+
+    // testing 
     return process.env.SESSION_SECRET;
   })(),
   resave: false,
