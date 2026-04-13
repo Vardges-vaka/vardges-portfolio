@@ -6,7 +6,7 @@ import {
   ButtonGlobal,
 } from "../../../../01_components/components.index.js";
 import { FieldMessage } from "../../../../01_components/stateComponents/_stateComponents.index.js";
-import "./_styles/adminSIgnup.css";
+import "./_styles/adminSignup.css";
 
 const AdminSignup = ({ onSwitchToSignin, states, handlers, t }) => {
   return (

@@ -1,1 +1,1 @@
-export { default as PublicHeader_NavBar } from "./publicHeader_navBar.jsx";
+export { default as PublicHeader_NavBar } from "./PublicHeader_navBar.jsx";
