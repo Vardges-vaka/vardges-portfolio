@@ -33,6 +33,9 @@ const app = express();
 // Required behind AWS ALB / reverse proxy for correct IPs and secure cookies
 app.set("trust proxy", 1);
 
+// ALB health check — placed before helmet/cors so it always responds 200
+app.get("/health", (req, res) => res.status(200).send("OK"));
+
 app.use(
   helmet({
     contentSecurityPolicy: {
