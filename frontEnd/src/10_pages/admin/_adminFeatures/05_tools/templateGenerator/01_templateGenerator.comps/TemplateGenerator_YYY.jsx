@@ -6,7 +6,7 @@
 //   PasswordInput,
 //   CheckboxGlobal,
 // } from "../../../../../01_components/components.index.js";
-import "../00_styles/templateGenerator_YYY.css";
+import "../00_styles/templateGenerator_yyy.css";
 
 const TemplateGenerator_YYY = () => {
   return (
