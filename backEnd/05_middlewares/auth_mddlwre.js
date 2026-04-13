@@ -12,7 +12,7 @@ export const auth_mddlwre = async (req, res, next) => {
       isDebug &&
         console.log(
           `${displayName} User authenticated via session:`,
-          req.session.user
+          req.session.user,
         );
       return next();
     }
@@ -56,7 +56,7 @@ export const auth_mddlwre = async (req, res, next) => {
     isDebug &&
       console.log(
         `${displayName} User authenticated via JWT:`,
-        req.session.user
+        req.session.user,
       );
 
     next();

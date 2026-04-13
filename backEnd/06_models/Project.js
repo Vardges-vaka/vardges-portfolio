@@ -36,7 +36,7 @@ const projectSchema = new mongoose.Schema(
       },
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Project = mongoose.model("Project", projectSchema);

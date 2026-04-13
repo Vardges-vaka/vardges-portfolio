@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   LanguageSelect,
   ThemeToggler,
@@ -10,9 +10,7 @@ import { AdminHeader_NavBar } from "./adminHeader.comps/_adminHeader.comps.index
 import "./_styles/adminHeader.css";
 
 const AdminHeader = () => {
-  const { i18n, t } = useTranslation("adminHeader");
-  const location = useLocation();
-  const currentLanguage = i18n.language;
+  const { t } = useTranslation("adminHeader");
   const navigate = useNavigate();
   return (
     <header className="AdminLayout_header">
@@ -25,12 +23,10 @@ const AdminHeader = () => {
         version="primary"
         withWrapper={true}
         wrapperProps={{
-          onClick: () =>
-            navigate(`/${currentLanguage}/admin/dashboard/settings`),
+          onClick: () => navigate("/admin/dashboard/settings"),
         }}
-        // iconProps = {}
       />
-      <AdminHeader_NavBar t={t} lan={currentLanguage} />
+      <AdminHeader_NavBar t={t} />
       <div className="AdminHeader_right">
         {" "}
         <LanguageSelect isAdmin={true} />

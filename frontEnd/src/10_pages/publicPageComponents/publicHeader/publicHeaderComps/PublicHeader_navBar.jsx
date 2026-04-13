@@ -8,7 +8,7 @@ const PublicHeader_NavBar = () => {
   const { t, i18n } = useTranslation("common");
   const location = useLocation();
 
-  const navBarItemsList = navBarItems(t, i18n.language);
+  const navBarItemsList = navBarItems(t);
 
   // Check if current path matches the nav item
   const isActive = (path) => {

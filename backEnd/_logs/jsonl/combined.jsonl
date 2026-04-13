@@ -24827,3 +24827,275 @@
   "timestamp": "2025-12-16 16:54:15",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges Petrosyan",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-02-25 11:55:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | project_getAll_cntrl.js |<=>| ",
+  "data": {
+    "projects": [
+      {
+        "__v": 0,
+        "_id": "6941474106ca6b5b3259789a",
+        "config": {
+          "isPublic": true,
+          "priority": "urgent",
+          "timing": {
+            "deadline": "2025-12-31T00:00:00.000Z",
+            "endDate": null,
+            "isDeadline": true,
+            "isOngoing": true,
+            "startDate": "2025-12-16T00:00:00.000Z"
+          }
+        },
+        "createdAt": "2025-12-16T11:49:21.695Z",
+        "description": {
+          "brief": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          },
+          "detailed": {
+            "ar": "Just Testing",
+            "en": "Just Testing",
+            "hy": "Just Testing",
+            "ru": "Just Testing"
+          }
+        },
+        "images": [],
+        "projectInfo": {
+          "cloudStorage": "AWS S3",
+          "db": "MySQL",
+          "hasBackEnd": true,
+          "links": {
+            "gitHub": "Just Testing",
+            "url": "Just Testing"
+          },
+          "packages": [
+            {
+              "name": "react-router-dom",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "@tanstack/react-query",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "axios",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "express",
+              "ref": "backEnd"
+            },
+            {
+              "name": "mongoose",
+              "ref": "backEnd"
+            },
+            {
+              "name": "dotenv",
+              "ref": "backEnd"
+            },
+            {
+              "name": "react-hook-form",
+              "ref": "frontEnd"
+            },
+            {
+              "name": "cors",
+              "ref": "backEnd"
+            },
+            {
+              "name": "helmet",
+              "ref": "backEnd"
+            }
+          ],
+          "shouldShowPackages": true,
+          "techStack": [
+            "JavaScript",
+            "TypeScript",
+            "React"
+          ]
+        },
+        "title": {
+          "ar": "Just Testing",
+          "en": "Just Testing",
+          "hy": "Just Testing",
+          "ru": "Just Testing"
+        },
+        "type": "Web App",
+        "updatedAt": "2025-12-16T11:49:21.695Z"
+      }
+    ]
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | project_getAll_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-02-25 11:55:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges Petrosyan",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-02-26 16:50:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-02-26 16:50:13",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2026-04-13 09:06:45",
+  "type": "controller_error"
+}
+{
+  "controller": "access_addCodes_cntrl.js",
+  "ip": "::1",
+  "level": "info",
+  "message": "🛑 ↘️ 🏃‍➡️ access_addCodes_cntrl.js |<=>| [STARTED]",
+  "service": "backend-api",
+  "timestamp": "2026-04-13 09:20:24",
+  "type": "controller_start"
+}
+{
+  "controller": "access_addCodes_cntrl.js",
+  "data": {
+    "message": "Successfully added 10 superAdmin access codes",
+    "success": true
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚 access_addCodes_cntrl.js |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "timestamp": "2026-04-13 09:20:24",
+  "type": "controller_success"
+}
+{
+  "controller": "access_addCodes_cntrl.js",
+  "data": {
+    "addedCodes": 10,
+    "totalSuperAdminCodes": 10
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚 access_addCodes_cntrl.js |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-13 09:20:24",
+  "type": "controller_success"
+}
+{
+  "controller": "access_addCodes_cntrl.js",
+  "level": "info",
+  "message": "🚩 🚩 🚩 access_addCodes_cntrl.js |<=>| [COMPLETED]",
+  "service": "backend-api",
+  "timestamp": "2026-04-13 09:20:24",
+  "type": "controller_complete"
+}
+{
+  "controller": " | user_signUp_cntrl.js |<=>| ",
+  "data": {
+    "user": {
+      "name": "Vardges",
+      "role": "superAdmin"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_signUp_cntrl.js |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-13 09:39:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-13 09:39:47",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-13 10:11:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-13 10:12:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-13 10:12:05",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-13 10:15:59",
+  "type": "controller_success"
+}

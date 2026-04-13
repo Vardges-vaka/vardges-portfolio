@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     port: 3210,
     proxy: {
-      "/Authentication": "http://localhost:4321", // Backend
+      "/Authentication": "http://localhost:3220",
       "/api": {
-        target: "http://localhost:4321",
+        target: "http://localhost:3220",
         changeOrigin: true,
       },
     },

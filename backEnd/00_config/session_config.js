@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 
 export const isProduction = process.env.NODE_ENV === "production";
 
@@ -21,9 +22,15 @@ export const SESSION_CONFIG = session({
   })(),
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URL,
+    collectionName: "sessions",
+    ttl: GLOBAL_SESSION_EXPIRY / 1000,
+  }),
   cookie: {
-    secure: isProduction, // Use secure cookies in production
+    secure: isProduction,
     httpOnly: true,
+    sameSite: "lax",
     maxAge: GLOBAL_SESSION_EXPIRY,
   },
 });

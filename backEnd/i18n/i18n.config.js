@@ -54,7 +54,8 @@ export const i18nConfig = {
 
   // Backend configuration for loading translation files
   backend: {
-    loadPath: "./backEnd/i18n/locales/{{lng}}/{{ns}}.json",
+    loadPath: new URL("./locales/{{lng}}/{{ns}}.json", import.meta.url)
+      .pathname,
   },
 
   // Language detection settings

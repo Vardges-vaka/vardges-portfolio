@@ -9,7 +9,7 @@ const ProtectedAdminRoute = ({ children }) => {
     // Redirect to admin welcome page while saving the attempted location
     console.log("Redirecting to admin welcome page - user not registered");
     console.log("user in ProtectedAdminRoute:", user);
-    return <Navigate to="/:lang/admin" state={{ from: location }} replace />;
+    return <Navigate to="/admin" state={{ from: location }} replace />;
   }
 
   return children;

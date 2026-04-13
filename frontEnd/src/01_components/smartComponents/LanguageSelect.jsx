@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLanguageContext } from "../../02_context/context.index.js";
 import {
@@ -15,8 +14,6 @@ const LanguageSelect = ({ isAdmin }) => {
   const { toggleLanguage } = useLanguageContext();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const location = useLocation();
-  const navigate = useNavigate();
 
   const currentLanguage = i18n.language;
 
@@ -57,15 +54,6 @@ const LanguageSelect = ({ isAdmin }) => {
   const changeLanguage = (langCode) => {
     toggleLanguage(langCode);
     setIsOpen(false);
-
-    const validLanguagePattern = /^\/(?:en|ar|ru|hy)/;
-    const currentPath =
-      location.pathname.replace(validLanguagePattern, "") || "/";
-    if (currentPath === "/") {
-      return;
-    } else {
-      navigate(`/${langCode}${currentPath}`);
-    }
   };
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 
@@ -23,13 +24,26 @@ import {
   connectDB,
   SESSION_CONFIG,
   BACKEND_PORT,
-  setCSPHeader,
 } from "./00_config/_config.index.js";
 
 dotenv.config();
 
 const app = express();
 
+// Required behind AWS ALB / reverse proxy for correct IPs and secure cookies
+app.set("trust proxy", 1);
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      },
+    },
+  }),
+);
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -45,19 +59,21 @@ app.use(
   express.static("public", {
     maxAge: "7d",
     immutable: true,
-  })
+  }),
 );
-connectDB();
 
 app.use("/api/admin", projectRoutes);
-app.use("/api/user", userRoutes); ///    /api/user/auth/signup
-app.use("/api/access", accessRoutes); // /api/user/auth/signup
-app.use("/api/test", testRoutes); // /api/test/i18n
+app.use("/api/user", userRoutes);
+app.use("/api/access", accessRoutes);
+app.use("/api/test", testRoutes);
 
-app.use(setCSPHeader);
+const startServer = async () => {
+  await connectDB();
+  app.listen(BACKEND_PORT, () => {
+    console.log(`✅ 💻 📟 [SERVER] 🔗 [PORT: ${BACKEND_PORT}] Connected `);
+  });
+};
 
-app.listen(BACKEND_PORT, () => {
-  console.log(`✅ 💻 📟 [SERVER] 🔗 [PORT: ${BACKEND_PORT}] Connected `);
-});
+startServer();
 
 export default app;

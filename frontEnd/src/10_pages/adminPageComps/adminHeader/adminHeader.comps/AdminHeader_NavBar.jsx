@@ -3,7 +3,7 @@ import { AdminNavBar_Items } from "../adminHeader.constances/_adminHeader.consta
 import { useNavigate, useParams } from "react-router-dom";
 import "../_styles/adminHeader_NavBar.css";
 
-const AdminHeader_NavBar = ({ t, lan }) => {
+const AdminHeader_NavBar = ({ t }) => {
   const navigate = useNavigate();
   const { section } = useParams();
 
@@ -27,7 +27,7 @@ const AdminHeader_NavBar = ({ t, lan }) => {
               }`}
               key={item.to}>
               <div
-                onClick={() => navigate(`/${lan}/admin/dashboard/${item.to}`)}
+                onClick={() => navigate(`/admin/dashboard/${item.to}`)}
                 className="publicHeaderNavBar__link">
                 {/* Icon Container */}
                 <div className="publicHeaderNavBar__iconWrapper">

@@ -10,12 +10,12 @@ export const useAdminDashboard_handlers = ({
   const onClickSideBarItem = useCallback(
     (item) => {
       setters.setSubSection(item.path);
-      const newPath = `/${translations.language}/admin/dashboard/${states.section}/${item.path}`;
+      const newPath = `/admin/dashboard/${states.section}/${item.path}`;
       navigate(newPath);
 
       isDebug && console.log("onClickSideBarItem: newPath -> ", newPath);
     },
-    [setters.setSubSection, states.section, navigate, translations.language]
+    [setters.setSubSection, states.section, navigate],
   );
 
   const isActive = useCallback(
@@ -35,36 +35,30 @@ export const useAdminDashboard_handlers = ({
       ? states.original_section
       : "settings";
     const defaultSubsection = states.sideBaritems?.find(
-      (item) => item.isDefault === true
+      (item) => item.isDefault === true,
     );
     isDebug &&
       console.log(
         "handleDefaultsubSection: defaultSubsection -> ",
-        defaultSubsection
+        defaultSubsection,
       );
     setters.setDefaultSubSection(defaultSubsection?.path);
     navigate(
-      `/${translations.language}/admin/dashboard/${defaultSection}/${defaultSubsection?.path}`
+      `/admin/dashboard/${defaultSection}/${defaultSubsection?.path}`,
     );
   }, [
     states.original_section,
     states.sideBaritems,
     setters.setDefaultSubSection,
     navigate,
-    translations.language,
   ]);
 
   const handleDefaultsection = useCallback(() => {
     setters.setSection("settings");
-    navigate(`/${translations.language}/admin/dashboard/settings`);
+    navigate("/admin/dashboard/settings");
     handleDefaultsubSection();
     isDebug && console.log("handleDefaultsection: settings");
-  }, [
-    setters.setSection,
-    navigate,
-    translations.language,
-    handleDefaultsubSection,
-  ]);
+  }, [setters.setSection, navigate, handleDefaultsubSection]);
 
   const handleInitialMount = (section, subSection) => {
     setters.setSection(section);
