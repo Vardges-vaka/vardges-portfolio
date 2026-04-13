@@ -11,7 +11,7 @@ import { useMenuDevelopment } from "./02_menuDevelopment.hooks/_menuDevelopment.
 //   CheckboxGlobal,
 // } from "../../../../../01_components/components.index.js";
 import { MenuDevelopment_YYY } from "./01_menuDevelopment.comps/_menuDevelopment.comps.index.js";
-import "./00_styles/MenuDevelopment.css";
+import "./00_styles/menuDevelopment.css";
 
 const MenuDevelopment = () => {
   return (
