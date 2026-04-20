@@ -27,7 +27,9 @@
       "achievements": "Достижения",
       "vision": "Видение",
       "values": "Ценности",
-      "contact": "Контакт"
+      "contact": "Контакт",
+      "about": "Обо мне",
+      "work": "Работа"
     }
   },
   "inputs": {

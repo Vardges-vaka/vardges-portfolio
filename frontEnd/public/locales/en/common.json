@@ -27,7 +27,9 @@
       "achievements": "Achievements",
       "vision": "Vision",
       "values": "Values",
-      "contact": "Contact"
+      "contact": "Contact",
+      "about": "About",
+      "work": "Work"
     }
   },
   "inputs": {
