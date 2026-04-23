@@ -108,6 +108,11 @@ temp/
 .kiro/
 .cursor/
 .todo's/
+.todo's/
+.claude/
+.claire/
+.claude/
+
 
 # OS generated files
 Thumbs.db

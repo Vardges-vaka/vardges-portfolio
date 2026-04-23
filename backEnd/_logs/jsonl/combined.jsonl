@@ -25535,3 +25535,16 @@
   "timestamp": "2026-04-23 17:41:09",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 21:20:23",
+  "type": "controller_success"
+}
