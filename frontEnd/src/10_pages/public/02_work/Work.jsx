@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useWork } from "./workHooks/_workHooks.index.js";
 import {
@@ -14,16 +15,15 @@ import "./styles/work.css";
  * Displays development projects and professional experience
  */
 const Work = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const {
     workContent,
     loading,
     error,
     selectedProject,
-    selectedCategory,
     handleProjectClick,
     handleCloseProject,
-    handleCategoryChange,
   } = useWork(profile);
 
   const workClassName = `work ${
@@ -33,7 +33,7 @@ const Work = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={workClassName}>
-        <div className="work__loading">Loading...</div>
+        <div className="work__loading">{t("ui.common.loading")}</div>
       </div>
     );
   }
@@ -41,7 +41,9 @@ const Work = ({ variant = "full" }) => {
   if (error) {
     return (
       <div className={workClassName}>
-        <div className="work__error">Error: {error}</div>
+        <div className="work__error">
+          {t("ui.common.errorPrefix")} {error}
+        </div>
       </div>
     );
   }
@@ -60,10 +62,8 @@ const Work = ({ variant = "full" }) => {
         {/* Header - Only show in full variant */}
         {!isShort && (
           <header className="work__header">
-            <h1 className="work__title">Projects & Experience</h1>
-            <p className="work__subtitle">
-              Development projects and professional journey
-            </p>
+            <h1 className="work__title">{t("ui.pages.work.title")}</h1>
+            <p className="work__subtitle">{t("ui.pages.work.subtitle")}</p>
           </header>
         )}
 
@@ -71,7 +71,9 @@ const Work = ({ variant = "full" }) => {
         {projects.length > 0 && (
           <section className="work__projects">
             {!isShort && (
-              <h2 className="work__sectionTitle">Development Projects</h2>
+              <h2 className="work__sectionTitle">
+                {t("ui.pages.work.developmentProjects")}
+              </h2>
             )}
             <ProjectsGrid
               projects={isShort ? projects.slice(0, 4) : projects}
@@ -84,7 +86,9 @@ const Work = ({ variant = "full" }) => {
         {/* Journey Section - Condensed Timeline */}
         {!isShort && roles.length > 0 && (
           <section className="work__journey">
-            <h2 className="work__sectionTitle">Professional Journey</h2>
+            <h2 className="work__sectionTitle">
+              {t("ui.pages.work.professionalJourney")}
+            </h2>
             {workContent.journey?.summary && (
               <div className="work__summary">
                 <p className="work__summaryText">
@@ -99,7 +103,11 @@ const Work = ({ variant = "full" }) => {
 
       {/* Project Modal */}
       {selectedProject && (
-        <ProjectModal project={selectedProject} onClose={handleCloseProject} />
+        <ProjectModal
+          project={selectedProject}
+          isOpen={Boolean(selectedProject)}
+          onClose={handleCloseProject}
+        />
       )}
     </div>
   );

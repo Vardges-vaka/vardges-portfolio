@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check, Award, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import {
   formatAchievementMetrics,
@@ -12,6 +13,8 @@ import {
  * Displays individual achievement with details
  */
 const AchievementCard = ({ achievement, onClick, index }) => {
+  const { t } = useTranslation("tempContent");
+
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -80,13 +83,14 @@ const AchievementCard = ({ achievement, onClick, index }) => {
       {/* Impact Preview */}
       {achievement.impact && (
         <div className="achievementCard__impact">
-          <strong>Impact:</strong> {truncateText(achievement.impact, 120)}
+          <strong>{t("ui.achievements.impact")}</strong>{" "}
+          {truncateText(achievement.impact, 120)}
         </div>
       )}
 
       {onClick && (
         <button className="achievementCard__viewMore">
-          View Details
+          {t("ui.common.viewDetails")}
           <ChevronRight size={16} />
         </button>
       )}

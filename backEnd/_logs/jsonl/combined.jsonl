@@ -25124,3 +25124,414 @@
   "timestamp": "2026-04-13 14:41:51",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2026-04-23 16:23:36",
+  "type": "controller_error"
+}
+{
+  "controller": "user_signIn_cntrl.js",
+  "data": {
+    "user": {
+      "name": "Vardges",
+      "role": "superAdmin"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚 user_signIn_cntrl.js |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 16:24:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 16:27:09",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 16:58:26",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 16:59:13",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 16:59:15",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:00:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:01:06",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:01:12",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:01:59",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:11:59",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:13:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:14:31",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:15:40",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:16:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:20:38",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:20:56",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:21:03",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:21:06",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:21:26",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:21:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:21:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:21:31",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:04",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:04",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:07",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:09",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:32:35",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:34:02",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:34:05",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-23 17:41:09",
+  "type": "controller_success"
+}

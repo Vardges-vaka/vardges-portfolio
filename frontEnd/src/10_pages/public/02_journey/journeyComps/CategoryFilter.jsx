@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 /**
@@ -7,21 +8,19 @@ import PropTypes from 'prop-types';
  * Buttons to filter roles by category
  */
 const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
-  const categoryLabels = {
-    'all': 'All Roles',
-    'tech': 'Technology',
-    'hospitality': 'Hospitality',
-    'hybrid': 'Hybrid',
-    'consulting': 'Consulting'
-  };
+  const { t } = useTranslation('tempContent');
 
   return (
     <div className="categoryFilter">
-      <h3 className="categoryFilter__title">Filter by Category</h3>
+      <h3 className="categoryFilter__title">
+        {t('ui.common.filterByCategory')}
+      </h3>
       <div className="categoryFilter__buttons">
         {categories.map((category) => {
           const isSelected = category === selectedCategory;
-          const label = categoryLabels[category] || category;
+          const label = t(`ui.journey.categories.${category}`, {
+            defaultValue: category,
+          });
           
           return (
             <motion.button

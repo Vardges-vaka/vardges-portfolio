@@ -32,7 +32,7 @@ export const formatDate = (dateStr) => {
  * @param {string} endDate - End date string (null for current)
  * @returns {string} - Duration string
  */
-export const calculateDuration = (startDate, endDate) => {
+export const calculateDuration = (startDate, endDate, labels = {}) => {
   const start = parseDate(startDate);
   const end = endDate ? parseDate(endDate) : new Date();
   
@@ -41,13 +41,16 @@ export const calculateDuration = (startDate, endDate) => {
   const months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
+  const yearLabel = years === 1 ? labels.year_one || 'yr' : labels.year_other || 'yrs';
+  const monthLabel =
+    remainingMonths === 1 ? labels.month_one || 'mo' : labels.month_other || 'mos';
   
   if (years > 0 && remainingMonths > 0) {
-    return `${years} yr${years > 1 ? 's' : ''} ${remainingMonths} mo${remainingMonths > 1 ? 's' : ''}`;
+    return `${years} ${yearLabel} ${remainingMonths} ${monthLabel}`;
   } else if (years > 0) {
-    return `${years} yr${years > 1 ? 's' : ''}`;
+    return `${years} ${yearLabel}`;
   } else {
-    return `${remainingMonths} mo${remainingMonths > 1 ? 's' : ''}`;
+    return `${remainingMonths} ${monthLabel}`;
   }
 };
 

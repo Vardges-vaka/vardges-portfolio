@@ -5,12 +5,18 @@
  */
 
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { skillsData } from "../skillsConstances/_skillsConstances.index.js";
 import { filterSkillsByProfile } from "../skillsHelpers/_skillsHelpers.index.js";
 import { useSkills_states } from "./useSkills_states.js";
 import { useSkills_handlers } from "./useSkills_handlers.js";
+import {
+  getResolvedLanguage,
+  getTranslatedData,
+} from "../../publicHelpers/publicI18n.js";
 
 export const useSkills = (currentProfile) => {
+  const { t, i18n } = useTranslation("tempContent");
   const {
     skillsContent,
     setSkillsContent,
@@ -26,6 +32,7 @@ export const useSkills = (currentProfile) => {
     setActiveCategory,
     setActiveSubcategory
   );
+  const language = getResolvedLanguage(i18n);
 
   // Load and filter skills data based on profile
   useEffect(() => {
@@ -34,8 +41,12 @@ export const useSkills = (currentProfile) => {
 
       // Simulate API call - will be replaced with actual fetch later
       try {
+        const translatedSkillsData = getTranslatedData(t, "skills", skillsData);
         // Filter data based on profile
-        const filtered = filterSkillsByProfile(skillsData, currentProfile);
+        const filtered = filterSkillsByProfile(
+          translatedSkillsData,
+          currentProfile
+        );
         setSkillsContent(filtered);
 
         // Set first available category as active if current is not available
@@ -53,7 +64,7 @@ export const useSkills = (currentProfile) => {
     };
 
     loadSkillsData();
-  }, [currentProfile]); // Only re-run when profile changes
+  }, [currentProfile, language, t]); // Re-run when profile or language changes
 
   return {
     skillsContent,

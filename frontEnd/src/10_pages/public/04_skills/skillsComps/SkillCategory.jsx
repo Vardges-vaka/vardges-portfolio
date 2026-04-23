@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import SubcategorySection from "./SubcategorySection.jsx";
 import { getSortedSubcategories } from "../skillsHelpers/_skillsHelpers.index.js";
@@ -9,6 +10,8 @@ import { getSortedSubcategories } from "../skillsHelpers/_skillsHelpers.index.js
  * Displays the active category with its subcategories
  */
 const SkillCategory = ({ category, categoryKey }) => {
+  const { t } = useTranslation("tempContent");
+
   const categoryVariants = {
     hidden: { opacity: 0, x: 20 },
     visible: {
@@ -26,7 +29,7 @@ const SkillCategory = ({ category, categoryKey }) => {
   if (!category || !category.subcategories) {
     return (
       <div className="skillCategory__empty">
-        <p>No skills found for this category.</p>
+        <p>{t("ui.empty.skillCategory")}</p>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useHome } from "./homeHooks/_homeHooks.index.js";
 import { Hero, SectionDivider } from "./homeComps/_homeComps.index.js";
@@ -12,6 +13,7 @@ import "./styles/home.css";
  * Landing page with hero and preview of all sections
  */
 const Home = () => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const { heroContent, loading } = useHome(profile);
 
@@ -23,7 +25,7 @@ const Home = () => {
   if (loading) {
     return (
       <div className="home">
-        <div className="home__loading">Loading...</div>
+        <div className="home__loading">{t("ui.common.loading")}</div>
       </div>
     );
   }
@@ -37,19 +39,19 @@ const Home = () => {
 
       {/* About Preview */}
       <section className="home__section">
-        <SectionDivider title="About Me" link="/about" />
+        <SectionDivider title={t("ui.home.sections.about")} link="/about" />
         <About variant="short" />
       </section>
 
       {/* Work Preview */}
       <section className="home__section">
-        <SectionDivider title="Projects & Experience" link="/work" />
+        <SectionDivider title={t("ui.home.sections.work")} link="/work" />
         <Work variant="short" />
       </section>
 
       {/* Skills Preview */}
       <section className="home__section">
-        <SectionDivider title="Skills & Learning" link="/skills" />
+        <SectionDivider title={t("ui.home.sections.skills")} link="/skills" />
         <Skills variant="short" />
       </section>
     </div>

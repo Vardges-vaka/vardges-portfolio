@@ -8,13 +8,9 @@ import {
 } from "./_adminDashboard.hooks.index.js";
 
 import {
-  settings_SIdeBar,
   me_SideBar,
-  work_planning_SideBar,
-  business_docs_SideBar,
-  assets_storage_SideBar,
-  tools_SideBar,
-  brand_product_SideBar,
+  vkusno_SideBar,
+  settings_SIdeBar,
 } from "../../_adminFeatures/adminFeatures.index.js";
 
 const isDebug = is_Debug.hooks;
@@ -30,12 +26,8 @@ export const useAdminDashboard = () => {
   const { i18n } = useTranslation();
 
   const sideBarMap = {
+    vkusno: vkusno_SideBar(tSideBar),
     me: me_SideBar(tSideBar),
-    work_planning: work_planning_SideBar(tSideBar),
-    Business_docs: business_docs_SideBar(tSideBar),
-    Assets_storage: assets_storage_SideBar(tSideBar),
-    tools: tools_SideBar(tSideBar),
-    Brand_product: brand_product_SideBar(tSideBar),
     settings: settings_SIdeBar(tSideBar),
   };
 

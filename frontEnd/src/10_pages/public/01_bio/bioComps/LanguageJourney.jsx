@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 /**
@@ -7,6 +8,8 @@ import PropTypes from 'prop-types';
  * Displays the language learning journey narrative
  */
 const LanguageJourney = ({ story }) => {
+  const { t } = useTranslation('tempContent');
+
   if (!story) return null;
 
   const sectionVariants = {
@@ -54,7 +57,9 @@ const LanguageJourney = ({ story }) => {
             className="languageJourney__section"
             variants={itemVariants}
           >
-            <h3 className="languageJourney__subheading">How I Approached It:</h3>
+            <h3 className="languageJourney__subheading">
+              {t('ui.bio.languageApproach')}
+            </h3>
             <ul className="languageJourney__list">
               {story.approach.map((item, index) => (
                 <li key={index} className="languageJourney__listItem">
@@ -70,7 +75,9 @@ const LanguageJourney = ({ story }) => {
             className="languageJourney__section"
             variants={itemVariants}
           >
-            <h3 className="languageJourney__subheading">Outcomes:</h3>
+            <h3 className="languageJourney__subheading">
+              {t('ui.bio.outcomes')}
+            </h3>
             <ul className="languageJourney__list">
               {story.outcomes.map((item, index) => (
                 <li key={index} className="languageJourney__listItem">
@@ -86,7 +93,9 @@ const LanguageJourney = ({ story }) => {
             className="languageJourney__section"
             variants={itemVariants}
           >
-            <h3 className="languageJourney__subheading">Lessons Learned:</h3>
+            <h3 className="languageJourney__subheading">
+              {t('ui.bio.lessonsLearned')}
+            </h3>
             <ul className="languageJourney__list">
               {story.lessonsLearned.map((item, index) => (
                 <li key={index} className="languageJourney__listItem">

@@ -901,3 +901,14 @@
   "timestamp": "2026-04-13 09:06:45",
   "type": "controller_error"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2026-04-23 16:23:36",
+  "type": "controller_error"
+}

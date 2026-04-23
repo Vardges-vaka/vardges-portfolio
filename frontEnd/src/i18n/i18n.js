@@ -20,6 +20,8 @@ export const i18nConfig = {
     //  Admin Translations
     "adminWelcome",
     "sideBar",
+    // tempContent
+    "tempContent",
   ],
   defaultNS: "common",
 

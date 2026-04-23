@@ -1,0 +1,34 @@
+/* ============================================================================
+   FILE: xXX.css
+   ROLE: Styles for the parent component XXX.jsx
+   ============================================================================
+
+   CSS FILE NAMING RULE:
+     The CSS file name is the component's full prefixed name in lowerCamelCase.
+     Parent component → xXX.css  (page name, first letter lowercase)
+     Component        → xXX_YYY.css
+     Child component  → xXX_YYY_ZZZ.css
+
+   ROOT CLASS:
+     The parent component's root <div> uses className="xXX"
+     All internal classNames follow: xXX_[elementName]
+
+   SINGLE UNDERSCORE ONLY:
+     ✅  xXX_header, xXX_title, xXX_grid
+     ❌  xXX__header (no double underscores)
+
+   WHERE THIS FILE IS IMPORTED:
+     In XXX.jsx:  import "./_styles/xXX.css";
+
+   SEE: .cursor/Directory_Architecture.md → Section 6
+   ============================================================================ */
+
+.xXX {
+  /* Root styles for the parent page component */
+}
+
+/* Example internal element styles:
+.xXX_header { }
+.xXX_title { }
+.xXX_grid { }
+*/

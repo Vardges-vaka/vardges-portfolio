@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import ProjectCard from "./ProjectCard.jsx";
 
@@ -8,10 +9,12 @@ import ProjectCard from "./ProjectCard.jsx";
  * Grid container for project cards
  */
 const ProjectsGrid = ({ projects, onProjectClick }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!projects || projects.length === 0) {
     return (
       <div className="projectsGrid__empty">
-        <p>No projects found for the selected category.</p>
+        <p>{t("ui.empty.projects")}</p>
       </div>
     );
   }

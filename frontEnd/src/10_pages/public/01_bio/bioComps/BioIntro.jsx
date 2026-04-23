@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { placeholder } from "../../../../00_assets/_assets.index.js";
 
@@ -9,6 +10,8 @@ import { placeholder } from "../../../../00_assets/_assets.index.js";
  * Supports short and full variants
  */
 const BioIntro = ({ data, profile, variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!data) return null;
 
   const isShort = variant === "short";
@@ -57,7 +60,7 @@ const BioIntro = ({ data, profile, variant = "full" }) => {
 
         {!isShort && (
           <div className="bioIntro__image">
-            <img src={placeholder} alt="Profile" loading="lazy" />
+            <img src={placeholder} alt={t("ui.common.profileAlt")} loading="lazy" />
           </div>
         )}
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MapPin, Calendar, Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { placeholder } from "../../../../00_assets/_assets.index.js";
 import {
@@ -15,9 +16,17 @@ import {
  * Supports short and full variants
  */
 const TimelineCard = ({ role, isExpanded, onToggle, variant = "full" }) => {
-  const duration = calculateDuration(role.startDate, role.endDate);
+  const { t } = useTranslation("tempContent");
+  const durationLabels = t("ui.journey.duration", { returnObjects: true });
+  const duration = calculateDuration(
+    role.startDate,
+    role.endDate,
+    durationLabels
+  );
   const categoryClass = getCategoryColorClass(role.category);
-  const typeBadge = getTypeBadgeText(role.type);
+  const typeBadge = t(`ui.journey.typeBadges.${role.type}`, {
+    defaultValue: getTypeBadgeText(role.type),
+  });
   const isShort = variant === "short";
 
   const cardVariants = {
@@ -119,7 +128,9 @@ const TimelineCard = ({ role, isExpanded, onToggle, variant = "full" }) => {
               variants={contentVariants}>
               {role.scope && (
                 <div className="timelineCard__section">
-                  <h4 className="timelineCard__sectionTitle">Scope</h4>
+                  <h4 className="timelineCard__sectionTitle">
+                    {t("ui.journey.sections.scope")}
+                  </h4>
                   <p className="timelineCard__text">{role.scope}</p>
                 </div>
               )}
@@ -127,7 +138,7 @@ const TimelineCard = ({ role, isExpanded, onToggle, variant = "full" }) => {
               {role.responsibilities && role.responsibilities.length > 0 && (
                 <div className="timelineCard__section">
                   <h4 className="timelineCard__sectionTitle">
-                    Key Responsibilities
+                    {t("ui.journey.sections.keyResponsibilities")}
                   </h4>
                   <ul className="timelineCard__list">
                     {role.responsibilities.map((item, index) => (
@@ -142,7 +153,7 @@ const TimelineCard = ({ role, isExpanded, onToggle, variant = "full" }) => {
               {role.achievements && role.achievements.length > 0 && (
                 <div className="timelineCard__section">
                   <h4 className="timelineCard__sectionTitle">
-                    Selected Contributions
+                    {t("ui.journey.sections.selectedContributions")}
                   </h4>
                   <ul className="timelineCard__list timelineCard__list--achievements">
                     {role.achievements.map((item, index) => (

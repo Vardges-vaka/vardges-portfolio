@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useAbout } from "./aboutHooks/_aboutHooks.index.js";
 import {
@@ -16,6 +17,7 @@ import "./styles/about.css";
  * Displays personal info, intro, principles, values, and current focus
  */
 const About = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const { aboutContent, loading, error } = useAbout(profile);
 
@@ -26,7 +28,7 @@ const About = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={aboutClassName}>
-        <div className="about__loading">Loading...</div>
+        <div className="about__loading">{t("ui.common.loading")}</div>
       </div>
     );
   }
@@ -34,7 +36,9 @@ const About = ({ variant = "full" }) => {
   if (error) {
     return (
       <div className={aboutClassName}>
-        <div className="about__error">Error: {error}</div>
+        <div className="about__error">
+          {t("ui.common.errorPrefix")} {error}
+        </div>
       </div>
     );
   }
@@ -51,7 +55,7 @@ const About = ({ variant = "full" }) => {
         {/* Header - Only show in full variant */}
         {!isShort && (
           <header className="about__header">
-            <h1 className="about__title">About Me</h1>
+            <h1 className="about__title">{t("ui.pages.about.title")}</h1>
           </header>
         )}
 
@@ -64,7 +68,7 @@ const About = ({ variant = "full" }) => {
             </p>
             {aboutContent.personalInfo.languages && (
               <p className="about__languages">
-                Languages:{" "}
+                {t("ui.common.languages")}:{" "}
                 {aboutContent.personalInfo.languages
                   .map((lang) => `${lang.name} (${lang.level})`)
                   .join(", ")}

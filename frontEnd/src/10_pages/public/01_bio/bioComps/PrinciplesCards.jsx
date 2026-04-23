@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Target, Handshake, Layers } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 /**
@@ -9,6 +10,8 @@ import PropTypes from "prop-types";
  * Supports short and full variants
  */
 const PrinciplesCards = ({ principles, variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!principles || principles.length === 0) return null;
 
   const isShort = variant === "short";
@@ -37,7 +40,9 @@ const PrinciplesCards = ({ principles, variant = "full" }) => {
       className={`principlesCards ${
         isShort ? "principlesCards--short" : "principlesCards--full"
       }`}>
-      <h2 className="principlesCards__heading">Core Principles</h2>
+      <h2 className="principlesCards__heading">
+        {t("ui.bio.corePrinciples")}
+      </h2>
       <div className="principlesCards__grid">
         {displayPrinciples.map((principle, index) => {
           const IconComponent = iconMap[principle.icon] || Target;

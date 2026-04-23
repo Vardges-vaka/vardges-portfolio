@@ -117,14 +117,16 @@ export const getTotalSkillsCount = (category) => {
  * @param {array} platforms - Array of platform names
  * @returns {string} Formatted string
  */
-export const formatPlatforms = (platforms) => {
+export const formatPlatforms = (platforms, moreLabel = "more") => {
   if (!platforms || platforms.length === 0) return "";
 
   if (platforms.length <= 3) {
     return platforms.join(", ");
   }
 
-  return `${platforms.slice(0, 3).join(", ")} +${platforms.length - 3} more`;
+  return `${platforms.slice(0, 3).join(", ")} +${
+    platforms.length - 3
+  } ${moreLabel}`;
 };
 
 /**

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useJourney } from "./journeyHooks/_journeyHooks.index.js";
 import {
@@ -16,6 +17,7 @@ import "./styles/journey.css";
  * Content adapts based on current profile (dev/hospitality/both)
  */
 const Journey = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const {
     journeyContent,
@@ -36,7 +38,7 @@ const Journey = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={journeyClassName}>
-        <div className="journey__loading">Loading...</div>
+        <div className="journey__loading">{t("ui.common.loading")}</div>
       </div>
     );
   }
@@ -44,7 +46,9 @@ const Journey = ({ variant = "full" }) => {
   if (error) {
     return (
       <div className={journeyClassName}>
-        <div className="journey__error">Error: {error}</div>
+        <div className="journey__error">
+          {t("ui.common.errorPrefix")} {error}
+        </div>
       </div>
     );
   }
@@ -62,7 +66,7 @@ const Journey = ({ variant = "full" }) => {
         {/* Page Header - Only in full variant */}
         {!isShort && (
           <header className="journey__header">
-            <h1 className="journey__title">Professional Journey</h1>
+            <h1 className="journey__title">{t("ui.pages.journey.title")}</h1>
             {journeyContent.narrative && (
               <div className="journey__narrative">
                 <p className="journey__overview">

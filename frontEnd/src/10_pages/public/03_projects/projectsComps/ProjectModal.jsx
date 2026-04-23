@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MapPin, Calendar, Target } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import TechStackBadge from "./TechStackBadge.jsx";
 import { formatMetrics } from "../projectsHelpers/_projectsHelpers.index.js";
@@ -10,6 +11,8 @@ import { formatMetrics } from "../projectsHelpers/_projectsHelpers.index.js";
  * Detailed view of project in modal
  */
 const ProjectModal = ({ project, isOpen, onClose }) => {
+  const { t } = useTranslation("tempContent");
+
   // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e) => {
@@ -87,7 +90,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 <button
                   className="projectModal__closeButton"
                   onClick={onClose}
-                  aria-label="Close modal">
+                  aria-label={t("ui.common.closeModal")}>
                   <X size={24} />
                 </button>
               </div>
@@ -120,7 +123,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 <div className="projectModal__section">
                   <h3 className="projectModal__sectionTitle">
                     <Target size={20} />
-                    Challenge
+                    {t("ui.projects.sections.challenge")}
                   </h3>
                   <p className="projectModal__text">{project.challenge}</p>
                 </div>
@@ -129,7 +132,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Solution */}
               {project.solution && (
                 <div className="projectModal__section">
-                  <h3 className="projectModal__sectionTitle">Solution</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.solution")}
+                  </h3>
                   <ul className="projectModal__list">
                     {project.solution.map((item, index) => (
                       <li key={index} className="projectModal__listItem">
@@ -143,7 +148,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Features */}
               {project.features && project.features.length > 0 && (
                 <div className="projectModal__section">
-                  <h3 className="projectModal__sectionTitle">Key Features</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.keyFeatures")}
+                  </h3>
                   <ul className="projectModal__list">
                     {project.features.map((feature, index) => (
                       <li key={index} className="projectModal__listItem">
@@ -157,7 +164,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Deliverables */}
               {project.deliverables && project.deliverables.length > 0 && (
                 <div className="projectModal__section">
-                  <h3 className="projectModal__sectionTitle">Deliverables</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.deliverables")}
+                  </h3>
                   <ul className="projectModal__list">
                     {project.deliverables.map((item, index) => (
                       <li key={index} className="projectModal__listItem">
@@ -171,7 +180,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Approach */}
               {project.approach && project.approach.length > 0 && (
                 <div className="projectModal__section">
-                  <h3 className="projectModal__sectionTitle">Approach</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.approach")}
+                  </h3>
                   <ul className="projectModal__list">
                     {project.approach.map((item, index) => (
                       <li key={index} className="projectModal__listItem">
@@ -185,7 +196,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Components */}
               {project.components && project.components.length > 0 && (
                 <div className="projectModal__section">
-                  <h3 className="projectModal__sectionTitle">Components</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.components")}
+                  </h3>
                   <ul className="projectModal__list">
                     {project.components.map((item, index) => (
                       <li key={index} className="projectModal__listItem">
@@ -199,7 +212,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Platforms */}
               {project.platforms && project.platforms.length > 0 && (
                 <div className="projectModal__section">
-                  <h3 className="projectModal__sectionTitle">Platforms</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.platforms")}
+                  </h3>
                   <div className="projectModal__platforms">
                     {project.platforms.map((platform, index) => (
                       <span key={index} className="projectModal__platform">
@@ -214,7 +229,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {project.techStack && project.techStack.length > 0 && (
                 <div className="projectModal__section">
                   <h3 className="projectModal__sectionTitle">
-                    Technology Stack
+                    {t("ui.projects.sections.technologyStack")}
                   </h3>
                   <div className="projectModal__techStack">
                     {project.techStack.map((tech, index) => (
@@ -228,7 +243,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {metrics.length > 0 && (
                 <div className="projectModal__section">
                   <h3 className="projectModal__sectionTitle">
-                    Impact & Metrics
+                    {t("ui.projects.sections.impactMetrics")}
                   </h3>
                   <div className="projectModal__metrics">
                     {metrics.map((metric, index) => (
@@ -248,7 +263,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Highlights */}
               {project.highlights && project.highlights.length > 0 && (
                 <div className="projectModal__section">
-                  <h3 className="projectModal__sectionTitle">Highlights</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.highlights")}
+                  </h3>
                   <ul className="projectModal__list projectModal__list--highlights">
                     {project.highlights.map((highlight, index) => (
                       <li key={index} className="projectModal__listItem">
@@ -262,7 +279,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Impact */}
               {project.impact && (
                 <div className="projectModal__section projectModal__section--impact">
-                  <h3 className="projectModal__sectionTitle">Impact</h3>
+                  <h3 className="projectModal__sectionTitle">
+                    {t("ui.projects.sections.impact")}
+                  </h3>
                   <p className="projectModal__impact">{project.impact}</p>
                 </div>
               )}

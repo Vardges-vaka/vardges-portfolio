@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Award, Calendar, Building } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { getCertificationTypeColor } from "../educationHelpers/_educationHelpers.index.js";
 
@@ -9,6 +10,8 @@ import { getCertificationTypeColor } from "../educationHelpers/_educationHelpers
  * Displays individual certification with details
  */
 const CertificationCard = ({ certification, index }) => {
+  const { t } = useTranslation("tempContent");
+
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -62,7 +65,9 @@ const CertificationCard = ({ certification, index }) => {
 
       {certification.coverage && certification.coverage.length > 0 && (
         <div className="certificationCard__coverage">
-          <h5 className="certificationCard__coverageTitle">Coverage:</h5>
+          <h5 className="certificationCard__coverageTitle">
+            {t("ui.education.coverage")}
+          </h5>
           <ul className="certificationCard__coverageList">
             {certification.coverage.map((item, idx) => (
               <li key={idx} className="certificationCard__coverageItem">
@@ -75,7 +80,7 @@ const CertificationCard = ({ certification, index }) => {
 
       {certification.focus && (
         <div className="certificationCard__focus">
-          <strong>Focus:</strong> {certification.focus}
+          <strong>{t("ui.education.focus")}</strong> {certification.focus}
         </div>
       )}
     </motion.article>

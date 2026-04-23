@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Code, Palette, Wine, TrendingUp, Grid } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import { getCategoryDisplayName } from "../projectsHelpers/_projectsHelpers.index.js";
 
 /**
  * ProjectCategoryFilter Component
@@ -13,6 +13,8 @@ const ProjectCategoryFilter = ({
   selectedCategory,
   onCategoryChange,
 }) => {
+  const { t } = useTranslation("tempContent");
+
   const iconMap = {
     all: Grid,
     tech: Code,
@@ -23,11 +25,15 @@ const ProjectCategoryFilter = ({
 
   return (
     <div className="projectCategoryFilter">
-      <h3 className="projectCategoryFilter__title">Filter by Category</h3>
+      <h3 className="projectCategoryFilter__title">
+        {t("ui.common.filterByCategory")}
+      </h3>
       <div className="projectCategoryFilter__buttons">
         {categories.map((category) => {
           const isSelected = category === selectedCategory;
-          const displayName = getCategoryDisplayName(category);
+          const displayName = t(`ui.projects.categories.${category}`, {
+            defaultValue: category,
+          });
           const IconComponent = iconMap[category] || Grid;
 
           return (

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { getProficiencyDisplay } from "../skillsHelpers/_skillsHelpers.index.js";
 
@@ -7,7 +8,11 @@ import { getProficiencyDisplay } from "../skillsHelpers/_skillsHelpers.index.js"
  * Visual representation of skill proficiency level
  */
 const ProficiencyIndicator = ({ level, showLabel = true }) => {
+  const { t } = useTranslation("tempContent");
   const proficiency = getProficiencyDisplay(level);
+  const label = t(`ui.skills.proficiency.${level}`, {
+    defaultValue: proficiency.label,
+  });
 
   return (
     <div className="proficiencyIndicator">
@@ -15,11 +20,11 @@ const ProficiencyIndicator = ({ level, showLabel = true }) => {
         <div
           className={`proficiencyIndicator__fill ${proficiency.color}`}
           style={{ width: `${proficiency.percentage}%` }}
-          aria-label={`${proficiency.label} - ${proficiency.percentage}%`}
+          aria-label={`${label} - ${proficiency.percentage}%`}
         />
       </div>
       {showLabel && (
-        <span className="proficiencyIndicator__label">{proficiency.label}</span>
+        <span className="proficiencyIndicator__label">{label}</span>
       )}
     </div>
   );

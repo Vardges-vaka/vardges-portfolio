@@ -5,6 +5,7 @@
  */
 
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { educationData } from "../educationConstances/_educationConstances.index.js";
 import {
   filterEducationByProfile,
@@ -12,8 +13,13 @@ import {
 } from "../educationHelpers/_educationHelpers.index.js";
 import { useEducation_states } from "./useEducation_states.js";
 import { useEducation_handlers } from "./useEducation_handlers.js";
+import {
+  getResolvedLanguage,
+  getTranslatedData,
+} from "../../publicHelpers/publicI18n.js";
 
 export const useEducation = (currentProfile) => {
+  const { t, i18n } = useTranslation("tempContent");
   const {
     educationContent,
     setEducationContent,
@@ -24,6 +30,7 @@ export const useEducation = (currentProfile) => {
   } = useEducation_states();
 
   const { handleCategoryFilter } = useEducation_handlers(setActiveCategory);
+  const language = getResolvedLanguage(i18n);
 
   // Load and filter education data based on profile
   useEffect(() => {
@@ -32,8 +39,16 @@ export const useEducation = (currentProfile) => {
 
       // Simulate API call - will be replaced with actual fetch later
       try {
+        const translatedEducationData = getTranslatedData(
+          t,
+          "education",
+          educationData
+        );
         // Filter data based on profile
-        const filtered = filterEducationByProfile(educationData, currentProfile);
+        const filtered = filterEducationByProfile(
+          translatedEducationData,
+          currentProfile
+        );
 
         // Sort categories
         const sorted = sortCategoriesByOrder(filtered.categories);
@@ -47,7 +62,7 @@ export const useEducation = (currentProfile) => {
     };
 
     loadEducationData();
-  }, [currentProfile, setEducationContent, setLoading]);
+  }, [currentProfile, language, setEducationContent, setLoading, t]);
 
   // Filter categories by active category
   const filteredCategories = educationContent?.categories.filter((category) => {

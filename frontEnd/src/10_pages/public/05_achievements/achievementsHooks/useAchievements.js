@@ -5,12 +5,18 @@
  */
 
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { achievementsData } from "../achievementsConstances/_achievementsConstances.index.js";
 import { filterAchievementsByProfile } from "../achievementsHelpers/_achievementsHelpers.index.js";
 import { useAchievements_states } from "./useAchievements_states.js";
 import { useAchievements_handlers } from "./useAchievements_handlers.js";
+import {
+  getResolvedLanguage,
+  getTranslatedData,
+} from "../../publicHelpers/publicI18n.js";
 
 export const useAchievements = (currentProfile) => {
+  const { t, i18n } = useTranslation("tempContent");
   const {
     achievementsContent,
     setAchievementsContent,
@@ -27,6 +33,7 @@ export const useAchievements = (currentProfile) => {
     handleAchievementClick,
     handleCloseDetail,
   } = useAchievements_handlers(setActiveCategory, setSelectedAchievement);
+  const language = getResolvedLanguage(i18n);
 
   // Load and filter achievements data based on profile
   useEffect(() => {
@@ -35,9 +42,14 @@ export const useAchievements = (currentProfile) => {
 
       // Simulate API call - will be replaced with actual fetch later
       try {
+        const translatedAchievementsData = getTranslatedData(
+          t,
+          "achievements",
+          achievementsData
+        );
         // Filter data based on profile
         const filtered = filterAchievementsByProfile(
-          achievementsData,
+          translatedAchievementsData,
           currentProfile
         );
         setAchievementsContent(filtered);
@@ -49,7 +61,7 @@ export const useAchievements = (currentProfile) => {
     };
 
     loadAchievementsData();
-  }, [currentProfile, setAchievementsContent, setLoading]);
+  }, [currentProfile, language, setAchievementsContent, setLoading, t]);
 
   // Filter categories by active category
   const filteredCategories = achievementsContent?.categories.filter((category) => {

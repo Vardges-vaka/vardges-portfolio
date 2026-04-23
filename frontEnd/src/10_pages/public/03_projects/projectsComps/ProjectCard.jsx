@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import TechStackBadge from "./TechStackBadge.jsx";
 import { truncateDescription } from "../projectsHelpers/_projectsHelpers.index.js";
@@ -10,6 +11,8 @@ import { truncateDescription } from "../projectsHelpers/_projectsHelpers.index.j
  * Displays individual project card in grid
  */
 const ProjectCard = ({ project, onViewDetails }) => {
+  const { t } = useTranslation("tempContent");
+
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -80,8 +83,8 @@ const ProjectCard = ({ project, onViewDetails }) => {
       <button
         className="projectCard__viewButton"
         onClick={() => onViewDetails(project)}
-        aria-label={`View details for ${project.name}`}>
-        View Details
+        aria-label={t("ui.common.viewDetailsFor", { name: project.name })}>
+        {t("ui.common.viewDetails")}
         <ChevronRight size={16} />
       </button>
     </motion.article>

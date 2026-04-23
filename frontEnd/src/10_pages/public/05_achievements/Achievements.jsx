@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useAchievements } from "./achievementsHooks/_achievementsHooks.index.js";
 import {
@@ -11,6 +12,7 @@ import "./styles/achievements.css";
 
 
 const Achievements = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const {
     achievementsContent,
@@ -29,7 +31,9 @@ const Achievements = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={achievementsClassName}>
-        <div className="achievements__loading">Loading achievements...</div>
+        <div className="achievements__loading">
+          {t("ui.loading.achievements")}
+        </div>
       </div>
     );
   }
@@ -42,7 +46,7 @@ const Achievements = ({ variant = "full" }) => {
     return (
       <div className={achievementsClassName}>
         <div className="achievements__empty">
-          <p>No achievements available for the selected profile.</p>
+          <p>{t("ui.empty.achievements")}</p>
         </div>
       </div>
     );
@@ -51,10 +55,11 @@ const Achievements = ({ variant = "full" }) => {
   return (
     <div className={achievementsClassName}>
       <header className="achievements__header">
-        <h1 className="achievements__title">Achievements & Milestones</h1>
+        <h1 className="achievements__title">
+          {t("ui.pages.achievements.title")}
+        </h1>
         <p className="achievements__subtitle">
-          Key accomplishments across hospitality, technology, marketing, and
-          leadership domains.
+          {t("ui.pages.achievements.subtitle")}
         </p>
       </header>
 

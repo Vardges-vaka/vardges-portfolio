@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import ProficiencyIndicator from "./ProficiencyIndicator.jsx";
 import { formatPlatforms } from "../skillsHelpers/_skillsHelpers.index.js";
@@ -10,6 +11,8 @@ import { formatPlatforms } from "../skillsHelpers/_skillsHelpers.index.js";
  * Displays individual skill with competencies
  */
 const SkillCard = ({ skill, index }) => {
+  const { t } = useTranslation("tempContent");
+
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -46,9 +49,11 @@ const SkillCard = ({ skill, index }) => {
 
       {skill.platforms && skill.platforms.length > 0 && (
         <div className="skillCard__platforms">
-          <span className="skillCard__platformsLabel">Platforms:</span>
+          <span className="skillCard__platformsLabel">
+            {t("ui.skills.platforms")}
+          </span>
           <span className="skillCard__platformsList">
-            {formatPlatforms(skill.platforms)}
+            {formatPlatforms(skill.platforms, t("ui.skills.more"))}
           </span>
         </div>
       )}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useSkills } from "./skillsHooks/_skillsHooks.index.js";
 import { useEducation } from "../06_education/educationHooks/_educationHooks.index.js";
@@ -13,10 +14,11 @@ import "./styles/skills.css";
  * Content adapts based on current profile (dev/hospitality/both)
  */
 const Skills = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const { skillsContent, loading, activeCategory, handleCategoryChange } =
     useSkills(profile);
-  const { educationContent, loading: educationLoading } = useEducation(profile);
+  const { educationContent } = useEducation(profile);
 
   const skillsClassName = `skills ${
     variant === "full" ? "skills--full" : "skills--short"
@@ -25,7 +27,7 @@ const Skills = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={skillsClassName}>
-        <div className="skills__loading">Loading skills...</div>
+        <div className="skills__loading">{t("ui.loading.skills")}</div>
       </div>
     );
   }
@@ -38,7 +40,7 @@ const Skills = ({ variant = "full" }) => {
     return (
       <div className={skillsClassName}>
         <div className="skills__empty">
-          <p>No skills available for the selected profile.</p>
+          <p>{t("ui.empty.skills")}</p>
         </div>
       </div>
     );
@@ -49,10 +51,8 @@ const Skills = ({ variant = "full" }) => {
   return (
     <div className={skillsClassName}>
       <header className="skills__header">
-        <h1 className="skills__title">Skills & Learning</h1>
-        <p className="skills__subtitle">
-          Technical skills, business expertise, and professional certifications.
-        </p>
+        <h1 className="skills__title">{t("ui.pages.skills.title")}</h1>
+        <p className="skills__subtitle">{t("ui.pages.skills.subtitle")}</p>
       </header>
 
       <div className="skills__content">
@@ -76,7 +76,9 @@ const Skills = ({ variant = "full" }) => {
       {!variant || variant === "full" ? (
         educationContent?.categories && educationContent.categories.length > 0 && (
           <section className="skills__education">
-            <h2 className="skills__educationTitle">Education & Certifications</h2>
+            <h2 className="skills__educationTitle">
+              {t("ui.pages.skills.educationTitle")}
+            </h2>
             <div className="skills__educationContent">
               {educationContent.categories.map((category) => (
                 <CategorySection key={category.id} category={category} />

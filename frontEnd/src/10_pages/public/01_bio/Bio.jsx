@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useBio } from "./bioHooks/_bioHooks.index.js";
 import {
@@ -16,6 +17,7 @@ import "./styles/bio.css";
  * Content adapts based on current profile (dev/hospitality/both)
  */
 const Bio = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const { bioContent, loading, error } = useBio(profile);
 
@@ -24,7 +26,7 @@ const Bio = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={bioClassName}>
-        <div className="bio__loading">Loading...</div>
+        <div className="bio__loading">{t("ui.common.loading")}</div>
       </div>
     );
   }
@@ -32,7 +34,9 @@ const Bio = ({ variant = "full" }) => {
   if (error) {
     return (
       <div className={bioClassName}>
-        <div className="bio__error">Error: {error}</div>
+        <div className="bio__error">
+          {t("ui.common.errorPrefix")} {error}
+        </div>
       </div>
     );
   }
@@ -52,7 +56,7 @@ const Bio = ({ variant = "full" }) => {
         {/* Header - Only show in full variant */}
         {!isShort && (
           <header className="bio__header">
-            <h1 className="bio__title">About Me</h1>
+            <h1 className="bio__title">{t("ui.pages.bio.title")}</h1>
           </header>
         )}
 
@@ -63,7 +67,7 @@ const Bio = ({ variant = "full" }) => {
             <p className="bio__location">{bioContent.personalInfo.location}</p>
             {bioContent.personalInfo.languages && (
               <p className="bio__languages">
-                Languages:{" "}
+                {t("ui.common.languages")}:{" "}
                 {bioContent.personalInfo.languages
                   .map((lang) => `${lang.name} (${lang.level})`)
                   .join(", ")}

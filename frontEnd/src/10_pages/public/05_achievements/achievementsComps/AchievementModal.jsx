@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Award, Target, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { formatAchievementMetrics } from "../achievementsHelpers/_achievementsHelpers.index.js";
 
@@ -9,6 +10,8 @@ import { formatAchievementMetrics } from "../achievementsHelpers/_achievementsHe
  * Detailed view of achievement in modal
  */
 const AchievementModal = ({ achievement, isOpen, onClose }) => {
+  const { t } = useTranslation("tempContent");
+
   // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e) => {
@@ -97,7 +100,7 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
                 <button
                   className="achievementModal__closeButton"
                   onClick={onClose}
-                  aria-label="Close modal">
+                  aria-label={t("ui.common.closeModal")}>
                   <X size={24} />
                 </button>
               </div>
@@ -114,7 +117,7 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
                 <div className="achievementModal__section">
                   <h3 className="achievementModal__sectionTitle">
                     <Target size={20} />
-                    Challenge
+                    {t("ui.achievements.challenge")}
                   </h3>
                   <p className="achievementModal__text">
                     {achievement.challenge}
@@ -126,7 +129,7 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
               {achievement.features && achievement.features.length > 0 && (
                 <div className="achievementModal__section">
                   <h3 className="achievementModal__sectionTitle">
-                    Key Features
+                    {t("ui.achievements.keyFeatures")}
                   </h3>
                   <ul className="achievementModal__list">
                     {achievement.features.map((feature, index) => (
@@ -143,7 +146,7 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
                 achievement.achievements.length > 0 && (
                   <div className="achievementModal__section">
                     <h3 className="achievementModal__sectionTitle">
-                      Accomplishments
+                      {t("ui.achievements.accomplishments")}
                     </h3>
                     <ul className="achievementModal__list">
                       {achievement.achievements.map((item, index) => (
@@ -160,7 +163,7 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
                 achievement.deliverables.length > 0 && (
                   <div className="achievementModal__section">
                     <h3 className="achievementModal__sectionTitle">
-                      Deliverables
+                      {t("ui.achievements.deliverables")}
                     </h3>
                     <ul className="achievementModal__list">
                       {achievement.deliverables.map((item, index) => (
@@ -177,7 +180,7 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
                 <div className="achievementModal__section">
                   <h3 className="achievementModal__sectionTitle">
                     <TrendingUp size={20} />
-                    Impact & Metrics
+                    {t("ui.achievements.impactMetrics")}
                   </h3>
                   <div className="achievementModal__metrics">
                     {metrics.map((metric, index) => (
@@ -197,7 +200,9 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
               {/* Impact */}
               {achievement.impact && (
                 <div className="achievementModal__section achievementModal__section--impact">
-                  <h3 className="achievementModal__sectionTitle">Impact</h3>
+                  <h3 className="achievementModal__sectionTitle">
+                    {t("ui.projects.sections.impact")}
+                  </h3>
                   <p className="achievementModal__impact">
                     {achievement.impact}
                   </p>
@@ -208,7 +213,7 @@ const AchievementModal = ({ achievement, isOpen, onClose }) => {
               {achievement.skills && achievement.skills.length > 0 && (
                 <div className="achievementModal__section">
                   <h3 className="achievementModal__sectionTitle">
-                    Skills Demonstrated
+                    {t("ui.achievements.skillsDemonstrated")}
                   </h3>
                   <div className="achievementModal__skills">
                     {achievement.skills.map((skill, index) => (

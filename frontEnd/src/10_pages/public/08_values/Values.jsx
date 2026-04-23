@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useValues } from "./valuesHooks/_valuesHooks.index.js";
 import {
@@ -9,6 +10,7 @@ import {
 import "./styles/values.css";
 
 const Values = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const { valuesContent, loading } = useValues(profile);
 
@@ -19,7 +21,7 @@ const Values = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={valuesClassName}>
-        <div className="values__loading">Loading values...</div>
+        <div className="values__loading">{t("ui.loading.values")}</div>
       </div>
     );
   }
@@ -27,7 +29,7 @@ const Values = ({ variant = "full" }) => {
   if (!valuesContent) {
     return (
       <div className={valuesClassName}>
-        <div className="values__empty">No values data available.</div>
+        <div className="values__empty">{t("ui.empty.values")}</div>
       </div>
     );
   }
@@ -41,10 +43,8 @@ const Values = ({ variant = "full" }) => {
     <div className={valuesClassName}>
       {!isShort && (
         <header className="values__header">
-          <h1 className="values__title">Values & Personality</h1>
-          <p className="values__subtitle">
-            Core principles, communication style, and what drives my work.
-          </p>
+          <h1 className="values__title">{t("ui.pages.values.title")}</h1>
+          <p className="values__subtitle">{t("ui.pages.values.subtitle")}</p>
         </header>
       )}
 

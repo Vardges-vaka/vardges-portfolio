@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Compass, DollarSign, Activity, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 const PersonalGoalsSection = ({ personalGoals }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!personalGoals) return null;
 
   return (
@@ -66,7 +69,7 @@ const PersonalGoalsSection = ({ personalGoals }) => {
             <p>{personalGoals.coreDirection.description}</p>
 
             <div className="personalGoalsSection__building">
-              <strong>Building:</strong>
+              <strong>{t("ui.vision.building")}</strong>
               <ul>
                 {personalGoals.coreDirection.building.map((item, idx) => (
                   <li key={idx}>{item}</li>
@@ -75,7 +78,7 @@ const PersonalGoalsSection = ({ personalGoals }) => {
             </div>
 
             <div className="personalGoalsSection__outcomes">
-              <strong>To achieve:</strong>
+              <strong>{t("ui.vision.toAchieve")}</strong>
               <ul>
                 {personalGoals.coreDirection.outcomes.map((item, idx) => (
                   <li key={idx}>{item}</li>
@@ -84,7 +87,7 @@ const PersonalGoalsSection = ({ personalGoals }) => {
             </div>
 
             <div className="personalGoalsSection__ultimate">
-              <strong>Ultimately, a life where I:</strong>
+              <strong>{t("ui.vision.ultimately")}</strong>
               <ul>
                 {personalGoals.coreDirection.ultimate.map((item, idx) => (
                   <li key={idx}>{item}</li>

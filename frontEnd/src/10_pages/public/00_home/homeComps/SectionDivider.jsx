@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import "../styles/sectionDevider.css";
@@ -10,6 +11,8 @@ import "../styles/sectionDevider.css";
  * Enhanced visual divider between home sections with CTA
  */
 const SectionDivider = ({ title, link }) => {
+  const { t } = useTranslation("tempContent");
+
   return (
     <motion.div
       className="sectionDivider"
@@ -19,7 +22,7 @@ const SectionDivider = ({ title, link }) => {
       transition={{ duration: 0.5 }}>
       <h2 className="sectionDivider__title">{title}</h2>
       <Link to={link} className="sectionDivider__link">
-        View Full Page
+        {t("ui.common.viewFullPage")}
         <ArrowRight size={18} />
       </Link>
     </motion.div>

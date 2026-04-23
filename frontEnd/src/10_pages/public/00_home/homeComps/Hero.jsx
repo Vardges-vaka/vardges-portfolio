@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { placeholder } from "../../../../00_assets/_assets.index.js";
 
@@ -11,6 +12,8 @@ import { placeholder } from "../../../../00_assets/_assets.index.js";
  * Profile-aware content
  */
 const Hero = ({ data, onDownloadCV }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!data) return null;
 
   const handleCTAClick = (cta) => {
@@ -106,7 +109,7 @@ const Hero = ({ data, onDownloadCV }) => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}>
-          <img src={placeholder} alt="Profile" loading="eager" />
+          <img src={placeholder} alt={t("ui.common.profileAlt")} loading="eager" />
         </motion.div>
       </div>
     </section>

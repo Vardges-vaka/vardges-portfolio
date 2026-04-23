@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 /**
@@ -7,6 +8,8 @@ import PropTypes from 'prop-types';
  * Displays career direction based on profile
  */
 const CareerDirection = ({ directions, profile }) => {
+  const { t } = useTranslation('tempContent');
+
   if (!directions) return null;
 
   const fadeInVariants = {
@@ -26,7 +29,9 @@ const CareerDirection = ({ directions, profile }) => {
       viewport={{ once: true }}
       variants={fadeInVariants}
     >
-      <h2 className="careerDirection__heading">Career Direction</h2>
+      <h2 className="careerDirection__heading">
+        {t('ui.bio.careerDirection')}
+      </h2>
       
       <div className="careerDirection__content">
         <h3 className="careerDirection__title">{directions.title}</h3>
@@ -34,7 +39,9 @@ const CareerDirection = ({ directions, profile }) => {
         
         {directions.focus && directions.focus.length > 0 && (
           <div className="careerDirection__section">
-            <h4 className="careerDirection__subheading">Current Focus:</h4>
+            <h4 className="careerDirection__subheading">
+              {t('ui.bio.currentFocus')}
+            </h4>
             <ul className="careerDirection__list">
               {directions.focus.map((item, index) => (
                 <motion.li 
@@ -54,7 +61,9 @@ const CareerDirection = ({ directions, profile }) => {
         
         {directions.questions && directions.questions.length > 0 && (
           <div className="careerDirection__section">
-            <h4 className="careerDirection__subheading">Key Questions I Address:</h4>
+            <h4 className="careerDirection__subheading">
+              {t('ui.bio.keyQuestions')}
+            </h4>
             <ul className="careerDirection__list careerDirection__list--questions">
               {directions.questions.map((item, index) => (
                 <li key={index} className="careerDirection__listItem">
@@ -67,7 +76,9 @@ const CareerDirection = ({ directions, profile }) => {
         
         {directions.openTo && directions.openTo.length > 0 && (
           <div className="careerDirection__section">
-            <h4 className="careerDirection__subheading">Open To:</h4>
+            <h4 className="careerDirection__subheading">
+              {t('ui.bio.openTo')}
+            </h4>
             <ul className="careerDirection__list">
               {directions.openTo.map((item, index) => (
                 <li key={index} className="careerDirection__listItem">

@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Rocket, Package, Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 const EntrepreneurialAmbitionsSection = ({ entrepreneurialAmbitions }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!entrepreneurialAmbitions) return null;
 
   return (
@@ -26,7 +29,7 @@ const EntrepreneurialAmbitionsSection = ({ entrepreneurialAmbitions }) => {
 
       {entrepreneurialAmbitions.brands && (
         <div className="entrepreneurialAmbitionsSection__brands">
-          <h3>Active Brands & Ventures</h3>
+          <h3>{t("ui.vision.activeBrands")}</h3>
           <ul>
             {entrepreneurialAmbitions.brands.map((brand, idx) => (
               <li key={idx}>{brand}</li>
@@ -45,7 +48,7 @@ const EntrepreneurialAmbitionsSection = ({ entrepreneurialAmbitions }) => {
         <div className="entrepreneurialAmbitionsSection__infrastructure">
           <Package size={24} />
           <div>
-            <h3>Infrastructure Components</h3>
+            <h3>{t("ui.vision.infrastructureComponents")}</h3>
             <ul>
               {entrepreneurialAmbitions.infrastructure.map((item, idx) => (
                 <li key={idx}>{item}</li>

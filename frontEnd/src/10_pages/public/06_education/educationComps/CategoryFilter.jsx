@@ -9,6 +9,7 @@ import {
   TrendingUp,
   FileCheck,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 /**
@@ -16,6 +17,8 @@ import PropTypes from "prop-types";
  * Filter buttons for education categories
  */
 const CategoryFilter = ({ categories, activeCategory, onCategoryChange }) => {
+  const { t } = useTranslation("tempContent");
+
   const iconMap = {
     hospitality: Wine,
     beverage: GlassWater,
@@ -25,11 +28,16 @@ const CategoryFilter = ({ categories, activeCategory, onCategoryChange }) => {
     other: FileCheck,
   };
 
-  const allCategories = [{ id: "all", title: "All Categories" }, ...categories];
+  const allCategories = [
+    { id: "all", title: t("ui.common.allCategories") },
+    ...categories,
+  ];
 
   return (
     <div className="categoryFilter">
-      <h3 className="categoryFilter__title">Filter by Category</h3>
+      <h3 className="categoryFilter__title">
+        {t("ui.common.filterByCategory")}
+      </h3>
       <div className="categoryFilter__buttons">
         {allCategories.map((category) => {
           const isActive =

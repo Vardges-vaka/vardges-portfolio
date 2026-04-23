@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Scale } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 const BalanceSection = ({ balance }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!balance) return null;
 
   return (
@@ -27,7 +30,7 @@ const BalanceSection = ({ balance }) => {
       </div>
 
       <div className="balanceSection__baseline">
-        <strong>In simple terms:</strong>
+        <strong>{t("ui.values.inSimpleTerms")}</strong>
         <ul>
           {balance.baseline.map((item, idx) => (
             <li key={idx}>{item}</li>

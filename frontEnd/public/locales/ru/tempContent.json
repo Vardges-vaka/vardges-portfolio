@@ -1,0 +1,3734 @@
+{
+  "ui": {
+    "common": {
+      "loading": "Загрузка...",
+      "errorPrefix": "Ошибка:",
+      "profileAlt": "Профиль",
+      "closeModal": "Закрыть окно",
+      "viewDetails": "Подробнее",
+      "viewDetailsFor": "Посмотреть детали: {{name}}",
+      "viewFullPage": "Открыть страницу",
+      "languages": "Языки",
+      "filterByCategory": "Фильтр по категории",
+      "allCategories": "Все категории",
+      "skill_one": "навык",
+      "skill_other": "навыков"
+    },
+    "home": {
+      "sections": {
+        "about": "Обо мне",
+        "work": "Проекты и опыт",
+        "skills": "Навыки и обучение"
+      }
+    },
+    "pages": {
+      "bio": {
+        "title": "Обо мне"
+      },
+      "about": {
+        "title": "Обо мне"
+      },
+      "work": {
+        "title": "Проекты и опыт",
+        "subtitle": "Проекты разработки и профессиональный путь",
+        "developmentProjects": "Проекты разработки",
+        "professionalJourney": "Профессиональный путь"
+      },
+      "journey": {
+        "title": "Профессиональный путь"
+      },
+      "projects": {
+        "title": "Проекты и инициативы"
+      },
+      "skills": {
+        "title": "Навыки и обучение",
+        "subtitle": "Технические навыки, бизнес-экспертиза и профессиональные сертификаты.",
+        "educationTitle": "Образование и сертификаты"
+      },
+      "achievements": {
+        "title": "Достижения и этапы",
+        "subtitle": "Ключевые достижения в гостеприимстве, технологиях, маркетинге и лидерстве."
+      },
+      "education": {
+        "title": "Образование и сертификаты",
+        "subtitle": "Профессиональное развитие в гостеприимстве, технологиях, бизнесе и маркетинге."
+      },
+      "vision": {
+        "title": "Видение и цели",
+        "subtitle": "Будущее направление, предпринимательские амбиции и личные стремления."
+      },
+      "values": {
+        "title": "Ценности и личность",
+        "subtitle": "Основные принципы, стиль коммуникации и то, что движет моей работой."
+      },
+      "contact": {
+        "title": "Контакты"
+      }
+    },
+    "empty": {
+      "achievements": "Для выбранного профиля нет достижений.",
+      "education": "Для выбранного профиля нет данных об образовании.",
+      "projects": "Для выбранной категории проекты не найдены.",
+      "roles": "Нет ролей для отображения",
+      "skills": "Для выбранного профиля нет навыков.",
+      "skillCategory": "Для этой категории навыки не найдены.",
+      "values": "Нет данных о ценностях.",
+      "vision": "Нет данных о видении."
+    },
+    "loading": {
+      "achievements": "Загрузка достижений...",
+      "education": "Загрузка данных об образовании...",
+      "skills": "Загрузка навыков...",
+      "values": "Загрузка ценностей...",
+      "vision": "Загрузка видения..."
+    },
+    "bio": {
+      "corePrinciples": "Ключевые принципы",
+      "languageApproach": "Как я к этому подошел:",
+      "outcomes": "Результаты:",
+      "lessonsLearned": "Уроки:",
+      "careerDirection": "Карьерное направление",
+      "currentFocus": "Текущий фокус:",
+      "keyQuestions": "Ключевые вопросы, которые я решаю:",
+      "openTo": "Открыт к:"
+    },
+    "about": {
+      "coreValues": "Ключевые ценности"
+    },
+    "journey": {
+      "categories": {
+        "all": "Все роли",
+        "tech": "Технологии",
+        "hospitality": "Гостеприимство",
+        "hybrid": "Гибрид",
+        "consulting": "Консалтинг"
+      },
+      "typeBadges": {
+        "operations": "Операции",
+        "service": "Сервис",
+        "premium": "Премиум",
+        "foundation": "Основа",
+        "consulting": "Консалтинг",
+        "hybrid": "Гибрид",
+        "tech": "Технологии"
+      },
+      "sections": {
+        "scope": "Область работы",
+        "keyResponsibilities": "Ключевые обязанности",
+        "selectedContributions": "Избранный вклад"
+      },
+      "duration": {
+        "year_one": "г.",
+        "year_other": "лет",
+        "month_one": "мес.",
+        "month_other": "мес."
+      }
+    },
+    "projects": {
+      "categories": {
+        "tech": "Технологии",
+        "brands": "Развитие бренда",
+        "bar": "Бар и напитки",
+        "marketing": "Маркетинг и рост",
+        "all": "Все проекты"
+      },
+      "sections": {
+        "challenge": "Задача",
+        "solution": "Решение",
+        "keyFeatures": "Ключевые функции",
+        "deliverables": "Результаты",
+        "approach": "Подход",
+        "components": "Компоненты",
+        "platforms": "Платформы",
+        "technologyStack": "Технологический стек",
+        "impactMetrics": "Влияние и метрики",
+        "highlights": "Основное",
+        "impact": "Влияние"
+      }
+    },
+    "skills": {
+      "supportingTools": "Поддерживающие инструменты",
+      "approach": "Подход",
+      "platforms": "Платформы:",
+      "more": "еще",
+      "categories": {
+        "technical": "Технические навыки",
+        "marketing": "Маркетинг и рост",
+        "business": "Бизнес и операции",
+        "soft": "Гибкие навыки и языки"
+      },
+      "proficiency": {
+        "native": "Родной",
+        "advanced": "Продвинутый",
+        "proficient": "Уверенный",
+        "intermediate": "Средний",
+        "beginner": "Начальный"
+      }
+    },
+    "achievements": {
+      "impact": "Влияние:",
+      "challenge": "Задача",
+      "keyFeatures": "Ключевые функции",
+      "accomplishments": "Достижения",
+      "deliverables": "Результаты",
+      "impactMetrics": "Влияние и метрики",
+      "skillsDemonstrated": "Показанные навыки"
+    },
+    "education": {
+      "coverage": "Охват:",
+      "focus": "Фокус:"
+    },
+    "vision": {
+      "coreFoundations": "Ключевые основы",
+      "activeBrands": "Активные бренды и проекты",
+      "infrastructureComponents": "Компоненты инфраструктуры",
+      "building": "Строю:",
+      "toAchieve": "Чтобы достичь:",
+      "ultimately": "В итоге жизнь, в которой я:"
+    },
+    "values": {
+      "approach": "Подход:",
+      "method": "Метод:",
+      "inSimpleTerms": "Проще говоря:"
+    }
+  },
+  "home": {
+    "hero": {
+      "dev": {
+        "title": "Full-Stack Developer & AI Consultant",
+        "subtitle": "Building scalable web applications and AI-powered systems for real businesses",
+        "description": "Transforming operational challenges into elegant solutions through code, automation, and intelligent systems.",
+        "ctas": [
+          {
+            "text": "View Projects",
+            "link": "/projects",
+            "primary": true
+          },
+          {
+            "text": "Download CV",
+            "action": "downloadCV",
+            "primary": false
+          }
+        ],
+        "stats": [
+          {
+            "value": "10+",
+            "label": "Years Experience"
+          },
+          {
+            "value": "15+",
+            "label": "Projects Delivered"
+          },
+          {
+            "value": "5+",
+            "label": "Technologies Mastered"
+          }
+        ]
+      },
+      "hospitality": {
+        "title": "Hospitality Operations Expert",
+        "subtitle": "Transforming venues through systems, training, and beverage innovation",
+        "description": "Over a decade of experience building and managing high-volume hospitality operations with proven results.",
+        "ctas": [
+          {
+            "text": "View Journey",
+            "link": "/journey",
+            "primary": true
+          },
+          {
+            "text": "Download CV",
+            "action": "downloadCV",
+            "primary": false
+          }
+        ],
+        "stats": [
+          {
+            "value": "10+",
+            "label": "Years Experience"
+          },
+          {
+            "value": "20+",
+            "label": "Venues Managed"
+          },
+          {
+            "value": "100+",
+            "label": "Staff Trained"
+          }
+        ]
+      },
+      "both": {
+        "title": "Tech × Hospitality Integration Specialist",
+        "subtitle": "Operating at the intersection of technology, operations, and customer experience",
+        "description": "Combining a decade of hospitality expertise with full-stack development and AI to build systems that actually work in the real world.",
+        "ctas": [
+          {
+            "text": "View Projects",
+            "link": "/projects",
+            "primary": true
+          },
+          {
+            "text": "View Journey",
+            "link": "/journey",
+            "primary": false
+          },
+          {
+            "text": "Download CV",
+            "action": "downloadCV",
+            "primary": false
+          }
+        ],
+        "stats": [
+          {
+            "value": "10+",
+            "label": "Years Experience"
+          },
+          {
+            "value": "15+",
+            "label": "Projects Delivered"
+          },
+          {
+            "value": "20+",
+            "label": "Venues Managed"
+          }
+        ]
+      }
+    },
+    "sections": [
+      {
+        "id": "bio",
+        "profiles": [
+          "both"
+        ],
+        "title": "About Me",
+        "description": "My background, principles, and approach to work",
+        "icon": "User",
+        "link": "/bio"
+      },
+      {
+        "id": "journey",
+        "profiles": [
+          "both"
+        ],
+        "title": "Professional Journey",
+        "description": "Career progression and key roles",
+        "icon": "TrendingUp",
+        "link": "/journey"
+      },
+      {
+        "id": "projects",
+        "profiles": [
+          "dev",
+          "both"
+        ],
+        "title": "Projects & Ventures",
+        "description": "Technology projects and business initiatives",
+        "icon": "Layers",
+        "link": "/projects"
+      },
+      {
+        "id": "skills",
+        "profiles": [
+          "both"
+        ],
+        "title": "Skills & Expertise",
+        "description": "Technical, business, and soft skills",
+        "icon": "Zap",
+        "link": "/skills"
+      },
+      {
+        "id": "achievements",
+        "profiles": [
+          "both"
+        ],
+        "title": "Achievements",
+        "description": "Key milestones and contributions",
+        "icon": "Award",
+        "link": "/achievements"
+      },
+      {
+        "id": "education",
+        "profiles": [
+          "both"
+        ],
+        "title": "Education & Certifications",
+        "description": "Formal qualifications and training",
+        "icon": "GraduationCap",
+        "link": "/education"
+      },
+      {
+        "id": "vision",
+        "profiles": [
+          "both"
+        ],
+        "title": "Vision & Goals",
+        "description": "Future direction and ambitions",
+        "icon": "Target",
+        "link": "/vision"
+      },
+      {
+        "id": "values",
+        "profiles": [
+          "both"
+        ],
+        "title": "Values & Personality",
+        "description": "Core principles and what drives me",
+        "icon": "Heart",
+        "link": "/values"
+      }
+    ]
+  },
+  "bio": {
+    "personalInfo": {
+      "profiles": [
+        "both"
+      ],
+      "name": "Vardges Petrosyan",
+      "dateOfBirth": "March 2, 1992",
+      "location": "Dubai, United Arab Emirates",
+      "languages": [
+        {
+          "name": "Russian",
+          "level": "Fluent"
+        },
+        {
+          "name": "English",
+          "level": "Fluent"
+        },
+        {
+          "name": "Armenian",
+          "level": "Fluent"
+        }
+      ]
+    },
+    "intro": {
+      "dev": {
+        "title": "Full-Stack Developer & AI Consultant",
+        "description": "I build scalable web applications and AI-powered systems for real businesses. My focus is on creating tools that reduce chaos and solve operational problems — from delivery platforms and payment systems to custom GPTs and automation frameworks.",
+        "highlights": [
+          "Full-stack development (React, Node.js, MongoDB, AWS)",
+          "AI integration and custom GPT development",
+          "Restaurant and delivery platform expertise",
+          "Backend systems with secure architecture"
+        ]
+      },
+      "hospitality": {
+        "title": "Hospitality Operations & Bar Management Expert",
+        "description": "Over a decade of experience building and managing high-volume hospitality venues. I specialize in operational systems, beverage program innovation, team leadership, and transforming service quality through structured processes.",
+        "highlights": [
+          "Bar management and beverage consulting",
+          "Operational standardization and SOP development",
+          "Team training and leadership",
+          "Menu engineering and cost control"
+        ]
+      },
+      "both": {
+        "title": "Tech × Hospitality Integration Specialist",
+        "description": "I operate at the intersection of hospitality, business operations, and technology. For over a decade, I built my career in hospitality — from bartender to bar manager. In recent years, I redirected my energy toward technology and software development, combining my hospitality background with growing expertise in full-stack development.",
+        "highlights": [
+          "Full-stack web applications for hospitality businesses",
+          "Operational tools for restaurants and delivery brands",
+          "AI-powered systems for real business operations",
+          "Systems thinking across technology and service"
+        ]
+      }
+    },
+    "principles": [
+      {
+        "profiles": [
+          "both"
+        ],
+        "id": 1,
+        "title": "Reality > Appearance",
+        "icon": "target",
+        "description": "I value what works, not what looks good on paper. I don't pitch things I can't deliver. I see authenticity and clarity as more valuable than image.",
+        "quote": "In both hospitality and tech, I care about execution. I expect systems that can actually survive real usage — busy service, real customers, real money.",
+        "practical": [
+          "Build systems that work in reality, not just in theory",
+          "No overpromising — only commitments I can fulfill",
+          "Focus on execution over appearance"
+        ]
+      },
+      {
+        "profiles": [
+          "both"
+        ],
+        "id": 2,
+        "title": "My Word Is My Bond",
+        "icon": "handshake",
+        "description": "If I commit to something, I do it. I don't overpromise. I don't hide from responsibility when things get difficult.",
+        "quote": "Reputation matters. Reliability is not 'nice,' it's leverage.",
+        "practical": [
+          "Commitments are serious",
+          "Follow-through builds trust",
+          "Trust is an asset, not a nicety"
+        ]
+      },
+      {
+        "profiles": [
+          "both"
+        ],
+        "id": 3,
+        "title": "Systems & Deliberate Problem-Solving",
+        "icon": "layers",
+        "description": "I believe in spending serious time understanding a problem before acting. My typical ratio: 70–80% analysis, planning, sharpening the approach; 20–30% execution.",
+        "quote": "If I had an hour to chop down a tree, I'd spend the first 45 minutes sharpening my axe.",
+        "practical": [
+          "Preparation is not slowing down — it's the condition for doing something properly",
+          "Clarity of thought is part of the work, not 'extra'",
+          "Choosing one path means not choosing others — I take that seriously"
+        ]
+      }
+    ],
+    "languageJourney": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Language Journey / Persistence",
+      "initialState": "When I first arrived in the UAE, the only English word I knew was 'ok.'",
+      "challenge": "That forced me into a decision: adapt or be limited.",
+      "approach": [
+        "Studied through immersion, constant interaction, and trial-and-error, not just textbooks",
+        "Pushed through discomfort, frustration, and embarrassment in real working environments",
+        "Treated language as a tool I had to win, not something I might get 'eventually'"
+      ],
+      "outcomes": [
+        "English fluency",
+        "Cultural adaptability",
+        "Ability to operate in global, mixed teams"
+      ],
+      "lessonsLearned": [
+        "Persistence under pressure",
+        "Willingness to rebuild myself from zero",
+        "Zero fear of starting as a beginner in a new field"
+      ],
+      "impact": "These same habits now drive how I approach software, systems thinking, and business."
+    },
+    "careerDirection": {
+      "dev": {
+        "title": "Technology & Development",
+        "description": "Technology is not just coding. For me, it's about solving real operational problems.",
+        "focus": [
+          "Full-stack web development",
+          "AI-powered tools and automation",
+          "Restaurant and delivery platforms",
+          "Backend systems with secure architecture"
+        ],
+        "questions": [
+          "How do we handle delivery logic?",
+          "How do we control cost and margin with discounts and aggregators?",
+          "How do we automate repetitive decisions so humans can focus on higher-value judgment?"
+        ],
+        "philosophy": "I don't build 'apps for fun.' I build tools that reduce chaos."
+      },
+      "hospitality": {
+        "title": "Hospitality Operations",
+        "description": "Hospitality is not something I 'left.' It's my backbone.",
+        "focus": [
+          "Bar management and consulting",
+          "Beverage program design and innovation",
+          "Operations optimization and standardization",
+          "Team training and leadership"
+        ],
+        "openTo": [
+          "Consulting opportunities",
+          "Operations management",
+          "Training and development",
+          "Direct hands-on work with meaningful culture"
+        ],
+        "philosophy": "Hospitality, to me, is driven by who you work under. The team and management culture decide whether the job has purpose."
+      },
+      "both": {
+        "title": "Integrated Approach",
+        "description": "I build systems that merge hospitality operations, software automation, and marketing strategy.",
+        "focus": [
+          "Software tools for restaurants and delivery brands",
+          "Designing operational flows and internal logic (payments, delivery areas, order handling)",
+          "Creating structured marketing and retention systems",
+          "Developing AI-driven assistants that support actual day-to-day work"
+        ],
+        "philosophy": "This is not a career 'switch.' It's an expansion. I am combining what I learned on the floor with what I'm now building in code."
+      }
+    },
+    "workPhilosophy": {
+      "profiles": [
+        "both"
+      ],
+      "sections": [
+        {
+          "title": "How I Think About Work",
+          "areas": [
+            {
+              "name": "Technology",
+              "description": "Technology is about solving real operational problems, not just coding apps for fun."
+            },
+            {
+              "name": "Marketing",
+              "description": "Marketing is strategy and positioning first — not just posting content. Social media and ads are deployment tools, not the root strategy."
+            },
+            {
+              "name": "Hospitality",
+              "description": "Hospitality is my backbone. I'm open to opportunities if the culture is serious, leadership has standards, and direction is meaningful."
+            }
+          ]
+        }
+      ]
+    },
+    "futureDirection": {
+      "profiles": [
+        "both"
+      ],
+      "title": "What Comes Next",
+      "vision": "Use technology, systems thinking, and structured marketing to fix real problems in hospitality and delivery businesses.",
+      "approach": [
+        "Build processes and tools that are repeatable, not just one-off solutions",
+        "Operate in spaces where discipline, creativity, and practicality all matter at the same time"
+      ],
+      "summary": "I build things that work, and I build them to last."
+    }
+  },
+  "about": {
+    "personalInfo": {
+      "profiles": [
+        "both"
+      ],
+      "name": "Vardges Petrosyan",
+      "dateOfBirth": "March 2, 1992",
+      "location": "Dubai, United Arab Emirates",
+      "languages": [
+        {
+          "name": "Russian",
+          "level": "Fluent"
+        },
+        {
+          "name": "English",
+          "level": "Fluent"
+        },
+        {
+          "name": "Armenian",
+          "level": "Fluent"
+        }
+      ]
+    },
+    "intro": {
+      "dev": {
+        "title": "Full-Stack Developer & AI Consultant",
+        "description": "I build scalable web applications and AI-powered systems for real businesses. My focus is on creating tools that reduce chaos and solve operational problems — from delivery platforms and payment systems to custom GPTs and automation frameworks.",
+        "highlights": [
+          "Full-stack development (React, Node.js, MongoDB, AWS)",
+          "AI integration and custom GPT development",
+          "Restaurant and delivery platform expertise",
+          "Backend systems with secure architecture"
+        ]
+      },
+      "hospitality": {
+        "title": "Hospitality Operations & Bar Management Expert",
+        "description": "Over a decade of experience building and managing high-volume hospitality venues. I specialize in operational systems, beverage program innovation, team leadership, and transforming service quality through structured processes.",
+        "highlights": [
+          "Bar management and beverage consulting",
+          "Operational standardization and SOP development",
+          "Team training and leadership",
+          "Menu engineering and cost control"
+        ]
+      },
+      "both": {
+        "title": "Tech × Hospitality Integration Specialist",
+        "description": "I operate at the intersection of hospitality, business operations, and technology. For over a decade, I built my career in hospitality — from bartender to bar manager. In recent years, I redirected my energy toward technology and software development, combining my hospitality background with growing expertise in full-stack development.",
+        "highlights": [
+          "Full-stack web applications for hospitality businesses",
+          "Operational tools for restaurants and delivery brands",
+          "AI-powered systems for real business operations",
+          "Systems thinking across technology and service"
+        ]
+      }
+    },
+    "principles": [
+      {
+        "profiles": [
+          "both"
+        ],
+        "id": 1,
+        "title": "Reality > Appearance",
+        "icon": "target",
+        "description": "I value what works, not what looks good on paper. I don't pitch things I can't deliver. I see authenticity and clarity as more valuable than image.",
+        "quote": "In both hospitality and tech, I care about execution. I expect systems that can actually survive real usage — busy service, real customers, real money.",
+        "practical": [
+          "Build systems that work in reality, not just in theory",
+          "No overpromising — only commitments I can fulfill",
+          "Focus on execution over appearance"
+        ]
+      },
+      {
+        "profiles": [
+          "both"
+        ],
+        "id": 2,
+        "title": "My Word Is My Bond",
+        "icon": "handshake",
+        "description": "If I commit to something, I do it. I don't overpromise. I don't hide from responsibility when things get difficult.",
+        "quote": "Reputation matters. Reliability is not 'nice,' it's leverage.",
+        "practical": [
+          "Commitments are serious",
+          "Follow-through builds trust",
+          "Trust is an asset, not a nicety"
+        ]
+      },
+      {
+        "profiles": [
+          "both"
+        ],
+        "id": 3,
+        "title": "Systems & Deliberate Problem-Solving",
+        "icon": "layers",
+        "description": "I believe in spending serious time understanding a problem before acting. My typical ratio: 70–80% analysis, planning, sharpening the approach; 20–30% execution.",
+        "quote": "If I had an hour to chop down a tree, I'd spend the first 45 minutes sharpening my axe.",
+        "practical": [
+          "Preparation is not slowing down — it's the condition for doing something properly",
+          "Clarity of thought is part of the work, not 'extra'",
+          "Choosing one path means not choosing others — I take that seriously"
+        ]
+      }
+    ],
+    "coreValues": [
+      {
+        "id": 1,
+        "profiles": [
+          "both"
+        ],
+        "title": "Integrity and Reliability",
+        "icon": "shield-check",
+        "intro": "At the center of how I work is a simple rule: if I say I will do something, I do it.",
+        "description": "I was raised to believe that a person's word should mean something. That carried into my professional life and became non-negotiable. I don't exaggerate outcomes to impress people, and I don't make promises I can't keep just to look good in the moment.",
+        "principles": [
+          "Commitments are serious",
+          "Follow-through builds trust",
+          "Trust is an asset"
+        ],
+        "context": "In both hospitality and technology, people often sell ideas they can't deliver. Over time I've seen that reliability is what actually separates professionals from noise. My reputation is based on doing exactly what I said I would do — no more and no less."
+      },
+      {
+        "id": 2,
+        "profiles": [
+          "both"
+        ],
+        "title": "Structured Thinking and Systems",
+        "icon": "layers",
+        "intro": "I don't operate on impulse. I operate on structure.",
+        "description": "My instinct is to step back before acting. I spend most of my energy up front analyzing the situation, understanding constraints, and planning.",
+        "distribution": {
+          "planning": "70–80% of the effort into thinking, planning, sharpening the approach",
+          "execution": "20–30% into execution"
+        },
+        "approach": [
+          "Understand the system",
+          "Identify the failure points",
+          "Design a process that can actually survive pressure"
+        ],
+        "philosophy": "'Speed' without clarity is not impressive. Clean execution that can scale and survive is impressive. Preparation is not wasted time — it's the thing that makes results possible and repeatable."
+      },
+      {
+        "id": 3,
+        "profiles": [
+          "both"
+        ],
+        "title": "Persistence and Adaptability",
+        "icon": "trending-up",
+        "intro": "My growth has always come from situations where I started with nothing and had to build capability from zero.",
+        "story": "When I first arrived in the UAE, I knew only one English word: 'ok.' No comfort zone, no safety net. Learning the language was not symbolic. It was survival. I had to adapt to different cultures, service standards, and expectations that I couldn't even fully understand at first.",
+        "method": [
+          "Daily repetition",
+          "Embarrassing failures",
+          "Slow improvement",
+          "Absolute refusal to quit"
+        ],
+        "outcomes": [
+          "Resilience",
+          "Cultural adaptability",
+          "Patience for long, difficult progress",
+          "Confidence that I can retool myself when needed"
+        ],
+        "applications": [
+          "Becoming fluent in English",
+          "Moving from hospitality operations into marketing and growth strategy",
+          "Learning full-stack development and backend systems from scratch",
+          "Integrating AI and automation into business workflows"
+        ],
+        "conclusion": "I am comfortable starting at zero and working until I'm dangerous."
+      }
+    ],
+    "currentFocus": {
+      "dev": {
+        "title": "Building Full-Stack Solutions",
+        "description": "I'm focused on creating practical web applications and AI-powered tools for businesses. Available for freelance and consulting projects.",
+        "goals": [
+          "Full-stack development (React, Node.js, MongoDB)",
+          "AI integration and custom GPTs",
+          "Restaurant and delivery platforms",
+          "Automation frameworks"
+        ]
+      },
+      "hospitality": {
+        "title": "Hospitality Operations Expert",
+        "description": "Leveraging 10+ years of operational experience to build better systems. Available for consulting and development projects.",
+        "goals": [
+          "Operational systems and SOPs",
+          "Beverage program design",
+          "Team training and leadership",
+          "Business process optimization"
+        ]
+      },
+      "both": {
+        "title": "Tech × Business Integration",
+        "description": "I build software solutions informed by real operational experience. Available for freelance development and consulting projects that bridge technology and business operations.",
+        "goals": [
+          "Full-stack applications for hospitality businesses",
+          "AI-powered operational tools",
+          "Systems thinking and process optimization",
+          "Practical problem-solving"
+        ]
+      }
+    }
+  },
+  "work": {
+    "projects": {
+      "categories": {
+        "tech": {
+          "profiles": [
+            "dev",
+            "both"
+          ],
+          "title": "Technology Projects",
+          "description": "Full-stack applications, AI integration, and software solutions for real businesses",
+          "projects": [
+            {
+              "id": 1,
+              "name": "Vkusno Full-Stack Platform",
+              "category": "tech",
+              "type": "Full-Stack Web Application",
+              "period": "2024 - Present",
+              "description": "Complete restaurant delivery platform with multi-branch logic, secure architecture, and comprehensive business features",
+              "techStack": [
+                "React",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "Mongoose",
+                "AWS S3",
+                "Stripe",
+                "Socket.io",
+                "SendGrid",
+                "Twilio",
+                "Google Maps API"
+              ],
+              "features": [
+                "Multi-branch system with individual coverage areas and capacity management",
+                "Secure file handling via AWS S3 with presigned URLs",
+                "Complete wallet system: top-ups, refunds, full/partial payments, saved cards",
+                "OTP verification flows via SMS, WhatsApp, and Telegram",
+                "Transactional email integration (SendGrid, Amazon SES)",
+                "Real-time updates with Socket.io",
+                "JWT authentication with token blacklisting",
+                "Role-based access control",
+                "Order management with status workflows",
+                "Delivery coverage area logic with branch routing"
+              ],
+              "metrics": {
+                "impact": "Operational platform supporting multi-branch restaurant with secure payments and real-time communication"
+              },
+              "highlights": [
+                "Schemas map to actual business processes",
+                "APIs are secure, predictable, and easy to extend",
+                "Frontend is clear, fast, and multilingual"
+              ]
+            },
+            {
+              "id": 2,
+              "name": "Custom GPT Development",
+              "category": "tech",
+              "type": "AI Integration",
+              "period": "2024 - Present",
+              "description": "Brand-specific GPT assistants tailored to business owners, managers, and staff for operational support",
+              "techStack": [
+                "ChatGPT",
+                "OpenAI API",
+                "Prompt Engineering"
+              ],
+              "features": [
+                "Custom instructions aligned with brand identity",
+                "Content structuring and drafting assistance",
+                "Customer interaction templates",
+                "Internal process support",
+                "Brand voice consistency enforcement"
+              ],
+              "metrics": {
+                "impact": "Practical AI tools that help businesses manage tasks more efficiently"
+              },
+              "highlights": [
+                "Not generic chatbots — tailored to specific brand needs",
+                "Translates brand rules into usable assistants",
+                "Supports routine decision-making aligned with standards"
+              ]
+            },
+            {
+              "id": 3,
+              "name": "The Cocktail Tree Website",
+              "category": "tech",
+              "type": "Business Website",
+              "period": "2022 - Present",
+              "description": "Professional website for beverage consulting brand with service showcase and content platform",
+              "techStack": [
+                "React",
+                "Node.js",
+                "CSS3"
+              ],
+              "features": [
+                "Service offering presentation",
+                "Portfolio and case studies",
+                "Content management",
+                "Contact and inquiry forms",
+                "Responsive design"
+              ],
+              "metrics": {
+                "impact": "Online presence supporting ~5,000 LinkedIn followers and consulting inquiries"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "journey": {
+      "summary": {
+        "profiles": [
+          "both"
+        ],
+        "overview": "I spent 10+ years in hospitality operations, building systems and managing teams. In 2024, I transitioned to full-stack development, applying that systems thinking to software. My hospitality background informs how I build practical, operationally-sound solutions.",
+        "currentFocus": "Building full-stack applications and AI tools for businesses. Available for freelance and consulting projects."
+      },
+      "roles": [
+        {
+          "id": 1,
+          "title": "Business Development & Marketing Manager",
+          "company": "Vkusno",
+          "location": "Dubai, UAE",
+          "startDate": "2024-03",
+          "endDate": null,
+          "period": "Mar 2024 - Present",
+          "profiles": [
+            "dev",
+            "both"
+          ],
+          "category": "tech",
+          "type": "hybrid",
+          "scope": "Growth, partnerships, core marketing strategy, brand identity, and tech touchpoints (website/app) for an authentic Russian cuisine brand.",
+          "responsibilities": [
+            "Built and managed delivery/aggregator partnerships (Talabat, Careem, Deliveroo, Noon) to streamline operations and customer experience",
+            "Planned and executed integrated marketing (SEO, content, social, influencer) aligned to measurable objectives",
+            "Led brand identity refinement, including visual direction and messaging consistency",
+            "Directed groundwork for website and customer-facing app",
+            "Implemented customer feedback loops, loyalty programs, and seasonal/limited-time campaigns",
+            "Designed promotions aligned with kitchen capacity to avoid overload",
+            "Managed and optimized marketing budget with ROI focus"
+          ],
+          "achievements": [
+            "Synced marketing cadence with operational throughput to reduce service bottlenecks",
+            "Established a cohesive brand system across all digital surfaces to improve recognition and conversion"
+          ],
+          "tags": [
+            "marketing",
+            "tech",
+            "brand",
+            "aggregators"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Founder",
+          "company": "The Cocktail Tree",
+          "location": "Dubai, UAE",
+          "startDate": "2022-01",
+          "endDate": null,
+          "period": "Jan 2022 - Present",
+          "profiles": [
+            "hospitality",
+            "both"
+          ],
+          "category": "hospitality",
+          "type": "consulting",
+          "scope": "Beverage consulting and training concept that turns high-level mixology expertise into structured, repeatable services and content.",
+          "responsibilities": [
+            "Defined the consulting brand, service model, and training programs",
+            "Built packaged, productized offerings for restaurants and bars (menu development, cost control, staff training)",
+            "Established credibility and reach as a systems-driven partner rather than a 'guest bartender'"
+          ],
+          "achievements": [
+            "Delivered practical playbooks for beverage programs: cost-effective recipes, menu engineering for margin, upsell logic, and service standards",
+            "Built frameworks that venues can actually implement under real pressure"
+          ],
+          "tags": [
+            "consulting",
+            "beverage",
+            "training",
+            "brand"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Bar Manager",
+          "company": "BFF Sports Bar",
+          "location": "Dubai, UAE",
+          "startDate": "2018-12",
+          "endDate": "2024-09",
+          "period": "Dec 2018 - Sep 2024",
+          "profiles": [
+            "hospitality",
+            "both"
+          ],
+          "category": "hospitality",
+          "type": "operations",
+          "scope": "Full bar operations in a high-volume sports venue, including team leadership, beverage program design, service standards, and event execution.",
+          "responsibilities": [
+            "Led staffing, onboarding, scheduling, and continuous training",
+            "Drove cost control, stock management, and supplier relationships",
+            "Built and updated cocktail/beer programs; coordinated F&B pairing with kitchen",
+            "Set operational KPIs and QA routines to protect quality during peak hours"
+          ],
+          "achievements": [
+            "Introduced process improvements that stabilized throughput during high-pressure service without losing quality",
+            "Built a guest-focused culture that increased repeat visits and made average check behavior more predictable"
+          ],
+          "tags": [
+            "operations",
+            "team-leadership",
+            "beverage",
+            "high-volume"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Outlet Manager & Acting Bar Manager",
+          "company": "Subah Group / Sheraton Al Khalidiya",
+          "subCompany": "The 3rd Avenue Pub",
+          "location": "Abu Dhabi, UAE",
+          "startDate": "2018-03",
+          "endDate": "2018-08",
+          "period": "Mar 2018 - Aug 2018",
+          "profiles": [
+            "hospitality",
+            "both"
+          ],
+          "category": "hospitality",
+          "type": "operations",
+          "scope": "Multi-outlet exposure (20+ venues) with direct responsibility for a flagship pub.",
+          "responsibilities": [
+            "Standardized SOPs, service benchmarks, and staff training across multiple outlets",
+            "Contributed to labor planning, capacity balancing, and guest experience refinement",
+            "Acted as a link between operations, service, and leadership"
+          ],
+          "achievements": [
+            "Rolled out training programs that improved consistency across venues and raised service reliability across shifts"
+          ],
+          "tags": [
+            "multi-outlet",
+            "standardization",
+            "training",
+            "operations"
+          ]
+        }
+      ]
+    }
+  },
+  "journey": {
+    "narrative": {
+      "profiles": [
+        "both"
+      ],
+      "overview": "I began in hands-on hospitality roles (bartender → head bartender → bar manager), progressed into multi-venue leadership and brand building, and since 2024 have layered in technology and data-backed marketing to drive measurable growth.",
+      "currentFocus": "Today I operate at the intersection of hospitality operations, core marketing and brand strategy, and software and AI-driven tooling."
+    },
+    "roles": [
+      {
+        "id": 1,
+        "title": "Business Development & Marketing Manager",
+        "company": "Vkusno",
+        "location": "Dubai, UAE",
+        "startDate": "2024-03",
+        "endDate": null,
+        "period": "Mar 2024 - Present",
+        "profiles": [
+          "dev",
+          "both"
+        ],
+        "category": "tech",
+        "type": "hybrid",
+        "scope": "Growth, partnerships, core marketing strategy, brand identity, and tech touchpoints (website/app) for an authentic Russian cuisine brand.",
+        "responsibilities": [
+          "Built and managed delivery/aggregator partnerships (Talabat, Careem, Deliveroo, Noon) to streamline operations and customer experience",
+          "Planned and executed integrated marketing (SEO, content, social, influencer) aligned to measurable objectives",
+          "Led brand identity refinement, including visual direction and messaging consistency",
+          "Directed groundwork for website and customer-facing app",
+          "Implemented customer feedback loops, loyalty programs, and seasonal/limited-time campaigns",
+          "Designed promotions aligned with kitchen capacity to avoid overload",
+          "Managed and optimized marketing budget with ROI focus"
+        ],
+        "achievements": [
+          "Synced marketing cadence with operational throughput to reduce service bottlenecks",
+          "Established a cohesive brand system across all digital surfaces to improve recognition and conversion"
+        ],
+        "tags": [
+          "marketing",
+          "tech",
+          "brand",
+          "aggregators"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Founder",
+        "company": "The Cocktail Tree",
+        "location": "Dubai, UAE",
+        "startDate": "2022-01",
+        "endDate": null,
+        "period": "Jan 2022 - Present",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "category": "hospitality",
+        "type": "consulting",
+        "scope": "Beverage consulting and training concept that turns high-level mixology expertise into structured, repeatable services and content.",
+        "responsibilities": [
+          "Defined the consulting brand, service model, and training programs",
+          "Built packaged, productized offerings for restaurants and bars (menu development, cost control, staff training)",
+          "Established credibility and reach as a systems-driven partner rather than a 'guest bartender'"
+        ],
+        "achievements": [
+          "Delivered practical playbooks for beverage programs: cost-effective recipes, menu engineering for margin, upsell logic, and service standards",
+          "Built frameworks that venues can actually implement under real pressure"
+        ],
+        "tags": [
+          "consulting",
+          "beverage",
+          "training",
+          "brand"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Bar Manager",
+        "company": "BFF Sports Bar",
+        "location": "Dubai, UAE",
+        "startDate": "2018-12",
+        "endDate": "2024-09",
+        "period": "Dec 2018 - Sep 2024",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "category": "hospitality",
+        "type": "operations",
+        "scope": "Full bar operations in a high-volume sports venue, including team leadership, beverage program design, service standards, and event execution.",
+        "responsibilities": [
+          "Led staffing, onboarding, scheduling, and continuous training",
+          "Drove cost control, stock management, and supplier relationships",
+          "Built and updated cocktail/beer programs; coordinated F&B pairing with kitchen",
+          "Set operational KPIs and QA routines to protect quality during peak hours"
+        ],
+        "achievements": [
+          "Introduced process improvements that stabilized throughput during high-pressure service without losing quality",
+          "Built a guest-focused culture that increased repeat visits and made average check behavior more predictable"
+        ],
+        "tags": [
+          "operations",
+          "team-leadership",
+          "beverage",
+          "high-volume"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Outlet Manager & Acting Bar Manager",
+        "company": "Subah Group / Sheraton Al Khalidiya",
+        "subCompany": "The 3rd Avenue Pub",
+        "location": "Abu Dhabi, UAE",
+        "startDate": "2018-03",
+        "endDate": "2018-08",
+        "period": "Mar 2018 - Aug 2018",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "category": "hospitality",
+        "type": "operations",
+        "scope": "Multi-outlet exposure (20+ venues) with direct responsibility for a flagship pub.",
+        "responsibilities": [
+          "Standardized SOPs, service benchmarks, and staff training across multiple outlets",
+          "Contributed to labor planning, capacity balancing, and guest experience refinement",
+          "Acted as a link between operations, service, and leadership"
+        ],
+        "achievements": [
+          "Rolled out training programs that improved consistency across venues and raised service reliability across shifts"
+        ],
+        "tags": [
+          "multi-outlet",
+          "standardization",
+          "training",
+          "operations"
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Head Bartender",
+        "company": "Southern Sun",
+        "subCompany": "Blu Sky Lounge & Grill",
+        "location": "Abu Dhabi, UAE",
+        "startDate": "2015-01",
+        "endDate": "2016-10",
+        "period": "Jan 2015 - Oct 2016",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "category": "hospitality",
+        "type": "service",
+        "scope": "Service leadership and beverage program development in a sports-bar/lounge environment.",
+        "responsibilities": [
+          "Managed peak-hour service while keeping quality and timing consistent",
+          "Mentored junior bartenders and developed their speed, accuracy, and product knowledge",
+          "Helped evolve and refresh the beverage offering to match guest profile and positioning"
+        ],
+        "achievements": [],
+        "tags": [
+          "service",
+          "beverage",
+          "mentoring",
+          "peak-service"
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Bartender → Acting Head Bartender",
+        "company": "Miramar Al Aqah Beach Resort",
+        "location": "Fujairah, UAE",
+        "startDate": "2013-09",
+        "endDate": "2014-12",
+        "period": "Sep 2013 - Dec 2014",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "category": "hospitality",
+        "type": "service",
+        "scope": "High-volume, dual-environment operation: daytime relaxed beach bar service and nighttime club-style atmosphere.",
+        "responsibilities": [
+          "Adapted service style, speed, and menu between completely different day/night formats",
+          "Maintained standards under volume with an international customer base",
+          "Reinforced guest experience through product range, pace, and consistency"
+        ],
+        "achievements": [],
+        "tags": [
+          "high-volume",
+          "adaptability",
+          "service",
+          "beach-club"
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Head Bartender",
+        "company": "Hotel Metropol Moscow",
+        "subCompany": "Shalyapin Bar",
+        "location": "Moscow, Russia",
+        "startDate": "2013-01",
+        "endDate": "2013-08",
+        "period": "Jan 2013 - Aug 2013",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "category": "hospitality",
+        "type": "premium",
+        "scope": "Premium bar program in a luxury environment with 500+ SKUs.",
+        "responsibilities": [
+          "Led a multicultural bar team in a high-expectation environment",
+          "Owned drink presentation, spirits curation, and inventory control",
+          "Delivered both technical execution and guest experience at a 'fine service' standard"
+        ],
+        "achievements": [],
+        "tags": [
+          "premium",
+          "luxury",
+          "multicultural",
+          "fine-service"
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Bar Back → Bartender",
+        "company": "Congress Hotel",
+        "subCompany": "Venice Outlet Bar",
+        "location": "Yerevan, Armenia",
+        "startDate": "2011-03",
+        "endDate": "2013-01",
+        "period": "Mar 2011 - Jan 2013",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "category": "hospitality",
+        "type": "foundation",
+        "scope": "Foundational service experience: inventory discipline, hygiene, guest interaction, and teamwork.",
+        "responsibilities": [
+          "Progressed rapidly from bar back to bartender",
+          "Added creative, trend-aligned drinks to keep offering current",
+          "Began mentoring junior teammates early, even while still growing"
+        ],
+        "achievements": [],
+        "tags": [
+          "foundation",
+          "progression",
+          "creativity",
+          "mentoring"
+        ]
+      }
+    ],
+    "professionalDevelopment": {
+      "profiles": [
+        "hospitality",
+        "both"
+      ],
+      "title": "Mixology Bus Tour — Europe",
+      "period": "Nov 2016 - May 2017",
+      "details": "33 countries • 65 cities • 70 venues",
+      "description": [
+        "Immersive study of regional technique, service etiquette, and venue operations",
+        "Built an international network of bar professionals and operators",
+        "Observed how different markets solve speed, consistency, and experience",
+        "Fed these insights back into later leadership, training structures, and program design"
+      ],
+      "tags": [
+        "professional-development",
+        "networking",
+        "international"
+      ]
+    },
+    "themes": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Cross-Role Themes (What Repeats and Compounds)",
+      "items": [
+        {
+          "title": "Systems & Standards",
+          "description": "I build procedures, train teams on them, and enforce quality. This is how consistency scales across shifts, across venues, and across brands."
+        },
+        {
+          "title": "Brand Building",
+          "description": "I shape not just the menu, but the identity: tone, visuals, positioning, and guest experience. I extend that identity across both physical and digital surfaces."
+        },
+        {
+          "title": "Operational Pragmatism",
+          "description": "I align marketing/demand generation (campaigns, promotions, exposure) with actual operational capacity. I don't create traffic that the operation can't support."
+        },
+        {
+          "title": "People Development",
+          "description": "I train and mentor staff so they become confident, fast, and consistent. I build teams that are stable, not constantly rebuilding under stress."
+        },
+        {
+          "title": "Tech-Enabled Growth",
+          "description": "Since 2024, I've connected operations, brand, and marketing with technology: website and app groundwork, loyalty systems and feedback loops, and data-backed marketing campaigns anchored to ROI, not vanity metrics."
+        }
+      ]
+    }
+  },
+  "projects": {
+    "categories": {
+      "tech": {
+        "profiles": [
+          "dev",
+          "both"
+        ],
+        "title": "Technology Projects",
+        "description": "Full-stack applications, AI integration, and software solutions for real businesses",
+        "projects": [
+          {
+            "id": 1,
+            "name": "Vkusno Full-Stack Platform",
+            "category": "tech",
+            "type": "Full-Stack Web Application",
+            "period": "2024 - Present",
+            "description": "Complete restaurant delivery platform with multi-branch logic, secure architecture, and comprehensive business features",
+            "techStack": [
+              "React",
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "Mongoose",
+              "AWS S3",
+              "Stripe",
+              "Socket.io",
+              "SendGrid",
+              "Twilio",
+              "Google Maps API"
+            ],
+            "features": [
+              "Multi-branch system with individual coverage areas and capacity management",
+              "Secure file handling via AWS S3 with presigned URLs",
+              "Complete wallet system: top-ups, refunds, full/partial payments, saved cards",
+              "OTP verification flows via SMS, WhatsApp, and Telegram",
+              "Transactional email integration (SendGrid, Amazon SES)",
+              "Real-time updates with Socket.io",
+              "JWT authentication with token blacklisting",
+              "Role-based access control",
+              "Order management with status workflows",
+              "Delivery coverage area logic with branch routing"
+            ],
+            "metrics": {
+              "impact": "Operational platform supporting multi-branch restaurant with secure payments and real-time communication"
+            },
+            "highlights": [
+              "Schemas map to actual business processes",
+              "APIs are secure, predictable, and easy to extend",
+              "Frontend is clear, fast, and multilingual"
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Custom GPT Development",
+            "category": "tech",
+            "type": "AI Integration",
+            "period": "2024 - Present",
+            "description": "Brand-specific GPT assistants tailored to business owners, managers, and staff for operational support",
+            "techStack": [
+              "ChatGPT",
+              "OpenAI API",
+              "Prompt Engineering"
+            ],
+            "features": [
+              "Custom instructions aligned with brand identity",
+              "Content structuring and drafting assistance",
+              "Customer interaction templates",
+              "Internal process support",
+              "Brand voice consistency enforcement"
+            ],
+            "metrics": {
+              "impact": "Practical AI tools that help businesses manage tasks more efficiently"
+            },
+            "highlights": [
+              "Not generic chatbots — tailored to specific brand needs",
+              "Translates brand rules into usable assistants",
+              "Supports routine decision-making aligned with standards"
+            ]
+          },
+          {
+            "id": 3,
+            "name": "The Cocktail Tree Website",
+            "category": "tech",
+            "type": "Business Website",
+            "period": "2022 - Present",
+            "description": "Professional website for beverage consulting brand with service showcase and content platform",
+            "techStack": [
+              "React",
+              "Node.js",
+              "CSS3"
+            ],
+            "features": [
+              "Service offering presentation",
+              "Portfolio and case studies",
+              "Content management",
+              "Contact and inquiry forms",
+              "Responsive design"
+            ],
+            "metrics": {
+              "impact": "Online presence supporting ~5,000 LinkedIn followers and consulting inquiries"
+            }
+          }
+        ]
+      },
+      "brands": {
+        "profiles": [
+          "both"
+        ],
+        "title": "Brand Development",
+        "description": "End-to-end brand creation from concept to market-ready identity",
+        "projects": [
+          {
+            "id": 4,
+            "name": "Vkusno Brand Development",
+            "category": "brands",
+            "type": "Full Brand Creation",
+            "period": "2024",
+            "description": "Complete brand development for authentic Russian cuisine restaurant: from naming concept to fully operational digital presence",
+            "deliverables": [
+              "Brand identity and visual system",
+              "Logo design and brand book",
+              "Website development and hosting setup",
+              "Social media channel creation and strategy",
+              "Professional email setup and signatures",
+              "Menu design and packaging language",
+              "Aggregator presence (Talabat, Deliveroo, Careem, Noon)",
+              "Marketing campaign structure",
+              "Custom GPT for business management"
+            ],
+            "metrics": {
+              "impact": "Fully operational restaurant brand with cohesive identity across all touchpoints"
+            },
+            "highlights": [
+              "Transformed idea into market-ready brand",
+              "Integrated marketing with operational capacity",
+              "Built systems for sustainable growth"
+            ]
+          },
+          {
+            "id": 5,
+            "name": "Bloome (Cakes & Flowers)",
+            "category": "brands",
+            "type": "Brand Concept",
+            "period": "2024",
+            "description": "Brand development for cakes and flowers delivery concept",
+            "deliverables": [
+              "Brand name and concept",
+              "Logo design",
+              "Visual identity system",
+              "Social media presence",
+              "Coming soon website",
+              "Brand positioning"
+            ],
+            "metrics": {
+              "impact": "Brand ready for market launch with complete identity package"
+            }
+          },
+          {
+            "id": 6,
+            "name": "Little Almonds (Kids Healthy Food)",
+            "category": "brands",
+            "type": "Brand Concept",
+            "period": "2024",
+            "description": "Brand development for kids-focused healthy food concept",
+            "deliverables": [
+              "Brand name and concept",
+              "Logo design",
+              "Visual identity system",
+              "Target market positioning",
+              "Brand messaging for parents",
+              "Social media groundwork"
+            ],
+            "metrics": {
+              "impact": "Complete brand package ready for operational phase"
+            }
+          }
+        ]
+      },
+      "bar": {
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "title": "Bar & Beverage Innovation",
+        "description": "Operational improvements and creative concepts that transformed beverage programs",
+        "projects": [
+          {
+            "id": 7,
+            "name": "House Crafts",
+            "category": "bar",
+            "type": "Beverage Innovation Program",
+            "venue": "BFF Sports Bar",
+            "period": "2020 - 2024",
+            "description": "Revolutionary in-house craft program creating liqueurs, syrups, and bitters to reduce costs and create unique identity",
+            "challenge": "24 beer taps wasting 2-3 pints per tap daily, expensive imported liqueurs limiting promotional capabilities",
+            "solution": [
+              "Converted home into mixology lab during COVID lockdown",
+              "Developed house-made liqueurs replicating premium products at fraction of cost",
+              "Created signature craft line (liqueurs, bitters, pre-batched cocktails)",
+              "Built exclusive identity around house crafts"
+            ],
+            "metrics": {
+              "costReduction": "Cocktail costs from AED 18 down to AED 4-5",
+              "profitability": "Beverage cost ratio from 60-70% to 20-30%",
+              "salesGrowth": "30-40 cocktails/month to 2,000+",
+              "identity": "Exclusive in-house craft line"
+            },
+            "impact": "Reshaped guest experience, created signature identity, demonstrated how operational challenges transform into innovation and profitability"
+          },
+          {
+            "id": 8,
+            "name": "Our Competition",
+            "category": "bar",
+            "type": "Staff Engagement Initiative",
+            "venue": "BFF Sports Bar",
+            "period": "2021 - 2022",
+            "description": "Monthly in-house cocktail challenge turning slow-moving inventory into innovation and team bonding",
+            "challenge": "Slow-moving inventory tying up costs and taking shelf space",
+            "solution": [
+              "Monthly cocktail challenge using underutilized products",
+              "Cross-department judging (kitchen, floor, finance staff)",
+              "Winner rewards: vouchers, gifts, cash bonuses",
+              "Winning cocktail featured on menu for full month with BOGO promotion",
+              "Waiters compete to sell the most, kitchen pairs best dishes"
+            ],
+            "metrics": {
+              "salesGrowth": "Slow-moving products transformed into menu stars",
+              "engagement": "Broke silos between departments, fostered collaboration and pride",
+              "customerExcitement": "Guests asked about 'winning cocktail of the month'",
+              "culture": "Evolved into place of ongoing creativity and innovation"
+            },
+            "impact": "Staff gained ownership and pride, inventory problem became win-win for team and guests"
+          },
+          {
+            "id": 9,
+            "name": "BFF's Weekly Tasting Experience",
+            "category": "bar",
+            "type": "Customer Experience Program",
+            "venue": "BFF Sports Bar",
+            "period": "2020 - 2021",
+            "description": "Weekly Saturday tasting events exploring drinks categories with education and entertainment",
+            "challenge": "Stockroom full of underutilized bottles post-COVID lockdown",
+            "solution": [
+              "Saturday evening tasting sessions hosted personally",
+              "Curated lineups of rums, whiskies, gins, sparkling wines, craft beers, cocktails",
+              "Complementary food pairings with kitchen team",
+              "Narrated history, craftsmanship, and unique features with microphone",
+              "Free tastings creating excitement and goodwill"
+            ],
+            "metrics": {
+              "attendance": "From 50-55 initial participants to 200+ guests every Saturday",
+              "duration": "Ran for 9 months straight",
+              "productMovement": "Dead stock became highlights, boosted sales and visibility",
+              "positioning": "Positioned BFF as more than sports bar — hub for beverage education"
+            },
+            "impact": "Guests weren't just drinking — they were learning and engaging, solving stock issue while elevating reputation"
+          }
+        ]
+      },
+      "marketing": {
+        "profiles": [
+          "both"
+        ],
+        "title": "Marketing & Growth",
+        "description": "Data-driven campaigns, aggregator growth, and ROI-focused initiatives",
+        "projects": [
+          {
+            "id": 10,
+            "name": "Multi-Aggregator Growth Campaign",
+            "category": "marketing",
+            "type": "Digital Marketing & Growth",
+            "period": "2024 - Present",
+            "description": "Comprehensive aggregator strategy across major platforms with ROI-driven advertising",
+            "platforms": [
+              "Talabat",
+              "Deliveroo",
+              "Careem",
+              "Noon",
+              "Keeta",
+              "Amazon 15 Minutes",
+              "Instashop",
+              "Smiles by Etisalat"
+            ],
+            "approach": [
+              "Built and managed partnerships with Key Account Managers",
+              "Set and optimized CPC budgets across platforms",
+              "Tracked performance through aggregator dashboards",
+              "Designed promotion mechanics (discounts, caps, cashback)",
+              "Aligned offers with operational capacity and margin goals",
+              "Separated basket value from net revenue for true ROI"
+            ],
+            "metrics": {
+              "focus": "Cost-per-order, ROAS, net revenue after discounts",
+              "approach": "Profitable volume growth vs. chaotic traffic spikes",
+              "diversification": "Reduced dependency on single platform"
+            },
+            "impact": "Controlled growth through disciplined spend management and capacity-aligned campaigns"
+          },
+          {
+            "id": 11,
+            "name": "Brand Launch & Positioning",
+            "category": "marketing",
+            "type": "Integrated Marketing",
+            "period": "2024",
+            "description": "End-to-end marketing for new restaurant brand launch",
+            "components": [
+              "Brand identity and messaging",
+              "Pre-launch buzz building",
+              "Aggregator onboarding and visibility",
+              "Influencer collaboration strategy",
+              "Seasonal and loyalty campaigns",
+              "SEO and content strategy",
+              "Email marketing flows",
+              "Social media calendar"
+            ],
+            "approach": [
+              "Connected advertising spend to ROI",
+              "Ensured campaigns matched service capacity",
+              "Built retention paths, not just acquisition",
+              "Tracked real metrics: orders, margin, repeat business"
+            ],
+            "impact": "Brand recognition translating into orders and retention, not just reach"
+          }
+        ]
+      }
+    },
+    "overview": {
+      "profiles": [
+        "both"
+      ],
+      "statement": "My projects span technology, hospitality, and business development — reflecting both my operational roots and expansion into software, AI, and growth strategy. Each project demonstrates systems thinking, practical execution, and measurable impact."
+    }
+  },
+  "skills": {
+    "categories": {
+      "technical": {
+        "profiles": [
+          "dev",
+          "both"
+        ],
+        "id": "technical",
+        "title": "Technical (Web & Software)",
+        "icon": "code",
+        "subcategories": {
+          "frontend": {
+            "title": "Frontend Development",
+            "description": "Building modular, scalable, and user-friendly interfaces with a focus on clarity, reusability, and performance.",
+            "skills": [
+              {
+                "name": "JavaScript (ES6+)",
+                "competencies": [
+                  "asynchronous programming",
+                  "modular code structure",
+                  "DOM manipulation"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "React",
+                "competencies": [
+                  "component-based architecture",
+                  "custom hooks",
+                  "context API for global state management",
+                  "reusable UI components"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Vite",
+                "competencies": [
+                  "fast development server and optimized build pipelines for React apps"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "HTML5 & CSS3",
+                "competencies": [
+                  "semantic structure and responsive styling"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Bootstrap",
+                "competencies": [
+                  "used for quick prototyping and layout before shifting to React"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "i18n (internationalization)",
+                "competencies": [
+                  "managing multilingual support and localization in frontend applications"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Figma",
+                "competencies": [
+                  "creating and interpreting UI/UX designs",
+                  "collaborating with design workflows"
+                ],
+                "proficiency": "intermediate"
+              }
+            ],
+            "approach": "My frontend philosophy is to prioritize clarity, modularity, and reusability. I structure components in a way that future features can be added without major rewrites, while ensuring fast load times and intuitive user experiences."
+          },
+          "backend": {
+            "title": "Backend Development",
+            "description": "Backend work built on Node.js and Express, focusing on security, structure, and maintainability.",
+            "skills": [
+              {
+                "name": "Node.js & Express",
+                "competencies": [
+                  "REST API design",
+                  "routing",
+                  "middleware",
+                  "authentication",
+                  "error handling",
+                  "request validation"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Authentication & Security",
+                "competencies": [
+                  "JWT authentication",
+                  "password hashing (middleware-based)",
+                  "token blacklists",
+                  "role-based access control"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "File Uploads",
+                "competencies": [
+                  "Multer integration with AWS SDK",
+                  "handling private storage with S3 presigned URLs"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Business Logic",
+                "competencies": [
+                  "schema handling for users, orders, campaigns",
+                  "wallet/transactions",
+                  "delivery coverage areas"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Rate Limiting & Security Hardening",
+                "competencies": [
+                  "protections against abuse",
+                  "CORS configuration",
+                  "secure headers"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Email Services",
+                "competencies": [
+                  "transactional email integration using SendGrid, Nodemailer, and Amazon SES"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Real-Time Communication",
+                "competencies": [
+                  "socket.io for event-driven flows such as live updates or notifications"
+                ],
+                "proficiency": "intermediate"
+              }
+            ],
+            "supportingTools": [
+              "Logging & monitoring: Winston (logging), Morgan (HTTP request logging)",
+              "Task scheduling: node-cron for background jobs"
+            ],
+            "approach": "I prioritize clarity, modularity, and reliability in backend systems. Each module is structured to separate concerns (routes, controllers, services, middleware), making codebases easier to maintain and scale. I ensure APIs are designed with both performance and security in mind."
+          },
+          "databases": {
+            "title": "Databases",
+            "description": "MongoDB with Mongoose, designing schemas that match real business operations.",
+            "skills": [
+              {
+                "name": "MongoDB",
+                "competencies": [
+                  "CRUD operations",
+                  "indexing and query optimization",
+                  "handling growth in collection size"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Mongoose",
+                "competencies": [
+                  "schema definition and validation",
+                  "pre/post middleware",
+                  "populate for references",
+                  "lean queries for performance"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Schema Design",
+                "competencies": [
+                  "Users & Admins (roles, tokens, auth state)",
+                  "Orders (items, price breakdown, status pipeline)",
+                  "Menu Items (images, categories, descriptions)",
+                  "Campaigns & Discounts (promo caps, cashback logic)",
+                  "Wallet & Transactions (top-ups, refunds, partial payments)"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "I treat database design as structural risk control. If the schema is wrong, the business can't scale, reporting becomes unreliable, and security gaps open. I design schemas to reflect real workflows, be safe to extend, and keep queries efficient under load."
+          },
+          "integrations": {
+            "title": "Payments, Messaging & Maps",
+            "description": "Building and integrating core features: payments, communication, and delivery logic.",
+            "skills": [
+              {
+                "name": "Stripe",
+                "competencies": [
+                  "Wallet system (top-ups, balance usage)",
+                  "refund handling",
+                  "saving/removing payment methods"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "SendGrid",
+                "competencies": [
+                  "transactional email (registration, verification, status updates)"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Amazon SES",
+                "competencies": [
+                  "scalable email delivery for cost-effective transactional messaging"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Twilio / Infobip",
+                "competencies": [
+                  "OTP via SMS, WhatsApp, Telegram"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Google Maps API",
+                "competencies": [
+                  "address lookup and selection",
+                  "rendering map data",
+                  "delivery coverage logic and branch routing"
+                ],
+                "proficiency": "proficient"
+              }
+            ],
+            "supportingTools": [
+              "Nodemailer — lightweight email handling",
+              "Webhook Integrations — reacting to external provider events"
+            ],
+            "approach": "Payments and messaging are about trust. If they fail, the whole product feels unreliable. My priorities: Security, Predictability, Clear user experience. All integrations are built to scale as order volume and customer base grow."
+          }
+        }
+      },
+      "marketing": {
+        "profiles": [
+          "both"
+        ],
+        "id": "marketing",
+        "title": "Marketing & Growth",
+        "icon": "trending-up",
+        "subcategories": {
+          "foundations": {
+            "title": "Marketing Foundations",
+            "description": "Marketing starts with positioning, offer design, and capacity planning.",
+            "skills": [
+              {
+                "name": "Positioning & Strategy",
+                "competencies": [
+                  "define who we are, who we're for, what problem we're solving"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Value Proposition Design",
+                "competencies": [
+                  "explain clearly why someone should choose us, in their language"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Campaign Planning",
+                "competencies": [
+                  "loyalty pushes",
+                  "seasonal promos",
+                  "retention campaigns",
+                  "new menu launches"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Offer Design",
+                "competencies": [
+                  "% discounts with caps",
+                  "cashback structures",
+                  "bundled incentives",
+                  "offers that drive volume but don't destroy margin"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Operational Alignment",
+                "competencies": [
+                  "campaigns must match production capacity",
+                  "no promo that overwhelms kitchen/dispatch"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Measurement & Feedback",
+                "competencies": [
+                  "track performance",
+                  "gather feedback",
+                  "iterate"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "I don't launch noise. I launch systems: The offer, The capacity plan, The fulfillment plan, The retention path. If those four aren't aligned, it's not a real strategy."
+          },
+          "digital": {
+            "title": "Digital Marketing & Advertising",
+            "description": "Treating digital as an extension of strategy, executing what's already defined.",
+            "skills": [
+              {
+                "name": "SEO",
+                "competencies": [
+                  "keyword targeting",
+                  "structure",
+                  "technical hygiene to drive organic visibility"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Content Strategy",
+                "competencies": [
+                  "taking raw assets (video, photos, copy)",
+                  "turning them into structured, branded campaigns"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Social Media / Influencers",
+                "competencies": [
+                  "calendar planning",
+                  "collaboration with influencers and bloggers",
+                  "balancing organic reach with paid spend"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "CPC & Paid Ads",
+                "competencies": [
+                  "budget setting",
+                  "bid management",
+                  "performance review tied to conversion"
+                ],
+                "proficiency": "proficient"
+              },
+              {
+                "name": "Email Marketing",
+                "competencies": [
+                  "automated onboarding/welcome flows",
+                  "retention/reactivation messaging",
+                  "transactional + promotional split"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Performance Analytics",
+                "competencies": [
+                  "cost-per-order",
+                  "return on ad spend (ROAS)",
+                  "customer acquisition cost (CAC)",
+                  "conversion tracking"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "I only consider a campaign 'successful' if: It brings in orders we can handle, At a cost we can afford, From customers we can retain. Impressions and likes are meaningless without repeatable sales."
+          },
+          "aggregators": {
+            "title": "Aggregator Growth & Partnerships",
+            "description": "Managing real relationships and performance with delivery platforms.",
+            "skills": [
+              {
+                "name": "Aggregator Partnerships",
+                "competencies": [
+                  "onboarding brands",
+                  "negotiating placements and visibility",
+                  "working with KAMs to secure exposure"
+                ],
+                "platforms": [
+                  "Talabat",
+                  "Deliveroo",
+                  "Careem",
+                  "Noon",
+                  "Keeta",
+                  "Amazon 15 Minutes",
+                  "Instashop",
+                  "Smiles by Etisalat"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "CPC Campaigns",
+                "competencies": [
+                  "budget allocation and optimization in aggregator dashboards",
+                  "measuring conversion vs spend"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "ROI & Profitability",
+                "competencies": [
+                  "reading aggregator data correctly",
+                  "gross basket value before discount",
+                  "net revenue after promo caps and commission"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Menu / Catalog Management",
+                "competencies": [
+                  "structuring items and categories for conversion",
+                  "maintaining brand alignment across platforms"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Promotions & Loyalty",
+                "competencies": [
+                  "discount logic (50% off up to cap)",
+                  "cashback structures",
+                  "repeat-order incentives"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "I use aggregators as partners, not landlords. That means: We chase visibility, but not at any cost. We measure outcome per dirham spent. We keep volume aligned to operational capacity. The result: controlled growth instead of chaos."
+          },
+          "brand": {
+            "title": "Brand Building & Customer Engagement",
+            "description": "Building brands from zero and ensuring experience matches promise.",
+            "skills": [
+              {
+                "name": "Logo Direction & Identity Systems",
+                "competencies": [
+                  "visual language",
+                  "typography",
+                  "color palette",
+                  "voice and tone"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Brand Books / Guidelines",
+                "competencies": [
+                  "rules for usage",
+                  "how the brand speaks, looks, behaves"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "End-to-End Brand Setup",
+                "competencies": [
+                  "social channels",
+                  "website/domain setup",
+                  "professional email + signature",
+                  "menu/packaging language"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Custom GPT Development",
+                "competencies": [
+                  "building brand-specific GPT assistants for owners/managers/staff",
+                  "automating structured responses in the brand's voice"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Storytelling & Messaging",
+                "competencies": [
+                  "communicating what the brand stands for",
+                  "why it matters"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Customer Experience Integration",
+                "competencies": [
+                  "making sure aggregators, Instagram, and delivery bag feel like one brand"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Loyalty & Retention",
+                "competencies": [
+                  "cashback",
+                  "referral incentives",
+                  "repeat-order hooks"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "I don't hand over 'a logo.' I hand over an operating identity: Visual, Operational, Communication, Loyalty, AI support tools. The result: a brand that can actually run."
+          },
+          "data": {
+            "title": "Data & Measurement",
+            "description": "Tracking performance, not guessing it.",
+            "skills": [
+              {
+                "name": "ROI Analysis",
+                "competencies": [
+                  "per platform (Talabat/Deliveroo/Careem/Noon/Keeta/etc.)",
+                  "per campaign"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "CPC & Spend Tracking",
+                "competencies": [
+                  "cost-per-order",
+                  "ROAS",
+                  "CAC"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Revenue Clarity",
+                "competencies": [
+                  "breaking down gross basket value vs net revenue after discounts and caps"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Performance Dashboards",
+                "competencies": [
+                  "building spreadsheets/reports comparing order volumes, spend, retention, efficiency"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Retention Metrics",
+                "competencies": [
+                  "repeat order rate",
+                  "loyalty program usage",
+                  "customer lifetime value (LTV)"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Operational Alignment",
+                "competencies": [
+                  "making sure marketing output matches what operations can fulfill"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "I ignore vanity metrics. I focus on: Orders, Margin, Repeat business, Capacity impact. If we can't afford it, it's not 'good marketing.' If we can't repeat it, it's not 'a win.'"
+          }
+        }
+      },
+      "business": {
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "id": "business",
+        "title": "Business & Operations",
+        "icon": "briefcase",
+        "subcategories": {
+          "operations": {
+            "title": "Operational Management",
+            "description": "Running operations in high-volume hospitality and delivery-first food businesses.",
+            "skills": [
+              {
+                "name": "Daily Operations Oversight",
+                "competencies": [
+                  "service",
+                  "flow",
+                  "timing"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "SOP Creation and Rollout",
+                "competencies": [
+                  "standardized operating procedures",
+                  "training documentation"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Capacity vs Demand Balancing",
+                "competencies": [
+                  "matching marketing output with operational capacity"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Inventory and Supplier Control",
+                "competencies": [
+                  "purchasing discipline",
+                  "supplier relationship management"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Quality Assurance",
+                "competencies": [
+                  "quality control systems",
+                  "escalation handling"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Customer Feedback Loops",
+                "competencies": [
+                  "gathering feedback",
+                  "acting on it",
+                  "closing the loop"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "Operations are the engine. Marketing can promise anything — but only operations can cash that promise. I design operations so they can carry the brand without collapsing under stress."
+          },
+          "leadership": {
+            "title": "Team Leadership",
+            "description": "Leading teams in fast, high-pressure environments and structured business/tech work.",
+            "skills": [
+              {
+                "name": "Recruitment & Onboarding",
+                "competencies": [
+                  "hiring the right people",
+                  "effective onboarding processes"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Training & Development",
+                "competencies": [
+                  "speed",
+                  "service",
+                  "upsell discipline",
+                  "standards enforcement"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Motivation & Retention",
+                "competencies": [
+                  "keeping teams engaged",
+                  "reducing turnover"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Delegation with Accountability",
+                "competencies": [
+                  "empowering team members",
+                  "holding them accountable"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Conflict Resolution",
+                "competencies": [
+                  "internal conflicts",
+                  "guest-facing issues"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Cross-functional Leadership",
+                "competencies": [
+                  "ops",
+                  "marketing",
+                  "tech",
+                  "design"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "Leadership isn't just scheduling people. Leadership is building people. I make sure teams know the standard, know why it matters, and know how to execute it with confidence. That's how you get consistency without micromanaging."
+          },
+          "financial": {
+            "title": "Financial Oversight",
+            "description": "Linking activity to cost and revenue. Tracking budget, spend, and return.",
+            "skills": [
+              {
+                "name": "Budget Management",
+                "competencies": [
+                  "planning and tracking budgets",
+                  "ensuring spend aligns with goals"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Cost Control and Waste Reduction",
+                "competencies": [
+                  "identifying and eliminating waste",
+                  "optimizing costs"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Supplier and Purchasing Discipline",
+                "competencies": [
+                  "negotiating with suppliers",
+                  "maintaining cost discipline"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Campaign ROI Analysis",
+                "competencies": [
+                  "measuring return on marketing spend",
+                  "adjusting campaigns based on ROI"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Forecasting and Impact Planning",
+                "competencies": [
+                  "predicting outcomes",
+                  "planning for different scenarios"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Reporting",
+                "competencies": [
+                  "plain, direct language for decision-makers",
+                  "actionable insights"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "No fantasy numbers. I track: Real margin, Real spend, Real gain. If the numbers don't work, we adjust the campaign or the offer. Not the math."
+          },
+          "customer": {
+            "title": "Customer Experience Design",
+            "description": "Building customer journeys that feel smooth and intentional.",
+            "skills": [
+              {
+                "name": "Journey Mapping",
+                "competencies": [
+                  "from ad → menu → order → follow-up",
+                  "identifying touchpoints"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Consistency Across Touchpoints",
+                "competencies": [
+                  "keeping tone and visuals consistent",
+                  "brand integrity"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Feedback Loops",
+                "competencies": [
+                  "embedding feedback mechanisms",
+                  "acting on feedback"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Offer & Communication Alignment",
+                "competencies": [
+                  "ensuring offers match operational reality"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Loyalty Structures",
+                "competencies": [
+                  "rewarding repeat customers"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Hospitality-Style Personalization",
+                "competencies": [
+                  "translating personalization into digital channels"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "Customer experience is brand integrity in real life. If the delivery, tone, and follow-up don't match the promise, the brand loses trust. I design for trust."
+          },
+          "process": {
+            "title": "Process Optimization",
+            "description": "Viewing process as infrastructure. Weak process burns money and reputation.",
+            "skills": [
+              {
+                "name": "Workflow Mapping",
+                "competencies": [
+                  "analyzing workflows",
+                  "identifying bottlenecks"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "SOP Standardization",
+                "competencies": [
+                  "creating clear standard operating procedures"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Time and Resource Efficiency",
+                "competencies": [
+                  "improving efficiency",
+                  "reducing waste"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Tech / Automation Integration",
+                "competencies": [
+                  "POS",
+                  "APIs",
+                  "dashboards"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Scalability Planning",
+                "competencies": [
+                  "planning for higher order volume",
+                  "planning for more outlets"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Continuous Improvement",
+                "competencies": [
+                  "analyze → improve → monitor → repeat"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "I don't assume 'this is how we do it' is good enough. I treat process like a product: analyze → improve → monitor → repeat."
+          },
+          "expansion": {
+            "title": "Expansion & New Openings",
+            "description": "Launching new outlets, onboarding brands, and taking concepts from zero to live.",
+            "skills": [
+              {
+                "name": "New Outlet Launches",
+                "competencies": [
+                  "staffing",
+                  "training",
+                  "menu rollout",
+                  "service structure"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Brand Creation",
+                "competencies": [
+                  "identity",
+                  "positioning",
+                  "pitch"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Aggregator Onboarding",
+                "competencies": [
+                  "Talabat, Deliveroo, Careem, Noon, Keeta, Amazon 15 Minutes, Instashop, Smiles"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Operational Setup",
+                "competencies": [
+                  "SOPs",
+                  "inventory",
+                  "service rhythms"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Digital Presence Foundation",
+                "competencies": [
+                  "website",
+                  "socials",
+                  "email"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Pre-opening Marketing",
+                "competencies": [
+                  "offers",
+                  "exposure plays",
+                  "influencer and promo alignment"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "Opening is not 'grand opening day.' Opening is: Identity, Systems, Capacity, Launch strategy. If those four aren't ready, you're not launching. You're improvising."
+          },
+          "coordination": {
+            "title": "Cross-Functional Coordination",
+            "description": "Acting as a bridge between teams: marketing, operations, finance, tech.",
+            "skills": [
+              {
+                "name": "Marketing ↔ Operations Sync",
+                "competencies": [
+                  "don't sell what you can't serve"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Brand ↔ Tech Sync",
+                "competencies": [
+                  "website/app reflects the brand and promise"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Finance ↔ Marketing Sync",
+                "competencies": [
+                  "budget spend must have measurable ROI"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Aggregator ↔ Business Sync",
+                "competencies": [
+                  "align promos and visibility with capacity and margin"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Team Clarity",
+                "competencies": [
+                  "everyone understands goals, timelines, risks"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Risk Anticipation",
+                "competencies": [
+                  "catch problems before they hit customers"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "Alignment is a skill. Most failures I've seen are not technical failures — they're coordination failures. I prevent that."
+          },
+          "development": {
+            "title": "Business Development",
+            "description": "Structured expansion: new channels, new concepts, new audiences.",
+            "skills": [
+              {
+                "name": "Market Expansion / Positioning",
+                "competencies": [
+                  "entering new markets",
+                  "positioning the brand"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Partnerships and Negotiation",
+                "competencies": [
+                  "aggregators",
+                  "suppliers",
+                  "influencers",
+                  "collaborators"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Concept Development",
+                "competencies": [
+                  "building concepts from zero"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Multi-brand Management",
+                "competencies": [
+                  "restaurants",
+                  "beverage consulting",
+                  "cakes/flowers brands",
+                  "kids' food brands"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Aggregator Leverage",
+                "competencies": [
+                  "for exposure and volume"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Strategic Planning",
+                "competencies": [
+                  "for sustainable growth"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "AI and Automation",
+                "competencies": [
+                  "exploring AI and automation as value-add, not gimmick"
+                ],
+                "proficiency": "proficient"
+              }
+            ],
+            "approach": "Business development = controlled growth. I design opportunities that we can execute, measure, and scale — not just announce."
+          }
+        }
+      },
+      "soft": {
+        "profiles": [
+          "both"
+        ],
+        "id": "soft",
+        "title": "Soft Skills & Languages",
+        "icon": "users",
+        "subcategories": {
+          "languages": {
+            "title": "Languages & Cultural Adaptability",
+            "description": "Fluent in multiple languages with high cultural adaptability.",
+            "skills": [
+              {
+                "name": "Languages",
+                "competencies": [
+                  "Russian (fluent)",
+                  "English (fluent)",
+                  "Armenian (fluent)"
+                ],
+                "proficiency": "native"
+              },
+              {
+                "name": "English Journey",
+                "competencies": [
+                  "arrived in UAE with almost no English",
+                  "built fluency through persistence and daily use",
+                  "high adaptability in multicultural environments"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Cultural Adaptability",
+                "competencies": [
+                  "working with international teams",
+                  "understanding different expectations and communication styles",
+                  "adjusting accordingly"
+                ],
+                "proficiency": "advanced"
+              }
+            ]
+          },
+          "core": {
+            "title": "Core Soft Skills",
+            "description": "Skills that make everything else work under pressure.",
+            "skills": [
+              {
+                "name": "Analytical Thinking",
+                "competencies": [
+                  "breaking down complex problems into small, solvable units"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Systems Thinking",
+                "competencies": [
+                  "considering the long-term effect of decisions"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Problem-Solving",
+                "competencies": [
+                  "approaching problems with discipline and practicality"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Integrity & Reliability",
+                "competencies": [
+                  "'My word is my bond' — don't overpromise, don't disappear"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Leadership & Mentorship",
+                "competencies": [
+                  "building people and raising standards through training"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Communication",
+                "competencies": [
+                  "direct, clear, consistent",
+                  "can talk to frontline staff, management, or technical collaborators"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Adaptability",
+                "competencies": [
+                  "operating in high-pressure service",
+                  "negotiations",
+                  "technical build cycles"
+                ],
+                "proficiency": "advanced"
+              },
+              {
+                "name": "Persistence & Commitment",
+                "competencies": [
+                  "willing to grind for long-term payoff"
+                ],
+                "proficiency": "advanced"
+              }
+            ],
+            "approach": "Soft skills are not 'extra.' They are what make everything else work under pressure. They are why I can move between hospitality, marketing, tech, and operations — and keep all of them aligned."
+          }
+        }
+      }
+    }
+  },
+  "achievements": {
+    "categories": [
+      {
+        "id": "hospitality",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "title": "Hospitality & Brand Management",
+        "intro": "Consistently taking high-pressure, complex hospitality environments and turning them into stable, reliable, and guest-focused operations.",
+        "icon": "wine",
+        "achievements": [
+          {
+            "id": 1,
+            "title": "Operational Standardization",
+            "company": "Subah Group",
+            "description": "Worked across 20+ outlets and helped standardize operating procedures, service expectations, and training structures. This created repeatable service quality across different venues instead of relying on individual staff style or luck.",
+            "impact": "Repeatable service quality across 20+ outlets, regardless of individual staff variations.",
+            "metrics": {
+              "outlets": "20+",
+              "scope": "Service standardization"
+            }
+          },
+          {
+            "id": 2,
+            "title": "Peak-Hour Stability",
+            "company": "BFF Sports Bar",
+            "description": "Focused on the most critical window in any high-volume venue: peak hours. Tightened service workflows, enforced consistent training rhythms, and introduced quality checkpoints.",
+            "impact": "Increased ability to handle rush periods without collapsing on service or timing. Guests felt that consistency, which led to stronger repeat visits and a more predictable average check.",
+            "achievements": [
+              "Tightened service workflows",
+              "Enforced consistent training rhythms",
+              "Introduced quality checkpoints",
+              "Improved peak-hour performance"
+            ]
+          },
+          {
+            "id": 3,
+            "title": "Systematized Beverage Programs",
+            "company": "The Cocktail Tree",
+            "description": "Founded The Cocktail Tree to convert hands-on bar experience into structured, sellable systems.",
+            "deliverables": [
+              "Created menu programs that are cost-effective and executable in real conditions",
+              "Designed training that improves speed and consistency at the bar",
+              "Built playbooks that bars and restaurants can use without physical presence"
+            ],
+            "impact": "Converted expertise into scalable systems that venues can implement independently."
+          },
+          {
+            "id": 4,
+            "title": "Technical Beverage Credibility",
+            "certifications": [
+              "WSET Level 3 in Wines",
+              "WSET Level 3 in Spirits"
+            ],
+            "description": "Earned advanced certifications that provided deep technical domain knowledge, ability to design beverage experiences that hold up under expert scrutiny, and confidence to align menu creativity with profitability.",
+            "outcomes": [
+              "Deep technical domain knowledge",
+              "Ability to design beverage experiences under expert scrutiny",
+              "Confidence to align menu creativity with profitability"
+            ]
+          }
+        ],
+        "summary": "I don't just make bars 'nice.' I make them consistent, profitable, and scalable as systems."
+      },
+      {
+        "id": "technology",
+        "profiles": [
+          "dev",
+          "both"
+        ],
+        "title": "Technology & Software",
+        "intro": "Building software that supports real business operations — not just prototypes.",
+        "icon": "code",
+        "achievements": [
+          {
+            "id": 1,
+            "title": "Full-Stack Platform Architecture",
+            "company": "Vkusno",
+            "description": "Designed and structured a full-stack system for a delivery-first food brand with comprehensive features supporting real business operations.",
+            "features": [
+              "Multi-branch logic: Multiple locations, each with its own coverage/radius and capacity",
+              "Secure asset handling: Private AWS S3 bucket access using presigned URLs",
+              "Wallet system: Top-ups, full wallet payments, refunds, saved cards, and card removal logic",
+              "OTP & Messaging: Login and verification through SMS/WhatsApp/Telegram",
+              "Transactional Email: Integrated SendGrid and Amazon SES for reliable communication",
+              "Real-time events: Used socket.io to deliver immediate status updates"
+            ],
+            "techStack": [
+              "React",
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "AWS S3",
+              "Stripe",
+              "Socket.io",
+              "SendGrid",
+              "Amazon SES",
+              "Twilio",
+              "Infobip"
+            ],
+            "impact": "Created a robust, scalable platform supporting multi-location restaurant operations with secure payments, real-time communication, and comprehensive user management."
+          },
+          {
+            "id": 2,
+            "title": "Business-Aligned Architecture",
+            "description": "Mapping real processes — orders, refunds, promotions, delivery coverage, loyalty programs — into schemas and APIs that are secure, extendable, and understandable.",
+            "approach": "I don't just 'write code.' I design systems that reflect real business workflows and can scale with the business.",
+            "capabilities": [
+              "Order management and status workflows",
+              "Refund and payment processing",
+              "Promotion and discount logic",
+              "Delivery coverage and branch routing",
+              "Loyalty program implementation"
+            ]
+          },
+          {
+            "id": 3,
+            "title": "Brand-Specific AI Assistants",
+            "description": "Building custom GPTs for brand owners, managers, and staff. These assistants reflect the brand's tone, values, and rules.",
+            "features": [
+              "Reflect brand tone, values, and rules",
+              "Help prepare customer responses",
+              "Generate campaign language",
+              "Provide internal guidelines",
+              "Offer routine decision support"
+            ],
+            "impact": "Practical tools that automate brand-consistent communication and decision support — not generic chatbots."
+          }
+        ],
+        "summary": "I use software and AI to create structure, predictability, and control for real businesses."
+      },
+      {
+        "id": "marketing",
+        "profiles": [
+          "both"
+        ],
+        "title": "Marketing & Growth",
+        "intro": "Connecting brand, marketing, capacity, and profitability into one system.",
+        "icon": "trending-up",
+        "achievements": [
+          {
+            "id": 1,
+            "title": "Aggregator Partnerships & Paid Growth",
+            "description": "Managing relationships, visibility, and ad spend on multiple delivery platforms.",
+            "platforms": [
+              "Talabat",
+              "Deliveroo",
+              "Careem",
+              "Noon",
+              "Keeta",
+              "Amazon 15 Minutes",
+              "Instashop",
+              "Smiles by Etisalat"
+            ],
+            "responsibilities": [
+              "Negotiating placements and exposure",
+              "Setting and adjusting CPC budgets",
+              "Aligning promo mechanics (discounts, caps, cashback) with margin targets"
+            ],
+            "impact": "Controlled, profitable growth across multiple platforms without overwhelming operations."
+          },
+          {
+            "id": 2,
+            "title": "Performance Discipline",
+            "description": "Measuring real outcomes, not vanity numbers. Ensuring scale doesn't kill profit or overwhelm capacity.",
+            "metrics": [
+              "Cost-per-order",
+              "Return on ad spend (ROAS)",
+              "Net revenue after discounts and caps",
+              "Capacity impact per campaign"
+            ],
+            "approach": "We scale demand without killing profit or overwhelming the kitchen."
+          },
+          {
+            "id": 3,
+            "title": "Brand Launch & Activation",
+            "description": "Taking brands from zero to active in the market.",
+            "process": [
+              "Defined the identity and voice",
+              "Set up digital presence (website, socials, professional email)",
+              "Onboarded them to aggregators",
+              "Built first-wave campaigns (seasonal, loyalty-driven, repeat incentives)"
+            ],
+            "impact": "Complete brand activation from concept to revenue generation."
+          },
+          {
+            "id": 4,
+            "title": "Trained Marketing Mindset",
+            "certification": "Google Digital Marketing & E-Commerce Certificate",
+            "description": "Formalized practical marketing knowledge with structured training.",
+            "competencies": [
+              "Funnel thinking",
+              "Measurability",
+              "Customer experience design",
+              "Retention > one-time sale"
+            ]
+          }
+        ],
+        "summary": "I don't do 'activity.' I do controlled growth."
+      },
+      {
+        "id": "leadership",
+        "profiles": [
+          "both"
+        ],
+        "title": "Leadership & Development",
+        "intro": "Building people, teams, and systems that can perform under pressure.",
+        "icon": "users",
+        "achievements": [
+          {
+            "id": 1,
+            "title": "Team Building and Training",
+            "description": "Recruiting, onboarding, and mentoring bartenders, supervisors, and operators — training them not just on 'how to do the job,' but how to understand standards, speed, product knowledge, and customer psychology.",
+            "impact": "Teams that understand why standards matter, not just what they are."
+          },
+          {
+            "id": 2,
+            "title": "Cross-Functional Leadership",
+            "description": "Running initiatives that touch brand, operations, marketing, and tech simultaneously.",
+            "teams": [
+              "Designers",
+              "Developers",
+              "Marketers",
+              "Front-line service teams"
+            ],
+            "impact": "Seamless launches that feel cohesive to customers despite multiple moving parts behind the scenes."
+          },
+          {
+            "id": 3,
+            "title": "Scaling Through Structure",
+            "description": "Designing training, SOPs, and communication flows so that teams can run without micromanagement.",
+            "philosophy": "The point is not to be the hero. The point is to build something that works every day.",
+            "impact": "Self-sustaining teams that maintain standards independently."
+          },
+          {
+            "id": 4,
+            "title": "Career Transformation",
+            "description": "Deliberately transitioned from 'just hospitality' into full-stack development and marketing strategy using the same pattern applied everywhere else.",
+            "process": [
+              "1. Analyze the system",
+              "2. Build a structure",
+              "3. Execute with discipline"
+            ],
+            "impact": "Ability to bridge hospitality, software, and marketing into one integrated offer.",
+            "milestone": "Personal transformation that expanded value from on-the-ground operator to tech builder, growth driver, and brand strategist."
+          }
+        ],
+        "summary": "From on-the-ground operator to someone who can build tech, drive growth, and manage brand direction."
+      }
+    ],
+    "overallSummary": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Core Achievements Summary",
+      "points": [
+        "Stabilized operations in high-pressure hospitality environments",
+        "Built scalable beverage programs and consulting products",
+        "Architected real backend systems and frontends for real businesses",
+        "Run marketing tied to ROI, capacity, and profitability — not noise",
+        "Built and trained teams that execute consistently",
+        "Proven ability to evolve and absorb entire new disciplines when needed"
+      ],
+      "conclusion": "I build systems that perform in reality and can be trusted to scale."
+    }
+  },
+  "education": {
+    "categories": [
+      {
+        "id": "hospitality",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "title": "Hospitality & Beverage",
+        "icon": "wine",
+        "certifications": [
+          {
+            "id": 1,
+            "name": "WSET Level 3 Award in Wines",
+            "issuer": "Wine & Spirit Education Trust (WSET)",
+            "year": null,
+            "type": "Advanced Certification",
+            "description": "Advanced qualification covering grape varieties, regional characteristics, winemaking techniques, and structured tasting methodology.",
+            "coverage": [
+              "Grape varieties and regional characteristics",
+              "Winemaking techniques and production variables",
+              "Structured tasting methodology",
+              "Food and wine pairing principles"
+            ],
+            "focus": "Technical wine knowledge + the ability to apply it in service, menu design, and guest education."
+          },
+          {
+            "id": 2,
+            "name": "WSET Level 3 Award in Spirits",
+            "issuer": "Wine & Spirit Education Trust (WSET)",
+            "year": null,
+            "type": "Advanced Certification",
+            "description": "In-depth qualification covering global spirit categories, distillation methods, and flavor development.",
+            "coverage": [
+              "Global spirit categories (whisky, rum, gin, etc.)",
+              "Distillation methods and raw materials",
+              "Flavor development and evaluation",
+              "Product knowledge for premium positioning and upselling"
+            ],
+            "focus": "Spirits program design, cost control, and storytelling around premium products."
+          },
+          {
+            "id": 3,
+            "name": "Hotel & Hospitality Management",
+            "issuer": "Zabeel International Institute of Management & Technology",
+            "year": "2017",
+            "type": "Diploma",
+            "description": "Comprehensive hospitality management program covering operations, revenue, and leadership.",
+            "coverage": [
+              "Sales and upselling for F&B",
+              "Wine service and beverage cost awareness",
+              "Restaurant management and service structuring",
+              "Budgeting and revenue analysis",
+              "Leadership and team supervision",
+              "Pre-opening planning and launch execution",
+              "Hospitality management fundamentals"
+            ],
+            "focus": "Turning hospitality operations into predictable, profitable systems."
+          }
+        ]
+      },
+      {
+        "id": "beverage",
+        "profiles": [
+          "hospitality",
+          "both"
+        ],
+        "title": "Specialized Beverage Training",
+        "icon": "glass-water",
+        "description": "Focused technical development in beverage service, menu profitability, and guest experience.",
+        "certifications": [
+          {
+            "id": 1,
+            "name": "Exploring Drinks with Food",
+            "issuer": "WSET eLearning",
+            "year": null,
+            "type": "Course",
+            "description": "Pairing logic, flavor structure, guest guidance."
+          },
+          {
+            "id": 2,
+            "name": "Serve with Spirit",
+            "issuer": "WSET eLearning",
+            "year": null,
+            "type": "Course",
+            "description": "Professional service standards and responsible service culture."
+          },
+          {
+            "id": 3,
+            "name": "A Complete Guide to Whisky: Taste and Flavour",
+            "issuer": "WSET eLearning",
+            "year": null,
+            "type": "Course",
+            "description": "Deep dive into whisky styles, aging, profile building, and sensory analysis."
+          },
+          {
+            "id": 4,
+            "name": "Batched on Tap and Canned Cocktails",
+            "issuer": "WSET eLearning",
+            "year": null,
+            "type": "Course",
+            "description": "High-volume cocktail systems: batching, consistency, and speed without quality loss."
+          },
+          {
+            "id": 5,
+            "name": "Improving Your Bar Menu: Tips to Boost Profits",
+            "issuer": "WSET eLearning",
+            "year": null,
+            "type": "Course",
+            "description": "Menu engineering for margin, sell-through, and guest appeal."
+          }
+        ],
+        "focus": "Cost control, scalable execution, and designing beverage programs that are both high-performing and profitable in real service conditions."
+      },
+      {
+        "id": "technology",
+        "profiles": [
+          "dev",
+          "both"
+        ],
+        "title": "Technology & Digital Skills",
+        "icon": "code",
+        "certifications": [
+          {
+            "id": 1,
+            "name": "Google Digital Marketing & E-Commerce Certificate",
+            "issuer": "Coursera",
+            "year": "Dec 2023",
+            "type": "Professional Certificate",
+            "description": "Comprehensive digital marketing and e-commerce training.",
+            "coverage": [
+              "E-commerce setup and management",
+              "Digital marketing foundations",
+              "Customer acquisition and retention strategy",
+              "Analytics and performance tracking",
+              "Building engagement and repeat behavior"
+            ],
+            "focus": "Linking marketing activity to measurable commercial results."
+          },
+          {
+            "id": 2,
+            "name": "Introduction to Prompt Engineering for Generative AI",
+            "issuer": "LinkedIn",
+            "year": "2024",
+            "type": "Course",
+            "description": "Structuring AI prompts for reliability and control in business applications.",
+            "coverage": [
+              "Structuring AI prompts for reliability and control",
+              "Extracting consistent, high-quality outputs for business use",
+              "Using AI as an operator-facing tool (not just 'idea generation')"
+            ],
+            "focus": "Turning AI into repeatable internal infrastructure, not a toy."
+          },
+          {
+            "id": 3,
+            "name": "Introduction to Responsible AI",
+            "issuer": "Google",
+            "year": "2024",
+            "type": "Course",
+            "description": "Safe and ethical deployment of AI systems.",
+            "coverage": [
+              "Safe deployment of AI systems",
+              "Bias, risk, and accountability considerations",
+              "Ethics in automated decision support"
+            ],
+            "focus": "Using AI in a way that is useful, compliant, and reputationally safe."
+          }
+        ]
+      },
+      {
+        "id": "business",
+        "profiles": [
+          "both"
+        ],
+        "title": "Business, Leadership & Productivity",
+        "icon": "briefcase",
+        "description": "All completed in 2024 (LinkedIn Learning).",
+        "certifications": [
+          {
+            "id": 1,
+            "name": "Data Visualization: Best Practices",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Communicating data clearly and persuasively."
+          },
+          {
+            "id": 2,
+            "name": "Getting Things Done (GTD Method)",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Personal productivity, prioritization, and execution discipline."
+          },
+          {
+            "id": 3,
+            "name": "How to Be Both Assertive and Likable",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Navigating leadership presence without losing team trust."
+          },
+          {
+            "id": 4,
+            "name": "How to Prepare for Your Negotiations",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Pre-negotiation structure, information leverage, framing."
+          },
+          {
+            "id": 5,
+            "name": "Negotiation Foundations",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Core negotiation mechanics: value, concession, leverage."
+          },
+          {
+            "id": 6,
+            "name": "Negotiating with Agility",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Adapting negotiation strategy in dynamic situations."
+          },
+          {
+            "id": 7,
+            "name": "Strategic Negotiation",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Long-term relationship-based negotiation, not just one-off deals."
+          },
+          {
+            "id": 8,
+            "name": "When Negotiation's About More than Money",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Non-monetary levers: access, placement, exposure, terms, positioning."
+          },
+          {
+            "id": 9,
+            "name": "Strategic Planning Foundations",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Building plans that are executable, measurable, and directionally aligned."
+          },
+          {
+            "id": 10,
+            "name": "Leading and Motivating People with Different Personalities",
+            "issuer": "LinkedIn Learning",
+            "year": "2024",
+            "type": "Course",
+            "description": "Leadership style adaptation; motivating people based on how they operate, not how you operate."
+          }
+        ],
+        "focus": "Practical leadership in live environments — hospitality, operations, partnerships, and brand development."
+      },
+      {
+        "id": "marketing",
+        "profiles": [
+          "both"
+        ],
+        "title": "Customer Experience & Marketing",
+        "icon": "trending-up",
+        "description": "Completed through Google / Coursera.",
+        "certifications": [
+          {
+            "id": 1,
+            "name": "Satisfaction Guaranteed: Develop Customer Loyalty",
+            "issuer": "Google / Coursera",
+            "year": null,
+            "type": "Course",
+            "description": "Retention models and loyalty systems."
+          },
+          {
+            "id": 2,
+            "name": "Make the Sale: Build, Launch, and Manage E-Commerce Stores",
+            "issuer": "Google / Coursera",
+            "year": null,
+            "type": "Course",
+            "description": "Store setup, funnel design, and conversion flow."
+          },
+          {
+            "id": 3,
+            "name": "Assess for Success: Marketing Analytics and Measurement",
+            "issuer": "Google / Coursera",
+            "year": null,
+            "type": "Course",
+            "description": "Measuring performance against real outcomes, not vanity metrics."
+          },
+          {
+            "id": 4,
+            "name": "Think Outside the Inbox: Email Marketing",
+            "issuer": "Google / Coursera",
+            "year": null,
+            "type": "Course",
+            "description": "Lifecycle emails, retention, reactivation, and transactional comms."
+          },
+          {
+            "id": 5,
+            "name": "From Likes to Leads: Interact with Customers",
+            "issuer": "Google / Coursera",
+            "year": null,
+            "type": "Course",
+            "description": "Turning attention into actual action and order behavior."
+          },
+          {
+            "id": 6,
+            "name": "Attract and Engage Customers with Digital Marketing",
+            "issuer": "Google / Coursera",
+            "year": null,
+            "type": "Course",
+            "description": "Traffic growth and early-stage awareness strategies."
+          },
+          {
+            "id": 7,
+            "name": "Foundations of Digital Marketing and E-Commerce",
+            "issuer": "Google / Coursera",
+            "year": null,
+            "type": "Course",
+            "description": "End-to-end visibility on acquisition, messaging, offer design, and repeat purchase."
+          }
+        ],
+        "focus": "Converting attention into revenue and building long-term relationships instead of one-time orders."
+      },
+      {
+        "id": "other",
+        "profiles": [
+          "both"
+        ],
+        "title": "Other Credentials",
+        "icon": "file-check",
+        "certifications": [
+          {
+            "id": 1,
+            "name": "TIA Attestation",
+            "issuer": "TIA",
+            "year": null,
+            "type": "Credential",
+            "description": "Multiple certificates submitted and verified.",
+            "focus": "Compliance and documentation supporting work status, qualifications, and formal validation when required."
+          }
+        ]
+      }
+    ]
+  },
+  "vision": {
+    "careerVision": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Career Vision",
+      "intro": "Positioning myself as a full-stack developer and AI consultant operating at the intersection of technology, hospitality, and business strategy.",
+      "foundations": [
+        "Frontend development",
+        "Backend/API design",
+        "Database modeling and data flow",
+        "Payments, wallet systems, and secure transactions",
+        "Cloud storage and secure file delivery",
+        "Messaging, verification, and real-time communication"
+      ],
+      "nextLayer": {
+        "title": "AI Integration",
+        "description": "Building the next layer focused on designing and deploying intelligent systems."
+      },
+      "direction": {
+        "title": "Where I'm Going",
+        "description": "Design and deploy intelligent systems that improve operations, reduce errors, and enhance customer experience.",
+        "goals": [
+          "Automate repetitive decision-making and routine communication",
+          "Reduce human error in operations",
+          "Improve customer experience with personalization and speed",
+          "Give owners and managers visibility and control over their business"
+        ],
+        "applications": [
+          {
+            "title": "Custom GPTs",
+            "description": "Internal assistants for owners, managers, and staff — aligned with brand voice and able to support daily work, not just answer generic questions."
+          },
+          {
+            "title": "AI-driven dashboards",
+            "description": "Connect operations, marketing performance, customer behavior, and finance into one view that supports actual decisions, not just reporting."
+          },
+          {
+            "title": "Automation frameworks",
+            "description": "Handle common, repeatable workflows (refund logic, first-response messaging, post-order follow-ups, etc.) without constant manual supervision."
+          }
+        ]
+      },
+      "longTerm": "The person you bring in when you want your business to run cleaner, faster, and more intelligently — not just 'someone who can build a website,' but someone who can design the system behind how you operate."
+    },
+    "entrepreneurialAmbitions": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Entrepreneurial Ambitions",
+      "intro": "Actively building a multi-brand ecosystem with different verticals.",
+      "brands": [
+        "Restaurants and delivery-first food brands",
+        "Beverage consulting and bar systems via The Cocktail Tree",
+        "Cakes and flowers concepts (Bloome)",
+        "Kids-focused healthy food brands (Little Almonds)",
+        "Additional concepts still in development"
+      ],
+      "philosophy": "Each new brand is more than a product. It's also infrastructure.",
+      "infrastructure": [
+        "Brand identity and market positioning",
+        "Operational standards and SOPs",
+        "Aggregator onboarding and performance strategy",
+        "Pricing logic and offer structure",
+        "Customer retention mechanisms",
+        "Technical systems (ordering, communication, payment, logistics)"
+      ],
+      "approach": "These projects are both businesses and testbeds. I use them to prove systems in the real world — then I can package those systems and sell them as services.",
+      "consultingOffer": {
+        "title": "Consulting Offer",
+        "description": "Formalized consulting model where a client can come with only an idea and leave with everything needed to launch.",
+        "deliverables": [
+          "Brand identity (name, visuals, tone, story)",
+          "Marketing and positioning strategy",
+          "Website / app foundations",
+          "Aggregator strategy and launch plan",
+          "Operational toolkit (SOPs, training models, offer design)",
+          "AI-driven internal assistant to keep the brand consistent and efficient"
+        ],
+        "vision": "Make it possible for someone to go from 'concept' to 'operational brand with systems' in a structured way, not by guessing and improvising."
+      }
+    },
+    "personalGoals": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Personal Goals",
+      "intro": "Built on independence, structure, and long-term stability.",
+      "financial": {
+        "title": "Financial Independence",
+        "description": "Working toward the ability to step out of full-time employment and fully allocate time to building brands, developing software solutions, and running structured consulting work.",
+        "plan": [
+          "Save at least one year of living expenses",
+          "Exit traditional employment once that buffer is secured",
+          "Dedicate focus to building assets instead of just trading hours for salary"
+        ],
+        "philosophy": "This is not about quitting; this is about transitioning into full control of my work."
+      },
+      "lifeOS": {
+        "title": "Life OS",
+        "description": "Designing a personal 'Life OS' — a structured system that runs life with the same clarity and discipline as projects.",
+        "areas": [
+          "Health and physical performance (training, energy, recovery)",
+          "Professional growth (technical skill, strategic skill, leadership)",
+          "Financial stability and expansion",
+          "Long-term direction and positioning"
+        ],
+        "goal": "Track and improve these areas the same way operational performance is tracked in a business: with visibility, intent, and measurable progress."
+      },
+      "coreDirection": {
+        "title": "How I See It",
+        "description": "Not chasing titles. Building systems, capabilities, and brands.",
+        "building": [
+          "A set of brands",
+          "A set of systems",
+          "A set of capabilities"
+        ],
+        "outcomes": [
+          "Control over my time",
+          "The ability to solve high-value problems for others",
+          "A reputation built on execution and clarity, not talk"
+        ],
+        "ultimate": [
+          "Build things that actually work",
+          "Help others build things that actually work",
+          "Stay sharp, independent, and useful"
+        ],
+        "conclusion": "That is the core of my future direction."
+      }
+    }
+  },
+  "values": {
+    "coreValues": [
+      {
+        "id": 1,
+        "profiles": [
+          "both"
+        ],
+        "title": "Integrity and Reliability",
+        "icon": "shield-check",
+        "intro": "At the center of how I work is a simple rule: if I say I will do something, I do it.",
+        "description": "I was raised to believe that a person's word should mean something. That carried into my professional life and became non-negotiable. I don't exaggerate outcomes to impress people, and I don't make promises I can't keep just to look good in the moment.",
+        "principles": [
+          "Commitments are serious",
+          "Follow-through builds trust",
+          "Trust is an asset"
+        ],
+        "context": "In both hospitality and technology, people often sell ideas they can't deliver. Over time I've seen that reliability is what actually separates professionals from noise. My reputation is based on doing exactly what I said I would do — no more and no less."
+      },
+      {
+        "id": 2,
+        "profiles": [
+          "both"
+        ],
+        "title": "Structured Thinking and Systems",
+        "icon": "layers",
+        "intro": "I don't operate on impulse. I operate on structure.",
+        "description": "My instinct is to step back before acting. I spend most of my energy up front analyzing the situation, understanding constraints, and planning.",
+        "distribution": {
+          "planning": "70–80% of the effort into thinking, planning, sharpening the approach",
+          "execution": "20–30% into execution"
+        },
+        "approach": [
+          "Understand the system",
+          "Identify the failure points",
+          "Design a process that can actually survive pressure"
+        ],
+        "philosophy": "'Speed' without clarity is not impressive. Clean execution that can scale and survive is impressive. Preparation is not wasted time — it's the thing that makes results possible and repeatable."
+      },
+      {
+        "id": 3,
+        "profiles": [
+          "both"
+        ],
+        "title": "Persistence and Adaptability",
+        "icon": "trending-up",
+        "intro": "My growth has always come from situations where I started with nothing and had to build capability from zero.",
+        "story": "When I first arrived in the UAE, I knew only one English word: 'ok.' No comfort zone, no safety net. Learning the language was not symbolic. It was survival. I had to adapt to different cultures, service standards, and expectations that I couldn't even fully understand at first.",
+        "method": [
+          "Daily repetition",
+          "Embarrassing failures",
+          "Slow improvement",
+          "Absolute refusal to quit"
+        ],
+        "outcomes": [
+          "Resilience",
+          "Cultural adaptability",
+          "Patience for long, difficult progress",
+          "Confidence that I can retool myself when needed"
+        ],
+        "applications": [
+          "Becoming fluent in English",
+          "Moving from hospitality operations into marketing and growth strategy",
+          "Learning full-stack development and backend systems from scratch",
+          "Integrating AI and automation into business workflows"
+        ],
+        "conclusion": "I am comfortable starting at zero and working until I'm dangerous."
+      },
+      {
+        "id": 4,
+        "profiles": [
+          "both"
+        ],
+        "title": "Problem-Solving and Impact",
+        "icon": "target",
+        "intro": "I am not motivated by job titles or how something 'looks from the outside.'",
+        "motivation": "I am motivated by taking something that is messy — or fragile — and making it stable.",
+        "examples": [
+          "A bar that collapses every weekend during rush",
+          "A delivery brand that can't keep up with promo traffic",
+          "A database schema that doesn't reflect real business logic",
+          "A marketing plan that promises things the operation can't fulfill",
+          "A brand that has visuals but no core identity or retention path"
+        ],
+        "strength": {
+          "title": "Pattern Recognition",
+          "process": [
+            "I look at the whole system",
+            "I find where stress accumulates",
+            "I design something that holds under pressure"
+          ]
+        },
+        "impact": [
+          "Work in reality",
+          "Can be repeated",
+          "Lower stress for the people using them",
+          "Earn trust from customers, partners, and teams"
+        ]
+      },
+      {
+        "id": 5,
+        "profiles": [
+          "both"
+        ],
+        "title": "Communication Style",
+        "icon": "message-square",
+        "intro": "My personality is straightforward. I prefer clarity over decoration.",
+        "characteristics": [
+          "I say things directly",
+          "I expect directness back",
+          "I don't enjoy performative communication or fake 'positivity'",
+          "I'm okay with tension if it leads to truth"
+        ],
+        "rationale": "This style comes from working in environments where confusion costs money, guests, or reputation. In service, you can't afford miscommunication. In software, unclear requirements become production problems. In marketing, sloppy messaging turns into complaints.",
+        "conclusion": "Direct language prevents expensive problems."
+      },
+      {
+        "id": 6,
+        "profiles": [
+          "both"
+        ],
+        "title": "People and Culture",
+        "icon": "users",
+        "hospitality": [
+          "Reading the room",
+          "Managing stress in others",
+          "Understanding what 'good service' feels like",
+          "Holding standards without breaking people"
+        ],
+        "technology": [
+          "Logic",
+          "Structure",
+          "Process",
+          "Elimination of waste and chaos"
+        ],
+        "balance": [
+          "Human and analytical",
+          "Emotional and operational",
+          "Service mindset and systems thinking"
+        ],
+        "result": "That lets me work with frontline staff, marketing teams, owners, and engineers — and keep them aligned."
+      }
+    ],
+    "coreDrivers": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Core Drivers",
+      "intro": "If you strip everything down, I am driven by four things:",
+      "drivers": [
+        {
+          "id": 1,
+          "title": "Integrity",
+          "description": "My word has weight. I protect that."
+        },
+        {
+          "id": 2,
+          "title": "Structure",
+          "description": "I don't just fix problems — I build systems so they don't repeat."
+        },
+        {
+          "id": 3,
+          "title": "Persistence",
+          "description": "I am comfortable doing hard work quietly for a long time until it becomes real."
+        },
+        {
+          "id": 4,
+          "title": "Usefulness",
+          "description": "I want what I build to matter to someone:",
+          "examples": [
+            "A smoother shift",
+            "A cleaner dashboard",
+            "A more reliable brand experience",
+            "A team that knows what to do and why"
+          ]
+        }
+      ]
+    },
+    "balance": {
+      "profiles": [
+        "both"
+      ],
+      "title": "Balance (How I See Myself)",
+      "statements": [
+        "I'm analytical, but not detached",
+        "I'm practical, but not limited",
+        "I'm direct, but not careless",
+        "I'm disciplined, but not rigid"
+      ],
+      "baseline": [
+        "I believe in doing things properly",
+        "I believe in treating people with respect",
+        "I believe in delivering what you said you would deliver"
+      ],
+      "conclusion": "That's the baseline I operate from."
+    }
+  }
+}

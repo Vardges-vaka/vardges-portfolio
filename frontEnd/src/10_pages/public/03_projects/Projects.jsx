@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useProjects } from "./projectsHooks/_projectsHooks.index.js";
 import {
@@ -15,6 +16,7 @@ import "./styles/projects.css";
  * Content adapts based on current profile (dev/hospitality/both)
  */
 const Projects = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const {
     projectsContent,
@@ -36,7 +38,7 @@ const Projects = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={projectsClassName}>
-        <div className="projects__loading">Loading...</div>
+        <div className="projects__loading">{t("ui.common.loading")}</div>
       </div>
     );
   }
@@ -44,7 +46,9 @@ const Projects = ({ variant = "full" }) => {
   if (error) {
     return (
       <div className={projectsClassName}>
-        <div className="projects__error">Error: {error}</div>
+        <div className="projects__error">
+          {t("ui.common.errorPrefix")} {error}
+        </div>
       </div>
     );
   }
@@ -68,7 +72,7 @@ const Projects = ({ variant = "full" }) => {
         {/* Page Header - Only in full variant */}
         {!isShort && (
           <header className="projects__header">
-            <h1 className="projects__title">Projects & Ventures</h1>
+            <h1 className="projects__title">{t("ui.pages.projects.title")}</h1>
             {projectsContent.overview && (
               <p className="projects__overview">
                 {projectsContent.overview.statement}

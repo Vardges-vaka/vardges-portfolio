@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Target, Zap, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 const CareerVisionSection = ({ careerVision }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!careerVision) return null;
 
   return (
@@ -21,7 +24,7 @@ const CareerVisionSection = ({ careerVision }) => {
 
       {careerVision.foundations && (
         <div className="careerVisionSection__foundations">
-          <h3>Core Foundations</h3>
+          <h3>{t("ui.vision.coreFoundations")}</h3>
           <ul>
             {careerVision.foundations.map((item, idx) => (
               <li key={idx}>{item}</li>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useEducation } from "./educationHooks/_educationHooks.index.js";
 import {
@@ -13,6 +14,7 @@ import "./styles/education.css";
  * Content adapts based on current profile (dev/hospitality/both)
  */
 const Education = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const { educationContent, loading, activeCategory, handleCategoryFilter } =
     useEducation(profile);
@@ -24,7 +26,7 @@ const Education = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={educationClassName}>
-        <div className="education__loading">Loading education data...</div>
+        <div className="education__loading">{t("ui.loading.education")}</div>
       </div>
     );
   }
@@ -37,7 +39,7 @@ const Education = ({ variant = "full" }) => {
     return (
       <div className={educationClassName}>
         <div className="education__empty">
-          <p>No education data available for the selected profile.</p>
+          <p>{t("ui.empty.education")}</p>
         </div>
       </div>
     );
@@ -46,10 +48,9 @@ const Education = ({ variant = "full" }) => {
   return (
     <div className={educationClassName}>
       <header className="education__header">
-        <h1 className="education__title">Education & Certifications</h1>
+        <h1 className="education__title">{t("ui.pages.education.title")}</h1>
         <p className="education__subtitle">
-          Professional development across hospitality, technology, business, and
-          marketing domains.
+          {t("ui.pages.education.subtitle")}
         </p>
       </header>
 

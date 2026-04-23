@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import { Shield, Layers, TrendingUp } from "lucide-react";
 
@@ -8,6 +9,8 @@ import { Shield, Layers, TrendingUp } from "lucide-react";
  * Displays core values (simplified from Values page)
  */
 const ValuesSection = ({ values, variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!values || values.length === 0) return null;
 
   const isShort = variant === "short";
@@ -36,7 +39,7 @@ const ValuesSection = ({ values, variant = "full" }) => {
       className={`valuesSection ${
         isShort ? "valuesSection--short" : "valuesSection--full"
       }`}>
-      <h2 className="valuesSection__heading">Core Values</h2>
+      <h2 className="valuesSection__heading">{t("ui.about.coreValues")}</h2>
       <div className="valuesSection__grid">
         {displayValues.map((value, index) => {
           const IconComponent = iconMap[value.icon] || Shield;

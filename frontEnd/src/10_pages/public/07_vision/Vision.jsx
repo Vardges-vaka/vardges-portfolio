@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useProfileContext } from "../../../02_context/context.index.js";
 import { useVision } from "./visionHooks/_visionHooks.index.js";
 import {
@@ -13,6 +14,7 @@ import "./styles/vision.css";
  * Displays career vision, entrepreneurial ambitions, and personal goals
  */
 const Vision = ({ variant = "full" }) => {
+  const { t } = useTranslation("tempContent");
   const { profile } = useProfileContext();
   const { visionContent, loading } = useVision(profile);
 
@@ -23,7 +25,7 @@ const Vision = ({ variant = "full" }) => {
   if (loading) {
     return (
       <div className={visionClassName}>
-        <div className="vision__loading">Loading vision...</div>
+        <div className="vision__loading">{t("ui.loading.vision")}</div>
       </div>
     );
   }
@@ -32,7 +34,7 @@ const Vision = ({ variant = "full" }) => {
     return (
       <div className={visionClassName}>
         <div className="vision__empty">
-          <p>No vision data available.</p>
+          <p>{t("ui.empty.vision")}</p>
         </div>
       </div>
     );
@@ -44,11 +46,8 @@ const Vision = ({ variant = "full" }) => {
     <div className={visionClassName}>
       {!isShort && (
         <header className="vision__header">
-          <h1 className="vision__title">Vision & Goals</h1>
-          <p className="vision__subtitle">
-            Future direction, entrepreneurial ambitions, and personal
-            aspirations.
-          </p>
+          <h1 className="vision__title">{t("ui.pages.vision.title")}</h1>
+          <p className="vision__subtitle">{t("ui.pages.vision.subtitle")}</p>
         </header>
       )}
 

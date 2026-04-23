@@ -1,9 +1,14 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { projectsData } from '../projectsConstances/_projectsConstances.index.js';
 import { filterDataByProfile } from '../../../../07_utils/_utils.index.js';
 import { getProjectsByCategory } from '../projectsHelpers/_projectsHelpers.index.js';
 import useProjects_states from './useProjects_states.js';
 import useProjects_handlers from './useProjects_handlers.js';
+import {
+  getResolvedLanguage,
+  getTranslatedData,
+} from '../../publicHelpers/publicI18n.js';
 
 /**
  * Main Projects Hook
@@ -12,6 +17,7 @@ import useProjects_handlers from './useProjects_handlers.js';
  * @returns {Object} - Projects content, state, and handlers
  */
 const useProjects = (currentProfile) => {
+  const { t, i18n } = useTranslation('tempContent');
   const states = useProjects_states();
   const {
     projectsContent,
@@ -21,6 +27,7 @@ const useProjects = (currentProfile) => {
     selectedProject,
     isModalOpen
   } = states;
+  const language = getResolvedLanguage(i18n);
   
   const handlers = useProjects_handlers(states);
   const {
@@ -31,10 +38,11 @@ const useProjects = (currentProfile) => {
   } = handlers;
 
   useEffect(() => {
+    const translatedProjectsData = getTranslatedData(t, 'projects', projectsData);
     // Filter data based on profile
-    const filteredData = filterDataByProfile(projectsData, currentProfile);
+    const filteredData = filterDataByProfile(translatedProjectsData, currentProfile);
     loadProjectsData(filteredData, currentProfile);
-  }, [currentProfile]);
+  }, [currentProfile, language, t]);
 
   // Get filtered projects based on selected category
   const filteredProjects = projectsContent?.categories

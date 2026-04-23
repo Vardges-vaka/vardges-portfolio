@@ -8,9 +8,12 @@ import {
   MessageSquare,
   Users,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 const ValueCard = ({ value, index }) => {
+  const { t } = useTranslation("tempContent");
+
   const iconMap = {
     "shield-check": ShieldCheck,
     layers: Layers,
@@ -59,7 +62,7 @@ const ValueCard = ({ value, index }) => {
 
       {value.approach && (
         <div className="valueCard__approach">
-          <strong>Approach:</strong>
+          <strong>{t("ui.values.approach")}</strong>
           <ul>
             {value.approach.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -70,7 +73,7 @@ const ValueCard = ({ value, index }) => {
 
       {value.method && (
         <div className="valueCard__method">
-          <strong>Method:</strong>
+          <strong>{t("ui.values.method")}</strong>
           <ul>
             {value.method.map((item, idx) => (
               <li key={idx}>{item}</li>

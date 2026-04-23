@@ -1,17 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Code, TrendingUp, Briefcase, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import {
-  getCategoryDisplayName,
-  getTotalSkillsCount,
-} from "../skillsHelpers/_skillsHelpers.index.js";
+import { getTotalSkillsCount } from "../skillsHelpers/_skillsHelpers.index.js";
 
 /**
  * SkillsNav Component
  * Tab navigation for skill categories
  */
 const SkillsNav = ({ categories, activeCategory, onCategoryChange }) => {
+  const { t } = useTranslation("tempContent");
+
   const iconMap = {
     technical: Code,
     marketing: TrendingUp,
@@ -25,9 +25,14 @@ const SkillsNav = ({ categories, activeCategory, onCategoryChange }) => {
         {Object.keys(categories).map((categoryKey) => {
           const category = categories[categoryKey];
           const isActive = categoryKey === activeCategory;
-          const displayName = getCategoryDisplayName(categoryKey);
+          const displayName =
+            category.title ||
+            t(`ui.skills.categories.${categoryKey}`, { defaultValue: categoryKey });
           const IconComponent = iconMap[categoryKey] || Code;
           const skillsCount = getTotalSkillsCount(category);
+          const skillsLabel = t(
+            skillsCount === 1 ? "ui.common.skill_one" : "ui.common.skill_other"
+          );
 
           return (
             <motion.button
@@ -45,7 +50,7 @@ const SkillsNav = ({ categories, activeCategory, onCategoryChange }) => {
               <div className="skillsNav__tabContent">
                 <span className="skillsNav__tabTitle">{displayName}</span>
                 <span className="skillsNav__tabCount">
-                  {skillsCount} {skillsCount === 1 ? "skill" : "skills"}
+                  {skillsCount} {skillsLabel}
                 </span>
               </div>
               {isActive && (

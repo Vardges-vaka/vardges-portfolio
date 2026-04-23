@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import TimelineCard from "./TimelineCard.jsx";
 
@@ -13,8 +14,12 @@ const TimelineContainer = ({
   onToggleRole,
   variant = "full",
 }) => {
+  const { t } = useTranslation("tempContent");
+
   if (!roles || roles.length === 0) {
-    return <div className="timelineContainer__empty">No roles to display</div>;
+    return (
+      <div className="timelineContainer__empty">{t("ui.empty.roles")}</div>
+    );
   }
 
   const isShort = variant === "short";

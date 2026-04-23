@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import SkillCard from "./SkillCard.jsx";
 
@@ -8,6 +9,8 @@ import SkillCard from "./SkillCard.jsx";
  * Displays a subcategory with its skills
  */
 const SubcategorySection = ({ subcategory, subcategoryKey }) => {
+  const { t } = useTranslation("tempContent");
+
   const sectionVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -42,7 +45,7 @@ const SubcategorySection = ({ subcategory, subcategoryKey }) => {
       {subcategory.supportingTools && subcategory.supportingTools.length > 0 && (
         <div className="subcategorySection__supportingTools">
           <h4 className="subcategorySection__supportingToolsTitle">
-            Supporting Tools
+            {t("ui.skills.supportingTools")}
           </h4>
           <ul className="subcategorySection__toolsList">
             {subcategory.supportingTools.map((tool, index) => (
@@ -56,7 +59,9 @@ const SubcategorySection = ({ subcategory, subcategoryKey }) => {
 
       {subcategory.approach && (
         <div className="subcategorySection__approach">
-          <h4 className="subcategorySection__approachTitle">Approach</h4>
+          <h4 className="subcategorySection__approachTitle">
+            {t("ui.skills.approach")}
+          </h4>
           <p className="subcategorySection__approachText">
             {subcategory.approach}
           </p>

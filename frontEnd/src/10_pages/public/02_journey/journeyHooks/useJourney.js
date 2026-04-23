@@ -1,9 +1,14 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { journeyData } from '../journeyConstances/_journeyConstances.index.js';
 import { filterDataByProfile } from '../../../../07_utils/_utils.index.js';
 import { sortRolesByDate, filterRolesByCategory } from '../journeyHelpers/_journeyHelpers.index.js';
 import useJourney_states from './useJourney_states.js';
 import useJourney_handlers from './useJourney_handlers.js';
+import {
+  getResolvedLanguage,
+  getTranslatedData,
+} from '../../publicHelpers/publicI18n.js';
 
 /**
  * Main Journey Hook
@@ -12,6 +17,7 @@ import useJourney_handlers from './useJourney_handlers.js';
  * @returns {Object} - Journey content, state, and handlers
  */
 const useJourney = (currentProfile) => {
+  const { t, i18n } = useTranslation('tempContent');
   const states = useJourney_states();
   const { 
     journeyContent, 
@@ -20,6 +26,7 @@ const useJourney = (currentProfile) => {
     expandedRoleId,
     selectedCategory
   } = states;
+  const language = getResolvedLanguage(i18n);
   
   const handlers = useJourney_handlers(states);
   const { 
@@ -29,8 +36,9 @@ const useJourney = (currentProfile) => {
   } = handlers;
 
   useEffect(() => {
+    const translatedJourneyData = getTranslatedData(t, 'journey', journeyData);
     // Filter data based on profile
-    const filteredData = filterDataByProfile(journeyData, currentProfile);
+    const filteredData = filterDataByProfile(translatedJourneyData, currentProfile);
     
     // Sort roles by date
     if (filteredData && filteredData.roles) {
@@ -38,7 +46,7 @@ const useJourney = (currentProfile) => {
     }
     
     loadJourneyData(filteredData, currentProfile);
-  }, [currentProfile]);
+  }, [currentProfile, language, t]);
 
   // Get filtered roles based on selected category
   const filteredRoles = journeyContent && journeyContent.roles 
