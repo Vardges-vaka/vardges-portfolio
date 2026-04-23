@@ -10,7 +10,11 @@ export const componentMap = {
     Ai: lazy(() => import("../../_adminFeatures/02_me/ai/Ai.jsx")),
     Health: lazy(() => import("../../_adminFeatures/02_me/health/Health.jsx")),
   },
-
+  cloudKitchens: {
+    cloudKitchens_branches: lazy(
+      () => import("../../_adminFeatures/03_cloudKitchens/branches/Branches.jsx"),
+    ),
+  },
   settings: {
     adminAcount: lazy(
       () =>

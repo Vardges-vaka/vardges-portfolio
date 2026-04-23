@@ -11,6 +11,7 @@ import {
   me_SideBar,
   vkusno_SideBar,
   settings_SIdeBar,
+  cloudKitchens_SideBar,
 } from "../../_adminFeatures/adminFeatures.index.js";
 
 const isDebug = is_Debug.hooks;
@@ -29,6 +30,7 @@ export const useAdminDashboard = () => {
     vkusno: vkusno_SideBar(tSideBar),
     me: me_SideBar(tSideBar),
     settings: settings_SIdeBar(tSideBar),
+    cloudKitchens: cloudKitchens_SideBar(tSideBar),
   };
 
   const translations = {
