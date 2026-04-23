@@ -15,6 +15,7 @@ import {
   assets_storage_SideBar,
   tools_SideBar,
   brand_product_SideBar,
+  cloudKitchens_SideBar,
 } from "../../_adminFeatures/adminFeatures.index.js";
 
 const isDebug = is_Debug.hooks;
@@ -37,6 +38,7 @@ export const useAdminDashboard = () => {
     tools: tools_SideBar(tSideBar),
     Brand_product: brand_product_SideBar(tSideBar),
     settings: settings_SIdeBar(tSideBar),
+    cloudKitchens: cloudKitchens_SideBar(tSideBar),
   };
 
   const translations = {

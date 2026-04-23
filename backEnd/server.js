@@ -10,6 +10,7 @@ import {
   accessRoutes,
   testRoutes,
   projectRoutes,
+  branchRoutes,
 } from "./08_routes/_routes.index.js";
 
 // !===== Middlewares =====
@@ -66,6 +67,7 @@ app.use(
 );
 
 app.use("/api/admin", projectRoutes);
+app.use("/api/branches", branchRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/access", accessRoutes);
 app.use("/api/test", testRoutes);

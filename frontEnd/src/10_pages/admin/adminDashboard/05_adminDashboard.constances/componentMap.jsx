@@ -106,6 +106,11 @@ export const componentMap = {
       )
     ),
   },
+  cloudKitchens: {
+    cloudKitchens_branches: lazy(
+      () => import("../../_adminFeatures/03_cloudKitchens/branches/Branches.jsx"),
+    ),
+  },
   settings: {
     adminAcount: lazy(() =>
       import("../../_adminFeatures/00_settings/adminAccount/AdminAccount.jsx")
