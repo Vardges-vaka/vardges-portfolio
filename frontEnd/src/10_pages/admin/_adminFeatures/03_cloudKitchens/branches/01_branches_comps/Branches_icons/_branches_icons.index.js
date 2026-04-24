@@ -1,0 +1,13 @@
+export { default as PhoneIcon } from "./PhoneIcon.jsx";
+export { default as WhatsAppIcon } from "./WhatsAppIcon.jsx";
+export { default as EmailIcon } from "./EmailIcon.jsx";
+export { default as TelegramIcon } from "./TelegramIcon.jsx";
+export { default as LocationIcon } from "./LocationIcon.jsx";
+export { default as ClockIcon } from "./ClockIcon.jsx";
+export { default as CalendarIcon } from "./CalendarIcon.jsx";
+export { default as MoneyIcon } from "./MoneyIcon.jsx";
+export { default as ManagerIcon } from "./ManagerIcon.jsx";
+export { default as TrashIcon } from "./TrashIcon.jsx";
+export { default as ListIcon } from "./ListIcon.jsx";
+export { default as MapIcon } from "./MapIcon.jsx";
+export { default as ChevronIcon } from "./ChevronIcon.jsx";

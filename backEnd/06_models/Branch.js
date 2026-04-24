@@ -21,12 +21,14 @@ const branchSchema = new mongoose.Schema(
       ourSupport: {
         phone: { type: String },
         whatsApp: { type: String },
+        telegram: { type: String },
         email: { type: String },
       },
       manager: {
         name: { type: String },
         phone: { type: String },
         whatsApp: { type: String },
+        telegram: { type: String },
         email: { type: String },
       },
     },
@@ -49,16 +51,15 @@ const branchSchema = new mongoose.Schema(
           water: { type: Number },
           gas: { type: Number },
           AC: { type: Number },
-          /*
-          cleaning// monthly 
-          service fees// monthly
-          sewage// monthly
-          pest control // monthly
-          extra storage // monthly
-          
-          
-          */
         },
+      },
+      // Recurring monthly services — present on some branches, not all
+      monthlyServices: {
+        cleaning: { type: Number },
+        sewage: { type: Number },
+        pestControl: { type: Number },
+        serviceFees: { type: Number },
+        extraStorage: { type: Number },
       },
       variable: [
         {

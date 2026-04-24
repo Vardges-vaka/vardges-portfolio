@@ -2,27 +2,26 @@ import {
   request_failed,
   request_success,
 } from "../../../../../03_services/_services.index.js";
+import { validateBranchFields } from "../branch_fields_vld.js";
 
 const displayName = " | branch_add_vld.js | ";
 const isDebug = true;
 
 export const branch_add_vld = async (req) => {
   const data = req.body.body_Data || req.body;
-  const { name, ...rest } = data;
+  // Strip Mongoose metadata up front — detail-edit flows may re-send subdocs.
+  const { _id, __v, createdAt, updatedAt, ...safeData } = data;
 
-  if (!name || typeof name !== "string" || name.trim().length === 0) {
+  // Run the shared field validator. It enforces `name` required on add.
+  const result = validateBranchFields(safeData, { isUpdate: false });
+  if (!result.ok) {
     return request_failed(
-      "Branch name is required",
-      req.body,
+      result.message,
+      { field: result.field },
       displayName,
       isDebug,
     );
   }
 
-  const sanitizedData = {
-    name: name.trim(),
-    ...rest,
-  };
-
-  return request_success(displayName, isDebug, sanitizedData);
+  return request_success(displayName, isDebug, result.sanitized);
 };

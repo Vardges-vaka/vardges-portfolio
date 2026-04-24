@@ -1,1 +1,1 @@
-// Phase 1: name non-empty check already done in the form handler
+export { validateSection, validateBulk } from "./branches_fieldValidators.js";

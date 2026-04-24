@@ -1,3 +1,11 @@
 export { default as Branches_list } from "./Branches_list.jsx";
-export { default as Branches_form } from "./Branches_form.jsx";
-export { default as Branches_list_item } from "./branches_childComps/Branches_list_item.jsx";
+export { default as Branches_viewToggle } from "./Branches_viewToggle.jsx";
+export { default as Branches_tablePlaceholder } from "./Branches_tablePlaceholder.jsx";
+export { default as Branches_mapPlaceholder } from "./Branches_mapPlaceholder.jsx";
+export { default as Branches_addForm } from "./Branches_addForm.jsx";
+export { default as Branches_detail } from "./Branches_detail.jsx";
+export { default as Branches_confirmModal } from "./Branches_confirmModal.jsx";
+export { default as Branches_discardModal } from "./Branches_discardModal.jsx";
+export { default as Branches_deleteModal } from "./Branches_deleteModal.jsx";
+export { default as Branches_simpleMap } from "./Branches_simpleMap.jsx";
+export { default as Branches_salesPlaceholder } from "./Branches_salesPlaceholder.jsx";

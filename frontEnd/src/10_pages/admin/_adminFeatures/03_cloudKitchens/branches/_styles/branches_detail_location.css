@@ -1,0 +1,34 @@
+.branchesDetailLocation__viewToggle {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  background: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 6px;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.branchesDetailLocation__toggleBtn {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  color: var(--text-secondary-color);
+  transition: background 0.15s, color 0.15s;
+}
+
+.branchesDetailLocation__toggleBtn:hover {
+  background: var(--bg-primary-color);
+  color: var(--text-primary-color);
+}
+
+.branchesDetailLocation__toggleBtn--active {
+  background: var(--bg-primary-color);
+  color: var(--btn-primary-bg-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}

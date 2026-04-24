@@ -1,0 +1,8 @@
+.branchesDetailNotes__body {
+  margin: 0;
+  padding: 0.5rem 0;
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  color: var(--text-primary-color);
+  word-break: break-word;
+}

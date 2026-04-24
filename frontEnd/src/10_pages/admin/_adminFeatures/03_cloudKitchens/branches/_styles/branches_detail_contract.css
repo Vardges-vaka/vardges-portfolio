@@ -1,0 +1,16 @@
+.branchesDetailContract__fileHint {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-secondary-color);
+  border: 1px dashed var(--border-primary-color);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+  font-style: italic;
+}
+
+.branchesDetailContract__fileLink {
+  color: var(--btn-primary-bg-color);
+  text-decoration: underline;
+  word-break: break-all;
+}

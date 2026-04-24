@@ -1,0 +1,7 @@
+.branchesDetailBasic {
+  /* Inherits branchesDetailSection chrome. */
+}
+
+.branchesDetailBasic__body {
+  gap: 1rem;
+}

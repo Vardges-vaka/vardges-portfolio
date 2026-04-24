@@ -1,0 +1,76 @@
+.branchesDiscardModal {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branchesDiscardModal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+}
+
+.branchesDiscardModal__dialog {
+  position: relative;
+  background: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: min(94vw, 420px);
+  box-shadow: var(--boxShadow-primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.branchesDiscardModal__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.branchesDiscardModal__hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary-color);
+}
+
+.branchesDiscardModal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-primary-color);
+}
+
+.branchesDiscardModal__cancelBtn,
+.branchesDiscardModal__confirmBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid var(--border-primary-color);
+}
+
+.branchesDiscardModal__cancelBtn {
+  background: transparent;
+  color: var(--text-primary-color);
+}
+
+.branchesDiscardModal__cancelBtn:hover {
+  background: var(--bg-secondary-color);
+}
+
+.branchesDiscardModal__confirmBtn {
+  background: var(--primary-error-border);
+  color: var(--btn-primary-text-color, #fff);
+  border-color: var(--primary-error-border);
+}
+
+.branchesDiscardModal__confirmBtn:hover {
+  opacity: 0.9;
+}

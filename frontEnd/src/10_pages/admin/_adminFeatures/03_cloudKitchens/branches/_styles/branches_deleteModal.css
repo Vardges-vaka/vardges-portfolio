@@ -1,0 +1,115 @@
+.branchesDeleteModal {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branchesDeleteModal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+}
+
+.branchesDeleteModal__dialog {
+  position: relative;
+  background: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: min(94vw, 440px);
+  box-shadow: var(--boxShadow-primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+}
+
+.branchesDeleteModal__iconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--primary-error-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branchesDeleteModal__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.branchesDeleteModal__hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary-color);
+  line-height: 1.5;
+}
+
+.branchesDeleteModal__branchName {
+  color: var(--text-primary-color);
+  font-weight: 600;
+}
+
+.branchesDeleteModal__error {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--primary-error-border);
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  width: 100%;
+}
+
+.branchesDeleteModal__actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  width: 100%;
+  border-top: 1px solid var(--border-primary-color);
+}
+
+.branchesDeleteModal__cancelBtn,
+.branchesDeleteModal__confirmBtn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid var(--border-primary-color);
+  flex: 1;
+  max-width: 180px;
+}
+
+.branchesDeleteModal__cancelBtn {
+  background: transparent;
+  color: var(--text-primary-color);
+}
+
+.branchesDeleteModal__cancelBtn:hover {
+  background: var(--bg-secondary-color);
+}
+
+.branchesDeleteModal__confirmBtn {
+  background: var(--primary-error-border);
+  color: #fff;
+  border-color: var(--primary-error-border);
+}
+
+.branchesDeleteModal__confirmBtn:hover {
+  opacity: 0.9;
+}
+
+.branchesDeleteModal__confirmBtn:disabled,
+.branchesDeleteModal__cancelBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,75 @@
+.branchesDetailCosts__readonly {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.branchesDetailCosts__readonlyList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.branchesDetailCosts__readonlyRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  background: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 5px;
+  font-size: 0.8125rem;
+  color: var(--text-primary-color);
+}
+
+.branchesDetailCosts__readonlyLabel {
+  font-weight: 500;
+}
+
+.branchesDetailCosts__readonlyAmount {
+  color: var(--text-primary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.branchesDetailCosts__readonlyDate {
+  color: var(--text-secondary-color);
+}
+
+.branchesDetailCosts__readonlyNotes {
+  color: var(--text-secondary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.branchesDetailCosts__variableList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.branchesDetailCosts__variableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr auto;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.branchesDetailCosts__addRow {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.branchesDetailCosts__emptyHint {
+  margin: 0;
+  color: var(--text-secondary-color);
+  font-size: 0.8125rem;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .branchesDetailCosts__readonlyRow,
+  .branchesDetailCosts__variableRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
