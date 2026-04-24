@@ -25560,3 +25560,422 @@
   "timestamp": "2026-04-23 21:31:56",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 13:56:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:04:34",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:07:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:10:04",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:10:23",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:10:48",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:11:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:11:03",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:11:36",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:11:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:12:02",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:12:03",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:12:07",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:12:09",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:12:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:12:12",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_add_cntrl.js | ",
+  "data": {
+    "__v": 0,
+    "_id": "69eb420ea4534b71721f1472",
+    "brands": [],
+    "costs": {
+      "currency": "AED",
+      "variable": []
+    },
+    "coverageAreas": {
+      "byDistance": {
+        "polygon": []
+      },
+      "byDriveTime": {
+        "polygon": []
+      }
+    },
+    "createdAt": "2026-04-24T10:12:30.085Z",
+    "employees": [],
+    "equipments": [],
+    "images": [],
+    "name": "Arjan",
+    "operations": {
+      "is24Hours": false,
+      "isActive": true
+    },
+    "updatedAt": "2026-04-24T10:12:30.085Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_add_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:12:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:13:11",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:13:12",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Arjan",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T10:12:30.085Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:13:12",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_add_cntrl.js | ",
+  "data": {
+    "__v": 0,
+    "_id": "69eb4249a4534b71721f1475",
+    "brands": [],
+    "costs": {
+      "currency": "AED",
+      "variable": []
+    },
+    "coverageAreas": {
+      "byDistance": {
+        "polygon": []
+      },
+      "byDriveTime": {
+        "polygon": []
+      }
+    },
+    "createdAt": "2026-04-24T10:13:29.091Z",
+    "employees": [],
+    "equipments": [],
+    "images": [],
+    "name": "Business Bay, Sol",
+    "operations": {
+      "is24Hours": false,
+      "isActive": true
+    },
+    "updatedAt": "2026-04-24T10:13:29.091Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_add_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:13:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_add_cntrl.js | ",
+  "data": {
+    "__v": 0,
+    "_id": "69eb4257a4534b71721f1477",
+    "brands": [],
+    "costs": {
+      "currency": "AED",
+      "variable": []
+    },
+    "coverageAreas": {
+      "byDistance": {
+        "polygon": []
+      },
+      "byDriveTime": {
+        "polygon": []
+      }
+    },
+    "createdAt": "2026-04-24T10:13:43.301Z",
+    "employees": [],
+    "equipments": [],
+    "images": [],
+    "name": "Dubai Silicon Oasis",
+    "operations": {
+      "is24Hours": false,
+      "isActive": true
+    },
+    "updatedAt": "2026-04-24T10:13:43.301Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_add_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:13:43",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_add_cntrl.js | ",
+  "data": {
+    "__v": 0,
+    "_id": "69eb4260a4534b71721f1479",
+    "brands": [],
+    "costs": {
+      "currency": "AED",
+      "variable": []
+    },
+    "coverageAreas": {
+      "byDistance": {
+        "polygon": []
+      },
+      "byDriveTime": {
+        "polygon": []
+      }
+    },
+    "createdAt": "2026-04-24T10:13:52.787Z",
+    "employees": [],
+    "equipments": [],
+    "images": [],
+    "name": "Dubai Marina",
+    "operations": {
+      "is24Hours": false,
+      "isActive": true
+    },
+    "updatedAt": "2026-04-24T10:13:52.787Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_add_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:13:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_add_cntrl.js | ",
+  "data": {
+    "__v": 0,
+    "_id": "69eb4283a4534b71721f147b",
+    "brands": [],
+    "costs": {
+      "currency": "AED",
+      "variable": []
+    },
+    "coverageAreas": {
+      "byDistance": {
+        "polygon": []
+      },
+      "byDriveTime": {
+        "polygon": []
+      }
+    },
+    "createdAt": "2026-04-24T10:14:27.077Z",
+    "employees": [],
+    "equipments": [],
+    "images": [],
+    "name": "Business Bay, Cuisinette",
+    "operations": {
+      "is24Hours": false,
+      "isActive": true
+    },
+    "updatedAt": "2026-04-24T10:14:27.077Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_add_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-24 14:14:27",
+  "type": "controller_success"
+}

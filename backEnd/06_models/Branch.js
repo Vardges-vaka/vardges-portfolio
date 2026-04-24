@@ -49,6 +49,15 @@ const branchSchema = new mongoose.Schema(
           water: { type: Number },
           gas: { type: Number },
           AC: { type: Number },
+          /*
+          cleaning// monthly 
+          service fees// monthly
+          sewage// monthly
+          pest control // monthly
+          extra storage // monthly
+          
+          
+          */
         },
       },
       variable: [

@@ -11,7 +11,12 @@ export const branch_add_vld = async (req) => {
   const { name, ...rest } = data;
 
   if (!name || typeof name !== "string" || name.trim().length === 0) {
-    return request_failed("Branch name is required", req.body, displayName, isDebug);
+    return request_failed(
+      "Branch name is required",
+      req.body,
+      displayName,
+      isDebug,
+    );
   }
 
   const sanitizedData = {

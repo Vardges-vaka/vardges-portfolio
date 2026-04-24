@@ -1,4 +1,4 @@
-import { ADMIN_endpoints } from "../../../../../03_config/config.index";
+import { ADMIN_endpoints } from "../../../../../../03_config/config.index";
 
 const { DISPLAY_NAME } = ADMIN_endpoints.BRANCH.UPDATE;
 const isDebug = true;
