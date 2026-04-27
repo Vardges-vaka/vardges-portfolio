@@ -1,0 +1,26 @@
+.brandsDetailBasic__readonly,
+.brandsDetailBasic__form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.brandsDetailBasic__readonly p {
+  margin: 0;
+}
+
+.brandsDetailBasic__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.brandsDetailBasic__field small,
+.brandsDetailSocials__field small,
+.brandsDetailEmails__editRow small {
+  color: var(--primary-error-border);
+}
+
+.brandsDetailBasic__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

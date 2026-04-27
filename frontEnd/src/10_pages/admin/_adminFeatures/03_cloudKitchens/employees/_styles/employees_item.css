@@ -1,0 +1,8 @@
+.employees, .employeesList, .employeesDetail { color: var(--text-primary-color); }
+button { border: 1px solid var(--border-primary-color); border-radius: .65rem; padding: .45rem .7rem; background: var(--bg-secondary-color); color: var(--text-primary-color); cursor: pointer; }
+input, select, textarea { border: 1px solid var(--input-primary-border-color, var(--border-primary-color)); border-radius: .6rem; padding: .5rem; background: var(--input-primary-bg-color, var(--bg-primary-color)); color: var(--input-primary-text-color, var(--text-primary-color)); }
+small, .employeesList__error, .employeesDetail__error, .employeesAddForm__error, .employeesModal__error { color: var(--primary-error-border); }
+.employeesSectionForm, .employeesArrayRow { display: grid; gap: .6rem; }
+.employeesArrayRow { border: 1px solid var(--border-primary-color); border-radius: .75rem; padding: .7rem; background: var(--bg-primary-color); }
+
+.employeesListItem{display:flex;justify-content:space-between;gap:1rem;border:1px solid var(--border-primary-color);border-radius:1rem;padding:1rem;background:var(--bg-secondary-color)}.employeesListItem__actions{display:flex;gap:.4rem;flex-wrap:wrap}

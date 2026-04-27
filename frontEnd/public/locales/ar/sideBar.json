@@ -26,5 +26,11 @@
   "BrandDevelopment": "تطوير العلامة التجارية",
   "BrandPortfolio": "ملف العلامة التجارية",
   "CocktailDevelopment": "تطوير الكوكتيلات",
-  "MenuDevelopment": "تطوير القائمة"
+  "MenuDevelopment": "تطوير القائمة",
+  "brands": "Brands",
+  "employees": "Employees",
+  "menus": "\u0627\u0644\u0642\u0648\u0627\u0626\u0645",
+  "menuCategories": "فئات القائمة",
+  "modifiers": "المعدّلات",
+  "menuItems": "عناصر القائمة"
 }

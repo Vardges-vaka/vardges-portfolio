@@ -1,0 +1,98 @@
+{
+  "title": "Մdelays",
+  "modifiers": "Մodelays",
+  "addModifier": "Ավdelays modifier",
+  "addFormHint": "Նdelays modifier, delays delays delays.",
+  "saving": "Պdelays...",
+  "loading": "Delays delays...",
+  "confirmTitle": "Delays delays",
+  "confirmHint": "Delays delays delays.",
+  "discardTitle": "Delays delays?",
+  "discardHint": "Delays delays delays.",
+  "deleteTitle": "Delays modifier?",
+  "deleteHint": "Delays delays delays",
+  "bulkEditBadge": "Delays delays",
+  "viewModes": {
+    "list": "Delays",
+    "table": "Delays",
+    "comingSoon": "Delays"
+  },
+  "actions": {
+    "view": "Delays",
+    "edit": "Delays",
+    "add": "Delays",
+    "save": "Delays",
+    "saveAll": "Delays delays",
+    "cancel": "Delays",
+    "confirm": "Delays",
+    "create": "Delays",
+    "addRow": "Delays delays",
+    "removeRow": "Delays delays",
+    "discard": "Delays",
+    "keepEditing": "Delays delays",
+    "delete": "Delays",
+    "deleteModifier": "Delays modifier",
+    "back": "Delays"
+  },
+  "sections": {
+    "basic": "Delays",
+    "name": "Delays",
+    "descriptions": "Delays",
+    "options": "Delays"
+  },
+  "fields": {
+    "type": "Delays",
+    "selectionQty": "Delays delays",
+    "cost": "Delays",
+    "sellingPrice": "Delays delays",
+    "optionName": "Delays delays",
+    "isActive": "Delays",
+    "name": "Delays"
+  },
+  "enums": {
+    "type": {
+      "optional": "Delays",
+      "mandatory": "Delays"
+    },
+    "selectionQty": {
+      "onlyOne": "Delays delays",
+      "multiple": "Delays"
+    }
+  },
+  "channels": {
+    "aggregators": "Delays",
+    "website": "Delays",
+    "google": "Google"
+  },
+  "activeTimings": {
+    "alwaysActive": "Delays delays",
+    "noWindows": "Delays delays delays",
+    "labelPlaceholder": "Delays",
+    "addWindow": "Delays delays",
+    "always": "Delays"
+  },
+  "badges": {
+    "active": "Delays",
+    "inactive": "Delays"
+  },
+  "empty": {
+    "noModifiers": "Delays delays delays.",
+    "noOptions": "Delays delays delays.",
+    "noValue": "Delays delays",
+    "modifierGone": "Delays modifier delays delays."
+  },
+  "validation": {
+    "required": "Delays",
+    "tooShort": "Delays delays",
+    "tooLong": "Delays delays",
+    "mustBeString": "Delays delays delays",
+    "mustBeBoolean": "Delays delays delays",
+    "notANumber": "Delays delays delays",
+    "numberMin": "Delays delays delays",
+    "invalidEnum": "Delays delays"
+  },
+  "placeholders": {
+    "tableTitle": "Delays delays",
+    "tableDescription": "Delays delays delays delays delays."
+  }
+}

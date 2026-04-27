@@ -1,0 +1,62 @@
+.menuItemsDetailBasic__readonly,
+.menuItemsDetailBasic__form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.menuItemsDetailBasic__readonly p {
+  margin: 0;
+}
+
+.menuItemsDetailBasic__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.menuItemsDetailBasic__field small {
+  color: var(--primary-error-border);
+}
+
+.menuItemsDetailBasic__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menuItemsDetailBasic__timingsEdit {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.menuItemsDetailBasic__windows {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.menuItemsDetailBasic__windowRow {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.menuItemsDetailBasic__windowRow input {
+  border: 1px solid var(--input-primary-border-color, var(--border-primary-color));
+  border-radius: 0.65rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--input-primary-bg-color, var(--bg-primary-color));
+  color: var(--input-primary-text-color, var(--text-primary-color));
+}
+
+.menuItemsDetailBasic__windowList {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.menuItemsDetailBasic__addWindowBtn {
+  border: 1px dashed var(--border-primary-color);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.7rem;
+  background: transparent;
+  color: var(--text-primary-color);
+  cursor: pointer;
+}

@@ -1,0 +1,97 @@
+{
+  "title": "عناصر القائمة",
+  "menuItems": "عناصر القائمة",
+  "addMenuItem": "إضافة عنصر",
+  "addFormHint": "أنشئ العنصر أولاً، ثم أكمل الأقسام التفصيلية.",
+  "saving": "جارٍ الحفظ...",
+  "loading": "جارٍ تحميل العناصر...",
+  "confirmTitle": "تأكيد التغييرات",
+  "confirmHint": "راجع التغييرات قبل الحفظ.",
+  "discardTitle": "تجاهل التغييرات؟",
+  "discardHint": "لديك تغييرات غير محفوظة.",
+  "deleteTitle": "حذف العنصر؟",
+  "deleteHint": "سيتم حذف هذا بشكل دائم",
+  "bulkEditBadge": "تعديل جماعي",
+  "viewModes": {
+    "list": "قائمة",
+    "table": "جدول",
+    "comingSoon": "قريبًا"
+  },
+  "actions": {
+    "view": "عرض",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "save": "حفظ",
+    "saveAll": "حفظ الكل",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "create": "إنشاء",
+    "discard": "تجاهل",
+    "keepEditing": "متابعة التحرير",
+    "delete": "حذف",
+    "deleteMenuItem": "حذف العنصر",
+    "back": "رجوع"
+  },
+  "sections": {
+    "basic": "أساسي",
+    "name": "الاسم",
+    "modifiers": "المعدّلات",
+    "descriptions": "الأوصاف",
+    "images": "الصور",
+    "recipeFile": "ملف الوصفة",
+    "ingredients": "المكوّنات"
+  },
+  "fields": {
+    "cost": "التكلفة",
+    "sellingPrice": "سعر البيع",
+    "isActive": "نشط",
+    "name": "الاسم",
+    "modifierName": "المعدّل"
+  },
+  "activeTimings": {
+    "title": "أوقات التوفر",
+    "alwaysActive": "متاح دائمًا",
+    "label": "التسمية",
+    "from": "من",
+    "to": "إلى",
+    "addWindow": "إضافة فترة"
+  },
+  "channels": {
+    "aggregators": "المجمّعات",
+    "website": "الموقع",
+    "google": "جوجل",
+    "original": "الأصلي",
+    "icon": "الأيقونة"
+  },
+  "badges": {
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "empty": {
+    "noMenuItems": "لا توجد عناصر قائمة بعد.",
+    "noValue": "غير محدد",
+    "menuItemGone": "هذا العنصر لم يعد متاحًا.",
+    "noModifiers": "لا توجد معدّلات مُعيّنة.",
+    "noModifiersAvailable": "لا توجد معدّلات متاحة بعد."
+  },
+  "validation": {
+    "required": "مطلوب",
+    "tooShort": "قصير جدًا",
+    "tooLong": "طويل جدًا",
+    "mustBeBoolean": "يجب أن يكون نعم أو لا",
+    "mustBeString": "يجب أن يكون نصًا",
+    "mustBeNumber": "يجب أن يكون رقمًا",
+    "mustBePositive": "يجب أن يكون >= صفر",
+    "invalidTime": "صيغة وقت غير صالحة (سس:دد)"
+  },
+  "placeholders": {
+    "tableTitle": "جدول العناصر",
+    "tableDescription": "عرض الجدول مخصص لنسخة مستقبلية أغنى.",
+    "namePlaceholder": "دجاج مشوي",
+    "imagesDescription": "قريبًا: رفع وإدارة صور العنصر لكل قناة.",
+    "recipeFileDescription": "قريبًا: رفع وإدارة ملفات الوصفات.",
+    "ingredientsDescription": "قريبًا: ربط وإدارة المكوّنات."
+  }
+}

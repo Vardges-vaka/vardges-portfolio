@@ -1,0 +1,36 @@
+.menuCategoriesList {
+  display: grid;
+  gap: 1rem;
+  color: var(--text-primary-color);
+}
+
+.menuCategoriesList__header,
+.menuCategoriesListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.menuCategoriesList__title {
+  margin: 0;
+}
+
+.menuCategoriesList__addBtn {
+  border: 1px solid var(--btn-primary-bg-color);
+  border-radius: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  cursor: pointer;
+}
+
+.menuCategoriesList__items {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.menuCategoriesList__empty,
+.menuCategoriesList__loading {
+  color: var(--text-secondary-color, var(--text-primary-color));
+}

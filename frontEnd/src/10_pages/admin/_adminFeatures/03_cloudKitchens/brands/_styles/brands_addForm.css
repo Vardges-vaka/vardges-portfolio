@@ -1,0 +1,72 @@
+.brandsAddForm,
+.brandsModal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.brandsAddForm__panel,
+.brandsModal__panel {
+  width: min(92vw, 32rem);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-primary-color);
+  color: var(--text-primary-color);
+}
+
+.brandsAddForm__title,
+.brandsAddForm__hint {
+  margin: 0 0 0.75rem;
+}
+
+.brandsAddForm__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.brandsAddForm__input,
+.brandsDetailBasic__field input,
+.brandsDetailBasic__field textarea,
+.brandsDetailSocials__field input,
+.brandsDetailEmails__editRow input {
+  border: 1px solid var(--input-primary-border-color, var(--border-primary-color));
+  border-radius: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  background: var(--input-primary-bg-color, var(--bg-primary-color));
+  color: var(--input-primary-text-color, var(--text-primary-color));
+}
+
+.brandsAddForm__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.brandsAddForm__btn,
+.brandsModal__btn {
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.brandsAddForm__btn--primary,
+.brandsModal__btn--primary {
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  border-color: var(--btn-primary-bg-color);
+}
+
+.brandsAddForm__error,
+.brandsModal__error,
+.brandsList__error,
+.brandsDetail__error {
+  color: var(--primary-error-border);
+}

@@ -8,3 +8,5 @@ export {
   isSectionEmpty,
 } from "./branches_defaults.js";
 export { computeSectionDiff, computeBulkDiff } from "./branches_diff.js";
+export { toNum, branchHasCoords } from "./branches_mapHelpers.js";
+export { default as fitMapToBranches } from "./branches_mapFit_helper.js";

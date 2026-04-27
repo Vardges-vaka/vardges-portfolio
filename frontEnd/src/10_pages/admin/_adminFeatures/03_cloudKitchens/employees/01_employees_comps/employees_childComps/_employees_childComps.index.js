@@ -1,0 +1,15 @@
+export { default as Employees_list_item } from "./Employees_list_item.jsx";
+export { default as Employees_detail_sectionShell } from "./Employees_detail_sectionShell.jsx";
+export { default as Employees_detail_basic } from "./Employees_detail_basic.jsx";
+export { default as Employees_detail_status } from "./Employees_detail_status.jsx";
+export { default as Employees_detail_contact } from "./Employees_detail_contact.jsx";
+export { default as Employees_detail_assignment } from "./Employees_detail_assignment.jsx";
+export { default as Employees_branchPicker } from "./Employees_branchPicker.jsx";
+export { default as Employees_brandsPicker } from "./Employees_brandsPicker.jsx";
+export { default as Employees_detail_salary } from "./Employees_detail_salary.jsx";
+export { default as Employees_detail_leaves } from "./Employees_detail_leaves.jsx";
+export { default as Employees_detail_legal } from "./Employees_detail_legal.jsx";
+export { default as Employees_detail_legalDoc } from "./Employees_detail_legalDoc.jsx";
+export { default as Employees_detail_certifications } from "./Employees_detail_certifications.jsx";
+export { default as Employees_detail_uniform } from "./Employees_detail_uniform.jsx";
+export { default as Employees_detail_imagesPlaceholder } from "./Employees_detail_imagesPlaceholder.jsx";

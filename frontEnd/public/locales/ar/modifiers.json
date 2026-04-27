@@ -1,0 +1,98 @@
+{
+  "title": "المعدّلات",
+  "modifiers": "المعدّلات",
+  "addModifier": "إضافة معدّل",
+  "addFormHint": "أنشئ المعدّل أولاً، ثم املأ الأقسام التفصيلية.",
+  "saving": "جارٍ الحفظ...",
+  "loading": "جارٍ تحميل المعدّلات...",
+  "confirmTitle": "تأكيد التغييرات",
+  "confirmHint": "راجع التغييرات قبل الحفظ.",
+  "discardTitle": "تجاهل التغييرات؟",
+  "discardHint": "لديك تغييرات غير محفوظة.",
+  "deleteTitle": "حذف المعدّل؟",
+  "deleteHint": "سيتم حذف هذا نهائياً",
+  "bulkEditBadge": "تعديل جماعي",
+  "viewModes": {
+    "list": "قائمة",
+    "table": "جدول",
+    "comingSoon": "قريباً"
+  },
+  "actions": {
+    "view": "عرض",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "save": "حفظ",
+    "saveAll": "حفظ الكل",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "create": "إنشاء",
+    "addRow": "إضافة صف",
+    "removeRow": "إزالة صف",
+    "discard": "تجاهل",
+    "keepEditing": "متابعة التعديل",
+    "delete": "حذف",
+    "deleteModifier": "حذف المعدّل",
+    "back": "رجوع"
+  },
+  "sections": {
+    "basic": "أساسي",
+    "name": "الاسم",
+    "descriptions": "الأوصاف",
+    "options": "الخيارات"
+  },
+  "fields": {
+    "type": "النوع",
+    "selectionQty": "كمية الاختيار",
+    "cost": "التكلفة",
+    "sellingPrice": "سعر البيع",
+    "optionName": "اسم الخيار",
+    "isActive": "نشط",
+    "name": "الاسم"
+  },
+  "enums": {
+    "type": {
+      "optional": "اختياري",
+      "mandatory": "إلزامي"
+    },
+    "selectionQty": {
+      "onlyOne": "واحد فقط",
+      "multiple": "متعدد"
+    }
+  },
+  "channels": {
+    "aggregators": "المجمّعات",
+    "website": "الموقع",
+    "google": "Google"
+  },
+  "activeTimings": {
+    "alwaysActive": "نشط دائماً",
+    "noWindows": "لا توجد نوافذ زمنية",
+    "labelPlaceholder": "التسمية",
+    "addWindow": "إضافة نافذة",
+    "always": "دائماً"
+  },
+  "badges": {
+    "active": "نشط",
+    "inactive": "غير نشط"
+  },
+  "empty": {
+    "noModifiers": "لا توجد معدّلات بعد.",
+    "noOptions": "لا توجد خيارات بعد.",
+    "noValue": "غير محدد",
+    "modifierGone": "هذا المعدّل لم يعد متاحاً."
+  },
+  "validation": {
+    "required": "مطلوب",
+    "tooShort": "قصير جداً",
+    "tooLong": "طويل جداً",
+    "mustBeString": "يجب أن يكون نصاً",
+    "mustBeBoolean": "يجب أن يكون صحيحاً أو خاطئاً",
+    "notANumber": "يجب أن يكون رقماً",
+    "numberMin": "القيمة منخفضة جداً",
+    "invalidEnum": "اختيار غير صالح"
+  },
+  "placeholders": {
+    "tableTitle": "جدول المعدّلات",
+    "tableDescription": "عرض الجدول محجوز لواجهة مستقبلية أكثر تفصيلاً."
+  }
+}

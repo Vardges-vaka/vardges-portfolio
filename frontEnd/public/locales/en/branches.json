@@ -31,6 +31,21 @@
     "aria": "Branch location preview",
     "noCoords": "Add latitude and longitude to see a pin."
   },
+  "mapView": {
+    "controlsTitle": "Map layers",
+    "controlsHint": "Choose what to show on the map.",
+    "showBranches": "Show branches",
+    "showCoverage": "Coverage areas",
+    "showCompetitors": "Competitors",
+    "disabledHint": "Coming in a later release.",
+    "loadingMap": "Loading map…",
+    "loadError": "Could not load Google Maps.",
+    "noApiKeyTitle": "Map API key missing",
+    "noApiKey": "Add VITE_GOOGLE_MAPS_API_KEY to your Vite environment (for example in .env.local) and restart the dev server.",
+    "noBranchesWithCoords": "No branches have coordinates yet. Add latitude and longitude under each branch's location section.",
+    "branchesCount": "{{count}} branches on map",
+    "openDetails": "View branch"
+  },
   "placeholders": {
     "tableTitle": "Table view",
     "tableDescription": "Sortable and filterable table view coming soon.",

@@ -1,0 +1,107 @@
+.modifiersDetailOptions__readonly,
+.modifiersDetailOptions__form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.modifiersDetailOptions__readonly p {
+  margin: 0;
+}
+
+.modifiersDetailOptions__card {
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--bg-primary-color);
+}
+
+.modifiersDetailOptions__cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.modifiersDetailOptions__cardHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.modifiersDetailOptions__cardBody {
+  border-top: 1px solid var(--border-primary-color);
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.modifiersDetailOptions__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.modifiersDetailOptions__field input,
+.modifiersDetailOptions__field textarea {
+  border: 1px solid var(--input-primary-border-color, var(--border-primary-color));
+  border-radius: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  background: var(--input-primary-bg-color, var(--bg-primary-color));
+  color: var(--input-primary-text-color, var(--text-primary-color));
+}
+
+.modifiersDetailOptions__field small {
+  color: var(--primary-error-border);
+}
+
+.modifiersDetailOptions__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modifiersDetailOptions__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.modifiersDetailOptions__addBtn {
+  border: 1px solid var(--btn-primary-bg-color);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  cursor: pointer;
+  justify-self: start;
+}
+
+.modifiersDetailOptions__removeBtn {
+  border: 1px solid var(--primary-error-border);
+  border-radius: 0.65rem;
+  padding: 0.4rem 0.7rem;
+  background: transparent;
+  color: var(--primary-error-border);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.modifiersDetailOptions__readCard {
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background: var(--bg-primary-color);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.modifiersDetailOptions__readCardName {
+  font-weight: 600;
+}
+
+.modifiersDetailOptions__readCardMeta {
+  font-size: 0.85rem;
+  color: var(--text-secondary-color, var(--text-primary-color));
+}

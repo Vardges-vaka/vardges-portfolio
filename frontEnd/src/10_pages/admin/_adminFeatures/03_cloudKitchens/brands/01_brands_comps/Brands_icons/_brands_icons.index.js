@@ -1,0 +1,11 @@
+export { default as InstagramIcon } from "./InstagramIcon.jsx";
+export { default as FacebookIcon } from "./FacebookIcon.jsx";
+export { default as TikTokIcon } from "./TikTokIcon.jsx";
+export { default as LinkedInIcon } from "./LinkedInIcon.jsx";
+export { default as GlobeIcon } from "./GlobeIcon.jsx";
+export { default as ImageIcon } from "./ImageIcon.jsx";
+export { default as FileIcon } from "./FileIcon.jsx";
+export { default as EmailIcon } from "./EmailIcon.jsx";
+export { default as ManagerIcon } from "./ManagerIcon.jsx";
+export { default as TrashIcon } from "./TrashIcon.jsx";
+export { default as ChevronIcon } from "./ChevronIcon.jsx";

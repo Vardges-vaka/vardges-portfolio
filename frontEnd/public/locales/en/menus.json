@@ -1,0 +1,78 @@
+{
+  "title": "Menus",
+  "menus": "Menus",
+  "addMenu": "Add menu",
+  "addFormHint": "Create the menu first, then fill the detail sections.",
+  "saving": "Saving...",
+  "loading": "Loading menus...",
+  "confirmTitle": "Confirm changes",
+  "confirmHint": "Review the changes before saving.",
+  "discardTitle": "Discard changes?",
+  "discardHint": "You have unsaved changes.",
+  "deleteTitle": "Delete menu?",
+  "deleteHint": "This will permanently delete",
+  "bulkEditBadge": "Bulk edit",
+  "viewModes": {
+    "list": "List",
+    "table": "Table",
+    "comingSoon": "Coming soon"
+  },
+  "placeholders": {
+    "tableTitle": "Menus table",
+    "tableDescription": "Table view is reserved for a future richer grid.",
+    "nameEn": "Menu name (English)",
+    "name_en": "Menu name (English)",
+    "name_ru": "Menu name (Russian)",
+    "name_ar": "Menu name (Arabic)"
+  },
+  "actions": {
+    "view": "View",
+    "edit": "Edit",
+    "add": "Add",
+    "save": "Save",
+    "saveAll": "Save all",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "discard": "Discard",
+    "keepEditing": "Keep editing",
+    "delete": "Delete",
+    "deleteMenu": "Delete menu",
+    "back": "Back"
+  },
+  "sections": {
+    "basic": "Basic",
+    "name": "Name",
+    "categories": "Categories",
+    "branches": "Branches",
+    "brands": "Brands"
+  },
+  "fields": {
+    "nameEn": "Name (EN)",
+    "isActive": "Active",
+    "categoriesCount": "categories"
+  },
+  "badges": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "empty": {
+    "noMenus": "No menus yet.",
+    "noValue": "Not set",
+    "menuGone": "This menu is no longer available."
+  },
+  "validation": {
+    "required": "Required",
+    "tooShort": "Too short",
+    "tooLong": "Too long",
+    "mustBeBoolean": "Must be true or false",
+    "mustBeString": "Must be text"
+  },
+  "pickers": {
+    "noCategories": "No categories available.",
+    "noBranches": "No branches available.",
+    "noBrands": "No brands available."
+  }
+}

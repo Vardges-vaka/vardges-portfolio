@@ -1,0 +1,100 @@
+{
+  "title": "Brands",
+  "branches": "Brands",
+  "addBrand": "Add brand",
+  "addFormHint": "Create the brand first, then fill the detail sections.",
+  "saving": "Saving...",
+  "loading": "Loading brands...",
+  "confirmTitle": "Confirm changes",
+  "confirmHint": "Review the changes before saving.",
+  "discardTitle": "Discard changes?",
+  "discardHint": "You have unsaved changes.",
+  "deleteTitle": "Delete brand?",
+  "deleteHint": "This will permanently delete",
+  "bulkEditBadge": "Bulk edit",
+  "viewModes": {
+    "list": "List",
+    "table": "Table",
+    "comingSoon": "Coming soon"
+  },
+  "placeholders": {
+    "tableTitle": "Brands table",
+    "tableDescription": "Table view is reserved for a future richer grid.",
+    "logoTitle": "Logo",
+    "logoDescription": "Coming soon: upload and manage brand logos.",
+    "filesTitle": "Files",
+    "filesDescription": "Coming soon: upload contracts, menus, and other files."
+  },
+  "actions": {
+    "view": "View",
+    "edit": "Edit",
+    "add": "Add",
+    "save": "Save",
+    "saveAll": "Save all",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "addRow": "Add row",
+    "removeRow": "Remove row",
+    "discard": "Discard",
+    "keepEditing": "Keep editing",
+    "delete": "Delete",
+    "deleteBrand": "Delete brand",
+    "addLogo": "Add logo",
+    "addFiles": "Add files",
+    "back": "Back"
+  },
+  "sections": {
+    "basic": "Basic",
+    "socials": "Socials",
+    "emails": "Emails",
+    "logo": "Logo",
+    "files": "Files"
+  },
+  "badges": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "socialActions": {
+    "instagram": "Open Instagram",
+    "facebook": "Open Facebook",
+    "tikTok": "Open TikTok",
+    "linkedIn": "Open LinkedIn",
+    "domain": "Open website"
+  },
+  "emailActions": {
+    "email": "Email"
+  },
+  "fields": {
+    "name": "Name",
+    "namePlaceholder": "Vkusno",
+    "tagline": "Tagline",
+    "taglinePlaceholder": "Short customer-facing brand line",
+    "logo": "Logo",
+    "isActive": "Active",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tikTok": "TikTok",
+    "linkedIn": "LinkedIn",
+    "domain": "Domain",
+    "emailName": "Name",
+    "emailPosition": "Position",
+    "email": "Email"
+  },
+  "empty": {
+    "noBrands": "No brands yet.",
+    "noEmails": "No emails yet.",
+    "noValue": "Not set",
+    "brandGone": "This brand is no longer available."
+  },
+  "validation": {
+    "required": "Required",
+    "tooShort": "Too short",
+    "tooLong": "Too long",
+    "invalidEmail": "Invalid email",
+    "mustBeBoolean": "Must be true or false",
+    "mustBeString": "Must be text"
+  }
+}

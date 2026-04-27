@@ -1,0 +1,6 @@
+.menuCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-primary-color);
+}

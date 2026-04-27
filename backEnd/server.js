@@ -10,6 +10,12 @@ import {
   accessRoutes,
   testRoutes,
   branchRoutes,
+  brandRoutes,
+  employeeRoutes,
+  menuRoutes,
+  menuItemRoutes,
+  menuCategoryRoutes,
+  modifierRoutes,
 } from "./08_routes/_routes.index.js";
 
 // !===== Middlewares =====
@@ -66,6 +72,12 @@ app.use(
 );
 
 app.use("/api/branches", branchRoutes);
+app.use("/api/brands", brandRoutes);
+app.use("/api/employees", employeeRoutes);
+app.use("/api/modifiers", modifierRoutes);
+app.use("/api/menu-categories", menuCategoryRoutes);
+app.use("/api/menus", menuRoutes);
+app.use("/api/menu-items", menuItemRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/access", accessRoutes);
 app.use("/api/test", testRoutes);

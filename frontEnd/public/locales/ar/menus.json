@@ -1,0 +1,78 @@
+{
+  "title": "القوائم",
+  "menus": "القوائم",
+  "addMenu": "إضافة قائمة",
+  "addFormHint": "أنشئ القائمة أولاً، ثم املأ الأقسام التفصيلية.",
+  "saving": "جارٍ الحفظ...",
+  "loading": "جارٍ تحميل القوائم...",
+  "confirmTitle": "تأكيد التغييرات",
+  "confirmHint": "راجع التغييرات قبل الحفظ.",
+  "discardTitle": "تجاهل التغييرات؟",
+  "discardHint": "لديك تغييرات غير محفوظة.",
+  "deleteTitle": "حذف القائمة؟",
+  "deleteHint": "سيتم حذف هذا نهائياً",
+  "bulkEditBadge": "تعديل جماعي",
+  "viewModes": {
+    "list": "قائمة",
+    "table": "جدول",
+    "comingSoon": "قريباً"
+  },
+  "placeholders": {
+    "tableTitle": "جدول القوائم",
+    "tableDescription": "عرض الجدول مخصص لشبكة مستقبلية أغنى.",
+    "nameEn": "اسم القائمة (إنجليزي)",
+    "name_en": "الاسم (إنجليزي)",
+    "name_ru": "الاسم (روسي)",
+    "name_ar": "الاسم (عربي)"
+  },
+  "actions": {
+    "view": "عرض",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "save": "حفظ",
+    "saveAll": "حفظ الكل",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "create": "إنشاء",
+    "discard": "تجاهل",
+    "keepEditing": "متابعة التعديل",
+    "delete": "حذف",
+    "deleteMenu": "حذف القائمة",
+    "back": "رجوع"
+  },
+  "sections": {
+    "basic": "الأساسي",
+    "name": "الاسم",
+    "categories": "الفئات",
+    "branches": "الفروع",
+    "brands": "العلامات التجارية"
+  },
+  "fields": {
+    "nameEn": "الاسم (EN)",
+    "isActive": "نشط",
+    "categoriesCount": "فئات"
+  },
+  "badges": {
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "empty": {
+    "noMenus": "لا توجد قوائم بعد.",
+    "noValue": "غير محدد",
+    "menuGone": "هذه القائمة لم تعد متاحة."
+  },
+  "validation": {
+    "required": "مطلوب",
+    "tooShort": "قصير جداً",
+    "tooLong": "طويل جداً",
+    "mustBeBoolean": "يجب أن يكون صحيح أو خطأ",
+    "mustBeString": "يجب أن يكون نصاً"
+  },
+  "pickers": {
+    "noCategories": "لا توجد فئات متاحة.",
+    "noBranches": "لا توجد فروع متاحة.",
+    "noBrands": "لا توجد علامات تجارية متاحة."
+  }
+}

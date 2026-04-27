@@ -1,0 +1,50 @@
+.brandsModal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.brandsModal__panel {
+  width: min(92vw, 32rem);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-primary-color);
+  color: var(--text-primary-color);
+}
+
+.brandsModal__title,
+.brandsModal__hint {
+  margin: 0 0 0.75rem;
+}
+
+.brandsModal__changes {
+  display: grid;
+  gap: 0.4rem;
+  max-height: 16rem;
+  overflow: auto;
+  margin: 0.75rem 0;
+}
+
+.brandsModal__change {
+  display: grid;
+  gap: 0.2rem;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.65rem;
+  padding: 0.55rem;
+  background: var(--bg-secondary-color);
+}
+
+.brandsModal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.brandsModal__btn--danger {
+  border-color: var(--primary-error-border);
+  color: var(--primary-error-border);
+}

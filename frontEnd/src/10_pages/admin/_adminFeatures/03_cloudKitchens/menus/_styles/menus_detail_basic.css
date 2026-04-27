@@ -1,0 +1,15 @@
+.menusDetailBasic__readonly,
+.menusDetailBasic__form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.menusDetailBasic__readonly p {
+  margin: 0;
+}
+
+.menusDetailBasic__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

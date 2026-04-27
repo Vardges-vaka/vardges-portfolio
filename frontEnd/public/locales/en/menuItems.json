@@ -1,0 +1,97 @@
+{
+  "title": "Menu Items",
+  "menuItems": "Menu Items",
+  "addMenuItem": "Add menu item",
+  "addFormHint": "Create the item first, then fill the detail sections.",
+  "saving": "Saving...",
+  "loading": "Loading menu items...",
+  "confirmTitle": "Confirm changes",
+  "confirmHint": "Review the changes before saving.",
+  "discardTitle": "Discard changes?",
+  "discardHint": "You have unsaved changes.",
+  "deleteTitle": "Delete menu item?",
+  "deleteHint": "This will permanently delete",
+  "bulkEditBadge": "Bulk edit",
+  "viewModes": {
+    "list": "List",
+    "table": "Table",
+    "comingSoon": "Coming soon"
+  },
+  "actions": {
+    "view": "View",
+    "edit": "Edit",
+    "add": "Add",
+    "save": "Save",
+    "saveAll": "Save all",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "discard": "Discard",
+    "keepEditing": "Keep editing",
+    "delete": "Delete",
+    "deleteMenuItem": "Delete menu item",
+    "back": "Back"
+  },
+  "sections": {
+    "basic": "Basic",
+    "name": "Name",
+    "modifiers": "Modifiers",
+    "descriptions": "Descriptions",
+    "images": "Images",
+    "recipeFile": "Recipe File",
+    "ingredients": "Ingredients"
+  },
+  "fields": {
+    "cost": "Cost",
+    "sellingPrice": "Selling Price",
+    "isActive": "Active",
+    "name": "Name",
+    "modifierName": "Modifier"
+  },
+  "activeTimings": {
+    "title": "Active Timings",
+    "alwaysActive": "Always active",
+    "label": "Label",
+    "from": "From",
+    "to": "To",
+    "addWindow": "Add window"
+  },
+  "channels": {
+    "aggregators": "Aggregators",
+    "website": "Website",
+    "google": "Google",
+    "original": "Original",
+    "icon": "Icon"
+  },
+  "badges": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "empty": {
+    "noMenuItems": "No menu items yet.",
+    "noValue": "Not set",
+    "menuItemGone": "This menu item is no longer available.",
+    "noModifiers": "No modifiers assigned.",
+    "noModifiersAvailable": "No modifiers available yet."
+  },
+  "validation": {
+    "required": "Required",
+    "tooShort": "Too short",
+    "tooLong": "Too long",
+    "mustBeBoolean": "Must be true or false",
+    "mustBeString": "Must be text",
+    "mustBeNumber": "Must be a number",
+    "mustBePositive": "Must be zero or positive",
+    "invalidTime": "Invalid time format (HH:mm)"
+  },
+  "placeholders": {
+    "tableTitle": "Menu Items table",
+    "tableDescription": "Table view is reserved for a future richer grid.",
+    "namePlaceholder": "Grilled Chicken",
+    "imagesDescription": "Coming soon: upload and manage item images for each channel.",
+    "recipeFileDescription": "Coming soon: upload and manage recipe files.",
+    "ingredientsDescription": "Coming soon: link and manage ingredients."
+  }
+}

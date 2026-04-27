@@ -1,0 +1,87 @@
+{
+  "title": "Menu Categories",
+  "menuCategories": "Menu Categories",
+  "addCategory": "Add category",
+  "addFormHint": "Create the category first, then fill the detail sections.",
+  "saving": "Saving...",
+  "loading": "Loading menu categories...",
+  "confirmTitle": "Confirm changes",
+  "confirmHint": "Review the changes before saving.",
+  "discardTitle": "Discard changes?",
+  "discardHint": "You have unsaved changes.",
+  "deleteTitle": "Delete category?",
+  "deleteHint": "This will permanently delete",
+  "bulkEditBadge": "Bulk edit",
+  "viewModes": {
+    "list": "List",
+    "table": "Table",
+    "comingSoon": "Coming soon"
+  },
+  "placeholders": {
+    "tableTitle": "Categories table",
+    "tableDescription": "Table view is reserved for a future richer grid.",
+    "nameEn": "e.g. Appetizers",
+    "name_en": "e.g. Appetizers",
+    "name_ru": "e.g. \u0417\u0430\u043a\u0443\u0441\u043a\u0438",
+    "name_ar": "e.g. \u0645\u0642\u0628\u0644\u0627\u062a"
+  },
+  "actions": {
+    "view": "View",
+    "edit": "Edit",
+    "add": "Add",
+    "save": "Save",
+    "saveAll": "Save all",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "addRow": "Add row",
+    "removeRow": "Remove",
+    "discard": "Discard",
+    "keepEditing": "Keep editing",
+    "delete": "Delete",
+    "deleteCategory": "Delete category",
+    "back": "Back"
+  },
+  "sections": {
+    "basic": "Basic",
+    "name": "Name",
+    "items": "Menu Items"
+  },
+  "fields": {
+    "nameEn": "Name (EN)",
+    "name_en": "Name (EN)",
+    "name_ru": "Name (RU)",
+    "name_ar": "Name (AR)",
+    "isActive": "Active",
+    "items": "items"
+  },
+  "activeTimings": {
+    "title": "Active Timings",
+    "always": "Always active",
+    "custom": "Custom schedule",
+    "alwaysActive": "Always active",
+    "label": "Label",
+    "addWindow": "Add time window"
+  },
+  "badges": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "empty": {
+    "noCategories": "No menu categories yet.",
+    "noItems": "No items assigned.",
+    "noMenuItems": "No menu items available to pick.",
+    "noValue": "Not set",
+    "categoryGone": "This category is no longer available."
+  },
+  "validation": {
+    "required": "Required",
+    "tooShort": "Too short",
+    "tooLong": "Too long",
+    "invalidTime": "Invalid time format",
+    "mustBeBoolean": "Must be true or false",
+    "mustBeString": "Must be text"
+  }
+}

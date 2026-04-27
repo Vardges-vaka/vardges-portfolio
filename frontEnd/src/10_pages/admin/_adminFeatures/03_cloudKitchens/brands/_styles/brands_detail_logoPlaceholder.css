@@ -1,0 +1,19 @@
+.brandsDetailLogoPlaceholder,
+.brandsDetailFiles {
+  border: 1px dashed var(--border-primary-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+}
+
+.brandsDetailLogoPlaceholder__title,
+.brandsDetailFiles__title {
+  margin: 0.5rem 0;
+}
+
+.brandsDetailLogoPlaceholder__description,
+.brandsDetailFiles__description {
+  margin: 0;
+  color: var(--text-secondary-color, var(--text-primary-color));
+}

@@ -25,7 +25,7 @@ export const useBranches_states = () => {
   const [branches, setBranches] = useState([]);
 
   // View orchestration: "list" | "table" | "map" | "detail"
-  const [viewMode, setViewMode] = useState("list");
+  const [viewMode, setViewMode] = useState("map");
 
   // Detail view sub-mode: "read" | "bulkEdit"
   const [detailMode, setDetailMode] = useState("read");

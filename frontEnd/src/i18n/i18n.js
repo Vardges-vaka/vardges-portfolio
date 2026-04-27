@@ -20,6 +20,13 @@ export const i18nConfig = {
     //  Admin Translations
     "adminWelcome",
     "sideBar",
+    "branches",
+    "brands",
+    "employees",
+    "menus",
+    "menuCategories",
+    "modifiers",
+    "menuItems",
     // tempContent
     "tempContent",
   ],

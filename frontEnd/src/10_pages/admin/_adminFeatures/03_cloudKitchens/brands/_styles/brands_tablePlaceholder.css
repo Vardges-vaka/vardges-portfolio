@@ -1,0 +1,15 @@
+.brandsTablePlaceholder {
+  border: 1px dashed var(--border-primary-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+}
+
+.brandsTablePlaceholder__title {
+  margin: 0 0 0.5rem;
+}
+
+.brandsTablePlaceholder__description {
+  margin: 0;
+}

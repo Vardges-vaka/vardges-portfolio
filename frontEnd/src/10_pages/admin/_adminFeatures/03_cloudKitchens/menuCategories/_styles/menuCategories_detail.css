@@ -1,0 +1,70 @@
+.menuCategoriesDetail {
+  display: grid;
+  gap: 1rem;
+  color: var(--text-primary-color);
+}
+
+.menuCategoriesDetail__toolbar,
+.menuCategoriesDetail__bulkFooter,
+.menuCategoriesDetail__deleteFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.menuCategoriesDetail__toolbar {
+  justify-content: flex-start;
+}
+
+.menuCategoriesDetail__title {
+  margin: 0;
+}
+
+.menuCategoriesDetail__columns {
+  display: grid;
+  gap: 1rem;
+}
+
+.menuCategoriesDetail__left,
+.menuCategoriesDetail__right {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.menuCategoriesDetail__backBtn,
+.menuCategoriesDetail__bulkCancelBtn,
+.menuCategoriesDetail__bulkSaveBtn,
+.menuCategoriesDetail__deleteBtn {
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.7rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.menuCategoriesDetail__bulkBadge,
+.menuCategoriesDetail__bulkSaveBtn {
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  border-color: var(--btn-primary-bg-color);
+}
+
+.menuCategoriesDetail__bulkBadge {
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+}
+
+.menuCategoriesDetail__deleteBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary-error-border);
+}
+
+@media (min-width: 768px) {
+  .menuCategoriesDetail__columns {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}

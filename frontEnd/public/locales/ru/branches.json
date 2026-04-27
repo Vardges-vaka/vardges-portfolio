@@ -31,6 +31,21 @@
     "aria": "Превью местоположения филиала",
     "noCoords": "Добавьте широту и долготу, чтобы увидеть метку."
   },
+  "mapView": {
+    "controlsTitle": "Слои карты",
+    "controlsHint": "Выберите, что показывать на карте.",
+    "showBranches": "Показать филиалы",
+    "showCoverage": "Зоны покрытия",
+    "showCompetitors": "Конкуренты",
+    "disabledHint": "Появится в следующей версии.",
+    "loadingMap": "Загрузка карты…",
+    "loadError": "Не удалось загрузить Google Maps.",
+    "noApiKeyTitle": "Нет ключа API карт",
+    "noApiKey": "Добавьте VITE_GOOGLE_MAPS_API_KEY в окружение Vite (например, в .env.local) и перезапустите сервер разработки.",
+    "noBranchesWithCoords": "Ни у одного филиала нет координат. Укажите широту и долготу в разделе «Местоположение».",
+    "branchesCount": "На карте: {{count}} филиалов",
+    "openDetails": "Открыть филиал"
+  },
   "placeholders": {
     "tableTitle": "Табличный вид",
     "tableDescription": "Сортируемая и фильтруемая таблица появится позже.",

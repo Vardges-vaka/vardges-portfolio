@@ -26,5 +26,11 @@
   "BrandDevelopment": "BrandDevelopment",
   "BrandPortfolio": "BrandPortfolio",
   "CocktailDevelopment": "CocktailDevelopment",
-  "MenuDevelopment": "MenuDevelopment"
+  "MenuDevelopment": "MenuDevelopment",
+  "brands": "Brands",
+  "employees": "Employees",
+  "menus": "Menus",
+  "menuCategories": "Menu Categories",
+  "modifiers": "Modifiers",
+  "menuItems": "Menu Items"
 }

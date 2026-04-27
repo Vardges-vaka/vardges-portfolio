@@ -1,0 +1,98 @@
+{
+  "title": "Модификаторы",
+  "modifiers": "Модификаторы",
+  "addModifier": "Добавить модификатор",
+  "addFormHint": "Сначала создайте модификатор, затем заполните разделы.",
+  "saving": "Сохранение...",
+  "loading": "Загрузка модификаторов...",
+  "confirmTitle": "Подтвердите изменения",
+  "confirmHint": "Проверьте изменения перед сохранением.",
+  "discardTitle": "Отменить изменения?",
+  "discardHint": "У вас есть несохранённые изменения.",
+  "deleteTitle": "Удалить модификатор?",
+  "deleteHint": "Это навсегда удалит",
+  "bulkEditBadge": "Массовое редактирование",
+  "viewModes": {
+    "list": "Список",
+    "table": "Таблица",
+    "comingSoon": "Скоро"
+  },
+  "actions": {
+    "view": "Просмотр",
+    "edit": "Редактировать",
+    "add": "Добавить",
+    "save": "Сохранить",
+    "saveAll": "Сохранить всё",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "create": "Создать",
+    "addRow": "Добавить строку",
+    "removeRow": "Удалить строку",
+    "discard": "Отменить",
+    "keepEditing": "Продолжить редактирование",
+    "delete": "Удалить",
+    "deleteModifier": "Удалить модификатор",
+    "back": "Назад"
+  },
+  "sections": {
+    "basic": "Основное",
+    "name": "Название",
+    "descriptions": "Описания",
+    "options": "Опции"
+  },
+  "fields": {
+    "type": "Тип",
+    "selectionQty": "Количество выбора",
+    "cost": "Стоимость",
+    "sellingPrice": "Цена продажи",
+    "optionName": "Название опции",
+    "isActive": "Активен",
+    "name": "Название"
+  },
+  "enums": {
+    "type": {
+      "optional": "Необязательный",
+      "mandatory": "Обязательный"
+    },
+    "selectionQty": {
+      "onlyOne": "Только один",
+      "multiple": "Несколько"
+    }
+  },
+  "channels": {
+    "aggregators": "Агрегаторы",
+    "website": "Сайт",
+    "google": "Google"
+  },
+  "activeTimings": {
+    "alwaysActive": "Всегда активен",
+    "noWindows": "Нет временных окон",
+    "labelPlaceholder": "Метка",
+    "addWindow": "Добавить окно",
+    "always": "Всегда"
+  },
+  "badges": {
+    "active": "Активен",
+    "inactive": "Неактивен"
+  },
+  "empty": {
+    "noModifiers": "Модификаторов пока нет.",
+    "noOptions": "Опций пока нет.",
+    "noValue": "Не задано",
+    "modifierGone": "Этот модификатор больше не доступен."
+  },
+  "validation": {
+    "required": "Обязательное поле",
+    "tooShort": "Слишком короткое",
+    "tooLong": "Слишком длинное",
+    "mustBeString": "Должно быть текстом",
+    "mustBeBoolean": "Должно быть true или false",
+    "notANumber": "Должно быть числом",
+    "numberMin": "Значение слишком мало",
+    "invalidEnum": "Неверный выбор"
+  },
+  "placeholders": {
+    "tableTitle": "Таблица модификаторов",
+    "tableDescription": "Табличный вид зарезервирован для будущего расширенного интерфейса."
+  }
+}

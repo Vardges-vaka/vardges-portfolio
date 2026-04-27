@@ -1,17 +1,16 @@
 import "../_styles/branches_viewToggle.css";
 
-const MODES = ["list", "table", "map"];
+const MODES = ["map", "list", "table"];
 
 const Branches_viewToggle = ({ viewMode, onChange, t }) => {
   return (
     <div
       className="branchesViewToggle"
       role="tablist"
-      aria-label={t("viewModes.list")}
-    >
+      aria-label={t("viewModes.list")}>
       {MODES.map((mode) => {
         const isActive = viewMode === mode;
-        const isPlaceholder = mode !== "list";
+        const isPlaceholder = mode === "table";
         return (
           <button
             key={mode}
@@ -23,8 +22,7 @@ const Branches_viewToggle = ({ viewMode, onChange, t }) => {
               "branchesViewToggle__btn" +
               (isActive ? " branchesViewToggle__btn--active" : "")
             }
-            onClick={() => onChange(mode)}
-          >
+            onClick={() => onChange(mode)}>
             {t(`viewModes.${mode}`)}
             {isPlaceholder && (
               <span className="branchesViewToggle__badge">

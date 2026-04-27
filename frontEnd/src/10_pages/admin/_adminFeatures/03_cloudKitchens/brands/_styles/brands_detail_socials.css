@@ -1,0 +1,28 @@
+.brandsDetailSocials__rows,
+.brandsDetailSocials__form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.brandsDetailSocials__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.brandsDetailSocials__value,
+.brandsDetailSocials__field span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.brandsDetailSocials__launcher {
+  color: var(--btn-primary-bg-color);
+}
+
+.brandsDetailSocials__field {
+  display: grid;
+  gap: 0.35rem;
+}

@@ -26,5 +26,11 @@
   "BrandDevelopment": "Разработка бренда",
   "BrandPortfolio": "Портфолио бренда",
   "CocktailDevelopment": "Разработка коктейлей",
-  "MenuDevelopment": "Разработка меню"
+  "MenuDevelopment": "Разработка меню",
+  "brands": "Brands",
+  "employees": "Employees",
+  "menus": "\u041c\u0435\u043d\u044e",
+  "menuCategories": "Категории меню",
+  "modifiers": "Модификаторы",
+  "menuItems": "Позиции меню"
 }

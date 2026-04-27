@@ -83,7 +83,13 @@ export const useBranches = () => {
   };
 
   const Branches_tablePlaceholder_props = { t };
-  const Branches_mapPlaceholder_props = { t };
+  const Branches_mapView_props = {
+    branches: states.branches,
+    isLoading: states.isLoading,
+    error: states.error,
+    onViewBranch: handlers.handleViewBranch,
+    t,
+  };
 
   // -------- Per-section props (built for the detail view) --------
 
@@ -204,7 +210,7 @@ export const useBranches = () => {
       Branches_list_props,
       Branches_addForm_props,
       Branches_tablePlaceholder_props,
-      Branches_mapPlaceholder_props,
+      Branches_mapView_props,
       Branches_detail_props,
       Branches_confirmModal_props,
       Branches_discardModal_props,

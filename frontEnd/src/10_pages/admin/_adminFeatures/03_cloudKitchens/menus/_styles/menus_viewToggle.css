@@ -1,0 +1,19 @@
+.menusViewToggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.menusViewToggle__btn {
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
+
+.menusViewToggle__btn--active {
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  border-color: var(--btn-primary-bg-color);
+}

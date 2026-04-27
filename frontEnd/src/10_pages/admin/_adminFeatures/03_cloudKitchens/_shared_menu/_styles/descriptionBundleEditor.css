@@ -1,0 +1,41 @@
+.descriptionBundleEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.descriptionBundleEditor__channel {
+  border: 1px solid var(--border-primary-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.descriptionBundleEditor__toggle {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+  background: var(--bg-secondary-color);
+  transition: background 0.15s;
+  box-sizing: border-box;
+}
+
+.descriptionBundleEditor__toggle:hover {
+  background: var(--bg-primary-color);
+}
+
+.descriptionBundleEditor__chevron {
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+}
+
+.descriptionBundleEditor__body {
+  padding: 0.65rem;
+  border-top: 1px solid var(--border-primary-color);
+}

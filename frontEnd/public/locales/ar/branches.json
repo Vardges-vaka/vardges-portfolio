@@ -31,6 +31,21 @@
     "aria": "معاينة موقع الفرع",
     "noCoords": "أضف خط العرض وخط الطول لعرض العلامة."
   },
+  "mapView": {
+    "controlsTitle": "طبقات الخريطة",
+    "controlsHint": "اختر ما يُعرض على الخريطة.",
+    "showBranches": "إظهار الفروع",
+    "showCoverage": "مناطق التغطية",
+    "showCompetitors": "المنافسون",
+    "disabledHint": "سيُتاح في إصدار لاحق.",
+    "loadingMap": "جاري تحميل الخريطة…",
+    "loadError": "تعذّر تحميل Google Maps.",
+    "noApiKeyTitle": "مفتاح واجهة الخرائط غير موجود",
+    "noApiKey": "أضف VITE_GOOGLE_MAPS_API_KEY إلى بيئة Vite (مثلاً في .env.local) وأعد تشغيل خادم التطوير.",
+    "noBranchesWithCoords": "لا توجد إحداثيات لأي فرع بعد. أضف خط العرض والطول في قسم موقع الفرع.",
+    "branchesCount": "{{count}} فرع على الخريطة",
+    "openDetails": "عرض الفرع"
+  },
   "placeholders": {
     "tableTitle": "عرض الجدول",
     "tableDescription": "عرض جدولي قابل للفرز والتصفية قريباً.",

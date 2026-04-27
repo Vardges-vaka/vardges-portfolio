@@ -1,0 +1,97 @@
+{
+  "title": "Позиции меню",
+  "menuItems": "Позиции меню",
+  "addMenuItem": "Добавить позицию",
+  "addFormHint": "Сначала создайте позицию, затем заполните разделы.",
+  "saving": "Сохранение...",
+  "loading": "Загрузка позиций...",
+  "confirmTitle": "Подтвердите изменения",
+  "confirmHint": "Проверьте изменения перед сохранением.",
+  "discardTitle": "Отменить изменения?",
+  "discardHint": "У вас есть несохранённые изменения.",
+  "deleteTitle": "Удалить позицию?",
+  "deleteHint": "Это навсегда удалит",
+  "bulkEditBadge": "Массовое редактирование",
+  "viewModes": {
+    "list": "Список",
+    "table": "Таблица",
+    "comingSoon": "Скоро"
+  },
+  "actions": {
+    "view": "Просмотр",
+    "edit": "Редактировать",
+    "add": "Добавить",
+    "save": "Сохранить",
+    "saveAll": "Сохранить всё",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "create": "Создать",
+    "discard": "Отменить",
+    "keepEditing": "Продолжить",
+    "delete": "Удалить",
+    "deleteMenuItem": "Удалить позицию",
+    "back": "Назад"
+  },
+  "sections": {
+    "basic": "Основное",
+    "name": "Название",
+    "modifiers": "Модификаторы",
+    "descriptions": "Описания",
+    "images": "Изображения",
+    "recipeFile": "Файл рецепта",
+    "ingredients": "Ингредиенты"
+  },
+  "fields": {
+    "cost": "Себестоимость",
+    "sellingPrice": "Цена продажи",
+    "isActive": "Активна",
+    "name": "Название",
+    "modifierName": "Модификатор"
+  },
+  "activeTimings": {
+    "title": "Расписание",
+    "alwaysActive": "Всегда доступна",
+    "label": "Метка",
+    "from": "С",
+    "to": "До",
+    "addWindow": "Добавить окно"
+  },
+  "channels": {
+    "aggregators": "Агрегаторы",
+    "website": "Сайт",
+    "google": "Google",
+    "original": "Оригинал",
+    "icon": "Иконка"
+  },
+  "badges": {
+    "active": "Активна",
+    "inactive": "Неактивна",
+    "yes": "Да",
+    "no": "Нет"
+  },
+  "empty": {
+    "noMenuItems": "Нет позиций меню.",
+    "noValue": "Не задано",
+    "menuItemGone": "Эта позиция больше недоступна.",
+    "noModifiers": "Модификаторы не назначены.",
+    "noModifiersAvailable": "Модификаторы пока не доступны."
+  },
+  "validation": {
+    "required": "Обязательно",
+    "tooShort": "Слишком коротко",
+    "tooLong": "Слишком длинно",
+    "mustBeBoolean": "Должно быть да или нет",
+    "mustBeString": "Должно быть текстом",
+    "mustBeNumber": "Должно быть числом",
+    "mustBePositive": "Должно быть >= 0",
+    "invalidTime": "Неверный формат времени (ЧЧ:мм)"
+  },
+  "placeholders": {
+    "tableTitle": "Таблица позиций",
+    "tableDescription": "Табличный вид зарезервирован для будущего.",
+    "namePlaceholder": "Курица гриль",
+    "imagesDescription": "Скоро: загрузка и управление изображениями для каждого канала.",
+    "recipeFileDescription": "Скоро: загрузка и управление файлами рецептов.",
+    "ingredientsDescription": "Скоро: привязка и управление ингредиентами."
+  }
+}

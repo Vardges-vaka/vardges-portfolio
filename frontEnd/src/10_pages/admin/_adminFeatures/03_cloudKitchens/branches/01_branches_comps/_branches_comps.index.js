@@ -1,7 +1,7 @@
 export { default as Branches_list } from "./Branches_list.jsx";
 export { default as Branches_viewToggle } from "./Branches_viewToggle.jsx";
 export { default as Branches_tablePlaceholder } from "./Branches_tablePlaceholder.jsx";
-export { default as Branches_mapPlaceholder } from "./Branches_mapPlaceholder.jsx";
+export * from "./branches_mapView/_branches_mapView.index.js";
 export { default as Branches_addForm } from "./Branches_addForm.jsx";
 export { default as Branches_detail } from "./Branches_detail.jsx";
 export { default as Branches_confirmModal } from "./Branches_confirmModal.jsx";

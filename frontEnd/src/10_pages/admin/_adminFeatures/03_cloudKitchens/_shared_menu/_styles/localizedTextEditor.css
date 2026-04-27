@@ -1,0 +1,97 @@
+.localizedTextEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.localizedTextEditor__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-primary-color);
+}
+
+.localizedTextEditor__tabs {
+  display: inline-flex;
+  gap: 0.15rem;
+  padding: 0.15rem;
+  background: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 5px;
+  align-self: flex-start;
+}
+
+.localizedTextEditor__tab {
+  all: unset;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-secondary-color);
+  transition: background 0.15s, color 0.15s;
+}
+
+.localizedTextEditor__tab:hover {
+  background: var(--bg-primary-color);
+}
+
+.localizedTextEditor__tab--active {
+  background: var(--bg-primary-color);
+  color: var(--btn-primary-bg-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.localizedTextEditor__tab--filled::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--btn-primary-bg-color);
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+.localizedTextEditor__input,
+.localizedTextEditor__textarea {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--input-primary-border-color);
+  background: var(--input-primary-bg-color);
+  color: var(--input-primary-text-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.localizedTextEditor__input:focus,
+.localizedTextEditor__textarea:focus {
+  border-color: var(--input-primary-border-color-FOC);
+  box-shadow: var(--input-primary-boxShadow-FOC);
+}
+
+.localizedTextEditor__input--error,
+.localizedTextEditor__textarea--error {
+  border-color: var(--primary-error-border);
+}
+
+.localizedTextEditor__textarea {
+  min-height: 4rem;
+  resize: vertical;
+}
+
+.localizedTextEditor__error {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--primary-error-border);
+}
+
+.localizedTextEditor__previews {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: var(--text-secondary-color);
+  font-style: italic;
+}

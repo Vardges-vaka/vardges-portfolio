@@ -1,0 +1,98 @@
+{
+  "title": "Modifiers",
+  "modifiers": "Modifiers",
+  "addModifier": "Add modifier",
+  "addFormHint": "Create the modifier first, then fill the detail sections.",
+  "saving": "Saving...",
+  "loading": "Loading modifiers...",
+  "confirmTitle": "Confirm changes",
+  "confirmHint": "Review the changes before saving.",
+  "discardTitle": "Discard changes?",
+  "discardHint": "You have unsaved changes.",
+  "deleteTitle": "Delete modifier?",
+  "deleteHint": "This will permanently delete",
+  "bulkEditBadge": "Bulk edit",
+  "viewModes": {
+    "list": "List",
+    "table": "Table",
+    "comingSoon": "Coming soon"
+  },
+  "actions": {
+    "view": "View",
+    "edit": "Edit",
+    "add": "Add",
+    "save": "Save",
+    "saveAll": "Save all",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "addRow": "Add row",
+    "removeRow": "Remove row",
+    "discard": "Discard",
+    "keepEditing": "Keep editing",
+    "delete": "Delete",
+    "deleteModifier": "Delete modifier",
+    "back": "Back"
+  },
+  "sections": {
+    "basic": "Basic",
+    "name": "Name",
+    "descriptions": "Descriptions",
+    "options": "Options"
+  },
+  "fields": {
+    "type": "Type",
+    "selectionQty": "Selection quantity",
+    "cost": "Cost",
+    "sellingPrice": "Selling price",
+    "optionName": "Option name",
+    "isActive": "Active",
+    "name": "Name"
+  },
+  "enums": {
+    "type": {
+      "optional": "Optional",
+      "mandatory": "Mandatory"
+    },
+    "selectionQty": {
+      "onlyOne": "Only one",
+      "multiple": "Multiple"
+    }
+  },
+  "channels": {
+    "aggregators": "Aggregators",
+    "website": "Website",
+    "google": "Google"
+  },
+  "activeTimings": {
+    "alwaysActive": "Always active",
+    "noWindows": "No time windows",
+    "labelPlaceholder": "Label",
+    "addWindow": "Add window",
+    "always": "Always"
+  },
+  "badges": {
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "empty": {
+    "noModifiers": "No modifiers yet.",
+    "noOptions": "No options yet.",
+    "noValue": "Not set",
+    "modifierGone": "This modifier is no longer available."
+  },
+  "validation": {
+    "required": "Required",
+    "tooShort": "Too short",
+    "tooLong": "Too long",
+    "mustBeString": "Must be text",
+    "mustBeBoolean": "Must be true or false",
+    "notANumber": "Must be a number",
+    "numberMin": "Value is too low",
+    "invalidEnum": "Invalid selection"
+  },
+  "placeholders": {
+    "tableTitle": "Modifiers table",
+    "tableDescription": "Table view is reserved for a future richer grid."
+  }
+}
