@@ -1,5 +1,6 @@
 import Branches_Icon from "../../../../../../../01_components/uiComponents/dashboard_Icons/Branches_Icon.jsx";
 import DeliveryCoverage_Icon from "../../../../../../../01_components/uiComponents/cloudKitchens_icons/DeliveryCoverage_Icon.jsx";
+import { MapCoverage_Icon } from "../../../../../../../01_components/components.index.js";
 import "../../_styles/branches_mapView_cntrls.css";
 
 const Branches_mapView_cntrls = ({
@@ -18,7 +19,9 @@ const Branches_mapView_cntrls = ({
       className="branchesMapView__controls"
       aria-label={t("mapView.controlsTitle")}>
       <div className="branchesMapView__controlsToolbar">
-        <span className="branchesMapView__controlsToolbarLabel">{t("mapView.controlsTitle")}</span>
+        <span className="branchesMapView__controlsToolbarLabel">
+          {t("mapView.controlsTitle")}
+        </span>
         <div className="branchesMapView__controlsToolbarMain">
           <button
             type="button"
@@ -79,10 +82,14 @@ const Branches_mapView_cntrls = ({
         id="branches-map-view-controls-body"
         className={
           "branchesMapView__controlsBody" +
-          (mapControlsExpanded ? "" : " branchesMapView__controlsBody--collapsed")
+          (mapControlsExpanded
+            ? ""
+            : " branchesMapView__controlsBody--collapsed")
         }
         hidden={!mapControlsExpanded}>
-        <p className="branchesMapView__controlsHint">{t("mapView.controlsMoreHint")}</p>
+        <p className="branchesMapView__controlsHint">
+          {t("mapView.controlsMoreHint")}
+        </p>
 
         <div className="branchesMapView__controlsPlaceholderGrid">
           <button
