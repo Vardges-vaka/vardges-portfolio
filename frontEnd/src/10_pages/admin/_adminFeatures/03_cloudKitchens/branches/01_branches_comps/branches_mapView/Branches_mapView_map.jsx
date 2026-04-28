@@ -1,10 +1,11 @@
+import { useMemo } from "react";
 import { GoogleMap } from "@react-google-maps/api";
 import {
   Branches_mapView_mapErrorLoading,
   Branches_mapView_map_marker,
 } from "./_branches_mapView.index.js";
 import {
-  MAP_OPTIONS,
+  getBranchesMapOptions,
   DUBAI_CENTER,
   DEFAULT_ZOOM,
   mapContainerStyle,
@@ -23,6 +24,8 @@ const Branches_mapView_map = ({
   setInfoPanelBranchId,
   activeBranchId,
 }) => {
+  const mapOptions = useMemo(() => getBranchesMapOptions(), []);
+
   return (
     <div className="branchesMapView__mapShell">
       <Branches_mapView_mapErrorLoading
@@ -37,7 +40,7 @@ const Branches_mapView_map = ({
         center={DUBAI_CENTER}
         zoom={DEFAULT_ZOOM}
         onLoad={onMapLoad}
-        options={MAP_OPTIONS}>
+        options={mapOptions}>
         {visibleBranches?.map((b) => {
           const lat = toNum(b.location.coordinates.lat);
           const lng = toNum(b.location.coordinates.lng);

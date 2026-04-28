@@ -1,4 +1,4 @@
-import { googleMaps_mapId } from "../branches.config.js";
+import { googleMaps_mapId, googleMaps_useVector } from "../branches.config.js";
 
 const DUBAI_CENTER = { lat: 25.2048, lng: 55.2708 };
 const DEFAULT_ZOOM = 10;
@@ -19,4 +19,20 @@ const MAP_OPTIONS = {
   ...(googleMaps_mapId.trim() ? { mapId: googleMaps_mapId.trim() } : {}),
 };
 
-export { DUBAI_CENTER, DEFAULT_ZOOM, mapContainerStyle, MAP_OPTIONS };
+/**
+ * Call after the Maps script is loaded. With a Cloud `mapId`, Google otherwise follows the ID’s vector/raster
+ * setting (often vector → WebGL attempt → “Falling back to Raster” on unsupported GPUs). Setting
+ * `renderingType: "RASTER"` at create time skips that attempt; constants may be string literals per Maps API docs.
+ */
+function getBranchesMapOptions() {
+  const opts = { ...MAP_OPTIONS };
+  if (!googleMaps_useVector) {
+    opts.renderingType =
+      typeof google !== "undefined" && google.maps?.RenderingType
+        ? google.maps.RenderingType.RASTER
+        : "RASTER";
+  }
+  return opts;
+}
+
+export { DUBAI_CENTER, DEFAULT_ZOOM, mapContainerStyle, MAP_OPTIONS, getBranchesMapOptions };

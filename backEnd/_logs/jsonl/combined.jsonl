@@ -83873,3 +83873,4261 @@
   "timestamp": "2026-04-28 17:16:06",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:17:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:17:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:17:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:17:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:18:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:18:38",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:19:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:19:02",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:22:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:22:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:22:42",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:23:49",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:24:09",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:24:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:25:59",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:03",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:07",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:07",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:09",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:19",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:54",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:26:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:29:46",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:29:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-28 17:29:56",
+  "type": "controller_success"
+}

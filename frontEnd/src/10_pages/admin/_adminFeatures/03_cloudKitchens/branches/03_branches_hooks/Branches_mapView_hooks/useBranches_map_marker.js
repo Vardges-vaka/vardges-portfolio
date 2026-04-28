@@ -25,26 +25,28 @@ export const useBranches_map_marker = ({
     const AdvancedMarkerElement = window.google?.maps?.marker?.AdvancedMarkerElement;
     if (!AdvancedMarkerElement) return;
 
-    const marker = new AdvancedMarkerElement({
-      map,
-      position: { lat, lng },
-      title: branchName,
-    });
-    markerRef.current = marker;
-
+    // PinElement extends HTMLElement; use the instance as content — not pin.element (deprecated on <gmp-pin>).
+    let pinContent = null;
     try {
       const PinElement = window.google?.maps?.marker?.PinElement;
       if (PinElement) {
-        const pin = new PinElement({
+        pinContent = new PinElement({
           background: "#c62828",
           borderColor: "#8e0000",
           glyphColor: "#ffffff",
         });
-        marker.content = pin.element;
       }
     } catch {
-      // Plain advanced marker if PinElement fails
+      pinContent = null;
     }
+
+    const marker = new AdvancedMarkerElement({
+      map,
+      position: { lat, lng },
+      title: branchName,
+      ...(pinContent ? { content: pinContent } : {}),
+    });
+    markerRef.current = marker;
 
     const onGmpClick = () => {
       onClickRef.current?.();

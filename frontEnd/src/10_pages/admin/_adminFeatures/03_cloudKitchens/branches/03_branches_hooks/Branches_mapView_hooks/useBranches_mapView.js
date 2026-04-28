@@ -5,12 +5,15 @@ import {
   fitMapToBranches,
 } from "../../02_branches_helpers/_branches_helpers.index.js";
 
+// Stable reference — inline `["marker"]` on every render makes LoadScript reload the script.
+const GOOGLE_MAPS_LIBRARIES = ["marker"];
+
 export const useBranches_mapView = ({ branches, googleMaps_apiKey }) => {
   const { isLoaded, loadError } = useJsApiLoader({
     id: "admin-branches-google-map",
     googleMapsApiKey: googleMaps_apiKey,
     // Loads `google.maps.marker` (AdvancedMarkerElement, PinElement, …).
-    libraries: ["marker"],
+    libraries: GOOGLE_MAPS_LIBRARIES,
   });
 
   const mapRef = useRef(null);
