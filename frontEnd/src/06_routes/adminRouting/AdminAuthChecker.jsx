@@ -5,7 +5,7 @@ export const AdminAuthChecker = ({ children }) => {
 
   if (isChecking) {
     return (
-      <div className="adminLayout__loading">
+      <div className="adminLayout__loading" role="status" aria-live="polite">
         <p>Loading...</p>
       </div>
     );

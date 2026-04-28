@@ -1,21 +1,22 @@
 .branchesMapView {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 0.75rem;
   width: 100%;
-  min-height: min(70vh, 560px);
+  min-height: min(85vh, 900px);
   color: var(--text-primary-color);
 }
 
 @media (min-width: 768px) {
   .branchesMapView {
-    flex-direction: row;
+    flex-direction: column;
     align-items: stretch;
   }
 }
 
 .branchesMapView__controls {
   flex: 0 0 auto;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -27,12 +28,7 @@
   max-width: 100%;
 }
 
-@media (min-width: 768px) {
-  .branchesMapView__controls {
-    width: 220px;
-    max-width: 220px;
-  }
-}
+/* Controls span full width in column layout (all breakpoints). */
 
 .branchesMapView__controlsTitle {
   margin: 0;
@@ -90,12 +86,20 @@
 
 .branchesMapView__mapShell {
   position: relative;
+  /* Grow when space allows, but allow shrinking so the info strip below keeps its height */
   flex: 1 1 auto;
-  min-height: 320px;
+  min-height: min(55vh, 520px);
+  min-width: 0;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border-primary-color);
   box-shadow: var(--boxShadow-primary-color);
+}
+
+@media (min-width: 768px) {
+  .branchesMapView__mapShell {
+    min-height: min(62vh, 640px);
+  }
 }
 
 .branchesMapView__mapShell > div {
@@ -202,4 +206,34 @@
 
 .branchesMapView__popupBtn:hover {
   filter: brightness(1.05);
+}
+
+.branchesMapView__popupBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.branchesMapView__popupBtn--secondary {
+  background: color-mix(in srgb, var(--btn-primary-bg-color, #1976d2) 35%, var(--bg-secondary-color, #f5f5f5));
+  color: var(--text-primary-color, #1a1a1a);
+}
+
+.branchesMapView__popupBtn--muted {
+  background: #e0e0e0;
+  color: #424242;
+}
+
+.branchesMapView__popupActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.branchesMapView__popupActions .branchesMapView__popupBtn {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
 }

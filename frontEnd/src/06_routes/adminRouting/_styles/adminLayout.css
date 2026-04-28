@@ -1,30 +1,39 @@
-/* Admin Layout Styles */
+/* Fills the viewport once; children use flex + min-height:0 so only inner areas scroll. */
 .adminLayout {
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  box-sizing: border-box;
 }
 
 .adminLayout__main {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  /* Dashboard shell fills height (no main scroll); welcome / other pages can scroll here. */
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .adminLayout__loading {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex: 1 1 auto;
+  min-height: 0;
   font-size: 1.2rem;
-  color: var(--text-color);
+  color: var(--text-primary-color);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .adminLayout__main {
     padding: 0.5rem;

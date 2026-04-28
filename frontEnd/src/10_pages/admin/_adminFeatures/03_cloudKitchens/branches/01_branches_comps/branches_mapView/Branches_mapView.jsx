@@ -36,6 +36,8 @@ const Branches_mapView = ({
         showBranches={states.showBranches}
         handleToggleBranches={handlers.handleToggleBranches}
         visibleBranches={states.visibleBranches}
+        mapControlsExpanded={states.mapControlsExpanded}
+        handleToggleMapControls={handlers.handleToggleMapControls}
       />
 
       <Branches_mapView_map
@@ -47,10 +49,20 @@ const Branches_mapView = ({
         onLoad={handlers.onMapLoad}
         visibleBranches={states.visibleBranches}
         setActiveBranchId={handlers.setActiveBranchId}
+        setInfoPanelBranchId={handlers.setInfoPanelBranchId}
         onViewBranch={onViewBranch}
       />
 
-      <Branches_mapView_info t={t} />
+      <Branches_mapView_info
+        t={t}
+        branches={branches}
+        mapSummaryPeriod={states.mapSummaryPeriod}
+        onSummaryPeriodChange={handlers.setMapSummaryPeriod}
+        infoPanelBranchId={states.infoPanelBranchId}
+        onClearBranchInfo={handlers.handleClearMapInfoBranch}
+        mapInfoExpanded={states.mapInfoExpanded}
+        onToggleMapInfo={handlers.handleToggleMapInfo}
+      />
     </div>
   );
 };

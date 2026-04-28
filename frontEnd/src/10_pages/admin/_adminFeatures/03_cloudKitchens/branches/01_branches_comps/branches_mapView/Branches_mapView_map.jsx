@@ -1,9 +1,7 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { GoogleMap } from "@react-google-maps/api";
 import {
   Branches_mapView_mapErrorLoading,
   Branches_mapView_map_marker,
-  Branches_map_loadError,
 } from "./_branches_mapView.index.js";
 import {
   MAP_OPTIONS,
@@ -22,6 +20,7 @@ const Branches_mapView_map = ({
 
   onViewBranch,
   setActiveBranchId,
+  setInfoPanelBranchId,
   activeBranchId,
 }) => {
   return (
@@ -54,8 +53,12 @@ const Branches_mapView_map = ({
               onClick={() => setActiveBranchId(id)}
               onCloseClick={() => setActiveBranchId(null)}
               branch={b}
-              btnOnCLick={() => {
+              btnOnClick={() => {
                 onViewBranch(b._id);
+                setActiveBranchId(null);
+              }}
+              onViewBranchInfo={() => {
+                setInfoPanelBranchId(id);
                 setActiveBranchId(null);
               }}
             />

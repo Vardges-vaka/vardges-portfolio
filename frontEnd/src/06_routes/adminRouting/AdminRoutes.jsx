@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 import ProtectedAdminRoutes from "./AdminRoutes_protection";
+import "../../10_pages/admin/adminDashboard/00_styles/adminRouteShell.css";
 
 // Lazy load components
 const AdminDashboard = lazy(() =>
@@ -28,8 +29,10 @@ const AdminRoutes = () => {
         path="dashboard/:section?/:subSection?"
         element={
           <ProtectedAdminRoutes>
-            <Header />
-            <AdminDashboard />
+            <div className="adminRouteShell">
+              <Header />
+              <AdminDashboard />
+            </div>
             {/* <Footer /> */}
           </ProtectedAdminRoutes>
         }

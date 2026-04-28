@@ -5,26 +5,29 @@
   flex-direction: row;
   background-color: var(--bg-primary-color);
   position: relative;
-  align-items: flex-start;
-  min-height: calc(100vh - 60px);
-  height: 100%;
+  align-items: stretch;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
   gap: 10px;
 }
 
 /* ===== CONTENT WRAPPER ===== */
 .adminDashboard__contentWrapper {
-  flex: 1;
+  flex: 1 1 auto;
   /* Left margin adjusts dynamically based on sidebar width */
   /* margin-left: calc(var(--sidebar-width, 150px) - 5px); */
   /* margin-left: 150px; */
   padding: 20px;
+  /* Single scroll column for the whole feature area (shell + dashboard clip overflow). */
   overflow-y: auto;
   overflow-x: hidden;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--bg-primary-color);
-  height: calc(100vh - 45px);
+  min-height: 0;
   display: flex;
   justify-content: flex-start;
+  align-items: stretch;
   box-sizing: border-box;
 }
 

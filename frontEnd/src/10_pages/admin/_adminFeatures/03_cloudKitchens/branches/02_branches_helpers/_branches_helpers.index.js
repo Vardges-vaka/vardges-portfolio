@@ -9,4 +9,16 @@ export {
 } from "./branches_defaults.js";
 export { computeSectionDiff, computeBulkDiff } from "./branches_diff.js";
 export { toNum, branchHasCoords } from "./branches_mapHelpers.js";
+export { createBranches_mapView_infoWindowContent } from "./branches_mapView_infoWindowContent_helper.js";
+export {
+  getBranches_mapSummaryRange,
+  formatBranches_mapSummaryRange,
+} from "./branches_mapSummaryRange_helper.js";
+export { branchIsOpenNow, getBranchScheduleHint } from "./branches_openNow_helper.js";
+export {
+  hrefTel,
+  hrefWhatsApp,
+  hrefTelegram,
+  hrefMailto,
+} from "./branches_contactLinks_helper.js";
 export { default as fitMapToBranches } from "./branches_mapFit_helper.js";

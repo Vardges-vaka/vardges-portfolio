@@ -62,6 +62,8 @@ export { default as BrandPortfolio_icon } from "./uiComponents/dashboard_Icons/B
 export { default as CocktailDevelopment_icon } from "./uiComponents/dashboard_Icons/CocktailDevelopment_icon.jsx";
 export { default as MenuDevelopment_icon } from "./uiComponents/dashboard_Icons/MenuDevelopment_icon.jsx";
 
+export * from "./uiComponents/cloudKitchens_icons/_cloudKitchens_icons.index.js";
+
 // Admin Header Icons
 export { default as Me_Icons } from "./uiComponents/dashboard_Icons/Me_Icons.jsx";
 export { default as Tools_Icons } from "./uiComponents/dashboard_Icons/Tools_Icons.jsx";

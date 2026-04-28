@@ -5,8 +5,8 @@
 
 .adminSideBar {
   position: sticky;
-  top: 48px;
-  align-self: flex-start;
+  top: 0;
+  align-self: stretch;
   border-right: 1px solid var(--border-tertiary-color);
   background-color: var(--bg-tertiary-color);
   display: flex;
@@ -16,8 +16,8 @@
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden; /* Clip overflow - tooltips use fixed positioning */
   width: max-content;
-  height: calc(100vh - 48px);
-  max-height: calc(1000vh - 60px);
+  height: auto;
+  min-height: 0;
 }
 
 /* Pinned state - wider to show labels */

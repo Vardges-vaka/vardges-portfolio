@@ -5,20 +5,24 @@ import {
   fitMapToBranches,
 } from "../../02_branches_helpers/_branches_helpers.index.js";
 
-export const useBranches_mapView = ({
-//   fitMapToBranches,
-  branches,
-  googleMaps_apiKey,
-}) => {
+export const useBranches_mapView = ({ branches, googleMaps_apiKey }) => {
   const { isLoaded, loadError } = useJsApiLoader({
     id: "admin-branches-google-map",
     googleMapsApiKey: googleMaps_apiKey,
+    // Loads `google.maps.marker` (AdvancedMarkerElement, PinElement, …).
+    libraries: ["marker"],
   });
 
   const mapRef = useRef(null);
 
   const [showBranches, setShowBranches] = useState(true);
   const [activeBranchId, setActiveBranchId] = useState(null);
+  const [mapControlsExpanded, setMapControlsExpanded] = useState(false);
+  const [mapSummaryPeriod, setMapSummaryPeriod] = useState(
+    /** @type {"daily"|"weekly"|"monthly"} */ ("daily"),
+  );
+  const [infoPanelBranchId, setInfoPanelBranchId] = useState(null);
+  const [mapInfoExpanded, setMapInfoExpanded] = useState(false);
 
   const withCoords = useMemo(
     () => (branches ?? []).filter(branchHasCoords),
@@ -34,6 +38,27 @@ export const useBranches_mapView = ({
   const handleToggleBranches = () => {
     setShowBranches((v) => !v);
     setActiveBranchId(null);
+    setInfoPanelBranchId(null);
+    setMapInfoExpanded(false);
+  };
+
+  const handleToggleMapControls = () => {
+    setMapControlsExpanded((v) => !v);
+  };
+
+  const handleClearMapInfoBranch = () => {
+    setInfoPanelBranchId(null);
+    setMapInfoExpanded(false);
+  };
+
+  const handleToggleMapInfo = () => {
+    setMapInfoExpanded((v) => !v);
+  };
+
+  /** Selecting branch detail from the map opens the info panel. */
+  const handleSetInfoPanelBranchId = (id) => {
+    setInfoPanelBranchId(id);
+    if (id) setMapInfoExpanded(true);
   };
 
   const mapStates = {
@@ -41,14 +66,23 @@ export const useBranches_mapView = ({
     loadError,
     showBranches,
     activeBranchId,
+    mapControlsExpanded,
+    mapSummaryPeriod,
+    infoPanelBranchId,
+    mapInfoExpanded,
     withCoords,
     visibleBranches,
     googleMaps_apiKey,
   };
   const mapHandlers = {
     handleToggleBranches,
+    handleToggleMapControls,
+    handleToggleMapInfo,
+    handleClearMapInfoBranch,
     onMapLoad,
     setActiveBranchId,
+    setMapSummaryPeriod,
+    setInfoPanelBranchId: handleSetInfoPanelBranchId,
   };
 
   //! ______________USE EFFECTS________________

@@ -6,3 +6,19 @@
   width: 100%;
   color: var(--text-primary-color);
 }
+
+/* Map mode: stretch the map column so the shell fills space below the header (avoids a dead zone under the info strip). */
+.branches--mapMode {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.branches--mapMode .branchesMapView {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.branches--mapMode .branchesMapView__mapShell {
+  flex: 1 1 0;
+  min-height: min(55vh, 520px);
+}

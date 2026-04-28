@@ -1,0 +1,836 @@
+.branchesMapViewInfo {
+  width: 100%;
+  padding: 0;
+  background: var(--bg-primary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+  box-shadow: var(--boxShadow-primary-color);
+  color: var(--text-primary-color);
+  /* Do not shrink inside .branchesMapView flex column (map has flex-grow) — was clipping expanded body */
+  flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.branchesMapViewInfo__collapseBar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem 0.65rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg-secondary-color);
+  border-bottom: 1px solid var(--border-primary-color);
+}
+
+.branchesMapViewInfo__collapseBarStart {
+  justify-self: start;
+  min-width: 0;
+}
+
+.branchesMapViewInfo__collapseBarCenter {
+  justify-self: center;
+  max-width: min(38vw, 20rem);
+  min-width: 0;
+  text-align: center;
+}
+
+.branchesMapViewInfo__collapseAddress {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--text-primary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.branchesMapViewInfo__collapseBarEnd {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+/* Header icon row: no boxes — icons sit flush on the bar */
+.branchesMapViewInfo__collapseBarEnd .branchesMapViewInfo__contactTrigger,
+.branchesMapViewInfo__collapseBarEnd .branchesMapViewInfo__collapseToggle {
+  border: none;
+  background: transparent;
+}
+
+.branchesMapViewInfo__collapseBarEnd .branchesMapViewInfo__contactTrigger:hover,
+.branchesMapViewInfo__collapseBarEnd .branchesMapViewInfo__collapseToggle:hover {
+  border: none;
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 14%, transparent);
+}
+
+.branchesMapViewInfo__operationsTrigger--not24h {
+  opacity: 0.78;
+}
+
+.branchesMapViewInfo__collapseBarContact {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.branchesMapViewInfo__contactTrigger--collapseBar .branchesMapViewInfo__contactTriggerImg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.branchesMapViewInfo__collapseBarMain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+  min-width: 0;
+}
+
+.branchesMapViewInfo__collapseTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary-color);
+}
+
+.branchesMapViewInfo__collapseValue {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+.branchesMapViewInfo__collapseMeta {
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+}
+
+.branchesMapViewInfo__collapseDate {
+  font-size: 0.6875rem;
+  color: var(--text-secondary-color);
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.branchesMapViewInfo__collapseToggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.branchesMapViewInfo__collapseToggle:hover {
+  border: none;
+}
+
+.branchesMapViewInfo__collapseToggle:focus-visible {
+  outline: 2px solid var(--btn-primary-bg-color);
+  outline-offset: 2px;
+}
+
+.branchesMapViewInfo__collapseToggleIcon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.branchesMapViewInfo__expandBody {
+  padding: 1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* Single page scroll: avoid a second scrollbar here (admin content wrapper already scrolls). */
+  overflow: visible;
+}
+
+.branchesMapViewInfo__expandBody--collapsed {
+  display: none;
+  max-height: none;
+  overflow: visible;
+}
+
+.branchesMapViewInfo__header--inPanel {
+  margin-bottom: 0.25rem;
+}
+
+.branchesMapViewInfo__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.branchesMapViewInfo__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.branchesMapViewInfo__backBtn {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8125rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.branchesMapViewInfo__backBtn:hover {
+  border-color: var(--btn-primary-bg-color);
+}
+
+.branchesMapViewInfo__periodRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.branchesMapViewInfo__periodBtn {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8125rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.branchesMapViewInfo__periodBtn--active {
+  border-color: var(--btn-primary-bg-color);
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 18%, transparent);
+}
+
+.branchesMapViewInfo__range {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary-color);
+}
+
+.branchesMapViewInfo__rangeLabel {
+  font-weight: 500;
+  color: var(--text-primary-color);
+}
+
+.branchesMapViewInfo__hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+  line-height: 1.4;
+}
+
+.branchesMapViewInfo__kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.65rem;
+}
+
+.branchesMapViewInfo__kpi {
+  padding: 0.65rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+}
+
+.branchesMapViewInfo__kpiLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 0.25rem;
+}
+
+.branchesMapViewInfo__kpiValue {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.branchesMapViewInfo__block {
+  margin-bottom: 0.85rem;
+}
+
+.branchesMapViewInfo__blockTitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary-color);
+}
+
+.branchesMapViewInfo__blockBody {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.branchesMapViewInfo__contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.branchesMapViewInfo__contactTrigger {
+  padding: 0.4rem 0.65rem;
+  font-size: 0.8125rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+  cursor: pointer;
+  text-align: left;
+}
+
+.branchesMapViewInfo__contactTrigger:hover {
+  border-color: var(--btn-primary-bg-color);
+}
+
+.branchesMapViewInfo__contactTrigger:focus-visible {
+  outline: 2px solid var(--btn-primary-bg-color);
+  outline-offset: 2px;
+}
+
+.branchesMapViewInfo__contactTrigger--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.35rem;
+}
+
+/* Collapse bar: smaller uniform tiles (wins over --icon alone) */
+.branchesMapViewInfo__contactTrigger--icon.branchesMapViewInfo__contactTrigger--collapseBar {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.28rem;
+}
+
+.branchesMapViewInfo__contactTriggerImg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.branchesMapViewInfo__visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Operations: compact card rows (theme-aware) */
+.branchesMapViewInfo__opsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 8px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+  overflow: hidden;
+}
+
+.branchesMapViewInfo__opsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--border-primary-color) 65%, transparent);
+}
+
+.branchesMapViewInfo__opsRow:last-child {
+  border-bottom: none;
+}
+
+.branchesMapViewInfo__opsRow--full {
+  flex-wrap: wrap;
+}
+
+.branchesMapViewInfo__opsLabel {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+}
+
+.branchesMapViewInfo__opsValue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.branchesMapViewInfo__opsPill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-primary-color);
+  color: var(--text-primary-color);
+}
+
+.branchesMapViewInfo__opsPill--on {
+  border-color: color-mix(
+    in srgb,
+    var(--btn-primary-bg-color) 55%,
+    var(--border-primary-color)
+  );
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 14%, transparent);
+  color: var(--text-primary-color);
+}
+
+.branchesMapViewInfo__opsPill--off {
+  opacity: 0.85;
+}
+
+.branchesMapViewInfo__opsMuted {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+}
+
+.branchesMapViewInfo__opsHours {
+  font-weight: 600;
+  color: var(--text-primary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.branchesMapViewInfo__ops24h {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 12%, transparent);
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--btn-primary-bg-color) 35%,
+      var(--border-primary-color)
+    );
+}
+
+.branchesMapViewInfo__ops24h--crossed {
+  background: color-mix(in srgb, var(--bg-primary-color) 88%, transparent);
+  border-color: var(--border-primary-color);
+  opacity: 0.82;
+}
+
+.branchesMapViewInfo__ops24hImg {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.branchesMapViewInfo__detailsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.branchesMapViewInfo__details {
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  background: var(--bg-secondary-color);
+}
+
+.branchesMapViewInfo__details--accordion {
+  margin-bottom: 0;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.branchesMapViewInfo__details--accordion:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--btn-primary-bg-color) 45%,
+    var(--border-primary-color)
+  );
+}
+
+.branchesMapViewInfo__details--accordion[open] {
+  border-color: var(--btn-primary-bg-color);
+  box-shadow: 0 0 0 1px
+    color-mix(in srgb, var(--btn-primary-bg-color) 25%, transparent);
+}
+
+.branchesMapViewInfo__details summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.branchesMapViewInfo__details--accordion > summary {
+  list-style: none;
+}
+
+.branchesMapViewInfo__details--accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.branchesMapViewInfo__detailsSummary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.65rem;
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  user-select: none;
+}
+
+.branchesMapViewInfo__detailsSummary:hover {
+  background: var(--bg-primary-color);
+}
+
+.branchesMapViewInfo__detailsSummaryIcon {
+  flex-shrink: 0;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.branchesMapViewInfo__detailsSummaryLabel {
+  flex: 1 1 auto;
+  min-width: 4.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.branchesMapViewInfo__detailsSummaryCount {
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  padding: 0.12rem 0.45rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 16%, transparent);
+  color: var(--text-primary-color);
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--btn-primary-bg-color) 30%,
+      var(--border-primary-color)
+    );
+}
+
+.branchesMapViewInfo__detailsSummary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-left: 0.15rem;
+  border-right: 2px solid var(--text-secondary-color);
+  border-bottom: 2px solid var(--text-secondary-color);
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+
+.branchesMapViewInfo__details--accordion[open]
+  > .branchesMapViewInfo__detailsSummary::after {
+  transform: rotate(45deg);
+  margin-top: 0.1rem;
+}
+
+.branchesMapViewInfo__idList,
+.branchesMapViewInfo__imgList {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.8125rem;
+}
+
+.branchesMapViewInfo__idList--inDetails,
+.branchesMapViewInfo__imgList--inDetails {
+  margin: 0;
+  padding: 0.5rem 0.65rem 0.65rem 1.85rem;
+  background: var(--bg-primary-color);
+  border-top: 1px solid
+    color-mix(in srgb, var(--border-primary-color) 70%, transparent);
+}
+
+.branchesMapViewInfo__notes--inDetails {
+  margin: 0;
+  padding: 0.5rem 0.65rem 0.65rem;
+  background: var(--bg-primary-color);
+  border-top: 1px solid
+    color-mix(in srgb, var(--border-primary-color) 70%, transparent);
+}
+
+.branchesMapViewInfo__imgLink {
+  color: var(--btn-primary-bg-color);
+}
+
+.branchesMapViewInfo__notes {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.branchesMapViewInfo__muted {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary-color);
+}
+
+/* Pin-style contact popover (portal to body, no dimmed backdrop) */
+
+.branchesMapViewInfo__contactPopover {
+  position: fixed;
+  z-index: 1300;
+  min-width: 11rem;
+  max-width: min(22rem, calc(100vw - 1rem));
+  padding: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid color-mix(in srgb, #1a1a1a 18%, #fff);
+  box-shadow:
+    0 2px 8px color-mix(in srgb, #000 12%, transparent),
+    0 8px 24px color-mix(in srgb, #000 10%, transparent);
+}
+
+.branchesMapViewInfo__contactPopoverArrow {
+  position: absolute;
+  top: -7px;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #fff;
+  filter: drop-shadow(0 -1px 0 color-mix(in srgb, #1a1a1a 12%, transparent));
+  pointer-events: none;
+}
+
+.branchesMapViewInfo__contactPopover--flip
+  .branchesMapViewInfo__contactPopoverArrow {
+  top: auto;
+  bottom: -7px;
+  border-bottom: none;
+  border-top: 7px solid #fff;
+  filter: drop-shadow(0 1px 0 color-mix(in srgb, #1a1a1a 12%, transparent));
+}
+
+.branchesMapViewInfo__contactPopoverHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem 0.4rem;
+  border-bottom: 1px solid color-mix(in srgb, #1a1a1a 10%, transparent);
+}
+
+.branchesMapViewInfo__contactPopoverTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.branchesMapViewInfo__contactPopoverClose {
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+  padding: 0 0.15rem;
+}
+
+.branchesMapViewInfo__contactPopoverClose:hover {
+  color: #111;
+}
+
+.branchesMapViewInfo__contactPopoverEmpty {
+  margin: 0;
+  padding: 0.5rem 0.65rem 0.65rem;
+  font-size: 0.8125rem;
+  color: #555;
+}
+
+.branchesMapViewInfo__contactPopoverList {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0.5rem 0.55rem;
+}
+
+.branchesMapViewInfo__cpRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  min-height: 2.25rem;
+  border-radius: 6px;
+  padding: 0.2rem 0;
+}
+
+.branchesMapViewInfo__cpIconWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: #424242;
+}
+
+.branchesMapViewInfo__cpIcon {
+  display: block;
+}
+
+.branchesMapViewInfo__cpSlide {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: 0;
+}
+
+.branchesMapViewInfo__cpValue {
+  font-size: 0.75rem;
+  color: #333;
+  flex: 1 1 8rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.branchesMapViewInfo__cpMiniBtn {
+  flex-shrink: 0;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.6875rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  cursor: pointer;
+  color: #222;
+}
+
+.branchesMapViewInfo__cpMiniBtn:hover {
+  border-color: #888;
+}
+
+.branchesMapViewInfo__cpMiniLink {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  color: var(--btn-primary-bg-color, #1976d2);
+  text-decoration: none;
+}
+
+.branchesMapViewInfo__cpMiniLink:hover {
+  text-decoration: underline;
+}
+
+/* Operations / hours popover (reuses contact popover shell) */
+.branchesMapViewInfo__operationsPopover {
+  min-width: 14rem;
+}
+
+.branchesMapViewInfo__opsPopoverBody {
+  padding: 0.45rem 0.6rem 0.6rem;
+}
+
+.branchesMapViewInfo__opsPopoverDl {
+  margin: 0;
+}
+
+.branchesMapViewInfo__opsPopoverRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 0.65rem;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid color-mix(in srgb, #1a1a1a 8%, transparent);
+  font-size: 0.8125rem;
+}
+
+.branchesMapViewInfo__opsPopoverRow:last-of-type {
+  border-bottom: none;
+}
+
+.branchesMapViewInfo__opsPopoverDt {
+  margin: 0;
+  font-weight: 500;
+  color: #555;
+}
+
+.branchesMapViewInfo__opsPopoverDd {
+  margin: 0;
+  text-align: right;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.branchesMapViewInfo__opsPopoverPill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  color: #222;
+}
+
+.branchesMapViewInfo__opsPopoverPill--on {
+  border-color: color-mix(in srgb, var(--btn-primary-bg-color, #1976d2) 45%, #ccc);
+  background: color-mix(in srgb, var(--btn-primary-bg-color, #1976d2) 12%, #f7f7f7);
+}
+
+.branchesMapViewInfo__opsPopoverPill--off {
+  opacity: 0.88;
+}
+
+.branchesMapViewInfo__opsPopoverHint {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+.branchesMapViewInfo__opsPopoverMuted {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #555;
+}

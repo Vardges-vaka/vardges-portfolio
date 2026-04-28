@@ -21,7 +21,7 @@ const Branches = () => {
 
   const renederMapView = () => {
     if (!googleMaps_apiKey.trim()) {
-      return <Branches_mapViewNoKey t={t} />;
+      return <Branches_mapViewNoKey t={compProps.Branches_mapView_props.t} />;
     }
     return (
       <Branches_mapView
@@ -36,7 +36,7 @@ const Branches = () => {
   };
 
   return (
-    <div className="branches">
+    <div className={`branches${viewMode === "map" ? " branches--mapMode" : ""}`}>
       <Branches_viewToggle {...compProps.Branches_viewToggle_props} />
 
       {viewMode === "list" && (
