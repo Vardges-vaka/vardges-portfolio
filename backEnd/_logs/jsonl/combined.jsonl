@@ -130144,3 +130144,6207 @@
   "timestamp": "2026-04-30 16:51:12",
   "type": "controller_success"
 }
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:51:25",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:51:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:52:21",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:53:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:54:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:54:12",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:54:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:54:23",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:54:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:55:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:55:58",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:56:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:56:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:56:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:56:39",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:56:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:56:44",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:56:45",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:58:44",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:59:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:59:17",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:59:47",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:59:49",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 16:59:54",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 17:00:05",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 17:00:06",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 17:53:26",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:13:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:15:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:15:11",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:15:35.397Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:15:35",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:15:54",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:15:35.397Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:15:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Not authenticated",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Not authenticated\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:15:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2026-04-30 18:18:02",
+  "type": "controller_error"
+}
+{
+  "controller": "user_signIn_cntrl.js",
+  "data": {
+    "user": {
+      "name": "Vardges",
+      "role": "superAdmin"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚 user_signIn_cntrl.js |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:18:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:15:35.397Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:18:22",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:15:35.397Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:23",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:15:35.397Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:25",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:27.894Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:27",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:30.413Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:31.578Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:31",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:33.258Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:33",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:34.449Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:34",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:35.281Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:35",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:36.837Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:36",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:37.469Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:37",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:38.183Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:38",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:48",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_getAll_cntrl.js | ",
+  "data": [
+    {
+      "__v": 0,
+      "_id": "69eb4283a4534b71721f147b",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971529947037",
+          "whatsApp": "+971529947037"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:14:27.077Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marasi Dr - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.189285858295616,
+          "lng": 55.26972461142198
+        }
+      },
+      "name": "Business Bay, Cuisinette",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:18:33.934Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4260a4534b71721f1479",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025487",
+          "whatsApp": "+971521025487"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:52.787Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Marsa Dubai - Dubai Marina - Dubai",
+        "coordinates": {
+          "lat": 25.07935076847297,
+          "lng": 55.14270363840367
+        }
+      },
+      "name": "Dubai Marina",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:19:45.918Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4257a4534b71721f1477",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": " +971528331658",
+          "whatsApp": " +971528331658"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:43.301Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "name": "Dubai Silicon Oasis",
+      "operations": {
+        "is24Hours": false,
+        "isActive": true
+      },
+      "updatedAt": "2026-04-24T11:20:14.176Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb4249a4534b71721f1475",
+      "brands": [],
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:13:29.091Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Sol Avenue - Business Bay - Dubai",
+        "coordinates": {
+          "lat": 25.179947336512896,
+          "lng": 55.27515425560145
+        }
+      },
+      "name": "Business Bay, Sol",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "23:45",
+        "is24Hours": false,
+        "isActive": true,
+        "openSince": null,
+        "openingTime": "07:00"
+      },
+      "updatedAt": "2026-04-28T12:57:33.886Z"
+    },
+    {
+      "__v": 0,
+      "_id": "69eb420ea4534b71721f1472",
+      "brands": [],
+      "contact": {
+        "manager": {
+          "email": "",
+          "name": "",
+          "phone": "",
+          "whatsApp": ""
+        },
+        "ourSupport": {
+          "email": "",
+          "phone": "+971521025674",
+          "whatsApp": "+971521025674"
+        }
+      },
+      "costs": {
+        "currency": "AED",
+        "variable": []
+      },
+      "coverageAreas": {
+        "byDistance": {
+          "polygon": []
+        },
+        "byDriveTime": {
+          "polygon": []
+        }
+      },
+      "createdAt": "2026-04-24T10:12:30.085Z",
+      "employees": [],
+      "equipments": [],
+      "images": [],
+      "location": {
+        "address": "Rose Palace Residences, Arjan, Shop 19 - Dubai",
+        "coordinates": {
+          "lat": 25.067662943185052,
+          "lng": 55.23373065374678
+        }
+      },
+      "name": "Arjan",
+      "operations": {
+        "closedSince": null,
+        "closingTime": "",
+        "is24Hours": true,
+        "isActive": true,
+        "openSince": "2024-11-01T00:00:00.000Z",
+        "openingTime": ""
+      },
+      "updatedAt": "2026-04-24T11:16:50.863Z"
+    }
+  ],
+  "level": "info",
+  "message": "⛟ 📦 🚚  | branch_getAll_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:19:58",
+  "type": "controller_success"
+}
+{
+  "controller": " | branch_update_cntrl.js | ",
+  "error": "No valid fields to update",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | branch_update_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: No valid fields to update\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at branch_update_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/branchCntrl/branchCntrl_crud/branch_update_cntrl.js:14:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2026-04-30 18:20:03",
+  "type": "controller_error"
+}
+{
+  "controller": " | branch_update_cntrl.js | ",
+  "error": "No valid fields to update",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | branch_update_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: No valid fields to update\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at branch_update_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/branchCntrl/branchCntrl_crud/branch_update_cntrl.js:14:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+  "statusCode": 400,
+  "timestamp": "2026-04-30 18:20:06",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:34:27",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:34:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:34:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:35:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:35:15",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:39:19",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:39:20",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:41:59",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:42:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:42:21",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:42:22",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:42:33",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:42:34",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:43:47",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:43:48",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:44:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:44:11",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:44:42",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:44:43",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:45:17",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:45:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:47:02",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:47:03",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:47:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:47:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:48:51",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-04-30 18:48:51",
+  "type": "controller_success"
+}

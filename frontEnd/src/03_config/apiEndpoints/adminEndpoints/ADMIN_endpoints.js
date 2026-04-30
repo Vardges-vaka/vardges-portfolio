@@ -68,6 +68,28 @@ const ADMIN_endpoints = {
     },
   },
 
+  SETTINGS: {
+    GET: {
+      ENDPOINT: `${API_BASE}/settings`,
+      DISPLAY_NAME: "Settings_get.js",
+      PROPERTIES: {
+        method: "GET",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    PATCH_STORAGE: {
+      ENDPOINT: `${API_BASE}/settings/storage`,
+      DISPLAY_NAME: "Settings_patchStorage.js",
+      PROPERTIES: (body) => ({
+        method: "PATCH",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }),
+    },
+  },
+
   BRAND: {
     ADD: {
       ENDPOINT: `${API_BASE}/brands`,

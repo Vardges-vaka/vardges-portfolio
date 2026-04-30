@@ -14,6 +14,7 @@ import {
   time_vld,
   date_vld,
 } from "../../../../09_validators/_validators.index.js";
+import { CLOUD_STORAGE_PROVIDERS } from "../../../../05_constants/cloudStorageProviders.js";
 
 // -------- tiny per-field helpers --------
 
@@ -492,6 +493,57 @@ export const validateBranchFields = (data, { isUpdate = false } = {}) => {
     }
 
     out.contract = contract;
+  }
+
+  // -------- images --------
+  if ("images" in data && data.images !== undefined && data.images !== null) {
+    if (!Array.isArray(data.images)) {
+      return {
+        ok: false,
+        field: "images",
+        message: "images must be an array",
+      };
+    }
+    if (data.images.length > 32) {
+      return {
+        ok: false,
+        field: "images",
+        message: "At most 32 image URLs allowed",
+      };
+    }
+    const urls = [];
+    for (let i = 0; i < data.images.length; i += 1) {
+      const r = checkStr(data.images[i], {
+        field: `images[${i}]`,
+        max: 2048,
+      });
+      if (r.err) return { ok: false, field: `images[${i}]`, message: r.err };
+      if (r.value !== undefined && r.value !== "") urls.push(r.value);
+    }
+    out.images = urls;
+  }
+
+  // -------- cloudStorage (which provider uploads for this branch) --------
+  if ("cloudStorage" in data && data.cloudStorage !== undefined) {
+    const v = data.cloudStorage;
+    if (v === null) {
+      out.cloudStorage = null;
+    } else {
+      const r = checkStr(v, { field: "cloudStorage", max: 32 });
+      if (r.err) return { ok: false, field: "cloudStorage", message: r.err };
+      const key = r.value;
+      if (
+        typeof key !== "string" ||
+        !CLOUD_STORAGE_PROVIDERS.includes(/** @type {any} */ (key))
+      ) {
+        return {
+          ok: false,
+          field: "cloudStorage",
+          message: `cloudStorage must be one of: ${CLOUD_STORAGE_PROVIDERS.join(", ")}`,
+        };
+      }
+      out.cloudStorage = key;
+    }
   }
 
   // -------- notes --------

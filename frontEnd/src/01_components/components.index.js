@@ -63,6 +63,7 @@ export { default as CocktailDevelopment_icon } from "./uiComponents/dashboard_Ic
 export { default as MenuDevelopment_icon } from "./uiComponents/dashboard_Icons/MenuDevelopment_icon.jsx";
 
 export * from "./uiComponents/cloudKitchens_icons/_cloudKitchens_icons.index.js";
+export * from "./uiComponents/dashboard_Icons/settings_icons/_settings_icons.index.js";
 
 // Admin Header Icons
 export { default as Me_Icons } from "./uiComponents/dashboard_Icons/Me_Icons.jsx";

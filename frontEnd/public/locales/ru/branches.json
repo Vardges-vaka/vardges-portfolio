@@ -208,6 +208,16 @@
     "noVariableCosts": "Разовых расходов нет.",
     "branchGone": "Этот филиал больше недоступен."
   },
+  "filesSection": {
+    "cloudStorageLabel": "Облачное хранилище",
+    "cloudStorageHint": "Выберите, где хранятся файлы филиала. Включите или отключите провайдеров в разделе «Настройки → Облачное хранилище».",
+    "loadingStorage": "Загрузка настроек хранилища…",
+    "cloudStorageUnset": "Не выбрано",
+    "cloudStorageDefaultSuffix": " (по умолчанию)",
+    "cloudStorageDisabledOption": "{{label}} — отключено",
+    "cloudStorageBulkHint": "Нельзя сменить облако при редактировании всех разделов. Вернитесь в режим просмотра.",
+    "placeholderBody": "Загрузка PDF договора и галереи будет здесь после запуска модуля файлов."
+  },
   "validation": {
     "required": "Поле обязательно",
     "tooShort": "Значение слишком короткое",

@@ -1,0 +1,19 @@
+{
+  "title": "التخزين السحابي",
+  "subtitle": "فعّل مزودي التخزين لرفع الملفات بين الفروع. يبقى مزود واحد مفعّل على الأقل كافتراضي (يُعاد ترتيبه تلقائياً عند الحاجة). يمكن ربط الشعار وعنوان لوحة المزود لاحقاً.",
+  "loading": "جاري التحميل…",
+  "loadFailed": "تعذر تحميل الإعدادات.",
+  "patchFailed": "تعذر تحديث التخزين.",
+  "colProvider": "المزود",
+  "colEnabled": "متاح",
+  "colDefault": "افتراضي",
+  "enabledOn": "مفعّل",
+  "enabledOff": "معطّل",
+  "default": "الافتراضي للرفع الجديد",
+  "providers": {
+    "s3": "Amazon S3",
+    "gcs": "Google Cloud Storage",
+    "r2": "Cloudflare R2",
+    "blob": "Azure Blob Storage"
+  }
+}

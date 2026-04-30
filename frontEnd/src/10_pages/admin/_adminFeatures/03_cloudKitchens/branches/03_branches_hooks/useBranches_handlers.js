@@ -511,6 +511,27 @@ export const useBranches_handlers = ({
     setCollapsedSections((prev) => ({ ...prev, [sectionKey]: !prev?.[sectionKey] }));
   };
 
+  /** Persist top-level Branch.cloudStorage immediately (outside section-card flow). */
+  const handleBranchCloudStorageChange = async (cloudStorage) => {
+    if (!detailSelectedId || detailMode === "bulkEdit") return;
+    setIsSaving(true);
+    setError(null);
+    const payload =
+      cloudStorage === "" || cloudStorage === undefined ? { cloudStorage: null } : { cloudStorage };
+
+    const { success, message, data } = await Branch_update(detailSelectedId, payload);
+    setIsSaving(false);
+
+    if (!success || !data) {
+      setError(message || "Update failed");
+      return;
+    }
+
+    setBranches((prev) =>
+      prev.map((b) => (b._id === detailSelectedId ? data : b)),
+    );
+  };
+
   return {
     handlers: {
       // data
@@ -555,6 +576,7 @@ export const useBranches_handlers = ({
       // misc
       handleLocationViewToggle,
       handleToggleSectionCollapse,
+      handleBranchCloudStorageChange,
     },
   };
 };

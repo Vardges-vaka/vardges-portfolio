@@ -208,6 +208,16 @@
     "noVariableCosts": "لا توجد تكاليف متغيرة مسجّلة.",
     "branchGone": "هذا الفرع لم يعد متاحاً."
   },
+  "filesSection": {
+    "cloudStorageLabel": "التخزين السحابي",
+    "cloudStorageHint": "حدد موقع ملفات هذا الفرع. فعّل أو أوقف الموفرات من الإعدادات ← التخزين السحابي.",
+    "loadingStorage": "جاري تحميل إعدادات التخزين…",
+    "cloudStorageUnset": "غير محدد",
+    "cloudStorageDefaultSuffix": " (افتراضي)",
+    "cloudStorageDisabledOption": "{{label}} — معطّل",
+    "cloudStorageBulkHint": "لا يمكن تغيير التخزين السحابي أثناء تحرير جميع الأقسام. عد إلى وضع العرض.",
+    "placeholderBody": "سيتم رفع ملف العقد والصور من هنا بعد إطلاق خاصية الملفات."
+  },
   "validation": {
     "required": "هذا الحقل مطلوب",
     "tooShort": "القيمة قصيرة جداً",

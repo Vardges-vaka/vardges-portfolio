@@ -12,25 +12,30 @@ export const componentMap = {
   },
   cloudKitchens: {
     cloudKitchens_branches: lazy(
-      () => import("../../_adminFeatures/03_cloudKitchens/branches/Branches.jsx"),
+      () =>
+        import("../../_adminFeatures/03_cloudKitchens/branches/Branches.jsx"),
     ),
     cloudKitchens_brands: lazy(
       () => import("../../_adminFeatures/03_cloudKitchens/brands/Brands.jsx"),
     ),
     cloudKitchens_employees: lazy(
-      () => import("../../_adminFeatures/03_cloudKitchens/employees/Employees.jsx"),
+      () =>
+        import("../../_adminFeatures/03_cloudKitchens/employees/Employees.jsx"),
     ),
     cloudKitchens_modifiers: lazy(
-      () => import("../../_adminFeatures/03_cloudKitchens/modifiers/Modifiers.jsx"),
+      () =>
+        import("../../_adminFeatures/03_cloudKitchens/modifiers/Modifiers.jsx"),
     ),
     cloudKitchens_menus: lazy(
       () => import("../../_adminFeatures/03_cloudKitchens/menus/Menus.jsx"),
     ),
     cloudKitchens_menuCategories: lazy(
-      () => import("../../_adminFeatures/03_cloudKitchens/menuCategories/MenuCategories.jsx"),
+      () =>
+        import("../../_adminFeatures/03_cloudKitchens/menuCategories/MenuCategories.jsx"),
     ),
     cloudKitchens_menuItems: lazy(
-      () => import("../../_adminFeatures/03_cloudKitchens/menuItems/MenuItems.jsx"),
+      () =>
+        import("../../_adminFeatures/03_cloudKitchens/menuItems/MenuItems.jsx"),
     ),
   },
   settings: {
@@ -49,6 +54,10 @@ export const componentMap = {
     adminSettings: lazy(
       () =>
         import("../../_adminFeatures/00_settings/adminSettings/AdminSettings.jsx"),
+    ),
+    cloudStorage: lazy(
+      () =>
+        import("../../_adminFeatures/00_settings/cloudStorage/CloudStorage.jsx"),
     ),
   },
 };

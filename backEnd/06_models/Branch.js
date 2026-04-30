@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+import { CLOUD_STORAGE_PROVIDERS } from "../05_constants/cloudStorageProviders.js";
+
 const coordinateSchema = new mongoose.Schema(
   {
     lat: { type: Number },
@@ -99,6 +101,10 @@ const branchSchema = new mongoose.Schema(
     },
 
     images: [{ type: String }], // image URLs
+    cloudStorage: {
+      type: String,
+      enum: CLOUD_STORAGE_PROVIDERS,
+    },
 
     employees: [{ type: mongoose.Schema.Types.ObjectId, ref: "Employee" }],
     equipments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Equipment" }],

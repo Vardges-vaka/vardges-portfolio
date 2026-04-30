@@ -17,7 +17,10 @@ import {
   Branches_detailView_filesField,
 } from "./branches_childComps/branches_detailView/branches_detailView_fields/_branches_detailView_fields.index.js";
 import { TrashIcon } from "./branches_childComps/Branches_icons/_branches_icons.index.js";
-import { SECTION_KEYS } from "../05_branches_cnst/_branches_cnst.index.js";
+import {
+  SECTION_KEYS,
+  PLACEHOLDER_SECTION_KEYS,
+} from "../05_branches_cnst/_branches_cnst.index.js";
 import "../_styles/branches_detail.css";
 
 // Maps section keys → their component. The detail view rendering logic
@@ -49,6 +52,7 @@ const Branches_detailView = ({
   error,
   layout,
   sectionProps,
+  filesFieldProps,
   onBack,
   onBulkSubmit,
   onBulkCancel,
@@ -119,7 +123,11 @@ const Branches_detailView = ({
         {layout.bottomStrip.map((k) => {
           const Comp = PLACEHOLDER_COMPONENT[k];
           if (!Comp) return null;
-          return <Comp key={k} t={t} />;
+          const extraProps =
+            k === PLACEHOLDER_SECTION_KEYS.files && filesFieldProps
+              ? filesFieldProps
+              : {};
+          return <Comp key={k} t={t} {...extraProps} />;
         })}
       </div>
 

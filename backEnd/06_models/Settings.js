@@ -1,5 +1,17 @@
 import mongoose from "mongoose";
 
+const getStorageSchema = () => {
+  return new mongoose.Schema(
+    {
+      isEnabled: { type: Boolean, default: false },
+      // Logo + vendor console URLs — filled when you wire provisioning UI.
+      logo: { type: String, default: "" },
+      consoleUrl: { type: String, default: "" },
+      isDefault: { type: Boolean, default: false },
+    },
+    { timestamps: false },
+  );
+};
 const settingsSchema = new mongoose.Schema(
   {
     languages: {
@@ -14,13 +26,18 @@ const settingsSchema = new mongoose.Schema(
       nodeMailer: { type: Boolean, default: false },
     },
     storage: {
-      s3: { type: Boolean, default: true },
-      local: { type: Boolean, default: false },
+      s3: getStorageSchema(),
+      gcs: getStorageSchema(),
+      r2: getStorageSchema(),
+      blob: getStorageSchema(),
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Settings = mongoose.model("Settings", settingsSchema);
 
 export default Settings;
+/*
+
+*/

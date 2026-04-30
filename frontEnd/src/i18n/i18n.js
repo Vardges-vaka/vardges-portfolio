@@ -29,6 +29,7 @@ export const i18nConfig = {
     "menuItems",
     // tempContent
     "tempContent",
+    "settingsCloud",
   ],
   defaultNS: "common",
 

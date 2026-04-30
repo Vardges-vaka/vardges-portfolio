@@ -208,6 +208,16 @@
     "noVariableCosts": "No ad-hoc costs recorded.",
     "branchGone": "This branch is no longer available."
   },
+  "filesSection": {
+    "cloudStorageLabel": "Cloud storage",
+    "cloudStorageHint": "Choose where uploads for this branch are stored. Turn providers on or off under Settings → Cloud Storage.",
+    "loadingStorage": "Loading storage settings…",
+    "cloudStorageUnset": "Not set",
+    "cloudStorageDefaultSuffix": " (default)",
+    "cloudStorageDisabledOption": "{{label}} — disabled",
+    "cloudStorageBulkHint": "Cloud storage cannot be changed while editing all sections. Switch back to view mode.",
+    "placeholderBody": "Contract PDF and gallery images will upload here once the file flow ships."
+  },
   "validation": {
     "required": "This field is required",
     "tooShort": "Value is too short",

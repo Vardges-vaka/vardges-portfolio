@@ -6,3 +6,4 @@ export {
   useBranches_mapView,
   useBranches_map_marker,
 } from "./Branches_mapView_hooks/_Branches_mapView_hooks.index.js";
+export { useBranches_storageOptions } from "./useBranches_storageOptions.js";

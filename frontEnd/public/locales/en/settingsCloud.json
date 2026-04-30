@@ -1,0 +1,19 @@
+{
+  "title": "Cloud storage",
+  "subtitle": "Enable providers for file uploads across branches. Exactly one enabled provider stays marked as default (first in list used if normalization runs). Logo and vendor console URLs can be wired later.",
+  "loading": "Loading…",
+  "loadFailed": "Could not load settings.",
+  "patchFailed": "Could not update storage.",
+  "colProvider": "Provider",
+  "colEnabled": "Available",
+  "colDefault": "Default",
+  "enabledOn": "On",
+  "enabledOff": "Off",
+  "default": "Default for new uploads",
+  "providers": {
+    "s3": "Amazon S3",
+    "gcs": "Google Cloud Storage",
+    "r2": "Cloudflare R2",
+    "blob": "Azure Blob Storage"
+  }
+}

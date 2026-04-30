@@ -1,0 +1,97 @@
+/* Cloud Storage settings — toggle providers and default bucket vendor */
+.cloudStorage {
+  max-width: 52rem;
+  padding: 1rem 0;
+}
+
+.cloudStorage__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.cloudStorage__subtitle {
+  margin: 0 0 1.25rem;
+  color: var(--admin-muted-text, #6b7280);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.cloudStorage__status {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cloudStorage__status--error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.cloudStorage__status--muted {
+  color: var(--admin-muted-text, #6b7280);
+}
+
+.cloudStorage__tableWrap {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--admin-border-soft, #e5e7eb);
+}
+
+.cloudStorage__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.cloudStorage__th,
+.cloudStorage__td {
+  text-align: start;
+  padding: 0.65rem 0.85rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--admin-border-soft, #e5e7eb);
+}
+
+.cloudStorage__th {
+  font-weight: 600;
+  background: var(--admin-surface-soft, #f9fafb);
+}
+
+.cloudStorage__row:last-child .cloudStorage__td {
+  border-bottom: none;
+}
+
+.cloudStorage__cellControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cloudStorage__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.cloudStorage__label--muted {
+  opacity: 0.55;
+}
+
+.cloudStorage__input {
+  accent-color: #2563eb;
+}
+
+@media (min-width: 768px) {
+  .cloudStorage {
+    padding: 1rem 1.25rem;
+  }
+
+  .cloudStorage__cellControls {
+    gap: 1.35rem;
+  }
+}

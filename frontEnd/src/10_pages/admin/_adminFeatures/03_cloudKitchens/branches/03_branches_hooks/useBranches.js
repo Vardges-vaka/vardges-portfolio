@@ -164,6 +164,12 @@ export const useBranches = () => {
     layout: SECTION_LAYOUT,
     sectionProps,
     locationViewMode: states.locationViewMode,
+    filesFieldProps: {
+      branch: selectedBranch,
+      onCloudStorageChange: handlers.handleBranchCloudStorageChange,
+      isSaving: states.isSaving,
+      isBulkEdit,
+    },
     onBack: handlers.handleBackToList,
     onBulkSubmit: handlers.handleBulkSubmit,
     onBulkCancel: handlers.handleBulkCancel,

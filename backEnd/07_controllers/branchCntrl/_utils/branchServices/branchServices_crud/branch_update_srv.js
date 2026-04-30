@@ -10,10 +10,30 @@ export const branch_update_srv = async (req, isDebug) => {
   try {
     const { id, ...updateFields } = req.body.sanitizedData;
 
+    const mongoOp = {};
+
+    /** `cloudStorage: null` clears branch storage choice (validated in branch_fields_vld). */
+    if (
+      Object.prototype.hasOwnProperty.call(updateFields, "cloudStorage") &&
+      updateFields.cloudStorage === null
+    ) {
+      mongoOp.$unset = { cloudStorage: "" };
+    }
+
+    const { cloudStorage: _drop, ...setFields } = updateFields;
+
+    if (Object.keys(setFields).length > 0) {
+      mongoOp.$set = setFields;
+    }
+
+    if (!mongoOp.$set && !mongoOp.$unset) {
+      return { success: false, message: "No valid fields to update", data: null };
+    }
+
     const updatedBranch = await Branch.findByIdAndUpdate(
       id,
-      { $set: updateFields },
-      { new: true, runValidators: true }
+      mongoOp,
+      { new: true, runValidators: true },
     );
 
     if (!updatedBranch) {
