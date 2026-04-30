@@ -14,9 +14,9 @@
   "deleteHint": "This action cannot be undone. The branch will be permanently removed.",
   "bulkEditBadge": "Editing all sections",
   "viewModes": {
-    "list": "List",
-    "table": "Table",
-    "map": "Map",
+    "toggleAria": "Switch branch layout",
+    "list": "List view",
+    "map": "Map view",
     "comingSoon": "Coming soon"
   },
   "locationViewModes": {
@@ -32,6 +32,12 @@
     "noCoords": "Add latitude and longitude to see a pin."
   },
   "mapView": {
+    "toolbarAria": "Map summary and visibility controls",
+    "toolbarBranchLabel": "branches",
+    "toolbarSalesPlaceholder": "Sales —",
+    "toolbarOrdersPlaceholder": "Orders —",
+    "toolbarPeriodTitle": "Click to rotate report window (today, week, month)",
+    "toolbarPeriodAria": "Switch report period. Current: {{period}}",
     "controlsTitle": "Map layers",
     "controlsHint": "Choose what to show on the map.",
     "showBranches": "Show branches",

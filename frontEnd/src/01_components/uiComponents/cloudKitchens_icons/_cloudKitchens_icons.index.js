@@ -11,4 +11,6 @@ export { default as Files_Icon } from "./Files_Icon.jsx";
 export { default as FoodMenu_Icon } from "./FoodMenu_Icon.jsx";
 export { default as Notes_Icon } from "./Notes_Icon.jsx";
 export { default as MapCoverage_Icon } from "./MapCoverage_Icon.jsx";
+export { default as MapView_Icon } from "./MapView_Icon.jsx";
+export { default as ListView_Icon } from "./ListView_Icon.jsx";
 /**/

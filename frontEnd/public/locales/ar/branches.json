@@ -14,9 +14,9 @@
   "deleteHint": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف الفرع بشكل نهائي.",
   "bulkEditBadge": "تعديل جميع الأقسام",
   "viewModes": {
-    "list": "قائمة",
-    "table": "جدول",
-    "map": "خريطة",
+    "toggleAria": "تبديل عرض الفروع",
+    "list": "عرض القائمة",
+    "map": "عرض الخريطة",
     "comingSoon": "قريباً"
   },
   "locationViewModes": {
@@ -32,6 +32,12 @@
     "noCoords": "أضف خط العرض وخط الطول لعرض العلامة."
   },
   "mapView": {
+    "toolbarAria": "ملخص الخريطة وعناصر التحكم",
+    "toolbarBranchLabel": "فروع",
+    "toolbarSalesPlaceholder": "المبيعات — —",
+    "toolbarOrdersPlaceholder": "الطلبات — —",
+    "toolbarPeriodTitle": "انقر لتبديل نافذة التقرير (اليوم، الأسبوع، الشهر)",
+    "toolbarPeriodAria": "تبديل فترة التقرير. الحالية: {{period}}",
     "controlsTitle": "طبقات الخريطة",
     "controlsHint": "اختر ما يُعرض على الخريطة.",
     "showBranches": "إظهار الفروع",

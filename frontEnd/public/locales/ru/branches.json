@@ -14,8 +14,8 @@
   "deleteHint": "Это действие нельзя отменить. Филиал будет удалён навсегда.",
   "bulkEditBadge": "Редактирование всех разделов",
   "viewModes": {
+    "toggleAria": "Переключить режим отображения филиалов",
     "list": "Список",
-    "table": "Таблица",
     "map": "Карта",
     "comingSoon": "Скоро"
   },
@@ -32,6 +32,12 @@
     "noCoords": "Добавьте широту и долготу, чтобы увидеть метку."
   },
   "mapView": {
+    "toolbarAria": "Сводка по карте и управление видимостью",
+    "toolbarBranchLabel": "филиалов",
+    "toolbarSalesPlaceholder": "Продажи — —",
+    "toolbarOrdersPlaceholder": "Заказы — —",
+    "toolbarPeriodTitle": "Нажмите для смены периода отчёта (день, неделя, месяц)",
+    "toolbarPeriodAria": "Сменить период отчёта. Сейчас: {{period}}",
     "controlsTitle": "Слои карты",
     "controlsHint": "Выберите, что показывать на карте.",
     "showBranches": "Показать филиалы",

@@ -14,11 +14,15 @@ export {
   getBranches_mapSummaryRange,
   formatBranches_mapSummaryRange,
 } from "./branches_mapSummaryRange_helper.js";
-export { branchIsOpenNow, getBranchScheduleHint } from "./branches_openNow_helper.js";
+export {
+  branchIsOpenNow,
+  getBranchScheduleHint,
+} from "./branches_openNow_helper.js";
 export {
   hrefTel,
   hrefWhatsApp,
   hrefTelegram,
   hrefMailto,
+  empty,
 } from "./branches_contactLinks_helper.js";
 export { default as fitMapToBranches } from "./branches_mapFit_helper.js";

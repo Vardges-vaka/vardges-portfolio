@@ -1,0 +1,12 @@
+export { default as Branches_detailView_basicField } from "./Branches_detailView_basicField.jsx";
+export { default as Branches_detailView_locationField } from "./Branches_detailView_locationField.jsx";
+export { default as Branches_detailView_contactField } from "./Branches_detailView_contactField.jsx";
+export { default as Branches_detailView_operationsField } from "./Branches_detailView_operationsField.jsx";
+export { default as Branches_detailView_costsField } from "./Branches_detailView_costsField.jsx";
+export { default as Branches_detailView_contractField } from "./Branches_detailView_contractField.jsx";
+export { default as Branches_detailView_notesField } from "./Branches_detailView_notesField.jsx";
+export { default as Branches_detailView_brandsField } from "./Branches_detailView_brandsField.jsx";
+export { default as Branches_detailView_employeesField } from "./Branches_detailView_employeesField.jsx";
+export { default as Branches_detailView_equipmentsField } from "./Branches_detailView_equipmentsField.jsx";
+export { default as Branches_detailView_coverageField } from "./Branches_detailView_coverageField.jsx";
+export { default as Branches_detailView_filesField } from "./Branches_detailView_filesField.jsx";

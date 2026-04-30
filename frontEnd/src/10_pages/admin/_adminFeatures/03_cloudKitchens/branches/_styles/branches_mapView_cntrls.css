@@ -1,29 +1,119 @@
-/* Top toolbar: always-visible primary actions + expand chevron */
+/* Top toolbar: layer toggles left, summary strip centre, collapse only on the right */
 
 .branchesMapView__controlsToolbar {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.5rem 0.75rem;
+  width: 100%;
 }
 
-.branchesMapView__controlsToolbarLabel {
-  flex: 1 1 auto;
-  min-width: 5rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-secondary-color);
-}
-
-.branchesMapView__controlsToolbarMain {
-  display: flex;
+.branchesMapView__controlsToolbarLeft {
+  display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.35rem;
-  flex: 1 1 auto;
-  justify-content: flex-end;
+  justify-self: start;
+}
+
+.branchesMapView__controlsToolbarCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.branchesMapView__controlsToolbarRight {
+  justify-self: end;
+}
+
+.branchesMapView__toolbarStats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.45rem;
+  row-gap: 0.35rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.branchesMapView__toolbarStat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.branchesMapView__toolbarStatValue {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+
+.branchesMapView__toolbarStatLabel {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+}
+
+.branchesMapView__toolbarMuted {
+  color: var(--text-secondary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.branchesMapView__toolbarDivider {
+  color: var(--text-secondary-color);
+  opacity: 0.65;
+  user-select: none;
+}
+
+.branchesMapView__toolbarPeriodChip {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.55rem;
+  margin: 0;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 1px solid var(--btn-primary-bg-color);
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 22%, transparent);
+  color: var(--text-primary-color);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.12s ease;
+}
+
+.branchesMapView__toolbarPeriodChip:hover {
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 32%, transparent);
+  border-color: var(--btn-primary-bg-color);
+}
+
+.branchesMapView__toolbarPeriodChip:focus-visible {
+  outline: 2px solid var(--btn-primary-bg-color);
+  outline-offset: 2px;
+}
+
+.branchesMapView__toolbarPeriodChip:active {
+  transform: scale(0.98);
+}
+
+.branchesMapView__controlsPlaceholderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+.branchesMapView__controlsPlaceholderGrid .branchesMapView__ctrlBtn {
+  width: 100%;
+  text-align: center;
 }
 
 /* Icon toggles: theme vars match .branchesMapView__ctrlBtn / expand control */
@@ -85,17 +175,6 @@
   text-align: center;
 }
 
-.branchesMapView__controlsPlaceholderGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 0.5rem;
-}
-
-.branchesMapView__controlsPlaceholderGrid .branchesMapView__ctrlBtn {
-  width: 100%;
-  text-align: center;
-}
-
 .branchesMapView__controlsToggle {
   flex-shrink: 0;
   display: inline-flex;
@@ -120,7 +199,7 @@
 }
 
 .branchesMapView__controlsToggleIcon {
-  font-size: 3rem;
+  font-size: 1rem;
   line-height: 1;
 }
 

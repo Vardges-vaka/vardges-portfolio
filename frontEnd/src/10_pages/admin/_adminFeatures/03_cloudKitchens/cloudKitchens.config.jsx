@@ -11,13 +11,15 @@ import {
   Images_Icon,
   Files_Icon,
   FoodMenu_Icon,
+  MapView_Icon,
+  ListView_Icon,
 } from "../../../../01_components/components.index.js";
 
 const cloudKitchens_SideBar = (t) => [
   {
     label: t("branches") || "Branches",
     path: "cloudKitchens_branches",
-    icon: Branches_Icon(),
+    icon: ListView_Icon(),
     access: ["admin", "superAdmin"],
     isDefault: true,
   },
@@ -54,7 +56,7 @@ const cloudKitchens_SideBar = (t) => [
   {
     label: t("menuItems", { defaultValue: "Menu Items" }),
     path: "cloudKitchens_menuItems",
-    icon: BrandDevelopment_icon(),
+    icon: MapView_Icon(),
     access: ["admin", "superAdmin"],
   },
 ];

@@ -1,4 +1,4 @@
-import { ChevronIcon } from "../Branches_icons/_branches_icons.index.js";
+import { ChevronIcon } from "./Branches_icons/_branches_icons.index.js";
 
 // Thin wrapper that owns the collapsible chrome (title + chevron + edit/save
 // buttons). Section components supply their own body via children.
@@ -48,14 +48,15 @@ const Branches_detail_sectionShell = ({
         "branchesDetailSection " +
         rootClass +
         (effectiveCollapsed ? " branchesDetailSection--collapsed" : "")
-      }
-    >
+      }>
       <header className="branchesDetailSection__header">
         <div className="branchesDetailSection__headerTitle">
           {isBulkEdit ? (
             <span className="branchesDetailSection__titleBtn">
               {icon && (
-                <span className="branchesDetailSection__sectionIcon">{icon}</span>
+                <span className="branchesDetailSection__sectionIcon">
+                  {icon}
+                </span>
               )}
               <h3 className="branchesDetailSection__title">{title}</h3>
             </span>
@@ -64,14 +65,15 @@ const Branches_detail_sectionShell = ({
               type="button"
               className="branchesDetailSection__titleBtn"
               onClick={onToggleCollapse}
-              aria-expanded={!effectiveCollapsed}
-            >
+              aria-expanded={!effectiveCollapsed}>
               <ChevronIcon
                 size={14}
                 className="branchesDetailSection__chevron"
               />
               {icon && (
-                <span className="branchesDetailSection__sectionIcon">{icon}</span>
+                <span className="branchesDetailSection__sectionIcon">
+                  {icon}
+                </span>
               )}
               <h3 className="branchesDetailSection__title">{title}</h3>
             </button>
@@ -86,16 +88,14 @@ const Branches_detail_sectionShell = ({
                   type="button"
                   className="branchesDetailSection__btn"
                   onClick={onCancel}
-                  disabled={isSaving}
-                >
+                  disabled={isSaving}>
                   {t("actions.cancel")}
                 </button>
                 <button
                   type="button"
                   className="branchesDetailSection__btn branchesDetailSection__btn--primary"
                   onClick={onSubmit}
-                  disabled={isSaving}
-                >
+                  disabled={isSaving}>
                   {isSaving ? t("saving") : t("actions.save")}
                 </button>
               </>
@@ -103,8 +103,7 @@ const Branches_detail_sectionShell = ({
               <button
                 type="button"
                 className="branchesDetailSection__btn"
-                onClick={onEditStart}
-              >
+                onClick={onEditStart}>
                 {editBtnLabel}
               </button>
             )}

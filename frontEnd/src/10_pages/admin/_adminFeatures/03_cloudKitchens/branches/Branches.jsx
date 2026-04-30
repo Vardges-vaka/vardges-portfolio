@@ -1,11 +1,10 @@
 import { useBranches } from "./03_branches_hooks/_branches_hooks.index.js";
 import {
   Branches_viewToggle,
-  Branches_list,
-  Branches_tablePlaceholder,
+  Branches_listView,
   Branches_mapView,
+  Branches_detailView,
   Branches_addForm,
-  Branches_detail,
   Branches_confirmModal,
   Branches_discardModal,
   Branches_deleteModal,
@@ -18,6 +17,8 @@ const Branches = () => {
   const { states, compProps } = useBranches();
   const { viewMode, showAddForm, confirmModal, discardModal, deleteModal } =
     states;
+
+  console.log("***************************viewMode", viewMode);
 
   const renederMapView = () => {
     if (!googleMaps_apiKey.trim()) {
@@ -36,20 +37,16 @@ const Branches = () => {
   };
 
   return (
-    <div className={`branches${viewMode === "map" ? " branches--mapMode" : ""}`}>
+    <div
+      className={`branches${viewMode === "map" ? " branches--mapMode" : ""}`}>
       <Branches_viewToggle {...compProps.Branches_viewToggle_props} />
 
       {viewMode === "list" && (
-        <Branches_list {...compProps.Branches_list_props} />
-      )}
-      {viewMode === "table" && (
-        <Branches_tablePlaceholder
-          {...compProps.Branches_tablePlaceholder_props}
-        />
+        <Branches_listView {...compProps.Branches_list_props} />
       )}
       {viewMode === "map" && renederMapView()}
       {viewMode === "detail" && (
-        <Branches_detail {...compProps.Branches_detail_props} />
+        <Branches_detailView {...compProps.Branches_detail_props} />
       )}
 
       {showAddForm && (

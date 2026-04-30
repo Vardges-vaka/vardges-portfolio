@@ -1,4 +1,4 @@
-import { MapIcon } from "../Branches_icons/_branches_icons.index.js";
+import { MapIcon } from "./Branches_icons/_branches_icons.index.js";
 import "../../_styles/branches_location_mapPlaceholder.css";
 
 // Inline "map" view inside the Location section. Rendered when the user

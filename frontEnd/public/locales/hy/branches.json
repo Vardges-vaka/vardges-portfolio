@@ -14,9 +14,9 @@
   "deleteHint": "Այս գործողությունն անշրջելի է։ Մասնաճյուղը կջնջվի ընդմիշտ։",
   "bulkEditBadge": "Բոլոր բաժինների խմբագրում",
   "viewModes": {
-    "list": "Ցանկ",
-    "table": "Աղյուսակ",
-    "map": "Քարտեզ",
+    "toggleAria": "Փոխել մասնաճյուղերի պատկերը",
+    "list": "Ցանկի տեսք",
+    "map": "Քարտեզի տեսք",
     "comingSoon": "Շուտով"
   },
   "locationViewModes": {
@@ -32,6 +32,12 @@
     "noCoords": "Ավելացրեք լայնություն ու երկայնություն՝ նիշը տեսնելու համար։"
   },
   "mapView": {
+    "toolbarAria": "Քարտեզի ամփոփում և կառավարում",
+    "toolbarBranchLabel": "մասնաճյուղ",
+    "toolbarSalesPlaceholder": "Վաճառք — —",
+    "toolbarOrdersPlaceholder": "Պատվերներ — —",
+    "toolbarPeriodTitle": "Սեղմիր՝ ընտրության նոր օրվա/շաբթվա/ամսվա պատուհանով",
+    "toolbarPeriodAria": "Փոխել համառոտ հաշվետու ժամանակաշրջանը։ Ընթացիկ՝ {{period}}",
     "controlsTitle": "Քարտեզի շերտեր",
     "controlsHint": "Ընտրեք, թե ինչ ցուցադրել քարտեզի վրա։",
     "showBranches": "Ցուցադրել մասնաճյուղերը",

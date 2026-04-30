@@ -82,7 +82,6 @@ export const useBranches = () => {
     t,
   };
 
-  const Branches_tablePlaceholder_props = { t };
   const Branches_mapView_props = {
     branches: states.branches,
     isLoading: states.isLoading,
@@ -209,7 +208,6 @@ export const useBranches = () => {
       Branches_viewToggle_props,
       Branches_list_props,
       Branches_addForm_props,
-      Branches_tablePlaceholder_props,
       Branches_mapView_props,
       Branches_detail_props,
       Branches_confirmModal_props,

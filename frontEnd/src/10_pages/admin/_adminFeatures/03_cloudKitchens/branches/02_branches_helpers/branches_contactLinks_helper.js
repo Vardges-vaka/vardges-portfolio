@@ -25,3 +25,5 @@ export const hrefMailto = (email) => {
   if (!email?.trim()) return null;
   return `mailto:${email.trim()}`;
 };
+
+export const empty = (v) => v == null || v === "";
