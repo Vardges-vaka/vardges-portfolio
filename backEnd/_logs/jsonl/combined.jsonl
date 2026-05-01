@@ -136348,3 +136348,248 @@
   "timestamp": "2026-04-30 18:48:51",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "name": "Vardges",
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-01 20:08:20",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-01 20:08:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-04-30T14:19:48.738Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-01 20:45:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:08.164Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-01 20:45:08",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:11.370Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-01 20:45:11",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_patchStorage_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_patchStorage_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-01 20:45:12",
+  "type": "controller_success"
+}

@@ -8,6 +8,8 @@ const getStorageSchema = () => {
       logo: { type: String, default: "" },
       consoleUrl: { type: String, default: "" },
       isDefault: { type: Boolean, default: false },
+      customExpTime: { type: Boolean, default: false },
+
     },
     { timestamps: false },
   );

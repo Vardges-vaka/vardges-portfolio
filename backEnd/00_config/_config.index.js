@@ -3,3 +3,4 @@ export * from "./server_config.js";
 export * from "./session_config.js";
 export * from "./cookie_config.js";
 export * from "./encryption_config.js";
+export * from "./cloudStorage_config/_cloudStorage_config.index.js";

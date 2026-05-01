@@ -11,9 +11,6 @@ export {
   createRateLimitError,
 } from "./cntrl_returnHandler.js";
 
-
-
-
 export { catch_errorHandler_service } from "./service_returnHandler.js";
 export {
   hashPassword,
@@ -23,3 +20,5 @@ export {
 } from "./authServices.js";
 export { setJWT_Cookie, clearJWT_Cookie } from "./cookie_srv.js";
 export { default as logger } from "./logger/_logger.index.js";
+
+export * from "./cloudStorage_srv/_cloudStorage.index.js";
