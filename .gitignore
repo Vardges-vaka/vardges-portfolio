@@ -107,8 +107,9 @@ temp/
 # Kiro IDE
 .kiro/
 .cursor/
-.todo's/
-.todo's/
+.plans/
+.designs/
+.toDo/
 .claude/
 .claire/
 .claude/

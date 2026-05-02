@@ -1,19 +1,81 @@
 {
   "title": "التخزين السحابي",
-  "subtitle": "فعّل مزودي التخزين لرفع الملفات بين الفروع. يبقى مزود واحد مفعّل على الأقل كافتراضي (يُعاد ترتيبه تلقائياً عند الحاجة). يمكن ربط الشعار وعنوان لوحة المزود لاحقاً.",
+  "subtitle": "إدارة مزودي التخزين السحابي لرفع الملفات. فعّل المزودين، حدد مزوداً افتراضياً، وضبط عناوين لوحة التحكم وإعدادات انتهاء الصلاحية والشعارات.",
   "loading": "جاري التحميل…",
   "loadFailed": "تعذر تحميل الإعدادات.",
-  "patchFailed": "تعذر تحديث التخزين.",
-  "colProvider": "المزود",
-  "colEnabled": "متاح",
-  "colDefault": "افتراضي",
-  "enabledOn": "مفعّل",
-  "enabledOff": "معطّل",
-  "default": "الافتراضي للرفع الجديد",
+  "putFailed": "تعذر تحديث إعدادات المزود.",
   "providers": {
     "s3": "Amazon S3",
     "gcs": "Google Cloud Storage",
     "r2": "Cloudflare R2",
     "blob": "Azure Blob Storage"
+  },
+  "card": {
+    "enable": "تفعيل",
+    "disable": "تعطيل",
+    "enabled": "مفعّل",
+    "disabled": "معطّل",
+    "defaultBadge": "افتراضي",
+    "setDefault": "تعيين كافتراضي",
+    "customExpTime": "انتهاء صلاحية مخصص",
+    "customExpTimeHint": "السماح بطلبات ذات مدة انتهاء صلاحية مخصصة للرابط الموقّع (مثل ملفات PDF الكبيرة والفيديو)",
+    "consoleUrl": "رابط لوحة التحكم",
+    "consoleUrlPlaceholder": "https://console.example.com/…",
+    "saveUrl": "حفظ",
+    "savingUrl": "جاري الحفظ…",
+    "logo": "الشعار",
+    "noLogo": "لا يوجد شعار — انقر رفع لإضافة واحد",
+    "loadingPreview": "جاري تحميل المعاينة…",
+    "chooseFile": "اختر ملفاً",
+    "upload": "رفع",
+    "replace": "استبدال",
+    "uploading": "جاري الرفع…",
+    "delete": "حذف",
+    "deleting": "جاري الحذف…",
+    "openFile": "فتح الملف",
+    "previewError": "تعذر تحميل المعاينة",
+    "notImplemented": "غير متاح بعد"
+  },
+  "modal": {
+    "cancel": "إلغاء",
+    "enable": {
+      "title": "تفعيل {{provider}}؟",
+      "body": "سيصبح {{provider}} متاحاً لرفع الملفات.",
+      "confirm": "تفعيل"
+    },
+    "disable": {
+      "title": "تعطيل {{provider}}؟",
+      "body": "لن يكون هذا المزود متاحاً للرفع. إذا كان هو الافتراضي، سيُختار مزود آخر مفعّل تلقائياً.",
+      "confirm": "تعطيل"
+    },
+    "setDefault": {
+      "title": "تعيين {{provider}} كافتراضي؟",
+      "body": "لن يكون {{previous}} افتراضياً بعد الآن. ستُوجَّه جميع الرفعات الجديدة عبر {{provider}}.",
+      "confirm": "تعيين كافتراضي"
+    },
+    "deleteLogo": {
+      "title": "حذف شعار {{provider}}؟",
+      "body": "سيُزال ملف الشعار نهائياً من التخزين.",
+      "confirm": "حذف"
+    },
+    "replaceLogo": {
+      "title": "استبدال شعار {{provider}}؟",
+      "body": "سيُستبدل الشعار الحالي بالملف المحدد.",
+      "confirm": "استبدال"
+    }
+  },
+  "messages": {
+    "enabled": "تم تفعيل المزود.",
+    "disabled": "تم تعطيل المزود.",
+    "defaultSet": "تم تحديث المزود الافتراضي.",
+    "urlSaved": "تم حفظ رابط لوحة التحكم.",
+    "customExpOn": "تم السماح بانتهاء الصلاحية المخصص.",
+    "customExpOff": "تم تعطيل انتهاء الصلاحية المخصص.",
+    "logoUploaded": "تم رفع الشعار.",
+    "logoDeleted": "تم حذف الشعار.",
+    "logoReplaced": "تم استبدال الشعار.",
+    "uploadFailed": "فشل الرفع.",
+    "deleteFailed": "فشل الحذف.",
+    "saveFailed": "تعذر الحفظ."
   }
 }

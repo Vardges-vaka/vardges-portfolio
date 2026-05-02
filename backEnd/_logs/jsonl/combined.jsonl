@@ -136665,3 +136665,2482 @@
   "timestamp": "2026-05-02 09:25:19",
   "type": "controller_success"
 }
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:46:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:46:20",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:48:20",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:48:21",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:48:27",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:48:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:51:38",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:51:39",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:55:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:55:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:55:54",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:55:55",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:56:23",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:56:23",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:58:29",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-01T16:45:12.456Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:58:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_uploadLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.JPG"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T05:58:52.276Z",
+    "upload": {
+      "bucket": "vardges-portfolio-vkusno-uploads-dev",
+      "bytes": 19119,
+      "contentType": "image/jpeg",
+      "objectKey": "settings/gcs/logo.JPG"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_uploadLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:58:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T08:58:52.458Z",
+    "objectKey": "settings/gcs/logo.JPG",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.JPG?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T055852Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=5ba608512833f742a64ff45433c251ca1b7b1c520fc591f8768b7e01600875068a1ad557392fa7edfd604665c7a61456f367565ee392c7985843ffbbf3d87e2dafcbe9ba41a9bd80f79bc5e322c272e560cec07bf9a9c3e6d600a911b5a5bf53c2cd9d7003f2efd4c2b0cae86096825380f367288630113be78ecf17303540b3efe2889488084ff308e76bd2804ea575cf3b9a4497e2ac759a34195614b22a42b8f82890bda8de3cd512249dd6f27ea2c800c4c92e99b13546718830c35751179726919178a2fead866f24e783abd5b219d06427a6efa48d500e5b91eb9a60027c531e03bffcabae6c57f82ed10647fed131a4cb6048e5e3097bed313e227e50"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:58:52",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.JPG"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T05:58:52.276Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T08:59:01.241Z",
+    "objectKey": "settings/gcs/logo.JPG",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.JPG?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T055901Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=6eb7a04702470a33e70427f3cab4903b21c582e68bcd00ca591f00ccc0671db21c24aa47bdf85ebffab5dcb3ff9087aad20e15217d907de276cb1658146a82a507e82a0195e8f1301ab9690fc3a23fb4d5d369daea0dff0b669cf33fc3c1718e0b3a892836906e12b7fb9b8c4494a25327e8cdf0adac9e8722438816a353d4d70476c9df7464d9f0de8a9c4bbca62dc52a56ab63709b4690df689a830e1b303e175f9dd5cf568361ddc341018091ff45f7be940117ccedf86723f77ea5af31fa8ba5f8fcd3181a948b70afae6a2f46bcb156d625f0396f485642afe2c51b9f53bfbdd1c9d68e56171b3a493e944c60ed41e37595a6b317885c7a58a6d6cd9157"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:01",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_deleteLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T05:59:05.881Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_deleteLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:05",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:07",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T05:59:05.881Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:08",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_uploadLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.JPG"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T05:59:16.005Z",
+    "upload": {
+      "bucket": "vardges-portfolio-vkusno-uploads-dev",
+      "bytes": 127631,
+      "contentType": "image/jpeg",
+      "objectKey": "settings/gcs/logo.JPG"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_uploadLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T08:59:16.219Z",
+    "objectKey": "settings/gcs/logo.JPG",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.JPG?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T055916Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=584823e46b842b51bc62905ff17e77e9f70af38a57efc815ae66c87e130b2605af6f4973b8454643b4d52c06538c9597fdbc383fcd39f9b55cec748b858ca649f55d1e0c2968f9ad3fed8d3c25561a3f6aef972419b6c5bda5c5f00f099936066fe4593d291af36de7ca2cd6dc2ba3452a95e942004b5dad449eb4026bb82dd787d2aa20d736e62c500473055dc3ac2bf7dd20e004e79bd271397696828373a66699c6fa5eb3ba91c909168991fe53947e306b26e047ae9f9088a3b81e56bb2ffdcc6a52929b6be4a8bc14aca060ba4333f325c78eb1c7cf003e8cc169d2e3a5f1eab13062acd2363f758aa5bd6e89b918e7abba80aa362aa613885d5582297f"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:20",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.JPG"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T05:59:16.005Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:21",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T08:59:21.752Z",
+    "objectKey": "settings/gcs/logo.JPG",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.JPG?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T055921Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=2526c4016b2fff0f3e3592a9aafc76c7b5d4589ab75c187941f3243565bfe2af6fd6ca406c6e89d4c19bc366360019d3265abaaccbcd5a428b391827c5ab8ec2b570c99fcf9c6ded5d6f843b5598fff2758f73c866484c23a8d3a1cab2933d94286a231b68a22148ef41134f490f0d063593ce4290a30e104cc47e5a4841609b3e555d4d8775e92412bad5da8bf10e49f659feafcd62e94b42115b8df98f9f70f3c02e25d289fa9f3b8e5bcac67a3c5d1afb071593d788d03a6372adf11861f093ffd54348c753f6721e527f7c753022ddedaacb9baac738f113f0edd1fb5395941de3c654e02d78222e33e9f403d4fe2c5e238f5fd3e137dfcf2d0572961f62"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:21",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_deleteLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T05:59:24.919Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_deleteLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 09:59:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_uploadLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.mp4"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T06:01:03.865Z",
+    "upload": {
+      "bucket": "vardges-portfolio-vkusno-uploads-dev",
+      "bytes": 15596143,
+      "contentType": "video/mp4",
+      "objectKey": "settings/gcs/logo.mp4"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_uploadLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:01:03",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T09:01:04.048Z",
+    "objectKey": "settings/gcs/logo.mp4",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.mp4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T060104Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=38dd0c83c981c9cf12109352814b40fd914221b62fdb89ac690fd25b7e66d2c154131da49757d34cfa03eda6aaee9678203fd67ed97085eceefdfcb35f13906dec8fbb95d18cec801fb91de12844b8d37d908e033ad6e7f908b7f33afcdbec2f8d2e501b9b6c89eca98e44b3b90a8dea680a85876f0eb4ecf77492e060d2320b6055a2c17335c3edc6072b187a00fec460b7c8d8cfaab83e066886773339489f52a87ca6ec77147aac37c9633ba403f7dddaa6c9f885dca17ec498b1c2ab322e576fe6a2f2715b5964a310bf7530576a94bcb62efb680dedee79ea26fd68fab9efeaade43cc2ec8814eb8724ff676d67edfde293bc89c939e1875f8903542a4c"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:01:04",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:01:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.mp4"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T06:01:03.865Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:01:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T09:01:11.110Z",
+    "objectKey": "settings/gcs/logo.mp4",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.mp4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T060111Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=15e6fba0f81c76eab73fa26c29e15a5bba0a57984fb7ec3e472b36645c17ac2a0078d012564e8fb2241c1e24fdd2489336eee45e0d184be7487cb9f96fe73ae5da6e546667d3f818571dbcf447397fd3366dba13de69c2348e43fab9935f2ce6af2bdc415553da4151e477f78df271766ce54309e72b03f7f92a197ef51bdf0fc7b9c147ea8a967e4c28353674d4eab396c737bc465a3b777f3ba26270ed7c68f630383cd73d155bca56550b551e4da92dba429337a0dae6d15cccc770ea25e180d0dc31a490c16a9fd7d81016599d64a752d61af69f1fba56db555bcf2d0c806c47dfcac108a9fc8e6354c0140c37370cbbc226677a8ce518d86b412e7138f9"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:01:11",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:02:15",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.mp4"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T06:01:03.865Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:02:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T09:02:16.743Z",
+    "objectKey": "settings/gcs/logo.mp4",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.mp4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T060216Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=2fdfffc10fee0351517c27d2aec0d7ed04230a027934e52146a43cd8a2b15488562aeb5f2bd8061a9a4bca712f6fb540397ee610436ed0fbb63e0cd0e31e93b069a621b31eb1983cd47e9121ee19082a2b11bb8c7a3ece0e6555807ecd87cbaa563ca9ea76fa1c636c5c99ae244ae723043385fe2fda98ba5374cd9efb050b957bed7de310adbe90b0e97bfef8d58df66b58b2789338d19c4b93b3f763cd0bdc3cd28f061243d14479476590e7f496d350fa593c48f38e9e759781d27153b2feed380d8404a0dc0c6ea201dbcc410071dd6a46a450277890d16749b5e2288a4bc8c698751717db3b716a6a38d0095e2d35c195fa9ce75a1b5331beb68c596d52"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:02:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_deleteLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T06:02:30.025Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_deleteLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:02:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_uploadLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.jpg"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T06:06:47.461Z",
+    "upload": {
+      "bucket": "vardges-portfolio-vkusno-uploads-dev",
+      "bytes": 11402419,
+      "contentType": "image/jpeg",
+      "objectKey": "settings/gcs/logo.jpg"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_uploadLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:06:47",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T09:06:47.654Z",
+    "objectKey": "settings/gcs/logo.jpg",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T060647Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=6fd493c9389ebdd4ba178e69bf44bdb12cf621b49172dc7488a867a381dc22c486c7dfab6fc01d0b3e7d221a53659f3f4daa24ecb3d8614c26314a44bf138443b57b649231524e7079a99f17de5e6d6cb28cac521cee39db74ca0df5d5e0b8699a016c050ba073ce2336437426bab1b0303be1aa750ba1b423d19b262674e54fed12adb8aef42efd5ee6168d9d4f088b6fc8536b71e1532c39711d607b5999658b6534c173da5a84980548d7d794021fecaf53760fc9490162e0cb46da3f0aeeb500e154848f68d6933d79eb6a50493f59db98ea619cbdc4163b3aa1e0ceed726dd0d30a246c540ba2bb40a305b5cfa00370d974e0626c86c6b9403dcdfd6f4b"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:06:47",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:10:09",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.jpg"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T06:06:47.461Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:10:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T09:10:10.471Z",
+    "objectKey": "settings/gcs/logo.jpg",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T061010Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=5c0906ed7780fe487b55c18ea53784eb481c9775bdd06a781a507e7da52746d5dc6b3ca2bfbf45f9ae15ea3ab8705909a2e9bf87d50e1ed711db7fd557028d7cea652cf2aa7663beee28a4b48a4055b3be43dff7e6ba9552693318685c5b761faf7d8faec7ce5d2d31f954fe009887dc43429c57ed41fa15a234a6b5798926bbc9a28b3a30130ccbaf40f387692a01fa43ac26e38b3ba10680751bbcad8e0952312a97084b99aaef7cb616c4ab5e9a1744069e0dbcdfa5dcd89844ed211348013e5b9befd06a0d866c34ee071089188de2624403b82aeee6a8dc9ebe51392f4cd582a125a96b2c474dbcf24526c7c925137d0d5276b21569945973ca576577bf"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:10:10",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_deleteLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": ""
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T06:10:15.444Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_deleteLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 10:10:15",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_uploadLogo_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T07:11:14.686Z",
+    "upload": {
+      "bucket": "vardges-portfolio-vkusno-uploads-dev",
+      "bytes": 245862,
+      "contentType": "image/png",
+      "objectKey": "settings/gcs/logo.png"
+    }
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_uploadLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:11:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T10:11:14.894Z",
+    "objectKey": "settings/gcs/logo.png",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T071114Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=06ba4d9b48810761c4ccf2f3a8aafc507db8339784c87cd94d9571150b10f75a9ebb138bc12e1c3ee6ea3f0107b68b5e1d0906635cdddcc3111de47da14afe727e61151e99282f5175e873bdc60c076285ce154645e443443c112a569c8935fcde96476799ec84e88992e48b052e588009b24008892f704928ddb1d0db491f22f4575bb295986e5dc51b22ab0de026083320090e34553aa81d801bdeec2a54e7e98170d8d080f8b90b4fafddd237b0e7531275b53121bb0e449e805177f76bb3d3425b49928223289594198e6dc0463603852fe96ddbe37ecd12cd8b43a0682c03eba570139a70b70b92ddf4e2642dddc2553a1695fbc594512df4cb123c449e"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:11:14",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:53:39",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T07:11:14.686Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:53:40",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T10:53:41.123Z",
+    "objectKey": "settings/gcs/logo.png",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T075341Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=7a0f4e5bfb002f6b8196da4d4ffdede46123dfde0451146aa2d82c1d8c4cac9b412b9516aae95b208c9345e53ad2291a415004ec05cfcfd20185951bf9e265df08e59ae84354848f49f136c6599b9d368940d2cec89e9131e2ebb04b30c7741ba48ea0cbf606eb37c4209969883857f8aefe06ce338c1fce3f11319198124d90344ec7ff20693df2276a00fa6ee7b45dfa5548c99bc46b15c394d39eadab63d24e6e4d77a12b872664f6bd9bff26f5ea69e08aa5a86d9e4d91db6add40dedb9f522dd9ec0519583336337a8003c622c93afca18a3b0c44b1c99045445ba08478e61cd2e488d8825f38ce41d9dd4c7e8ed7183f143a79c4e8b1c49e7d4e95ea55"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:53:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:57:00",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:57:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:57:41",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 11:59:32",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:00:35",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:02:18",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:02:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:04:44",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:04:58",
+  "type": "controller_success"
+}
+{
+  "controller": " | user_authCheck_cntrl.js | |<=>| ",
+  "data": {
+    "role": "superAdmin"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | user_authCheck_cntrl.js | |<=>|  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:06:48",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T07:11:14.686Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:06:49",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T11:06:49.228Z",
+    "objectKey": "settings/gcs/logo.png",
+    "provider": "gcs",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T080649Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=6065ae2aeeb9fd595819ddc6f3e72f3a3953c6c3e8626eae9ff1ff868acbaaf7bbb51cb4ab42230df74f8970ef3f237c528d2e64fde44c0a3fd0d86af230fb6e6d90beef3e7a62e9cf907fe6fb5c44daccd5f48562d0c9fd7c2bff02085d818f8091dce503f3e101bc650cf2ee9c9e192b1b6ce3cab739f3e3c6bf9bbeee6649a810c0b514be683629737afc6937f70795a827ce9d7acaec9e9c8aada8cc19fcf5094b27b209898e5cb436ee28f851772d09403cfd7a0f2ae1b940500885d3a35de24f83a383849c4eabd57ac5015b18dfd5b3d3552d8cc2937b59ba9f38761434251516eb3b6457753b5208a83af64399c44bbcda23394e9fc3b5dd57c07b00"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:06:49",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_putProvider_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T08:07:07.698Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_putProvider_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:07:07",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_putProvider_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T08:07:11.055Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_putProvider_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:07:11",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_putProvider_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": true,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T08:28:13.016Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_putProvider_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:28:13",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_putProvider_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T08:28:16.628Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_putProvider_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 12:28:16",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T08:28:16.628Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 13:04:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T12:04:24.332Z",
+    "objectKey": "settings/gcs/logo.png",
+    "provider": "gcs",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T090424Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=6e47128f4e4cc4b8abe439e711da86f6cb3923dbc992f89139cd429ffa3a158cf7bc6e95fb42c605dc109f6d1afb719a6621092f28e472ead9b7901ca2aed24f5aff91c00392aa115c59060ba5e1feec7318f6251bfa379aefe4704d596e9e3e083c392d0d7c7d757375d85f1bfd573e8315c0967977358adb5e00dc665c4fc468bca78e2e42e1d364626b6048eed9911555047d65ddee98733e1190611df21ef66b0b8a943d057399b4fe2cfc9995a5d9a96764605a9502e66944ba458a6de6146676f91f6578833c23cac17b2b14a5342b4ade1cad3d07734b42097deb66affedee06a3d240c3d983df74edf3adb80e7fecce92a85fce87d394c2183cdf407"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 13:04:24",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T08:28:16.628Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 13:04:27",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T12:04:28.244Z",
+    "objectKey": "settings/gcs/logo.png",
+    "provider": "gcs",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T090428Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=3c4662c3b1aecccd6c888351dcd907a0ddba0d922497a321510407fcea0e7c6bc1d3fb92226da3ff3c4339127f05b4f575e365357fa036233300fc57afe0d3f7a9d7f95b8abec99839bd6d822b1f845b48a6ff0c5ef7a879707c993d66bb7ef761c430e265163ba6fe47c9d7ed470410a7969e00e1271d4b671b18111f4276e8a8c08153605a25fbef23f9b6c2cbafb22776c0282051beb8285f74e378901ece6476087f30b06395edfd6c06982aedba777413693f9a0bfae0f64d60c3f9cb5d7d75d2e942ad081f9685ffd5bdb69e2983cf793f9a45b3490c86b4b1988e1eefceb35200f068e0437827ee3fb4fc7868d2f861a70b3e2ed2c3b62a20b4eb2933"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 13:04:28",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_get_cntrl.js | ",
+  "data": {
+    "_id": "69f36407820223388e0a368a",
+    "createdAt": "2026-04-30T14:15:35.397Z",
+    "emailEngines": {
+      "amazonSES": false,
+      "nodeMailer": false,
+      "sendGrid": true
+    },
+    "languages": {
+      "arabic": false,
+      "armenian": false,
+      "english": true,
+      "russian": false
+    },
+    "storage": {
+      "blob": {
+        "_id": "69f36407820223388e0a368e",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "gcs": {
+        "_id": "69f36407820223388e0a368c",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": true,
+        "isEnabled": true,
+        "logo": "settings/gcs/logo.png"
+      },
+      "r2": {
+        "_id": "69f36407820223388e0a368d",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      },
+      "s3": {
+        "_id": "69f36407820223388e0a368b",
+        "consoleUrl": "",
+        "customExpTime": false,
+        "isDefault": false,
+        "isEnabled": false,
+        "logo": ""
+      }
+    },
+    "updatedAt": "2026-05-02T08:28:16.628Z"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_get_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 13:04:30",
+  "type": "controller_success"
+}
+{
+  "controller": " | settings_getLogo_cntrl.js | ",
+  "data": {
+    "expiresAt": "2026-05-02T12:04:30.141Z",
+    "objectKey": "settings/gcs/logo.png",
+    "provider": "gcs",
+    "readUrl": "https://storage.googleapis.com/vardges-portfolio-vkusno-uploads-dev/settings/gcs/logo.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=portfolio-vkusno-gcs-access%40vardges-portfolio-2026-04-27.iam.gserviceaccount.com%2F20260502%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260502T090430Z&X-Goog-Expires=10800&X-Goog-SignedHeaders=host&X-Goog-Signature=3e8b3d7d5b31f17f46f1a31ab64cb0857e5c9a97b553320fac575aa4d4acff1ba8724dd7398dab56c0cc971d736456d85094347b7330f7e727a872368d1ad7b0341888b0bf5c8f7566ced9d23d1b81c7e0c861483e585843aac7e0bd76424b3b615b37a23621d69869da65299f54d04862c6150625a4c81323d31b4471fc7dee0552a34c962feb887e72ce8eae99bc8c299b90b57b0cbe56f70c1b23df95d1b5fce80893d8654e6f35469873be150d54d3f8d06ae766771b1b6d719dac3430946e7ec529cfd85d4dee01bf441ac481e5bf9e02345c514225fe544bdc101a082b90fc260b1af8d4b60c9535d4d1c0bdeb7b6378e5b8de53f65c186f5e7e8d3ba9"
+  },
+  "level": "info",
+  "message": "⛟ 📦 🚚  | settings_getLogo_cntrl.js |  |<=>| [SUCCESS]",
+  "service": "backend-api",
+  "statusCode": 200,
+  "timestamp": "2026-05-02 13:04:30",
+  "type": "controller_success"
+}

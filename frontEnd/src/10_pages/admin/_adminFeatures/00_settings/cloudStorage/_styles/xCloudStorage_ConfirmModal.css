@@ -1,0 +1,96 @@
+.xCloudStorage_ConfirmModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: xCloudStorage_ConfirmModal_fadeIn 0.15s ease;
+}
+
+@keyframes xCloudStorage_ConfirmModal_fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.xCloudStorage_ConfirmModal_box {
+  background: var(--bg-primary-color, #ffffff);
+  border: 1px solid var(--border-primary-color, #e5e7eb);
+  border-radius: 0.85rem;
+  padding: 1.75rem 1.5rem 1.4rem;
+  max-width: 430px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: xCloudStorage_ConfirmModal_slideUp 0.15s ease;
+}
+
+@keyframes xCloudStorage_ConfirmModal_slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.xCloudStorage_ConfirmModal_title {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary-color, #111827);
+  line-height: 1.3;
+}
+
+.xCloudStorage_ConfirmModal_body {
+  margin: 0 0 1.4rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary-color, #4a4a4a);
+  line-height: 1.55;
+}
+
+.xCloudStorage_ConfirmModal_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.xCloudStorage_ConfirmModal_btnCancel {
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--btn-secondary-bg-color, #f9fafb);
+  color: var(--btn-secondary-text-color, #374151);
+  border: 1px solid var(--btn-secondary-border-color, #d1d5db);
+  transition: background 0.15s;
+}
+
+.xCloudStorage_ConfirmModal_btnCancel:hover {
+  background: var(--btn-secondary-bg-color-HOV, #f3f4f6);
+}
+
+.xCloudStorage_ConfirmModal_btnConfirm {
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--btn-primary-bg-color, #2563eb);
+  color: var(--btn-primary-text-color, #ffffff);
+  border: 1px solid var(--btn-primary-border-color, #2563eb);
+  transition: background 0.15s;
+}
+
+.xCloudStorage_ConfirmModal_btnConfirm:hover {
+  background: var(--btn-primary-bg-color-HOV, #1d4ed8);
+  border-color: var(--btn-primary-bg-color-HOV, #1d4ed8);
+}
+
+.xCloudStorage_ConfirmModal_btnConfirm--danger {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.xCloudStorage_ConfirmModal_btnConfirm--danger:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}

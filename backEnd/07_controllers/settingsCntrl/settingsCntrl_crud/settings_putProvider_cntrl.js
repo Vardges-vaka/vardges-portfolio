@@ -1,15 +1,15 @@
-import { settings_patchStorage_srv } from "../_utils/settingsServices/settings_patchStorage_srv.js";
+import { settings_putProvider_srv } from "../_utils/settingsServices/settings_putProvider_srv.js";
 import {
   catch_errorHandler_cntrl,
   validRespond,
 } from "../../../03_services/_services.index.js";
 
-const displayName = " | settings_patchStorage_cntrl.js | ";
+const displayName = " | settings_putProvider_cntrl.js | ";
 
-const settings_patchStorage_cntrl = async (req, res) => {
+const settings_putProvider_cntrl = async (req, res) => {
   const isDebug = true;
   try {
-    const { success, message, data } = await settings_patchStorage_srv(
+    const { success, message, data } = await settings_putProvider_srv(
       req,
       isDebug,
     );
@@ -19,4 +19,4 @@ const settings_patchStorage_cntrl = async (req, res) => {
   }
 };
 
-export default settings_patchStorage_cntrl;
+export default settings_putProvider_cntrl;

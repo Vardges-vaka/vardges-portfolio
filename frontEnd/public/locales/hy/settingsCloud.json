@@ -1,19 +1,81 @@
 {
   "title": "Ամպային պահեստ",
-  "subtitle": "Միացրեք մատակարարները՝ մասնաճյուղերի ֆայլերի վերբեռնման համար։ Մեկը միշտ կմնա լռելյայն (անհրաժեշտության դեպքում համակարգը կնորմալացնի)։ Լոգոն և վահանակի URL-ը կկարողանաք ավելացնել ավելի ուշ։",
+  "subtitle": "Կառավարեք ամպային պահեստի մատակարարները ֆայլերի վերբեռնման համար: Միացրեք մատակարարներ, ընտրեք կանխադրվածը, կարգավորեք վահանակի URL-ներ, ժամկետի կարգավորումներ և լոգոներ:",
   "loading": "Բեռնում…",
-  "loadFailed": "Չհաջողվեց բեռնել կարգավորումները։",
-  "patchFailed": "Չհաջողվեց թարմացնել պահեստը։",
-  "colProvider": "Մատակարար",
-  "colEnabled": "Միացված",
-  "colDefault": "Լռելյայն",
-  "enabledOn": "Միացված",
-  "enabledOff": "Անջատված",
-  "default": "Լռելյայն նոր վերբեռնումների համար",
+  "loadFailed": "Չhաջողvец բеռnел կàргàvороumb.",
+  "putFailed": "Չhаջողvец թàрmàцnел мàтàkàрàри кàрgàvороumbnerы.",
   "providers": {
     "s3": "Amazon S3",
     "gcs": "Google Cloud Storage",
     "r2": "Cloudflare R2",
     "blob": "Azure Blob Storage"
+  },
+  "card": {
+    "enable": "Միացնել",
+    "disable": "Անջատել",
+    "enabled": "Միացված",
+    "disabled": "Անջատված",
+    "defaultBadge": "Կանխադրված",
+    "setDefault": "Սահմանել կանխադրված",
+    "customExpTime": "Հատուկ ժամկետ",
+    "customExpTimeHint": "Թույլ տալ հատուկ ժամկետով ստորագրված URL հարցումներ (օր.՝ մեծ PDF-ներ, տեսանյութեր)",
+    "consoleUrl": "Վահանակի URL",
+    "consoleUrlPlaceholder": "https://console.example.com/…",
+    "saveUrl": "Պահպանել",
+    "savingUrl": "Պահպանում…",
+    "logo": "Լոգո",
+    "noLogo": "Լոգո չկա — սեղմեք Վերբեռնել՝ ավելացնելու",
+    "loadingPreview": "Նախադիտումի բեռնում…",
+    "chooseFile": "Ընտրել ֆայל",
+    "upload": "Վերբեռնել",
+    "replace": "Փոխարինել",
+    "uploading": "Վerберноum…",
+    "delete": "Ջnջel",
+    "deleting": "Ջnջоum…",
+    "openFile": "Bàцel ֆàйл",
+    "previewError": "Nàhàdоуmbы çhàджоghvец բernvel",
+    "notImplemented": "Deռ mдàтçheli"
+  },
+  "modal": {
+    "cancel": "Ануlнel",
+    "enable": {
+      "title": "Мîàцnel {{provider}}?",
+      "body": "{{provider}} màтàkàrը կdàрdàr mîàцî ֆàйleri verберnмàn hàmàr:",
+      "confirm": "Мîàцnel"
+    },
+    "disable": {
+      "title": "Ànçàтel {{provider}}?",
+      "body": "Аyь мàтàkàrы verберnмàn hàмàr mдàтçheli kдàрdà: Eтe nà kànhàdrvàdý е, àybà mîàцvàd mатàkàr àvtomàtikàpеs kàrjàцvum е:",
+      "confirm": "Ànçàтel"
+    },
+    "setDefault": {
+      "title": "Sàhmànel {{provider}} kànhàdrvàd?",
+      "body": "{{previous}} àylевs çi lini kànhàdrvàd: Bоlоr nоr verберnоumnerы kànцnel kden {{provider}}-оv:",
+      "confirm": "Sàhmànel kànhàdrvàd"
+    },
+    "deleteLogo": {
+      "title": "Ջnçel {{provider}}-ì lоgоn?",
+      "body": "Lоgоyi ֆàйly hàvàtàpàs hеrànàlоu е pahestîç:",
+      "confirm": "Ջnçel"
+    },
+    "replaceLogo": {
+      "title": "Phоhàrînel {{provider}}-ì lоgоn?",
+      "body": "Àрdеn orsvàd lоgоn kphоhàrîni yntrvàd ֆàйlоv:",
+      "confirm": "Phоhàrînel"
+    }
+  },
+  "messages": {
+    "enabled": "Мàтàkàrы mîàцvàd е:",
+    "disabled": "Мàтàkàrы ànçàtvàd е:",
+    "defaultSet": "Kànhàdrvàd màтàkàrý tàrбervàd е:",
+    "urlSaved": "Vàhànàkî URL-ý pàhpànvàd е:",
+    "customExpOn": "Hàtouk zhàmkety thоyлàтrvàd е:",
+    "customExpOff": "Hàtouk zhàmkety ànjàтvàd е:",
+    "logoUploaded": "Lоgоn verберnvàd е:",
+    "logoDeleted": "Lоgоn джnçvàd е:",
+    "logoReplaced": "Lоgоn phоhàrînvàd е:",
+    "uploadFailed": "Verберnоumy çhàджоghvàц:",
+    "deleteFailed": "Джnçоumy çhàджоghvàц:",
+    "saveFailed": "Pàhpànouly çhàджоghvàц:"
   }
 }

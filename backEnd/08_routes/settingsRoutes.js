@@ -3,23 +3,41 @@ import express from "express";
 import {
   vld_sntzr_mddlwre,
   auth_mddlwre,
+  upload_mddlwre,
 } from "../05_middlewares/_mddlwre.index.js";
 import {
   settings_get_cntrl,
-  settings_patchStorage_cntrl,
+  settings_putProvider_cntrl,
+  settings_uploadLogo_cntrl,
+  settings_getLogo_cntrl,
+  settings_deleteLogo_cntrl,
 } from "../07_controllers/settingsCntrl/_settingsCntrl.index.js";
 import {
-  settings_patchStorage_vld,
+  settings_putProvider_vld,
+  settings_uploadLogo_vld,
 } from "../07_controllers/settingsCntrl/_utils/settingsCntrl_utils.index.js";
 
 const router = express.Router();
 
 router.get("/", auth_mddlwre, settings_get_cntrl);
-router.patch(
-  "/storage",
+
+router.put(
+  "/storage/:provider",
   auth_mddlwre,
-  vld_sntzr_mddlwre(settings_patchStorage_vld),
-  settings_patchStorage_cntrl,
+  vld_sntzr_mddlwre(settings_putProvider_vld),
+  settings_putProvider_cntrl,
 );
+
+router.post(
+  "/storage/:provider/logo",
+  auth_mddlwre,
+  upload_mddlwre,
+  vld_sntzr_mddlwre(settings_uploadLogo_vld),
+  settings_uploadLogo_cntrl,
+);
+
+router.get("/storage/:provider/logo", auth_mddlwre, settings_getLogo_cntrl);
+
+router.delete("/storage/:provider/logo", auth_mddlwre, settings_deleteLogo_cntrl);
 
 export default router;

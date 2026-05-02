@@ -1,19 +1,81 @@
 {
-  "title": "Cloud storage",
-  "subtitle": "Enable providers for file uploads across branches. Exactly one enabled provider stays marked as default (first in list used if normalization runs). Logo and vendor console URLs can be wired later.",
+  "title": "Cloud Storage",
+  "subtitle": "Manage cloud storage providers for file uploads. Enable providers, designate one as default, configure console URLs, custom expiry, and logos.",
   "loading": "Loading…",
   "loadFailed": "Could not load settings.",
-  "patchFailed": "Could not update storage.",
-  "colProvider": "Provider",
-  "colEnabled": "Available",
-  "colDefault": "Default",
-  "enabledOn": "On",
-  "enabledOff": "Off",
-  "default": "Default for new uploads",
+  "putFailed": "Could not update provider settings.",
   "providers": {
     "s3": "Amazon S3",
     "gcs": "Google Cloud Storage",
     "r2": "Cloudflare R2",
     "blob": "Azure Blob Storage"
+  },
+  "card": {
+    "enable": "Enable",
+    "disable": "Disable",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "defaultBadge": "Default",
+    "setDefault": "Set as Default",
+    "customExpTime": "Custom Expiry",
+    "customExpTimeHint": "Allow requests with a custom signed-URL expiry time (e.g. large PDFs, videos)",
+    "consoleUrl": "Console URL",
+    "consoleUrlPlaceholder": "https://console.example.com/…",
+    "saveUrl": "Save",
+    "savingUrl": "Saving…",
+    "logo": "Logo",
+    "noLogo": "No logo — click Upload to add one",
+    "loadingPreview": "Loading preview…",
+    "chooseFile": "Choose file",
+    "upload": "Upload",
+    "replace": "Replace",
+    "uploading": "Uploading…",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "openFile": "Open file",
+    "previewError": "Could not load preview",
+    "notImplemented": "Not available yet"
+  },
+  "modal": {
+    "cancel": "Cancel",
+    "enable": {
+      "title": "Enable {{provider}}?",
+      "body": "{{provider}} will become available for file uploads.",
+      "confirm": "Enable"
+    },
+    "disable": {
+      "title": "Disable {{provider}}?",
+      "body": "This provider will no longer be available for uploads. If it is currently the default, another enabled provider will be selected automatically.",
+      "confirm": "Disable"
+    },
+    "setDefault": {
+      "title": "Set {{provider}} as default?",
+      "body": "{{previous}} will no longer be the default. All new uploads will be routed through {{provider}}.",
+      "confirm": "Set as Default"
+    },
+    "deleteLogo": {
+      "title": "Delete {{provider}} logo?",
+      "body": "The logo file will be permanently removed from storage.",
+      "confirm": "Delete"
+    },
+    "replaceLogo": {
+      "title": "Replace {{provider}} logo?",
+      "body": "The existing logo will be overwritten with the selected file.",
+      "confirm": "Replace"
+    }
+  },
+  "messages": {
+    "enabled": "Provider enabled.",
+    "disabled": "Provider disabled.",
+    "defaultSet": "Default provider updated.",
+    "urlSaved": "Console URL saved.",
+    "customExpOn": "Custom expiry allowed.",
+    "customExpOff": "Custom expiry disabled.",
+    "logoUploaded": "Logo uploaded.",
+    "logoDeleted": "Logo deleted.",
+    "logoReplaced": "Logo replaced.",
+    "uploadFailed": "Upload failed.",
+    "deleteFailed": "Delete failed.",
+    "saveFailed": "Could not save."
   }
 }

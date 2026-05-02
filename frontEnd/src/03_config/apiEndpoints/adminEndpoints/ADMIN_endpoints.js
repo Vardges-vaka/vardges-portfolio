@@ -78,15 +78,42 @@ const ADMIN_endpoints = {
         headers: { "Content-Type": "application/json" },
       },
     },
-    PATCH_STORAGE: {
-      ENDPOINT: `${API_BASE}/settings/storage`,
-      DISPLAY_NAME: "Settings_patchStorage.js",
+    PUT_PROVIDER: {
+      ENDPOINT: (provider) => `${API_BASE}/settings/storage/${provider}`,
+      DISPLAY_NAME: "Settings_putProvider.js",
       PROPERTIES: (body) => ({
-        method: "PATCH",
+        method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       }),
+    },
+    UPLOAD_LOGO: {
+      ENDPOINT: (provider) => `${API_BASE}/settings/storage/${provider}/logo`,
+      DISPLAY_NAME: "Settings_uploadLogo.js",
+      PROPERTIES: (formData) => ({
+        method: "POST",
+        credentials: "include",
+        body: formData,
+      }),
+    },
+    GET_LOGO: {
+      ENDPOINT: (provider) => `${API_BASE}/settings/storage/${provider}/logo`,
+      DISPLAY_NAME: "Settings_getLogo.js",
+      PROPERTIES: {
+        method: "GET",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    DELETE_LOGO: {
+      ENDPOINT: (provider) => `${API_BASE}/settings/storage/${provider}/logo`,
+      DISPLAY_NAME: "Settings_deleteLogo.js",
+      PROPERTIES: {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
     },
   },
 

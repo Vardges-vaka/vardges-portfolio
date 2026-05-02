@@ -1,17 +1,17 @@
 import { ADMIN_endpoints } from "../../../../../03_config/config.index.js";
 
-const { ENDPOINT, PROPERTIES, DISPLAY_NAME } = ADMIN_endpoints.SETTINGS.PATCH_STORAGE;
+const { ENDPOINT, PROPERTIES, DISPLAY_NAME } = ADMIN_endpoints.SETTINGS.GET_LOGO;
 const isDebug = false;
 
 /**
- * @param {{ provider: string, isEnabled?: boolean, isDefault?: boolean }} payload
+ * @param {string} provider
  */
-const Settings_patchStorage = async (payload) => {
+const Settings_getLogo = async (provider) => {
   isDebug &&
-    console.log(`${DISPLAY_NAME} [CALLED] | ENDPOINT: [${ENDPOINT}]`);
+    console.log(`${DISPLAY_NAME} [CALLED] | provider: ${provider}`);
 
   try {
-    const response = await fetch(ENDPOINT, PROPERTIES(payload));
+    const response = await fetch(ENDPOINT(provider), { ...PROPERTIES });
     const backendResponse = await response.json();
 
     isDebug &&
@@ -19,17 +19,17 @@ const Settings_patchStorage = async (payload) => {
 
     return {
       success: backendResponse.success === true,
-      message: backendResponse.message || "Failed to update storage",
+      message: backendResponse.message || "Failed to load logo URL",
       data: backendResponse.payload ?? null,
     };
   } catch (error) {
     isDebug && console.error(`${DISPLAY_NAME} [ERROR]`, error);
     return {
       success: false,
-      message: error.message || "Failed to update storage",
+      message: error.message || "Failed to load logo URL",
       data: null,
     };
   }
 };
 
-export default Settings_patchStorage;
+export default Settings_getLogo;
