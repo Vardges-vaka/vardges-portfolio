@@ -1,8 +1,5 @@
-import { GCS_BUCKET_NAME } from "../../../00_config/cloudStorage_config/gcs_config.js";
-import {
-  gcs_resolveBucket,
-  gcs_normalizeObjectKey,
-} from "../../../04_helpers/helpers.index.js";
+import { GCS_BUCKET_NAME } from "../../../00_config/_config.index.js";
+import { gcs_resolveBucketKey } from "../../../04_helpers/helpers.index.js";
 
 const displayName = " | CS_GCS_delete.js | ";
 
@@ -15,21 +12,15 @@ const displayName = " | CS_GCS_delete.js | ";
  */
 
 const CS_GCS_delete = async (params, isDebug = false) => {
-  const resolved = gcs_resolveBucket();
-  if (!resolved.ok) {
-    return { success: false, message: `${displayName}${resolved.message}` };
-  }
-
-  const keyRes = gcs_normalizeObjectKey(params?.objectKey);
-  if (!keyRes.ok) {
-    return { success: false, message: `${displayName}${keyRes.message}` };
+  const resolveBucketKey = gcs_resolveBucketKey(params?.objectKey);
+  if (!resolveBucketKey.ok) {
+    return { success: false, message: `${displayName}${resolveBucketKey.message}` };
   }
 
   const ignoreNotFound = params?.ignoreNotFound === true;
-  const { bucket } = resolved;
 
   try {
-    const file = bucket.file(keyRes.key);
+    const file = resolveBucketKey.bucket.file(resolveBucketKey.key);
     await file.delete();
 
     return {
@@ -37,7 +28,7 @@ const CS_GCS_delete = async (params, isDebug = false) => {
       message: "Object deleted",
       data: {
         bucket: GCS_BUCKET_NAME,
-        objectKey: keyRes.key,
+        objectKey: resolveBucketKey.key,
       },
     };
   } catch (error) {
@@ -52,7 +43,7 @@ const CS_GCS_delete = async (params, isDebug = false) => {
         message: "Object not found (ignored)",
         data: {
           bucket: GCS_BUCKET_NAME,
-          objectKey: keyRes.key,
+          objectKey: resolveBucketKey.key,
         },
       };
     }

@@ -6,11 +6,16 @@ import {
 
 /**
  * Shared ADC + bucket wiring for GCS services (single place for env checks).
+ * Lazy singleton — client is created on first successful call and reused thereafter.
  *
  * @returns {{ ok: true, storage: Storage, bucket: import("@google-cloud/storage").Bucket } | { ok: false, message: string }}
  */
 
+let _cache = null;
+
 export const gcs_resolveBucket = () => {
+  if (_cache) return { ok: true, ..._cache };
+
   if (!GCS_APP_CRED_PATH) {
     return {
       ok: false,
@@ -24,5 +29,6 @@ export const gcs_resolveBucket = () => {
 
   const storage = new Storage();
   const bucket = storage.bucket(GCS_BUCKET_NAME);
+  _cache = { storage, bucket };
   return { ok: true, storage, bucket };
 };
