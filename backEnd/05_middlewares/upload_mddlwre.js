@@ -39,9 +39,4 @@ export const upload_mddlwre = (req, res, next) => {
     next();
   });
 };
-// let instance = null;
-// if (contentLength === -1 || contentLength > TEN_MB) {
-//   instance = diskUpload;
-// } else {
-//   instance = memoryUpload;
-// }
+

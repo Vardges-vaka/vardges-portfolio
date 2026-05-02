@@ -9,7 +9,6 @@ const getStorageSchema = () => {
       consoleUrl: { type: String, default: "" },
       isDefault: { type: Boolean, default: false },
       customExpTime: { type: Boolean, default: false },
-
     },
     { timestamps: false },
   );
