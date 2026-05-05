@@ -25,6 +25,7 @@ import {
 import {
   i18nHandler,
   i18nMiddleware,
+  auth_mddlwre,
 } from "./05_middlewares/_mddlwre.index.js";
 
 // !===== Config =====
@@ -81,7 +82,7 @@ app.use("/api/employees", employeeRoutes);
 app.use("/api/menu-categories", menuCategoryRoutes);
 app.use("/api/menus", menuRoutes);
 app.use("/api/menu-items", menuItemRoutes);
-app.use("/api/settings", settingsRoutes);
+app.use("/api/settings", auth_mddlwre, settingsRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/access", accessRoutes);
 app.use("/api/test", testRoutes);

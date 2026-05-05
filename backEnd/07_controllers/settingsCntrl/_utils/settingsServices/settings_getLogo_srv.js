@@ -1,6 +1,6 @@
 import { Settings } from "../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../03_services/_services.index.js";
-import { getCloudOps } from "../cloudStorageDispatch.js";
+import { getCloudOps } from "../settingshelpers/cloudStorageDispatch.js";
 
 const displayName = " | settings_getLogo_srv.js | ";
 
@@ -24,7 +24,11 @@ export const settings_getLogo_srv = async (req, isDebug) => {
     const getResult = await get({ objectKey }, isDebug);
 
     if (!getResult.success) {
-      return { success: false, message: `${displayName}${getResult.message}`, data: null };
+      return {
+        success: false,
+        message: `${displayName}${getResult.message}`,
+        data: null,
+      };
     }
 
     return {

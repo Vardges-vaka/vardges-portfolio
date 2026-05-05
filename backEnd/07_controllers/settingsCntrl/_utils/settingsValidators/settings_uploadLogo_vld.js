@@ -1,9 +1,5 @@
 const displayName = " | settings_uploadLogo_vld.js | ";
 
-/**
- * Validates that Multer attached a file to the request.
- * MIME whitelist intentionally omitted — accepts any type for testing.
- */
 export const settings_uploadLogo_vld = async (req) => {
   const file = req.file;
 

@@ -967,3 +967,203 @@
   "timestamp": "2026-04-30 18:20:06",
   "type": "controller_error"
 }
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "Azure Blob cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Azure Blob cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-03 09:57:57",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "Azure Blob cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Azure Blob cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-03 11:08:39",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "Cloudflare R2 cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Cloudflare R2 cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-03 11:12:44",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "AWS S3 cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: AWS S3 cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-03 13:38:53",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:17",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:17",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:18",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:25",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:27",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:28",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:46",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:22:53",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:24:15",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:25:07",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:27:19",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:27:39",
+  "type": "controller_error"
+}
+{
+  "controller": " | settings_getMonitor_cntrl.js | ",
+  "error": "[object Object] cloud storage operations are not yet implemented",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨  | settings_getMonitor_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: [object Object] cloud storage operations are not yet implemented\n    at validRespond (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/cntrl_returnHandler.js:27:35)\n    at settings_getMonitor_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_getMonitor_cntrl.js:13:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 400,
+  "timestamp": "2026-05-05 21:28:49",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | settings_get_cntrl.js | ",
+  "error": "CLOUD_STORAGE_PROVIDERS is not defined",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | settings_get_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: CLOUD_STORAGE_PROVIDERS is not defined\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at settings_get_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/_utils/settingsServices/settings_get_srv.js:85:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async settings_get_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/settingsCntrl/settingsCntrl_crud/settings_get_cntrl.js:12:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-05 23:54:34",
+  "type": "controller_error"
+}

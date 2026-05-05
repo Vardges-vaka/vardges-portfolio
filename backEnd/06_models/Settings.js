@@ -10,7 +10,7 @@ const getStorageSchema = () => {
       isDefault: { type: Boolean, default: false },
       customExpTime: { type: Boolean, default: false },
     },
-    { timestamps: false },
+    { _id: false, timestamps: false },
   );
 };
 const settingsSchema = new mongoose.Schema(

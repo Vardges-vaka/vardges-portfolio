@@ -105,6 +105,11 @@ temp/
 *.sw?
 
 # Kiro IDE
+.email/
+.kilocode/
+.plans/
+.vscode/
+.personalContext/
 .kiro/
 .cursor/
 .plans/

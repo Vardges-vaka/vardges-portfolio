@@ -4,6 +4,7 @@ export { settings_putProvider_srv } from "./settingsServices/settings_putProvide
 export { settings_uploadLogo_srv } from "./settingsServices/settings_uploadLogo_srv.js";
 export { settings_getLogo_srv } from "./settingsServices/settings_getLogo_srv.js";
 export { settings_deleteLogo_srv } from "./settingsServices/settings_deleteLogo_srv.js";
+export { settings_getMonitor_srv } from "./settingsServices/settings_getMonitor_srv.js";
 export { normalizeStorageDefaults } from "./settingsServices/normalizeStorageDefaults.js";
 
 // !===== Validators =====

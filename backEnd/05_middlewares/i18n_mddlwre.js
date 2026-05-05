@@ -85,12 +85,12 @@ export const i18nMiddleware = (req, res, next) => {
     }
 
     // Log detected language
-    console.log(`[i18n] Request received`);
-    console.log(`[i18n] Detected language: ${detectedLanguage}`);
-    console.log(`[i18n] Language source: ${source}`);
-    console.log(
-      `[i18n] Supported: ${LANGUAGE_CODES.includes(detectedLanguage)}`
-    );
+    // console.log(`[i18n] Request received`);
+    // console.log(`[i18n] Detected language: ${detectedLanguage}`);
+    // console.log(`[i18n] Language source: ${source}`);
+    // console.log(
+    //   `[i18n] Supported: ${LANGUAGE_CODES.includes(detectedLanguage)}`
+    // );
 
     // Attach language information to request
     req.language = detectedLanguage;

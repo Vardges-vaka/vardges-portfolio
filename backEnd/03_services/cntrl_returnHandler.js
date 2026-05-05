@@ -18,17 +18,17 @@ export const validRespond = (res, debug, name, success, message, data) => {
   const statusCode = success ? 200 : 400;
 
   // Log using Winston logger
-  if (success) {
-    logger.controller.success(name, data, {
-      statusCode,
-      userId,
-    });
-  } else {
-    logger.controller.error(name, new Error(message), {
-      statusCode,
-      userId,
-    });
-  }
+  // if (success) {
+  //   logger.controller.success(name, data, {
+  //     statusCode,
+  //     userId,
+  //   });
+  // } else {
+  //   logger.controller.error(name, new Error(message), {
+  //     statusCode,
+  //     userId,
+  //   });
+  // }
 
   // Maintain backward compatibility with console.log
   debug && console.log(`⛟📦🚚${name}[SUCCESS] ${success} |<=>| [DATA]`, data);

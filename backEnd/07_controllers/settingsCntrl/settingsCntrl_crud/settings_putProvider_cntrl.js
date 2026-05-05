@@ -5,9 +5,9 @@ import {
 } from "../../../03_services/_services.index.js";
 
 const displayName = " | settings_putProvider_cntrl.js | ";
+const isDebug = true;
 
 const settings_putProvider_cntrl = async (req, res) => {
-  const isDebug = true;
   try {
     const { success, message, data } = await settings_putProvider_srv(
       req,

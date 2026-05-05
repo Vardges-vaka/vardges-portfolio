@@ -7,7 +7,7 @@ import {
 const displayName = " | settings_getLogo_cntrl.js | ";
 
 const settings_getLogo_cntrl = async (req, res) => {
-  const isDebug = true;
+  const isDebug = false;
   try {
     const { success, message, data } = await settings_getLogo_srv(req, isDebug);
     return validRespond(res, isDebug, displayName, success, message, data);

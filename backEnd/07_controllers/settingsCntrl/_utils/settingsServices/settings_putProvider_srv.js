@@ -1,5 +1,6 @@
 import { Settings } from "../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../03_services/_services.index.js";
+import { CLOUD_STORAGE_PROVIDERS } from "../../../../05_constants/cloudStorageProviders.js";
 import { settings_get_srv } from "./settings_get_srv.js";
 import { normalizeStorageDefaults } from "./normalizeStorageDefaults.js";
 
@@ -42,6 +43,15 @@ export const settings_putProvider_srv = async (req, isDebug) => {
     }
 
     plain[provider] = node;
+
+    if (node.isDefault) {
+      for (const k of CLOUD_STORAGE_PROVIDERS) {
+        if (k !== provider && plain[k]?.isDefault) {
+          plain[k] = { ...plain[k], isDefault: false };
+        }
+      }
+    }
+
     doc.storage = normalizeStorageDefaults(plain);
     doc.markModified("storage");
     await doc.save();

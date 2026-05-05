@@ -1,7 +1,7 @@
 import { Settings } from "../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../03_services/_services.index.js";
 import { settings_get_srv } from "./settings_get_srv.js";
-import { getCloudOps } from "../cloudStorageDispatch.js";
+import { getCloudOps } from "../settingshelpers/cloudStorageDispatch.js";
 
 const displayName = " | settings_deleteLogo_srv.js | ";
 
@@ -36,7 +36,11 @@ export const settings_deleteLogo_srv = async (req, isDebug) => {
     );
 
     if (!delResult.success) {
-      return { success: false, message: `${displayName}${delResult.message}`, data: null };
+      return {
+        success: false,
+        message: `${displayName}${delResult.message}`,
+        data: null,
+      };
     }
 
     plain[provider] = { ...(plain[provider] || {}), logo: "" };

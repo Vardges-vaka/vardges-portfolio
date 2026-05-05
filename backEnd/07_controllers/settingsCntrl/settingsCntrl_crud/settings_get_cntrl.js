@@ -5,9 +5,9 @@ import {
 } from "../../../03_services/_services.index.js";
 
 const displayName = " | settings_get_cntrl.js | ";
+const isDebug = false;
 
 const settings_get_cntrl = async (req, res) => {
-  const isDebug = true;
   try {
     const { success, message, data } = await settings_get_srv(req, isDebug);
     return validRespond(res, isDebug, displayName, success, message, data);
