@@ -1,0 +1,54 @@
+/* Files */
+.files-cell {
+  min-width: 118px;
+}
+.files-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.files-summary-count {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-primary-color);
+}
+.files-summary-size {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted-color);
+}
+.files-empty {
+  font-size: 12px;
+  color: var(--text-muted-color);
+  white-space: nowrap;
+}
+.files-loading {
+  width: 94px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.files-loading-count,
+.files-loading-size {
+  display: block;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary-color) 0%,
+    var(--hover-bg-color) 45%,
+    var(--bg-tertiary-color) 100%
+  );
+  background-size: 220% 100%;
+  animation: cloud-storage-shimmer 1.35s ease-in-out infinite;
+}
+.files-loading-count {
+  width: 92px;
+  height: 11px;
+}
+.files-loading-size {
+  width: 62px;
+  height: 9px;
+  animation-delay: 0.14s;
+}

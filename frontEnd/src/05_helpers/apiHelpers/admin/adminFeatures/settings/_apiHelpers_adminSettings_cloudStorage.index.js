@@ -3,3 +3,4 @@ export { default as Settings_putProvider } from "./Settings_putProvider.js";
 export { default as Settings_uploadLogo } from "./Settings_uploadLogo.js";
 export { default as Settings_getLogo } from "./Settings_getLogo.js";
 export { default as Settings_deleteLogo } from "./Settings_deleteLogo.js";
+export { default as Settings_getMonitor } from "./Settings_getMonitor.js";

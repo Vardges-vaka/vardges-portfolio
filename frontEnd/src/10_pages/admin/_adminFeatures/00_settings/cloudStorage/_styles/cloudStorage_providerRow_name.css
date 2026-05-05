@@ -1,0 +1,22 @@
+.provider-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.provider-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+.badge-default {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: var(--badge-default-bg);
+  color: var(--badge-default-text);
+  border: 1px solid var(--badge-default-border);
+  white-space: nowrap;
+  text-transform: uppercase;
+}

@@ -1,0 +1,32 @@
+.default-radio-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.default-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-secondary-color);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.default-radio:hover {
+  border-color: var(--admin-tool-icon-active);
+}
+.default-radio.active {
+  border-color: var(--admin-tool-icon-active);
+  background: var(--admin-tool-icon-active);
+}
+.default-radio.active::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}

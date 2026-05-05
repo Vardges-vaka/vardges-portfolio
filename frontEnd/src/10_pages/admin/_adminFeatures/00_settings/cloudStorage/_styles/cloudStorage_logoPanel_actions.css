@@ -1,0 +1,46 @@
+.cloudStorage_logoPanel_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 24px;
+}
+
+.cloudStorage_logoPanel_btnUpload {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 7px;
+  background: var(--brand-secondary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.cloudStorage_logoPanel_btnUpload:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cloudStorage_logoPanel_btnUpload:not(:disabled):hover {
+  opacity: 0.85;
+}
+
+.cloudStorage_logoPanel_btnClose {
+  padding: 7px 18px;
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-secondary-color);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.cloudStorage_logoPanel_btnClose:hover {
+  background: var(--hover-bg-color);
+}
+

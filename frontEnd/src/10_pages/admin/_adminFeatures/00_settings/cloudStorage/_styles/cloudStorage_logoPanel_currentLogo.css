@@ -1,0 +1,30 @@
+.cloudStorage_logoPanel_currentLogoWrap {
+  flex-shrink: 0;
+}
+
+.cloudStorage_logoPanel_currentLogoBox {
+  width: 160px;
+  height: 110px;
+  border: 2px dashed var(--border-secondary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--bg-secondary-color);
+  padding: 12px;
+
+  /* "disabled" look */
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.cloudStorage_logoPanel_currentLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+

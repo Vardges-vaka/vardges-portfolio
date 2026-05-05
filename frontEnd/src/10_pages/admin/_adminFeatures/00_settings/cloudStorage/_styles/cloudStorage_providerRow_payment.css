@@ -1,0 +1,19 @@
+/* Payment */
+.payment-cell {
+  min-width: 88px;
+}
+.payment-amount {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary-color);
+  white-space: nowrap;
+}
+.payment-empty {
+  font-size: 12px;
+  color: var(--text-muted-color);
+}
+.payment-loading {
+  width: 54px;
+  height: 13px;
+  margin: auto;
+}

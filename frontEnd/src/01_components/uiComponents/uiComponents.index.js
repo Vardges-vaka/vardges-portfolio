@@ -1,5 +1,7 @@
 export { default as DeveloperIcon } from "./DeveloperIcon";
 export { default as HospIcon } from "./HospIcon";
+export { default as Up_icon } from "./Up_icon";
+export { default as Down_icon } from "./Down_icon";
 // export { default as AAAAA } from "./AAAAA";
 // export { default as AboutIcon } from "./AboutIcon";
 

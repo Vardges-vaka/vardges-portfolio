@@ -10,6 +10,7 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
     Settings_uploadLogo,
     Settings_getLogo,
     Settings_deleteLogo,
+    Settings_getMonitor,
   } = apiHelpers;
 
   const {
@@ -23,9 +24,20 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
     setBusyMap,
     setMessages,
     setModal,
+    setOpenMonitorPanel,
+    setOpenLogoPanel,
+    setMonitorData,
+    setMonitorLoading,
   } = setters;
 
-  const { modal, storage, logoFiles, consoleUrlDraft } = states;
+  const {
+    modal,
+    storage,
+    logoFiles,
+    consoleUrlDraft,
+    monitorData,
+    monitorLoading,
+  } = states;
 
   // ─── internal helpers ────────────────────────────────────────────────────
 
@@ -50,15 +62,45 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
 
   // ─── modal ───────────────────────────────────────────────────────────────
 
-  const openModal = useCallback(
-    (type, provider, pendingData = null) =>
-      setModal({ isOpen: true, type, provider, pendingData }),
-    [setModal],
+  const closeModal = useCallback(() => setModal(null), [setModal]);
+
+  const confirmModal = useCallback(async () => {
+    if (modal?.onConfirm) await modal.onConfirm();
+    closeModal();
+  }, [modal, closeModal]);
+
+  // ─── monitor data ─────────────────────────────────────────────────────────
+
+  const loadMonitorData = useCallback(
+    async (provider, refresh = false) => {
+      setMonitorLoading((prev) => ({ ...prev, [provider]: true }));
+      const res = await Settings_getMonitor(provider, refresh);
+      setMonitorLoading((prev) => ({ ...prev, [provider]: false }));
+      if (res.success && res.data) {
+        setMonitorData((prev) => ({ ...prev, [provider]: res.data }));
+      }
+    },
+    [Settings_getMonitor, setMonitorData, setMonitorLoading],
   );
 
-  const closeModal = useCallback(
-    () => setModal({ isOpen: false, type: null, provider: null, pendingData: null }),
-    [setModal],
+  // ─── panel toggles ───────────────────────────────────────────────────────
+
+  const toggleMonitorPanel = useCallback(
+    (id) => {
+      setOpenMonitorPanel((cur) => {
+        const opening = cur !== id;
+        if (opening && !monitorData[id] && !monitorLoading[id]) {
+          loadMonitorData(id);
+        }
+        return opening ? id : null;
+      });
+    },
+    [setOpenMonitorPanel, monitorData, monitorLoading, loadMonitorData],
+  );
+
+  const toggleLogoPanel = useCallback(
+    (id) => setOpenLogoPanel((cur) => (cur === id ? null : id)),
+    [setOpenLogoPanel],
   );
 
   // ─── core API calls ──────────────────────────────────────────────────────
@@ -135,6 +177,7 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
       }
       if (res.data?.storage) setStorage(res.data.storage);
       setLogoFiles((prev) => ({ ...prev, [provider]: null }));
+      setOpenLogoPanel(null);
       setMsg(provider, "logoUploaded", "ok");
       loadLogoUrl(provider);
     },
@@ -144,6 +187,7 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
       setMsg,
       setStorage,
       setLogoFiles,
+      setOpenLogoPanel,
       loadLogoUrl,
     ],
   );
@@ -164,59 +208,59 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
     [Settings_deleteLogo, setBusy, setMsg, setStorage, setLogoUrls],
   );
 
-  // ─── confirm modal ───────────────────────────────────────────────────────
-
-  const confirmModal = useCallback(async () => {
-    const { type, provider, pendingData } = modal;
-    closeModal();
-
-    switch (type) {
-      case "enable":
-        if (await putProvider(provider, { isEnabled: true }))
-          setMsg(provider, "enabled", "ok");
-        break;
-      case "disable":
-        if (await putProvider(provider, { isEnabled: false })) {
-          setMsg(provider, "disabled", "ok");
-          setLogoUrls((prev) => ({ ...prev, [provider]: "" }));
-        }
-        break;
-      case "setDefault":
-        if (await putProvider(provider, { isDefault: true }))
-          setMsg(provider, "defaultSet", "ok");
-        break;
-      case "deleteLogo":
-        await doDeleteLogo(provider);
-        break;
-      case "replaceLogo":
-        await doUploadLogo(provider, pendingData);
-        setLogoFiles((prev) => ({ ...prev, [provider]: null }));
-        break;
-    }
-  }, [
-    modal,
-    closeModal,
-    putProvider,
-    doDeleteLogo,
-    doUploadLogo,
-    setMsg,
-    setLogoUrls,
-    setLogoFiles,
-  ]);
-
   // ─── user-triggered actions ──────────────────────────────────────────────
 
   const handleToggle = useCallback(
     (provider) => {
-      const isCurrentlyEnabled = storage?.[provider]?.isEnabled;
-      openModal(isCurrentlyEnabled ? "disable" : "enable", provider);
+      const isEnabled = storage?.[provider]?.isEnabled;
+      const providerLabel = provider;
+      if (isEnabled) {
+        setModal({
+          title: `Disable ${providerLabel}?`,
+          body: `Are you sure you want to <strong>disable</strong> <strong>${providerLabel}</strong> as a storage provider?`,
+          danger: true,
+          onConfirm: async () => {
+            if (await putProvider(provider, { isEnabled: false })) {
+              setMsg(provider, "disabled", "ok");
+              setLogoUrls((prev) => ({ ...prev, [provider]: "" }));
+            }
+          },
+        });
+      } else {
+        setModal({
+          title: `Enable ${providerLabel}?`,
+          body: `Are you sure you want to <strong>enable</strong> <strong>${providerLabel}</strong> as a storage provider?`,
+          danger: false,
+          onConfirm: async () => {
+            if (await putProvider(provider, { isEnabled: true }))
+              setMsg(provider, "enabled", "ok");
+          },
+        });
+      }
     },
-    [storage, openModal],
+    [storage, setModal, putProvider, setMsg, setLogoUrls],
   );
 
   const handleSetDefault = useCallback(
-    (provider) => openModal("setDefault", provider),
-    [openModal],
+    (provider) => {
+      const currentDefault = CLOUD_STORAGE_PROVIDERS.find(
+        (p) => storage?.[p]?.isDefault,
+      );
+      setModal({
+        title: `Set ${provider} as default?`,
+        body: `This will make <strong>${provider}</strong> the default upload target.${
+          currentDefault && currentDefault !== provider
+            ? ` <strong>${currentDefault}</strong> will lose its default status.`
+            : ""
+        }`,
+        danger: false,
+        onConfirm: async () => {
+          if (await putProvider(provider, { isDefault: true }))
+            setMsg(provider, "defaultSet", "ok");
+        },
+      });
+    },
+    [storage, setModal, putProvider, setMsg],
   );
 
   const handleCustomExpTimeToggle = useCallback(
@@ -235,9 +279,9 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
   );
 
   const handleConsoleUrlSave = useCallback(
-    async (provider) => {
-      const url = consoleUrlDraft[provider] ?? "";
-      if (await putProvider(provider, { consoleUrl: url }))
+    async (provider, url) => {
+      const resolvedUrl = url ?? consoleUrlDraft[provider] ?? "";
+      if (await putProvider(provider, { consoleUrl: resolvedUrl }))
         setMsg(provider, "urlSaved", "ok");
     },
     [consoleUrlDraft, putProvider, setMsg],
@@ -253,24 +297,46 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
     (provider) => {
       const file = logoFiles[provider];
       if (!file) return;
-      const hasExisting = !!storage?.[provider]?.logo;
-      if (hasExisting) openModal("replaceLogo", provider, file);
-      else doUploadLogo(provider, file);
+      doUploadLogo(provider, file);
     },
-    [logoFiles, storage, openModal, doUploadLogo],
+    [logoFiles, doUploadLogo],
   );
 
   const handleLogoDelete = useCallback(
-    (provider) => openModal("deleteLogo", provider),
-    [openModal],
+    (provider) => {
+      setModal({
+        title: `Delete logo for ${provider}?`,
+        body: `This will permanently remove the logo for <strong>${provider}</strong>.`,
+        danger: true,
+        onConfirm: async () => doDeleteLogo(provider),
+      });
+    },
+    [setModal, doDeleteLogo],
+  );
+
+  const handleLogoUploadRequest = useCallback(
+    (provider, file) => {
+      const isReplace = !!storage?.[provider]?.logo;
+      setModal({
+        title: isReplace ? `Replace logo for ${provider}?` : `Upload logo for ${provider}?`,
+        body: isReplace
+          ? `This will <strong>replace</strong> the existing logo for <strong>${provider}</strong>.`
+          : `Upload this file as the logo for <strong>${provider}</strong>?`,
+        danger: false,
+        onConfirm: () => doUploadLogo(provider, file),
+      });
+    },
+    [storage, setModal, doUploadLogo],
   );
 
   return {
     handlers: {
       reload,
-      openModal,
       closeModal,
       confirmModal,
+      toggleMonitorPanel,
+      toggleLogoPanel,
+      loadMonitorData,
       handleToggle,
       handleSetDefault,
       handleCustomExpTimeToggle,
@@ -279,6 +345,8 @@ export const useCloudStorage_handlers = ({ states, setters, apiHelpers }) => {
       handleLogoFileChange,
       handleLogoUpload,
       handleLogoDelete,
+      handleLogoUploadRequest,
+      doUploadLogo,
     },
   };
 };

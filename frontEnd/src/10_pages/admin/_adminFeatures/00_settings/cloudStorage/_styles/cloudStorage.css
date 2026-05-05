@@ -1,0 +1,94 @@
+.CloudStorage {
+  width: 100%;
+  transition: all 2.25s !important;
+}
+
+.storage-table-wrap {
+  width: 100%;
+  overflow-x: hidden;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 10px;
+  background: var(--bg-secondary-color);
+  box-shadow: 0 2px 8px var(--boxShadow-primary-color);
+  overflow-y: hidden !important;
+}
+.storage-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1210px;
+}
+.storage-table thead tr {
+  background: var(--bg-tertiary-color);
+  border-bottom: 1px solid var(--border-secondary-color);
+}
+.storage-table thead th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+  padding: 10px 5px;
+  text-align: left;
+  white-space: nowrap;
+  user-select: none;
+}
+.storage-table thead th.center {
+  text-align: center;
+}
+.col-num {
+  width: 20px;
+}
+.col-logo {
+  width: 50px;
+}
+.col-name {
+  width: 190px;
+}
+.col-files {
+  width: 130px;
+  text-align: center !important;
+}
+.col-usage {
+  width: 180px;
+}
+.col-payment {
+  width: 96px;
+}
+.col-enabled {
+  width: 88px;
+}
+.col-default {
+  width: 88px;
+}
+.col-expiry {
+  width: 120px;
+}
+.col-expand {
+  width: 52px;
+}
+
+/* Keep header cells as real table cells; only body cells need flex */
+.storage-table thead th.col-url-cell {
+  display: table-cell;
+  width: 220px;
+  padding-left: 5px !important;
+}
+.storage-table tbody td.col-url-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  margin: 0 !important;
+  padding-left: 0 !important;
+}
+
+@media (max-width: 899px) {
+  .col-url-cell {
+    display: none;
+  }
+}
+@media (max-width: 599px) {
+  .storage-table-wrap {
+    border-radius: 0;
+  }
+}

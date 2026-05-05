@@ -3,6 +3,7 @@ import Settings_putProvider from "../../../../../../05_helpers/apiHelpers/admin/
 import Settings_uploadLogo from "../../../../../../05_helpers/apiHelpers/admin/adminFeatures/settings/Settings_uploadLogo.js";
 import Settings_getLogo from "../../../../../../05_helpers/apiHelpers/admin/adminFeatures/settings/Settings_getLogo.js";
 import Settings_deleteLogo from "../../../../../../05_helpers/apiHelpers/admin/adminFeatures/settings/Settings_deleteLogo.js";
+import Settings_getMonitor from "../../../../../../05_helpers/apiHelpers/admin/adminFeatures/settings/Settings_getMonitor.js";
 
 export const useCloudStorage_apiHelpers = () => ({
   apiHelpers: {
@@ -11,5 +12,6 @@ export const useCloudStorage_apiHelpers = () => ({
     Settings_uploadLogo,
     Settings_getLogo,
     Settings_deleteLogo,
+    Settings_getMonitor,
   },
 });

@@ -1,44 +1,40 @@
-import "./_styles/xCloudStorage.css";
-
 import { useCloudStorage } from "./03_CloudStorage_hooks/_CloudStorage_hooks.index.js";
 import {
-  CloudStorage_ProviderCard,
-  CloudStorage_ConfirmModal,
+  CloudStorage_header,
+  CloudStorage_loadingText,
+  CloudStorage_errorText,
+  CloudStorage_table,
+  CloudStorage_confirmModal,
 } from "./01_CloudStorage_comps/_CloudStorage_comps.index.js";
+import "./_styles/cloudStorage.css";
 
 const CloudStorage = () => {
   const { t, states, compProps } = useCloudStorage();
-  const { loading, error } = states;
+  const { CS_table_props, CS_ConfirmModal_props } = compProps;
 
   return (
-    <div className="xCloudStorage">
-      <h2 className="xCloudStorage_title">{t("title")}</h2>
-      <p className="xCloudStorage_subtitle">{t("subtitle")}</p>
+    <div className="CloudStorage">
+      <CloudStorage_header t={t} />
 
-      {loading && (
-        <p className="xCloudStorage_status xCloudStorage_statusMuted" aria-live="polite">
-          {t("loading")}
-        </p>
+      <CloudStorage_loadingText t={t} loading={states.loading} />
+
+      <CloudStorage_errorText
+        t={t}
+        loading={states.loading}
+        error={states.error}
+      />
+
+      <CloudStorage_table
+        states={CS_table_props.states}
+        compProps={CS_table_props.compProps}
+      />
+
+      {states.modal && (
+        <CloudStorage_confirmModal
+          states={CS_ConfirmModal_props.states}
+          handlers={CS_ConfirmModal_props.handlers}
+        />
       )}
-
-      {error && !loading && (
-        <p className="xCloudStorage_status xCloudStorage_statusError" role="alert">
-          {t(error, { defaultValue: error })}
-        </p>
-      )}
-
-      {!loading && (
-        <div className="xCloudStorage_grid">
-          {compProps.cards.map(({ CloudStorage_ProviderCard_props }) => (
-            <CloudStorage_ProviderCard
-              key={CloudStorage_ProviderCard_props.provider}
-              {...CloudStorage_ProviderCard_props}
-            />
-          ))}
-        </div>
-      )}
-
-      <CloudStorage_ConfirmModal {...compProps.CloudStorage_ConfirmModal_props} />
     </div>
   );
 };

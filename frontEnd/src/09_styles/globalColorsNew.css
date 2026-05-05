@@ -4,8 +4,9 @@
   /* 🎯 Brand Colors */
 
   /* ! ⬇️⬇️⬇️⬇ GLOBAL COLOR PALATE ⬇️⬇️⬇️ */
-
+  /* --L-bg-primary-color */
   --D-bg-primary-color: #571b73;
+  --D-bg-primary-color-modal: #571b73;
   --D-h1-primary-color: #ffffff;
   --D-h2-primary-color: #00a6ff;
   --D-h3-primary-color: #7bff00;
@@ -45,6 +46,7 @@
   --D-bg-tertiary-color-HOV: #340f44ce;
 
   --L-bg-primary-color: #eee29539;
+  --L-bg-primary-color-modal: #d4c353;
   --L-h1-primary-color: #171617;
   --L-h2-primary-color: #196842;
   --L-h3-primary-color: #8d4f0d;

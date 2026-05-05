@@ -4,6 +4,8 @@ import {
   AdminSettings_icon,
   ServerSettings_icon,
   CloudStorage,
+  EmailEngine_Icon,
+  LinkTo_Icon,
 } from "../../../../01_components/components.index.js";
 
 const settings_SIdeBar = (t) => {
@@ -16,16 +18,24 @@ const settings_SIdeBar = (t) => {
       isDefault: false,
     },
     {
-      label: t("adminAcount"),
-      path: "adminAcount",
-      icon: AdminAccount_icon(),
+      label: "Email Engines",
+      path: "emailEngines",
+      icon: EmailEngine_Icon(),
       access: ["user", "admin", "superAdmin"],
       isDefault: true,
     },
     {
+      label: "Admin Account",
+      path: "adminAccount",
+      icon: AdminAccount_icon(),
+      access: ["user", "admin", "superAdmin"],
+      isDefault: false,
+    },
+
+    {
       label: t("serverSettings"),
       path: "serverSettings",
-      icon: ServerSettings_icon(),
+      icon: LinkTo_Icon(),
       access: ["user", "admin", "superAdmin"],
       isDefault: false,
     },

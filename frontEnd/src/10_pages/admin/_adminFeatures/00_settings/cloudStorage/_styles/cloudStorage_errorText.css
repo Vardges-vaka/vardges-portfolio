@@ -1,0 +1,4 @@
+.cloudStorage_errorText {
+  color: var(--primary-error-border);
+  font-size: 13px;
+}

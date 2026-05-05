@@ -1,0 +1,38 @@
+.provider-row-group {
+  border-bottom: 1px solid var(--border-primary-color);
+}
+.provider-row-group:last-child {
+  border-bottom: none;
+}
+.provider-row {
+  background: var(--bg-secondary-color);
+  transition: background 0.15s;
+}
+.provider-row:hover {
+  background: var(--hover-bg-color);
+}
+.provider-row.expanded {
+  background: var(--hover-bg-color);
+}
+.provider-row td {
+  padding: 12px;
+  vertical-align: middle;
+}
+.provider-row td.center {
+  text-align: center;
+}
+.row-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted-color);
+  text-align: center;
+}
+
+@keyframes cloud-storage-shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}

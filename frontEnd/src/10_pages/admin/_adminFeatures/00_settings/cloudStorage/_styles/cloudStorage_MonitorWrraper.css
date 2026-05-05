@@ -1,0 +1,43 @@
+.monitor-section {
+  border-bottom: 1px solid var(--border-primary-color);
+  padding: 0;
+}
+.monitor-section:last-child {
+  border-bottom: none;
+}
+.monitor-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.monitor-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-secondary-color);
+}
+.monitor-section-chevron svg {
+  transition: transform 0.2s;
+}
+.monitor-section-chevron.open svg {
+  transform: rotate(180deg);
+}
+.monitor-section-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+.monitor-section-body.open {
+  max-height: 800px;
+}
+.monitor-section-content {
+  padding-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+

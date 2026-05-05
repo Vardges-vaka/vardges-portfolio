@@ -39,6 +39,10 @@ export const componentMap = {
     ),
   },
   settings: {
+    emailEngines: lazy(
+      () =>
+        import("../../_adminFeatures/00_settings/emailEngines/EmailEngines.jsx"),
+    ),
     adminAcount: lazy(
       () =>
         import("../../_adminFeatures/00_settings/adminAccount/AdminAccount.jsx"),

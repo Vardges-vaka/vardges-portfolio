@@ -1,0 +1,61 @@
+.logo-cell {
+  text-align: center;
+}
+.logo-add-btn {
+  width: 48px;
+  height: 48px;
+  /* border: 2px dashed var(--border-secondary-color); */
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted-color);
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: all 0.15s;
+  line-height: 1;
+}
+.logo-add-btn:hover {
+  border-color: var(--brand-secondary);
+  color: var(--brand-secondary);
+  background: var(--bg-tertiary-color);
+}
+.logo-img-wrap {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+.logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-update-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.logo-img-wrap:hover .logo-update-overlay {
+  opacity: 1;
+}
+.logo-update-overlay svg {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+}

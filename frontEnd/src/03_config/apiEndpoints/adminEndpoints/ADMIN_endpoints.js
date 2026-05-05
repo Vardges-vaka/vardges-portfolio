@@ -115,6 +115,16 @@ const ADMIN_endpoints = {
         headers: { "Content-Type": "application/json" },
       },
     },
+    GET_MONITOR: {
+      ENDPOINT: (provider, refresh = false) =>
+        `${API_BASE}/settings/storage/${provider}/monitor${refresh ? "?refresh=1" : ""}`,
+      DISPLAY_NAME: "Settings_getMonitor.js",
+      PROPERTIES: {
+        method: "GET",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
   },
 
   BRAND: {

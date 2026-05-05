@@ -5,6 +5,7 @@
   /* ! ⬇️⬇️⬇️⬇ GLOBAL COLOR PALATE ⬇️⬇️⬇️ ------------------------------------------------------------------------------------------------------------------*/
 
   --bg-primary-color: var(--D-bg-primary-color);
+  --bg-primary-color-modal: var(--D-bg-primary-color-modal);
   --h1-primary-color: var(--D-h1-primary-color);
   --h2-primary-color: var(--D-h2-primary-color);
   --h3-primary-color: var(--D-h3-primary-color);
@@ -159,4 +160,20 @@
   --admin-sidebar-item-active-color: #66b3ff;
 
   /* ! ⬆️⬆️⬆️===ADMIN DASHBOARD COLORS===⬆️⬆️⬆️ */
+
+  /* ! ⬇️⬇️⬇️===CLOUD STORAGE FEATURE===⬇️⬇️⬇️ */
+
+  --toggle-on-bg: #ff8300;
+  --toggle-off-bg: #6b006b;
+  --toggle-thumb: #ffffff;
+  --badge-default-bg: #1e3a5f;
+  --badge-default-text: #66b3ff;
+  --badge-default-border: #4a9eff;
+  --monitoring-border: #ff8300;
+  --progress-track: #6b006b;
+  --text-muted-color: #c6a0cf;
+  --brand-secondary: #ff8300;
+  --hover-bg-color: #2e005d;
+
+  /* ! ⬆️⬆️⬆️===CLOUD STORAGE FEATURE===⬆️⬆️⬆️ */
 }

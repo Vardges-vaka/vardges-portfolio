@@ -1,0 +1,83 @@
+/* Monitor panel core shell (child styles live in their own files) */
+.monitoring-panel {
+  background: var(--bg-secondary-color);
+  border-top: 2px solid var(--monitoring-border);
+  padding-bottom: 16px;
+}
+
+.monitor-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px 12px;
+  border-bottom: 1px solid var(--border-primary-color);
+}
+
+.monitor-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
+  animation: pulse-dot 2s infinite;
+  flex-shrink: 0;
+}
+
+.live-dot.offline {
+  background: var(--text-muted-color);
+  box-shadow: none;
+  animation: none;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.1);
+  }
+}
+
+.live-label {
+  font-size: 11px;
+  color: var(--text-muted-color);
+}
+
+.monitor-sections {
+  padding: 0 24px;
+}
+
+.not-impl-banner {
+  background: var(--bg-tertiary-color);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: var(--text-muted-color);
+  font-style: italic;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.not-impl-banner--normal {
+  font-style: normal;
+}
+
+/* Monitor grid (used by some section layouts) */
+.monitor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+}
+
+@media (max-width: 700px) {
+  .monitor-grid {
+    grid-template-columns: 1fr;
+  }
+}

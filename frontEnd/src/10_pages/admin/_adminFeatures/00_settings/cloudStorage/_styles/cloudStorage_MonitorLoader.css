@@ -1,0 +1,199 @@
+/* Loader */
+.monitor-loader {
+  width: calc(100% + 48px);
+  min-height: 270px;
+  margin: 0 -24px;
+  padding: 26px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 60%),
+    var(--bg-secondary-color);
+  box-sizing: border-box;
+}
+.monitor-loader-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.monitor-loader-core {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.monitor-loader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--border-primary-color);
+  border-top-color: var(--brand-secondary);
+  border-right-color: var(--admin-tool-icon-active);
+  animation: monitor-loader-spin 0.9s linear infinite;
+}
+.monitor-loader-stack {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.monitor-loader-stack span {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--brand-secondary);
+  opacity: 0.95;
+  animation: monitor-loader-stack 1.1s ease-in-out infinite;
+}
+.monitor-loader-stack span:nth-child(2) {
+  width: 78%;
+  animation-delay: 0.12s;
+}
+.monitor-loader-stack span:nth-child(3) {
+  width: 58%;
+  animation-delay: 0.24s;
+}
+.monitor-loader-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  text-align: left;
+}
+.monitor-loader-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary-color);
+}
+.monitor-loader-subtitle {
+  font-size: 12px;
+  color: var(--text-muted-color);
+}
+.monitor-loader-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.monitor-loader-card {
+  min-height: 86px;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+  background: var(--bg-tertiary-color);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+.monitor-loader-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 45%,
+    transparent 75%
+  );
+  transform: translateX(-100%);
+  animation: monitor-loader-card-sweep 1.7s ease-in-out infinite;
+}
+.monitor-loader-card-title,
+.monitor-loader-card-value,
+.monitor-loader-card-bar {
+  display: block;
+  border-radius: 999px;
+  background: var(--progress-track);
+}
+.monitor-loader-card-title {
+  width: 42%;
+  height: 9px;
+}
+.monitor-loader-card-value {
+  width: 62%;
+  height: 15px;
+}
+.monitor-loader-card-bar {
+  width: 100%;
+  height: 7px;
+}
+.monitor-loader-skeleton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.monitor-loader-skeleton span {
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary-color) 0%,
+    var(--hover-bg-color) 45%,
+    var(--bg-tertiary-color) 100%
+  );
+  background-size: 220% 100%;
+  animation: monitor-loader-shimmer 1.4s ease-in-out infinite;
+}
+.monitor-loader-skeleton span:nth-child(2) {
+  width: 100%;
+  animation-delay: 0.12s;
+}
+.monitor-loader-skeleton span:nth-child(3) {
+  width: 100%;
+  animation-delay: 0.24s;
+}
+@keyframes monitor-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes monitor-loader-stack {
+  0%,
+  100% {
+    transform: scaleX(0.68);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@keyframes monitor-loader-shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+@keyframes monitor-loader-card-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  55%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 700px) {
+  .monitor-loader {
+    padding: 24px;
+  }
+  .monitor-loader-grid {
+    grid-template-columns: 1fr;
+  }
+  .monitor-loader-top {
+    justify-content: flex-start;
+  }
+}

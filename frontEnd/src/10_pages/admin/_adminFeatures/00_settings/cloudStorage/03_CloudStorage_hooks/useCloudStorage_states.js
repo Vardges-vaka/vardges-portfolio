@@ -15,12 +15,16 @@ export const useCloudStorage_states = () => {
   const [consoleUrlDraft, setConsoleUrlDraft] = useState(() => initMap(""));
   const [busyMap, setBusyMap] = useState({});
   const [messages, setMessages] = useState(() => initMap(null));
-  const [modal, setModal] = useState({
-    isOpen: false,
-    type: null,
-    provider: null,
-    pendingData: null,
-  });
+  const [modal, setModal] = useState(null);
+  const [openMonitorPanel, setOpenMonitorPanel] = useState(null);
+  const [openLogoPanel, setOpenLogoPanel] = useState(null);
+  const [monitorData, setMonitorData] = useState(() => initMap(null));
+  const [monitorLoading, setMonitorLoading] = useState(() => initMap(false));
+
+  // const [urlEditing, setUrlEditing] = useState(false);
+  // const [urlValue, setUrlValue] = useState(null); // provider.consoleUrl
+  // const [copied, setCopied] = useState(false);
+  // const copyTimerRef = useRef(null);
 
   return {
     states: {
@@ -34,6 +38,17 @@ export const useCloudStorage_states = () => {
       busyMap,
       messages,
       modal,
+      openMonitorPanel,
+      openLogoPanel,
+      monitorData,
+      monitorLoading,
+      // New Ones
+      // urlEditing,
+      // urlValue,
+      // copied,
+
+      // // Refs
+      // copyTimerRef,
     },
     setters: {
       setStorage,
@@ -46,6 +61,17 @@ export const useCloudStorage_states = () => {
       setBusyMap,
       setMessages,
       setModal,
+      setOpenMonitorPanel,
+      setOpenLogoPanel,
+      setMonitorData,
+      setMonitorLoading,
+      // New Ones
+      // setUrlEditing,
+      // setUrlValue,
+      // setCopied,
     },
+    // reff: {
+    //   copyTimerRef,
+    // },
   };
 };
