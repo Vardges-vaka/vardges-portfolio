@@ -4,10 +4,10 @@
   z-index: 50;
   display: grid;
   place-items: center;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--brands-modal-backdrop-bg);
 }
 
-.brandsModal__panel {
+.brandsModal_panel {
   width: min(92vw, 32rem);
   border: 1px solid var(--border-primary-color);
   border-radius: 1rem;
@@ -16,12 +16,12 @@
   color: var(--text-primary-color);
 }
 
-.brandsModal__title,
-.brandsModal__hint {
+.brandsModal_title,
+.brandsModal_hint {
   margin: 0 0 0.75rem;
 }
 
-.brandsModal__changes {
+.brandsModal_changes {
   display: grid;
   gap: 0.4rem;
   max-height: 16rem;
@@ -29,7 +29,7 @@
   margin: 0.75rem 0;
 }
 
-.brandsModal__change {
+.brandsModal_change {
   display: grid;
   gap: 0.2rem;
   border: 1px solid var(--border-primary-color);
@@ -38,13 +38,13 @@
   background: var(--bg-secondary-color);
 }
 
-.brandsModal__actions {
+.brandsModal_actions {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
 }
 
-.brandsModal__btn--danger {
+.brandsModal_btn--danger {
   border-color: var(--primary-error-border);
   color: var(--primary-error-border);
 }

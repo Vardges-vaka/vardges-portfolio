@@ -1,0 +1,115 @@
+{
+  "tableView": {
+    "title": "Конкуренты"
+  },
+  "tableRow": {
+    "open": "Открыть",
+    "editCompetitor": "Редактировать",
+    "viewCompetitor": "Просмотр",
+    "competesStackLabel": "Конкурирующие бренды: {{names}}",
+    "detailMenuItems": "Позиции меню",
+    "detailMenuCategories": "Категории меню",
+    "ownDeliveryYes": "Собственная доставка в Дубае",
+    "ownDeliveryNo": "Нет собственной доставки в Дубае",
+    "ownDeliveryUnknown": "Собственная доставка в Дубае не указана"
+  },
+  "priceRange": {
+    "budget": "бюджет",
+    "mid": "средний",
+    "premium": "премиум"
+  },
+  "viewModes": {
+    "table": "Таблица",
+    "map": "Карта"
+  },
+  "mapView": {
+    "noKeyTitle": "Карта недоступна",
+    "noKeyText": "Отсутствует ключ Google Maps API (VITE_GOOGLE_MAPS_API_KEY).",
+    "loadErrorTitle": "Не удалось загрузить карту",
+    "loadErrorText": "Скрипт Google Maps не загрузился. Проверьте ключ и сеть.",
+    "loadingTitle": "Загрузка карты…",
+    "toggleCompetitors": "Конкуренты",
+    "allPolygon": "Полигон (все)",
+    "allRadius": "Радиус (все)",
+    "toggleAllPolygonTitle": "Показать/скрыть полигоны покрытия (все)",
+    "toggleAllRadiusTitle": "Показать/скрыть радиусы покрытия (все)",
+    "visible": "видно",
+    "total": "всего",
+    "controlsToggleTitle": "Показать/скрыть элементы управления картой",
+    "hint": "Нажмите на логотип конкурента на карте, чтобы открыть детали в панели информации.",
+    "popupViewInfo": "Показать детали",
+    "popupShowRadius": "Показать радиус",
+    "popupHideRadius": "Скрыть радиус",
+    "popupShowPolygon": "Показать полигон",
+    "popupHidePolygon": "Скрыть полигон",
+    "infoTitle": "Информация о конкуренте",
+    "clearInfo": "Снять выбор",
+    "noSelection": "Выберите конкурента на карте, чтобы увидеть детали здесь.",
+    "openCompetitor": "Открыть конкурента",
+    "cardBranches": "Филиалы",
+    "cardOwnDelivery": "Своя доставка DXB",
+    "cardSelectedBranch": "Выбранная точка (филиал)",
+    "noActivePin": "Нажмите на пин, чтобы увидеть детали филиала.",
+    "cardCoords": "Координаты",
+    "cardCoveragePolygon": "Полигон",
+    "cardCoverageRadius": "Радиус",
+    "cardCoverageKm": "Радиус (км)",
+    "cardPriceRange": "Ценовой сегмент",
+    "cardMenuItems": "Позиции меню",
+    "cardMenuCategories": "Категории меню",
+    "cardCuisine": "Кухня",
+    "cardMenu": "Меню",
+    "cardNotes": "Заметки",
+    "cardLinks": "Ссылки"
+  },
+  "tableheaders": {
+    "name": {
+      "text": "Название",
+      "title": "Название конкурента"
+    },
+    "logo": {
+      "text": "Логотип",
+      "title": "Логотип конкурента"
+    },
+    "cuisine": {
+      "text": "Кухня"
+    },
+    "cuisineTypes": {
+      "title": "Типы кухни"
+    },
+    "priceRange": {
+      "text": "Ценовой сегмент",
+      "title": "Ценовой сегмент конкурента"
+    },
+    "menu": {
+      "text": "Меню",
+      "title": "Меню конкурента"
+    },
+    "menuItemsQnt": {
+      "text": "Позиции",
+      "title": "Количество позиций в меню конкурента"
+    },
+    "menuCategoriesQnt": {
+      "text": "Категории",
+      "title": "Количество категорий в меню конкурента"
+    },
+    "ownDeliveryDubai": {
+      "text": "Своя доставка DXB",
+      "title": "Собственная доставка в Дубае"
+    },
+    "competesWithBrands": {
+      "text": "Конкурирует с брендами",
+      "title": "Связанные бренды"
+    },
+    "branches": {
+      "text": "Филиалы",
+      "title": "Филиальная сеть"
+    },
+    "actions": {
+      "edit": "Правка",
+      "editTitle": "Редактировать все разделы",
+      "overview": "Обзор",
+      "overviewTitle": "Открыть обзор конкурента"
+    }
+  }
+}

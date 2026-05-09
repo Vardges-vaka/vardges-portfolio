@@ -1,0 +1,28 @@
+import { useThemeContext } from "../../../02_context/context.index.js";
+
+const Radius_Icon = () => {
+  const { strokeColor } = useThemeContext();
+
+  const svgString = `
+
+
+<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> 
+<path d="M12 2C17.5228 2 22 6.47715 22 12C22 13.8214 21.513 15.5291 20.6622 17M5 4.85857C3.14864 6.67349 2 9.20261 2 12C2 17.5228 6.47715 22 12 22C13.8214 22 15.5291 21.513 17 20.6622" 
+stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round"/> 
+<path d="M5 12C5 13.4872 5.46381 14.8662 6.25469 16M12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C10.9264 19 9.90926 18.7583 9 18.3264" 
+stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round"/> <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8" 
+stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round"/> </g>
+
+</svg>
+`;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
+};
+
+export default Radius_Icon;

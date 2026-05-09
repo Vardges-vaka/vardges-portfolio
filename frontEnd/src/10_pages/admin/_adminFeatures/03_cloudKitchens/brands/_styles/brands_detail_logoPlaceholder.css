@@ -7,13 +7,13 @@
   color: var(--text-primary-color);
 }
 
-.brandsDetailLogoPlaceholder__title,
-.brandsDetailFiles__title {
+.brandsDetailLogoPlaceholder_title,
+.brandsDetailFiles_title {
   margin: 0.5rem 0;
 }
 
-.brandsDetailLogoPlaceholder__description,
-.brandsDetailFiles__description {
+.brandsDetailLogoPlaceholder_description,
+.brandsDetailFiles_description {
   margin: 0;
   color: var(--text-secondary-color, var(--text-primary-color));
 }

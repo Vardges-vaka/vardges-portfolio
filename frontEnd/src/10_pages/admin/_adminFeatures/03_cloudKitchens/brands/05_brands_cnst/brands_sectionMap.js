@@ -1,31 +1,51 @@
 export const SECTION_KEYS = {
   basic: "basic",
-  socials: "socials",
-  emails: "emails",
-};
-
-export const PLACEHOLDER_SECTION_KEYS = {
-  logo: "logo",
   files: "files",
+  socials: "socials",
+  website: "website",
+  otherSocials: "otherSocials",
+  inventoryIntegrations: "inventoryIntegrations",
+  salesIntegration: "salesIntegration",
+  legal: "legal",
+  relations: "relations",
 };
 
 export const SECTION_PAYLOAD_KEY = {
   basic: "basic",
+  files: "files",
   socials: "socials",
-  emails: "emails",
+  website: "website",
+  otherSocials: "otherSocials",
+  inventoryIntegrations: "inventoryIntegrations",
+  salesIntegration: "salesIntegration",
+  legal: "legal",
+  relations: "relations",
 };
 
 export const EDITABLE_SECTIONS = [
   SECTION_KEYS.basic,
+  SECTION_KEYS.files,
   SECTION_KEYS.socials,
-  SECTION_KEYS.emails,
+  SECTION_KEYS.website,
+  SECTION_KEYS.otherSocials,
+  SECTION_KEYS.inventoryIntegrations,
+  SECTION_KEYS.salesIntegration,
+  SECTION_KEYS.legal,
+  SECTION_KEYS.relations,
 ];
 
 export const SECTION_LAYOUT = {
-  leftColumn: [SECTION_KEYS.basic, PLACEHOLDER_SECTION_KEYS.logo],
-  rightColumn: [
+  leftColumn: [
+    SECTION_KEYS.basic,
     SECTION_KEYS.socials,
-    SECTION_KEYS.emails,
-    PLACEHOLDER_SECTION_KEYS.files,
+    SECTION_KEYS.website,
+    SECTION_KEYS.otherSocials,
+  ],
+  rightColumn: [
+    SECTION_KEYS.files,
+    SECTION_KEYS.inventoryIntegrations,
+    SECTION_KEYS.salesIntegration,
+    SECTION_KEYS.legal,
+    SECTION_KEYS.relations,
   ],
 };

@@ -1,0 +1,298 @@
+.Brands_table_row {
+  background: var(--brands-table-row-bg);
+  transition: background 0.12s;
+}
+
+.Brands_table_row:hover {
+  background: var(--brands-table-row-bg-hov);
+}
+
+.Brands_table_row:not(:last-child) td {
+  border-bottom: 1px solid var(--brands-table-border);
+}
+
+.Brands_table_row_num {
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  color: var(--text-secondary-color);
+  font-size: 0.8rem;
+  width: 2.5rem;
+}
+
+.Brands_table_row_logo {
+  padding: 0.5rem 0.875rem;
+  width: 4.5rem;
+}
+
+.Brands_table_row_logoImg {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  border-radius: 0.375rem;
+  border: 1px solid var(--brands-table-border);
+  background: var(--brands-table-logo-bg);
+  display: block;
+}
+
+.Brands_table_row_logoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px dashed var(--brands-table-logo-btn-border);
+  background: transparent;
+  color: var(--brands-table-logo-btn-text);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.12s, color 0.12s;
+}
+
+.Brands_table_row_logoBtn:hover {
+  background: var(--brands-table-logo-btn-hov-bg);
+  color: var(--brands-table-logo-btn-hov-text);
+  border-color: var(--brands-add-btn-color);
+}
+
+.Brands_table_row_cell {
+  padding: 0.5rem 0.875rem;
+  vertical-align: middle;
+}
+
+.Brands_table_row_cellInner {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: nowrap;
+}
+
+.Brands_table_row_cellInner--menu {
+  gap: 0.25rem;
+}
+
+.Brands_table_row_cell--menu {
+  min-width: 9rem;
+}
+
+.Brands_table_row_logoWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Brands_table_row_logoImgBtn {
+  display: block;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.Brands_table_row_logoImgBtn:hover .Brands_table_row_logoImg {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+.Brands_table_row_logoImg {
+  transition: opacity 0.12s, transform 0.12s;
+}
+
+.Brands_table_row_logoPlaceholder {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background: var(--brands-table-action-bg);
+  border: 1px solid var(--brands-table-border);
+  color: var(--text-secondary-color);
+}
+
+.Brands_table_row_logoTooltip {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.25rem);
+  z-index: 100;
+  min-width: 9rem;
+  background: var(--brands-table-tooltip-bg);
+  border: 1px solid var(--brands-table-tooltip-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--brands-table-tooltip-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.Brands_table_row_logoEditBtn {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--brands-table-border);
+  background: var(--brands-table-row-bg);
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s;
+}
+
+.Brands_table_row_logoEditBtn:hover {
+  background: var(--btn-primary-bg-color);
+  color: #fff;
+  border-color: var(--btn-primary-bg-color);
+}
+
+.Brands_table_row_logoBtnText {
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.Brands_table_row_miniBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--brands-table-action-border);
+  background: var(--brands-table-action-bg);
+  color: var(--brands-table-action-text);
+  cursor: pointer;
+  flex-shrink: 0;
+  justify-content: center;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.Brands_table_row_miniBtn:hover {
+  background: var(--brands-table-icon-btn-bg-hov);
+  border-color: var(--brands-table-icon-btn-border-hov);
+  color: var(--brands-table-icon-btn-text-hov);
+}
+
+.Brands_table_row_miniBtn--assign {
+  width: auto;
+  padding: 0 0.4rem;
+  border-style: dashed;
+  color: var(--brands-add-btn-color);
+  border-color: var(--brands-add-btn-color);
+}
+
+.Brands_table_row_miniBtn--assign:hover {
+  background: var(--brands-add-btn-hover-bg);
+  border-style: solid;
+  color: var(--brands-add-btn-color);
+}
+
+.Brands_table_row_miniBtnText {
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.Brands_table_row_count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.375rem;
+  border-radius: 0.875rem;
+  background: var(--brands-table-count-bg);
+  color: var(--brands-table-count-text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: default;
+}
+
+
+.Brands_table_row_menuName {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary-color);
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10rem;
+}
+
+.Brands_table_row_iconCell {
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  position: relative;
+  width: 2.75rem;
+}
+
+.Brands_table_row_iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--brands-table-icon-btn-border);
+  background: var(--brands-table-icon-btn-bg);
+  color: var(--brands-table-icon-btn-text);
+  cursor: pointer;
+  transition:
+    background 0.12s,
+    border-color 0.12s,
+    color 0.12s;
+}
+
+.Brands_table_row_iconBtn:hover,
+.Brands_table_row_iconBtn--active {
+  background: var(--brands-table-icon-btn-bg-hov);
+  border-color: var(--brands-table-icon-btn-border-hov);
+  color: var(--brands-table-icon-btn-text-hov);
+}
+
+.Brands_table_row_tooltip {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  z-index: 100;
+  min-width: 11rem;
+  background: var(--brands-table-tooltip-bg);
+  border: 1px solid var(--brands-table-tooltip-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--brands-table-tooltip-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.Brands_table_row_tooltipItem {
+  padding: 0.45rem 0.875rem;
+  text-align: left;
+  font-size: 0.8rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary-color);
+  cursor: pointer;
+  transition: background 0.1s;
+  white-space: nowrap;
+}
+
+.Brands_table_row_tooltipItem:hover {
+  background: var(--brands-table-tooltip-item-hov);
+}
+
+.Brands_table_row_tooltipItem--all {
+  font-weight: 600;
+  color: var(--btn-primary-bg-color);
+}
+
+.Brands_table_row_tooltipDivider {
+  height: 1px;
+  background: var(--brands-table-border);
+  margin: 0.125rem 0;
+}

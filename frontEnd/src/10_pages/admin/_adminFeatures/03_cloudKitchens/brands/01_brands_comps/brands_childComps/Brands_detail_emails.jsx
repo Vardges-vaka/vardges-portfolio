@@ -24,19 +24,23 @@ const Brands_detail_emails = (props) => {
       title={t("sections.emails")}
       icon={<EmailIcon />}
       renderReadonly={() => (
-        <div className="brandsDetailEmails__rows">
+        <div className="brandsDetailEmails_rows">
           {readRows.length === 0 && (
-            <p className="brandsDetailEmails__empty">{t("empty.noEmails")}</p>
+            <p className="brandsDetailEmails_empty">{t("empty.noEmails")}</p>
           )}
           {readRows.map((row, index) => (
-            <div className="brandsDetailEmails__row" key={`${row.email}-${index}`}>
+            <div
+              className="brandsDetailEmails_row"
+              key={`${row.email}-${index}`}>
               <div>
                 <strong>{row.name || t("empty.noValue")}</strong>
                 <span>{row.position || t("empty.noValue")}</span>
                 <small>{row.email || t("empty.noValue")}</small>
               </div>
               {row.email && (
-                <a className="brandsDetailEmails__launcher" href={`mailto:${row.email}`}>
+                <a
+                  className="brandsDetailEmails_launcher"
+                  href={`mailto:${row.email}`}>
                   {t("emailActions.email")}
                 </a>
               )}
@@ -45,14 +49,16 @@ const Brands_detail_emails = (props) => {
         </div>
       )}
       renderEditable={() => (
-        <div className="brandsDetailEmails__form">
+        <div className="brandsDetailEmails_form">
           {rows.map((row, index) => (
-            <div className="brandsDetailEmails__editRow" key={index}>
+            <div className="brandsDetailEmails_editRow" key={index}>
               <label>
                 <span>{t("fields.emailName")}</span>
                 <input
                   value={row.name ?? ""}
-                  onChange={(event) => onEmailChange(index, "name", event.target.value)}
+                  onChange={(event) =>
+                    onEmailChange(index, "name", event.target.value)
+                  }
                 />
                 {fieldErrors?.[`[${index}].name`] && (
                   <small>{errorText(t, fieldErrors[`[${index}].name`])}</small>
@@ -62,17 +68,23 @@ const Brands_detail_emails = (props) => {
                 <span>{t("fields.emailPosition")}</span>
                 <input
                   value={row.position ?? ""}
-                  onChange={(event) => onEmailChange(index, "position", event.target.value)}
+                  onChange={(event) =>
+                    onEmailChange(index, "position", event.target.value)
+                  }
                 />
                 {fieldErrors?.[`[${index}].position`] && (
-                  <small>{errorText(t, fieldErrors[`[${index}].position`])}</small>
+                  <small>
+                    {errorText(t, fieldErrors[`[${index}].position`])}
+                  </small>
                 )}
               </label>
               <label>
                 <span>{t("fields.email")}</span>
                 <input
                   value={row.email ?? ""}
-                  onChange={(event) => onEmailChange(index, "email", event.target.value)}
+                  onChange={(event) =>
+                    onEmailChange(index, "email", event.target.value)
+                  }
                 />
                 {fieldErrors?.[`[${index}].email`] && (
                   <small>{errorText(t, fieldErrors[`[${index}].email`])}</small>
@@ -80,18 +92,16 @@ const Brands_detail_emails = (props) => {
               </label>
               <button
                 type="button"
-                className="brandsDetailEmails__removeBtn"
-                onClick={() => onEmailRemove(index)}
-              >
+                className="brandsDetailEmails_removeBtn"
+                onClick={() => onEmailRemove(index)}>
                 {t("actions.removeRow")}
               </button>
             </div>
           ))}
           <button
             type="button"
-            className="brandsDetailEmails__addBtn"
-            onClick={onEmailAdd}
-          >
+            className="brandsDetailEmails_addBtn"
+            onClick={onEmailAdd}>
             + {t("actions.addRow")}
           </button>
         </div>

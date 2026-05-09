@@ -4,38 +4,38 @@
   color: var(--text-primary-color);
 }
 
-.brandsDetail__toolbar,
-.brandsDetail__bulkFooter,
-.brandsDetail__deleteFooter {
+.brandsDetail_toolbar,
+.brandsDetail_bulkFooter,
+.brandsDetail_deleteFooter {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.brandsDetail__toolbar {
+.brandsDetail_toolbar {
   justify-content: flex-start;
 }
 
-.brandsDetail__title {
+.brandsDetail_title {
   margin: 0;
 }
 
-.brandsDetail__columns {
+.brandsDetail_columns {
   display: grid;
   gap: 1rem;
 }
 
-.brandsDetail__left,
-.brandsDetail__right {
+.brandsDetail_left,
+.brandsDetail_right {
   display: grid;
   gap: 1rem;
   align-content: start;
 }
 
-.brandsDetail__backBtn,
-.brandsDetail__bulkCancelBtn,
-.brandsDetail__bulkSaveBtn,
-.brandsDetail__deleteBtn {
+.brandsDetail_backBtn,
+.brandsDetail_bulkCancelBtn,
+.brandsDetail_bulkSaveBtn,
+.brandsDetail_deleteBtn {
   border: 1px solid var(--border-primary-color);
   border-radius: 0.7rem;
   padding: 0.6rem 0.9rem;
@@ -44,19 +44,19 @@
   cursor: pointer;
 }
 
-.brandsDetail__bulkBadge,
-.brandsDetail__bulkSaveBtn {
+.brandsDetail_bulkBadge,
+.brandsDetail_bulkSaveBtn {
   background: var(--btn-primary-bg-color);
   color: var(--btn-primary-text-color);
   border-color: var(--btn-primary-bg-color);
 }
 
-.brandsDetail__bulkBadge {
+.brandsDetail_bulkBadge {
   border-radius: 999px;
   padding: 0.3rem 0.7rem;
 }
 
-.brandsDetail__deleteBtn {
+.brandsDetail_deleteBtn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -64,7 +64,7 @@
 }
 
 @media (min-width: 768px) {
-  .brandsDetail__columns {
+  .brandsDetail_columns {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   }
 }

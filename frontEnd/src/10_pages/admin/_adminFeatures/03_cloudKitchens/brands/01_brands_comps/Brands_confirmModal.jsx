@@ -13,12 +13,12 @@ const Brands_confirmModal = ({
 
   return (
     <div className="brandsModal" role="dialog" aria-modal="true">
-      <div className="brandsModal__panel">
-        <h2 className="brandsModal__title">{t("confirmTitle")}</h2>
-        <p className="brandsModal__hint">{t("confirmHint")}</p>
-        <div className="brandsModal__changes">
+      <div className="brandsModal_panel">
+        <h2 className="brandsModal_title">{t("confirmTitle")}</h2>
+        <p className="brandsModal_hint">{t("confirmHint")}</p>
+        <div className="brandsModal_changes">
           {(changes ?? []).map((change) => (
-            <div className="brandsModal__change" key={change.field}>
+            <div className="brandsModal_change" key={change.field}>
               <strong>{change.field}</strong>
               <span>
                 {String(change.from ?? "-")} {"->"} {String(change.to ?? "-")}
@@ -26,22 +26,20 @@ const Brands_confirmModal = ({
             </div>
           ))}
         </div>
-        {error && <p className="brandsModal__error">{error}</p>}
-        <div className="brandsModal__actions">
+        {error && <p className="brandsModal_error">{error}</p>}
+        <div className="brandsModal_actions">
           <button
             type="button"
-            className="brandsModal__btn"
+            className="brandsModal_btn"
             onClick={onCancel}
-            disabled={isSaving}
-          >
+            disabled={isSaving}>
             {t("actions.cancel")}
           </button>
           <button
             type="button"
-            className="brandsModal__btn brandsModal__btn--primary"
+            className="brandsModal_btn brandsModal_btn--primary"
             onClick={onConfirm}
-            disabled={isSaving}
-          >
+            disabled={isSaving}>
             {isSaving ? t("saving") : t("actions.confirm")}
           </button>
         </div>

@@ -7,11 +7,10 @@ const Brands_viewToggle = ({ viewMode, onChange, t }) => (
         key={mode}
         type="button"
         className={
-          "brandsViewToggle__btn" +
-          (viewMode === mode ? " brandsViewToggle__btn--active" : "")
+          "brandsViewToggle_btn" +
+          (viewMode === mode ? " brandsViewToggle_btn--active" : "")
         }
-        onClick={() => onChange(mode)}
-      >
+        onClick={() => onChange(mode)}>
         {t(`viewModes.${mode}`)}
       </button>
     ))}

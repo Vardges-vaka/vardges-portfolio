@@ -1,0 +1,15 @@
+.competitors_table_row_dineIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.5rem;
+}
+
+.competitors_table_row_dineIn__check {
+  color: var(--primary-success-border);
+}
+
+.competitors_table_row_dineIn__dash {
+  color: var(--text-secondary-color);
+}
+

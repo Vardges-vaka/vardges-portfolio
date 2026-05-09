@@ -156,4 +156,73 @@
   --hover-bg-color: #f3f4f6;
 
   /* ! ⬆️⬆️⬆️===CLOUD STORAGE FEATURE===⬆️⬆️⬆️ */
+
+  /* ! ⬇️⬇️⬇️===BRANDS FEATURE===⬇️⬇️⬇️ */
+
+  --brands-card-bg: var(--bg-secondary-color);
+  --brands-card-border: var(--border-primary-color);
+  --brands-card-shadow: var(--boxShadow-primary-color);
+  --brands-section-header-bg: var(--bg-tertiary-color);
+  --brands-section-edit-bg: #f0f7ff;
+  --brands-section-edit-border: #c2d9f0;
+  --brands-chip-bg: var(--bg-tertiary-color);
+  --brands-chip-border: var(--border-primary-color);
+  --brands-chip-text: var(--text-secondary-color);
+  --brands-chip-active-bg: #1a6ed8;
+  --brands-chip-active-border: #1a6ed8;
+  --brands-chip-active-text: #ffffff;
+  --brands-badge-active-bg: #d4edda;
+  --brands-badge-active-text: #155724;
+  --brands-badge-inactive-bg: #f8d7da;
+  --brands-badge-inactive-text: #721c24;
+  --brands-integration-row-bg: var(--bg-tertiary-color);
+  --brands-integration-row-border: var(--border-primary-color);
+  --brands-sub-section-bg: #f8f9fa;
+  --brands-sub-section-border: #dee2e6;
+  --brands-delete-btn-color: #c0392b;
+  --brands-delete-btn-hover-bg: #fadbd8;
+  --brands-add-btn-color: #1a6ed8;
+  --brands-add-btn-hover-bg: #dbeafe;
+  --brands-remove-btn-color: #c0392b;
+  --brands-link-color: #1a6ed8;
+  --brands-input-bg: var(--bg-primary-color);
+  --brands-input-border: var(--border-primary-color);
+  --brands-input-text: var(--text-primary-color);
+  --brands-label-text: var(--text-secondary-color);
+  --brands-error-color: #c0392b;
+  --brands-modal-backdrop-bg: rgba(0, 0, 0, 0.45);
+
+  /* ! ⬇️⬇️⬇️===BRANDS TABLE===⬇️⬇️⬇️ */
+  --brands-table-border: #e2e8f0;
+  --brands-table-header-bg: #f8fafc;
+  --brands-table-th-text: #374151;
+  --brands-table-icon-th-color: #6b7280;
+  --brands-table-row-bg: #ffffff;
+  --brands-table-row-bg-hov: #f9fafb;
+  --brands-table-count-bg: #e0e7ef;
+  --brands-table-count-text: #374151;
+  --brands-table-action-bg: #f3f4f6;
+  --brands-table-action-border: #d1d5db;
+  --brands-table-action-text: #374151;
+  --brands-table-action-bg-hov: #e5e7eb;
+  --brands-table-action-border-hov: #9ca3af;
+  --brands-table-action-text-hov: #111827;
+  --brands-table-logo-bg: #f9fafb;
+  --brands-table-logo-btn-border: #9ca3af;
+  --brands-table-logo-btn-text: #6b7280;
+  --brands-table-logo-btn-hov-bg: #e5e7eb;
+  --brands-table-logo-btn-hov-text: #374151;
+  --brands-table-icon-btn-bg: #f3f4f6;
+  --brands-table-icon-btn-border: #d1d5db;
+  --brands-table-icon-btn-text: #6b7280;
+  --brands-table-icon-btn-bg-hov: #1a6ed8;
+  --brands-table-icon-btn-border-hov: #1a6ed8;
+  --brands-table-icon-btn-text-hov: #ffffff;
+  --brands-table-tooltip-bg: #ffffff;
+  --brands-table-tooltip-border: #e2e8f0;
+  --brands-table-tooltip-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --brands-table-tooltip-item-hov: #f3f4f6;
+  /* ! ⬆️⬆️⬆️===BRANDS TABLE===⬆️⬆️⬆️ */
+
+  /* ! ⬆️⬆️⬆️===BRANDS FEATURE===⬆️⬆️⬆️ */
 }

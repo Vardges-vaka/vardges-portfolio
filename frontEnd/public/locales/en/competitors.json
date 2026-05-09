@@ -1,0 +1,115 @@
+{
+  "tableView": {
+    "title": "Competitors"
+  },
+  "tableRow": {
+    "open": "Open",
+    "editCompetitor": "Edit competitor",
+    "viewCompetitor": "View competitor",
+    "competesStackLabel": "Competing brands: {{names}}",
+    "detailMenuItems": "Menu items",
+    "detailMenuCategories": "Menu categories",
+    "ownDeliveryYes": "Own delivery in Dubai",
+    "ownDeliveryNo": "No own delivery in Dubai",
+    "ownDeliveryUnknown": "Own delivery in Dubai not recorded"
+  },
+  "priceRange": {
+    "budget": "budget",
+    "mid": "mid",
+    "premium": "premium"
+  },
+  "viewModes": {
+    "table": "Table",
+    "map": "Map"
+  },
+  "mapView": {
+    "noKeyTitle": "Map is not available",
+    "noKeyText": "Missing Google Maps API key (VITE_GOOGLE_MAPS_API_KEY).",
+    "loadErrorTitle": "Map failed to load",
+    "loadErrorText": "Google Maps script could not be loaded. Check your API key and network.",
+    "loadingTitle": "Loading map…",
+    "toggleCompetitors": "Competitors",
+    "allPolygon": "Polygon (all)",
+    "allRadius": "Radius (all)",
+    "toggleAllPolygonTitle": "Show / hide polygon coverages (all)",
+    "toggleAllRadiusTitle": "Show / hide radius coverages (all)",
+    "visible": "visible",
+    "total": "total",
+    "controlsToggleTitle": "Toggle map controls",
+    "hint": "Click a competitor logo marker to open details in the info panel.",
+    "popupViewInfo": "View info",
+    "popupShowRadius": "Show radius",
+    "popupHideRadius": "Hide radius",
+    "popupShowPolygon": "Show polygon",
+    "popupHidePolygon": "Hide polygon",
+    "infoTitle": "Competitor info",
+    "clearInfo": "Clear selection",
+    "noSelection": "Select a competitor marker on the map to see details here.",
+    "openCompetitor": "Open competitor",
+    "cardBranches": "Branches",
+    "cardOwnDelivery": "Own delivery DXB",
+    "cardSelectedBranch": "Selected pin (branch)",
+    "noActivePin": "Click a pin to see branch-level details.",
+    "cardCoords": "Coords",
+    "cardCoveragePolygon": "Polygon",
+    "cardCoverageRadius": "Radius",
+    "cardCoverageKm": "Radius km",
+    "cardPriceRange": "Price range",
+    "cardMenuItems": "Menu items",
+    "cardMenuCategories": "Menu categories",
+    "cardCuisine": "Cuisine",
+    "cardMenu": "Menu",
+    "cardNotes": "Notes",
+    "cardLinks": "Links"
+  },
+  "tableheaders": {
+    "name": {
+      "text": "Name",
+      "title": "Name of the competitor"
+    },
+    "logo": {
+      "text": "Logo",
+      "title": "Logo of the Competitor"
+    },
+    "cuisine": {
+      "text": "Cuisine"
+    },
+    "cuisineTypes": {
+      "title": "Cuisine types of the competitor"
+    },
+    "priceRange": {
+      "text": "Price range",
+      "title": "Price range of the competitor"
+    },
+    "menu": {
+      "text": "Menu",
+      "title": "Menu of the competitor"
+    },
+    "menuItemsQnt": {
+      "text": "Dishes",
+      "title": "Number of items on the competitor menu"
+    },
+    "menuCategoriesQnt": {
+      "text": "Categories",
+      "title": "Number of categories on the competitor menu"
+    },
+    "ownDeliveryDubai": {
+      "text": "delivery",
+      "title": "Runs first-party delivery in Dubai"
+    },
+    "competesWithBrands": {
+      "text": "Competes",
+      "title": "Brands this competitor is tracked against"
+    },
+    "branches": {
+      "text": "Branches",
+      "title": "Branch footprint for this competitor"
+    },
+    "actions": {
+      "edit": "Update",
+      "editTitle": "Edit all sections",
+      "overview": "View",
+      "overviewTitle": "Open competitor overview"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "tableView": {
+    "title": "Մրակազմեր"
+  },
+  "tableRow": {
+    "open": "Բացել",
+    "editCompetitor": "Խմբագրել",
+    "viewCompetitor": "Դիտել",
+    "competesStackLabel": "Մրցակից ապրանքանիշներ՝ {{names}}",
+    "detailMenuItems": "Մենյուի կետեր",
+    "detailMenuCategories": "Մենյուի կատեգորիաներ",
+    "ownDeliveryYes": "Սեփական առաքում Դուբայում",
+    "ownDeliveryNo": "Սեփական առաքում չկա Դուբայում",
+    "ownDeliveryUnknown": "Դուբայի սեփական առաքումը չի գրանցվել"
+  },
+  "priceRange": {
+    "budget": "բյուջետային",
+    "mid": "միջին",
+    "premium": "պրեմիում"
+  },
+  "viewModes": {
+    "table": "Աղյուսակ",
+    "map": "Քարտեզ"
+  },
+  "mapView": {
+    "noKeyTitle": "Քարտեզը հասանելի չէ",
+    "noKeyText": "Google Maps API բանալին բացակայում է (VITE_GOOGLE_MAPS_API_KEY).",
+    "loadErrorTitle": "Քարտեզը չի բեռնվել",
+    "loadErrorText": "Google Maps սկրիպտը չի բեռնվել։ Ստուգեք բանալին և ցանցը։",
+    "loadingTitle": "Քարտեզը բեռնվում է…",
+    "toggleCompetitors": "Մրցակիցներ",
+    "allPolygon": "Բազմակողմ (բոլորը)",
+    "allRadius": "Շառավիղ (բոլորը)",
+    "toggleAllPolygonTitle": "Ցույց տալ/թաքցնել բազմակողմ ծածկույթները (բոլորը)",
+    "toggleAllRadiusTitle": "Ցույց տալ/թաքցնել շառավղային ծածկույթները (բոլորը)",
+    "visible": "ցուցադրված",
+    "total": "ընդհանուր",
+    "controlsToggleTitle": "Փոխել քարտեզի կառավարիչները",
+    "hint": "Սեղմեք մրցակցի լոգոյի նշիչին՝ ներքևի բաժնում մանրամասները տեսնելու համար։",
+    "popupViewInfo": "Տեսնել մանրամասները",
+    "popupShowRadius": "Ցույց տալ շառավիղը",
+    "popupHideRadius": "Թաքցնել շառավիղը",
+    "popupShowPolygon": "Ցույց տալ բազմակողմը",
+    "popupHidePolygon": "Թաքցնել բազմակողմը",
+    "infoTitle": "Մրցակցի տեղեկություն",
+    "clearInfo": "Մաքրել ընտրությունը",
+    "noSelection": "Ընտրեք մրցակցին քարտեզից՝ այստեղ մանրամասներ տեսնելու համար։",
+    "openCompetitor": "Բացել մրցակցին",
+    "cardBranches": "Մասնաճյուղեր",
+    "cardOwnDelivery": "Սեփական առաքում ԴՊԲ",
+    "cardSelectedBranch": "Ընտրված նշիչ (մասնաճյուղ)",
+    "noActivePin": "Սեղմեք նշիչի վրա՝ մասնաճյուղի մանրամասները տեսնելու համար։",
+    "cardCoords": "Կոորդինատներ",
+    "cardCoveragePolygon": "Բազմակողմ",
+    "cardCoverageRadius": "Շառավիղ",
+    "cardCoverageKm": "Շառավիղ (կմ)",
+    "cardPriceRange": "Գնային միջակայք",
+    "cardMenuItems": "Մենյուի կետեր",
+    "cardMenuCategories": "Մենյուի կատեգորիաներ",
+    "cardCuisine": "Խոհանոց",
+    "cardMenu": "Մենյու",
+    "cardNotes": "Նշումներ",
+    "cardLinks": "Հղումներ"
+  },
+  "tableheaders": {
+    "name": {
+      "text": "Անուն",
+      "title": "Մրակազմի անունը"
+    },
+    "logo": {
+      "text": "Լոգո",
+      "title": "Մրակազմի լոգոն"
+    },
+    "cuisine": {
+      "text": "Խոհանոց"
+    },
+    "cuisineTypes": {
+      "title": "Խոհանոցի տեսակներ"
+    },
+    "priceRange": {
+      "text": "Գնային միջակայք",
+      "title": "Գնային դասը"
+    },
+    "menu": {
+      "text": "Մենյու",
+      "title": "Մրակազմի մենյուն"
+    },
+    "menuItemsQnt": {
+      "text": "Մենյուի կետեր",
+      "title": "Մենյուի կետերի քանակը"
+    },
+    "menuCategoriesQnt": {
+      "text": "Մենյուի կատեգորիաներ",
+      "title": "Մենյուի կատեգորիաների քանակը"
+    },
+    "ownDeliveryDubai": {
+      "text": "Սեփական առաքում ԴՊԲ",
+      "title": "Սեփական առաքում Դուբայում"
+    },
+    "competesWithBrands": {
+      "text": "Առևտրային ապրանքանիշներ",
+      "title": "Կապակցված ապրանքանիշներ"
+    },
+    "branches": {
+      "text": "Մասնաճյուղեր",
+      "title": "Մասնաճյուղերի թիվը"
+    },
+    "actions": {
+      "edit": "Խմբագրել",
+      "editTitle": "Խմբագրել բոլոր բաժինները",
+      "overview": "Դիտել",
+      "overviewTitle": "Բացել ամբողջական տեսքը"
+    }
+  }
+}

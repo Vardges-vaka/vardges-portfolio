@@ -1,0 +1,90 @@
+.Brands_table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-primary-color);
+}
+
+.Brands_table_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.Brands_table_title {
+  margin: 0;
+  color: var(--h2-primary-color);
+}
+
+.Brands_table_addBtn {
+  border: 1px solid var(--btn-primary-bg-color);
+  border-radius: 0.75rem;
+  padding: 0.55rem 1rem;
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.Brands_table_addBtn:hover {
+  background: var(--btn-primary-bg-color-HOV);
+  border-color: var(--btn-primary-bg-color-HOV);
+}
+
+.Brands_table_error {
+  color: var(--brands-error-color);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.Brands_table_loading,
+.Brands_table_empty {
+  color: var(--text-secondary-color);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.Brands_table_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+.Brands_table_wrap {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--brands-table-border);
+}
+
+.Brands_table_tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.Brands_table_thead_row {
+  background: var(--brands-table-header-bg);
+}
+
+.Brands_table_th {
+  padding: 0.65rem 0.875rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--brands-table-th-text);
+  border-bottom: 1px solid var(--brands-table-border);
+  white-space: nowrap;
+}
+
+.Brands_table_th--num {
+  width: 2.5rem;
+  text-align: center;
+}
+
+.Brands_table_th--icon {
+  width: 2.75rem;
+  text-align: center;
+  color: var(--brands-table-icon-th-color);
+}

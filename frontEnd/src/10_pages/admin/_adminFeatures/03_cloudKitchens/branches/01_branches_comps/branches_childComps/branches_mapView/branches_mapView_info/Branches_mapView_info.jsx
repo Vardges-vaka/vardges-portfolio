@@ -26,7 +26,12 @@ import "../../../../_styles/branches_mapView_info.css";
 
 const refLabel = (x) => {
   if (x == null) return "";
-  if (typeof x === "object") return x.name || String(x._id ?? "");
+  if (typeof x === "object") {
+    if (typeof x.name === "string") return x.name;
+    if (x.name?.value) return x.name.value;
+    if (x.name?.translations?.en) return x.name.translations.en;
+    return String(x._id ?? "");
+  }
   return String(x);
 };
 

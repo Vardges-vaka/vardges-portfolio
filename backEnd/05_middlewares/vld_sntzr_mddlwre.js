@@ -14,7 +14,10 @@ export const vld_sntzr_mddlwre = (fn) => async (req, res, next) => {
         payload: sanitizedData ? sanitizedData : null,
       });
     } else {
-      sanitizedData && (req.body.sanitizedData = sanitizedData);
+      if (sanitizedData) {
+        if (!req.body) req.body = {};
+        req.body.sanitizedData = sanitizedData;
+      }
       next();
     }
   } catch (error) {

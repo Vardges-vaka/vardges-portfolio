@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.brandsDetailSection__header {
+.brandsDetailSection_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   padding: 0.85rem 1rem;
 }
 
-.brandsDetailSection__titleBtn {
+.brandsDetailSection_titleBtn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -24,21 +24,21 @@
   cursor: pointer;
 }
 
-.brandsDetailSection__titleBtn:disabled {
+.brandsDetailSection_titleBtn:disabled {
   cursor: default;
 }
 
-.brandsDetailSection__title {
+.brandsDetailSection_title {
   margin: 0;
   font-size: 1rem;
 }
 
-.brandsDetailSection__actions {
+.brandsDetailSection_actions {
   display: flex;
   gap: 0.45rem;
 }
 
-.brandsDetailSection__btn {
+.brandsDetailSection_btn {
   border: 1px solid var(--border-primary-color);
   border-radius: 0.6rem;
   padding: 0.45rem 0.7rem;
@@ -47,13 +47,13 @@
   cursor: pointer;
 }
 
-.brandsDetailSection__btn--primary {
+.brandsDetailSection_btn--primary {
   background: var(--btn-primary-bg-color);
   color: var(--btn-primary-text-color);
   border-color: var(--btn-primary-bg-color);
 }
 
-.brandsDetailSection__body {
+.brandsDetailSection_body {
   border-top: 1px solid var(--border-primary-color);
   padding: 1rem;
 }

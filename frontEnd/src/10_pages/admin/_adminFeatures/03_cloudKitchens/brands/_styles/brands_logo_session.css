@@ -1,0 +1,728 @@
+.Brands_logo_session {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--text-primary-color);
+}
+
+/* ─── Topbar ─────────────────────────────────────────────────────────────── */
+
+.Brands_logo_session_topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--brands-card-border);
+}
+
+.Brands_logo_session_backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.45rem 0.875rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--brands-card-border);
+  background: transparent;
+  color: var(--text-secondary-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.12s, color 0.12s;
+}
+
+.Brands_logo_session_backBtn:hover:not(:disabled) {
+  background: var(--brands-table-tooltip-item-hov);
+  color: var(--text-primary-color);
+}
+
+.Brands_logo_session_backBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Brands_logo_session_heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.Brands_logo_session_title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--h2-primary-color);
+}
+
+.Brands_logo_session_brandName {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}
+
+/* ─── Type badge ─────────────────────────────────────────────────────────── */
+
+.Brands_logo_session_typeBadge {
+  display: inline-flex;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: var(--brands-chip-active-bg);
+  color: var(--brands-chip-active-text);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+/* ─── VIEW mode ──────────────────────────────────────────────────────────── */
+
+.Brands_logo_session_view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.Brands_logo_session_emptyHint {
+  color: var(--text-secondary-color);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.Brands_logo_session_viewList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Brands_logo_session_viewRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--brands-card-border);
+  background: var(--brands-sub-section-bg);
+}
+
+.Brands_logo_session_viewRow--empty {
+  opacity: 0.55;
+}
+
+.Brands_logo_session_viewRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.Brands_logo_session_viewMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.Brands_logo_session_viewSize {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+.Brands_logo_session_viewMime {
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_viewEmpty {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+  font-style: italic;
+}
+
+.Brands_logo_session_viewLoadingUrl {
+  font-size: 0.78rem;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_viewRowActions {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-shrink: 0;
+}
+
+.Brands_logo_session_viewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--brands-table-action-border);
+  background: var(--brands-table-action-bg);
+  color: var(--brands-table-action-text);
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.Brands_logo_session_viewBtn:hover {
+  background: var(--brands-table-icon-btn-bg-hov);
+  border-color: var(--brands-table-icon-btn-border-hov);
+  color: var(--brands-table-icon-btn-text-hov);
+}
+
+.Brands_logo_session_viewBtn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.Brands_logo_session_viewBtn--disabled:hover {
+  background: var(--brands-table-action-bg);
+  border-color: var(--brands-table-action-border);
+  color: var(--brands-table-action-text);
+}
+
+.Brands_logo_session_viewFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.25rem;
+}
+
+.Brands_logo_session_editBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.125rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--btn-primary-bg-color);
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.Brands_logo_session_editBtn:hover {
+  background: var(--btn-primary-bg-color-HOV);
+  border-color: var(--btn-primary-bg-color-HOV);
+}
+
+/* ─── EDIT mode ──────────────────────────────────────────────────────────── */
+
+.Brands_logo_session_edit {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.Brands_logo_session_providerRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 0.875rem;
+  border-radius: 0.5rem;
+  background: var(--brands-section-header-bg);
+  border: 1px solid var(--brands-card-border);
+}
+
+.Brands_logo_session_providerLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+  white-space: nowrap;
+}
+
+.Brands_logo_session_loadingText {
+  font-size: 0.82rem;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_providers {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.Brands_logo_session_providerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  border: 2px solid var(--brands-table-action-border);
+  background: var(--brands-table-action-bg);
+  color: var(--text-primary-color);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+
+.Brands_logo_session_providerBtn:hover:not(:disabled) {
+  border-color: var(--btn-primary-bg-color);
+}
+
+.Brands_logo_session_providerBtn--active {
+  border-color: var(--btn-primary-bg-color);
+  color: var(--btn-primary-bg-color);
+}
+
+.Brands_logo_session_providerBtn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.Brands_logo_session_providerStar {
+  font-size: 0.68rem;
+  color: var(--brand-secondary);
+}
+
+.Brands_logo_session_typeList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.Brands_logo_session_typeWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.Brands_logo_session_typeRow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--brands-card-border);
+  background: var(--brands-sub-section-bg);
+}
+
+.Brands_logo_session_typeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Brands_logo_session_typeExists {
+  font-size: 0.72rem;
+  color: var(--brand-secondary);
+}
+
+.Brands_logo_session_typeDone {
+  font-size: 0.75rem;
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* ─── Upload progress ────────────────────────────────────────────────────── */
+
+.Brands_logo_session_uploadingState {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Brands_logo_session_uploadInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_progressWrap {
+  height: 6px;
+  background: var(--brands-table-count-bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.Brands_logo_session_progressBar {
+  height: 100%;
+  background: var(--btn-primary-bg-color);
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+
+.Brands_logo_session_progressLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary-color);
+  text-align: right;
+}
+
+/* ─── Edit grid (current → new) ──────────────────────────────────────────── */
+
+.Brands_logo_session_editGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.Brands_logo_session_arrow {
+  font-size: 1rem;
+  color: var(--text-secondary-color);
+  text-align: center;
+}
+
+.Brands_logo_session_previewSlot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.Brands_logo_session_previewLabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.Brands_logo_session_previewBox {
+  min-height: 5rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--brands-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  font-size: 0.78rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.Brands_logo_session_previewBox--empty {
+  color: var(--text-secondary-color);
+  font-style: italic;
+  background: var(--brands-table-logo-bg);
+}
+
+.Brands_logo_session_previewBox--filled {
+  background: var(--brands-table-logo-bg);
+}
+
+.Brands_logo_session_previewBox--new {
+  background: var(--brands-section-edit-bg);
+  border-color: var(--brands-section-edit-border);
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.Brands_logo_session_previewImg {
+  max-width: 100%;
+  max-height: 5.5rem;
+  object-fit: contain;
+  border-radius: 0.2rem;
+}
+
+.Brands_logo_session_previewText {
+  font-size: 0.75rem;
+  word-break: break-all;
+  text-align: center;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_fileInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--text-secondary-color);
+  width: 100%;
+}
+
+.Brands_logo_session_fileInfoText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.Brands_logo_session_uploadFileName {
+  font-size: 0.78rem;
+  color: var(--text-primary-color);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.Brands_logo_session_uploadFileMeta {
+  font-size: 0.7rem;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_selectedFileMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary-color);
+  font-size: 0.75rem;
+  padding-top: 0.125rem;
+}
+
+.Brands_logo_session_clearBtn {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--brands-delete-btn-hover-bg);
+  color: var(--brands-delete-btn-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s;
+}
+
+.Brands_logo_session_clearBtn:hover {
+  background: var(--brands-delete-btn-color);
+  color: #fff;
+}
+
+.Brands_logo_session_dropzone {
+  min-height: 5rem;
+  border-radius: 0.4rem;
+  border: 2px dashed var(--brands-table-action-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.Brands_logo_session_dropzone:hover {
+  border-color: var(--btn-primary-bg-color);
+  background: var(--brands-table-tooltip-item-hov);
+}
+
+.Brands_logo_session_dropzoneText {
+  font-size: 0.78rem;
+  color: var(--text-secondary-color);
+  text-align: center;
+  pointer-events: none;
+}
+
+.Brands_logo_session_fileInput {
+  display: none;
+}
+
+.Brands_logo_session_warning {
+  font-size: 0.73rem;
+  color: #d97706;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.Brands_logo_session_removeTypeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--brands-card-border);
+  background: transparent;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 0.75rem;
+  transition: background 0.12s, color 0.12s;
+}
+
+.Brands_logo_session_removeTypeBtn:hover {
+  background: var(--brands-delete-btn-hover-bg);
+  color: var(--brands-delete-btn-color);
+  border-color: var(--brands-delete-btn-color);
+}
+
+.Brands_logo_session_addTypeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.Brands_logo_session_addTypeLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_addTypeBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.Brands_logo_session_addTypeBtn {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px dashed var(--brands-add-btn-color);
+  background: transparent;
+  color: var(--brands-add-btn-color);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.Brands_logo_session_addTypeBtn:hover {
+  background: var(--brands-add-btn-hover-bg);
+}
+
+.Brands_logo_session_error {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--brands-error-color);
+  padding: 0.45rem 0.625rem;
+  border-radius: 0.35rem;
+  background: var(--brands-delete-btn-hover-bg);
+  border: 1px solid var(--brands-error-color);
+}
+
+.Brands_logo_session_editFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  padding-top: 0.5rem;
+}
+
+.Brands_logo_session_cancelBtn {
+  padding: 0.5rem 1.125rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--brands-card-border);
+  background: transparent;
+  color: var(--text-primary-color);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.Brands_logo_session_cancelBtn:hover:not(:disabled) {
+  background: var(--brands-table-tooltip-item-hov);
+}
+
+.Brands_logo_session_cancelBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Brands_logo_session_uploadBtn {
+  padding: 0.5rem 1.125rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--btn-primary-bg-color);
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.Brands_logo_session_uploadBtn:hover:not(:disabled) {
+  background: var(--btn-primary-bg-color-HOV);
+  border-color: var(--btn-primary-bg-color-HOV);
+}
+
+.Brands_logo_session_uploadBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ─── Confirm overlay ────────────────────────────────────────────────────── */
+
+.Brands_logo_session_confirmOverlay {
+  position: absolute;
+  inset: 0;
+  background: var(--brands-modal-backdrop-bg);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 10;
+}
+
+.Brands_logo_session_confirm {
+  background: var(--brands-card-bg);
+  border: 1px solid var(--brands-card-border);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.Brands_logo_session_confirmTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--h2-primary-color);
+}
+
+.Brands_logo_session_confirmHint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-secondary-color);
+}
+
+.Brands_logo_session_confirmList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.Brands_logo_session_confirmItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.Brands_logo_session_confirmItemName {
+  color: var(--text-primary-color);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Brands_logo_session_confirmItemSize {
+  color: var(--text-secondary-color);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.Brands_logo_session_confirmItemWarn {
+  color: #d97706;
+  font-size: 0.75rem;
+}
+
+.Brands_logo_session_confirmWarning {
+  margin: 0;
+  font-size: 0.76rem;
+  color: #d97706;
+}
+
+.Brands_logo_session_confirmBtns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}

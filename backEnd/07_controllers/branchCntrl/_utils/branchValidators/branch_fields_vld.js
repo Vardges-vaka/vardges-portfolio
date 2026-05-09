@@ -14,6 +14,7 @@ import {
   time_vld,
   date_vld,
 } from "../../../../09_validators/_validators.index.js";
+import mongoose from "mongoose";
 import { CLOUD_STORAGE_PROVIDERS } from "../../../../05_constants/cloudStorageProviders.js";
 
 // -------- tiny per-field helpers --------
@@ -113,6 +114,19 @@ const checkDate = (value, { field }) => {
   const r = date_vld(value, { field });
   if (!r.isValid) return { err: r.message };
   return { value: r.sanitized };
+};
+
+const checkObjectIdArray = (value, { field }) => {
+  if (value === undefined || value === null) return { value: undefined };
+  if (!Array.isArray(value)) return { err: `${field} must be an array` };
+  const ids = [];
+  for (let index = 0; index < value.length; index += 1) {
+    if (!mongoose.Types.ObjectId.isValid(value[index])) {
+      return { err: `${field}[${index}] is not a valid ID` };
+    }
+    if (!ids.includes(value[index])) ids.push(value[index]);
+  }
+  return { value: ids };
 };
 
 // Fails fast on the first bad field. Accumulates into `out` using a setter
@@ -544,6 +558,17 @@ export const validateBranchFields = (data, { isUpdate = false } = {}) => {
       }
       out.cloudStorage = key;
     }
+  }
+
+  // -------- brands --------
+  if ("brands" in data) {
+    const r = checkObjectIdArray(data.brands, { field: "brands" });
+    const res = applyCheck(r, {
+      out,
+      set: (o, v) => (o.brands = v),
+      field: "brands",
+    });
+    if (!res.ok) return res;
   }
 
   // -------- notes --------

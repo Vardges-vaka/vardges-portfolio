@@ -27,50 +27,47 @@ const Brands_detail_sectionShell = ({
         "brandsDetailSection " +
         rootClass +
         (effectiveCollapsed ? " brandsDetailSection--collapsed" : "")
-      }
-    >
-      <div className="brandsDetailSection__header">
+      }>
+      <div className="brandsDetailSection_header">
         <button
           type="button"
-          className="brandsDetailSection__titleBtn"
+          className="brandsDetailSection_titleBtn"
           onClick={onToggleCollapse}
           aria-expanded={!effectiveCollapsed}
-          disabled={isBulkEdit}
-        >
+          disabled={isBulkEdit}>
           {!isBulkEdit && (
-            <ChevronIcon size={14} className="brandsDetailSection__chevron" />
+            <ChevronIcon size={14} className="brandsDetailSection_chevron" />
           )}
-          {icon && <span className="brandsDetailSection__sectionIcon">{icon}</span>}
-          <h3 className="brandsDetailSection__title">{title}</h3>
+          {icon && (
+            <span className="brandsDetailSection_sectionIcon">{icon}</span>
+          )}
+          <h3 className="brandsDetailSection_title">{title}</h3>
         </button>
 
         {!isBulkEdit && (
-          <div className="brandsDetailSection__actions">
+          <div className="brandsDetailSection_actions">
             {isEditing ? (
               <>
                 <button
                   type="button"
-                  className="brandsDetailSection__btn"
+                  className="brandsDetailSection_btn"
                   onClick={onCancel}
-                  disabled={isSaving}
-                >
+                  disabled={isSaving}>
                   {t("actions.cancel")}
                 </button>
                 <button
                   type="button"
-                  className="brandsDetailSection__btn brandsDetailSection__btn--primary"
+                  className="brandsDetailSection_btn brandsDetailSection_btn--primary"
                   onClick={onSubmit}
-                  disabled={isSaving}
-                >
+                  disabled={isSaving}>
                   {isSaving ? t("saving") : t("actions.save")}
                 </button>
               </>
             ) : (
               <button
                 type="button"
-                className="brandsDetailSection__btn"
-                onClick={onEditStart}
-              >
+                className="brandsDetailSection_btn"
+                onClick={onEditStart}>
                 {editBtnLabel}
               </button>
             )}
@@ -79,7 +76,7 @@ const Brands_detail_sectionShell = ({
       </div>
 
       {!effectiveCollapsed && (
-        <div className="brandsDetailSection__body">
+        <div className="brandsDetailSection_body">
           {isEditing ? renderEditable() : renderReadonly()}
         </div>
       )}

@@ -1,0 +1,95 @@
+.competitorsLogoModal {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, #000 55%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 80;
+  padding: 1rem;
+}
+
+.competitorsLogoModal__panel {
+  width: min(38rem, 100%);
+  max-height: 90vh;
+  /* background: var(--panel-bg-color); */
+  background: var(--bg-primary-color-modal);
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.competitorsLogoModal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem;
+  border-bottom: 1px solid var(--border-secondary-color);
+}
+
+.competitorsLogoModal__title {
+  color: var(--text-primary-color);
+}
+
+.competitorsLogoModal__close {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--bg-tertiary-color);
+  cursor: pointer;
+  color: var(--text-primary-color);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.competitorsLogoModal__body {
+  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  min-height: 0;
+}
+
+.competitorsLogoModal__img {
+  width: min(500px, 82vw);
+  height: min(500px, 62vh);
+  object-fit: contain;
+  background: var(--bg-secondary-color);
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 0.75rem;
+}
+
+.competitorsLogoModal__placeholder {
+  color: var(--text-secondary-color);
+  font-weight: 700;
+}
+
+.competitorsLogoModal__footer {
+  padding: 0.9rem;
+  border-top: 1px solid var(--border-secondary-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  background: var(--panel-bg-color);
+}
+
+.competitorsLogoModal__btn {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.competitorsLogoModal__btn--primary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-contrast-color);
+}

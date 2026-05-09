@@ -1,36 +1,36 @@
-.brandsDetailEmails__rows,
-.brandsDetailEmails__form {
+.brandsDetailEmails_rows,
+.brandsDetailEmails_form {
   display: grid;
   gap: 0.75rem;
 }
 
-.brandsDetailEmails__row,
-.brandsDetailEmails__editRow {
+.brandsDetailEmails_row,
+.brandsDetailEmails_editRow {
   border: 1px solid var(--border-primary-color);
   border-radius: 0.75rem;
   padding: 0.75rem;
   background: var(--bg-primary-color);
 }
 
-.brandsDetailEmails__row {
+.brandsDetailEmails_row {
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
 }
 
-.brandsDetailEmails__row div,
-.brandsDetailEmails__editRow,
-.brandsDetailEmails__editRow label {
+.brandsDetailEmails_row div,
+.brandsDetailEmails_editRow,
+.brandsDetailEmails_editRow label {
   display: grid;
   gap: 0.35rem;
 }
 
-.brandsDetailEmails__launcher {
+.brandsDetailEmails_launcher {
   color: var(--btn-primary-bg-color);
 }
 
-.brandsDetailEmails__addBtn,
-.brandsDetailEmails__removeBtn {
+.brandsDetailEmails_addBtn,
+.brandsDetailEmails_removeBtn {
   border: 1px solid var(--border-primary-color);
   border-radius: 0.6rem;
   padding: 0.45rem 0.7rem;

@@ -13,27 +13,25 @@ const Brands_deleteModal = ({
 
   return (
     <div className="brandsModal" role="dialog" aria-modal="true">
-      <div className="brandsModal__panel">
-        <h2 className="brandsModal__title">{t("deleteTitle")}</h2>
-        <p className="brandsModal__hint">
+      <div className="brandsModal_panel">
+        <h2 className="brandsModal_title">{t("deleteTitle")}</h2>
+        <p className="brandsModal_hint">
           {t("deleteHint")} <strong>{brandName}</strong>
         </p>
-        {error && <p className="brandsModal__error">{error}</p>}
-        <div className="brandsModal__actions">
+        {error && <p className="brandsModal_error">{error}</p>}
+        <div className="brandsModal_actions">
           <button
             type="button"
-            className="brandsModal__btn"
+            className="brandsModal_btn"
             onClick={onCancel}
-            disabled={isSaving}
-          >
+            disabled={isSaving}>
             {t("actions.cancel")}
           </button>
           <button
             type="button"
-            className="brandsModal__btn brandsModal__btn--danger"
+            className="brandsModal_btn brandsModal_btn--danger"
             onClick={onConfirm}
-            disabled={isSaving}
-          >
+            disabled={isSaving}>
             {isSaving ? t("saving") : t("actions.delete")}
           </button>
         </div>

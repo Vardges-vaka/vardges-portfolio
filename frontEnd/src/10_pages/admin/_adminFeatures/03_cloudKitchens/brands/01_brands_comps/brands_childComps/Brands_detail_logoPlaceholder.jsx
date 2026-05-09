@@ -4,10 +4,10 @@ import "../../_styles/brands_detail_logoPlaceholder.css";
 const Brands_detail_logoPlaceholder = ({ t }) => (
   <div className="brandsDetailLogoPlaceholder">
     <ImageIcon size={22} />
-    <h3 className="brandsDetailLogoPlaceholder__title">
+    <h3 className="brandsDetailLogoPlaceholder_title">
       {t("placeholders.logoTitle")}
     </h3>
-    <p className="brandsDetailLogoPlaceholder__description">
+    <p className="brandsDetailLogoPlaceholder_description">
       {t("placeholders.logoDescription")}
     </p>
   </div>

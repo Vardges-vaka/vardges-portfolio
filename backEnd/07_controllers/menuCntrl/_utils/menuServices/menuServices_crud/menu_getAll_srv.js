@@ -10,7 +10,7 @@ export const menu_getAll_srv = async (req, isDebug) => {
     const menus = await Menu.find()
       .populate("categories", "name isActive")
       .populate("branches", "name")
-      .populate("brands", "name logo")
+      .populate("brands", "name files.logos isActive")
       .sort({ createdAt: -1 });
 
     isDebug && console.log(`✅${displayName}Found ${menus.length} menus`);

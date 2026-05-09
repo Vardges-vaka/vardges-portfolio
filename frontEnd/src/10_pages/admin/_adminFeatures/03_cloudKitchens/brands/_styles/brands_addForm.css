@@ -5,12 +5,14 @@
   z-index: 50;
   display: grid;
   place-items: center;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--brands-modal-backdrop-bg);
 }
 
-.brandsAddForm__panel,
-.brandsModal__panel {
-  width: min(92vw, 32rem);
+.brandsAddForm_panel,
+.brandsModal_panel {
+  width: min(92vw, 48rem);
+  max-height: 88vh;
+  overflow: auto;
   border: 1px solid var(--border-primary-color);
   border-radius: 1rem;
   padding: 1.25rem;
@@ -18,37 +20,67 @@
   color: var(--text-primary-color);
 }
 
-.brandsAddForm__title,
-.brandsAddForm__hint {
+.brandsAddForm_title,
+.brandsAddForm_hint {
   margin: 0 0 0.75rem;
 }
 
-.brandsAddForm__field {
+.brandsAddForm_field {
   display: grid;
   gap: 0.35rem;
 }
 
-.brandsAddForm__input,
-.brandsDetailBasic__field input,
-.brandsDetailBasic__field textarea,
-.brandsDetailSocials__field input,
-.brandsDetailEmails__editRow input {
-  border: 1px solid var(--input-primary-border-color, var(--border-primary-color));
+.brandsAddForm_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.brandsAddForm_input,
+.brandsDetailBasic_field input,
+.brandsDetailBasic_field textarea,
+.brandsDetailSocials_field input,
+.brandsDetailSocials_field select,
+.brandsDetailEmails_editRow input {
+  border: 1px solid
+    var(--input-primary-border-color, var(--border-primary-color));
   border-radius: 0.65rem;
   padding: 0.6rem 0.7rem;
   background: var(--input-primary-bg-color, var(--bg-primary-color));
   color: var(--input-primary-text-color, var(--text-primary-color));
 }
 
-.brandsAddForm__actions {
+.brandsAddForm_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.brandsAddForm_chip {
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.brandsAddForm_chip--active {
+  border-color: var(--btn-primary-bg-color);
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+}
+
+.brandsAddForm_actions {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-.brandsAddForm__btn,
-.brandsModal__btn {
+.brandsAddForm_btn,
+.brandsModal_btn {
   border: 1px solid var(--border-primary-color);
   border-radius: 0.65rem;
   padding: 0.55rem 0.9rem;
@@ -57,16 +89,16 @@
   cursor: pointer;
 }
 
-.brandsAddForm__btn--primary,
-.brandsModal__btn--primary {
+.brandsAddForm_btn--primary,
+.brandsModal_btn--primary {
   background: var(--btn-primary-bg-color);
   color: var(--btn-primary-text-color);
   border-color: var(--btn-primary-bg-color);
 }
 
-.brandsAddForm__error,
-.brandsModal__error,
-.brandsList__error,
-.brandsDetail__error {
+.brandsAddForm_error,
+.brandsModal_error,
+.brandsList_error,
+.brandsDetail_error {
   color: var(--primary-error-border);
 }

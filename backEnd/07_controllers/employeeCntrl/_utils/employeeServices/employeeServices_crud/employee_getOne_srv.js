@@ -10,7 +10,7 @@ export const employee_getOne_srv = async (req, isDebug) => {
     const { id } = req.body.sanitizedData;
     const employee = await Employee.findById(id)
       .populate("workingBranch", "name")
-      .populate("associatedBrands", "name logo");
+      .populate("associatedBrands", "name files.logos isActive");
 
     if (!employee) {
       return { success: false, message: "Employee not found", data: null };

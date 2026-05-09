@@ -1,0 +1,115 @@
+{
+  "tableView": {
+    "title": "المنافسون"
+  },
+  "tableRow": {
+    "open": "فتح",
+    "editCompetitor": "تعديل المنافس",
+    "viewCompetitor": "عرض المنافس",
+    "competesStackLabel": "علامات منافسة: {{names}}",
+    "detailMenuItems": "أصناف القائمة",
+    "detailMenuCategories": "فئات القائمة",
+    "ownDeliveryYes": "توصيل ذاتي في دبي",
+    "ownDeliveryNo": "لا توصيل ذاتي في دبي",
+    "ownDeliveryUnknown": "توصيل دبي غير مسجل"
+  },
+  "priceRange": {
+    "budget": "اقتصادي",
+    "mid": "متوسط",
+    "premium": "ممتاز"
+  },
+  "viewModes": {
+    "table": "جدول",
+    "map": "خريطة"
+  },
+  "mapView": {
+    "noKeyTitle": "الخريطة غير متاحة",
+    "noKeyText": "مفتاح Google Maps API غير موجود (VITE_GOOGLE_MAPS_API_KEY).",
+    "loadErrorTitle": "فشل تحميل الخريطة",
+    "loadErrorText": "تعذر تحميل Google Maps. تحقق من المفتاح والاتصال بالشبكة.",
+    "loadingTitle": "جاري تحميل الخريطة…",
+    "toggleCompetitors": "المنافسون",
+    "allPolygon": "المضلعات (الكل)",
+    "allRadius": "نصف القطر (الكل)",
+    "toggleAllPolygonTitle": "إظهار/إخفاء تغطيات المضلع (الكل)",
+    "toggleAllRadiusTitle": "إظهار/إخفاء تغطيات نصف القطر (الكل)",
+    "visible": "ظاهر",
+    "total": "الإجمالي",
+    "controlsToggleTitle": "إظهار/إخفاء أدوات الخريطة",
+    "hint": "اضغط على شعار المنافس على الخريطة لعرض التفاصيل في لوحة المعلومات.",
+    "popupViewInfo": "عرض المعلومات",
+    "popupShowRadius": "إظهار نصف القطر",
+    "popupHideRadius": "إخفاء نصف القطر",
+    "popupShowPolygon": "إظهار المضلع",
+    "popupHidePolygon": "إخفاء المضلع",
+    "infoTitle": "معلومات المنافس",
+    "clearInfo": "مسح التحديد",
+    "noSelection": "اختر منافسًا من الخريطة لعرض التفاصيل هنا.",
+    "openCompetitor": "فتح المنافس",
+    "cardBranches": "الفروع",
+    "cardOwnDelivery": "توصيل ذاتي دبي",
+    "cardSelectedBranch": "الدبوس المحدد (فرع)",
+    "noActivePin": "اضغط على دبوس لرؤية تفاصيل الفرع.",
+    "cardCoords": "الإحداثيات",
+    "cardCoveragePolygon": "المضلع",
+    "cardCoverageRadius": "نصف القطر",
+    "cardCoverageKm": "كم نصف القطر",
+    "cardPriceRange": "نطاق السعر",
+    "cardMenuItems": "أصناف القائمة",
+    "cardMenuCategories": "فئات القائمة",
+    "cardCuisine": "المطبخ",
+    "cardMenu": "القائمة",
+    "cardNotes": "ملاحظات",
+    "cardLinks": "روابط"
+  },
+  "tableheaders": {
+    "name": {
+      "text": "الاسم",
+      "title": "اسم المنافس"
+    },
+    "logo": {
+      "text": "الشعار",
+      "title": "شعار المنافس"
+    },
+    "cuisine": {
+      "text": "المطبخ"
+    },
+    "cuisineTypes": {
+      "title": "أنواع المطابخ"
+    },
+    "priceRange": {
+      "text": "نطاق السعر",
+      "title": "نطاق أسعار المنافس"
+    },
+    "menu": {
+      "text": "القائمة",
+      "title": "قائمة المنافس"
+    },
+    "menuItemsQnt": {
+      "text": "أصناف القائمة",
+      "title": "عدد أصناف قائمة المنافس"
+    },
+    "menuCategoriesQnt": {
+      "text": "فئات القائمة",
+      "title": "عدد فئات قائمة المنافس"
+    },
+    "ownDeliveryDubai": {
+      "text": "توصيل ذاتي دبي",
+      "title": "يشغّل توصيلاً مباشراً في دبي"
+    },
+    "competesWithBrands": {
+      "text": "يتنافس مع علامات",
+      "title": "العلامات المرتبطة"
+    },
+    "branches": {
+      "text": "الفروع",
+      "title": "عدد الفروع"
+    },
+    "actions": {
+      "edit": "تعديل",
+      "editTitle": "تعديل كل الأقسام",
+      "overview": "عرض",
+      "overviewTitle": "نظرة عامة على المنافس"
+    }
+  }
+}

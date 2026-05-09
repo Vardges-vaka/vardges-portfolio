@@ -1,0 +1,101 @@
+.competitors_viewToggle {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: var(--bg-secondary-color);
+  border: 1px dashed var(--border-primary-color);
+  border-radius: 5px;
+  align-self: flex-start;
+  align-items: center !important;
+  align-items: center !important;
+  align-content: center !important;
+  align-items: center !important;
+}
+
+.competitors_viewToggle_btn {
+  position: relative;
+  padding: 0.35rem 0.45rem;
+  background: transparent;
+  color: var(--text-primary-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.competitors_viewToggle_iconImg {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.competitors_viewToggle_btn:hover {
+  background: var(--bg-primary-color);
+  background: white;
+}
+
+.competitors_viewToggle--active {
+  background: var(--bg-primary-color);
+  color: var(--btn-primary-bg-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* Live indicator on the selected view — soft green pulse (“twinkle”). */
+.competitors_viewToggle_pulseDot {
+  position: absolute;
+  top: 0.2rem;
+  inset-inline-end: 0.2rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--bg-primary-color) 90%, transparent),
+    0 0 0.35rem rgba(34, 197, 94, 0.95);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .competitors_viewToggle_pulseDot {
+    animation: competitors_viewToggle_pulseTwinkle 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes competitors_viewToggle_pulseTwinkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--bg-primary-color) 90%, transparent),
+      0 0 0.35rem rgba(34, 197, 94, 0.75);
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.88;
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--bg-primary-color) 90%, transparent),
+      0 0 0.55rem rgba(34, 197, 94, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .competitors_viewToggle_pulseDot {
+    animation: none;
+    opacity: 1;
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--bg-primary-color) 92%, transparent),
+      0 0 0.25rem rgba(34, 197, 94, 0.7);
+  }
+}

@@ -1,0 +1,147 @@
+/* Controls bar (top). */
+.competitorsMapViewControls {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  background: var(--bg-primary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+  box-shadow: var(--boxShadow-primary-color);
+}
+
+.competitorsMapViewControls__toolbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  width: 100%;
+}
+
+.competitorsMapViewControls__toolbarLeft {
+  justify-self: start;
+}
+.competitorsMapViewControls__toolbarCenter {
+  justify-self: center;
+  min-width: 0;
+}
+.competitorsMapViewControls__toolbarRight {
+  justify-self: end;
+}
+
+.competitorsMapViewControls__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.competitorsMapViewControls__toggle--active {
+  border-color: var(--btn-primary-bg-color);
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 18%, transparent);
+}
+
+.competitorsMapViewControls__toggle:hover {
+  border-color: var(--btn-primary-bg-color);
+}
+
+.competitorsMapViewControls__stats {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem 0.45rem;
+  font-size: 0.8125rem;
+}
+
+.competitorsMapViewControls__stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+.competitorsMapViewControls__statValue {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+.competitorsMapViewControls__statLabel {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+}
+.competitorsMapViewControls__divider {
+  color: var(--text-secondary-color);
+  opacity: 0.65;
+  user-select: none;
+}
+
+.competitorsMapViewControls__expand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+.competitorsMapViewControls__expand:hover {
+  background: var(--bg-primary-color);
+  border-color: var(--btn-primary-bg-color);
+}
+
+.competitorsMapViewControls__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.competitorsMapViewControls__body--collapsed {
+  display: none;
+}
+
+.competitorsMapViewControls__hint {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--text-secondary-color);
+}
+
+.competitorsMapViewControls__chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.competitorsMapViewControls__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.competitorsMapViewControls__chip:hover {
+  border-color: var(--btn-primary-bg-color);
+}
+
+.competitorsMapViewControls__chip--active {
+  border-color: var(--btn-primary-bg-color);
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 18%, transparent);
+}
+

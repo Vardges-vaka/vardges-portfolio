@@ -7,7 +7,9 @@ export const branch_getAll_srv = async (req, isDebug) => {
   isDebug && console.log(`▄︻デ══━一💥${displayName}[STARTED]`);
 
   try {
-    const branches = await Branch.find().sort({ createdAt: -1 });
+    const branches = await Branch.find()
+      .populate("brands", "name files.logos isActive")
+      .sort({ createdAt: -1 });
 
     isDebug && console.log(`✅${displayName}Found ${branches.length} branches`);
 

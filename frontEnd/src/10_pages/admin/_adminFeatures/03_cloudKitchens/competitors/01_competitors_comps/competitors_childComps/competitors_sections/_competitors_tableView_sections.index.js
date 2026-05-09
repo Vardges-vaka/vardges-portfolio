@@ -1,0 +1,9 @@
+export { default as Competitors_tableView_name } from "./Competitors_tableView_name.jsx";
+export { default as Competitors_tableView_logo } from "./Competitors_tableView_logo.jsx";
+export { default as Competitors_tableView_profile } from "./Competitors_tableView_profile.jsx";
+export { default as Competitors_tableView_cuisineTypes } from "./Competitors_tableView_cuisineTypes.jsx";
+export { default as Competitors_tableView_priceRange } from "./Competitors_tableView_priceRange.jsx";
+export { default as Competitors_tableView_menu } from "./Competitors_tableView_menu.jsx";
+export { default as Competitors_tableView_competesWithBrands } from "./Competitors_tableView_competesWithBrands.jsx";
+export { default as Competitors_tableView_branches } from "./Competitors_tableView_branches.jsx";
+export { default as Competitors_tableView_fullView } from "./Competitors_tableView_fullView.jsx";

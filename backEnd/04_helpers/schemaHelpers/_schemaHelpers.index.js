@@ -1,3 +1,4 @@
+export { coordinateSchema } from "./coordinateSchema.js";
 export { default as multilingualTextSchema } from "./multilingualFieldSchema.js";
 export { default as personalInfoSchema } from "./CV/personalInfoSchema.js";
 export { default as roleSchema } from "./CV/roleSchema.js";

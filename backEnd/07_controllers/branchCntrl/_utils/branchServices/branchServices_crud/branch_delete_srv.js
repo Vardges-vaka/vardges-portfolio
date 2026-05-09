@@ -1,4 +1,4 @@
-import { Branch } from "../../../../../06_models/_models.index.js";
+import { Branch, Brand } from "../../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../../03_services/_services.index.js";
 
 const displayName = " | branch_delete_srv.js | ";
@@ -13,6 +13,8 @@ export const branch_delete_srv = async (req, isDebug) => {
     if (!deletedBranch) {
       return { success: false, message: "Branch not found", data: null };
     }
+
+    await Brand.updateMany({ branches: id }, { $pull: { branches: id } });
 
     isDebug && console.log(`✅${displayName}Branch deleted: ${id}`);
 

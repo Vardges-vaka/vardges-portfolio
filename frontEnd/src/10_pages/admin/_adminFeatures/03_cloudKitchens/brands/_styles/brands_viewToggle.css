@@ -3,7 +3,7 @@
   gap: 0.5rem;
 }
 
-.brandsViewToggle__btn {
+.brandsViewToggle_btn {
   border: 1px solid var(--border-primary-color);
   background: var(--bg-primary-color);
   color: var(--text-primary-color);
@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.brandsViewToggle__btn--active {
+.brandsViewToggle_btn--active {
   background: var(--btn-primary-bg-color);
   color: var(--btn-primary-text-color);
   border-color: var(--btn-primary-bg-color);

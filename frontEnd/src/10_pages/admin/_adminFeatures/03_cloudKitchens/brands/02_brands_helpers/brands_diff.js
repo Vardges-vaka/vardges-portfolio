@@ -1,3 +1,5 @@
+import { hydrateBrandForm } from "./brands_defaults.js";
+
 const normalize = (value) => {
   if (value === "" || value === null || value === undefined) return null;
   return value;
@@ -54,19 +56,26 @@ export const computeBulkDiff = (originalBrand, bulkPayload) => {
 
 export const computeSectionDiff = (originalBrand, updatedPayload, sectionKey) => {
   const out = [];
-  if (sectionKey === "basic") {
-    for (const key of ["name", "tagline", "isActive"]) {
-      if (!scalarEq(originalBrand?.[key], updatedPayload?.[key])) {
-        out.push({
-          field: key,
-          from: normalize(originalBrand?.[key]),
-          to: normalize(updatedPayload?.[key]),
-        });
-      }
-    }
-    return out;
-  }
 
-  walk(sectionKey, originalBrand?.[sectionKey], updatedPayload?.[sectionKey], out);
+  const hydrated = hydrateBrandForm(originalBrand);
+  const originalSection =
+    sectionKey === "basic"
+      ? {
+          name: hydrated.name,
+          tagline: hydrated.tagline,
+          isActive: hydrated.isActive,
+        }
+      : hydrated?.[sectionKey];
+
+  const updatedSection =
+    sectionKey === "basic"
+      ? {
+          name: updatedPayload?.name,
+          tagline: updatedPayload?.tagline,
+          isActive: updatedPayload?.isActive,
+        }
+      : updatedPayload?.[sectionKey];
+
+  walk(sectionKey, originalSection, updatedSection, out);
   return out;
 };

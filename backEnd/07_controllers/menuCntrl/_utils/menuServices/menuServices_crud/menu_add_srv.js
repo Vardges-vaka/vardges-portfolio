@@ -1,5 +1,6 @@
 import { Menu } from "../../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../../03_services/_services.index.js";
+import { syncMenuBrandRefs } from "../../../../brandCntrl/_utils/brandServices/brandServices_helpers/brand_relationSync_helpers.js";
 
 const displayName = " | menu_add_srv.js | ";
 
@@ -12,6 +13,7 @@ export const menu_add_srv = async (req, isDebug) => {
 
     const newMenu = new Menu(sanitizedData);
     await newMenu.save();
+    await syncMenuBrandRefs(newMenu._id, [], newMenu.brands);
 
     isDebug && console.log(`✅${displayName}Menu created: ${newMenu._id}`);
 

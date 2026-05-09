@@ -6,10 +6,10 @@
   color: var(--text-primary-color);
 }
 
-.brandsTablePlaceholder__title {
+.brandsTablePlaceholder_title {
   margin: 0 0 0.5rem;
 }
 
-.brandsTablePlaceholder__description {
+.brandsTablePlaceholder_description {
   margin: 0;
 }

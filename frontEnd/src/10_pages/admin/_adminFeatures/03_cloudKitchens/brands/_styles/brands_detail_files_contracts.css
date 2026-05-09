@@ -1,0 +1,136 @@
+/* Contracts Section */
+.brandsDetailFilesContracts_section {
+  background: var(--brands-sub-section-bg);
+  border: 1px solid var(--brands-sub-section-border);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.brandsDetailFilesContracts_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.brandsDetailFilesContracts_title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brands-input-text);
+  margin: 0;
+}
+
+.brandsDetailFilesContracts_empty {
+  color: var(--brands-label-text);
+  font-style: italic;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.brandsDetailFilesContracts_error {
+  color: var(--brands-error-color);
+  font-size: 0.75rem;
+}
+
+/* Array */
+.brandsDetailFilesContracts_array {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brandsDetailFilesContracts_row {
+  background: var(--brands-input-bg);
+  border: 1px solid var(--brands-input-border);
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Grid Layout */
+.brandsDetailFilesContracts_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Fields */
+.brandsDetailFilesContracts_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brandsDetailFilesContracts_label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--brands-label-text);
+}
+
+.brandsDetailFilesContracts_input {
+  padding: 0.5rem;
+  border: 1px solid var(--brands-input-border);
+  border-radius: 4px;
+  background: var(--brands-input-bg);
+  color: var(--brands-input-text);
+  font-size: 0.875rem;
+}
+
+.brandsDetailFilesContracts_input:focus {
+  outline: none;
+  border-color: var(--brands-link-color);
+}
+
+/* Checkboxes */
+.brandsDetailFilesContracts_checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.brandsDetailFilesContracts_checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--brands-input-text);
+  cursor: pointer;
+}
+
+/* Buttons */
+.brandsDetailFilesContracts_addBtn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--brands-add-btn-color);
+  border: 1px solid var(--brands-add-btn-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.brandsDetailFilesContracts_addBtn:hover {
+  background: var(--brands-add-btn-hover-bg);
+}
+
+.brandsDetailFilesContracts_removeBtn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--brands-remove-btn-color);
+  border: 1px solid var(--brands-remove-btn-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.brandsDetailFilesContracts_removeBtn:hover {
+  background: var(--brands-delete-btn-hover-bg);
+}

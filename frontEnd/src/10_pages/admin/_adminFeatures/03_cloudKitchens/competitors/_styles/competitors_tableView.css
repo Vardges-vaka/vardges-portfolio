@@ -1,0 +1,136 @@
+/* Single scroll container + readable admin table (theme variables). */
+.competitors_tableView {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.competitors_tableView__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.competitors_tableView__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--title-primary-color);
+}
+
+.competitors_tableView__tableScroll {
+  overflow-x: auto;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 8px;
+  background-color: var(--bg-secondary-color);
+  box-shadow: 0 1px 2px var(--boxShadow-primary-color);
+}
+
+.competitors_tableView__table {
+  width: 100%;
+  min-width: 960px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  color: var(--text-primary-color);
+}
+
+/* Subtle dashed rules between columns (`border-opacity` is invalid on borders). */
+.competitors_tableView__table thead th:not(:last-child),
+.competitors_tableView__table tbody td:not(:last-child) {
+  border-right: 1px dashed
+    color-mix(in srgb, var(--border-secondary-color) 40%, transparent);
+}
+
+.competitors_tableView__th {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--title-secondary-color);
+  background-color: var(--bg-tertiary-color);
+  border-bottom: 1px solid var(--border-primary-color);
+}
+
+.competitors_tableView__th--number {
+  width: 1%;
+  max-width: 1.85rem;
+  text-align: center;
+  /* Override default th horizontal padding — # only needs a sliver */
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+.competitors_tableView__th--menu {
+  /* Match body cell --hug horizontal inset so “Menu” lines up with row text */
+  padding-left: 0.32rem;
+  padding-right: 0.28rem;
+}
+
+/* Narrow visual gap between price range and menu (header only; body cell in row CSS) */
+.competitors_tableView__table thead th.competitors_tableView__th--priceMenuGutter {
+  width: 0.7rem;
+  min-width: 0.7rem;
+  max-width: 0.7rem;
+  padding: 0.5rem 0;
+  border-left: none;
+  border-right: none;
+  box-sizing: border-box;
+}
+.competitors_tableView__th--branches,
+.competitors_tableView__th--menuItemsQnt,
+.competitors_tableView__th--menuCategoriesQnt,
+.competitors_tableView__th--dineIn,
+.competitors_tableView__th--ownDeliveryDubai {
+  text-align: center;
+}
+
+.competitors_tableView__th--profile {
+  text-align: left;
+}
+
+/* Tighter header padding than default 0.75rem for narrow numeric / flag columns */
+.competitors_tableView__th--menuItemsQnt,
+.competitors_tableView__th--menuCategoriesQnt,
+.competitors_tableView__th--dineIn,
+.competitors_tableView__th--ownDeliveryDubai {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.competitors_tableView__thIcon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+.competitors_tableView__th--actionUpdate,
+.competitors_tableView__th--actionView {
+  width: 1%;
+  /* Room for translated labels (e.g. “Update” / “View”) + 10px horizontal padding */
+  min-width: 5.5rem;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+.competitors_tableView__table tbody tr:hover {
+  background-color: var(--bg-primary-color-HOV);
+}
+
+@media (min-width: 768px) {
+  .competitors_tableView__title {
+    font-size: 1.35rem;
+  }
+}

@@ -13,20 +13,23 @@ const Brands_list = ({
   t,
 }) => (
   <div className="brandsList">
-    <div className="brandsList__header">
-      <h2 className="brandsList__title">{t("title")}</h2>
-      <button type="button" className="brandsList__addBtn" onClick={onShowAddForm}>
+    <div className="brandsList_header">
+      <h2 className="brandsList_title">{t("title")}</h2>
+      <button
+        type="button"
+        className="brandsList_addBtn"
+        onClick={onShowAddForm}>
         + {t("addBrand")}
       </button>
     </div>
 
-    {error && <p className="brandsList__error">{error}</p>}
-    {isLoading && <p className="brandsList__loading">{t("loading")}</p>}
+    {error && <p className="brandsList_error">{error}</p>}
+    {isLoading && <p className="brandsList_loading">{t("loading")}</p>}
     {!isLoading && brands.length === 0 && (
-      <p className="brandsList__empty">{t("empty.noBrands")}</p>
+      <p className="brandsList_empty">{t("empty.noBrands")}</p>
     )}
 
-    <div className="brandsList__items">
+    <div className="brandsList_items">
       {brands.map((brand) => (
         <Brands_list_item
           key={brand._id}

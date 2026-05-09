@@ -1167,3 +1167,42 @@
   "timestamp": "2026-05-05 23:54:34",
   "type": "controller_error"
 }
+{
+  "controller": "⚠️ ☠️ 🚨 | brand_uploadLogo_cntrl.js | ",
+  "error": "Plan executor error during findAndModify :: caused by :: Cannot create field 'logos' in element {files: []}",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | brand_uploadLogo_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Plan executor error during findAndModify :: caused by :: Cannot create field 'logos' in element {files: []}\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at brand_uploadLogo_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/_utils/brandServices/brandServices_sections/brand_uploadLogo_srv.js:59:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async brand_uploadLogo_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/brandCntrl_sections/brand_uploadLogo_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-07 18:02:47",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | brand_uploadLogo_cntrl.js | ",
+  "error": "Plan executor error during findAndModify :: caused by :: Cannot create field 'logos' in element {files: []}",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | brand_uploadLogo_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Plan executor error during findAndModify :: caused by :: Cannot create field 'logos' in element {files: []}\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at brand_uploadLogo_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/_utils/brandServices/brandServices_sections/brand_uploadLogo_srv.js:59:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async brand_uploadLogo_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/brandCntrl_sections/brand_uploadLogo_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-07 18:03:34",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | brand_uploadLogo_cntrl.js | ",
+  "error": "Plan executor error during findAndModify :: caused by :: Cannot create field 'logos' in element {files: []}",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | brand_uploadLogo_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Plan executor error during findAndModify :: caused by :: Cannot create field 'logos' in element {files: []}\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at brand_uploadLogo_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/_utils/brandServices/brandServices_sections/brand_uploadLogo_srv.js:59:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async brand_uploadLogo_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/brandCntrl_sections/brand_uploadLogo_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-07 18:07:26",
+  "type": "controller_error"
+}

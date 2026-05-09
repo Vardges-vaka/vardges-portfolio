@@ -1,5 +1,6 @@
 import { Branch } from "../../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../../03_services/_services.index.js";
+import { syncBranchBrands } from "../../../../brandCntrl/_utils/brandServices/brandServices_helpers/brand_relationSync_helpers.js";
 
 const displayName = " | branch_update_srv.js | ";
 
@@ -9,6 +10,10 @@ export const branch_update_srv = async (req, isDebug) => {
 
   try {
     const { id, ...updateFields } = req.body.sanitizedData;
+    const previousBranch = await Branch.findById(id).select("brands");
+    if (!previousBranch) {
+      return { success: false, message: "Branch not found", data: null };
+    }
 
     const mongoOp = {};
 
@@ -34,10 +39,14 @@ export const branch_update_srv = async (req, isDebug) => {
       id,
       mongoOp,
       { new: true, runValidators: true },
-    );
+    ).populate("brands", "name files.logos isActive");
 
     if (!updatedBranch) {
       return { success: false, message: "Branch not found", data: null };
+    }
+
+    if (Object.prototype.hasOwnProperty.call(updateFields, "brands")) {
+      await syncBranchBrands(id, previousBranch.brands, updateFields.brands);
     }
 
     isDebug && console.log(`✅${displayName}Branch updated: ${updatedBranch._id}`);

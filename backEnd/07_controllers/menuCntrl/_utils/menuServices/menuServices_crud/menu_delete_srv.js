@@ -1,4 +1,4 @@
-import { Menu } from "../../../../../06_models/_models.index.js";
+import { Brand, Menu } from "../../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../../03_services/_services.index.js";
 
 const displayName = " | menu_delete_srv.js | ";
@@ -13,6 +13,8 @@ export const menu_delete_srv = async (req, isDebug) => {
     if (!deletedMenu) {
       return { success: false, message: "Menu not found", data: null };
     }
+
+    await Brand.updateMany({ menu: id }, { $set: { menu: null } });
 
     isDebug && console.log(`✅${displayName}Menu deleted: ${id}`);
 

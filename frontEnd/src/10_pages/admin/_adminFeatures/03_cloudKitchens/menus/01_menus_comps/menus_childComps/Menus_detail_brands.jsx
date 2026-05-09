@@ -1,4 +1,5 @@
 import { Menus_detail_sectionShell } from "./_menus_childComps.index.js";
+import { getBrandDisplayName } from "../../../brands/02_brands_helpers/_brands_helpers.index.js";
 import "../../_styles/menus_detail_picker.css";
 
 const Menus_detail_brands = (props) => {
@@ -20,7 +21,7 @@ const Menus_detail_brands = (props) => {
           <div className="menusDetailPicker__chips">
             {readonlyBrands.map((brand) => (
               <span key={brand._id || brand} className="menusDetailPicker__chip">
-                {brand?.name || brand._id || brand}
+                {getBrandDisplayName(brand) || brand._id || brand}
               </span>
             ))}
           </div>
@@ -45,7 +46,7 @@ const Menus_detail_brands = (props) => {
                   }
                   onClick={() => onIdToggle(id)}
                 >
-                  {brand?.name || id}
+                  {getBrandDisplayName(brand) || id}
                 </button>
               );
             })}

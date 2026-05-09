@@ -12,7 +12,7 @@ export const menu_getOne_srv = async (req, isDebug) => {
     const menu = await Menu.findById(id)
       .populate("categories", "name isActive")
       .populate("branches", "name")
-      .populate("brands", "name logo");
+      .populate("brands", "name files.logos isActive");
 
     if (!menu) {
       return { success: false, message: "Menu not found", data: null };

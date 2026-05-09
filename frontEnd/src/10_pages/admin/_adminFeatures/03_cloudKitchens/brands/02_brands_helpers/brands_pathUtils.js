@@ -13,3 +13,8 @@ export const setByPath = (source, path, value) => {
   cursor[keys[keys.length - 1]] = value;
   return clone;
 };
+
+export const getByPath = (source, path) =>
+  String(path)
+    .split(".")
+    .reduce((cursor, key) => (cursor ? cursor[key] : undefined), source);

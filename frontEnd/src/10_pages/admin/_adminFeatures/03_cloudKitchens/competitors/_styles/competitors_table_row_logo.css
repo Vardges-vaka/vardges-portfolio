@@ -1,0 +1,49 @@
+/* Single clickable thumb only (no separate open icon). */
+.competitors_table_row_logo {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.competitors_table_row_logo__thumbBtn {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.competitors_table_row_logo__thumbBtn:hover {
+  border-color: var(--border-primary-color-HOV);
+  background-color: var(--bg-primary-color-HOV);
+}
+
+.competitors_table_row_logo__thumbBtn:focus-visible {
+  outline: 2px solid var(--border-primary-color-HOV);
+  outline-offset: 2px;
+}
+
+.competitors_table_row_logo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.competitors_table_row_logo__placeholder {
+  font-size: 0.75rem;
+  color: var(--text-tertiary-color);
+  pointer-events: none;
+}

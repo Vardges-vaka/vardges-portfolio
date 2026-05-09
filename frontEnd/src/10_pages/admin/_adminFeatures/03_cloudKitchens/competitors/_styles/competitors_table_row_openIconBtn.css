@@ -1,0 +1,54 @@
+/* Shared “open detail” control (icon only). */
+.competitors_table_row_openIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 6px;
+  background-color: var(--bg-primary-color);
+  color: var(--icon-primary-stroke-color);
+  cursor: pointer;
+}
+
+.competitors_table_row_openIconBtn:hover {
+  color: var(--icon-primary-stroke-color-HOV);
+  border-color: var(--border-primary-color-HOV);
+  background-color: var(--bg-primary-color-HOV);
+}
+
+.competitors_table_row_openIconBtn:focus-visible {
+  outline: 2px solid var(--border-primary-color-HOV);
+  outline-offset: 2px;
+}
+
+.competitors_table_row_openIconBtn__svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+/* Same outer box as `.competitors_table_row_competesWithBrands__thumbWrap` (36×36, 8px radius, 2px border). */
+.competitors_table_row_openIconBtn--competesThumb {
+  width: 36px;
+  height: 36px;
+  border-width: 2px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.competitors_table_row_openIconBtn--competesThumb
+  .competitors_table_row_openIconBtn__svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.competitors_table_row_openIconBtn.iconOnly {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--icon-primary-stroke-color);
+}

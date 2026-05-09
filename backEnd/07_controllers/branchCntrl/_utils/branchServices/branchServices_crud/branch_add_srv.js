@@ -1,5 +1,6 @@
 import { Branch } from "../../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../../03_services/_services.index.js";
+import { syncBranchBrands } from "../../../../brandCntrl/_utils/brandServices/brandServices_helpers/brand_relationSync_helpers.js";
 
 const displayName = " | branch_add_srv.js | ";
 
@@ -12,6 +13,7 @@ export const branch_add_srv = async (req, isDebug) => {
 
     const newBranch = new Branch(sanitizedData);
     await newBranch.save();
+    await syncBranchBrands(newBranch._id, [], newBranch.brands);
 
     isDebug && console.log(`✅${displayName}Branch created: ${newBranch._id}`);
 

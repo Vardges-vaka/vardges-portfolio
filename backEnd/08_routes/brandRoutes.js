@@ -10,20 +10,162 @@ import {
   brand_getOne_cntrl,
   brand_update_cntrl,
   brand_delete_cntrl,
+  brand_getSection_cntrl,
+  brand_putSection_cntrl,
+  brand_clearSection_cntrl,
+  brand_addSectionItem_cntrl,
+  brand_updateSectionItem_cntrl,
+  brand_removeSectionItem_cntrl,
+  brand_createBranch_cntrl,
+  brand_linkBranch_cntrl,
+  brand_unlinkBranch_cntrl,
+  brand_linkEmployee_cntrl,
+  brand_unlinkEmployee_cntrl,
+  brand_setMenu_cntrl,
+  brand_clearMenu_cntrl,
+  brand_uploadLogo_cntrl,
+  brand_getLogo_cntrl,
 } from "../07_controllers/brandCntrl/_brandCntrl.index.js";
 import {
   brand_add_vld,
   brand_getOne_vld,
   brand_update_vld,
   brand_delete_vld,
+  brand_getSection_vld,
+  brand_putSection_vld,
+  brand_clearSection_vld,
+  brand_addSectionItem_vld,
+  brand_updateSectionItem_vld,
+  brand_removeSectionItem_vld,
+  brand_createBranch_vld,
+  brand_linkBranch_vld,
+  brand_unlinkBranch_vld,
+  brand_linkEmployee_vld,
+  brand_unlinkEmployee_vld,
+  brand_setMenu_vld,
+  brand_clearMenu_vld,
+  brand_uploadLogo_vld,
+  brand_getLogo_vld,
 } from "../07_controllers/brandCntrl/_utils/brandCntrl_utils.index.js";
+import { upload_mddlwre } from "../05_middlewares/_mddlwre.index.js";
 
 const router = express.Router();
 
-router.post("/", auth_mddlwre, vld_sntzr_mddlwre(brand_add_vld), brand_add_cntrl);
+router.post(
+  "/",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_add_vld),
+  brand_add_cntrl,
+);
 router.get("/", auth_mddlwre, brand_getAll_cntrl);
-router.get("/:id", auth_mddlwre, vld_sntzr_mddlwre(brand_getOne_vld), brand_getOne_cntrl);
-router.put("/:id", auth_mddlwre, vld_sntzr_mddlwre(brand_update_vld), brand_update_cntrl);
-router.delete("/:id", auth_mddlwre, vld_sntzr_mddlwre(brand_delete_vld), brand_delete_cntrl);
+router.get(
+  "/:id/sections/:sectionKey",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_getSection_vld),
+  brand_getSection_cntrl,
+);
+router.put(
+  "/:id/sections/:sectionKey",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_putSection_vld),
+  brand_putSection_cntrl,
+);
+router.delete(
+  "/:id/sections/:sectionKey",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_clearSection_vld),
+  brand_clearSection_cntrl,
+);
+router.post(
+  "/:id/sections/:sectionKey/items",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_addSectionItem_vld),
+  brand_addSectionItem_cntrl,
+);
+router.put(
+  "/:id/sections/:sectionKey/items/:itemId",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_updateSectionItem_vld),
+  brand_updateSectionItem_cntrl,
+);
+router.delete(
+  "/:id/sections/:sectionKey/items/:itemId",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_removeSectionItem_vld),
+  brand_removeSectionItem_cntrl,
+);
+router.post(
+  "/:id/branches",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_createBranch_vld),
+  brand_createBranch_cntrl,
+);
+router.post(
+  "/:id/branches/:branchId",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_linkBranch_vld),
+  brand_linkBranch_cntrl,
+);
+router.delete(
+  "/:id/branches/:branchId",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_unlinkBranch_vld),
+  brand_unlinkBranch_cntrl,
+);
+router.post(
+  "/:id/employees/:employeeId",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_linkEmployee_vld),
+  brand_linkEmployee_cntrl,
+);
+router.delete(
+  "/:id/employees/:employeeId",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_unlinkEmployee_vld),
+  brand_unlinkEmployee_cntrl,
+);
+router.put(
+  "/:id/menu/:menuId",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_setMenu_vld),
+  brand_setMenu_cntrl,
+);
+router.delete(
+  "/:id/menu",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_clearMenu_vld),
+  brand_clearMenu_cntrl,
+);
+router.get(
+  "/:id",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_getOne_vld),
+  brand_getOne_cntrl,
+);
+router.put(
+  "/:id",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_update_vld),
+  brand_update_cntrl,
+);
+router.delete(
+  "/:id",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_delete_vld),
+  brand_delete_cntrl,
+);
+router.post(
+  "/:id/files/logos/:logoType",
+  auth_mddlwre,
+  upload_mddlwre,
+  vld_sntzr_mddlwre(brand_uploadLogo_vld),
+  brand_uploadLogo_cntrl,
+);
+router.get(
+  "/:id/files/logos/:logoType",
+  auth_mddlwre,
+  vld_sntzr_mddlwre(brand_getLogo_vld),
+  brand_getLogo_cntrl,
+);
 
 export default router;

@@ -17,7 +17,7 @@ export const request_failed = (msg, data, name, isDebug) => {
 
   isDebug && console.log(`📢👮🚨${display}[FAILED] |<Msg>|${msg}|`, payload);
 
-  return { isValid: false, msg };
+  return { isValid: false, msg, message: msg, sanitizedData: data };
 };
 
 /**

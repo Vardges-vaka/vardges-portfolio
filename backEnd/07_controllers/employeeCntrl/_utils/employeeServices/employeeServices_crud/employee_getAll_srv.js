@@ -9,7 +9,7 @@ export const employee_getAll_srv = async (req, isDebug) => {
   try {
     const employees = await Employee.find()
       .populate("workingBranch", "name")
-      .populate("associatedBrands", "name logo")
+      .populate("associatedBrands", "name files.logos isActive")
       .sort({ createdAt: -1 });
 
     return {

@@ -1,0 +1,29 @@
+.competitors_table_row_ownDeliveryDubai {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+}
+
+.competitors_table_row_ownDeliveryDubai__check {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--primary-success-border);
+}
+
+.competitors_table_row_ownDeliveryDubai--empty {
+  color: var(--text-secondary-color);
+  font-weight: 600;
+}
+
+.competitors_table_row_ownDeliveryDubai__srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

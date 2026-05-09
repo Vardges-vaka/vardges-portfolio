@@ -9,7 +9,10 @@ export const branch_getOne_srv = async (req, isDebug) => {
   try {
     const { id } = req.body.sanitizedData;
 
-    const branch = await Branch.findById(id);
+    const branch = await Branch.findById(id).populate(
+      "brands",
+      "name files.logos isActive",
+    );
     if (!branch) {
       return { success: false, message: "Branch not found", data: null };
     }

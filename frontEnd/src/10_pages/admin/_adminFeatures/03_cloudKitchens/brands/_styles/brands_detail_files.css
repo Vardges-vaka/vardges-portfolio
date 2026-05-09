@@ -6,11 +6,95 @@
   color: var(--text-primary-color);
 }
 
-.brandsDetailFiles__title {
+.brandsDetailFiles_title {
   margin: 0.5rem 0;
 }
 
-.brandsDetailFiles__description {
+.brandsDetailFiles_description {
   margin: 0;
   color: var(--text-secondary-color, var(--text-primary-color));
+}
+
+.brandsDetailFiles_rows,
+.brandsDetailFiles_form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.brandsDetailFiles_link {
+  color: var(--link-primary-color, var(--text-primary-color));
+  overflow-wrap: anywhere;
+}
+
+.brandsDetailFiles_field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.brandsDetailFiles_field input {
+  border: 1px solid
+    var(--input-primary-border-color, var(--border-primary-color));
+  border-radius: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  background: var(--input-primary-bg-color, var(--bg-primary-color));
+  color: var(--input-primary-text-color, var(--text-primary-color));
+}
+
+.brandsDetailFiles_sectionTitle,
+.brandsDetailFiles_arrayHeader h5 {
+  margin: 0.75rem 0 0.25rem;
+  color: var(--brands-input-text);
+}
+
+.brandsDetailFiles_arraySection {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0.75rem;
+  border: 1px solid var(--brands-sub-section-border);
+  border-radius: 0.65rem;
+  background: var(--brands-sub-section-bg);
+}
+
+.brandsDetailFiles_arrayHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.brandsDetailFiles_arrayRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.brandsDetailFiles_arrayRow input {
+  border: 1px solid var(--brands-input-border);
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.65rem;
+  background: var(--brands-input-bg);
+  color: var(--brands-input-text);
+}
+
+.brandsDetailFiles_addBtn,
+.brandsDetailFiles_removeBtn {
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.brandsDetailFiles_addBtn {
+  color: var(--brands-add-btn-color);
+}
+
+.brandsDetailFiles_removeBtn {
+  color: var(--brands-remove-btn-color);
+}
+
+.brandsDetailFiles_empty {
+  color: var(--brands-label-text);
+  font-style: italic;
 }

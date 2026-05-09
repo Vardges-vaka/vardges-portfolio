@@ -37,6 +37,10 @@ export const componentMap = {
       () =>
         import("../../_adminFeatures/03_cloudKitchens/menuItems/MenuItems.jsx"),
     ),
+    cloudKitchens_competitors: lazy(
+      () =>
+        import("../../_adminFeatures/03_cloudKitchens/competitors/Competitors.jsx"),
+    ),
   },
   settings: {
     emailEngines: lazy(

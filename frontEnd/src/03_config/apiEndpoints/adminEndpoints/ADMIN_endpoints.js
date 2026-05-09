@@ -175,6 +175,149 @@ const ADMIN_endpoints = {
         headers: { "Content-Type": "application/json" },
       },
     },
+    SECTION_GET: {
+      ENDPOINT: (id, sectionKey) => `${API_BASE}/brands/${id}/sections/${sectionKey}`,
+      DISPLAY_NAME: "Brand_getSection.js",
+      PROPERTIES: {
+        method: "GET",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    SECTION_PUT: {
+      ENDPOINT: (id, sectionKey) => `${API_BASE}/brands/${id}/sections/${sectionKey}`,
+      DISPLAY_NAME: "Brand_putSection.js",
+      PROPERTIES: (body) => ({
+        method: "PUT",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }),
+    },
+    SECTION_CLEAR: {
+      ENDPOINT: (id, sectionKey) => `${API_BASE}/brands/${id}/sections/${sectionKey}`,
+      DISPLAY_NAME: "Brand_clearSection.js",
+      PROPERTIES: {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    SECTION_ITEM_ADD: {
+      ENDPOINT: (id, sectionKey) =>
+        `${API_BASE}/brands/${id}/sections/${sectionKey}/items`,
+      DISPLAY_NAME: "Brand_addSectionItem.js",
+      PROPERTIES: (body) => ({
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }),
+    },
+    SECTION_ITEM_UPDATE: {
+      ENDPOINT: (id, sectionKey, itemId) =>
+        `${API_BASE}/brands/${id}/sections/${sectionKey}/items/${itemId}`,
+      DISPLAY_NAME: "Brand_updateSectionItem.js",
+      PROPERTIES: (body) => ({
+        method: "PUT",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }),
+    },
+    SECTION_ITEM_DELETE: {
+      ENDPOINT: (id, sectionKey, itemId) =>
+        `${API_BASE}/brands/${id}/sections/${sectionKey}/items/${itemId}`,
+      DISPLAY_NAME: "Brand_removeSectionItem.js",
+      PROPERTIES: {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    CREATE_BRANCH: {
+      ENDPOINT: (id) => `${API_BASE}/brands/${id}/branches`,
+      DISPLAY_NAME: "Brand_createBranch.js",
+      PROPERTIES: (body) => ({
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }),
+    },
+    LINK_BRANCH: {
+      ENDPOINT: (id, branchId) => `${API_BASE}/brands/${id}/branches/${branchId}`,
+      DISPLAY_NAME: "Brand_linkBranch.js",
+      PROPERTIES: {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    UNLINK_BRANCH: {
+      ENDPOINT: (id, branchId) => `${API_BASE}/brands/${id}/branches/${branchId}`,
+      DISPLAY_NAME: "Brand_unlinkBranch.js",
+      PROPERTIES: {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    LINK_EMPLOYEE: {
+      ENDPOINT: (id, employeeId) => `${API_BASE}/brands/${id}/employees/${employeeId}`,
+      DISPLAY_NAME: "Brand_linkEmployee.js",
+      PROPERTIES: {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    UNLINK_EMPLOYEE: {
+      ENDPOINT: (id, employeeId) => `${API_BASE}/brands/${id}/employees/${employeeId}`,
+      DISPLAY_NAME: "Brand_unlinkEmployee.js",
+      PROPERTIES: {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    SET_MENU: {
+      ENDPOINT: (id, menuId) => `${API_BASE}/brands/${id}/menu/${menuId}`,
+      DISPLAY_NAME: "Brand_setMenu.js",
+      PROPERTIES: {
+        method: "PUT",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    CLEAR_MENU: {
+      ENDPOINT: (id) => `${API_BASE}/brands/${id}/menu`,
+      DISPLAY_NAME: "Brand_clearMenu.js",
+      PROPERTIES: {
+        method: "DELETE",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    LOGO_GET: {
+      ENDPOINT: (id, logoType) => `${API_BASE}/brands/${id}/files/logos/${logoType}`,
+      DISPLAY_NAME: "Brand_getLogo.js",
+      PROPERTIES: {
+        method: "GET",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      },
+    },
+    LOGO_UPLOAD: {
+      ENDPOINT: (id, logoType, provider) =>
+        `${API_BASE}/brands/${id}/files/logos/${logoType}?provider=${provider}`,
+      DISPLAY_NAME: "Brand_uploadLogo.js",
+      PROPERTIES: (formData) => ({
+        method: "POST",
+        credentials: "include",
+        body: formData,
+      }),
+    },
   },
 
   MODIFIER: {

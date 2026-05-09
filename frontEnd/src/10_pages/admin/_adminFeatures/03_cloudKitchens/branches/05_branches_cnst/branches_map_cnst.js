@@ -35,4 +35,10 @@ function getBranchesMapOptions() {
   return opts;
 }
 
-export { DUBAI_CENTER, DEFAULT_ZOOM, mapContainerStyle, MAP_OPTIONS, getBranchesMapOptions };
+export {
+  DUBAI_CENTER,
+  DEFAULT_ZOOM,
+  mapContainerStyle,
+  MAP_OPTIONS,
+  getBranchesMapOptions,
+};

@@ -8,7 +8,7 @@ import {
 } from "./_brands_hooks.index.js";
 import {
   SECTION_LAYOUT,
-  SECTION_KEYS,
+  EDITABLE_SECTIONS,
 } from "../05_brands_cnst/_brands_cnst.index.js";
 import { isSectionEmpty } from "../02_brands_helpers/_brands_helpers.index.js";
 
@@ -45,14 +45,16 @@ export const useBrands = () => {
       ? states.brands.find((brand) => brand._id === states.detailSelectedId)
       : null;
 
+  const logoBrand =
+    (states.viewMode === "logo_view" || states.viewMode === "logo_edit") &&
+    states.detailSelectedId
+      ? states.brands.find((b) => b._id === states.detailSelectedId)
+      : null;
+
   const isBulkEdit = states.detailMode === "bulkEdit";
   const sectionProps = {};
 
-  for (const sectionKey of [
-    SECTION_KEYS.basic,
-    SECTION_KEYS.socials,
-    SECTION_KEYS.emails,
-  ]) {
+  for (const sectionKey of EDITABLE_SECTIONS) {
     const draft = isBulkEdit
       ? states.bulkDrafts?.[sectionKey]
       : states.editingSection === sectionKey
@@ -79,18 +81,15 @@ export const useBrands = () => {
       onDraftChange: isBulkEdit
         ? (path, value) => handlers.handleBulkDraftChange(sectionKey, path, value)
         : handlers.handleSectionDraftChange,
-      onEmailAdd: isBulkEdit
-        ? handlers.handleBulkEmailAdd
-        : handlers.handleSectionEmailAdd,
-      onEmailRemove: isBulkEdit
-        ? handlers.handleBulkEmailRemove
-        : handlers.handleSectionEmailRemove,
-      onEmailChange: isBulkEdit
-        ? handlers.handleBulkEmailChange
-        : handlers.handleSectionEmailChange,
+      onDraftReplace: isBulkEdit
+        ? (value) => handlers.handleBulkDraftReplace(sectionKey, value)
+        : handlers.handleSectionDraftReplace,
       onCancel: handlers.handleSectionEditCancel,
       onSubmit: handlers.handleSectionEditSubmit,
       onToggleCollapse: () => handlers.handleToggleSectionCollapse(sectionKey),
+      branchesList: states.branchesList,
+      employeesList: states.employeesList,
+      menusList: states.menusList,
       t,
     };
   }
@@ -100,32 +99,54 @@ export const useBrands = () => {
     states,
     handlers,
     compProps: {
-      Brands_viewToggle_props: {
-        viewMode: states.viewMode,
-        onChange: handlers.handleSetViewMode,
-        t,
-      },
-      Brands_list_props: {
+      Brands_table_props: {
         brands: states.brands,
         isLoading: states.isLoading,
         error: states.error,
+        branchesList: states.branchesList,
+        employeesList: states.employeesList,
+        menusList: states.menusList,
+        activeTooltip: states.activeTooltip,
+        logoUrls: states.logoUrls,
         onShowAddForm: handlers.handleShowAddForm,
-        onView: handlers.handleViewBrand,
-        onEdit: handlers.handleEditBrand,
-        onAddLogo: handlers.handleAddLogo,
-        onAddFiles: handlers.handleAddFiles,
+        onTooltipToggle: handlers.handleTooltipToggle,
+        onTooltipClose: handlers.handleTooltipClose,
+        onUpdateAll: handlers.handleUpdateAll,
+        onUpdateSection: handlers.handleUpdateSection,
+        onViewAll: handlers.handleViewAll,
+        onGoToLogoView: handlers.handleGoToLogoView,
+        onGoToLogoEdit: handlers.handleGoToLogoEdit,
+        t,
+      },
+      Brands_logo_session_props: {
+        viewMode: states.viewMode,
+        brand: logoBrand,
+        logoEdit: states.logoEdit,
+        onBack: handlers.handleGoToTable,
+        onSwitchToEdit: handlers.handleSwitchToLogoEdit,
+        onSwitchToView: handlers.handleSwitchToLogoView,
+        onAddType: handlers.handleLogoAddType,
+        onRemoveType: handlers.handleLogoRemoveType,
+        onFileSelect: handlers.handleLogoFileSelect,
+        onClearFile: handlers.handleLogoClearFile,
+        onProviderSelect: handlers.handleLogoProviderSelect,
+        onConfirmOpen: handlers.handleLogoConfirmOpen,
+        onConfirmClose: handlers.handleLogoConfirmClose,
+        onUploadSubmit: handlers.handleLogoUploadSubmit,
         t,
       },
       Brands_addForm_props: {
-        name: states.addFormName,
+        draft: states.addFormDraft,
+        branchesList: states.branchesList,
         isSaving: states.isSaving,
         error: states.error,
         onChange: handlers.handleAddFormNameChange,
+        onDraftChange: handlers.handleAddFormDraftChange,
+        onBranchToggle: handlers.handleAddFormBranchToggle,
         onSubmit: handlers.handleAddFormSubmit,
         onCancel: handlers.handleCancelAddForm,
         t,
       },
-      Brands_tablePlaceholder_props: { t },
       Brands_detail_props: {
         brand: selectedBrand,
         isBulkEdit,
@@ -133,7 +154,7 @@ export const useBrands = () => {
         error: states.error,
         layout: SECTION_LAYOUT,
         sectionProps,
-        onBack: handlers.handleBackToList,
+        onBack: handlers.handleGoToTable,
         onBulkSubmit: handlers.handleBulkSubmit,
         onBulkCancel: handlers.handleBulkCancel,
         onDeleteRequest: () =>

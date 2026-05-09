@@ -22,6 +22,7 @@ export const i18nConfig = {
     "sideBar",
     "branches",
     "brands",
+    "competitors",
     "employees",
     "menus",
     "menuCategories",

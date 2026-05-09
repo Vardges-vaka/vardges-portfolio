@@ -1,0 +1,181 @@
+/* Row shell + shared icon / detail controls */
+.competitorsTableRow {
+  border-bottom: 1px solid var(--border-secondary-color);
+  overflow: visible;
+}
+
+.competitorsTableRow__cell {
+  vertical-align: middle;
+  text-align: left;
+  padding: 0.4rem 0.4rem 0.4rem 0.45rem;
+  border-bottom: 1px solid var(--border-secondary-color);
+}
+
+/* Table column shrink hint (min-width columns in auto layout). */
+.competitorsTableRow__cell--hug {
+  width: 1%;
+  white-space: nowrap;
+  padding-left: 0.32rem;
+  padding-right: 0.28rem;
+}
+
+.competitorsTableRow__cell--cuisineTypes {
+  overflow: visible;
+  vertical-align: middle;
+}
+
+.competitorsTableRow__cell--competesWithBrands {
+  overflow: visible;
+  vertical-align: middle;
+}
+
+.competitorsTableRow__cell--num {
+  box-sizing: border-box;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary-color);
+  width: 1%;
+  max-width: 1.85rem;
+  padding: 0.38rem 0.06rem;
+  white-space: nowrap;
+}
+
+/* Price + open icon stay left; column width follows content (with --hug). */
+.competitorsTableRow__cell--priceRange {
+  vertical-align: middle;
+}
+
+.competitorsTableRow__cell--priceRange.competitorsTableRow__cell--hug {
+  padding-right: 0.15rem;
+}
+
+.competitorsTableRow__cell--menu {
+  vertical-align: middle;
+}
+
+.competitorsTableRow__cell--menu.competitorsTableRow__cell--hug {
+  padding-right: 0.15rem;
+}
+
+/* Fixed gutter between price and menu: stable width, no dashed rules through the gap */
+.competitors_tableView__table tbody td.competitorsTableRow__cell--priceMenuGutter {
+  width: 0.7rem;
+  min-width: 0.7rem;
+  max-width: 0.7rem;
+  padding: 0;
+  border-left: none;
+  border-right: none;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.competitorsTableRow__cell--name {
+  max-width: 13rem;
+}
+
+.competitorsTableRow__cell--logo {
+  text-align: left;
+  vertical-align: middle;
+}
+
+.competitorsTableRow__cell--branches {
+  text-align: center;
+}
+
+.competitorsTableRow__cell--menuItemsQnt,
+.competitorsTableRow__cell--menuCategoriesQnt,
+.competitorsTableRow__cell--dineIn,
+.competitorsTableRow__cell--ownDeliveryDubai {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Narrower horizontal inset than generic --hug for compact count / own-delivery cells */
+.competitorsTableRow__cell--menuItemsQnt.competitorsTableRow__cell--hug,
+.competitorsTableRow__cell--menuCategoriesQnt.competitorsTableRow__cell--hug,
+.competitorsTableRow__cell--dineIn.competitorsTableRow__cell--hug,
+.competitorsTableRow__cell--ownDeliveryDubai.competitorsTableRow__cell--hug {
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
+}
+
+.competitorsTableRow__nameBlock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+  max-width: 100%;
+}
+
+.competitorsTableRow__nameText {
+  font-weight: 500;
+  color: var(--text-primary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 0 1 auto;
+  max-width: 10.5rem;
+  min-width: 0;
+}
+
+.competitorsTableRow__nameBtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.competitorsTableRow__nameBtn:hover {
+  text-decoration: underline;
+}
+
+.competitorsTableRow__nameBtn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.competitorsTableRow__cell--icon {
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+  width: 1%;
+  min-width: 3.25rem;
+  padding-top: 0.38rem;
+  padding-bottom: 0.38rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+/* Icon columns use --hug for shrink hint; horizontal padding matches header (10px) */
+.competitorsTableRow__cell--icon.competitorsTableRow__cell--hug {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.competitorsTableRow__iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--bg-tertiary-color);
+  color: var(--icon-primary-stroke-color);
+  cursor: pointer;
+}
+
+.competitorsTableRow__iconBtn:hover {
+  background-color: var(--bg-tertiary-color-HOV);
+  color: var(--icon-primary-stroke-color-HOV);
+}
+
+.competitorsTableRow__iconSvg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
