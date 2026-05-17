@@ -106,19 +106,26 @@ temp/
 
 # Kiro IDE
 .email/
+
 .kilocode/
-.plans/
+
 .vscode/
-.personalContext/
 .kiro/
 .cursor/
-.plans/
+
 .designs/
 .toDo/
 .claude/
 .claire/
 .claude/
 CLAUDE.md
+
+.plans/
+.CLAUDE_DESIGNS/
+.context/
+_sample_dir_named[XXX]/
+FRD's/
+personalContext/
 
 
 # OS generated files
