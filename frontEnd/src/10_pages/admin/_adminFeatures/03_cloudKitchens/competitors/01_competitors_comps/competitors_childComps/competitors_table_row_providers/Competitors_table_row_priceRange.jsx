@@ -6,8 +6,7 @@ import {
 import { formatPriceRangeLabel } from "../../../02_competitors_helpers/_competitors_helpers.index.js";
 import "../../../_styles/competitors_table_row_priceRange.css";
 
-const Competitors_table_row_priceRange = ({ competitor, handlers, t }) => {
-  const h = handlers?.handleCompetitorTableAction;
+const Competitors_table_row_priceRange = ({ competitor, t }) => {
   const label = formatPriceRangeLabel(competitor?.priceRange, t);
   const detailTitle = t
     ? t("tableRow.detailPriceRange", { defaultValue: "Price range" })
@@ -21,13 +20,13 @@ const Competitors_table_row_priceRange = ({ competitor, handlers, t }) => {
         : Premium_Icon();
 
   return (
-    <div className="competitors_table_row_priceRange">
+    <div className="Competitors_table_row_priceRange">
       <img
         src={icon}
         alt={label}
         title={label.toUpperCase()}
         aria-label={detailTitle}
-        className="competitors_table_row_openIconBtn iconOnly"
+        className="Competitors_table_row_openIconBtn iconOnly"
       />
     </div>
   );

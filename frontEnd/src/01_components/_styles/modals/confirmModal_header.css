@@ -1,0 +1,15 @@
+.confirmModal_header {
+  flex-shrink: 0;
+}
+
+.confirmModal_title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--title-primary-color);
+}
+
+.confirmModal_title_danger {
+  color: var(--text-primary-color);
+}

@@ -1,0 +1,146 @@
+.Competitors_sections_controlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Competitors_sections_controlBtn_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Competitors_sections_controlBtn_idle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.35rem 0.45rem;
+  border-radius: 0.65rem;
+  border: none;
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.Competitors_sections_controlBtn_idle:hover {
+  background: var(--bg-primary-color-HOV);
+  border: 1px dashed var(--border-primary-color);
+}
+
+.Competitors_sections_controlBtn_idle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.Competitors_sections_controlBtn_idleTrack {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.Competitors_sections_controlBtn_iconWrap {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.Competitors_sections_controlBtn_icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  display: block;
+  object-fit: contain;
+}
+
+.Competitors_sections_controlBtn_label {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transform: translateX(0.35rem);
+  transition:
+    max-width 0.22s ease,
+    opacity 0.18s ease,
+    transform 0.22s ease;
+}
+
+.Competitors_sections_controlBtn_idle:hover
+  .Competitors_sections_controlBtn_label,
+.Competitors_sections_controlBtn_idle:focus-visible
+  .Competitors_sections_controlBtn_label {
+  max-width: 14rem;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Competitors_sections_controlBtn_btn {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 0.65rem;
+  padding: 0.48rem 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  font: inherit;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.Competitors_sections_controlBtn_btn:hover {
+  background: var(--bg-primary-color-HOV);
+  border-color: var(--border-primary-color);
+}
+
+.Competitors_sections_controlBtn_btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.Competitors_sections_controlBtn_btnPrimary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-contrast-color);
+}
+
+.Competitors_sections_controlBtn_btnPrimary:hover {
+  background: color-mix(
+    in srgb,
+    var(--primary-color) 88%,
+    var(--text-primary-color)
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--primary-color) 88%,
+    var(--text-primary-color)
+  );
+  color: var(--primary-contrast-color);
+}
+
+.Competitors_sections_controlBtn_btnGhost {
+  background: transparent;
+  border-color: var(--border-secondary-color);
+  color: var(--text-secondary-color);
+}
+
+.Competitors_sections_controlBtn_btnGhost:hover {
+  background: color-mix(in srgb, var(--text-secondary-color) 8%, transparent);
+  color: var(--text-primary-color);
+}
+
+.Competitors_sections_controlBtn_btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

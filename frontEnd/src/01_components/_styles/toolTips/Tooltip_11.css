@@ -1,0 +1,139 @@
+/* ─── Radial popup menu ──────────────────────────────────────────────────── */
+/* Items fan downward (120° / 180° / 240°) so they never overlap the row
+   above in a table context. Override --t11-radius and --t11-size via an
+   ancestor or inline style to resize for other contexts.                     */
+
+.Tooltip_11 {
+  --t11-size: 60px;
+  --t11-toggle-size: 32px;
+  --t11-item-size: 48px;
+  --t11-radius: 76px;
+
+  width: var(--t11-size);
+  height: var(--t11-size);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Toggle (center button) ───────────────────────────────────────────────── */
+
+.Tooltip_11_toggle {
+  width: var(--t11-toggle-size);
+  height: var(--t11-toggle-size);
+  background-color: var(--bg-primary-color);
+  border: 1.5px solid var(--border-primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  box-shadow:
+    inset -1px -1px 3px 0 rgba(0, 0, 0, 0.18),
+    inset 1px 1px 3px 0 rgba(0, 0, 0, 0.22);
+}
+
+.Tooltip_11_toggle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-primary-color);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(14px) saturate(900%) opacity(0.4);
+}
+
+.Tooltip_11_isOpen .Tooltip_11_toggle {
+  background-color: var(--bg-secondary-color);
+  border-color: var(--border-secondary-color);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* ── Radial item wrappers ─────────────────────────────────────────────────── */
+/* Items fan to the RIGHT of the toggle — symmetric 90° arc.
+   Angles: i=0 → 225° (lower-right), i=1 → 270° (right), i=2 → 315° (upper-right).
+   Formula: rotate(45deg × i + 225deg) translateY(-radius)                    */
+
+.Tooltip_11_circleBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--t11-item-size);
+  height: var(--t11-item-size);
+  margin-left: calc(var(--t11-item-size) / -2);
+  margin-top: calc(var(--t11-item-size) / -2);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(calc(45deg * var(--i) + 225deg)) translateY(0px);
+  transition:
+    transform 0.4s ease,
+    opacity 0.3s ease;
+  transition-delay: calc(0.06s * var(--i));
+}
+
+.Tooltip_11_circleBox_open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: rotate(calc(45deg * var(--i) + 225deg))
+    translateY(calc(-1 * var(--t11-radius)));
+}
+
+/* ── Item buttons ────────────────────────────────────────────────────────── */
+/* Counter-rotate so content always stays upright on screen.                  */
+
+.Tooltip_11_anchor {
+  width: var(--t11-item-size);
+  height: var(--t11-item-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.78rem;
+  overflow: hidden;
+  background: var(--bg-secondary-color);
+  padding: 0;
+  position: relative;
+  transform: rotate(calc(-45deg * var(--i) - 225deg));
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+}
+
+.Tooltip_11_anchor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(8px) saturate(900%);
+  transition: inset 0.18s ease;
+  pointer-events: none;
+}
+
+.Tooltip_11_anchor:hover::before {
+  inset: -5px;
+}
+
+.Tooltip_11_anchor:focus-visible {
+  outline: 2px solid var(--border-primary-color-HOV);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Tooltip_11_circleBox,
+  .Tooltip_11_toggle {
+    transition: none;
+  }
+}

@@ -3,3 +3,5 @@ export { useCompetitors_apiHelpers } from "./useCompetitors_apiHelpers.js";
 export { useCompetitors_handlers } from "./useCompetitors_handlers.js";
 export { useCompetitors } from "./useCompetitors.js";
 export * from "./Competitors_mapView_hooks/_Competitors_mapView_hooks.index.js";
+export * from "./useCompetitors_sessions/_useCompetitors_sessions.index.js";
+export * from "./useCompetitors_sessions/C_T_branches_hooks/_C_T_branches_hooks.index.js";

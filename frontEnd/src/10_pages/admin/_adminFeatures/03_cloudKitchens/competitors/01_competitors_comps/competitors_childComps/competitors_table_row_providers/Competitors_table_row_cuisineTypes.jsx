@@ -11,13 +11,13 @@ const Competitors_table_row_cuisineTypes = ({ competitor, handlers, t }) => {
     : "Cuisine types";
 
   return (
-    <div className="competitors_table_row_cuisineTypes">
-      <div className="competitors_table_row_cuisineTypes__tagsCol">
+    <div className="Competitors_table_row_cuisineTypes">
+      <div className="Competitors_table_row_cuisineTypes_tagsCol">
         {tags.length === 0 ? (
-          <span className="competitors_table_row_cuisineTypes__empty">—</span>
+          <span className="Competitors_table_row_cuisineTypes_empty">—</span>
         ) : (
           <div
-            className="competitors_table_row_cuisineTypes__stack"
+            className="Competitors_table_row_cuisineTypes_stack"
             title={stackTitle}
             role="group"
             tabIndex={0}
@@ -33,7 +33,7 @@ const Competitors_table_row_cuisineTypes = ({ competitor, handlers, t }) => {
             {tags.map((tag, i) => (
               <span
                 key={`${tag}-${i}`}
-                className="competitors_table_row_cuisineTypes__tag"
+                className="Competitors_table_row_cuisineTypes_tag"
                 style={{ zIndex: i + 1 }}
                 title={tag}
               >

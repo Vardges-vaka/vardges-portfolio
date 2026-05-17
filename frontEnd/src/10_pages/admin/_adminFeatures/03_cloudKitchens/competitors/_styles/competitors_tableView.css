@@ -1,12 +1,12 @@
 /* Single scroll container + readable admin table (theme variables). */
-.competitors_tableView {
+.Competitors_tableView {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
 }
 
-.competitors_tableView__header {
+.Competitors_tableView_header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -14,14 +14,14 @@
   gap: 0.75rem;
 }
 
-.competitors_tableView__title {
+.Competitors_tableView_title {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--title-primary-color);
 }
 
-.competitors_tableView__tableScroll {
+.Competitors_tableView_tableScroll {
   overflow-x: auto;
   border: 1px solid var(--border-primary-color);
   border-radius: 8px;
@@ -29,22 +29,22 @@
   box-shadow: 0 1px 2px var(--boxShadow-primary-color);
 }
 
-.competitors_tableView__table {
+.Competitors_tableView_table {
   width: 100%;
-  min-width: 960px;
+  min-width: 1188px;
   border-collapse: collapse;
   font-size: 0.875rem;
   color: var(--text-primary-color);
 }
 
 /* Subtle dashed rules between columns (`border-opacity` is invalid on borders). */
-.competitors_tableView__table thead th:not(:last-child),
-.competitors_tableView__table tbody td:not(:last-child) {
+.Competitors_tableView_table thead th:not(:last-child),
+.Competitors_tableView_table tbody td:not(:last-child) {
   border-right: 1px dashed
     color-mix(in srgb, var(--border-secondary-color) 40%, transparent);
 }
 
-.competitors_tableView__th {
+.Competitors_tableView_th {
   text-align: left;
   padding: 0.65rem 0.75rem;
   white-space: nowrap;
@@ -52,9 +52,12 @@
   color: var(--title-secondary-color);
   background-color: var(--bg-tertiary-color);
   border-bottom: 1px solid var(--border-primary-color);
+  overflow: visible;
+  position: relative;
+  vertical-align: middle;
 }
 
-.competitors_tableView__th--number {
+.Competitors_tableView_th_number {
   width: 1%;
   max-width: 1.85rem;
   text-align: center;
@@ -66,54 +69,108 @@
   box-sizing: border-box;
 }
 
-.competitors_tableView__th--menu {
+.Competitors_tableView_th_menu {
   /* Match body cell --hug horizontal inset so “Menu” lines up with row text */
   padding-left: 0.32rem;
   padding-right: 0.28rem;
 }
 
-/* Narrow visual gap between price range and menu (header only; body cell in row CSS) */
-.competitors_tableView__table thead th.competitors_tableView__th--priceMenuGutter {
-  width: 0.7rem;
-  min-width: 0.7rem;
-  max-width: 0.7rem;
-  padding: 0.5rem 0;
-  border-left: none;
-  border-right: none;
-  box-sizing: border-box;
+/* Icon header: hover shifts icon slightly right and reveals title text beside it */
+.Competitors_tableView_thHoverWrap {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  vertical-align: middle;
 }
-.competitors_tableView__th--branches,
-.competitors_tableView__th--menuItemsQnt,
-.competitors_tableView__th--menuCategoriesQnt,
-.competitors_tableView__th--dineIn,
-.competitors_tableView__th--ownDeliveryDubai {
+
+/* Smooth ease-out on enter and ease-in on leave (symmetric curve) */
+.Competitors_tableView_thIconSlot {
+  flex-shrink: 0;
+  transition: transform 1.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.Competitors_tableView_thIconSlot .Competitors_tableView_thIcon {
+  margin: 0;
+}
+
+.Competitors_tableView_thHoverLabel {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    max-width 1s cubic-bezier(0.33, 1, 0.68, 1),
+    opacity 1s cubic-bezier(0.33, 1, 0.68, 1),
+    padding-left 1s cubic-bezier(0.33, 1, 0.68, 1);
+  padding-left: 0;
+  color: var(--title-secondary-color);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.Competitors_tableView_th:has(.Competitors_tableView_thHoverWrap):hover {
+  z-index: 2;
+}
+
+.Competitors_tableView_th:has(.Competitors_tableView_thHoverWrap):hover
+  .Competitors_tableView_thIconSlot {
+  transform: translateX(3px);
+}
+
+.Competitors_tableView_th:has(.Competitors_tableView_thHoverWrap):hover
+  .Competitors_tableView_thHoverLabel {
+  max-width: min(22rem, 55vw);
+  opacity: 1;
+  padding-left: 0.45rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Competitors_tableView_thIconSlot,
+  .Competitors_tableView_thHoverLabel {
+    transition-duration: 0.01ms;
+    transition-delay: 0s;
+  }
+}
+
+.Competitors_tableView_th_branches,
+.Competitors_tableView_th_files,
+.Competitors_tableView_th_socials,
+.Competitors_tableView_th_contact,
+.Competitors_tableView_th_reviews,
+.Competitors_tableView_th_menuItemsQnt,
+.Competitors_tableView_th_menuCategoriesQnt,
+.Competitors_tableView_th_dineIn,
+.Competitors_tableView_th_ownDeliveryDubai {
   text-align: center;
 }
 
-.competitors_tableView__th--profile {
+.Competitors_tableView_th_profile {
   text-align: left;
 }
 
 /* Tighter header padding than default 0.75rem for narrow numeric / flag columns */
-.competitors_tableView__th--menuItemsQnt,
-.competitors_tableView__th--menuCategoriesQnt,
-.competitors_tableView__th--dineIn,
-.competitors_tableView__th--ownDeliveryDubai {
+.Competitors_tableView_th_menuItemsQnt,
+.Competitors_tableView_th_menuCategoriesQnt,
+.Competitors_tableView_th_dineIn,
+.Competitors_tableView_th_ownDeliveryDubai {
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   padding-top: 0.45rem;
   padding-bottom: 0.45rem;
 }
 
-.competitors_tableView__thIcon {
+.Competitors_tableView_thIcon {
   width: 30px;
   height: 30px;
   display: block;
   margin: 0 auto;
 }
 
-.competitors_tableView__th--actionUpdate,
-.competitors_tableView__th--actionView {
+.Competitors_tableView_th_actionUpdate,
+.Competitors_tableView_th_actionView {
   width: 1%;
   /* Room for translated labels (e.g. “Update” / “View”) + 10px horizontal padding */
   min-width: 5.5rem;
@@ -125,12 +182,12 @@
   box-sizing: border-box;
 }
 
-.competitors_tableView__table tbody tr:hover {
+.Competitors_tableView_table tbody tr:hover {
   background-color: var(--bg-primary-color-HOV);
 }
 
 @media (min-width: 768px) {
-  .competitors_tableView__title {
+  .Competitors_tableView_title {
     font-size: 1.35rem;
   }
 }

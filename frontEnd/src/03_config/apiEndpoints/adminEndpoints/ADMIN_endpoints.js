@@ -176,7 +176,8 @@ const ADMIN_endpoints = {
       },
     },
     SECTION_GET: {
-      ENDPOINT: (id, sectionKey) => `${API_BASE}/brands/${id}/sections/${sectionKey}`,
+      ENDPOINT: (id, sectionKey) =>
+        `${API_BASE}/brands/${id}/sections/${sectionKey}`,
       DISPLAY_NAME: "Brand_getSection.js",
       PROPERTIES: {
         method: "GET",
@@ -185,7 +186,8 @@ const ADMIN_endpoints = {
       },
     },
     SECTION_PUT: {
-      ENDPOINT: (id, sectionKey) => `${API_BASE}/brands/${id}/sections/${sectionKey}`,
+      ENDPOINT: (id, sectionKey) =>
+        `${API_BASE}/brands/${id}/sections/${sectionKey}`,
       DISPLAY_NAME: "Brand_putSection.js",
       PROPERTIES: (body) => ({
         method: "PUT",
@@ -195,7 +197,8 @@ const ADMIN_endpoints = {
       }),
     },
     SECTION_CLEAR: {
-      ENDPOINT: (id, sectionKey) => `${API_BASE}/brands/${id}/sections/${sectionKey}`,
+      ENDPOINT: (id, sectionKey) =>
+        `${API_BASE}/brands/${id}/sections/${sectionKey}`,
       DISPLAY_NAME: "Brand_clearSection.js",
       PROPERTIES: {
         method: "DELETE",
@@ -246,7 +249,8 @@ const ADMIN_endpoints = {
       }),
     },
     LINK_BRANCH: {
-      ENDPOINT: (id, branchId) => `${API_BASE}/brands/${id}/branches/${branchId}`,
+      ENDPOINT: (id, branchId) =>
+        `${API_BASE}/brands/${id}/branches/${branchId}`,
       DISPLAY_NAME: "Brand_linkBranch.js",
       PROPERTIES: {
         method: "POST",
@@ -255,7 +259,8 @@ const ADMIN_endpoints = {
       },
     },
     UNLINK_BRANCH: {
-      ENDPOINT: (id, branchId) => `${API_BASE}/brands/${id}/branches/${branchId}`,
+      ENDPOINT: (id, branchId) =>
+        `${API_BASE}/brands/${id}/branches/${branchId}`,
       DISPLAY_NAME: "Brand_unlinkBranch.js",
       PROPERTIES: {
         method: "DELETE",
@@ -264,7 +269,8 @@ const ADMIN_endpoints = {
       },
     },
     LINK_EMPLOYEE: {
-      ENDPOINT: (id, employeeId) => `${API_BASE}/brands/${id}/employees/${employeeId}`,
+      ENDPOINT: (id, employeeId) =>
+        `${API_BASE}/brands/${id}/employees/${employeeId}`,
       DISPLAY_NAME: "Brand_linkEmployee.js",
       PROPERTIES: {
         method: "POST",
@@ -273,7 +279,8 @@ const ADMIN_endpoints = {
       },
     },
     UNLINK_EMPLOYEE: {
-      ENDPOINT: (id, employeeId) => `${API_BASE}/brands/${id}/employees/${employeeId}`,
+      ENDPOINT: (id, employeeId) =>
+        `${API_BASE}/brands/${id}/employees/${employeeId}`,
       DISPLAY_NAME: "Brand_unlinkEmployee.js",
       PROPERTIES: {
         method: "DELETE",
@@ -300,7 +307,8 @@ const ADMIN_endpoints = {
       },
     },
     LOGO_GET: {
-      ENDPOINT: (id, logoType) => `${API_BASE}/brands/${id}/files/logos/${logoType}`,
+      ENDPOINT: (id, logoType) =>
+        `${API_BASE}/brands/${id}/files/logos/${logoType}`,
       DISPLAY_NAME: "Brand_getLogo.js",
       PROPERTIES: {
         method: "GET",

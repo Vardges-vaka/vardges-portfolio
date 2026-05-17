@@ -3,7 +3,7 @@ import {
   catch_errorHandler_cntrl,
   validRespond,
 } from "../../../03_services/_services.index.js";
-import { cleanupTempFile } from "../../../02_utils/utils.index.js";
+import { cleanupTempFile } from "../../../02_utils/_utils.index.js";
 
 const isDebug = true;
 const displayName = " | brand_uploadLogo_cntrl.js | ";

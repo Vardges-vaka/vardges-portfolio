@@ -177,6 +177,31 @@
 
   /* ! ⬆️⬆️⬆️===CLOUD STORAGE FEATURE===⬆️⬆️⬆️ */
 
+  /* ! ⬇️⬇️⬇️===GLOBAL CONFIRM MODAL===⬇️⬇️⬇️ */
+
+  --confirmModal-backdrop-bg: rgba(0, 0, 0, 0.58);
+  --confirmModal-panel-shadow: var(--boxShadow-secondary-color);
+
+  /* ! ⬆️⬆️⬆️===GLOBAL CONFIRM MODAL===⬆️⬆️⬆️ */
+
+  /* ! ⬇️⬇️⬇️===COMPETITORS FEATURE===⬇️⬇️⬇️ */
+
+  --competitors-modal-backdrop-bg: rgba(0, 0, 0, 0.55);
+  --competitors-magnifier-bg: rgba(0, 0, 0, 0.45);
+  --competitors-magnifier-fg: #ffffff;
+  --competitors-shadow-color: #000000;
+  --competitors-viewToggle-hover-bg: #ffffff;
+  --competitors-viewToggle-active-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --competitors-viewToggle-pulse-bg: #22c55e;
+  --competitors-viewToggle-pulse-glow-strong: rgba(34, 197, 94, 0.95);
+  --competitors-viewToggle-pulse-glow-med: rgba(34, 197, 94, 0.75);
+  --competitors-viewToggle-pulse-glow-max: rgba(34, 197, 94, 1);
+  --competitors-viewToggle-pulse-glow-weak: rgba(34, 197, 94, 0.7);
+
+  --t11-view-gradient: linear-gradient(135deg, #818cf8, #a78bfa);
+
+  /* ! ⬆️⬆️⬆️===COMPETITORS FEATURE===⬆️⬆️⬆️ */
+
   /* ! ⬇️⬇️⬇️===BRANDS FEATURE===⬇️⬇️⬇️ */
 
   --brands-card-bg: var(--bg-secondary-color);

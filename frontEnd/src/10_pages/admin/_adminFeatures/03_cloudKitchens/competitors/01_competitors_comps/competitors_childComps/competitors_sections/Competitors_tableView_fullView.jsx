@@ -3,13 +3,12 @@ import "../../../_styles/competitors_tableView_fullView.css";
 const Competitors_tableView_fullView = ({
   states,
   handlers,
-  compProps,
   t,
 }) => {
   const isEditing = !!states?.isEditing;
   return (
-    <div className="competitors_tableView_fullView">
-      <div className="competitors_tableView_fullView__topbar">
+    <div className="Competitors_tableView_fullView">
+      <div className="Competitors_tableView_fullView_topbar">
         <button
           type="button"
           onClick={() =>

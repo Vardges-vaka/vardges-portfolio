@@ -7,9 +7,7 @@ import {
 import { useCompetitors_mapView } from "../03_competitors_hooks/Competitors_mapView_hooks/_Competitors_mapView_hooks.index.js";
 import { googleMaps_apiKey } from "../../branches/branches.config.js";
 
-const Competitors_mapView = ({ states, handlers, compProps, t }) => {
-  if (states?.session !== "view_competitors_map") return null;
-
+const Competitors_mapView_inner = ({ states, handlers, t }) => {
   const { competitors = [] } = states ?? {};
 
   const { mapStates, mapHandlers } = useCompetitors_mapView({
@@ -19,14 +17,14 @@ const Competitors_mapView = ({ states, handlers, compProps, t }) => {
 
   if (!googleMaps_apiKey?.trim()) {
     return (
-      <div className="competitorsMapView competitorsMapView--noKey">
-        <div className="competitorsMapView__fallback">
-          <h2 className="competitorsMapView__fallbackTitle">
+      <div className="Competitors_mapView Competitors_mapView_noKey">
+        <div className="Competitors_mapView_fallback">
+          <h2 className="Competitors_mapView_fallbackTitle">
             {t
               ? t("mapView.noKeyTitle", { defaultValue: "Map is not available" })
               : "Map is not available"}
           </h2>
-          <p className="competitorsMapView__fallbackText">
+          <p className="Competitors_mapView_fallbackText">
             {t
               ? t("mapView.noKeyText", {
                   defaultValue:
@@ -41,16 +39,16 @@ const Competitors_mapView = ({ states, handlers, compProps, t }) => {
 
   if (mapStates.loadError) {
     return (
-      <div className="competitorsMapView">
-        <div className="competitorsMapView__fallback">
-          <h2 className="competitorsMapView__fallbackTitle">
+      <div className="Competitors_mapView">
+        <div className="Competitors_mapView_fallback">
+          <h2 className="Competitors_mapView_fallbackTitle">
             {t
               ? t("mapView.loadErrorTitle", {
                   defaultValue: "Map failed to load",
                 })
               : "Map failed to load"}
           </h2>
-          <p className="competitorsMapView__fallbackText">
+          <p className="Competitors_mapView_fallbackText">
             {t
               ? t("mapView.loadErrorText", {
                   defaultValue:
@@ -65,9 +63,9 @@ const Competitors_mapView = ({ states, handlers, compProps, t }) => {
 
   if (!mapStates.isLoaded) {
     return (
-      <div className="competitorsMapView">
-        <div className="competitorsMapView__fallback">
-          <h2 className="competitorsMapView__fallbackTitle">
+      <div className="Competitors_mapView">
+        <div className="Competitors_mapView_fallback">
+          <h2 className="Competitors_mapView_fallbackTitle">
             {t
               ? t("mapView.loadingTitle", { defaultValue: "Loading map…" })
               : "Loading map…"}
@@ -78,7 +76,7 @@ const Competitors_mapView = ({ states, handlers, compProps, t }) => {
   }
 
   return (
-    <div className="competitorsMapView">
+    <div className="Competitors_mapView">
       <Competitors_mapView_controls
         t={t}
         showCompetitors={mapStates.showCompetitors}
@@ -125,6 +123,11 @@ const Competitors_mapView = ({ states, handlers, compProps, t }) => {
       />
     </div>
   );
+};
+
+const Competitors_mapView = ({ states, handlers, t }) => {
+  if (states?.session !== "view_competitors_map") return null;
+  return <Competitors_mapView_inner states={states} handlers={handlers} t={t} />;
 };
 
 export default Competitors_mapView;

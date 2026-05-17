@@ -28,19 +28,19 @@ export const useCompetitors_map_marker = ({
 
     // Custom content: small logo in a circular tile.
     const wrap = document.createElement("div");
-    wrap.className = "competitorsMapView__marker";
+    wrap.className = "Competitors_mapView_marker";
     wrap.setAttribute("role", "button");
     wrap.setAttribute("tabindex", "0");
 
     const fallback = document.createElement("span");
-    fallback.className = "competitorsMapView__markerFallback";
+    fallback.className = "Competitors_mapView_markerFallback";
     fallback.textContent =
       typeof title === "string" && title.trim()
         ? title.trim().slice(0, 1).toUpperCase()
         : "•";
 
     const img = document.createElement("img");
-    img.className = "competitorsMapView__markerImg";
+    img.className = "Competitors_mapView_markerImg";
     img.alt = "";
     img.decoding = "async";
     img.loading = "lazy";

@@ -31,7 +31,7 @@ const Competitors_mapView_map = ({
   const mapOptions = useMemo(() => getBranchesMapOptions(), []);
 
   return (
-    <div className="competitorsMapView__mapShell">
+    <div className="Competitors_mapView_mapShell">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={DUBAI_CENTER}

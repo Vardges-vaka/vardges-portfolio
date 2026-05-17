@@ -20,6 +20,14 @@ export { default as Competitors_table_row_competesWithBrands } from "./Competito
 
 export { default as Competitors_table_row_branches } from "./Competitors_table_row_branches.jsx";
 
+export { default as Competitors_table_row_files } from "./Competitors_table_row_files.jsx";
+
+export { default as Competitors_table_row_socials } from "./Competitors_table_row_socials.jsx";
+
+export { default as Competitors_table_row_contact } from "./Competitors_table_row_contact.jsx";
+
+export { default as Competitors_table_row_reviews } from "./Competitors_table_row_reviews.jsx";
+
 // competitors_table_row_logo
 // competitors_table_row_cuisineTypes
 // competitors_table_row_priceRange

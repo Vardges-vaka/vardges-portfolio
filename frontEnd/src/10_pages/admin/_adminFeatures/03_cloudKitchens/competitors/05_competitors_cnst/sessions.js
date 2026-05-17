@@ -8,6 +8,10 @@ export const VALID_SESSIONS = [
   "view_competesWithBrands",
   "view_branches",
   "view_competitor",
+  "view_files",
+  "view_socials",
+  "view_contact",
+  "view_reviews",
   "view_competitors_table",
   "view_competitors_map",
 ];
@@ -21,6 +25,10 @@ export const VALID_VIEW_SESSIONS = [
   "view_competesWithBrands",
   "view_branches",
   "view_competitor",
+  "view_files",
+  "view_socials",
+  "view_contact",
+  "view_reviews"
 ];
 
 export const VALID_VIEW_MODES = (t) => {

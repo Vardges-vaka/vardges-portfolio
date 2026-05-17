@@ -4,6 +4,7 @@
 }
 
 .adminSideBar {
+  flex: 0 0 auto;
   position: sticky;
   top: 0;
   align-self: stretch;

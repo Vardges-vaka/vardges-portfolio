@@ -1,0 +1,167 @@
+.Competitors_tableView_competesWithBrands_addSection {
+  border-top: 1px solid
+    color-mix(in srgb, var(--border-secondary-color) 75%, transparent);
+  padding-top: 1rem;
+  min-width: 0;
+}
+
+.Competitors_tableView_competesWithBrands_addTitle {
+  margin: 0 0 0.65rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_competesWithBrands_tagFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.Competitors_tableView_competesWithBrands_tagFiltersLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.Competitors_tableView_competesWithBrands_tagFiltersBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.Competitors_tableView_competesWithBrands_tagFilterBtn {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.Competitors_tableView_competesWithBrands_tagFilterBtn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.Competitors_tableView_competesWithBrands_tagFilterBtn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.Competitors_tableView_competesWithBrands_tagFilterBtn--active {
+  border-color: var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 14%, var(--panel-bg-color));
+  color: var(--primary-color);
+}
+
+.Competitors_tableView_competesWithBrands_addSectionEmpty {
+  margin: 0;
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+}
+
+.Competitors_tableView_competesWithBrands_addGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.65rem;
+}
+
+.Competitors_tableView_competesWithBrands_addCard {
+  border: 1px dashed var(--border-secondary-color);
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.7rem;
+  background: color-mix(in srgb, var(--primary-color) 4%, var(--panel-bg-color));
+  min-width: 0;
+}
+
+.Competitors_tableView_competesWithBrands_addCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.Competitors_tableView_competesWithBrands_addLogoWrap {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.65rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Competitors_tableView_competesWithBrands_addLogoWrap--sm {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.Competitors_tableView_competesWithBrands_addLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Competitors_tableView_competesWithBrands_addLogoFallback {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_competesWithBrands_addBtn {
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  color: var(--primary-contrast-color);
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.Competitors_tableView_competesWithBrands_addBtn:hover {
+  filter: brightness(1.05);
+}
+
+.Competitors_tableView_competesWithBrands_addBtn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.Competitors_tableView_competesWithBrands_addName {
+  margin: 0.45rem 0 0 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Competitors_tableView_competesWithBrands_addOverlap {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.72rem;
+  color: var(--text-secondary-color);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

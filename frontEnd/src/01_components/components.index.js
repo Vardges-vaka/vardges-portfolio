@@ -73,3 +73,8 @@ export { default as Work_planning_Icons } from "./uiComponents/dashboard_Icons/W
 export { default as Business_docs_Icons } from "./uiComponents/dashboard_Icons/Business_docs_Icons.jsx";
 export { default as Assets_storage_Icons } from "./uiComponents/dashboard_Icons/Assets_storage_Icons.jsx";
 export { default as Brand_product_Icons } from "./uiComponents/dashboard_Icons/Brand_product_Icons.jsx";
+
+// Tooltips
+export * from "./toolTips/_tooltips.index.js";
+export * from "./loaders/_loaders.index.js";
+export * from "./modals/_components_modals.index.js";

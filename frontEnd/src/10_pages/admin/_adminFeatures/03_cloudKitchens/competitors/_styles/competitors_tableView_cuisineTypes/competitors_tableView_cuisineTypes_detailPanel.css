@@ -1,0 +1,68 @@
+.cuisineTypesDetailPanel {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.cuisineTypesDetailPanel__title {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+
+.cuisineTypesDetailPanel__empty {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  line-height: 1.45;
+}
+
+.cuisineTypesDetailPanel__card {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  box-shadow: 0 1px 2px var(--boxShadow-secondary-color);
+}
+
+.cuisineTypesDetailPanel__dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 7rem) 1fr;
+  gap: 0.35rem 0.65rem;
+  align-items: start;
+}
+
+@media (max-width: 520px) {
+  .cuisineTypesDetailPanel__dl {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cuisineTypesDetailPanel__dt {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cuisineTypesDetailPanel__dd {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-primary-color);
+  line-height: 1.45;
+  min-width: 0;
+}
+
+.cuisineTypesDetailPanel__ddScroll {
+  max-height: 14rem;
+  overflow: auto;
+}
+
+.cuisineTypesDetailPanel__muted {
+  color: var(--text-secondary-color);
+  font-size: 0.84rem;
+}

@@ -21,12 +21,12 @@ const Competitors_table_row_ownDeliveryDubai = ({ competitor, t }) => {
 
   if (v === true) {
     return (
-      <div className="competitors_table_row_ownDeliveryDubai" title={yesLabel}>
-        <span className="competitors_table_row_ownDeliveryDubai__srOnly">
+      <div className="Competitors_table_row_ownDeliveryDubai" title={yesLabel}>
+        <span className="Competitors_table_row_ownDeliveryDubai_srOnly">
           {yesLabel}
         </span>
         <svg
-          className="competitors_table_row_ownDeliveryDubai__check"
+          className="Competitors_table_row_ownDeliveryDubai_check"
           viewBox="0 0 24 24"
           aria-hidden="true">
           <path
@@ -43,10 +43,10 @@ const Competitors_table_row_ownDeliveryDubai = ({ competitor, t }) => {
 
   return (
     <div
-      className="competitors_table_row_ownDeliveryDubai competitors_table_row_ownDeliveryDubai--empty"
+      className="Competitors_table_row_ownDeliveryDubai Competitors_table_row_ownDeliveryDubai_empty"
       title={emptyLabel}>
       <span aria-hidden="true">—</span>
-      <span className="competitors_table_row_ownDeliveryDubai__srOnly">
+      <span className="Competitors_table_row_ownDeliveryDubai_srOnly">
         {emptyLabel}
       </span>
     </div>

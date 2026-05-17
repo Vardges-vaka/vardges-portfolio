@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { MOCK_DATA_COMPETITORS } from "../05_competitors_cnst/MOCK_DATA.js";
 
 export const useCompetitors_states = () => {

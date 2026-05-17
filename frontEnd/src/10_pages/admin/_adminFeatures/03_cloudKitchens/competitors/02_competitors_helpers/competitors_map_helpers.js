@@ -1,3 +1,5 @@
+import { getCuisineDisplayLabelForRowItem } from "./competitors_cuisineTags_helpers.js";
+
 const DUBAI_EMIRATE = "Dubai";
 
 export const toNum = (v) => {
@@ -50,6 +52,35 @@ export const fitMapToCompetitors = (map, competitors) => {
   }
 };
 
+/**
+ * Fits the map to an arbitrary list of points (e.g. every branch of one competitor).
+ * Accepts `{ lat, lng }` or `{ coordinates: { lat, lng } }` per entry.
+ */
+export const fitMapToLocations = (map, locations) => {
+  if (!map || typeof google === "undefined") return;
+  const list = Array.isArray(locations) ? locations : [];
+  if (list.length === 0) return;
+
+  const bounds = new google.maps.LatLngBounds();
+  let added = 0;
+
+  list.forEach((item) => {
+    const lat = toNum(item?.lat ?? item?.coordinates?.lat);
+    const lng = toNum(item?.lng ?? item?.coordinates?.lng);
+    if (lat == null || lng == null) return;
+    bounds.extend({ lat, lng });
+    added += 1;
+  });
+
+  if (added === 0) return;
+
+  try {
+    map.fitBounds(bounds, 72);
+  } catch {
+    map.fitBounds(bounds);
+  }
+};
+
 export const getCompetitorMapSummary = (competitor) => {
   const loc = getCompetitorPinLocation(competitor);
   const addressParts = [
@@ -70,7 +101,7 @@ export const getCompetitorMapSummary = (competitor) => {
         : null,
     cuisineTags: Array.isArray(competitor?.cuisineTypes)
       ? competitor.cuisineTypes
-          .map((x) => x?.tag)
+          .map((x) => getCuisineDisplayLabelForRowItem(x))
           .filter(Boolean)
           .slice(0, 4)
       : [],

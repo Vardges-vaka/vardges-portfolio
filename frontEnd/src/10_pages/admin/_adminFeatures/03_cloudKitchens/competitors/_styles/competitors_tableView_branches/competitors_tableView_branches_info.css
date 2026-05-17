@@ -1,0 +1,184 @@
+/* Spacing when stacked under the map; reuses `Competitors_mapView_info` chrome. */
+.Competitors_tableView_branches_info.Competitors_mapView_info {
+  margin-top: 0.15rem;
+}
+
+.Competitors_tableView_branches_info_note {
+  margin: 0.55rem 0 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_branches_info_notes {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.Competitors_tableView_branches_info_notesBody {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-primary-color);
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.Competitors_tableView_branches_info_edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.Competitors_tableView_branches_info_editHint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_branches_info_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem 0.75rem;
+}
+
+.Competitors_tableView_branches_info_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_branches_info_fieldFull {
+  grid-column: 1 / -1;
+}
+
+.Competitors_tableView_branches_info_field input,
+.Competitors_tableView_branches_info_field select,
+.Competitors_tableView_branches_info_field textarea {
+  font-size: 0.875rem;
+  color: var(--text-primary-color);
+  background: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+}
+
+.Competitors_tableView_branches_info_coverageActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.Competitors_tableView_branches_info_coverageBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.Competitors_tableView_branches_info_editActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.Competitors_tableView_branches_info_saveBtn,
+.Competitors_tableView_branches_info_cancelBtn {
+  font-size: 0.875rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-primary-color);
+  cursor: pointer;
+}
+
+.Competitors_tableView_branches_info_saveBtn {
+  background: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+  border-color: transparent;
+}
+
+.Competitors_tableView_branches_info_cancelBtn {
+  background: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_branches_info_mapStep {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.Competitors_tableView_branches_info_stepBanner {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_branches_info_lockedFieldset {
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px dashed var(--border-primary-color);
+  border-radius: 8px;
+  opacity: 0.92;
+}
+
+.Competitors_tableView_branches_info_lockedFieldset legend {
+  font-size: 0.78rem;
+  color: var(--text-secondary-color);
+  padding: 0 0.25rem;
+}
+
+.Competitors_tableView_branches_info_lockedSummary {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_branches_info_listSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Competitors_tableView_branches_info_listHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.Competitors_tableView_branches_info_listHead h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_branches_info_listRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.Competitors_tableView_branches_info_check {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.Competitors_tableView_branches_info_removeRow {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}

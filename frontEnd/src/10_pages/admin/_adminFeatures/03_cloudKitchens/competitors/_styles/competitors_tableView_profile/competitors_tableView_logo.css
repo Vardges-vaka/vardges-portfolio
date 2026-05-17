@@ -1,0 +1,236 @@
+.Competitors_tableView_logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.Competitors_tableView_logo_heroBox {
+  background: var(--panel-bg-color);
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.Competitors_tableView_logo_heroImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.Competitors_tableView_logo_iconAction {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--bg-tertiary-color);
+  color: var(--icon-primary-stroke-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.Competitors_tableView_logo_iconAction:hover {
+  background: var(--bg-tertiary-color-HOV);
+  color: var(--icon-primary-stroke-color-HOV);
+}
+
+.Competitors_tableView_logo_iconAction:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.Competitors_tableView_logo_iconActionSvg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.Competitors_tableView_logo_heroBox .Competitors_tableView_logo_iconAction {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+}
+
+.Competitors_tableView_logo_card {
+  background: var(--panel-bg-color);
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.Competitors_tableView_logo_cardInline {
+  padding: 0.9rem;
+}
+
+.Competitors_tableView_logo_cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.Competitors_tableView_logo_cardTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_logo_btn {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.Competitors_tableView_logo_btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.Competitors_tableView_logo_btnPrimary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-contrast-color);
+}
+
+.Competitors_tableView_logo_row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.Competitors_tableView_logo_slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.Competitors_tableView_logo_slotLabel {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_logo_box {
+  border: 1px dashed var(--border-secondary-color);
+  border-radius: 0.75rem;
+  background: var(--bg-secondary-color);
+  height: 9.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.Competitors_tableView_logo_boxFilled {
+  border-style: solid;
+}
+
+.Competitors_tableView_logo_boxNew {
+  border-style: solid;
+  border-color: var(--primary-color);
+}
+
+.Competitors_tableView_logo_img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.Competitors_tableView_logo_empty {
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_logo_arrow {
+  color: var(--text-secondary-color);
+  font-weight: 700;
+}
+
+.Competitors_tableView_logo_dropBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.Competitors_tableView_logo_fileInput {
+  display: none;
+}
+
+.Competitors_tableView_logo_iconBtn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  cursor: pointer;
+  color: var(--text-primary-color);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.Competitors_tableView_logo_fileMeta {
+  border-top: 1px solid var(--border-secondary-color);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Competitors_tableView_logo_fileMetaRow {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.Competitors_tableView_logo_metaLabel {
+  color: var(--text-secondary-color);
+  font-size: 0.85rem;
+}
+
+.Competitors_tableView_logo_metaValue {
+  color: var(--text-primary-color);
+  word-break: break-word;
+}
+
+.Competitors_tableView_logo_metaMuted {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+}
+
+.Competitors_tableView_logo_warning {
+  margin: 0.4rem 0 0 0;
+  color: var(--warning-color);
+}
+
+.Competitors_tableView_logo_error {
+  margin: 0;
+  color: var(--danger-color);
+}
+
+.Competitors_tableView_logo_footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}

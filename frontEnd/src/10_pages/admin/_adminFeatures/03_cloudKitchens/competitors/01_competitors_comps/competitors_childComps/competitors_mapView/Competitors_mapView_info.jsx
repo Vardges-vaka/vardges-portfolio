@@ -84,30 +84,30 @@ const Competitors_mapView_info = ({
   );
 
   return (
-    <div className="competitorsMapViewInfo">
-      <div className="competitorsMapViewInfo__bar">
-        <div className="competitorsMapViewInfo__barMain">
-          <span className="competitorsMapViewInfo__barTitle">
+    <div className="Competitors_mapView_info">
+      <div className="Competitors_mapView_info_bar">
+        <div className="Competitors_mapView_info_barMain">
+          <span className="Competitors_mapView_info_barTitle">
             {t
               ? t("mapView.infoTitle", { defaultValue: "Competitor info" })
               : "Competitor info"}
           </span>
-          <span className="competitorsMapViewInfo__barValue">
+          <span className="Competitors_mapView_info_barValue">
             {s?.name || "—"}
           </span>
         </div>
 
-        <div className="competitorsMapViewInfo__barActions">
+        <div className="Competitors_mapView_info_barActions">
           <button
             type="button"
-            className="competitorsMapViewInfo__barBtn"
+            className="Competitors_mapView_info_barBtn"
             onClick={onToggleMapInfo}
             aria-expanded={mapInfoExpanded}>
             {mapInfoExpanded ? "▴" : "▾"}
           </button>
           <button
             type="button"
-            className="competitorsMapViewInfo__barBtn"
+            className="Competitors_mapView_info_barBtn"
             onClick={onClearCompetitorInfo}
             disabled={!active}
             title={
@@ -121,11 +121,11 @@ const Competitors_mapView_info = ({
       </div>
 
       <div
-        className={`competitorsMapViewInfo__body ${
-          mapInfoExpanded ? "" : "competitorsMapViewInfo__body--collapsed"
+        className={`Competitors_mapView_info_body ${
+          mapInfoExpanded ? "" : "Competitors_mapView_info_bodyCollapsed"
         }`}>
         {!active && (
-          <p className="competitorsMapViewInfo__muted">
+          <p className="Competitors_mapView_info_muted">
             {t
               ? t("mapView.noSelection", {
                   defaultValue:
@@ -137,29 +137,29 @@ const Competitors_mapView_info = ({
 
         {active && (
           <>
-            <div className="competitorsMapViewInfo__header">
-              <div className="competitorsMapViewInfo__headerLeft">
+            <div className="Competitors_mapView_info_header">
+              <div className="Competitors_mapView_info_headerLeft">
                 {s?.logo ? (
                   <img
-                    className="competitorsMapViewInfo__logo"
+                    className="Competitors_mapView_info_logo"
                     src={s.logo}
                     alt=""
                     loading="lazy"
                     decoding="async"
                   />
                 ) : null}
-                <div className="competitorsMapViewInfo__titleStack">
-                  <h3 className="competitorsMapViewInfo__name">{s?.name}</h3>
-                  <p className="competitorsMapViewInfo__addr">
+                <div className="Competitors_mapView_info_titleStack">
+                  <h3 className="Competitors_mapView_info_name">{s?.name}</h3>
+                  <p className="Competitors_mapView_info_addr">
                     {s?.addressLine || "—"}
                   </p>
                 </div>
               </div>
 
-              <div className="competitorsMapViewInfo__headerRight">
+              <div className="Competitors_mapView_info_headerRight">
                 <button
                   type="button"
-                  className="competitorsMapViewInfo__openBtn"
+                  className="Competitors_mapView_info_openBtn"
                   data-session="view_competitor"
                   data-competitor-id={active?._id}
                   data-editing="false"
@@ -174,16 +174,16 @@ const Competitors_mapView_info = ({
               </div>
             </div>
 
-            <div className="competitorsMapViewInfo__grid">
-              <div className="competitorsMapViewInfo__card competitorsMapViewInfo__card--full">
-                <span className="competitorsMapViewInfo__label">
+            <div className="Competitors_mapView_info_grid">
+              <div className="Competitors_mapView_info_card Competitors_mapView_info_cardFull">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardSelectedBranch", {
                         defaultValue: "Selected pin (branch)",
                       })
                     : "Selected pin (branch)"}
                 </span>
-                <span className="competitorsMapViewInfo__value">
+                <span className="Competitors_mapView_info_value">
                   {activeBranch
                     ? [activeBranch.emirate, activeBranch.city, activeBranch.address]
                         .filter(Boolean)
@@ -195,16 +195,16 @@ const Competitors_mapView_info = ({
                       : "Click a pin to see branch-level details."}
                 </span>
                 {activeBranch ? (
-                  <div className="competitorsMapViewInfo__miniGrid">
-                    <div className="competitorsMapViewInfo__miniRow">
-                      <span className="competitorsMapViewInfo__miniLabel">
+                  <div className="Competitors_mapView_info_miniGrid">
+                    <div className="Competitors_mapView_info_miniRow">
+                      <span className="Competitors_mapView_info_miniLabel">
                         {t
                           ? t("mapView.cardCoords", {
                               defaultValue: "Coords",
                             })
                           : "Coords"}
                       </span>
-                      <span className="competitorsMapViewInfo__miniValue">
+                      <span className="Competitors_mapView_info_miniValue">
                         {toNum(activeBranch?.coordinates?.lat) == null ||
                         toNum(activeBranch?.coordinates?.lng) == null
                           ? "—"
@@ -213,8 +213,8 @@ const Competitors_mapView_info = ({
                             ).toFixed(5)}`}
                       </span>
                     </div>
-                    <div className="competitorsMapViewInfo__miniRow">
-                      <span className="competitorsMapViewInfo__miniLabel">
+                    <div className="Competitors_mapView_info_miniRow">
+                      <span className="Competitors_mapView_info_miniLabel">
                         {t
                           ? t("mapView.cardCoveragePolygon", {
                               defaultValue: "Polygon",
@@ -222,16 +222,16 @@ const Competitors_mapView_info = ({
                           : "Polygon"}
                       </span>
                       <span
-                        className={`competitorsMapViewInfo__pill ${
+                        className={`Competitors_mapView_info_pill ${
                           effectiveCoverage.polygonOn
-                            ? "competitorsMapViewInfo__pill--on"
-                            : "competitorsMapViewInfo__pill--off"
+                            ? "Competitors_mapView_info_pillOn"
+                            : "Competitors_mapView_info_pillOff"
                         }`}>
                         {effectiveCoverage.polygonOn ? "ON" : "OFF"}
                       </span>
                     </div>
-                    <div className="competitorsMapViewInfo__miniRow">
-                      <span className="competitorsMapViewInfo__miniLabel">
+                    <div className="Competitors_mapView_info_miniRow">
+                      <span className="Competitors_mapView_info_miniLabel">
                         {t
                           ? t("mapView.cardCoverageRadius", {
                               defaultValue: "Radius",
@@ -239,23 +239,23 @@ const Competitors_mapView_info = ({
                           : "Radius"}
                       </span>
                       <span
-                        className={`competitorsMapViewInfo__pill ${
+                        className={`Competitors_mapView_info_pill ${
                           effectiveCoverage.radiusOn
-                            ? "competitorsMapViewInfo__pill--on"
-                            : "competitorsMapViewInfo__pill--off"
+                            ? "Competitors_mapView_info_pillOn"
+                            : "Competitors_mapView_info_pillOff"
                         }`}>
                         {effectiveCoverage.radiusOn ? "ON" : "OFF"}
                       </span>
                     </div>
-                    <div className="competitorsMapViewInfo__miniRow">
-                      <span className="competitorsMapViewInfo__miniLabel">
+                    <div className="Competitors_mapView_info_miniRow">
+                      <span className="Competitors_mapView_info_miniLabel">
                         {t
                           ? t("mapView.cardCoverageKm", {
                               defaultValue: "Radius km",
                             })
                           : "Radius km"}
                       </span>
-                      <span className="competitorsMapViewInfo__miniValue">
+                      <span className="Competitors_mapView_info_miniValue">
                         {toNum(
                           activeBranch?.coverageAreas?.byDistance?.radius?.km,
                         ) == null
@@ -269,32 +269,32 @@ const Competitors_mapView_info = ({
                 ) : null}
               </div>
 
-              <div className="competitorsMapViewInfo__card">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardBranches", {
                         defaultValue: "Branches",
                       })
                     : "Branches"}
                 </span>
-                <span className="competitorsMapViewInfo__value">
+                <span className="Competitors_mapView_info_value">
                   {s?.branchesTotalQnt == null ? "—" : s.branchesTotalQnt}
                 </span>
               </div>
 
-              <div className="competitorsMapViewInfo__card">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardPriceRange", {
                         defaultValue: "Price range",
                       })
                     : "Price range"}
                 </span>
-                <span className="competitorsMapViewInfo__value">{priceLabel}</span>
+                <span className="Competitors_mapView_info_value">{priceLabel}</span>
               </div>
 
-              <div className="competitorsMapViewInfo__card">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardOwnDelivery", {
                         defaultValue: "Own delivery DXB",
@@ -302,10 +302,10 @@ const Competitors_mapView_info = ({
                     : "Own delivery DXB"}
                 </span>
                 <span
-                  className={`competitorsMapViewInfo__pill ${
+                  className={`Competitors_mapView_info_pill ${
                     s?.hasOwnDeliveryDubai
-                      ? "competitorsMapViewInfo__pill--on"
-                      : "competitorsMapViewInfo__pill--off"
+                      ? "Competitors_mapView_info_pillOn"
+                      : "Competitors_mapView_info_pillOff"
                   }`}>
                   {s?.hasOwnDeliveryDubai
                     ? t
@@ -321,93 +321,93 @@ const Competitors_mapView_info = ({
                 </span>
               </div>
 
-              <div className="competitorsMapViewInfo__card">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardMenuItems", { defaultValue: "Menu items" })
                     : "Menu items"}
                 </span>
-                <span className="competitorsMapViewInfo__value">
+                <span className="Competitors_mapView_info_value">
                   {menuItemsCount == null ? "—" : menuItemsCount}
                 </span>
               </div>
 
-              <div className="competitorsMapViewInfo__card">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardMenuCategories", {
                         defaultValue: "Menu categories",
                       })
                     : "Menu categories"}
                 </span>
-                <span className="competitorsMapViewInfo__value">
+                <span className="Competitors_mapView_info_value">
                   {menuCategoriesCount == null ? "—" : menuCategoriesCount}
                 </span>
               </div>
 
-              <div className="competitorsMapViewInfo__card competitorsMapViewInfo__card--full">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card Competitors_mapView_info_cardFull">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardCuisine", { defaultValue: "Cuisine" })
                     : "Cuisine"}
                 </span>
-                <span className="competitorsMapViewInfo__value">
+                <span className="Competitors_mapView_info_value">
                   {s?.cuisineTags?.length ? s.cuisineTags.join(", ") : "—"}
                 </span>
               </div>
 
-              <div className="competitorsMapViewInfo__card competitorsMapViewInfo__card--full">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card Competitors_mapView_info_cardFull">
+                <span className="Competitors_mapView_info_label">
                   {t ? t("mapView.cardMenu", { defaultValue: "Menu" }) : "Menu"}
                 </span>
-                <span className="competitorsMapViewInfo__value">
+                <span className="Competitors_mapView_info_value">
                   {s?.menuName || "—"}
                 </span>
               </div>
 
-              <div className="competitorsMapViewInfo__card competitorsMapViewInfo__card--full">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card Competitors_mapView_info_cardFull">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardNotes", { defaultValue: "Notes" })
                     : "Notes"}
                 </span>
-                <span className="competitorsMapViewInfo__value">
+                <span className="Competitors_mapView_info_value">
                   {active?.description || "—"}
                 </span>
               </div>
 
-              <div className="competitorsMapViewInfo__card competitorsMapViewInfo__card--full">
-                <span className="competitorsMapViewInfo__label">
+              <div className="Competitors_mapView_info_card Competitors_mapView_info_cardFull">
+                <span className="Competitors_mapView_info_label">
                   {t
                     ? t("mapView.cardLinks", { defaultValue: "Links" })
                     : "Links"}
                 </span>
-                <div className="competitorsMapViewInfo__links">
+                <div className="Competitors_mapView_info_links">
                   {active?.socials?.website ? (
                     <a
-                      className="competitorsMapViewInfo__link"
+                      className="Competitors_mapView_info_link"
                       href={active.socials.website}
                       target="_blank"
                       rel="noreferrer">
-                      Website
+                      {t ? t("mapView.linkWebsite", { defaultValue: "Website" }) : "Website"}
                     </a>
                   ) : null}
                   {active?.socials?.instagram ? (
                     <a
-                      className="competitorsMapViewInfo__link"
+                      className="Competitors_mapView_info_link"
                       href={active.socials.instagram}
                       target="_blank"
                       rel="noreferrer">
-                      Instagram
+                      {t ? t("mapView.linkInstagram", { defaultValue: "Instagram" }) : "Instagram"}
                     </a>
                   ) : null}
                   {active?.socials?.facebook ? (
                     <a
-                      className="competitorsMapViewInfo__link"
+                      className="Competitors_mapView_info_link"
                       href={active.socials.facebook}
                       target="_blank"
                       rel="noreferrer">
-                      Facebook
+                      {t ? t("mapView.linkFacebook", { defaultValue: "Facebook" }) : "Facebook"}
                     </a>
                   ) : null}
                 </div>

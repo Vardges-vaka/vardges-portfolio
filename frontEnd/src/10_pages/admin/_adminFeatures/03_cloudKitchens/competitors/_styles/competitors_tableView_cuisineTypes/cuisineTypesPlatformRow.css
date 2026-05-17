@@ -1,0 +1,40 @@
+.cuisineTypesPlatformRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.cuisineTypesPlatformRowSm {
+  gap: 0.3rem;
+}
+
+.cuisineTypesPlatformRow__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  overflow: hidden;
+}
+
+.cuisineTypesPlatformRowSm .cuisineTypesPlatformRow__item {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.35rem;
+}
+
+.cuisineTypesPlatformRow__img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.cuisineTypesPlatformRow__fallback {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+}

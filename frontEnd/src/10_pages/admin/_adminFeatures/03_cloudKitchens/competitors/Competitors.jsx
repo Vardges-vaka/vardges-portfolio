@@ -10,7 +10,7 @@ import { VALID_VIEW_SESSIONS } from "./05_competitors_cnst/_competitors_cnst.ind
 import "./_styles/competitors.css";
 
 const Competitors = () => {
-  const { states, handlers, compProps, t } = useCompetitors();
+  const { states, handlers, compProps, t: _t } = useCompetitors();
   const {
     Competitors_tableView_props,
     Competitors_viewToggle_props,
@@ -19,7 +19,13 @@ const Competitors = () => {
     currentSession_props,
   } = compProps;
 
-  //   temp
+  /*
+  
+
+
+
+
+  */
   const renderSessionComponent = () => {
     return (
       <Competitors_sessionSwitch
@@ -33,7 +39,7 @@ const Competitors = () => {
     );
   };
   return (
-    <div className="competitors">
+    <div className="Competitors">
       <Competitors_header
         states={Competitors_header_props.states}
         handlers={Competitors_header_props.handlers}

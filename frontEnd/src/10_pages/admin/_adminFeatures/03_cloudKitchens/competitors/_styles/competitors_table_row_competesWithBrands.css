@@ -1,118 +1,12 @@
-/* Overlapping logo stack; fans out on hover (desktop). Row cell should not clip. */
-.competitors_table_row_competesWithBrands {
+.Competitors_table_row_competesWithBrands {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.2rem;
   overflow: visible;
   position: relative;
-  width: fit-content;
-  max-width: 100%;
 }
 
-.competitors_table_row_competesWithBrands__logos {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  min-width: 0;
-  overflow: visible;
-}
-
-.competitors_table_row_competesWithBrands__stack {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-shrink: 0;
-  padding: 0.15rem 0;
-  overflow: visible;
-  cursor: default;
-}
-
-/* Collapsed: stronger overlap (denser stack). */
-.competitors_table_row_competesWithBrands__thumbWrap {
-  box-sizing: border-box;
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 2px solid var(--bg-secondary-color);
-  background-color: var(--bg-primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: -17px;
-  position: relative;
-  box-shadow: 0 1px 3px var(--boxShadow-primary-color);
-  transition:
-    margin-left 0.22s ease,
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
-}
-
-.competitors_table_row_competesWithBrands__thumbWrap:first-child {
-  margin-left: 0;
-}
-
-.competitors_table_row_competesWithBrands__stack:hover
-  .competitors_table_row_competesWithBrands__thumbWrap {
-  margin-left: 0.35rem;
-}
-
-.competitors_table_row_competesWithBrands__stack:focus-within
-  .competitors_table_row_competesWithBrands__thumbWrap {
-  margin-left: 0.35rem;
-}
-
-.competitors_table_row_competesWithBrands__stack:hover
-  .competitors_table_row_competesWithBrands__thumbWrap:first-child {
-  margin-left: 0;
-}
-
-.competitors_table_row_competesWithBrands__stack:focus-within
-  .competitors_table_row_competesWithBrands__thumbWrap:first-child {
-  margin-left: 0;
-}
-
-.competitors_table_row_competesWithBrands__stack:hover
-  .competitors_table_row_competesWithBrands__thumbWrap {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px var(--boxShadow-secondary-color);
-}
-
-.competitors_table_row_competesWithBrands__stack:focus-within
-  .competitors_table_row_competesWithBrands__thumbWrap {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px var(--boxShadow-secondary-color);
-}
-
-.competitors_table_row_competesWithBrands__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.competitors_table_row_competesWithBrands__idPlaceholder {
-  font-size: 0.55rem;
-  font-weight: 600;
-  color: var(--text-tertiary-color);
-  text-transform: uppercase;
-}
-
-.competitors_table_row_competesWithBrands__empty {
+.Competitors_table_row_competesWithBrands_empty {
   color: var(--text-tertiary-color);
   font-size: 0.8rem;
-}
-
-.competitors_table_row_competesWithBrands__stack:focus-visible {
-  outline: 2px solid var(--border-primary-color-HOV);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .competitors_table_row_competesWithBrands__thumbWrap {
-    transition: none;
-  }
 }

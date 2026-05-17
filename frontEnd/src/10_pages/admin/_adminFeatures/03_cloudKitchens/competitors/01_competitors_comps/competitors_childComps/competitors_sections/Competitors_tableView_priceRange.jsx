@@ -1,13 +1,12 @@
 const Competitors_tableView_priceRange = ({
   states,
   handlers,
-  compProps,
   t,
 }) => {
   const isEditing = !!states?.isEditing;
   return (
-    <div className="competitors_tableView_priceRange">
-      <div className="competitors_tableView_priceRange__topbar">
+    <div className="Competitors_tableView_priceRange">
+      <div className="Competitors_tableView_priceRange_topbar">
         <button
           type="button"
           onClick={() =>

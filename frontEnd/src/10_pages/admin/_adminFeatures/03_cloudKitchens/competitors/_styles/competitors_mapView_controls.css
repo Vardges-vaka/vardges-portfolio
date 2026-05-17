@@ -1,5 +1,5 @@
 /* Controls bar (top). */
-.competitorsMapViewControls {
+.Competitors_mapView_controls {
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
   box-shadow: var(--boxShadow-primary-color);
 }
 
-.competitorsMapViewControls__toolbar {
+.Competitors_mapView_controls_toolbar {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
@@ -19,18 +19,18 @@
   width: 100%;
 }
 
-.competitorsMapViewControls__toolbarLeft {
+.Competitors_mapView_controls_toolbarLeft {
   justify-self: start;
 }
-.competitorsMapViewControls__toolbarCenter {
+.Competitors_mapView_controls_toolbarCenter {
   justify-self: center;
   min-width: 0;
 }
-.competitorsMapViewControls__toolbarRight {
+.Competitors_mapView_controls_toolbarRight {
   justify-self: end;
 }
 
-.competitorsMapViewControls__toggle {
+.Competitors_mapView_controls_toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -44,16 +44,16 @@
   cursor: pointer;
 }
 
-.competitorsMapViewControls__toggle--active {
+.Competitors_mapView_controls_toggleActive {
   border-color: var(--btn-primary-bg-color);
   background: color-mix(in srgb, var(--btn-primary-bg-color) 18%, transparent);
 }
 
-.competitorsMapViewControls__toggle:hover {
+.Competitors_mapView_controls_toggle:hover {
   border-color: var(--btn-primary-bg-color);
 }
 
-.competitorsMapViewControls__stats {
+.Competitors_mapView_controls_stats {
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
@@ -61,28 +61,28 @@
   font-size: 0.8125rem;
 }
 
-.competitorsMapViewControls__stat {
+.Competitors_mapView_controls_stat {
   display: inline-flex;
   align-items: baseline;
   gap: 0.35rem;
   white-space: nowrap;
 }
-.competitorsMapViewControls__statValue {
+.Competitors_mapView_controls_statValue {
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   color: var(--text-primary-color);
 }
-.competitorsMapViewControls__statLabel {
+.Competitors_mapView_controls_statLabel {
   color: var(--text-secondary-color);
   font-weight: 500;
 }
-.competitorsMapViewControls__divider {
+.Competitors_mapView_controls_divider {
   color: var(--text-secondary-color);
   opacity: 0.65;
   user-select: none;
 }
 
-.competitorsMapViewControls__expand {
+.Competitors_mapView_controls_expand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -95,34 +95,34 @@
   color: var(--text-primary-color);
   cursor: pointer;
 }
-.competitorsMapViewControls__expand:hover {
+.Competitors_mapView_controls_expand:hover {
   background: var(--bg-primary-color);
   border-color: var(--btn-primary-bg-color);
 }
 
-.competitorsMapViewControls__body {
+.Competitors_mapView_controls_body {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
-.competitorsMapViewControls__body--collapsed {
+.Competitors_mapView_controls_bodyCollapsed {
   display: none;
 }
 
-.competitorsMapViewControls__hint {
+.Competitors_mapView_controls_hint {
   margin: 0;
   font-size: 0.75rem;
   line-height: 1.35;
   color: var(--text-secondary-color);
 }
 
-.competitorsMapViewControls__chips {
+.Competitors_mapView_controls_chips {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.35rem;
 }
 
-.competitorsMapViewControls__chip {
+.Competitors_mapView_controls_chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -136,11 +136,11 @@
   cursor: pointer;
 }
 
-.competitorsMapViewControls__chip:hover {
+.Competitors_mapView_controls_chip:hover {
   border-color: var(--btn-primary-bg-color);
 }
 
-.competitorsMapViewControls__chip--active {
+.Competitors_mapView_controls_chipActive {
   border-color: var(--btn-primary-bg-color);
   background: color-mix(in srgb, var(--btn-primary-bg-color) 18%, transparent);
 }

@@ -1,0 +1,53 @@
+/* Table-view branches session: header + map + detail panel under the map. */
+.Competitors_tableView_branches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: min(80vh, 880px);
+  flex: 1 1 auto;
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_branches_noSelectTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--title-primary-color);
+}
+
+.Competitors_tableView_branches_noSelectHint {
+  margin: 0.35rem 0 0 0;
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 36rem;
+}
+
+/* Collapsible map panel — slides up when user continues to branch details. */
+.Competitors_tableView_branches_mapPanel {
+  overflow: hidden;
+  flex: 1 1 auto;
+  max-height: min(60vh, 620px);
+  transition:
+    max-height 0.45s ease,
+    opacity 0.35s ease,
+    margin 0.35s ease;
+}
+
+.Competitors_tableView_branches--detailsStep .Competitors_tableView_branches_mapPanel {
+  flex: 0 0 auto;
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.Competitors_tableView_branches--detailsStep .Competitors_tableView_branches_info {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.Competitors_tableView_branches--detailsStep {
+  min-height: min(70vh, 720px);
+}

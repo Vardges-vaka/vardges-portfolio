@@ -1,15 +1,15 @@
-.competitors_table_row_dineIn {
+.Competitors_table_row_dineIn {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 1.5rem;
 }
 
-.competitors_table_row_dineIn__check {
+.Competitors_table_row_dineIn_check {
   color: var(--primary-success-border);
 }
 
-.competitors_table_row_dineIn__dash {
+.Competitors_table_row_dineIn_dash {
   color: var(--text-secondary-color);
 }
 

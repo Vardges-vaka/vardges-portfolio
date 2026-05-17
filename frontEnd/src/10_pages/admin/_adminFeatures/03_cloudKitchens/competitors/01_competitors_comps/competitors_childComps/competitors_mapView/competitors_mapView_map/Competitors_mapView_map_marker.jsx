@@ -10,34 +10,34 @@ const createInfoWindowContent = ({
   state,
 }) => {
   const root = document.createElement("div");
-  root.className = "competitorsMapView__popup";
+  root.className = "Competitors_mapView_popup";
 
   const title = document.createElement("p");
-  title.className = "competitorsMapView__popupName";
+  title.className = "Competitors_mapView_popupName";
   title.textContent = name || "—";
 
   const addr = document.createElement("p");
-  addr.className = "competitorsMapView__popupAddr";
+  addr.className = "Competitors_mapView_popupAddr";
   addr.textContent = addressLine || "—";
 
   const actions = document.createElement("div");
-  actions.className = "competitorsMapView__popupActions";
+  actions.className = "Competitors_mapView_popupActions";
 
   const infoBtn = document.createElement("button");
   infoBtn.type = "button";
-  infoBtn.className = "competitorsMapView__popupBtn";
+  infoBtn.className = "Competitors_mapView_popupBtn";
   infoBtn.textContent = labels.viewInfo;
   infoBtn.addEventListener("click", handlers.onViewInfo);
 
   const radiusBtn = document.createElement("button");
   radiusBtn.type = "button";
-  radiusBtn.className = "competitorsMapView__popupBtn competitorsMapView__popupBtn--secondary";
+  radiusBtn.className = "Competitors_mapView_popupBtn Competitors_mapView_popupBtnSecondary";
   radiusBtn.textContent = state.isRadiusOn ? labels.hideRadius : labels.showRadius;
   radiusBtn.addEventListener("click", handlers.onToggleRadius);
 
   const polyBtn = document.createElement("button");
   polyBtn.type = "button";
-  polyBtn.className = "competitorsMapView__popupBtn competitorsMapView__popupBtn--secondary";
+  polyBtn.className = "Competitors_mapView_popupBtn Competitors_mapView_popupBtnSecondary";
   polyBtn.textContent = state.isPolygonOn ? labels.hidePolygon : labels.showPolygon;
   polyBtn.addEventListener("click", handlers.onTogglePolygon);
 

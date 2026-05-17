@@ -1,0 +1,185 @@
+.cuisineTypesEditHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.cuisineTypesEditHeader__typeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.cuisineTypesEditHeader__typeBtn {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 999px;
+  padding: 0.32rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.cuisineTypesEditHeader__typeBtn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.cuisineTypesEditHeader__typeBtnActive {
+  border-color: var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 14%, transparent);
+}
+
+.cuisineTypesEditHeader__typeBtn[data-cuisine-type="cuisine"].cuisineTypesEditHeader__typeBtnActive {
+  border-color: var(--primary-color);
+}
+
+.cuisineTypesEditHeader__typeBtn[data-cuisine-type="category"].cuisineTypesEditHeader__typeBtnActive {
+  border-color: var(--primary-success-border);
+}
+
+.cuisineTypesEditHeader__typeBtn[data-cuisine-type="dietary"].cuisineTypesEditHeader__typeBtnActive {
+  border-color: var(--primary-warning-border);
+}
+
+.cuisineTypesEditHeader__typeBtn[data-cuisine-type="mealType"].cuisineTypesEditHeader__typeBtnActive {
+  border-color: var(--primary-hint-border);
+}
+
+.cuisineTypesEditHeader__typeBtn[data-cuisine-type="dessertBeverage"].cuisineTypesEditHeader__typeBtnActive {
+  border-color: var(--primary-error-border);
+}
+
+.cuisineTypesEditHeader__searchLabel {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.cuisineTypesEditHeader__searchInput {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  font: inherit;
+}
+
+.cuisineTypesEditHeader__searchInput:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.cuisineTypesEditHeader__platformBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.cuisineTypesEditHeader__platformLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cuisineTypesEditHeader__platformRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.cuisineTypesEditHeader__platformBtn {
+  position: relative;
+  width: 2.35rem;
+  height: 2.35rem;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cuisineTypesEditHeader__platformBtn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.cuisineTypesEditHeader__platformBtnSelected {
+  border-color: var(--primary-success-border);
+}
+
+.cuisineTypesEditHeader__platformImg {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+}
+
+.cuisineTypesEditHeader__platformFallback {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+}
+
+.cuisineTypesEditHeader__platformPulse {
+  position: absolute;
+  top: 0.12rem;
+  right: 0.12rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--primary-success-border);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary-success-border) 55%, transparent);
+  animation: cuisineTypesEditHeaderPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes cuisineTypesEditHeaderPulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary-success-border) 45%, transparent);
+  }
+  70% {
+    opacity: 0.85;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary-success-border) 0%, transparent);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary-success-border) 0%, transparent);
+  }
+}
+
+.cuisineTypesEditHeader__visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

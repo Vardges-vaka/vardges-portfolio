@@ -3,13 +3,12 @@ import "../../../_styles/competitors_tableView_menu.css";
 const Competitors_tableView_menu = ({
   states,
   handlers,
-  compProps,
   t,
 }) => {
   const isEditing = !!states?.isEditing;
   return (
-    <div className="competitors_tableView_menu">
-      <div className="competitors_tableView_menu__topbar">
+    <div className="Competitors_tableView_menu">
+      <div className="Competitors_tableView_menu_topbar">
         <button
           type="button"
           onClick={() => (isEditing ? handlers?.handleStopEditing?.() : handlers?.handleToggleEditingMode?.())}

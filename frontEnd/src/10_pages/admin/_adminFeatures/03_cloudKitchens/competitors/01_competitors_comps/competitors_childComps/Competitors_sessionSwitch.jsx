@@ -6,6 +6,10 @@ import {
   Competitors_tableView_competesWithBrands,
   Competitors_tableView_branches,
   Competitors_tableView_fullView,
+  Competitors_tableView_files,
+  Competitors_tableView_socials,
+  Competitors_tableView_contact,
+  Competitors_tableView_reviews,
 } from "./competitors_sections/_competitors_tableView_sections.index.js";
 import { VALID_VIEW_SESSIONS } from "../../05_competitors_cnst/_competitors_cnst.index.js";
 import TemporaryTesting from "../TemporaryTesting.jsx";
@@ -19,11 +23,10 @@ const Competitors_sessionSwitch = ({
   temporaryTestingHandler,
 }) => {
   if (!session || !VALID_VIEW_SESSIONS.includes(session)) return null;
-  console.log("Competitors_sessionSwitch_____states:", states);
 
   return (
     <>
-      <TemporaryTesting handler={temporaryTestingHandler} />
+      {/* <TemporaryTesting handler={temporaryTestingHandler} /> */}
       {(session === "view_profile" ||
         session === "view_name" ||
         session === "view_logo") && (
@@ -42,6 +45,49 @@ const Competitors_sessionSwitch = ({
           t={t}
         />
       )}
+      {session === "view_competesWithBrands" && (
+        <Competitors_tableView_competesWithBrands
+          states={states}
+          handlers={handlers}
+          compProps={compProps}
+          t={t}
+        />
+      )}
+
+      {session === "view_reviews" && (
+        <Competitors_tableView_reviews
+          states={states}
+          handlers={handlers}
+          compProps={compProps}
+          t={t}
+        />
+      )}
+
+      {session === "view_files" && (
+        <Competitors_tableView_files
+          states={states}
+          handlers={handlers}
+          compProps={compProps}
+          t={t}
+        />
+      )}
+      {session === "view_socials" && (
+        <Competitors_tableView_socials
+          states={states}
+          handlers={handlers}
+          compProps={compProps}
+          t={t}
+        />
+      )}
+      {session === "view_contact" && (
+        <Competitors_tableView_contact
+          states={states}
+          handlers={handlers}
+          compProps={compProps}
+          t={t}
+        />
+      )}
+
       {session === "view_priceRange" && (
         <Competitors_tableView_priceRange
           states={states}
@@ -58,14 +104,7 @@ const Competitors_sessionSwitch = ({
           t={t}
         />
       )}
-      {session === "view_competesWithBrands" && (
-        <Competitors_tableView_competesWithBrands
-          states={states}
-          handlers={handlers}
-          compProps={compProps}
-          t={t}
-        />
-      )}
+
       {session === "view_branches" && (
         <Competitors_tableView_branches
           states={states}

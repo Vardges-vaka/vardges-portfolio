@@ -14,6 +14,7 @@
 .adminLayout__main {
   flex: 1 1 auto;
   min-height: 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   /* Dashboard shell fills height (no main scroll); welcome / other pages can scroll here. */

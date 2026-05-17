@@ -50,6 +50,7 @@ const supplierSchema = new mongoose.Schema(
     },
     files: {
       logo: { type: String },
+      other: [{ ref: { type: String }, value: { type: String } }],
       invoices: [
         {
           ref: { type: String },
@@ -82,6 +83,7 @@ const supplierSchema = new mongoose.Schema(
       lastDeliveryTime: { type: String },
     },
     notes: { type: String },
+    ingredients: [{ type: mongoose.Schema.Types.ObjectId, ref: "Ingredient" }],
 
     isActive: { type: Boolean, default: true },
   },

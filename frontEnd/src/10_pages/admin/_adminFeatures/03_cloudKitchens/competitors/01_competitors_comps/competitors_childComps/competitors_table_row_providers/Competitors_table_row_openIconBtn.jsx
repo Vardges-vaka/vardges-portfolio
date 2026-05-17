@@ -13,8 +13,8 @@ const Competitors_table_row_openIconBtn = ({
 }) => {
   const btnClass =
     variant === "competesThumb"
-      ? "competitors_table_row_openIconBtn competitors_table_row_openIconBtn--competesThumb"
-      : "competitors_table_row_openIconBtn";
+      ? "Competitors_table_row_openIconBtn Competitors_table_row_openIconBtn_competesThumb"
+      : "Competitors_table_row_openIconBtn";
   return (
     <button
       type="button"
@@ -27,7 +27,7 @@ const Competitors_table_row_openIconBtn = ({
       aria-label={ariaLabel || title}
     >
       <svg
-        className="competitors_table_row_openIconBtn__svg"
+        className="Competitors_table_row_openIconBtn_svg"
         viewBox="0 0 24 24"
         aria-hidden
       >

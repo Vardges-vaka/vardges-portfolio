@@ -1,0 +1,47 @@
+/* Radial fan (Tooltip_3) for preview logos; row cell should not clip. */
+.Competitors_table_row_competesWithBrands {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  overflow: visible;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.Competitors_table_row_competesWithBrands_logos {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 0;
+  overflow: visible;
+}
+
+/*
+ * Closed: tiny in-flow box (row height follows other columns).
+ * Open: Tooltip_3 stays 200×200 but is position:absolute inside this shell, centered,
+ * so the fan draws outside the cell without expanding the row.
+ */
+.Competitors_table_row_competesWithBrands_tooltipShell {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.Competitors_table_row_competesWithBrands_tooltipShell .menu-tooltip {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  margin: 0;
+}
+
+.Competitors_table_row_competesWithBrands_empty {
+  color: var(--text-tertiary-color);
+  font-size: 0.8rem;
+}

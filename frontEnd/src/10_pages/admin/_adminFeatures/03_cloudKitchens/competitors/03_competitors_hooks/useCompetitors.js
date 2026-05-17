@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   useCompetitors_states,
   useCompetitors_apiHelpers,
@@ -69,25 +68,12 @@ export const useCompetitors = () => {
   //   compProps: {},
   //   t,
   // };
-  const {
-    Competitors_tableView_profile_props,
-    Competitors_tableView_cuisineTypes_props,
-    Competitors_tableView_priceRange_props,
-    Competitors_tableView_menu_props,
-    Competitors_tableView_competesWithBrands_props,
-    Competitors_tableView_branches_props,
-    Competitors_tableView_fullView_props,
-    propsMap,
-  } = propsComposer_tablleView(states, handlers, t);
-  const {
-    Competitors_table_row_logo_props,
-    Competitors_table_row_cuisineTypes_props,
-    Competitors_table_row_priceRange_props,
-    Competitors_table_row_menu_props,
-    Competitors_table_row_competesWithBrands_props,
-    Competitors_table_row_branches_props,
-    Competitors_table_rows_provider_props,
-  } = propsComposer_tableRow(states, handlers, t);
+  const { propsMap } = propsComposer_tablleView(states, handlers, t);
+  const { Competitors_table_rows_provider_props } = propsComposer_tableRow(
+    states,
+    handlers,
+    t,
+  );
 
   // const Competitors_table_rows_provider_props = {
   //   ...baseTableRowsProviderProps,
@@ -96,11 +82,6 @@ export const useCompetitors = () => {
   //     handleCompetitorTableAction: handlers.handleCompetitorTableAction,
   //   },
   // };
-  console.log(
-    "useCompetitors_________Competitors_table_row_logo_props",
-    Competitors_table_row_logo_props,
-  );
-
   const Competitors_tableView_props = {
     states: { session: states.session, competitors: states.competitors },
     handlers: {

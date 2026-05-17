@@ -1,0 +1,14 @@
+cK_menuItem_getAll
+cK_menuItem_getAllByOwnerType
+cK_menuItem_create
+cK_menuItem_getOne
+cK_menuItem_updateAll
+cK_menuItem_delete
+
+
+cK_menuItem_getAll
+cK_menuItem_getAllByOwnerType
+cK_menuItem_create
+cK_menuItem_getOne
+cK_menuItem_updateAll
+cK_menuItem_delete

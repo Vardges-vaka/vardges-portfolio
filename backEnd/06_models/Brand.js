@@ -292,7 +292,7 @@ const brandSchema = new mongoose.Schema(
     employees: [{ type: mongoose.Schema.Types.ObjectId, ref: "Employee" }],
     equipments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Equipment" }],
     branches: [{ type: mongoose.Schema.Types.ObjectId, ref: "Branch" }],
-    menu: { type: mongoose.Schema.Types.ObjectId, ref: "Menu" },
+    menus: [{ type: mongoose.Schema.Types.ObjectId, ref: "Menu" }],
     competitors: [{ type: mongoose.Schema.Types.ObjectId, ref: "Competitor" }],
   },
   { timestamps: true },

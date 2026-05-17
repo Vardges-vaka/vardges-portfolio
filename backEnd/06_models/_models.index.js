@@ -4,7 +4,8 @@ export { default as Settings } from "./Settings.js";
 export { default as Branch } from "./Branch.js";
 export { default as Brand } from "./Brand.js";
 export { default as Employee } from "./Employee.js";
-export { default as MenuCategory } from "./MenuCategory.js";
-export { default as Menu } from "./Menu.js";
-export { default as MenuItem } from "./MenuItem.js";
-export { default as Modifier } from "./Modifier.js";
+
+// Cloud kitchen domain (menu + competitor).
+// Re-exports Menu, MenuCategory, MenuItem, MenuItemModifier,
+// MenuItemModifierOption, and Competitor.
+export * from "./cloudKitchen/_cloudKitchen.index.js";

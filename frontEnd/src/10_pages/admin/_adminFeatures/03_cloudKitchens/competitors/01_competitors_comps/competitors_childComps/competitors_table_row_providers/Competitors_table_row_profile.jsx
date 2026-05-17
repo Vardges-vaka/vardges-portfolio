@@ -41,10 +41,10 @@ const Competitors_table_row_profile = ({ competitor, states, handlers, t }) => {
     String(states?.logoModalCompetitorId ?? "") === String(competitorId ?? "");
 
   return (
-    <div className="competitors_table_row_profile">
+    <div className="Competitors_table_row_profile">
       <button
         type="button"
-        className="competitors_table_row_profile__logoBtn"
+        className="Competitors_table_row_profile_logoBtn"
         onClick={() => canShowModal && handlers?.handleOpenLogoModal?.(competitorId)}
         title={titleLogoPreview}
         aria-label={titleLogoPreview}
@@ -53,13 +53,13 @@ const Competitors_table_row_profile = ({ competitor, states, handlers, t }) => {
         {src ? (
           <>
             <img
-              className="competitors_table_row_profile__logoImg"
+              className="Competitors_table_row_profile_logoImg"
               src={src}
               alt=""
               loading="lazy"
             />
-            <span className="competitors_table_row_profile__magnifier" aria-hidden="true">
-              <svg viewBox="0 0 24 24" className="competitors_table_row_profile__magnifierSvg">
+            <span className="Competitors_table_row_profile_magnifier" aria-hidden="true">
+              <svg viewBox="0 0 24 24" className="Competitors_table_row_profile_magnifierSvg">
                 <path
                   fill="currentColor"
                   d="M10 18a8 8 0 1 1 5.29-14.01A8 8 0 0 1 10 18zm0-2a6 6 0 1 0 0-12a6 6 0 0 0 0 12zm8.59 4L14.5 15.91l1.41-1.41L20 18.59L18.59 20z"
@@ -68,13 +68,13 @@ const Competitors_table_row_profile = ({ competitor, states, handlers, t }) => {
             </span>
           </>
         ) : (
-          <span className="competitors_table_row_profile__logoPlaceholder">—</span>
+          <span className="Competitors_table_row_profile_logoPlaceholder">—</span>
         )}
       </button>
 
       <button
         type="button"
-        className="competitors_table_row_profile__nameBtn"
+        className="Competitors_table_row_profile_nameBtn"
         onClick={openProfile}
         title={titleProfile}
         aria-label={titleProfile}

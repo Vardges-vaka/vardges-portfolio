@@ -1,0 +1,22 @@
+/*
+ * Competitors → profile session: body inside global ConfirmModal.
+ * Overlay/panel/header/footer: 01_components/_styles/modals/confirmModal.css
+ */
+
+.competitorsConfirmModal_profile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+/* Match legacy profile modal detail grid (was `.Competitors_tableView_profile_modalChange`). */
+.competitorsConfirmModal_profile .confirmModal_detailRow {
+  grid-template-columns: 9rem 1fr;
+}
+
+@media (max-width: 480px) {
+  .competitorsConfirmModal_profile .confirmModal_detailRow {
+    grid-template-columns: minmax(5.5rem, 7.5rem) 1fr;
+  }
+}

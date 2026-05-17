@@ -1,12 +1,12 @@
 /* Single clickable thumb only (no separate open icon). */
-.competitors_table_row_logo {
+.Competitors_table_row_logo {
   display: inline-flex;
   align-items: center;
   width: fit-content;
   max-width: 100%;
 }
 
-.competitors_table_row_logo__thumbBtn {
+.Competitors_table_row_logo_thumbBtn {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -24,17 +24,17 @@
   cursor: pointer;
 }
 
-.competitors_table_row_logo__thumbBtn:hover {
+.Competitors_table_row_logo_thumbBtn:hover {
   border-color: var(--border-primary-color-HOV);
   background-color: var(--bg-primary-color-HOV);
 }
 
-.competitors_table_row_logo__thumbBtn:focus-visible {
+.Competitors_table_row_logo_thumbBtn:focus-visible {
   outline: 2px solid var(--border-primary-color-HOV);
   outline-offset: 2px;
 }
 
-.competitors_table_row_logo__img {
+.Competitors_table_row_logo_img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -42,7 +42,7 @@
   pointer-events: none;
 }
 
-.competitors_table_row_logo__placeholder {
+.Competitors_table_row_logo_placeholder {
   font-size: 0.75rem;
   color: var(--text-tertiary-color);
   pointer-events: none;

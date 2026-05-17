@@ -5,8 +5,8 @@ const Competitors_table_row_menuCategoryQty = ({ competitor }) => {
   const n = getCompetitorMenuCategoriesCount(competitor?.menu);
 
   return (
-    <div className="competitors_table_row_menuQty">
-      <span className="competitors_table_row_menuQty__count">
+    <div className="Competitors_table_row_menuQty">
+      <span className="Competitors_table_row_menuQty_count">
         {n == null ? "—" : n}
       </span>
     </div>

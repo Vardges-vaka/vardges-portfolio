@@ -1,0 +1,28 @@
+.Competitors_table_row_reviews {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+}
+
+.Competitors_table_row_reviews_rating {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--title-secondary-color);
+  min-width: 1.65rem;
+  text-align: right;
+}
+
+.Competitors_table_row_reviews_sep {
+  color: var(--text-secondary-color);
+  user-select: none;
+}
+
+.Competitors_table_row_reviews_count {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary-color);
+  min-width: 1.5rem;
+  text-align: left;
+}

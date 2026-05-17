@@ -2,6 +2,8 @@ import { useCallback } from "react";
 import { VALID_SESSIONS } from "../05_competitors_cnst/_competitors_cnst.index";
 
 export const useCompetitors_handlers = ({ states, setters, apiHelpers, t }) => {
+  void apiHelpers;
+  void t;
   const handleSetSession = useCallback(
     (e) => {
       const session = e.currentTarget.dataset.value;
@@ -139,6 +141,89 @@ export const useCompetitors_handlers = ({ states, setters, apiHelpers, t }) => {
     [setters],
   );
 
+  const handleCompetitorCuisineTypesSave = useCallback(
+    ({ competitorId, cuisineTypes }) => {
+      if (competitorId == null) return;
+      if (!Array.isArray(cuisineTypes)) return;
+
+      setters.setCompetitors((prev) => {
+        const next = (prev ?? []).map((c) => {
+          if (String(c?._id) !== String(competitorId)) return c;
+          return { ...c, cuisineTypes };
+        });
+        const synced = next.find((c) => String(c?._id) === String(competitorId));
+        if (synced) {
+          setters.setSelectedCompetitor((sel) => {
+            if (!sel || String(sel?._id) !== String(competitorId)) return sel;
+            return synced;
+          });
+        }
+        return next;
+      });
+
+      setters.setIsEditing(false);
+      setters.setUpdatingFields([]);
+    },
+    [setters],
+  );
+
+  const handleCompetitorBranchesSave = useCallback(
+    ({ competitorId, locations }) => {
+      if (competitorId == null) return;
+      if (!Array.isArray(locations)) return;
+
+      setters.setCompetitors((prev) => {
+        const next = (prev ?? []).map((c) => {
+          if (String(c?._id) !== String(competitorId)) return c;
+          return {
+            ...c,
+            branches: {
+              ...(c.branches && typeof c.branches === "object" ? c.branches : {}),
+              totalQnt: locations.length,
+              locations,
+            },
+          };
+        });
+        const synced = next.find((c) => String(c?._id) === String(competitorId));
+        if (synced) {
+          setters.setSelectedCompetitor((sel) => {
+            if (!sel || String(sel?._id) !== String(competitorId)) return sel;
+            return synced;
+          });
+        }
+        return next;
+      });
+    },
+    [setters],
+  );
+
+  const handleCompetitorCompetesWithBrandsSave = useCallback(
+    ({ competitorId, competesWithBrands }) => {
+      if (competitorId == null) return;
+      if (!Array.isArray(competesWithBrands)) return;
+
+      setters.setCompetitors((prev) => {
+        const next = (prev ?? []).map((c) => {
+          if (String(c?._id) !== String(competitorId)) return c;
+          return {
+            ...c,
+            competesWithBrands,
+          };
+        });
+        return next;
+      });
+
+      setters.setSelectedCompetitor((prev) => {
+        if (!prev || String(prev?._id) !== String(competitorId)) return prev;
+        return { ...prev, competesWithBrands };
+      });
+
+      setters.setIsEditing(false);
+      setters.setUpdatingFields([]);
+    },
+    [setters],
+  );
+
   return {
     handlers: {
       handleSetSession,
@@ -152,6 +237,9 @@ export const useCompetitors_handlers = ({ states, setters, apiHelpers, t }) => {
       handleCloseLogoModal,
       handleCompetitorProfileTextSave,
       handleCompetitorProfileLogoSave,
+      handleCompetitorCuisineTypesSave,
+      handleCompetitorCompetesWithBrandsSave,
+      handleCompetitorBranchesSave,
     },
   };
 };

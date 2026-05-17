@@ -34,25 +34,3 @@ viewBox="0 0 512 512" xml:space="preserve" stroke="${strokeColor}" stroke-width=
 };
 
 export default Update_Icon;
-/*
-
-
-,Ingredients_Icon
-,Packaging_1_Icon
-,Recipe_Icon
-
-
-
-
-,Emirate_Icon
-,Operations_Icon
-,Street_Icon
-,Sup_Recipe_Icon
-,Supplier_Icon
-,Text_Icon
-,
-
-
-
-
-*/

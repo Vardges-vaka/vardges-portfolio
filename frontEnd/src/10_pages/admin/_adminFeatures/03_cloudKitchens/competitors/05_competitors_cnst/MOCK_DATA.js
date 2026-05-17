@@ -1,8 +1,11 @@
 /**
  * Dev-only mock list. Shapes mirror what the admin UI expects after the API
- * populates refs (menu, competesWithBrands). On the wire, `menu` and
- * `competesWithBrands` are ObjectId(s) per Competitor.js — here they are expanded
- * for table/detail views.
+ * populates refs (`menu`). `competesWithBrands` on the wire is `{ brand, cuisineTags,
+ * platform, observations }[]` with `brand` → Competitor ObjectId (`Competitor.js`).
+ *
+ * The export assigns **zero or one** deterministic mock link per competitor (so
+ * editing `cuisineTypes` in raw rows does not change this list). The session UI
+ * allows **up to five** links total.
  *
  * `hasOwnDeliveryDubai` is not stored on each raw row; see `MOCK_HAS_OWN_DELIVERY_DXB_BY_ID`
  * and the `MOCK_DATA_COMPETITORS` export mapping.
@@ -49,6 +52,8 @@ import {
   MenuItem_twenty,
 } from "../../../../../../00_assets/_assets.index.js";
 
+import { mc } from "./mockCuisineHelpers.js";
+
 const UAE = "United Arab Emirates";
 
 const coveragePolygonFromKm = (lat, lng, km, points = 12) => {
@@ -76,7 +81,16 @@ const coveragePolygonFromKm = (lat, lng, km, points = 12) => {
 };
 
 /** Minimal location row matching `branches.locations[]` in Competitor.js */
-const loc = (emirate, city, address, lat, lng, coverageKm = null, hasDineIn = false) => ({
+const loc = (
+  emirate,
+  city,
+  address,
+  lat,
+  lng,
+  coverageKm = null,
+  hasDineIn = false,
+  hasOwnDelivery = false,
+) => ({
   country: UAE,
   emirate,
   state: "",
@@ -84,6 +98,7 @@ const loc = (emirate, city, address, lat, lng, coverageKm = null, hasDineIn = fa
   address,
   coordinates: { lat, lng },
   hasDineIn: Boolean(hasDineIn),
+  hasOwnDelivery: Boolean(hasOwnDelivery),
   coverageAreas: {
     // For the map view we simulate coverage as a Circle overlay using this km radius.
     byDistance: {
@@ -103,18 +118,34 @@ const loc = (emirate, city, address, lat, lng, coverageKm = null, hasDineIn = fa
 
 /** Mock `hasOwnDeliveryDubai` keyed by competitor root `_id` (Own delivery DXB column). */
 const MOCK_HAS_OWN_DELIVERY_DXB_BY_ID = {
-  "1": true,
-  "2": false,
-  "3": true,
-  "4": true,
-  "5": true,
-  "6": true,
-  "7": true,
-  "8": true,
-  "9": true,
-  "10": true,
-  "11": true,
+  1: true,
+  2: false,
+  3: true,
+  4: true,
+  5: true,
+  6: true,
+  7: true,
+  8: true,
+  9: true,
+  10: true,
+  11: true,
 };
+
+const mockCwbRow = (brandId, cuisineTags, platform, observations = []) => ({
+  brand: String(brandId),
+  cuisineTags: Array.isArray(cuisineTags) ? [...cuisineTags] : [],
+  platform: platform != null ? String(platform) : "talabat",
+  observations: Array.isArray(observations) ? [...observations] : [],
+});
+
+const MOCK_CWB_SAMPLE_OBS = [
+  {
+    date: new Date("2025-10-15"),
+    note: "Watch promos and overlapping delivery zones.",
+    addedBy: null,
+    tags: ["pricing"],
+  },
+];
 
 const MOCK_DATA_COMPETITORS_RAW = [
   {
@@ -122,11 +153,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Dacha",
     description: "Traditional Russian and Eastern European comfort food.",
     logo: dacha_logo,
-    cuisineTypes: [
-      { tag: "Russian", description: "Russian cuisine" },
-      { tag: "Ukrainian", description: "Ukrainian cuisine" },
-      { tag: "Belarusian", description: "Belarusian cuisine" },
-    ],
+    cuisineTypes: mc("russian", "ukrainian", "georgian"),
     priceRange: "premium",
     socials: {
       instagram: "https://instagram.com/dacha.example",
@@ -201,52 +228,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
       },
     ],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-101",
-        logo: russain_logo,
-        name: "Russian House",
-        cuisineTypes: [
-          { tag: "Russian", description: "Russian cuisine" },
-          { tag: "Grill", description: "Grill" },
-        ],
-        description: "Neighbouring Russian-focused dark kitchen.",
-      },
-      {
-        _id: "mock-cw-102",
-        logo: Logo_Berezka,
-        name: "Berezka",
-        cuisineTypes: [
-          { tag: "Eastern European", description: "Eastern European" },
-        ],
-        description: "Competes on pelmeni and set menus.",
-      },
-      {
-        _id: "mock-cw-103",
-        logo: Pelmeni_Hous,
-        name: "Pelmeni House",
-        cuisineTypes: [
-          { tag: "Dumplings", description: "Dumplings & soups" },
-        ],
-        description: "Overlap on dumplings and delivery promos.",
-      },
-      {
-        _id: "mock-cw-104",
-        logo: Pushkin_logo,
-        name: "Pushkin",
-        cuisineTypes: [{ tag: "Russian", description: "Russian fine casual" }],
-        description: "Higher ticket overlap in Business Bay.",
-      },
-      {
-        _id: "mock-cw-105",
-        logo: Odesa_ma_logo,
-        name: "Odesa Market",
-        cuisineTypes: [
-          { tag: "Ukrainian", description: "Ukrainian street food" },
-        ],
-        description: "Shared audience for Ukrainian dishes.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -255,11 +236,8 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Berezka Kitchen",
     description: "Eastern European classics and bakery items.",
     logo: Logo_Berezka,
-    cuisineTypes: [
-      { tag: "Chinese", description: "Chinese cuisine" },
-      { tag: "Dumplings", description: "Dumplings" },
-      { tag: "Noodles", description: "Noodles" },
-    ],
+    // cuisineTypes: mc("chinese", "dumplings", "noodles"),
+    cuisineTypes: mc("russian", "ukrainian", "georgian"),
     priceRange: "mid",
     socials: {
       instagram: "",
@@ -307,29 +285,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-201",
-        logo: dacha_logo,
-        name: "Dacha",
-        cuisineTypes: [{ tag: "Russian", description: "Russian" }],
-        description: "Direct overlap on comfort-food segment.",
-      },
-      {
-        _id: "mock-cw-202",
-        logo: Pelmeni_Hous,
-        name: "Pelmeni House",
-        cuisineTypes: [{ tag: "Dumplings", description: "Dumplings" }],
-        description: "Dumpling-focused competitor.",
-      },
-      {
-        _id: "mock-cw-203",
-        logo: talabat_logo,
-        name: "Aggregator benchmark",
-        cuisineTypes: [{ tag: "Market", description: "Delivery visibility" }],
-        description: "Compare delivery fees and promos.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -338,11 +293,8 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Pelmeni Hub",
     description: "Fast-casual dumplings and soups.",
     logo: Pelmeni_Hous,
-    cuisineTypes: [
-      { tag: "Indian", description: "Indian cuisine" },
-      { tag: "Curry", description: "Curry dishes" },
-      { tag: "Grill", description: "Grilled food" },
-    ],
+    // cuisineTypes: mc("indian", "curry", "grills"),
+    cuisineTypes: mc("russian", "ukrainian", "georgian"),
     priceRange: "premium",
     socials: {
       instagram: "https://instagram.com/pelmeni.example",
@@ -396,36 +348,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
       },
     ],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-301",
-        logo: Logo_Berezka,
-        name: "Berezka Kitchen",
-        cuisineTypes: [{ tag: "European", description: "European" }],
-        description: "Overlapping dumpling SKUs.",
-      },
-      {
-        _id: "mock-cw-302",
-        logo: BreadMeat_logo,
-        name: "Bread & Meat",
-        cuisineTypes: [{ tag: "Grill", description: "Grill" }],
-        description: "Grill overlap in same zones.",
-      },
-      {
-        _id: "mock-cw-303",
-        logo: Impasto_Logo,
-        name: "Impasto",
-        cuisineTypes: [{ tag: "Italian", description: "Italian" }],
-        description: "Pasta crossover audience.",
-      },
-      {
-        _id: "mock-cw-304",
-        logo: int,
-        name: "INT Kitchen",
-        cuisineTypes: [{ tag: "Fusion", description: "Fusion" }],
-        description: "Shared dark-kitchen corridor.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -434,11 +356,8 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Pushkin Express",
     description: "Lebanese-inspired grill and salads (test mix).",
     logo: Pushkin_logo,
-    cuisineTypes: [
-      { tag: "Lebanese", description: "Lebanese cuisine" },
-      { tag: "Grill", description: "Grilled food" },
-      { tag: "Salad", description: "Fresh salads" },
-    ],
+    // cuisineTypes: mc("lebanese", "grills", "salads"),
+    cuisineTypes: mc("russian", "ukrainian", "georgian"),
     priceRange: "budget",
     socials: {
       instagram: "",
@@ -486,29 +405,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-401",
-        logo: chayxana,
-        name: "Chayhana",
-        cuisineTypes: [{ tag: "Central Asian", description: "Central Asian" }],
-        description: "Shared grill and bread items.",
-      },
-      {
-        _id: "mock-cw-402",
-        logo: puzatic,
-        name: "Puzatic",
-        cuisineTypes: [{ tag: "Grill", description: "Grill" }],
-        description: "Price overlap on combos.",
-      },
-      {
-        _id: "mock-cw-403",
-        logo: VK_logo,
-        name: "VK Street",
-        cuisineTypes: [{ tag: "Fast casual", description: "Fast casual" }],
-        description: "Same delivery radius.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -517,11 +413,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Bread & Meat Co",
     description: "American-style burgers and fries.",
     logo: BreadMeat_logo,
-    cuisineTypes: [
-      { tag: "American", description: "American cuisine" },
-      { tag: "Burgers", description: "Burger specials" },
-      { tag: "Fries", description: "Sides" },
-    ],
+    cuisineTypes: mc("american", "burgers", "fastFood"),
     priceRange: "mid",
     socials: {
       instagram: "",
@@ -568,36 +460,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-501",
-        logo: Velikaya_logo,
-        name: "Velikaya",
-        cuisineTypes: [{ tag: "Grill", description: "Grill" }],
-        description: "Competes on meat-heavy baskets.",
-      },
-      {
-        _id: "mock-cw-502",
-        logo: sample_A,
-        name: "Sample Co A",
-        cuisineTypes: [{ tag: "Burgers", description: "Burgers" }],
-        description: "Benchmark AOV.",
-      },
-      {
-        _id: "mock-cw-503",
-        logo: volda,
-        name: "Volda",
-        cuisineTypes: [{ tag: "Casual", description: "Casual dining" }],
-        description: "Neighbourhood overlap.",
-      },
-      {
-        _id: "mock-cw-504",
-        logo: vkusnyashka,
-        name: "Vkusnyashka",
-        cuisineTypes: [{ tag: "Comfort", description: "Comfort food" }],
-        description: "Shared promos window.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -606,11 +468,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Velikaya",
     description: "Japanese-inspired bowls and sushi rolls.",
     logo: Velikaya_logo,
-    cuisineTypes: [
-      { tag: "Japanese", description: "Japanese cuisine" },
-      { tag: "Sushi", description: "Sushi rolls" },
-      { tag: "Ramen", description: "Ramen noodles" },
-    ],
+    cuisineTypes: mc("japanese", "sushi", "ramen"),
     priceRange: "premium",
     socials: {
       instagram: "",
@@ -664,29 +522,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-601",
-        logo: Impasto_Logo,
-        name: "Impasto",
-        cuisineTypes: [{ tag: "Italian", description: "Italian" }],
-        description: "Premium casual overlap.",
-      },
-      {
-        _id: "mock-cw-602",
-        logo: skazka,
-        name: "Skazka",
-        cuisineTypes: [{ tag: "Pan-Asian", description: "Pan-Asian" }],
-        description: "Rolls and bowls crossover.",
-      },
-      {
-        _id: "mock-cw-603",
-        logo: Odesa_ma_logo,
-        name: "Odesa Market",
-        cuisineTypes: [{ tag: "Seafood", description: "Seafood" }],
-        description: "Shared seafood-forward menu tests.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -695,11 +530,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Odesa Market Kitchen",
     description: "Ukrainian and Black Sea coastal comfort dishes.",
     logo: Odesa_ma_logo,
-    cuisineTypes: [
-      { tag: "Ukrainian", description: "Ukrainian cuisine" },
-      { tag: "Seafood", description: "Seafood plates" },
-      { tag: "Grill", description: "Grill" },
-    ],
+    cuisineTypes: mc("ukrainian", "seafood", "grills"),
     priceRange: "mid",
     socials: {
       instagram: "",
@@ -754,43 +585,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-701",
-        logo: dacha_logo,
-        name: "Dacha",
-        cuisineTypes: [{ tag: "Eastern European", description: "Eastern European" }],
-        description: "Shared heritage menu items.",
-      },
-      {
-        _id: "mock-cw-702",
-        logo: russain_logo,
-        name: "Russian House",
-        cuisineTypes: [{ tag: "Russian", description: "Russian" }],
-        description: "Neighbourhood overlap.",
-      },
-      {
-        _id: "mock-cw-703",
-        logo: volda,
-        name: "Volda",
-        cuisineTypes: [{ tag: "Casual", description: "Casual counter" }],
-        description: "Neighbouring casual brand.",
-      },
-      {
-        _id: "mock-cw-704",
-        logo: Pelmeni_Hous,
-        name: "Pelmeni Hub",
-        cuisineTypes: [{ tag: "Dumplings", description: "Dumplings" }],
-        description: "Dumpling category clash.",
-      },
-      {
-        _id: "mock-cw-705",
-        logo: Pushkin_logo,
-        name: "Pushkin Express",
-        cuisineTypes: [{ tag: "Grill", description: "Grill" }],
-        description: "Delivery overlap evenings.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -799,11 +593,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Impasto",
     description: "Italian hand-stretched pizza and pasta.",
     logo: Impasto_Logo,
-    cuisineTypes: [
-      { tag: "Italian", description: "Italian cuisine" },
-      { tag: "Pizza", description: "Wood-fired pizza" },
-      { tag: "Pasta", description: "Fresh pasta" },
-    ],
+    cuisineTypes: mc("italian", "pizza", "pasta"),
     priceRange: "mid",
     socials: {
       instagram: "",
@@ -861,29 +651,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-801",
-        logo: Velikaya_logo,
-        name: "Velikaya",
-        cuisineTypes: [{ tag: "Premium", description: "Premium casual" }],
-        description: "Ticket size comparison.",
-      },
-      {
-        _id: "mock-cw-802",
-        logo: BreadMeat_logo,
-        name: "Bread & Meat Co",
-        cuisineTypes: [{ tag: "Casual", description: "Casual" }],
-        description: "Family dining overlap.",
-      },
-      {
-        _id: "mock-cw-803",
-        logo: chayxana,
-        name: "Chayhana",
-        cuisineTypes: [{ tag: "Regional", description: "Regional" }],
-        description: "Shared feeder districts.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -892,11 +659,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Chayhana",
     description: "Central Asian tea house and grills.",
     logo: chayxana,
-    cuisineTypes: [
-      { tag: "Central Asian", description: "Central Asian cuisine" },
-      { tag: "Grill", description: "Grill" },
-      { tag: "Tea", description: "Tea service" },
-    ],
+    cuisineTypes: mc("uzbek", "grills", "tea"),
     priceRange: "budget",
     socials: {
       instagram: "",
@@ -946,36 +709,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-901",
-        logo: Pushkin_logo,
-        name: "Pushkin Express",
-        cuisineTypes: [{ tag: "Grill", description: "Grill" }],
-        description: "Nearby grill overlap.",
-      },
-      {
-        _id: "mock-cw-902",
-        logo: puzatic,
-        name: "Puzatic",
-        cuisineTypes: [{ tag: "Casual", description: "Casual" }],
-        description: "Similar radius and SLAs.",
-      },
-      {
-        _id: "mock-cw-903",
-        logo: int,
-        name: "INT Kitchen",
-        cuisineTypes: [{ tag: "Fusion", description: "Fusion" }],
-        description: "Shared aggregator placements.",
-      },
-      {
-        _id: "mock-cw-904",
-        logo: volda,
-        name: "Volda",
-        cuisineTypes: [{ tag: "Street food", description: "Street food" }],
-        description: "Late-night overlap.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -984,11 +717,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Skazka Treats",
     description: "Desserts and Slavic sweet bakery.",
     logo: skazka,
-    cuisineTypes: [
-      { tag: "Desserts", description: "Desserts" },
-      { tag: "Bakery", description: "Bakery" },
-      { tag: "Coffee", description: "Coffee" },
-    ],
+    cuisineTypes: mc("desserts", "bakery", "coffee"),
     priceRange: "mid",
     socials: {
       instagram: "",
@@ -1048,29 +777,6 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-1001",
-        logo: vkusnyashka,
-        name: "Vkusnyashka",
-        cuisineTypes: [{ tag: "Sweets", description: "Sweets" }],
-        description: "Direct dessert overlap.",
-      },
-      {
-        _id: "mock-cw-1002",
-        logo: Logo_Berezka,
-        name: "Berezka Kitchen",
-        cuisineTypes: [{ tag: "Bakery", description: "Bakery" }],
-        description: "Bakery crossover SKUs.",
-      },
-      {
-        _id: "mock-cw-1003",
-        logo: Velikaya_logo,
-        name: "Velikaya",
-        cuisineTypes: [{ tag: "Casual", description: "Casual" }],
-        description: "Mall adjacency.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
@@ -1079,11 +785,7 @@ const MOCK_DATA_COMPETITORS_RAW = [
     name: "Vkusnyashka Stop",
     description: "Grab-and-go sweets and soft drinks.",
     logo: vkusnyashka,
-    cuisineTypes: [
-      { tag: "Snacks", description: "Snacks" },
-      { tag: "Sweets", description: "Sweets" },
-      { tag: "Retail", description: "Retail bundles" },
-    ],
+    cuisineTypes: mc("snacks", "desserts", "beverages"),
     priceRange: "budget",
     socials: {
       instagram: "",
@@ -1138,49 +840,45 @@ const MOCK_DATA_COMPETITORS_RAW = [
     },
     observations: [],
     files: [],
-    competesWithBrands: [
-      {
-        _id: "mock-cw-1101",
-        logo: skazka,
-        name: "Skazka Treats",
-        cuisineTypes: [{ tag: "Desserts", description: "Desserts" }],
-        description: "Closest sweet competitor.",
-      },
-      {
-        _id: "mock-cw-1102",
-        logo: sample_A,
-        name: "Sample Co A",
-        cuisineTypes: [{ tag: "Benchmark", description: "Benchmark" }],
-        description: "Pricing sentinel brand.",
-      },
-      {
-        _id: "mock-cw-1103",
-        logo: talabat_logo,
-        name: "Delivery bench",
-        cuisineTypes: [{ tag: "Market", description: "Market" }],
-        description: "Promo frequency comparison.",
-      },
-      {
-        _id: "mock-cw-1104",
-        logo: MenuItem_eighteen,
-        name: "Item-image rival",
-        cuisineTypes: [{ tag: "Test", description: "Test" }],
-        description: "Uses menu asset as logo in mock.",
-      },
-      {
-        _id: "mock-cw-1105",
-        logo: MenuItem_nineteen,
-        name: "Second bench rival",
-        cuisineTypes: [{ tag: "Test", description: "Test" }],
-        description: "Fifth slot for table logo strip.",
-      },
-    ],
     isActive: true,
     deletedAt: null,
   },
 ];
+const MOCK_COMPETITOR_ROOT_IDS = MOCK_DATA_COMPETITORS_RAW.map((r) =>
+  String(r._id),
+);
+
+/**
+ * Stable pseudo-random: ~half have no links, ~half have one link (independent of
+ * `cuisineTypes` edits in raw rows). UI allows up to five links total.
+ */
+const zeroOrOneMockCompetesWithBrandsForId = (selfId) => {
+  const pool = MOCK_COMPETITOR_ROOT_IDS;
+  const sid = String(selfId);
+  const idx = pool.indexOf(sid);
+  if (idx < 0) return [];
+  let h = 0;
+  for (let i = 0; i < sid.length; i += 1) {
+    h = (h * 31 + sid.charCodeAt(i)) >>> 0;
+  }
+  if (h % 2 === 0) return [];
+  const span = Math.max(1, pool.length - 1);
+  const step = 1 + (h % span);
+  const j = (idx + step) % pool.length;
+  const cand = pool[j];
+  if (cand === sid) return [];
+  return [
+    mockCwbRow(
+      cand,
+      ["russian"],
+      "talabat",
+      h % 4 === 0 ? MOCK_CWB_SAMPLE_OBS : [],
+    ),
+  ];
+};
 
 export const MOCK_DATA_COMPETITORS = MOCK_DATA_COMPETITORS_RAW.map((row) => ({
   ...row,
   hasOwnDeliveryDubai: MOCK_HAS_OWN_DELIVERY_DXB_BY_ID[row._id] ?? false,
+  competesWithBrands: zeroOrOneMockCompetesWithBrandsForId(row._id),
 }));

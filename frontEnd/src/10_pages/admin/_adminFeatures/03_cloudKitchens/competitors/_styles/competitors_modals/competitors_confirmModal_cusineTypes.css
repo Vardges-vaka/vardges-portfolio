@@ -1,0 +1,5 @@
+.competitorsConfirmModal_cuisineTypes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}

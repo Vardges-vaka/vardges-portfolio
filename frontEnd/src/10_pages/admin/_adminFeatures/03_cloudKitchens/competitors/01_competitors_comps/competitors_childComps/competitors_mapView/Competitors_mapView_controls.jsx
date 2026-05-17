@@ -14,13 +14,13 @@ const Competitors_mapView_controls = ({
   visibleCompetitorsCount,
 }) => {
   return (
-    <div className="competitorsMapViewControls">
-      <div className="competitorsMapViewControls__toolbar">
-        <div className="competitorsMapViewControls__toolbarLeft">
+    <div className="Competitors_mapView_controls">
+      <div className="Competitors_mapView_controls_toolbar">
+        <div className="Competitors_mapView_controls_toolbarLeft">
           <button
             type="button"
-            className={`competitorsMapViewControls__toggle ${
-              showCompetitors ? "competitorsMapViewControls__toggle--active" : ""
+            className={`Competitors_mapView_controls_toggle ${
+              showCompetitors ? "Competitors_mapView_controls_toggleActive" : ""
             }`}
             onClick={onToggleCompetitors}
             aria-pressed={showCompetitors}>
@@ -33,8 +33,8 @@ const Competitors_mapView_controls = ({
 
           <button
             type="button"
-            className={`competitorsMapViewControls__toggle ${
-              showAllPolygon ? "competitorsMapViewControls__toggle--active" : ""
+            className={`Competitors_mapView_controls_toggle ${
+              showAllPolygon ? "Competitors_mapView_controls_toggleActive" : ""
             }`}
             onClick={onToggleAllPolygon}
             aria-pressed={showAllPolygon}
@@ -50,8 +50,8 @@ const Competitors_mapView_controls = ({
 
           <button
             type="button"
-            className={`competitorsMapViewControls__toggle ${
-              showAllRadius ? "competitorsMapViewControls__toggle--active" : ""
+            className={`Competitors_mapView_controls_toggle ${
+              showAllRadius ? "Competitors_mapView_controls_toggleActive" : ""
             }`}
             onClick={onToggleAllRadius}
             aria-pressed={showAllRadius}
@@ -66,34 +66,34 @@ const Competitors_mapView_controls = ({
           </button>
         </div>
 
-        <div className="competitorsMapViewControls__toolbarCenter">
-          <div className="competitorsMapViewControls__stats">
-            <span className="competitorsMapViewControls__stat">
-              <span className="competitorsMapViewControls__statValue">
+        <div className="Competitors_mapView_controls_toolbarCenter">
+          <div className="Competitors_mapView_controls_stats">
+            <span className="Competitors_mapView_controls_stat">
+              <span className="Competitors_mapView_controls_statValue">
                 {visibleCompetitorsCount}
               </span>
-              <span className="competitorsMapViewControls__statLabel">
+              <span className="Competitors_mapView_controls_statLabel">
                 {t
                   ? t("mapView.visible", { defaultValue: "visible" })
                   : "visible"}
               </span>
             </span>
-            <span className="competitorsMapViewControls__divider">/</span>
-            <span className="competitorsMapViewControls__stat">
-              <span className="competitorsMapViewControls__statValue">
+            <span className="Competitors_mapView_controls_divider">/</span>
+            <span className="Competitors_mapView_controls_stat">
+              <span className="Competitors_mapView_controls_statValue">
                 {competitorsTotalCount}
               </span>
-              <span className="competitorsMapViewControls__statLabel">
+              <span className="Competitors_mapView_controls_statLabel">
                 {t ? t("mapView.total", { defaultValue: "total" }) : "total"}
               </span>
             </span>
           </div>
         </div>
 
-        <div className="competitorsMapViewControls__toolbarRight">
+        <div className="Competitors_mapView_controls_toolbarRight">
           <button
             type="button"
-            className="competitorsMapViewControls__expand"
+            className="Competitors_mapView_controls_expand"
             onClick={onToggleMapControls}
             aria-expanded={mapControlsExpanded}
             title={
@@ -109,10 +109,10 @@ const Competitors_mapView_controls = ({
       </div>
 
       <div
-        className={`competitorsMapViewControls__body ${
-          mapControlsExpanded ? "" : "competitorsMapViewControls__body--collapsed"
+        className={`Competitors_mapView_controls_body ${
+          mapControlsExpanded ? "" : "Competitors_mapView_controls_bodyCollapsed"
         }`}>
-        <p className="competitorsMapViewControls__hint">
+        <p className="Competitors_mapView_controls_hint">
           {t
             ? t("mapView.hint", {
                 defaultValue:

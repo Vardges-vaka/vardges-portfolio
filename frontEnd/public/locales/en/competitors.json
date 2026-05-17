@@ -7,11 +7,20 @@
     "editCompetitor": "Edit competitor",
     "viewCompetitor": "View competitor",
     "competesStackLabel": "Competing brands: {{names}}",
+    "detailCompetes": "Competing brands",
+    "competesRadialToggle": "Open competing brands menu: {{count}} brands ({{names}})",
+    "competesRadialClose": "Close competing brands menu",
+    "competesIdPlaceholder": "ID",
     "detailMenuItems": "Menu items",
     "detailMenuCategories": "Menu categories",
     "ownDeliveryYes": "Own delivery in Dubai",
     "ownDeliveryNo": "No own delivery in Dubai",
-    "ownDeliveryUnknown": "Own delivery in Dubai not recorded"
+    "ownDeliveryUnknown": "Own delivery in Dubai not recorded",
+    "filesOpen": "Open files ({{count}} total)",
+    "detailSocials": "Social profiles",
+    "detailContact": "Contact details",
+    "detailReviews": "Ratings and reviews",
+    "reviewsSummaryAria": "Average rating {{rating}}, reviews {{reviews}}. Open ratings and reviews."
   },
   "priceRange": {
     "budget": "budget",
@@ -60,50 +69,253 @@
     "cardCuisine": "Cuisine",
     "cardMenu": "Menu",
     "cardNotes": "Notes",
-    "cardLinks": "Links"
+    "cardLinks": "Links",
+    "linkWebsite": "Website",
+    "linkInstagram": "Instagram",
+    "linkFacebook": "Facebook"
+  },
+  "branchesTableSession": {
+    "title": "Branches",
+    "subtitle": "Every saved branch appears as a pin. Coverage overlays use the same rules as the main competitors map (Dubai only).",
+    "noSelection": "Select a competitor from the table to see branches.",
+    "hint": "Tap a pin to see full details below. Use Polygon (all) / Radius (all) or each pin’s popup to toggle Dubai coverage overlays.",
+    "pinDetailsTitle": "Branch details",
+    "selectPinHint": "Select a branch pin on the map to see coordinates, coverage, and competitor context here.",
+    "clearSelectionTitle": "Clear pin selection",
+    "coverageDubaiOnlyNote": "Polygon and radius overlays are only available for Dubai locations in this tool.",
+    "polygonVerticesLabel": "Polygon points",
+    "dineInLabel": "Dine-in",
+    "branchNotesLabel": "Branch notes",
+    "dineInYes": "Dine-in",
+    "dineInNo": "No dine-in",
+    "pinNotFound": "Could not resolve this pin.",
+    "branchesCount": "{{count}} branches",
+    "branchesCountAria": "Total branches: {{count}}",
+    "coverageToolbarAria": "Branch coverage overlays",
+    "popupEdit": "Edit",
+    "popupRemove": "Remove",
+    "confirmRemoveTitle": "Remove this branch?",
+    "confirmRemoveHint": "This removes the branch from the competitor. You can add it again later from the full editor.",
+    "confirmRemoveButton": "Remove branch",
+    "confirmRemoveBranchLabel": "Branch",
+    "editModeTitle": "Editing branch",
+    "dragPinHint": "Drag the pin on the map to update coordinates.",
+    "addCoverageLabel": "Add coverage",
+    "coveragePolygonBtn": "Draw polygon",
+    "coverageRadiusBtn": "Draw radius",
+    "coverageCancelBtn": "Cancel coverage edit",
+    "coverageClearPolygonBtn": "Clear polygon",
+    "coverageClearRadiusBtn": "Clear radius",
+    "coverageClearPolygonTitle": "Remove polygon coverage for this branch",
+    "coverageClearRadiusTitle": "Remove radius coverage for this branch",
+    "coverageHidePolygonBtn": "Hide polygon",
+    "coverageHideRadiusBtn": "Hide radius",
+    "coverageHideAllBtn": "Hide all coverage",
+    "coverageHidePolygonTitle": "Hide polygon overlay on the map",
+    "coverageHideRadiusTitle": "Hide radius overlay on the map",
+    "coverageHideAllTitle": "Hide polygon and radius overlays on the map",
+    "coverageEditRadiusHint": "Drag the circle or its edge to set delivery radius, then save the branch.",
+    "coverageEditPolygonHint": "Drag polygon vertices to adjust coverage, then save the branch.",
+    "emirateLabel": "Emirate",
+    "cityLabel": "City",
+    "addressLabel": "Address",
+    "latLabel": "Latitude",
+    "lngLabel": "Longitude",
+    "notesLabel": "Notes",
+    "saveBranchLabel": "Save branch",
+    "cancelEditLabel": "Cancel edit",
+    "mapStepBadge": "Step 1 — Map",
+    "mapStepTitle": "Place branch on map",
+    "mapStepSubtitle": "Drag the pin and draw coverage, then continue to branch details.",
+    "detailsStepTitle": "Branch details",
+    "detailsStepSubtitle": "Map is locked. Complete address, delivery flags, platforms, and promos.",
+    "mapStepInstructions": "Use Draw polygon / Draw radius in the header (Dubai only), then drag the pin to the exact location.",
+    "mapStepCoverageNote": "Coverage tools are in the header. You can skip coverage for non-Dubai branches.",
+    "continueToDetailsLabel": "Continue to branch details →",
+    "detailsStepBanner": "Step 2 — Pin and coverage are locked. Fill in the fields below, then save.",
+    "coverageLockedLabel": "Map & coverage (locked)",
+    "coverageLockedHint": "Coordinates and coverage were set in step 1.",
+    "coordsLabel": "Coordinates",
+    "radiusKmLabel": "Radius",
+    "countryLabel": "Country",
+    "stateLabel": "State",
+    "hasOwnDeliveryLabel": "Own delivery (branch)",
+    "hasOwnDeliveryYes": "Yes",
+    "hasOwnDeliveryNo": "No",
+    "backToMapLabel": "← Back to map",
+    "mapLockedHint": "Map is locked while you complete branch details below. Use “Back to map” to adjust the pin or coverage.",
+    "platformsSectionTitle": "Delivery platforms",
+    "addPlatformBtn": "+ Platform",
+    "platformsEmpty": "No platforms added for this branch.",
+    "platformActiveLabel": "Active",
+    "deliveryFeeLabel": "Fee (AED)",
+    "promosSectionTitle": "Promotions",
+    "addPromoBtn": "+ Promo",
+    "promosEmpty": "No promos recorded for this branch.",
+    "promoNameLabel": "Promo name"
+  },
+  "header": {
+    "sessions": {
+      "profile": "Profile",
+      "cuisineTypes": "Cuisine Types",
+      "priceRange": "Price Range",
+      "menu": "Menu",
+      "competesWithBrands": "Competes With Brands",
+      "branches": "Branches",
+      "files": "Files",
+      "socials": "Socials",
+      "contact": "Contact",
+      "reviews": "Ratings & reviews",
+      "fullView": "Full View",
+      "tableView": "Our Competitors in a Table View",
+      "mapView": "Map View"
+    },
+    "editingSuffix": " Editing",
+    "goBack": "Go Back"
+  },
+  "sessions": {
+    "debugSessionLogo": "session: view_logo ",
+    "logoTitle": "Logo",
+    "debugSessionName": "session: view_name ",
+    "nameTitle": "Name"
+  },
+  "actions": {
+    "edit": "Edit",
+    "done": "Done",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "competesWithBrandsSession": {
+    "title": "Competes with competitors",
+    "subtitle": "Track other competitors you overlap with — filtered by shared cuisine tags.",
+    "noSelection": "Select a competitor from the table to manage this list.",
+    "empty": "No linked competitors yet. Edit to add from the filtered list.",
+    "emptyEligible": "No other competitors share a cuisine tag with this one — adjust cuisine tags first.",
+    "addSectionTitle": "Add from shared cuisine tags",
+    "addFilterHeading": "Filter competitors by your tag",
+    "filterAllTags": "All tags",
+    "filterEmpty": "No competitors left for this tag — pick another tag or All tags.",
+    "overlapLabel": "Shared tags",
+    "platformLabel": "Platform",
+    "observationsCount": "{{count}} notes",
+    "removeAria": "Remove {{name}} from list",
+    "cardAria": "Competitor {{name}}, shared tags: {{tags}}",
+    "maxLinksHint": "You can link up to five competitors. Remove one to add another.",
+    "confirmSaveTitle": "Save competing brands?",
+    "confirmSaveHint": "This updates which competitors are linked as overlaps for this row.",
+    "confirmLinksHeading": "Linked competitors",
+    "confirmCountLabel": "Count",
+    "confirmNoneLinked": "(none)"
+  },
+  "cuisineTypes": {
+    "title": "Tags & cuisines",
+    "subtitle": "Browse catalog tags by type. Tap chips to add or remove tags; details open on the right.",
+    "noSelection": "Select a competitor from the table to manage cuisine and category tags.",
+    "searchPlaceholder": "Search tags…",
+    "detailHeading": "Tag details",
+    "detailEmpty": "Tap a catalog chip to see its label, description, and platforms.",
+    "label": "Label",
+    "description": "Description",
+    "platforms": "Platforms",
+    "noPlatforms": "No platform list is defined for this tag in the catalog.",
+    "legacyPlatformsNote": "Platform coverage is only listed for catalog tags.",
+    "catalogHeading": "Catalog",
+    "viewSubtitle": "Tap a saved tag to read its catalog description and platforms.",
+    "viewDetailEmpty": "Select a tag on the left to show details here.",
+    "viewSelectedTitle": "Saved tags",
+    "viewSelectedEmpty": "This competitor has no cuisine or category tags yet.",
+    "filterAllTypes": "All types",
+    "filterPlatforms": "Platforms",
+    "togglePlatformFilter": "Filter catalog by {{id}}",
+    "legacyHeading": "Other saved tags",
+    "legacyHint": "These entries are not in the current catalog. You can remove them while editing.",
+    "selectedCount": "{{count}} selected",
+    "toggleTag": "Toggle tag: {{name}}",
+    "draftSelectionTitle": "Selected for this competitor",
+    "draftSelectionHint": "These tags will be stored when you tap Confirm. Tap a catalog chip again here or in the list below to remove it.",
+    "draftSelectionEmpty": "Nothing selected yet — tap catalog chips below to add tags.",
+    "draftRemoveAria": "Remove {{name}} from this competitor's selection",
+    "removeLegacy": "Remove tag",
+    "confirmSaveTitle": "Save tags for this competitor?",
+    "confirmSaveHint": "Your current selection will replace cuisine and category tags stored for this competitor.",
+    "confirmCatalogTags": "Catalog tags",
+    "confirmLegacyTags": "Other / legacy tags",
+    "confirmSelectionHeading": "Current selection",
+    "noDescription": "No description.",
+    "sectionTitles": {
+      "cuisine": "National / regional cuisines",
+      "category": "Food categories & formats",
+      "dietary": "Dietary & lifestyle",
+      "mealType": "Meal types",
+      "dessertBeverage": "Desserts & beverages"
+    },
+    "platformLabels": {
+      "talabat": "Talabat",
+      "deliveroo": "Deliveroo",
+      "noon": "Noon Food",
+      "careem": "Careem",
+      "keeta": "Keeta"
+    }
   },
   "tableheaders": {
     "name": {
       "text": "Name",
-      "title": "Name of the competitor"
+      "title": "Name"
     },
     "logo": {
       "text": "Logo",
-      "title": "Logo of the Competitor"
+      "title": "Logo"
     },
     "cuisine": {
       "text": "Cuisine"
     },
     "cuisineTypes": {
-      "title": "Cuisine types of the competitor"
+      "title": "Cuisine types"
     },
     "priceRange": {
       "text": "Price range",
-      "title": "Price range of the competitor"
+      "title": "Price range"
     },
     "menu": {
       "text": "Menu",
-      "title": "Menu of the competitor"
+      "title": "Menu"
     },
     "menuItemsQnt": {
       "text": "Dishes",
-      "title": "Number of items on the competitor menu"
+      "title": "Menu items"
     },
     "menuCategoriesQnt": {
       "text": "Categories",
-      "title": "Number of categories on the competitor menu"
+      "title": "Menu categories"
     },
     "ownDeliveryDubai": {
       "text": "delivery",
-      "title": "Runs first-party delivery in Dubai"
+      "title": "Runs first-party delivery"
     },
     "competesWithBrands": {
       "text": "Competes",
-      "title": "Brands this competitor is tracked against"
+      "title": "Competes with brands"
     },
     "branches": {
       "text": "Branches",
-      "title": "Branch footprint for this competitor"
+      "title": "Branches"
+    },
+    "files": {
+      "text": "Files",
+      "title": "Files"
+    },
+    "socials": {
+      "text": "Socials",
+      "title": "Socials"
+    },
+    "contact": {
+      "text": "Contact",
+      "title": "Contact"
+    },
+    "reviews": {
+      "text": "Ratings & reviews",
+      "title": "Ratings & reviews"
     },
     "actions": {
       "edit": "Update",

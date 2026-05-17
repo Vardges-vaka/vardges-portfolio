@@ -8,7 +8,6 @@ export { default as Employees_Icon } from "./Employees_Icon.jsx";
 export { default as Brands_Icon } from "./Brands_Icon.jsx";
 export { default as Images_Icon } from "./Images_Icon.jsx";
 export { default as Files_Icon } from "./Files_Icon.jsx";
-export { default as FoodMenu_Icon } from "./FoodMenu_Icon.jsx";
 export { default as Notes_Icon } from "./Notes_Icon.jsx";
 export { default as MapCoverage_Icon } from "./MapCoverage_Icon.jsx";
 export { default as MapView_Icon } from "./MapView_Icon.jsx";
@@ -16,11 +15,7 @@ export { default as ListView_Icon } from "./ListView_Icon.jsx";
 export { default as Competitors_Icon } from "./Competitors_Icon.jsx";
 export { default as Category_Icon } from "./Category_Icon.jsx";
 export { default as Modifiers_Icon } from "./Modifiers_Icon.jsx";
-export { default as Dish_Icon } from "./Dish_Icon.jsx";
 export { default as Budget_Icon } from "./Budget_Icon.jsx";
-export { default as Area_Icon } from "./Area_Icon.jsx";
-export { default as City_Icon } from "./City_Icon.jsx";
-export { default as Country_Icon } from "./Country_Icon.jsx";
 export { default as DineIn_Icon } from "./DineIn_Icon.jsx";
 
 export { default as Medium_Icon } from "./Medium_Icon.jsx";
@@ -28,31 +23,29 @@ export { default as Premium_Icon } from "./Premium_Icon.jsx";
 export { default as PriceRange_Icon } from "./PriceRange_Icon.jsx";
 export { default as Tags_Icon } from "./Tags_Icon.jsx";
 export { default as IsDelivery_Icon } from "./IsDelivery_Icon.jsx";
-export { default as Polygon } from "./Polygon.jsx";
+export { default as Polygon_Icon } from "./Polygon_Icon.jsx";
 export { default as Radius_Icon } from "./Radius_Icon.jsx";
-export { default as Update_Icon } from "./Update_Icon.jsx"
-/*
+export { default as Update_Icon } from "./Update_Icon.jsx";
 
+export { default as Operations_Icon } from "./Operations_Icon.jsx";
+export { default as Packaging_Icon } from "./Packaging_Icon.jsx";
+export { default as Supplier_Icon } from "./Supplier_Icon.jsx";
 
+export { default as FoodMenu_Icon } from "./FoodMenu_Icon.jsx";
+export { default as Recipe_Icon } from "./Recipe_Icon.jsx";
+export { default as Sup_Recipe_Icon } from "./Sup_Recipe_Icon.jsx";
+export { default as Ingredients_Icon } from "./Ingredients_Icon.jsx";
+export { default as Dish_Icon } from "./Dish_Icon.jsx";
 
-
-
-
-
-
-
-export { default as Emirate_Icon } from "./Emirate_Icon.jsx"
-export { default as Ingredients_Icon } from "./Ingredients_Icon.jsx"
-
-
-export { default as Operations_Icon } from "./Operations_Icon.jsx"
-export { default as Packaging_1_Icon } from "./Packaging_1_Icon.jsx"
-export { default as Recipe_Icon } from "./Recipe_Icon.jsx"
-export { default as Street_Icon } from "./Street_Icon.jsx"
-export { default as Sup_Recipe_Icon } from "./Sup_Recipe_Icon.jsx"
-export { default as Supplier_Icon } from "./Supplier_Icon.jsx"
-
-export { default as Text_Icon } from "./Text_Icon.jsx"
-
-
-*/
+export { default as Street_Icon } from "./Street_Icon.jsx";
+export { default as City_Icon } from "./City_Icon.jsx";
+export { default as Country_Icon } from "./Country_Icon.jsx";
+export { default as Emirate_Icon } from "./Emirate_Icon.jsx";
+export { default as Area_Icon } from "./Area_Icon.jsx";
+export { default as SalesChannel_Icon } from "./SalesChannel_Icon.jsx";
+export { default as Contact_Icon } from "./Contact_Icon.jsx";
+export { default as Ratings_Icon } from "./Ratings_Icon.jsx";
+export { default as SocialMedia_Icon } from "./SocialMedia_Icon.jsx";
+export { default as Earth_Icon } from "./Earth_Icon.jsx";
+export { default as Dashboard_Icon } from "./Dashboard_Icon.jsx";
+export { default as Earth_Icon3 } from "./Earth_Icon3.jsx";

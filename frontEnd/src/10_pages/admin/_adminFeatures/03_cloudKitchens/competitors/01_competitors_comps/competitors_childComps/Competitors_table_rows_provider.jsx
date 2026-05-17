@@ -9,6 +9,10 @@ import {
   Competitors_table_row_ownDeliveryDubai,
   Competitors_table_row_competesWithBrands,
   Competitors_table_row_branches,
+  Competitors_table_row_files,
+  Competitors_table_row_socials,
+  Competitors_table_row_contact,
+  Competitors_table_row_reviews,
 } from "./competitors_table_row_providers/_competitors_table_row_providers.index.js";
 import Competitors_table_row_openIconBtn from "./competitors_table_row_providers/Competitors_table_row_openIconBtn.jsx";
 import "../../_styles/competitors_table_row_provider.css";
@@ -27,11 +31,11 @@ const Competitors_table_rows_provider = ({
   const h = handlers?.handleCompetitorTableAction;
 
   return (
-    <tr className="competitorsTableRow">
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--num">
+    <tr className="Competitors_table_rows_provider">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellNum">
         {rowIndex + 1}
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--profile competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellProfile Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_profile
           competitor={competitor}
           states={states}
@@ -39,61 +43,86 @@ const Competitors_table_rows_provider = ({
           t={t}
         />
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--cuisineTypes competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellCuisineTypes Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_cuisineTypes
           competitor={competitor}
           handlers={handlers}
           t={t}
         />
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--competesWithBrands competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellCompetesWithBrands Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_competesWithBrands
           competitor={competitor}
+          states={states}
           handlers={handlers}
           t={t}
         />
       </td>
-      <td
-        className="competitorsTableRow__cell competitorsTableRow__cell--priceMenuGutter"
-        aria-hidden="true"
-      />
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--menu competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellMenu Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_menu
           competitor={competitor}
           handlers={handlers}
           t={t}
         />
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--menuItemsQnt competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellMenuItemsQnt Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_menuItemQty competitor={competitor} />
       </td>{" "}
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--menuCategoriesQnt competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellMenuCategoriesQnt Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_menuCategoryQty competitor={competitor} />
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--priceRange competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellPriceRange Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_priceRange
           competitor={competitor}
           handlers={handlers}
           t={t}
         />
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--dineIn competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellDineIn Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_dineIn competitor={competitor} t={t} />
       </td>{" "}
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--ownDeliveryDubai competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellOwnDeliveryDubai Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_ownDeliveryDubai competitor={competitor} t={t} />
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--branches competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellBranches Competitors_table_rows_provider_cellHug">
         <Competitors_table_row_branches
           competitor={competitor}
           handlers={handlers}
           t={t}
         />
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--icon competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellFiles Competitors_table_rows_provider_cellHug">
+        <Competitors_table_row_files
+          competitor={competitor}
+          handlers={handlers}
+          t={t}
+        />
+      </td>
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellSocials Competitors_table_rows_provider_cellHug">
+        <Competitors_table_row_socials
+          competitor={competitor}
+          handlers={handlers}
+          t={t}
+        />
+      </td>
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellContact Competitors_table_rows_provider_cellHug">
+        <Competitors_table_row_contact
+          competitor={competitor}
+          handlers={handlers}
+          t={t}
+        />
+      </td>
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellReviews Competitors_table_rows_provider_cellHug">
+        <Competitors_table_row_reviews
+          competitor={competitor}
+          handlers={handlers}
+          t={t}
+        />
+      </td>
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellIcon Competitors_table_rows_provider_cellHug">
         <button
           type="button"
-          className="competitorsTableRow__iconBtn"
+          className="Competitors_table_rows_provider_iconBtn"
           data-session="view_competitor"
           data-competitor-id={competitor._id}
           data-editing="true"
@@ -109,7 +138,7 @@ const Competitors_table_rows_provider = ({
               : "Edit competitor"
           }>
           <svg
-            className="competitorsTableRow__iconSvg"
+            className="Competitors_table_rows_provider_iconSvg"
             viewBox="0 0 24 24"
             aria-hidden>
             <path
@@ -119,10 +148,10 @@ const Competitors_table_rows_provider = ({
           </svg>
         </button>
       </td>
-      <td className="competitorsTableRow__cell competitorsTableRow__cell--icon competitorsTableRow__cell--hug">
+      <td className="Competitors_table_rows_provider_cell Competitors_table_rows_provider_cellIcon Competitors_table_rows_provider_cellHug">
         <button
           type="button"
-          className="competitorsTableRow__iconBtn"
+          className="Competitors_table_rows_provider_iconBtn"
           data-session="view_competitor"
           data-competitor-id={competitor._id}
           data-editing="false"
@@ -138,7 +167,7 @@ const Competitors_table_rows_provider = ({
               : "View competitor"
           }>
           <svg
-            className="competitorsTableRow__iconSvg"
+            className="Competitors_table_rows_provider_iconSvg"
             viewBox="0 0 24 24"
             aria-hidden>
             <path

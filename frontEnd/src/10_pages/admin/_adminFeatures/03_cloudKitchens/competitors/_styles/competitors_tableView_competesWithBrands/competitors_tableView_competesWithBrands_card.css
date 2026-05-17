@@ -1,0 +1,89 @@
+.Competitors_tableView_competesWithBrands_card {
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 0.85rem;
+  padding: 0.85rem 0.9rem;
+  background: var(--bg-secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.Competitors_tableView_competesWithBrands_cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.Competitors_tableView_competesWithBrands_logoWrap {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.65rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Competitors_tableView_competesWithBrands_logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Competitors_tableView_competesWithBrands_logoFallback {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_competesWithBrands_removeBtn {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.Competitors_tableView_competesWithBrands_removeBtn:hover {
+  background: var(--bg-primary-color-HOV);
+}
+
+.Competitors_tableView_competesWithBrands_removeBtn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.Competitors_tableView_competesWithBrands_cardName {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_competesWithBrands_meta {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-primary-color);
+  line-height: 1.35;
+}
+
+.Competitors_tableView_competesWithBrands_metaKey {
+  color: var(--text-secondary-color);
+  font-weight: 600;
+}
+
+.Competitors_tableView_competesWithBrands_metaMuted {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary-color);
+}

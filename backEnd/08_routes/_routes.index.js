@@ -5,6 +5,5 @@ export { default as branchRoutes } from "./branchRoutes.js";
 export { default as brandRoutes } from "./brandRoutes.js";
 export { default as employeeRoutes } from "./employeeRoutes.js";
 export { default as settingsRoutes } from "./settingsRoutes.js";
-export { default as menuCategoryRoutes } from "./menuCategoryRoutes.js";
-export { default as menuRoutes } from "./menuRoutes.js";
-export { default as menuItemRoutes } from "./menuItemRoutes.js";
+
+export * from "./cloudKitchen_routes/_cloudKitchen_routes.index.js";

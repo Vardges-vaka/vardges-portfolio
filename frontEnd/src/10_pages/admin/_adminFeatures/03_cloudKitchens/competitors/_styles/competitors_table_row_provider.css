@@ -1,10 +1,10 @@
 /* Row shell + shared icon / detail controls */
-.competitorsTableRow {
+.Competitors_table_rows_provider {
   border-bottom: 1px solid var(--border-secondary-color);
   overflow: visible;
 }
 
-.competitorsTableRow__cell {
+.Competitors_table_rows_provider_cell {
   vertical-align: middle;
   text-align: left;
   padding: 0.4rem 0.4rem 0.4rem 0.45rem;
@@ -12,24 +12,24 @@
 }
 
 /* Table column shrink hint (min-width columns in auto layout). */
-.competitorsTableRow__cell--hug {
+.Competitors_table_rows_provider_cellHug {
   width: 1%;
   white-space: nowrap;
   padding-left: 0.32rem;
   padding-right: 0.28rem;
 }
 
-.competitorsTableRow__cell--cuisineTypes {
+.Competitors_table_rows_provider_cellCuisineTypes {
   overflow: visible;
   vertical-align: middle;
 }
 
-.competitorsTableRow__cell--competesWithBrands {
+.Competitors_table_rows_provider_cellCompetesWithBrands {
   overflow: visible;
   vertical-align: middle;
 }
 
-.competitorsTableRow__cell--num {
+.Competitors_table_rows_provider_cellNum {
   box-sizing: border-box;
   text-align: center;
   font-variant-numeric: tabular-nums;
@@ -41,65 +41,57 @@
 }
 
 /* Price + open icon stay left; column width follows content (with --hug). */
-.competitorsTableRow__cell--priceRange {
+.Competitors_table_rows_provider_cellPriceRange {
   vertical-align: middle;
 }
 
-.competitorsTableRow__cell--priceRange.competitorsTableRow__cell--hug {
+.Competitors_table_rows_provider_cellPriceRange.Competitors_table_rows_provider_cellHug {
   padding-right: 0.15rem;
 }
 
-.competitorsTableRow__cell--menu {
+.Competitors_table_rows_provider_cellMenu {
   vertical-align: middle;
 }
 
-.competitorsTableRow__cell--menu.competitorsTableRow__cell--hug {
+.Competitors_table_rows_provider_cellMenu.Competitors_table_rows_provider_cellHug {
   padding-right: 0.15rem;
 }
 
-/* Fixed gutter between price and menu: stable width, no dashed rules through the gap */
-.competitors_tableView__table tbody td.competitorsTableRow__cell--priceMenuGutter {
-  width: 0.7rem;
-  min-width: 0.7rem;
-  max-width: 0.7rem;
-  padding: 0;
-  border-left: none;
-  border-right: none;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-
-.competitorsTableRow__cell--name {
+.Competitors_table_rows_provider_cellName {
   max-width: 13rem;
 }
 
-.competitorsTableRow__cell--logo {
+.Competitors_table_rows_provider_cellLogo {
   text-align: left;
   vertical-align: middle;
 }
 
-.competitorsTableRow__cell--branches {
+.Competitors_table_rows_provider_cellBranches,
+.Competitors_table_rows_provider_cellFiles,
+.Competitors_table_rows_provider_cellSocials,
+.Competitors_table_rows_provider_cellContact,
+.Competitors_table_rows_provider_cellReviews {
   text-align: center;
 }
 
-.competitorsTableRow__cell--menuItemsQnt,
-.competitorsTableRow__cell--menuCategoriesQnt,
-.competitorsTableRow__cell--dineIn,
-.competitorsTableRow__cell--ownDeliveryDubai {
+.Competitors_table_rows_provider_cellMenuItemsQnt,
+.Competitors_table_rows_provider_cellMenuCategoriesQnt,
+.Competitors_table_rows_provider_cellDineIn,
+.Competitors_table_rows_provider_cellOwnDeliveryDubai {
   text-align: center;
   vertical-align: middle;
 }
 
 /* Narrower horizontal inset than generic --hug for compact count / own-delivery cells */
-.competitorsTableRow__cell--menuItemsQnt.competitorsTableRow__cell--hug,
-.competitorsTableRow__cell--menuCategoriesQnt.competitorsTableRow__cell--hug,
-.competitorsTableRow__cell--dineIn.competitorsTableRow__cell--hug,
-.competitorsTableRow__cell--ownDeliveryDubai.competitorsTableRow__cell--hug {
+.Competitors_table_rows_provider_cellMenuItemsQnt.Competitors_table_rows_provider_cellHug,
+.Competitors_table_rows_provider_cellMenuCategoriesQnt.Competitors_table_rows_provider_cellHug,
+.Competitors_table_rows_provider_cellDineIn.Competitors_table_rows_provider_cellHug,
+.Competitors_table_rows_provider_cellOwnDeliveryDubai.Competitors_table_rows_provider_cellHug {
   padding-left: 0.15rem;
   padding-right: 0.15rem;
 }
 
-.competitorsTableRow__nameBlock {
+.Competitors_table_rows_provider_nameBlock {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -108,7 +100,7 @@
   max-width: 100%;
 }
 
-.competitorsTableRow__nameText {
+.Competitors_table_rows_provider_nameText {
   font-weight: 500;
   color: var(--text-primary-color);
   overflow: hidden;
@@ -119,7 +111,7 @@
   min-width: 0;
 }
 
-.competitorsTableRow__nameBtn {
+.Competitors_table_rows_provider_nameBtn {
   background: transparent;
   border: none;
   padding: 0;
@@ -127,17 +119,17 @@
   text-align: left;
 }
 
-.competitorsTableRow__nameBtn:hover {
+.Competitors_table_rows_provider_nameBtn:hover {
   text-decoration: underline;
 }
 
-.competitorsTableRow__nameBtn:focus-visible {
+.Competitors_table_rows_provider_nameBtn:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-.competitorsTableRow__cell--icon {
+.Competitors_table_rows_provider_cellIcon {
   box-sizing: border-box;
   text-align: center;
   vertical-align: middle;
@@ -151,12 +143,12 @@
 }
 
 /* Icon columns use --hug for shrink hint; horizontal padding matches header (10px) */
-.competitorsTableRow__cell--icon.competitorsTableRow__cell--hug {
+.Competitors_table_rows_provider_cellIcon.Competitors_table_rows_provider_cellHug {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.competitorsTableRow__iconBtn {
+.Competitors_table_rows_provider_iconBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -170,12 +162,12 @@
   cursor: pointer;
 }
 
-.competitorsTableRow__iconBtn:hover {
+.Competitors_table_rows_provider_iconBtn:hover {
   background-color: var(--bg-tertiary-color-HOV);
   color: var(--icon-primary-stroke-color-HOV);
 }
 
-.competitorsTableRow__iconSvg {
+.Competitors_table_rows_provider_iconSvg {
   width: 1.1rem;
   height: 1.1rem;
 }

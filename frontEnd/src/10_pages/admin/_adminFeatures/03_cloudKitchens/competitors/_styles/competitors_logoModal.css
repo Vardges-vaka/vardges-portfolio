@@ -1,7 +1,7 @@
-.competitorsLogoModal {
+.Competitors_logoModal {
   position: fixed;
   inset: 0;
-  background: color-mix(in srgb, #000 55%, transparent);
+  background: var(--competitors-modal-backdrop-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
   padding: 1rem;
 }
 
-.competitorsLogoModal__panel {
+.Competitors_logoModal_panel {
   width: min(38rem, 100%);
   max-height: 90vh;
   /* background: var(--panel-bg-color); */
@@ -21,7 +21,7 @@
   overflow: hidden;
 }
 
-.competitorsLogoModal__header {
+.Competitors_logoModal_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,11 +30,11 @@
   border-bottom: 1px solid var(--border-secondary-color);
 }
 
-.competitorsLogoModal__title {
+.Competitors_logoModal_title {
   color: var(--text-primary-color);
 }
 
-.competitorsLogoModal__close {
+.Competitors_logoModal_close {
   width: 2rem;
   height: 2rem;
   border-radius: 0.6rem;
@@ -46,7 +46,7 @@
   line-height: 1;
 }
 
-.competitorsLogoModal__body {
+.Competitors_logoModal_body {
   padding: 0.9rem;
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@
   min-height: 0;
 }
 
-.competitorsLogoModal__img {
+.Competitors_logoModal_img {
   width: min(500px, 82vw);
   height: min(500px, 62vh);
   object-fit: contain;
@@ -64,12 +64,12 @@
   border-radius: 0.75rem;
 }
 
-.competitorsLogoModal__placeholder {
+.Competitors_logoModal_placeholder {
   color: var(--text-secondary-color);
   font-weight: 700;
 }
 
-.competitorsLogoModal__footer {
+.Competitors_logoModal_footer {
   padding: 0.9rem;
   border-top: 1px solid var(--border-secondary-color);
   display: flex;
@@ -78,7 +78,7 @@
   background: var(--panel-bg-color);
 }
 
-.competitorsLogoModal__btn {
+.Competitors_logoModal_btn {
   border: 1px solid var(--border-secondary-color);
   background: var(--panel-bg-color);
   color: var(--text-primary-color);
@@ -88,7 +88,7 @@
   font-weight: 600;
 }
 
-.competitorsLogoModal__btn--primary {
+.Competitors_logoModal_btnPrimary {
   background: var(--primary-color);
   border-color: var(--primary-color);
   color: var(--primary-contrast-color);

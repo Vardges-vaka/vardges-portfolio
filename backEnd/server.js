@@ -14,11 +14,13 @@ import {
   branchRoutes,
   brandRoutes,
   employeeRoutes,
-  menuRoutes,
-  menuItemRoutes,
-  menuCategoryRoutes,
-  // modifierRoutes,
   settingsRoutes,
+  // ! Cloud Kitchen Routes
+  cK_menuRoutes,
+  ck_Mn_CategoryRoutes,
+  ck_Mn_ItemRoutes,
+  ck_Mn_It_ModifierRoutes,
+  ck_Mn_It_Md_OptionRoutes,
 } from "./08_routes/_routes.index.js";
 
 // !===== Middlewares =====
@@ -74,14 +76,17 @@ app.use(
     immutable: true,
   }),
 );
+// ! menu routes
+
+app.use("/api/menus", auth_mddlwre, cK_menuRoutes);
+app.use("/api/menuCategories", auth_mddlwre, ck_Mn_CategoryRoutes);
+app.use("/api/menuItems", auth_mddlwre, ck_Mn_ItemRoutes);
+app.use("/api/menuItemModifiers", auth_mddlwre, ck_Mn_It_ModifierRoutes);
+app.use("/api/menuItemModifierOptions", auth_mddlwre, ck_Mn_It_Md_OptionRoutes);
 
 app.use("/api/branches", branchRoutes);
 app.use("/api/brands", brandRoutes);
 app.use("/api/employees", employeeRoutes);
-// app.use("/api/modifiers", modifierRoutes);
-app.use("/api/menu-categories", menuCategoryRoutes);
-app.use("/api/menus", menuRoutes);
-app.use("/api/menu-items", menuItemRoutes);
 app.use("/api/settings", auth_mddlwre, settingsRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/access", accessRoutes);

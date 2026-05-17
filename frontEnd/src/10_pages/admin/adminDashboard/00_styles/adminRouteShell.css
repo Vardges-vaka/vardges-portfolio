@@ -10,6 +10,15 @@
 }
 
 .adminRouteShell > .adminDashboard {
-  flex: 1 1 auto;
+  flex: 1 1 0%;
   min-height: 0;
+  /* Flex column child of .adminRouteShell — allow horizontal shrink so main content
+     cannot extend under the app sidebar (wide grids / session panels). */
+  min-width: 0;
+}
+
+/* Flex row sibling of .adminSideBar — must shrink below intrinsic content width. */
+.adminDashboard__contentWrapper {
+  min-width: 0;
+  flex: 1 1 0%;
 }

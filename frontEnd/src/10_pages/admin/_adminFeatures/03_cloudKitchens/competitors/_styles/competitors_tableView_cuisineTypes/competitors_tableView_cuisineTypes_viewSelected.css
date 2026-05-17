@@ -1,0 +1,84 @@
+.cuisineTypesViewSelected {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.cuisineTypesViewSelected__title {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+
+.cuisineTypesViewSelected__empty {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  line-height: 1.45;
+}
+
+.cuisineTypesViewSelected__chipGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.cuisineTypesViewSelected__chip {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 999px;
+  padding: 0.34rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  max-width: 100%;
+  text-align: left;
+  line-height: 1.25;
+  border-inline-start: 4px solid transparent;
+  font: inherit;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.cuisineTypesViewSelected__chip:hover {
+  background: var(--bg-primary-color-HOV);
+  border-color: var(--border-primary-color);
+}
+
+.cuisineTypesViewSelected__chip[data-cuisine-kind="cuisine"] {
+  border-inline-start-color: var(--primary-color);
+}
+
+.cuisineTypesViewSelected__chip[data-cuisine-kind="category"] {
+  border-inline-start-color: var(--primary-success-border);
+}
+
+.cuisineTypesViewSelected__chip[data-cuisine-kind="dietary"] {
+  border-inline-start-color: var(--primary-warning-border);
+}
+
+.cuisineTypesViewSelected__chip[data-cuisine-kind="mealType"] {
+  border-inline-start-color: var(--primary-hint-border);
+}
+
+.cuisineTypesViewSelected__chip[data-cuisine-kind="dessertBeverage"] {
+  border-inline-start-color: var(--primary-error-border);
+}
+
+.cuisineTypesViewSelected__chip:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.cuisineTypesViewSelected__chipFocused {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.cuisineTypesViewSelected__chipLegacy {
+  border-style: dashed;
+}

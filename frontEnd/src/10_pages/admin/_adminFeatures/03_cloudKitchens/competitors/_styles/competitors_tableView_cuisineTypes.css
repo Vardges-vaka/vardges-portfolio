@@ -1,0 +1,305 @@
+.Competitors_tableView_cuisineTypes {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.1rem 1.15rem 1.25rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  box-shadow: 0 1px 3px var(--boxShadow-secondary-color);
+}
+
+.Competitors_tableView_cuisineTypes--editing {
+  border-color: color-mix(
+    in srgb,
+    var(--primary-color) 28%,
+    var(--border-secondary-color)
+  );
+  box-shadow: 0 2px 10px color-mix(
+    in srgb,
+    var(--primary-color) 12%,
+    var(--boxShadow-secondary-color)
+  );
+}
+
+.Competitors_tableView_cuisineTypes_topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Competitors_tableView_cuisineTypes_topbarSpacer {
+  display: block;
+  min-height: 1px;
+}
+
+.Competitors_tableView_cuisineTypes_topbarActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Competitors_tableView_cuisineTypes_title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--title-primary-color);
+}
+
+.Competitors_tableView_cuisineTypes_subTitle {
+  margin: 0.35rem 0 0 0;
+  color: var(--text-secondary-color);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.Competitors_tableView_cuisineTypes_hint {
+  margin: 0.45rem 0 0 0;
+  color: var(--text-secondary-color);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  max-width: 42rem;
+}
+
+.Competitors_tableView_cuisineTypes_header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--border-secondary-color) 75%, transparent);
+}
+
+.Competitors_tableView_cuisineTypes_header > div:first-child {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.Competitors_tableView_cuisineTypes_countBadge {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+  border: 1px solid var(--border-secondary-color);
+  background: color-mix(in srgb, var(--primary-color) 8%, var(--panel-bg-color));
+  border-radius: 999px;
+  padding: 0.38rem 0.65rem;
+}
+
+.Competitors_tableView_cuisineTypes--editing
+  .Competitors_tableView_cuisineTypes_countBadge {
+  border-color: color-mix(
+    in srgb,
+    var(--primary-color) 35%,
+    var(--border-secondary-color)
+  );
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_cuisineTypes_draftPanel {
+  border: 1px solid var(--border-secondary-color);
+  background: color-mix(in srgb, var(--bg-secondary-color) 55%, var(--panel-bg-color));
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.85rem 0.85rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.Competitors_tableView_cuisineTypes_draftTitle {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_cuisineTypes_draftHint {
+  margin: 0 0 0.55rem 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+  line-height: 1.45;
+}
+
+.Competitors_tableView_cuisineTypes_draftEmpty {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-secondary-color);
+  line-height: 1.45;
+}
+
+.Competitors_tableView_cuisineTypes_draftChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.Competitors_tableView_cuisineTypes_draftChipWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  max-width: 100%;
+}
+
+.Competitors_tableView_cuisineTypes_draftChipWrapLegacy {
+  gap: 0.25rem;
+}
+
+.Competitors_tableView_cuisineTypes_draftChip {
+  border: 1px solid var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 12%, transparent);
+  color: var(--text-primary-color);
+  border-radius: 999px;
+  padding: 0.28rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+  max-width: 100%;
+  text-align: left;
+  line-height: 1.25;
+  border-inline-start: 4px solid transparent;
+}
+
+.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="cuisine"] {
+  border-inline-start-color: var(--primary-color);
+}
+
+.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="category"] {
+  border-inline-start-color: var(--primary-success-border);
+}
+
+.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="dietary"] {
+  border-inline-start-color: var(--primary-warning-border);
+}
+
+.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="mealType"] {
+  border-inline-start-color: var(--primary-hint-border);
+}
+
+.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="dessertBeverage"] {
+  border-inline-start-color: var(--primary-error-border);
+}
+
+.Competitors_tableView_cuisineTypes_draftChip:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.Competitors_tableView_cuisineTypes_draftChipLegacy {
+  border-style: dashed;
+}
+
+.Competitors_tableView_cuisineTypes_draftRemove {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 0.45rem;
+  padding: 0.15rem 0.45rem;
+  line-height: 1;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.Competitors_tableView_cuisineTypes_draftRemove:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.Competitors_tableView_cuisineTypes_body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .Competitors_tableView_cuisineTypes_body {
+    grid-template-columns: minmax(0, 1.1fr) minmax(12rem, min(40vw, 22rem));
+  }
+}
+
+.Competitors_tableView_cuisineTypes_catalogShell {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.Competitors_tableView_cuisineTypes_detail {
+  min-width: 0;
+  max-width: 100%;
+  position: sticky;
+  top: 0.5rem;
+}
+
+.Competitors_tableView_cuisineTypes_btn {
+  border: 1px solid var(--border-secondary-color);
+  background: var(--panel-bg-color);
+  color: var(--text-primary-color);
+  border-radius: 0.65rem;
+  padding: 0.48rem 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  font: inherit;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.Competitors_tableView_cuisineTypes_btn:hover {
+  background: var(--bg-primary-color-HOV);
+  border-color: var(--border-primary-color);
+}
+
+.Competitors_tableView_cuisineTypes_btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.Competitors_tableView_cuisineTypes_btnPrimary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-contrast-color);
+}
+
+.Competitors_tableView_cuisineTypes_btnPrimary:hover {
+  background: color-mix(in srgb, var(--primary-color) 88%, var(--text-primary-color));
+  border-color: color-mix(in srgb, var(--primary-color) 88%, var(--text-primary-color));
+  color: var(--primary-contrast-color);
+}
+
+.Competitors_tableView_cuisineTypes_btnGhost {
+  background: transparent;
+  border-color: var(--border-secondary-color);
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_cuisineTypes_btnGhost:hover {
+  background: color-mix(in srgb, var(--text-secondary-color) 8%, transparent);
+  color: var(--text-primary-color);
+}
+
+.Competitors_tableView_cuisineTypes_btnDanger {
+  border-color: var(--primary-error-border);
+  color: var(--primary-error-border);
+  background: var(--panel-bg-color);
+}
+
+.Competitors_tableView_cuisineTypes_btnDanger:focus-visible {
+  outline: 2px solid var(--primary-error-border);
+  outline-offset: 2px;
+}

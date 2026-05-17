@@ -1,0 +1,10 @@
+.competitorsConfirmModal_competesWithBrands {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.competitorsConfirmModal_competesWithBrands_names {
+  white-space: normal;
+  word-break: break-word;
+}

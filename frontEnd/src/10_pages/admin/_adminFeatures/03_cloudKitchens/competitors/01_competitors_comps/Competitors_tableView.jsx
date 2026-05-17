@@ -8,6 +8,13 @@ import {
   Dish_Icon,
   Tags_Icon,
   IsDelivery_Icon,
+  Files_Icon,
+  Images_Icon,
+  Street_Icon,
+  Contact_Icon,
+  Notes_Icon,
+  Ratings_Icon,
+  SocialMedia_Icon,
 } from "../../../../../../01_components/components.index.js";
 import "../_styles/competitors_tableView.css";
 import TemporaryTesting from "./TemporaryTesting.jsx";
@@ -28,15 +35,19 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const dish_Icon = Dish_Icon();
   const tags_Icon = Tags_Icon();
   const isDelivery_Icon = IsDelivery_Icon();
+  const files_Icon = Files_Icon();
+  const images_Icon = SocialMedia_Icon();
+  // hhh
+  const street_Icon = Contact_Icon();
+  const notes_Icon = Ratings_Icon();
 
   // ==== Price Range column icon====
   const priceRange_img = (
     <img
       src={priceRange_Icon}
-      alt="Price Range"
-      title="Price Range"
-      aria-label="Price Range"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -44,10 +55,9 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const cuisine__img = (
     <img
       src={tags_Icon}
-      alt="Cuisine Types"
-      title="Cuisine Types"
-      aria-label="Cuisine Types"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -55,10 +65,9 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const menu__img = (
     <img
       src={foodMenu_Icon}
-      alt="Menu"
-      title="Menu"
-      aria-label="Menu"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -66,10 +75,9 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const dishes__img = (
     <img
       src={dish_Icon}
-      alt="Dish"
-      title="Dish"
-      aria-label="Dish"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -77,10 +85,9 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const categories__img = (
     <img
       src={category_Icon}
-      alt="Category"
-      title="Category"
-      aria-label="Category"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -88,10 +95,9 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const dineIn__img = (
     <img
       src={dineIn_Icon}
-      alt="Dine-in"
-      title="Dine-in"
-      aria-label="Dine-in"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -99,10 +105,9 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const delivery__img = (
     <img
       src={isDelivery_Icon}
-      alt="Delivery"
-      title="Delivery"
-      aria-label="Delivery"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -110,10 +115,9 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const compeats__img = (
     <img
       src={competitors_Icon}
-      alt="Price Range"
-      title="Price Range"
-      aria-label="Price Range"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
@@ -121,24 +125,59 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
   const branches__img = (
     <img
       src={branches_Icon}
-      alt="Price Range"
-      title="Price Range"
-      aria-label="Price Range"
-      className="competitors_tableView__thIcon"
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
+    />
+  );
+
+  const files__img = (
+    <img
+      src={files_Icon}
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
+    />
+  );
+
+  const socials__img = (
+    <img
+      src={images_Icon}
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
+    />
+  );
+
+  const contact__img = (
+    <img
+      src={street_Icon}
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
+    />
+  );
+
+  const reviews__img = (
+    <img
+      src={notes_Icon}
+      alt=""
+      aria-hidden="true"
+      className="Competitors_tableView_thIcon"
     />
   );
 
   return (
-    <div className="competitors_tableView">
-      <div className="competitors_tableView__header">
-        <h1 className="competitors_tableView__title">
+    <div className="Competitors_tableView">
+      <div className="Competitors_tableView_header">
+        <h1 className="Competitors_tableView_title">
           {t ? t("tableView.title", "Competitors") : "Competitors"}
         </h1>
         <TemporaryTesting handler={handlers.temp} />
       </div>
 
-      <div className="competitors_tableView__tableScroll">
-        <table className="competitors_tableView__table">
+      <div className="Competitors_tableView_tableScroll">
+        <table className="Competitors_tableView_table">
           <thead>
             <tr>
               {tableHeaders.map((header) => {
@@ -152,16 +191,37 @@ const Competitors_tableView = ({ states, handlers, compProps, t }) => {
                   ownDeliveryDubai: delivery__img,
                   competesWithBrands: compeats__img,
                   branches: branches__img,
+                  files: files__img,
+                  socials: socials__img,
+                  contact: contact__img,
+                  reviews: reviews__img,
                 };
                 const maybeIcon = iconByClass[header.className];
+                const hoverLabel =
+                  (header.title && String(header.title).trim()) ||
+                  header.text ||
+                  "";
 
                 return (
                   <th
                     key={`h-${header.className}`}
-                    className={`competitors_tableView__th competitors_tableView__th--${header.className}`}
-                    title={header.title || undefined}
-                    aria-hidden={header.spacer ? true : undefined}>
-                    {header.spacer ? "\u00A0" : maybeIcon || header.text}
+                    scope="col"
+                    className={`Competitors_tableView_th Competitors_tableView_th_${header.className}`}
+                    {...(maybeIcon ? { "aria-label": hoverLabel } : {})}>
+                    {maybeIcon ? (
+                      <span className="Competitors_tableView_thHoverWrap">
+                        <span className="Competitors_tableView_thIconSlot">
+                          {maybeIcon}
+                        </span>
+                        <span
+                          className="Competitors_tableView_thHoverLabel"
+                          aria-hidden="true">
+                          {hoverLabel}
+                        </span>
+                      </span>
+                    ) : (
+                      header.text || header.title || "\u00A0"
+                    )}
                   </th>
                 );
               })}

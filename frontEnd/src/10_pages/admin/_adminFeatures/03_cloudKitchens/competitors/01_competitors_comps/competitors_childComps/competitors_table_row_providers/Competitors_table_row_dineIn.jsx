@@ -1,5 +1,6 @@
 import "../../../_styles/competitors_table_row_dineIn.css";
 
+/* eslint-disable react-refresh/only-export-components */
 const competitorHasDineIn = (competitor) => {
   const locs = competitor?.branches?.locations;
   if (!Array.isArray(locs) || locs.length === 0) return false;
@@ -8,7 +9,7 @@ const competitorHasDineIn = (competitor) => {
 
 const CheckIcon = () => (
   <svg
-    className="competitors_table_row_dineIn__check"
+    className="Competitors_table_row_dineIn_check"
     width="16"
     height="16"
     viewBox="0 0 24 24"
@@ -27,13 +28,13 @@ const Competitors_table_row_dineIn = ({ competitor, t }) => {
   const no = t ? t("tableRow.dineInNo", "No dine-in") : "No dine-in";
 
   return (
-    <div className="competitors_table_row_dineIn">
+    <div className="Competitors_table_row_dineIn">
       {has ? (
         <span title={yes} aria-label={yes}>
           <CheckIcon />
         </span>
       ) : (
-        <span className="competitors_table_row_dineIn__dash" title={no} aria-label={no}>
+        <span className="Competitors_table_row_dineIn_dash" title={no} aria-label={no}>
           —
         </span>
       )}

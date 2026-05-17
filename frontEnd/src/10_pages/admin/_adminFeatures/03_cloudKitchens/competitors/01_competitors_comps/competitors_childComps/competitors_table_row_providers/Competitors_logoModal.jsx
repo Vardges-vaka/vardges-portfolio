@@ -18,21 +18,21 @@ const Competitors_logoModal = ({
 
   return (
     <div
-      className="competitorsLogoModal"
+      className="Competitors_logoModal"
       role="dialog"
       aria-modal="true"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose?.();
       }}
     >
-      <div className="competitorsLogoModal__panel" onClick={(e) => e.stopPropagation()}>
-        <div className="competitorsLogoModal__header">
-          <div className="competitorsLogoModal__title">
+      <div className="Competitors_logoModal_panel" onClick={(e) => e.stopPropagation()}>
+        <div className="Competitors_logoModal_header">
+          <div className="Competitors_logoModal_title">
             <strong>{competitorName || "—"}</strong>
           </div>
           <button
             type="button"
-            className="competitorsLogoModal__close"
+            className="Competitors_logoModal_close"
             onClick={onClose}
             aria-label={closeLabel}
             title={closeLabel}
@@ -41,21 +41,21 @@ const Competitors_logoModal = ({
           </button>
         </div>
 
-        <div className="competitorsLogoModal__body">
+        <div className="Competitors_logoModal_body">
           {logoSrc ? (
-            <img className="competitorsLogoModal__img" src={logoSrc} alt="" />
+            <img className="Competitors_logoModal_img" src={logoSrc} alt="" />
           ) : (
-            <span className="competitorsLogoModal__placeholder">—</span>
+            <span className="Competitors_logoModal_placeholder">—</span>
           )}
         </div>
 
-        <div className="competitorsLogoModal__footer">
-          <button type="button" className="competitorsLogoModal__btn" onClick={onClose}>
+        <div className="Competitors_logoModal_footer">
+          <button type="button" className="Competitors_logoModal_btn" onClick={onClose}>
             {cancelLabel}
           </button>
           <button
             type="button"
-            className="competitorsLogoModal__btn competitorsLogoModal__btn--primary"
+            className="Competitors_logoModal_btn Competitors_logoModal_btnPrimary"
             onClick={onUpdate}
           >
             {updateLabel}

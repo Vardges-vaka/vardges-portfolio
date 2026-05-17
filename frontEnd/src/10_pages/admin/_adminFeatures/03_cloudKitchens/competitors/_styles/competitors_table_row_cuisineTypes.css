@@ -1,4 +1,4 @@
-.competitors_table_row_cuisineTypes {
+.Competitors_table_row_cuisineTypes {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -9,7 +9,7 @@
 }
 
 /* Hug tags; do not grow — keeps open icon beside the stack */
-.competitors_table_row_cuisineTypes__tagsCol {
+.Competitors_table_row_cuisineTypes_tagsCol {
   flex: 0 0 auto;
   max-width: 9rem;
   min-width: 0;
@@ -17,7 +17,7 @@
 }
 
 /* Vertical pill stack; overlaps upward; hover / focus spreads. */
-.competitors_table_row_cuisineTypes__stack {
+.Competitors_table_row_cuisineTypes_stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -26,7 +26,7 @@
   overflow: visible;
 }
 
-.competitors_table_row_cuisineTypes__tag {
+.Competitors_table_row_cuisineTypes_tag {
   display: inline-block;
   max-width: 100%;
   font-size: 0.72rem;
@@ -48,39 +48,39 @@
     box-shadow 0.22s ease;
 }
 
-.competitors_table_row_cuisineTypes__tag:first-child {
+.Competitors_table_row_cuisineTypes_tag:first-child {
   margin-top: 0;
 }
 
-.competitors_table_row_cuisineTypes__stack:hover
-  .competitors_table_row_cuisineTypes__tag,
-.competitors_table_row_cuisineTypes__stack:focus-within
-  .competitors_table_row_cuisineTypes__tag {
+.Competitors_table_row_cuisineTypes_stack:hover
+  .Competitors_table_row_cuisineTypes_tag,
+.Competitors_table_row_cuisineTypes_stack:focus-within
+  .Competitors_table_row_cuisineTypes_tag {
   margin-top: 0.25rem;
   transform: translateX(0);
   box-shadow: 0 2px 6px var(--boxShadow-secondary-color);
 }
 
-.competitors_table_row_cuisineTypes__stack:hover
-  .competitors_table_row_cuisineTypes__tag:first-child,
-.competitors_table_row_cuisineTypes__stack:focus-within
-  .competitors_table_row_cuisineTypes__tag:first-child {
+.Competitors_table_row_cuisineTypes_stack:hover
+  .Competitors_table_row_cuisineTypes_tag:first-child,
+.Competitors_table_row_cuisineTypes_stack:focus-within
+  .Competitors_table_row_cuisineTypes_tag:first-child {
   margin-top: 0;
 }
 
-.competitors_table_row_cuisineTypes__stack:focus-visible {
+.Competitors_table_row_cuisineTypes_stack:focus-visible {
   outline: 2px solid var(--border-primary-color-HOV);
   outline-offset: 3px;
   border-radius: 10px;
 }
 
-.competitors_table_row_cuisineTypes__empty {
+.Competitors_table_row_cuisineTypes_empty {
   color: var(--text-tertiary-color);
   font-size: 0.8rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .competitors_table_row_cuisineTypes__tag {
+  .Competitors_table_row_cuisineTypes_tag {
     transition: none;
   }
 }

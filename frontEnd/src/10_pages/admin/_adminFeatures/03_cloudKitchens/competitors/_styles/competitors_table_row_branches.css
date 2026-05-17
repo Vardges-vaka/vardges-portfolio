@@ -1,11 +1,11 @@
-.competitors_table_row_branches {
+.Competitors_table_row_branches {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
 }
 
-.competitors_table_row_branches__count {
+.Competitors_table_row_branches_count {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   color: var(--title-secondary-color);

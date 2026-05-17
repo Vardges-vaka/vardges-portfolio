@@ -13,14 +13,10 @@ export const TABLE_HEADERS = (t = null) => {
       text: t ? t("tableheaders.cuisine.text", "Cuisine") : "Cuisine",
       className: "cuisineTypes",
       title: t
-        ? t(
-            "tableheaders.cuisineTypes.title",
-            "Cuisine Types of the Competitor",
-          )
-        : "Cuisine Types of the Competitor",
+        ? t("tableheaders.cuisineTypes.title", "Cuisine Types")
+        : "Cuisine Types",
     },
 
-    /* Fixed-width gap so price + menu columns don’t visually collide when both use --hug */
     {
       text: t
         ? t("tableheaders.competesWithBrands.text", "Competes With Brands")
@@ -34,17 +30,9 @@ export const TABLE_HEADERS = (t = null) => {
         : "Competes With other Brands besides ours.",
     },
     {
-      text: "",
-      className: "priceMenuGutter",
-      title: "",
-      spacer: true,
-    },
-    {
       text: t ? t("tableheaders.menu.text", "Menu") : "Menu",
       className: "menu",
-      title: t
-        ? t("tableheaders.menu.title", "Menu of the Competitor")
-        : "Menu of the Competitor",
+      title: t ? t("tableheaders.menu.title", "Menu") : "Menu",
     },
     {
       text: t
@@ -52,11 +40,8 @@ export const TABLE_HEADERS = (t = null) => {
         : "Menu items",
       className: "menuItemsQnt",
       title: t
-        ? t(
-            "tableheaders.menuItemsQnt.title",
-            "Number of items on the competitor menu",
-          )
-        : "Number of items on the competitor menu",
+        ? t("tableheaders.menuItemsQnt.title", "Menu items")
+        : "Menu items",
     },
     {
       text: t
@@ -64,11 +49,8 @@ export const TABLE_HEADERS = (t = null) => {
         : "Menu categories",
       className: "menuCategoriesQnt",
       title: t
-        ? t(
-            "tableheaders.menuCategoriesQnt.title",
-            "Number of categories on the competitor menu",
-          )
-        : "Number of categories on the competitor menu",
+        ? t("tableheaders.menuCategoriesQnt.title", "Menu categories")
+        : "Menu categories",
     },
     {
       text: t
@@ -76,19 +58,16 @@ export const TABLE_HEADERS = (t = null) => {
         : "Price Range",
       className: "priceRange",
       title: t
-        ? t("tableheaders.priceRange.title", "Price Range of the Competitor")
-        : "Price Range of the Competitor",
+        ? t("tableheaders.priceRange.title", "Price Range")
+        : "Price Range",
     },
 
     {
       text: t ? t("tableheaders.dineIn.text", "Dine-in") : "Dine-in",
       className: "dineIn",
       title: t
-        ? t(
-            "tableheaders.dineIn.title",
-            "Has dine-in available in at least one branch",
-          )
-        : "Has dine-in available in at least one branch",
+        ? t("tableheaders.dineIn.title", "Has dine-in available")
+        : "Has dine-in available",
     },
     {
       text: t
@@ -96,22 +75,53 @@ export const TABLE_HEADERS = (t = null) => {
         : "Own delivery DXB",
       className: "ownDeliveryDubai",
       title: t
-        ? t(
-            "tableheaders.ownDeliveryDubai.title",
-            "Runs first-party delivery in Dubai",
-          )
-        : "Runs first-party delivery in Dubai",
+        ? t("tableheaders.ownDeliveryDubai.title", "Runs first-party delivery")
+        : "Runs first-party delivery",
     },
 
     {
       text: t ? t("tableheaders.branches.text", "Branches") : "Branches",
       className: "branches",
+      title: t ? t("tableheaders.branches.title", "Branches") : "Branches",
+    },
+    {
+      text: t ? t("tableheaders.files.text", "Files") : "Files",
+      className: "files",
       title: t
         ? t(
-            "tableheaders.branches.title",
-            "Total number of Branches the Competitor has.",
+            "tableheaders.files.title",
+            "Number of files attached to this competitor",
           )
-        : "Total number of Branches the Competitor has.",
+        : "Number of files attached to this competitor",
+    },
+    {
+      text: t ? t("tableheaders.socials.text", "Socials") : "Socials",
+      className: "socials",
+      title: t
+        ? t(
+            "tableheaders.socials.title",
+            "Social profiles and links for this competitor",
+          )
+        : "Social profiles and links for this competitor",
+    },
+    {
+      text: t ? t("tableheaders.contact.text", "Contact") : "Contact",
+      className: "contact",
+      title: t
+        ? t("tableheaders.contact.title", "Contact details for this competitor")
+        : "Contact details for this competitor",
+    },
+    {
+      text: t
+        ? t("tableheaders.reviews.text", "Ratings & reviews")
+        : "Ratings & reviews",
+      className: "reviews",
+      title: t
+        ? t(
+            "tableheaders.reviews.title",
+            "Average rating and review counts across platforms",
+          )
+        : "Average rating and review counts across platforms",
     },
     {
       text: t ? t("tableheaders.actions.edit", "Edit") : "Edit",

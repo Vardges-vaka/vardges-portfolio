@@ -1,0 +1,116 @@
+.Competitors_tableView_branches_header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.Competitors_tableView_branches_headerTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.Competitors_tableView_branches_headerBrand {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.Competitors_tableView_branches_headerLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-primary-color);
+  background: var(--bg-secondary-color);
+}
+
+.Competitors_tableView_branches_headerLogoFallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary-color);
+  border: 1px solid var(--border-primary-color);
+  background: color-mix(in srgb, var(--btn-primary-bg-color) 14%, transparent);
+}
+
+.Competitors_tableView_branches_headerText {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.Competitors_tableView_branches_branchCount {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_branches_title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--title-primary-color);
+}
+
+.Competitors_tableView_branches_subTitle {
+  margin: 0.35rem 0 0 0;
+  color: var(--text-secondary-color);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.Competitors_tableView_branches_hint {
+  margin: 0.45rem 0 0 0;
+  color: var(--text-secondary-color);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  max-width: 42rem;
+}
+
+.Competitors_tableView_branches_headerStepBadge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  background: var(--bg-secondary-color);
+  border: 1px solid var(--border-primary-color);
+}
+
+.Competitors_tableView_branches_headerToggles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Competitors_tableView_branches_header_clearBtn:not(:disabled) {
+  color: var(--primary-error-border);
+  border-color: color-mix(in srgb, var(--primary-error-border) 35%, transparent);
+}
+
+.Competitors_tableView_branches_header_clearBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.Competitors_tableView_branches_header_hideBtn:not(:disabled) {
+  color: var(--text-secondary-color);
+}
+
+.Competitors_tableView_branches_header_hideBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

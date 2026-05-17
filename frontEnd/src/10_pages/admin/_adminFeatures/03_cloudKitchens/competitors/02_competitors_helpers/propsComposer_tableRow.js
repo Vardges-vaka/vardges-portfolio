@@ -49,7 +49,7 @@ export const propsComposer_tableRow = (states, handlers, t) => {
   };
 
   const competesWithBrands = {
-    states: {},
+    states: { competitors: states.competitors },
     handlers: {},
     compProps: {},
     t: t,
@@ -74,6 +74,7 @@ export const propsComposer_tableRow = (states, handlers, t) => {
     Competitors_table_rows_provider_props: {
       states: {
         logoModalCompetitorId: states.logoModalCompetitorId,
+        competitors: states.competitors,
       },
       handlers: {
         handleCompetitorTableAction: handlers.handleCompetitorTableAction,

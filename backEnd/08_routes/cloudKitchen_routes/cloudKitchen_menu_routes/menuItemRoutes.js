@@ -1,0 +1,291 @@
+import express from "express";
+import { vld_sntzr_mddlwre } from "../../../05_middlewares/_mddlwre.index.js";
+// ! VALIDATORS
+import {
+  // ! Crud
+  cK_menuItem_getAll_vld,
+  cK_menuItem_getAllByOwnerType_vld,
+  cK_menuItem_create_vld,
+  cK_menuItem_getOne_vld,
+  cK_menuItem_updateAll_vld,
+  cK_menuItem_delete_vld,
+  // ! Fields
+  cK_menuItem_update_ownerType_vld,
+  cK_menuItem_update_ownerId_vld,
+  cK_menuItem_update_name_vld,
+  cK_menuItem_update_cost_vld,
+  cK_menuItem_update_description_vld,
+  cK_menuItem_update_sellingPrice_vld,
+  cK_menuItem_update_cuisineType_vld,
+  cK_menuItem_update_images_vld,
+  cK_menuItem_update_recipe_vld,
+  cK_menuItem_update_recipeFile_vld,
+  cK_menuItem_update_techCardFile_vld,
+  cK_menuItem_update_otherFiles_vld,
+  cK_menuItem_update_priceHistory_vld,
+  cK_menuItem_update_sizeByGrams_vld,
+  cK_menuItem_update_quantity_vld,
+  cK_menuItem_update_dietaryTags_vld,
+  cK_menuItem_update_allergens_vld,
+  cK_menuItem_update_spicyLevel_vld,
+  cK_menuItem_update_preparationTimeMin_vld,
+  cK_menuItem_update_sku_vld,
+  cK_menuItem_update_kitchenStation_vld,
+  cK_menuItem_update_nutrition_vld,
+  cK_menuItem_update_source_vld,
+  cK_menuItem_update_externalId_vld,
+  cK_menuItem_update_cloudStorage_vld,
+  // ! relations
+  cK_menuItem_addModifiers_vld,
+  cK_menuItem_removeModifiers_vld,
+  cK_menuItem_reorderModifiers_vld,
+  cK_menuItem_addMirrors_vld,
+  cK_menuItem_removeMirrors_vld,
+  cK_menuItem_addCompetes_vld,
+  cK_menuItem_removeCompetes_vld,
+} from "../../../07_controllers/_controllers.index.js";
+// ! CONTROLLERS
+import {
+  // ! Crud
+  cK_menuItem_getAll_cntrl,
+  cK_menuItem_getAllByOwnerType_cntrl,
+  cK_menuItem_create_cntrl,
+  cK_menuItem_getOne_cntrl,
+  cK_menuItem_updateAll_cntrl,
+  cK_menuItem_delete_cntrl,
+  // ! Fields
+  cK_menuItem_update_ownerType_cntrl,
+  cK_menuItem_update_ownerId_cntrl,
+  cK_menuItem_update_name_cntrl,
+  cK_menuItem_update_cost_cntrl,
+  cK_menuItem_update_description_cntrl,
+  cK_menuItem_update_sellingPrice_cntrl,
+  cK_menuItem_update_cuisineType_cntrl,
+  cK_menuItem_update_images_cntrl,
+  cK_menuItem_update_recipe_cntrl,
+  cK_menuItem_update_recipeFile_cntrl,
+  cK_menuItem_update_techCardFile_cntrl,
+  cK_menuItem_update_otherFiles_cntrl,
+  cK_menuItem_update_priceHistory_cntrl,
+  cK_menuItem_update_sizeByGrams_cntrl,
+  cK_menuItem_update_quantity_cntrl,
+  cK_menuItem_update_dietaryTags_cntrl,
+  cK_menuItem_update_allergens_cntrl,
+  cK_menuItem_update_spicyLevel_cntrl,
+  cK_menuItem_update_preparationTimeMin_cntrl,
+  cK_menuItem_update_sku_cntrl,
+  cK_menuItem_update_kitchenStation_cntrl,
+  cK_menuItem_update_nutrition_cntrl,
+  cK_menuItem_update_source_cntrl,
+  cK_menuItem_update_externalId_cntrl,
+  cK_menuItem_update_cloudStorage_cntrl,
+  // ! relations
+  cK_menuItem_addModifiers_cntrl,
+  cK_menuItem_removeModifiers_cntrl,
+  cK_menuItem_reorderModifiers_cntrl,
+  cK_menuItem_addMirrors_cntrl,
+  cK_menuItem_removeMirrors_cntrl,
+  cK_menuItem_addCompetes_cntrl,
+  cK_menuItem_removeCompetes_cntrl,
+} from "../../../07_controllers/_controllers.index.js";
+
+const router = express.Router();
+
+// ! Crud --------------------------------------------------------------------
+router.get(
+  "/getAll",
+  vld_sntzr_mddlwre(cK_menuItem_getAll_vld),
+  cK_menuItem_getAll_cntrl,
+);
+router.get(
+  "/getAllByOwnerType/:ownerType",
+  vld_sntzr_mddlwre(cK_menuItem_getAllByOwnerType_vld),
+  cK_menuItem_getAllByOwnerType_cntrl,
+);
+router.post(
+  "/create",
+  vld_sntzr_mddlwre(cK_menuItem_create_vld),
+  cK_menuItem_create_cntrl,
+);
+router.get(
+  "/getOne/:id",
+  vld_sntzr_mddlwre(cK_menuItem_getOne_vld),
+  cK_menuItem_getOne_cntrl,
+);
+router.put(
+  "/updateAll/:id",
+  vld_sntzr_mddlwre(cK_menuItem_updateAll_vld),
+  cK_menuItem_updateAll_cntrl,
+);
+router.delete(
+  "/delete/:id",
+  vld_sntzr_mddlwre(cK_menuItem_delete_vld),
+  cK_menuItem_delete_cntrl,
+);
+// --------------------------------------------------------------------
+
+// ! Fields --------------------------------------------------------------------
+router.put(
+  "/update/ownerType/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_ownerType_vld),
+  cK_menuItem_update_ownerType_cntrl,
+);
+router.put(
+  "/update/ownerId/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_ownerId_vld),
+  cK_menuItem_update_ownerId_cntrl,
+);
+router.put(
+  "/update/name/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_name_vld),
+  cK_menuItem_update_name_cntrl,
+);
+router.put(
+  "/update/cost/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_cost_vld),
+  cK_menuItem_update_cost_cntrl,
+);
+router.put(
+  "/update/description/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_description_vld),
+  cK_menuItem_update_description_cntrl,
+);
+router.put(
+  "/update/sellingPrice/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_sellingPrice_vld),
+  cK_menuItem_update_sellingPrice_cntrl,
+);
+router.put(
+  "/update/cuisineType/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_cuisineType_vld),
+  cK_menuItem_update_cuisineType_cntrl,
+);
+router.put(
+  "/update/images/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_images_vld),
+  cK_menuItem_update_images_cntrl,
+);
+router.put(
+  "/update/recipe/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_recipe_vld),
+  cK_menuItem_update_recipe_cntrl,
+);
+router.put(
+  "/update/recipeFile/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_recipeFile_vld),
+  cK_menuItem_update_recipeFile_cntrl,
+);
+router.put(
+  "/update/techCardFile/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_techCardFile_vld),
+  cK_menuItem_update_techCardFile_cntrl,
+);
+router.put(
+  "/update/otherFiles/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_otherFiles_vld),
+  cK_menuItem_update_otherFiles_cntrl,
+);
+router.put(
+  "/update/priceHistory/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_priceHistory_vld),
+  cK_menuItem_update_priceHistory_cntrl,
+);
+router.put(
+  "/update/sizeByGrams/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_sizeByGrams_vld),
+  cK_menuItem_update_sizeByGrams_cntrl,
+);
+router.put(
+  "/update/quantity/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_quantity_vld),
+  cK_menuItem_update_quantity_cntrl,
+);
+router.put(
+  "/update/dietaryTags/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_dietaryTags_vld),
+  cK_menuItem_update_dietaryTags_cntrl,
+);
+router.put(
+  "/update/allergens/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_allergens_vld),
+  cK_menuItem_update_allergens_cntrl,
+);
+router.put(
+  "/update/spicyLevel/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_spicyLevel_vld),
+  cK_menuItem_update_spicyLevel_cntrl,
+);
+router.put(
+  "/update/preparationTimeMin/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_preparationTimeMin_vld),
+  cK_menuItem_update_preparationTimeMin_cntrl,
+);
+router.put(
+  "/update/sku/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_sku_vld),
+  cK_menuItem_update_sku_cntrl,
+);
+router.put(
+  "/update/kitchenStation/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_kitchenStation_vld),
+  cK_menuItem_update_kitchenStation_cntrl,
+);
+router.put(
+  "/update/nutrition/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_nutrition_vld),
+  cK_menuItem_update_nutrition_cntrl,
+);
+router.put(
+  "/update/source/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_source_vld),
+  cK_menuItem_update_source_cntrl,
+);
+router.put(
+  "/update/externalId/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_externalId_vld),
+  cK_menuItem_update_externalId_cntrl,
+);
+router.put(
+  "/update/cloudStorage/:id",
+  vld_sntzr_mddlwre(cK_menuItem_update_cloudStorage_vld),
+  cK_menuItem_update_cloudStorage_cntrl,
+);
+// --------------------------------------------------------------------
+
+// ! relations --------------------------------------------------------------------
+router.post(
+  "/modifiers/add/:id",
+  vld_sntzr_mddlwre(cK_menuItem_addModifiers_vld),
+  cK_menuItem_addModifiers_cntrl,
+);
+router.delete(
+  "/modifiers/remove/:id",
+  vld_sntzr_mddlwre(cK_menuItem_removeModifiers_vld),
+  cK_menuItem_removeModifiers_cntrl,
+);
+router.put(
+  "/modifiers/reorder/:id",
+  vld_sntzr_mddlwre(cK_menuItem_reorderModifiers_vld),
+  cK_menuItem_reorderModifiers_cntrl,
+);
+router.post(
+  "/mirrors/add/:id",
+  vld_sntzr_mddlwre(cK_menuItem_addMirrors_vld),
+  cK_menuItem_addMirrors_cntrl,
+);
+router.delete(
+  "/mirrors/remove/:id",
+  vld_sntzr_mddlwre(cK_menuItem_removeMirrors_vld),
+  cK_menuItem_removeMirrors_cntrl,
+);
+router.post(
+  "/competes/add/:id",
+  vld_sntzr_mddlwre(cK_menuItem_addCompetes_vld),
+  cK_menuItem_addCompetes_cntrl,
+);
+router.delete(
+  "/competes/remove/:id",
+  vld_sntzr_mddlwre(cK_menuItem_removeCompetes_vld),
+  cK_menuItem_removeCompetes_cntrl,
+);
+export default router;

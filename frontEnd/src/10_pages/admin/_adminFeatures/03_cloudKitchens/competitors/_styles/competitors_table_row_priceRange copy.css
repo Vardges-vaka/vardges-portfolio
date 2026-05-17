@@ -1,0 +1,16 @@
+.Competitors_table_row_priceRange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.Competitors_table_row_priceRange_value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--title-secondary-color);
+  min-width: 0;
+}

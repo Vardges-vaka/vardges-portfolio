@@ -1,0 +1,242 @@
+.menu-tooltip {
+  /* Let clicks reach the toggle / orbit items only; avoids a full 200×200 hit
+     slab stealing events in tight table layouts (later <td>s paint on top). */
+  pointer-events: none;
+  --menu-tooltip-toggle-bg: var(--bg-secondary-color);
+  --menu-tooltip-item-1-gradient: linear-gradient(
+    145deg,
+    var(--bg-secondary-color),
+    var(--bg-tertiary-color)
+  );
+  --menu-tooltip-item-2-gradient: linear-gradient(
+    145deg,
+    var(--bg-tertiary-color),
+    var(--border-secondary-color)
+  );
+  --menu-tooltip-item-3-gradient: linear-gradient(
+    145deg,
+    var(--bg-secondary-color-HOV),
+    var(--border-tertiary-color)
+  );
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: block;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  padding: 0 !important;
+}
+
+.menu-tooltip__toggle {
+  /* Compact center control (~32px); native button for reliable clicks in tables */
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  background-color: var(--menu-tooltip-toggle-bg);
+  color: var(--text-primary-color);
+  border-radius: 50%;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: inherit;
+  z-index: 999;
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  box-shadow:
+    inset -1px -1px 2px 0 var(--boxShadow-primary-color),
+    inset 1px 1px 2px 0 var(--boxShadow-secondary-color),
+    0 1px 2px var(--boxShadow-primary-color);
+}
+
+.menu-tooltip__toggle:focus-visible {
+  outline: 2px solid var(--border-primary-color-HOV);
+  outline-offset: 3px;
+}
+
+.menu-tooltip--open .menu-tooltip__toggle {
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.menu-tooltip--open .menu-tooltip__orbit {
+  z-index: 10;
+}
+
+.menu-tooltip--open .menu-tooltip__orbit .menu-tooltip__circle {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu-tooltip--open .menu-tooltip__toggle .menu-tooltip__toggleCount {
+  display: none;
+}
+
+.menu-tooltip--open .menu-tooltip__toggle .menu-tooltip__toggleCloseGlyph {
+  display: flex;
+}
+
+.menu-tooltip__toggleFace {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-tooltip__toggleCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  max-width: 28px;
+  overflow: hidden;
+}
+
+.menu-tooltip__toggleCloseGlyph {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: -0.04em;
+}
+
+.menu-tooltip__orbit {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.menu-tooltip__orbit .menu-tooltip__circle {
+  pointer-events: none;
+}
+
+.menu-tooltip__circle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  list-style-type: none;
+  transition:
+    transform 0.2s,
+    opacity 0.2s,
+    visibility 0.2s;
+  transform-origin: 100px 25px;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(70px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-tooltip--open .menu-tooltip__orbit .menu-tooltip__circle:nth-of-type(1),
+.menu-tooltip--open .menu-tooltip__orbit .menu-tooltip__circle:nth-of-type(2),
+.menu-tooltip--open .menu-tooltip__orbit .menu-tooltip__circle:nth-of-type(3) {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu-tooltip__circle:nth-of-type(1) .menu-tooltip__anchor {
+  background: var(--menu-tooltip-item-1-gradient);
+}
+
+.menu-tooltip__circle:nth-of-type(2) .menu-tooltip__anchor {
+  background: var(--menu-tooltip-item-2-gradient);
+}
+
+.menu-tooltip__circle:nth-of-type(3) .menu-tooltip__anchor {
+  background: var(--menu-tooltip-item-3-gradient);
+}
+
+.menu-tooltip__circle:nth-of-type(4),
+.menu-tooltip__circle:nth-of-type(5),
+.menu-tooltip__circle:nth-of-type(6),
+.menu-tooltip__circle:nth-of-type(7),
+.menu-tooltip__circle:nth-of-type(8) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.menu-tooltip__anchor {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border-radius: 50%;
+  font-size: 1.5em;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: var(--text-primary-color);
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  box-sizing: border-box;
+  position: relative;
+}
+
+.menu-tooltip__anchor::before {
+  display: none;
+}
+
+.menu-tooltip__anchorLogo {
+  overflow: hidden;
+}
+
+.menu-tooltip__logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.menu-tooltip__idPh {
+  font-size: 0.45em;
+  font-weight: 600;
+  color: var(--text-tertiary-color);
+  text-transform: uppercase;
+}
+
+.menu-tooltip__viewSvg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-tooltip__toggle,
+  .menu-tooltip__circle {
+    transition: none;
+  }
+}

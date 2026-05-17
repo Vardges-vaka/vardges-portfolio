@@ -5,7 +5,7 @@ import {
 import { VALID_VIEW_MODES } from "../05_competitors_cnst/_competitors_cnst.index.js";
 import "../_styles/competitors_viewToggle.css";
 
-const Competitors_viewToggle = ({ states, handlers, compProps, t }) => {
+const Competitors_viewToggle = ({ states, handlers, t }) => {
   const reducedModes = VALID_VIEW_MODES(t).reduce((acc, mode) => {
     acc[mode.value] = mode;
     return acc;
@@ -20,7 +20,7 @@ const Competitors_viewToggle = ({ states, handlers, compProps, t }) => {
   const MODES = VALID_VIEW_MODES(t);
 
   return (
-    <div className="competitors_viewToggle">
+    <div className="Competitors_viewToggle">
       {MODES.map((mode) => {
         const isActive = states.session === mode.value;
         return (
@@ -32,17 +32,17 @@ const Competitors_viewToggle = ({ states, handlers, compProps, t }) => {
             aria-label={mode.title}
             title={mode.title}
             className={
-              "competitors_viewToggle_btn" +
-              (isActive ? " competitors_viewToggle--active" : "")
+              "Competitors_viewToggle_btn" +
+              (isActive ? " Competitors_viewToggle_btnActive" : "")
             }
             data-value={mode.value}
             onClick={handlers.handleSetSession}>
             {isActive ? (
-              <span className="competitors_viewToggle_pulseDot" aria-hidden />
+              <span className="Competitors_viewToggle_pulseDot" aria-hidden />
             ) : null}
             {mode.value === "view_competitors_map" ? (
               <img
-                className="competitors_viewToggle_iconImg"
+                className="Competitors_viewToggle_iconImg"
                 src={mapView_Icon}
                 alt=""
                 aria-hidden
@@ -50,7 +50,7 @@ const Competitors_viewToggle = ({ states, handlers, compProps, t }) => {
               />
             ) : (
               <img
-                className="competitors_viewToggle_iconImg"
+                className="Competitors_viewToggle_iconImg"
                 src={listView_Icon}
                 alt=""
                 aria-hidden

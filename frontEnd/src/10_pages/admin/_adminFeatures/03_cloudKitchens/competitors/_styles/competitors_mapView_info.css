@@ -1,5 +1,5 @@
 /* Info panel (bottom). */
-.competitorsMapViewInfo {
+.Competitors_mapView_info {
   width: 100%;
   padding: 0;
   background: var(--bg-primary-color);
@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.competitorsMapViewInfo__bar {
+.Competitors_mapView_info_bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,7 +21,7 @@
   border-bottom: 1px solid var(--border-primary-color);
 }
 
-.competitorsMapViewInfo__barMain {
+.Competitors_mapView_info_barMain {
   min-width: 0;
   display: inline-flex;
   align-items: baseline;
@@ -29,7 +29,7 @@
   flex-wrap: wrap;
 }
 
-.competitorsMapViewInfo__barTitle {
+.Competitors_mapView_info_barTitle {
   font-size: 0.8125rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -37,7 +37,7 @@
   color: var(--text-secondary-color);
 }
 
-.competitorsMapViewInfo__barValue {
+.Competitors_mapView_info_barValue {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-primary-color);
@@ -47,13 +47,13 @@
   max-width: min(52vw, 32rem);
 }
 
-.competitorsMapViewInfo__barActions {
+.Competitors_mapView_info_barActions {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
 }
 
-.competitorsMapViewInfo__barBtn {
+.Competitors_mapView_info_barBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -66,31 +66,31 @@
   cursor: pointer;
 }
 
-.competitorsMapViewInfo__barBtn:hover:not(:disabled) {
+.Competitors_mapView_info_barBtn:hover:not(:disabled) {
   border-color: var(--btn-primary-bg-color);
 }
 
-.competitorsMapViewInfo__barBtn:disabled {
+.Competitors_mapView_info_barBtn:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
 
-.competitorsMapViewInfo__body {
+.Competitors_mapView_info_body {
   padding: 1rem 1.1rem 1.1rem;
 }
 
-.competitorsMapViewInfo__body--collapsed {
+.Competitors_mapView_info_bodyCollapsed {
   display: none;
 }
 
-.competitorsMapViewInfo__muted {
+.Competitors_mapView_info_muted {
   margin: 0;
   font-size: 0.8125rem;
   color: var(--text-secondary-color);
   line-height: 1.4;
 }
 
-.competitorsMapViewInfo__header {
+.Competitors_mapView_info_header {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -99,14 +99,14 @@
   margin-bottom: 0.85rem;
 }
 
-.competitorsMapViewInfo__headerLeft {
+.Competitors_mapView_info_headerLeft {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   min-width: 0;
 }
 
-.competitorsMapViewInfo__logo {
+.Competitors_mapView_info_logo {
   width: 44px;
   height: 44px;
   border-radius: 10px;
@@ -116,24 +116,24 @@
   flex-shrink: 0;
 }
 
-.competitorsMapViewInfo__titleStack {
+.Competitors_mapView_info_titleStack {
   min-width: 0;
 }
 
-.competitorsMapViewInfo__name {
+.Competitors_mapView_info_name {
   margin: 0;
   font-size: 1rem;
   font-weight: 600;
 }
 
-.competitorsMapViewInfo__addr {
+.Competitors_mapView_info_addr {
   margin: 0.2rem 0 0;
   font-size: 0.8125rem;
   color: var(--text-secondary-color);
   line-height: 1.35;
 }
 
-.competitorsMapViewInfo__openBtn {
+.Competitors_mapView_info_openBtn {
   padding: 0.45rem 0.75rem;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -144,22 +144,22 @@
   cursor: pointer;
 }
 
-.competitorsMapViewInfo__openBtn:hover:not(:disabled) {
+.Competitors_mapView_info_openBtn:hover:not(:disabled) {
   border-color: var(--btn-primary-bg-color);
 }
 
-.competitorsMapViewInfo__openBtn:disabled {
+.Competitors_mapView_info_openBtn:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
 
-.competitorsMapViewInfo__grid {
+.Competitors_mapView_info_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0.65rem;
 }
 
-.competitorsMapViewInfo__card {
+.Competitors_mapView_info_card {
   padding: 0.65rem;
   border-radius: 8px;
   border: 1px solid var(--border-primary-color);
@@ -170,11 +170,11 @@
   gap: 0.25rem;
 }
 
-.competitorsMapViewInfo__card--full {
+.Competitors_mapView_info_cardFull {
   grid-column: 1 / -1;
 }
 
-.competitorsMapViewInfo__label {
+.Competitors_mapView_info_label {
   font-size: 0.75rem;
   color: var(--text-secondary-color);
   font-weight: 600;
@@ -182,13 +182,13 @@
   letter-spacing: 0.03em;
 }
 
-.competitorsMapViewInfo__value {
+.Competitors_mapView_info_value {
   font-size: 0.9375rem;
   font-weight: 600;
   word-break: break-word;
 }
 
-.competitorsMapViewInfo__pill {
+.Competitors_mapView_info_pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -200,23 +200,23 @@
   font-weight: 700;
 }
 
-.competitorsMapViewInfo__pill--on {
+.Competitors_mapView_info_pillOn {
   border-color: var(--primary-success-border);
   background: color-mix(in srgb, var(--primary-success-border) 12%, transparent);
 }
 
-.competitorsMapViewInfo__pill--off {
+.Competitors_mapView_info_pillOff {
   opacity: 0.85;
 }
 
-.competitorsMapViewInfo__miniGrid {
+.Competitors_mapView_info_miniGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.5rem;
   margin-top: 0.55rem;
 }
 
-.competitorsMapViewInfo__miniRow {
+.Competitors_mapView_info_miniRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -227,7 +227,7 @@
   background: var(--bg-primary-color);
 }
 
-.competitorsMapViewInfo__miniLabel {
+.Competitors_mapView_info_miniLabel {
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -235,21 +235,21 @@
   color: var(--text-secondary-color);
 }
 
-.competitorsMapViewInfo__miniValue {
+.Competitors_mapView_info_miniValue {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--text-primary-color);
   font-variant-numeric: tabular-nums;
 }
 
-.competitorsMapViewInfo__links {
+.Competitors_mapView_info_links {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.35rem;
   margin-top: 0.35rem;
 }
 
-.competitorsMapViewInfo__link {
+.Competitors_mapView_info_link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -263,7 +263,7 @@
   text-decoration: none;
 }
 
-.competitorsMapViewInfo__link:hover {
+.Competitors_mapView_info_link:hover {
   border-color: var(--btn-primary-bg-color);
   background: color-mix(in srgb, var(--btn-primary-bg-color) 10%, transparent);
 }

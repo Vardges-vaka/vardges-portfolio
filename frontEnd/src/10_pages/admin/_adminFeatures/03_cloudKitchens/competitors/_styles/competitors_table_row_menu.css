@@ -1,4 +1,4 @@
-.competitors_table_row_menu {
+.Competitors_table_row_menu {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -7,7 +7,7 @@
   min-width: 0;
 }
 
-.competitors_table_row_menu__name {
+.Competitors_table_row_menu_name {
   flex: 1 1 auto;
   max-width: 100%;
   min-width: 0;

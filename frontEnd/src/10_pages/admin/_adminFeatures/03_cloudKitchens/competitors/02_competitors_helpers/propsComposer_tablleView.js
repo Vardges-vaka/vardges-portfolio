@@ -25,7 +25,11 @@ export const propsComposer_tablleView = (states, handlers, t) => {
   };
   const cuisineTypes_props = {
     states: baseStates,
-    handlers: baseHandlers,
+    handlers: {
+      ...baseHandlers,
+      handleCompetitorCuisineTypesSave:
+        handlers.handleCompetitorCuisineTypesSave,
+    },
     compProps: {},
     t,
   };
@@ -43,7 +47,11 @@ export const propsComposer_tablleView = (states, handlers, t) => {
   };
   const competesWithBrands_props = {
     states: baseStates,
-    handlers: baseHandlers,
+    handlers: {
+      ...baseHandlers,
+      handleCompetitorCompetesWithBrandsSave:
+        handlers.handleCompetitorCompetesWithBrandsSave,
+    },
     compProps: {},
     t,
   };

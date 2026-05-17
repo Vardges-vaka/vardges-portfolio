@@ -8,10 +8,10 @@ const Competitors_table_row_logo = ({ competitor, handlers, t }) => {
     : "Logo details";
 
   return (
-    <div className="competitors_table_row_logo">
+    <div className="Competitors_table_row_logo">
       <button
         type="button"
-        className="competitors_table_row_logo__thumbBtn"
+        className="Competitors_table_row_logo_thumbBtn"
         onClick={h}
         data-session="view_profile"
         data-competitor-id={competitor._id}
@@ -20,13 +20,13 @@ const Competitors_table_row_logo = ({ competitor, handlers, t }) => {
       >
         {src ? (
           <img
-            className="competitors_table_row_logo__img"
+            className="Competitors_table_row_logo_img"
             src={src}
             alt=""
             loading="lazy"
           />
         ) : (
-          <span className="competitors_table_row_logo__placeholder">—</span>
+          <span className="Competitors_table_row_logo_placeholder">—</span>
         )}
       </button>
     </div>

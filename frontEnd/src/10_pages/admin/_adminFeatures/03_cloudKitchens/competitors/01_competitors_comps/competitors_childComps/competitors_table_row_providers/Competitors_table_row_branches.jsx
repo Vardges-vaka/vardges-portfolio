@@ -10,8 +10,8 @@ const Competitors_table_row_branches = ({ competitor, handlers, t }) => {
     : "Branches map";
 
   return (
-    <div className="competitors_table_row_branches">
-      <span className="competitors_table_row_branches__count">
+    <div className="Competitors_table_row_branches">
+      <span className="Competitors_table_row_branches_count">
         {n == null ? "—" : n}
       </span>
       <Competitors_table_row_openIconBtn
