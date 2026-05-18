@@ -123,6 +123,7 @@ CLAUDE.md
 
 .CLAUDE_DESIGNS/
 .context/
+.local_only/
 .plans/
 FRD's/
 _sample_dir_named[XXX]/
