@@ -1,4 +1,4 @@
-import { Menu } from "../../../../../../../06_models/_models.index.js";
+import { MenuCategory } from "../../../../../../../06_models/_models.index.js";
 import { catch_errorHandler_service } from "../../../../../../../03_services/_services.index.js";
 
 const displayName = " | ck_Mn_Category_create_srv_srv.js | ";
@@ -10,15 +10,15 @@ export const ck_Mn_Category_create_srv = async (req, isDebug) => {
   try {
     const sanitizedData = req.body.sanitizedData;
 
-    const newMenu = new Menu(sanitizedData);
+    const newMenu = new MenuCategory(sanitizedData);
     await newMenu.save();
 
-    isDebug && console.log(`✅${displayName}Menu created: ${newMenu._id}`);
+    isDebug && console.log(`✅${displayName}MenuCategory created: ${newMenu._id}`);
 
     return {
       success: true,
       message: "Menu created successfully", // needs to be edited properly, to be added a proper internationalizated message.
-      data: newBranch,
+      data: {},
     };
   } catch (error) {
     return catch_errorHandler_service(displayName, isDebug, error);

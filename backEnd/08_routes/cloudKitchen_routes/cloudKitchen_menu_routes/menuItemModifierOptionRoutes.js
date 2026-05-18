@@ -9,7 +9,7 @@ import {
   cK_Mn_It_Md_Option_updateAll_vld,
   cK_Mn_It_Md_Option_delete_vld,
   // ! Fields Validvld
-  cK_Mn_It_Md_Option_update_ownerType_cntrl,
+  cK_Mn_It_Md_Option_update_ownerType_vld,
   cK_Mn_It_Md_Option_update_ownerId_vld,
   cK_Mn_It_Md_Option_update_name_vld,
   cK_Mn_It_Md_Option_update_description_vld,
@@ -41,7 +41,6 @@ import {
   cK_Mn_It_Md_Option_update_sellingPrice_cntrl,
   cK_Mn_It_Md_Option_update_nutrition_cntrl,
   cK_Mn_It_Md_Option_update_cloudStorage_cntrl,
-  cK_Mn_It_Md_Option_update_ownerType_vld,
 } from "../../../07_controllers/_controllers.index.js";
 
 const router = express.Router();

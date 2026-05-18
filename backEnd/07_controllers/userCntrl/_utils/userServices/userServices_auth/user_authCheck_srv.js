@@ -41,7 +41,7 @@ export const user_authCheck_srv = async (req, isDebug) => {
     isDebug &&
       console.log(`${displayName} Checking blacklist for token:`, token);
     const accessDoc = await Access.findOne();
-    isDebug && console.log(`${displayName} Access document:`, accessDoc);
+    // isDebug && console.log(`${displayName} Access document:`, accessDoc);
     if (accessDoc?.blacklist?.tokens?.logOut?.includes(token)) {
       isDebug && console.log(`${displayName} JWT token is blacklisted`);
       return {

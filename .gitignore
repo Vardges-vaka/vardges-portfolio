@@ -120,11 +120,12 @@ temp/
 .claude/
 CLAUDE.md
 
-.plans/
+
 .CLAUDE_DESIGNS/
 .context/
-_sample_dir_named[XXX]/
+.plans/
 FRD's/
+_sample_dir_named[XXX]/
 personalContext/
 
 

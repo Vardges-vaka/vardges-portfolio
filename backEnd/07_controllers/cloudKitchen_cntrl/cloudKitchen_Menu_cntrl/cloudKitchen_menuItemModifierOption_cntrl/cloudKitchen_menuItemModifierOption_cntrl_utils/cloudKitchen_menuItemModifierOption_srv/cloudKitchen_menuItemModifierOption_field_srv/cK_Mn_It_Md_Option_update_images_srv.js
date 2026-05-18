@@ -18,7 +18,7 @@ export const cK_Mn_It_Md_Option_update_images_srv = async (req, isDebug) => {
     return {
       success: true,
       message: "Menu created successfully", // needs to be edited properly, to be added a proper internationalizated message.
-      data: newBranch,
+      data: {},
     };
   } catch (error) {
     return catch_errorHandler_service(displayName, isDebug, error);
