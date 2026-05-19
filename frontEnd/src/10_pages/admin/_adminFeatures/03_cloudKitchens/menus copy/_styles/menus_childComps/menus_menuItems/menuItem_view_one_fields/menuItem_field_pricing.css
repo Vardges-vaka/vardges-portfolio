@@ -1,0 +1,80 @@
+/* ============================================================================
+   MenuItem — pricing section (selling price + cost + price history)
+============================================================================ */
+
+.menuItem_field_pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 35%, transparent);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  border-radius: var(--menus-radius-md, 8px);
+}
+
+.menuItem_field_pricing_costAndPrice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.menuItem_field_pricing_label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuItem_field_pricing_label label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+  margin: 0;
+}
+
+.menuItem_field_pricing_controlls {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Price-history toggle row — was hard-coded antiquewhite. */
+.MenuItem_field_pricing_priceHistory_cnt {
+  width: 100% !important;
+  background-color: transparent !important;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.MenuItem_field_pricing_priceHistory_cnt button,
+.MenuItem_field_pricing_priceHistory_btn {
+  appearance: none;
+  width: 100% !important;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d) !important;
+  background-color: var(--menus-bg-elev, #fff) !important;
+  background: var(--menus-bg-elev, #fff) !important;
+  border: 1px dashed var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-sm, 6px);
+  cursor: pointer;
+  transition:
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.MenuItem_field_pricing_priceHistory_cnt button:hover,
+.MenuItem_field_pricing_priceHistory_btn:hover {
+  color: var(--menus-text, #1d1b18) !important;
+  background-color: var(--menus-bg-soft, #f3efe9) !important;
+  background: var(--menus-bg-soft, #f3efe9) !important;
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--menus-border, #d6cfc4) 70%, var(--menus-text, #1d1b18));
+}

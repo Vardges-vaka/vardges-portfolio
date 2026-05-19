@@ -1,0 +1,8 @@
+/* MenuItems session wrapper. */
+.menus_session_menuItem {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}

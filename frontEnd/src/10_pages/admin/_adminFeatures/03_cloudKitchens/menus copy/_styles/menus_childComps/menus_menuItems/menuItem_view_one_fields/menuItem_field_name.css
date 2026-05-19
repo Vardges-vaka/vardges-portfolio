@@ -1,0 +1,7 @@
+/* ============================================================================
+   MenuItem — name field (refinements layered on view_one)
+============================================================================ */
+
+.menus_menuItem_view_one_topRight_name {
+  position: relative;
+}

@@ -1,0 +1,44 @@
+.MenuItem_field_cost {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  /* border: 1px solid black; */
+}
+
+.MenuItem_field_cost_label {
+  display: flex;
+  flex-direction: row;
+  align-items: center !important;
+  gap: 10px;
+}
+
+.MenuItem_field_cost_label label {
+  font-weight: 550;
+  font-size: 16px;
+}
+
+.menuItem_field_sellingPrice_controlls {
+  align-self: flex-end !important;
+  /* place-self: inherit; */
+}
+
+.MenuItem_field_cost_versions {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.MenuItem_field_cost_version {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.MenuItem_field_cost_version label {
+  font-size: 14px;
+}
+
+.MenuItem_field_cost_input {
+  width: 100%;
+  box-sizing: border-box !important;
+}

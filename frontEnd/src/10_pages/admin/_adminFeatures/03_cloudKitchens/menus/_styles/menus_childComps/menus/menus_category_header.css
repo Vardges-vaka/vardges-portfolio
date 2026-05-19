@@ -1,0 +1,80 @@
+.menus_category_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fffefe60;
+}
+
+.menus_category_header_aside {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.menus_category_header_label {
+  font-size: 25px;
+  /* font-weight: 600; */
+  /* font-style: italic; */
+}
+
+.menus_category_header_menuItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.menus_category_header_menuItems_count {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 10px 15px;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+.menus_category_header_menuItems_label {
+  font-size: 10px;
+  /* margin-bottom: 10px; */
+  /* margin-left: -5px; */
+  text-align: top !important ;
+}
+
+.menus_category_header_timing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.menus_category_header_alwaysActive {
+}
+
+.menus_category_header_windowLabel {
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px dashed #ccc;
+  color: #000;
+}
+
+.menus_category_header_windowTime_from {
+}
+
+.menus_category_header_windowTime_to {
+}
+
+.menus_category_header_button {
+}
+
+.menus_category_header_button .dropdown {
+}
+.menus_category_header_button .edit {
+}

@@ -1,0 +1,70 @@
+/* ============================================================================
+   Menus — breadcrumb path (replaces "Back to Menus" button)
+============================================================================ */
+
+.menus_breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  min-width: 0;
+}
+
+.menus_breadcrumb_crumb {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--menus-radius-sm, 6px);
+  padding: 4px 10px;
+  color: var(--menus-text-soft, #5a544d);
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 18rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: inherit;
+  transition:
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menus_breadcrumb_crumb:hover {
+  color: var(--menus-text, #1d1b18);
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border-color: var(--menus-border-soft, #e6e0d6);
+}
+
+.menus_breadcrumb_crumb.current {
+  color: var(--menus-title, #1d1b18);
+  font-weight: 600;
+  background-color: var(--menus-bg-elev, #fff);
+  border-color: var(--menus-border-soft, #e6e0d6);
+  pointer-events: none;
+  cursor: default;
+}
+
+.menus_breadcrumb_crumb:focus-visible {
+  outline: 2px solid var(--menus-accent, #2fc30b);
+  outline-offset: 2px;
+}
+
+.menus_breadcrumb_sep {
+  display: inline-flex;
+  align-items: center;
+  color: var(--menus-text-faint, color-mix(in srgb, #1d1b18 50%, transparent));
+  font-size: var(--menus-text-xs, 0.6875rem);
+  user-select: none;
+  line-height: 1;
+}
+
+/* The menus_sessionToggle middle slot already centers content; the
+   breadcrumb sits in that slot — no extra layout needed. */
+.menus_sessionToggle_middle .menus_breadcrumb {
+  justify-content: center;
+  font-size: var(--menus-text-base, 0.875rem);
+  letter-spacing: 0;
+}

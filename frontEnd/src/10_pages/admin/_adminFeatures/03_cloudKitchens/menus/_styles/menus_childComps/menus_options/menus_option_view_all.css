@@ -1,0 +1,19 @@
+/* .menus_option_view_all_table_row {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+} */
+
+.menus_option_view_all_table_row .image {
+  width: 35px;
+  height: 35px;
+}

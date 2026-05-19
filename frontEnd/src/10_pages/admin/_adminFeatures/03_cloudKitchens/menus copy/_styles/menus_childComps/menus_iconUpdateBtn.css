@@ -1,0 +1,96 @@
+/* ============================================================================
+   Menus — icon-only update button (per-field)
+   - Tiny ghost square that holds a single SVG icon
+   - Active state when this is the field currently being updated
+   - Disabled state when a top-level Update is active on another field
+============================================================================ */
+
+.menus_iconUpdateBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: var(--menus-radius-sm, 6px);
+  background-color: transparent;
+  color: var(--menus-text-soft, #5a544d);
+  cursor: pointer;
+  line-height: 0;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    transform var(--menus-dur-fast, 120ms) var(--menus-ease, ease);
+}
+
+.menus_iconUpdateBtn:hover {
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border-color: var(--menus-border-soft, #e6e0d6);
+  color: var(--menus-text, #1d1b18);
+}
+
+.menus_iconUpdateBtn:active { transform: scale(0.92); }
+
+.menus_iconUpdateBtn:focus-visible {
+  outline: 2px solid var(--menus-accent, #2fc30b);
+  outline-offset: 2px;
+}
+
+.menus_iconUpdateBtn.active {
+  color: var(--menus-accent-text, #2fc30b);
+  background-color: var(--menus-accent-soft, color-mix(in srgb, #2fc30b 14%, transparent));
+  border-color: color-mix(in srgb, var(--menus-accent, #2fc30b) 40%, var(--menus-border-soft, #e6e0d6));
+}
+
+.menus_iconUpdateBtn:disabled,
+.menus_iconUpdateBtn[aria-disabled="true"] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.4);
+}
+
+.menus_iconUpdateBtn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Tooltip on hover — pure CSS, uses [data-tooltip] */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--menus-bg-elev, #fff);
+  background-color: var(--menus-text, #1d1b18);
+  border-radius: var(--menus-radius-xs, 4px);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 30%, transparent);
+  animation: menus_tooltip_in 120ms var(--menus-ease-out, ease) both;
+}
+
+@keyframes menus_tooltip_in {
+  from { opacity: 0; transform: translate(-50%, 2px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}

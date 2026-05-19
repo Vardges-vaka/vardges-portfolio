@@ -1,0 +1,36 @@
+.menuItem_field_pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.menuItem_field_pricing_costAndPrice {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.menuItem_field_pricing_label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menuItem_field_pricing_label label {
+  /* font-size: 18px; */
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin-left: 5px;
+}
+.MenuItem_field_pricing_priceHistory_cnt {
+  width: 100% !important;
+  background-color: rgb(149, 149, 148) !important;
+  /* background: antiquewhite !important; */
+}
+/* MenuItem_field_pricing_priceHistory_cnt */
+/* MenuItem_field_pricing_priceHistory_btn */
+.MenuItem_field_pricing_priceHistory_cnt button,
+.MenuItem_field_pricing_priceHistory_btn {
+  width: 100% !important;
+  background-color: antiquewhite !important;
+  background: antiquewhite !important;
+}

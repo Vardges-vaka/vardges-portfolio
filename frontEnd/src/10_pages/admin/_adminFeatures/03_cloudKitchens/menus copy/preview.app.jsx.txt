@@ -1,0 +1,1004 @@
+/* ============================================================================
+   View_one components + creation forms + the main session app + mount.
+============================================================================ */
+
+const { useState: _aState, useMemo: _aMemo, Fragment: _aFrag, useEffect: _aEffect } = React;
+const MOCK = window.MOCK;
+const MOCK_CONST = window.MOCK_CONST;
+const I = window.I;
+const FLAGS = window.FLAGS;
+const {
+  Menus_iconUpdateBtn, Menus_breadcrumb, Menus_translations, Menus_dropZone,
+  Menus_filePreview, Menus_confirmModal, Menus_fieldRow, Menus_ownerBadge,
+  Menus_table, Menus_menuItems_table, Menus_modifier_table, Menus_option_table,
+} = window;
+
+/* ============================================================================
+   Menu_view_one — header card with every menu field shown, plus its categories
+   each rendered as a section with its menuItems table.
+============================================================================ */
+function Menu_view_one({ menu, lockAll, editingField, setEditingField, requestConfirm, onViewItem, onUpdateItem, expandedItemId, setExpandedItemId }) {
+  return (
+    <div className="menus_view_one">
+      <div className="Menus_menu_header">
+        <h1>{menu.label}</h1>
+        <Menus_fieldRow
+          label="Label" value={menu.label} fieldKey="label" lockedBy={lockAll}
+          editingField={editingField} setEditingField={setEditingField}
+          onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+        />
+        <Menus_fieldRow
+          label="Description" value={menu.description} fieldKey="description" multiline lockedBy={lockAll}
+          editingField={editingField} setEditingField={setEditingField}
+          onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+        />
+        <Menus_fieldRow
+          label="Owner Type" value={menu.ownerType} fieldKey="ownerType" type="select" options={["brand", "competitor"]}
+          lockedBy={lockAll}
+          editingField={editingField} setEditingField={setEditingField}
+          onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+        />
+        <Menus_fieldRow
+          label="Status" value={menu.isActive ? "Active" : "Inactive"} fieldKey="isActive" type="select" options={["Active", "Inactive"]}
+          lockedBy={lockAll}
+          editingField={editingField} setEditingField={setEditingField}
+          onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+        />
+        <p>Created By: -- {menu.createdBy}</p>
+        <p>Created At: -- {window.formatDate(menu.createdAt)}</p>
+        <p>Updated By: -- {menu.updatedBy}</p>
+        <p>Updated At: -- {window.formatDate(menu.updatedAt)}</p>
+      </div>
+
+      <div className="menus_categories">
+        {menu.categories.map((cid) => {
+          const cat = MOCK.categories[cid];
+          if (!cat) return null;
+          const items = cat.menuItems.map((iid) => MOCK.items[iid]).filter(Boolean);
+          return (
+            <div key={cat._id}>
+              <div className="menus_category_header">
+                <aside className="menus_category_header_aside">
+                  <p className="menus_category_header_label">{cat.name.label}</p>
+                  <p className="menus_category_header_menuItems">
+                    <span className="menus_category_header_menuItems_count">{items.length}</span>
+                    <span className="menus_category_header_menuItems_label">Menu Items</span>
+                  </p>
+                </aside>
+                <div className="menus_category_header_timing">
+                  {cat.activeTimings.isAlwaysActive ? <p className="menus_category_header_alwaysActive">Always Active</p> : (
+                    cat.activeTimings.windows.map((w, i) => (
+                      <div key={i}>
+                        <p className="menus_category_header_windowLabel">{w.label}</p>
+                        <span className="menus_category_header_windowTime_from">{w.from}</span>–
+                        <span className="menus_category_header_windowTime_to">{w.to}</span>
+                      </div>
+                    ))
+                  )}
+                </div>
+                <aside className="menus_category_header_actions">
+                  <button className="menus_category_header_button edit">Edit</button>
+                  <button className="menus_category_header_button dropdown">More</button>
+                </aside>
+              </div>
+              <div className="menus_categories_menuItems">
+                {items.length ? (
+                  <Menus_menuItems_table
+                    items={items} onView={onViewItem} onUpdate={onUpdateItem}
+                    expandedId={expandedItemId} setExpandedId={setExpandedItemId}
+                  />
+                ) : <div className="menus_empty_menuItems"><p>No items in this category yet.</p></div>}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+window.Menu_view_one = Menu_view_one;
+
+/* ============================================================================
+   MenuItem_view_one — every field of MOCK_MENU_ITEM_* shown.
+============================================================================ */
+function MenuItem_field_images_strip({ images }) {
+  const types = ["main", "aggregators", "website", "google", "highRes", "noBackgroundPng", "jpg", "png", "WebP", "ico"];
+  return (
+    <div className="menuItem_field_images_types_container">
+      {types.map((t) => (
+        <div key={t} className="menuItem_field_images_types_item" title={t}>
+          {images[t]
+            ? <span className={`menuItem_field_images_types active ${t}`} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}>{I.image}</span>
+            : <span className={`menuItem_field_images_types ${t}`} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}>{I.upload}</span>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function MenuItem_view_one({ item, lockAll, editingField, setEditingField, requestConfirm }) {
+  const [showNameTrans, setShowNameTrans] = _aState(false);
+  const [showNameAggr, setShowNameAggr] = _aState(false);
+  const [showShortTrans, setShowShortTrans] = _aState(false);
+  const [showLongTrans, setShowLongTrans] = _aState(false);
+  const [showDescAggr, setShowDescAggr] = _aState(false);
+  const [showPriceHistory, setShowPriceHistory] = _aState(false);
+
+  return (
+    <div className="menus_menuItem_view_one">
+      <div className="menus_menuItem_view_one_top">
+        {/* ---- Images column ---- */}
+        <aside className="menuItem_field_images">
+          <img src={item.images.main} alt={item.name.label} className="menuItem_field_images_mainImage" />
+          <MenuItem_field_images_strip images={item.images} />
+          <Menus_dropZone
+            label="Add main image"
+            hint="PNG, JPG, WebP up to 5 MB"
+            disabled={lockAll || !!editingField}
+          />
+        </aside>
+
+        <aside className="menus_menuItem_view_one_topRight">
+          {/* ---- Name ---- */}
+          <div>
+            <Menus_fieldRow
+              label="Name" value={item.name.label} fieldKey="name.label" lockedBy={lockAll}
+              editingField={editingField} setEditingField={setEditingField}
+              onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+              extraControls={
+                <>
+                  <Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showNameTrans} onClick={() => setShowNameTrans(!showNameTrans)} />
+                  <Menus_iconUpdateBtn icon={I.cart} tooltip="Aggregator versions" active={showNameAggr} onClick={() => setShowNameAggr(!showNameAggr)} />
+                </>
+              }
+            />
+            {showNameTrans && <Menus_translations title="Translations" data={item.name.translations} readOnly={!editingField} />}
+            {showNameAggr && <Menus_translations title="Aggregator versions" data={item.name.aggrigators} readOnly={!editingField} />}
+          </div>
+
+          {/* ---- Description ---- */}
+          <div className="menus_menuItem_view_one_topRight_description">
+            <div className="menus_menuItem_view_one_topRight_description_label">
+              <label>Descriptions</label>
+              <div className="menus_menuItem_view_one_topRight_controlls">
+                <Menus_iconUpdateBtn icon={I.globe} tooltip="Show website" />
+                <Menus_iconUpdateBtn icon={I.cart} tooltip="Aggregator versions" active={showDescAggr} onClick={() => setShowDescAggr(!showDescAggr)} />
+                <Menus_iconUpdateBtn icon={I.star} tooltip="Google version" />
+              </div>
+            </div>
+            <div className="menus_menuItem_view_one_topRight_description_versions">
+              <div className="menus_menuItem_view_one_topRight_description_version short">
+                <div className="menus_menuItem_view_one_topRight_description_version_label">
+                  <label>Short</label>
+                  <Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showShortTrans} onClick={() => setShowShortTrans(!showShortTrans)} />
+                </div>
+                <Menus_fieldRow
+                  label="Short" value={item.description.short.en} fieldKey="description.short" multiline lockedBy={lockAll}
+                  editingField={editingField} setEditingField={setEditingField}
+                  onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+                />
+                {showShortTrans && <Menus_translations title="Short — translations" data={item.description.short} multiline />}
+              </div>
+              <div className="menus_menuItem_view_one_topRight_description_version long">
+                <div className="menus_menuItem_view_one_topRight_description_version_label">
+                  <label>Long</label>
+                  <Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showLongTrans} onClick={() => setShowLongTrans(!showLongTrans)} />
+                </div>
+                <Menus_fieldRow
+                  label="Long" value={item.description.long.en} fieldKey="description.long" multiline lockedBy={lockAll}
+                  editingField={editingField} setEditingField={setEditingField}
+                  onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+                />
+                {showLongTrans && <Menus_translations title="Long — translations" data={item.description.long} multiline />}
+              </div>
+            </div>
+            {showDescAggr && <Menus_translations title="Description — aggregator versions" data={item.description.aggrigators} />}
+          </div>
+
+          {/* ---- Pricing ---- */}
+          <div className="menuItem_field_pricing">
+            <div className="menuItem_field_pricing_label">
+              <label>Selling Price</label>
+              <Menus_iconUpdateBtn tooltip="Edit pricing" disabled={lockAll || !!editingField} />
+            </div>
+
+            <div className="menuItem_field_sellingPrice">
+              <div className="menuItem_field_sellingPrice_versions">
+                <div className="menuItem_field_sellingPrice_version">
+                  <label>Gross</label>
+                  <input className="menuItem_field_sellingPrice_input" type="number" value={item.sellingPrice.gross} readOnly />
+                </div>
+                <div className="menuItem_field_sellingPrice_version">
+                  <label>Net</label>
+                  <input className="menuItem_field_sellingPrice_input" type="number" value={item.sellingPrice.net} readOnly />
+                </div>
+                <div className="menuItem_field_sellingPrice_version">
+                  <label>VAT</label>
+                  <input className="menuItem_field_sellingPrice_input" type="number" value={item.sellingPrice.VAT} readOnly />
+                </div>
+              </div>
+            </div>
+
+            <div className="MenuItem_field_cost">
+              <div className="MenuItem_field_cost_label"><label>Cost</label></div>
+              <div className="MenuItem_field_cost_versions">
+                <div className="MenuItem_field_cost_version estimated">
+                  <label>Estimated</label>
+                  <input className="MenuItem_field_cost_input" type="number" value={item.cost.estimatedCost} readOnly />
+                </div>
+                <div className="MenuItem_field_cost_version actual">
+                  <label>Actual</label>
+                  <input className="MenuItem_field_cost_input" type="number" value={item.cost.actualCost} readOnly />
+                </div>
+              </div>
+            </div>
+
+            <div className="MenuItem_field_pricing_priceHistory_cnt">
+              <button className="MenuItem_field_pricing_priceHistory_btn" onClick={() => setShowPriceHistory(!showPriceHistory)}>
+                {showPriceHistory ? "Hide" : "Show"} price history ({item.priceHistory.length})
+              </button>
+            </div>
+
+            {showPriceHistory && (
+              <div className="menuItem_field_priceHistory">
+                {item.priceHistory.length === 0 ? <p style={{ margin: 0, fontSize: 12 }}>No history yet.</p> : (
+                  <table style={{ width: "100%", fontSize: 12, borderCollapse: "collapse" }}>
+                    <thead><tr style={{ textAlign: "left" }}><th>From</th><th>To</th><th>Gross</th></tr></thead>
+                    <tbody>
+                      {item.priceHistory.map((p, i) => (
+                        <tr key={i}><td>{p.from}</td><td>{p.to || "—"}</td><td>{p.gross}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* ---- Nutrition ---- */}
+          <div className="menuItem_field_nutrition">
+            <div className="menuItem_field_nutrition_label">
+              <label>Nutrition</label>
+              <Menus_iconUpdateBtn tooltip="Edit nutrition" disabled={lockAll || !!editingField} />
+            </div>
+            <div className="menuItem_field_nutrition_versions">
+              <div className="menuItem_field_nutrition_version source"><label>Source</label><input className="menuItem_field_nutrition_input" value={item.nutrition.source} readOnly /></div>
+              <div className="menuItem_field_nutrition_version lastCalculatedAt"><label>Calculated</label><input className="menuItem_field_nutrition_input" value={window.formatDate(item.nutrition.lastCalculatedAt)} readOnly /></div>
+              <div className="menuItem_field_nutrition_version calories"><label>Calories</label><input type="number" className="menuItem_field_nutrition_input" value={item.nutrition.calories} readOnly /></div>
+              <div className="menuItem_field_nutrition_version protein"><label>Protein</label><input type="number" className="menuItem_field_nutrition_input" value={item.nutrition.protein} readOnly /></div>
+              <div className="menuItem_field_nutrition_version carbs"><label>Carbs</label><input type="number" className="menuItem_field_nutrition_input" value={item.nutrition.carbs} readOnly /></div>
+              <div className="menuItem_field_nutrition_version fat"><label>Fat</label><input type="number" className="menuItem_field_nutrition_input" value={item.nutrition.fat} readOnly /></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {/* ---- Other facts (compact 3-col grid) ---- */}
+      <section className="menuItem_field_modifiers" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
+        <FactCell label="SKU" value={item.sku} />
+        <FactCell label="Owner" value={<Menus_ownerBadge value={item.ownerType} />} />
+        <FactCell label="Cuisine" value={item.cuisineType} />
+        <FactCell label="Kitchen station" value={item.kitchenStation} />
+        <FactCell label="Size" value={`${item.sizeByGrams} g`} />
+        <FactCell label="Spicy level" value={item.spicyLevel} />
+        <FactCell label="Prep time" value={`${item.preparationTimeMin}m`} />
+        <FactCell label="External ID" value={item.externalId} />
+        <FactCell label="Cloud storage" value={`${item.cloudStorage.value}${item.cloudStorage.isDefault ? " (default)" : ""}`} />
+        <FactCell label="Source" value={item.source} />
+        <FactCell label="Dietary tags" value={item.dietaryTags.join(", ") || "—"} />
+        <FactCell label="Allergens" value={item.allergens.join(", ") || "—"} />
+        <FactCell label="Created" value={`${item.createdBy} · ${window.formatDate(item.createdAt || "2026-01-01")}`} wrap />
+        <FactCell label="Updated" value={`${item.updatedBy} · ${window.formatDate(item.updatedAt || "2026-05-12")}`} wrap />
+      </section>
+
+      {/* ---- Modifiers attached to the item ---- */}
+      {item.modifiers.length > 0 && (
+        <section className="menuItem_field_modifiers">
+          <Menus_modifier_table
+            modifiers={item.modifiers.map((m) => MOCK.modifiers[m.modifier]).filter(Boolean)}
+            onView={() => {}} onUpdate={() => {}}
+            expandedId={null} setExpandedId={() => {}}
+          />
+        </section>
+      )}
+
+      {/* ---- Files (recipe + techcard + other) ---- */}
+      <section className="menuItem_field_modifiers">
+        <h3 style={{ margin: 0, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--menus-text-soft)" }}>Files</h3>
+        <div className="menus_filePreview_strip" style={{ marginTop: 6 }}>
+          <Menus_filePreview file={item.recipeFile?.pdf ? { path: item.recipeFile.pdf, fileType: "pdf", ref: "Recipe (PDF)" } : null} label="Recipe PDF" />
+          <Menus_filePreview file={item.recipeFile?.word ? { path: item.recipeFile.word, fileType: "docx", ref: "Recipe (DOC)" } : null} label="Recipe DOC" />
+          <Menus_filePreview file={item.techCardFile?.pdf ? { path: item.techCardFile.pdf, fileType: "pdf", ref: "TechCard (PDF)" } : null} label="TechCard PDF" />
+          <Menus_filePreview file={item.techCardFile?.word ? { path: item.techCardFile.word, fileType: "docx", ref: "TechCard (DOC)" } : null} label="TechCard DOC" />
+          {item.otherFiles.map((f, i) => <Menus_filePreview key={i} file={f} />)}
+          {item.images.other && item.images.other.map((f, i) => <Menus_filePreview key={"img" + i} file={f} />)}
+        </div>
+        <div style={{ marginTop: 10 }}>
+          <Menus_dropZone label="Drop recipe / tech card / other files here" hint="PDF, DOCX, XLSX up to 10 MB" disabled={lockAll || !!editingField} />
+        </div>
+      </section>
+
+      {/* ---- Mirrored / Competes ---- */}
+      <section className="menuItem_field_modifiers" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+        <div>
+          <h3 style={{ margin: 0, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--menus-text-soft)" }}>Mirrored with other menu items</h3>
+          <div style={{ marginTop: 8, display: "flex", flexWrap: "wrap", gap: 10 }}>
+            {item.mirroredWithOtherMenuItems.length === 0 && <span style={{ fontSize: 13, color: "var(--menus-text-soft)" }}>—</span>}
+            {item.mirroredWithOtherMenuItems.map((m, i) => (
+              <span key={i} className="menus_pill" title={m.note}>
+                <img src={m.brand.logo} alt={m.brand.name} style={{ width: 18, height: 18, borderRadius: 4, objectFit: "cover" }} />
+                {m.brand.name} · {m.item.name}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 style={{ margin: 0, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--menus-text-soft)" }}>Competes with other menu items</h3>
+          <div style={{ marginTop: 8, display: "flex", flexWrap: "wrap", gap: 10 }}>
+            {item.competesWithOtherMenuItems.length === 0 && <span style={{ fontSize: 13, color: "var(--menus-text-soft)" }}>—</span>}
+            {item.competesWithOtherMenuItems.map((c, i) => (
+              <span key={i} className="menus_pill">
+                <img src={c.brand.logo} alt={c.brand.name} style={{ width: 18, height: 18, borderRadius: 4, objectFit: "cover" }} />
+                {c.brand.name} · {c.item.name} · {c.sellingPrice?.gross}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function FactCell({ label, value, wrap }) {
+  return (
+    <div className="menus_quickView_field">
+      <span className="menus_quickView_field_label">{label}</span>
+      <span className={`menus_quickView_field_value ${wrap ? "wrap" : ""}`}>{value}</span>
+    </div>
+  );
+}
+window.FactCell = FactCell;
+window.MenuItem_view_one = MenuItem_view_one;
+
+/* ============================================================================
+   Modifier_view_one — every field of MOCK_MODIFIER_* shown.
+============================================================================ */
+function Modifier_view_one({ modifier, lockAll, editingField, setEditingField, requestConfirm, onViewOption }) {
+  const [showTitleTrans, setShowTitleTrans] = _aState(false);
+  const [showShortTrans, setShowShortTrans] = _aState(false);
+  const [showLongTrans, setShowLongTrans] = _aState(false);
+  const options = modifier.options.map((oid) => MOCK.options[oid]).filter(Boolean);
+  return (
+    <div className="menus_menuItem_view_one">
+      <div className="menus_menuItem_view_one_top">
+        <aside className="menuItem_field_images" style={{ alignSelf: "start" }}>
+          <img src={options[0]?.images?.main || ""} alt="" className="menuItem_field_images_mainImage" />
+          <p style={{ fontSize: 12, color: "var(--menus-text-soft)", margin: 0 }}>First option preview</p>
+        </aside>
+
+        <aside className="menus_menuItem_view_one_topRight">
+          <div>
+            <Menus_fieldRow
+              label="Title" value={modifier.title.label} fieldKey="title.label" lockedBy={lockAll}
+              editingField={editingField} setEditingField={setEditingField}
+              onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+              extraControls={<Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showTitleTrans} onClick={() => setShowTitleTrans(!showTitleTrans)} />}
+            />
+            {showTitleTrans && <Menus_translations title="Title — translations" data={modifier.title.translations || {}} />}
+          </div>
+
+          <div className="menus_menuItem_view_one_topRight_description">
+            <div className="menus_menuItem_view_one_topRight_description_label"><label>Descriptions</label></div>
+            <div className="menus_menuItem_view_one_topRight_description_versions">
+              <div className="menus_menuItem_view_one_topRight_description_version short">
+                <div className="menus_menuItem_view_one_topRight_description_version_label"><label>Short</label>
+                  <Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showShortTrans} onClick={() => setShowShortTrans(!showShortTrans)} />
+                </div>
+                <Menus_fieldRow label="Short" value={modifier.description.short.en} fieldKey="description.short" multiline lockedBy={lockAll}
+                  editingField={editingField} setEditingField={setEditingField}
+                  onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+                />
+                {showShortTrans && <Menus_translations title="Short — translations" data={modifier.description.short} multiline />}
+              </div>
+              <div className="menus_menuItem_view_one_topRight_description_version long">
+                <div className="menus_menuItem_view_one_topRight_description_version_label"><label>Long</label>
+                  <Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showLongTrans} onClick={() => setShowLongTrans(!showLongTrans)} />
+                </div>
+                <Menus_fieldRow label="Long" value={modifier.description.long.en} fieldKey="description.long" multiline lockedBy={lockAll}
+                  editingField={editingField} setEditingField={setEditingField}
+                  onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+                />
+                {showLongTrans && <Menus_translations title="Long — translations" data={modifier.description.long} multiline />}
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section className="menuItem_field_modifiers" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
+        <FactCell label="Owner" value={<Menus_ownerBadge value={modifier.ownerType} />} />
+        <FactCell label="Optional" value={modifier.isOptional ? "Optional" : "Mandatory"} />
+        <FactCell label="Selection mode" value={modifier.selectionMode} />
+        <FactCell label="Free" value={modifier.isFree ? "Free" : "Paid"} />
+        <FactCell label="Display order" value={modifier.displayOrder} />
+        <FactCell label="Active" value={modifier.isActive ? "Yes" : "No"} />
+        <FactCell label="Created" value={`${modifier.createdBy} · ${window.formatDate(modifier.createdAt || "2026-01-01")}`} wrap />
+        <FactCell label="Updated" value={`${modifier.updatedBy} · ${window.formatDate(modifier.updatedAt || "2026-05-12")}`} wrap />
+        <FactCell label="Used by" value={modifier.availableInMenuItems.join(", ") || "—"} wrap />
+      </section>
+
+      <section className="menuItem_field_modifiers">
+        <h3 style={{ margin: 0, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--menus-text-soft)" }}>Active timings</h3>
+        <div style={{ marginTop: 8 }}>
+          {modifier.activeTimings.isAlwaysActive ? <span className="menus_pill" style={{ color: "var(--menus-accent-text)" }}>Always Active</span> : (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {modifier.activeTimings.windows.map((w, i) => (
+                <span key={i} className="menus_pill">{w.label}: {w.from}–{w.to}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="menuItem_field_modifiers">
+        <h3 style={{ margin: 0, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--menus-text-soft)" }}>Options</h3>
+        <Menus_option_table
+          options={options} onView={onViewOption} onUpdate={() => {}}
+          expandedId={null} setExpandedId={() => {}}
+        />
+      </section>
+    </div>
+  );
+}
+window.Modifier_view_one = Modifier_view_one;
+
+/* ============================================================================
+   Option_view_one — every field of MOCK_OPTION_* shown.
+============================================================================ */
+function Option_view_one({ option, lockAll, editingField, setEditingField, requestConfirm }) {
+  const [showNameTrans, setShowNameTrans] = _aState(false);
+  const [showShortTrans, setShowShortTrans] = _aState(false);
+  const [showLongTrans, setShowLongTrans] = _aState(false);
+
+  return (
+    <div className="menus_menuItem_view_one">
+      <div className="menus_menuItem_view_one_top">
+        <aside className="menuItem_field_images">
+          <img src={option.images?.main} alt={option.name.label} className="menuItem_field_images_mainImage" />
+          <MenuItem_field_images_strip images={option.images || {}} />
+          <Menus_dropZone label="Add option image" hint="PNG, JPG up to 5 MB" disabled={lockAll || !!editingField} />
+        </aside>
+
+        <aside className="menus_menuItem_view_one_topRight">
+          <div>
+            <Menus_fieldRow label="Name" value={option.name.label} fieldKey="name.label" lockedBy={lockAll}
+              editingField={editingField} setEditingField={setEditingField}
+              onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+              extraControls={<Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showNameTrans} onClick={() => setShowNameTrans(!showNameTrans)} />}
+            />
+            {showNameTrans && <Menus_translations title="Name — translations" data={option.name.translations || {}} />}
+          </div>
+          <div className="menus_menuItem_view_one_topRight_description">
+            <div className="menus_menuItem_view_one_topRight_description_label"><label>Descriptions</label></div>
+            <div className="menus_menuItem_view_one_topRight_description_versions">
+              <div className="menus_menuItem_view_one_topRight_description_version short">
+                <div className="menus_menuItem_view_one_topRight_description_version_label"><label>Short</label>
+                  <Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showShortTrans} onClick={() => setShowShortTrans(!showShortTrans)} />
+                </div>
+                <Menus_fieldRow label="Short" value={option.description.short.en} fieldKey="description.short" multiline lockedBy={lockAll}
+                  editingField={editingField} setEditingField={setEditingField}
+                  onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+                />
+                {showShortTrans && <Menus_translations title="Short — translations" data={option.description.short} multiline />}
+              </div>
+              <div className="menus_menuItem_view_one_topRight_description_version long">
+                <div className="menus_menuItem_view_one_topRight_description_version_label"><label>Long</label>
+                  <Menus_iconUpdateBtn icon={I.globe} tooltip="Translations" active={showLongTrans} onClick={() => setShowLongTrans(!showLongTrans)} />
+                </div>
+                <Menus_fieldRow label="Long" value={option.description.long.en} fieldKey="description.long" multiline lockedBy={lockAll}
+                  editingField={editingField} setEditingField={setEditingField}
+                  onRequestConfirm={(lbl, p, n, done) => requestConfirm({ fieldLabel: lbl, prev: p, next: n, onCommit: done })}
+                />
+                {showLongTrans && <Menus_translations title="Long — translations" data={option.description.long} multiline />}
+              </div>
+            </div>
+          </div>
+          <div className="menuItem_field_pricing">
+            <div className="menuItem_field_pricing_label"><label>Selling Price</label><Menus_iconUpdateBtn tooltip="Edit pricing" disabled={lockAll || !!editingField} /></div>
+            <div className="menuItem_field_sellingPrice_versions">
+              <div className="menuItem_field_sellingPrice_version"><label>Gross</label><input className="menuItem_field_sellingPrice_input" type="number" value={option.sellingPrice.gross} readOnly /></div>
+              <div className="menuItem_field_sellingPrice_version"><label>Net</label><input className="menuItem_field_sellingPrice_input" type="number" value={option.sellingPrice.net} readOnly /></div>
+              <div className="menuItem_field_sellingPrice_version"><label>VAT</label><input className="menuItem_field_sellingPrice_input" type="number" value={option.sellingPrice.VAT} readOnly /></div>
+            </div>
+            <div className="MenuItem_field_cost">
+              <div className="MenuItem_field_cost_label"><label>Cost</label></div>
+              <div className="MenuItem_field_cost_versions">
+                <div className="MenuItem_field_cost_version"><label>Estimated</label><input className="MenuItem_field_cost_input" type="number" value={option.cost.estimatedCost} readOnly /></div>
+                <div className="MenuItem_field_cost_version"><label>Actual</label><input className="MenuItem_field_cost_input" type="number" value={option.cost.actualCost} readOnly /></div>
+              </div>
+            </div>
+          </div>
+          <div className="menuItem_field_nutrition">
+            <div className="menuItem_field_nutrition_label"><label>Nutrition</label><Menus_iconUpdateBtn tooltip="Edit nutrition" disabled={lockAll || !!editingField} /></div>
+            <div className="menuItem_field_nutrition_versions">
+              <div className="menuItem_field_nutrition_version source"><label>Source</label><input className="menuItem_field_nutrition_input" value={option.nutrition.source} readOnly /></div>
+              <div className="menuItem_field_nutrition_version lastCalculatedAt"><label>Calculated</label><input className="menuItem_field_nutrition_input" value={window.formatDate(option.nutrition.lastCalculatedAt)} readOnly /></div>
+              <div className="menuItem_field_nutrition_version calories"><label>Calories</label><input type="number" className="menuItem_field_nutrition_input" value={option.nutrition.calories} readOnly /></div>
+              <div className="menuItem_field_nutrition_version protein"><label>Protein</label><input type="number" className="menuItem_field_nutrition_input" value={option.nutrition.protein} readOnly /></div>
+              <div className="menuItem_field_nutrition_version carbs"><label>Carbs</label><input type="number" className="menuItem_field_nutrition_input" value={option.nutrition.carbs} readOnly /></div>
+              <div className="menuItem_field_nutrition_version fat"><label>Fat</label><input type="number" className="menuItem_field_nutrition_input" value={option.nutrition.fat} readOnly /></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <section className="menuItem_field_modifiers" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
+        <FactCell label="Owner" value={<Menus_ownerBadge value={option.ownerType} />} />
+        <FactCell label="Display order" value={option.displayOrder} />
+        <FactCell label="Free" value={option.isFree ? "Free" : "Paid"} />
+        <FactCell label="Active" value={option.isActive ? "Yes" : "No"} />
+        <FactCell label="Cloud storage" value={`${option.cloudStorage.value}${option.cloudStorage.isDefault ? " (default)" : ""}`} />
+        <FactCell label="Available in modifiers" value={option.availableInModifiers.join(", ") || "—"} wrap />
+        <FactCell label="Created" value={`${option.createdBy} · ${window.formatDate(option.createdAt || "2026-01-01")}`} wrap />
+        <FactCell label="Updated" value={`${option.updatedBy} · ${window.formatDate(option.updatedAt || "2026-05-12")}`} wrap />
+      </section>
+      <section className="menuItem_field_modifiers">
+        <h3 style={{ margin: 0, fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--menus-text-soft)" }}>Files</h3>
+        <div className="menus_filePreview_strip" style={{ marginTop: 6 }}>
+          <Menus_filePreview file={option.recipeFile?.pdf ? { path: option.recipeFile.pdf, fileType: "pdf", ref: "Recipe (PDF)" } : null} label="Recipe PDF" />
+          <Menus_filePreview file={option.techCardFile?.pdf ? { path: option.techCardFile.pdf, fileType: "pdf", ref: "TechCard (PDF)" } : null} label="TechCard PDF" />
+          {(option.images?.other || []).map((f, i) => <Menus_filePreview key={i} file={f} />)}
+        </div>
+        <div style={{ marginTop: 10 }}>
+          <Menus_dropZone label="Drop recipe / tech card / other files here" hint="PDF, DOCX, XLSX up to 10 MB" disabled={lockAll || !!editingField} />
+        </div>
+      </section>
+    </div>
+  );
+}
+window.Option_view_one = Option_view_one;
+
+/* ============================================================================
+   Menus_form — creation form (ownerType pick -> label/title input -> submit)
+   Reused for all five entity types.
+============================================================================ */
+function Menus_form({ kind, onClose, onCreate }) {
+  const [step, setStep] = _aState(0);
+  const [ownerType, setOwnerType] = _aState("brand");
+  const [label, setLabel] = _aState("");
+  const labels = {
+    menu: { title: "Create a menu", input: "Menu label", hint: "e.g. \"Main Dining Menu\"" },
+    menuItem: { title: "Create a menu item", input: "Item name", hint: "e.g. \"Strawberry Pavlova\"" },
+    modifier: { title: "Create a modifier", input: "Modifier title", hint: "e.g. \"Sauce\"" },
+    option: { title: "Create an option", input: "Option name", hint: "e.g. \"Strawberry coulis\"" },
+    category: { title: "Create a category", input: "Category name", hint: "e.g. \"Desserts\"" },
+  }[kind] || labels.menu;
+
+  const steps = ["Owner", "Name", "Confirm"];
+  const canNext = step === 0 ? !!ownerType : (step === 1 ? label.trim().length > 1 : true);
+
+  return (
+    <div className="menus_confirmModal_overlay" role="dialog" aria-modal="true">
+      <div className="menus_confirmModal" style={{ width: "min(640px, 100%)" }}>
+        <header className="menus_confirmModal_header">
+          <div>
+            <p className="menus_confirmModal_subtitle">Create</p>
+            <h2 className="menus_confirmModal_title">{labels.title}</h2>
+          </div>
+          <button type="button" className="menus_confirmModal_close" onClick={onClose} aria-label="Close">{I.x}</button>
+        </header>
+        <div className="menus_confirmModal_body">
+          <div className="menus_form">
+            <div className="menus_form_steps">
+              {steps.map((s, i) => (
+                <div key={s} className={`menus_form_step ${step === i ? "active" : (i < step ? "done" : "")}`}>
+                  <span className="menus_form_step_num">{i + 1}</span>{s}
+                </div>
+              ))}
+            </div>
+
+            {step === 0 && (
+              <div className="menus_form_field">
+                <label>Owner type</label>
+                <p className="menus_form_helper">Pick whether this {kind} belongs to your brand or to a competitor.</p>
+                <div className="menus_form_ownerTypePicker">
+                  <button type="button" className={`menus_form_ownerType_card ${ownerType === "brand" ? "selected" : ""}`} onClick={() => setOwnerType("brand")}>
+                    {I.store}
+                    <span className="menus_form_ownerType_label">Brand</span>
+                    <span className="menus_form_ownerType_hint">Owned by your kitchen.</span>
+                  </button>
+                  <button type="button" className={`menus_form_ownerType_card ${ownerType === "competitor" ? "selected" : ""}`} onClick={() => setOwnerType("competitor")}>
+                    {I.rival}
+                    <span className="menus_form_ownerType_label">Competitor</span>
+                    <span className="menus_form_ownerType_hint">External — for tracking and competition.</span>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {step === 1 && (
+              <div className="menus_form_field">
+                <label>{labels.input}</label>
+                <input className="menus_form_input" autoFocus value={label} onChange={(e) => setLabel(e.target.value)} placeholder={labels.hint} />
+                <p className="menus_form_helper">You can fill in all other details after the entry exists.</p>
+              </div>
+            )}
+
+            {step === 2 && (
+              <div className="menus_form_field">
+                <label>Review</label>
+                <div className="menus_confirmModal_diff">
+                  <div className="menus_confirmModal_diff_col">
+                    <span className="menus_confirmModal_diff_col_label">Owner</span>
+                    <span className="menus_confirmModal_diff_col_value">{ownerType}</span>
+                  </div>
+                  <div className="menus_confirmModal_diff_col next">
+                    <span className="menus_confirmModal_diff_col_label">{labels.input}</span>
+                    <span className="menus_confirmModal_diff_col_value">{label}</span>
+                  </div>
+                </div>
+                <p className="menus_form_helper">Files, images, pricing, modifiers etc. are added later via the view session.</p>
+              </div>
+            )}
+          </div>
+        </div>
+        <footer className="menus_confirmModal_actions">
+          <div className="menus_form_actions_left">
+            {step > 0 && <button className="menus_confirmModal_btn" onClick={() => setStep(step - 1)}>Back</button>}
+          </div>
+          <div className="menus_form_actions_right">
+            <button className="menus_confirmModal_btn" onClick={onClose}>Cancel</button>
+            {step < 2
+              ? <button className="menus_confirmModal_btn primary" disabled={!canNext} onClick={() => setStep(step + 1)}>Next</button>
+              : <button className="menus_confirmModal_btn primary" onClick={() => onCreate({ kind, ownerType, label })}>Create</button>}
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+}
+window.Menus_form = Menus_form;
+
+/* ============================================================================
+   MAIN — session app. Holds all state for session/viewingType/selected/etc.
+============================================================================ */
+function MenusApp() {
+  const [session, setSession] = _aState("menus");           // menus | items | modifiers | options
+  const [viewingType, setViewingType] = _aState("all");     // all | single
+  const [selectedId, setSelectedId] = _aState(null);        // id of the open menu/item/modifier/option
+  const [ownerType, setOwnerType] = _aState("both");        // brand | competitor | both
+  const [editingField, setEditingField] = _aState(null);    // per-field edit mode
+  const [isUpdatingAll, setIsUpdatingAll] = _aState(false); // top-level update mode
+  const [confirm, setConfirm] = _aState(null);              // {title, prev, next, fieldLabel, onCommit}
+  const [showForm, setShowForm] = _aState(null);            // null | menu|menuItem|modifier|option|category
+  const [expandedRowId, setExpandedRowId] = _aState(null);
+  const [toast, setToast] = _aState(null);
+
+  _aEffect(() => {
+    if (!toast) return;
+    const id = setTimeout(() => setToast(null), 2400);
+    return () => clearTimeout(id);
+  }, [toast]);
+
+  /* ---- Derived: breadcrumb trail ---- */
+  const trail = _aMemo(() => {
+    const sessLabel = { menus: "Menus", items: "Items", modifiers: "Modifiers", options: "Options" }[session];
+    const t = [{ key: "menus", label: "Menus", onClick: () => goto("menus", "all", null) }];
+    if (session !== "menus") {
+      t.push({ key: session, label: sessLabel, onClick: () => goto(session, "all", null) });
+    }
+    if (viewingType === "single" && selectedId) {
+      const entity = (session === "menus" && MOCK.menus.find((m) => m._id === selectedId))
+        || (session === "items" && MOCK.items[selectedId])
+        || (session === "modifiers" && MOCK.modifiers[selectedId])
+        || (session === "options" && MOCK.options[selectedId]);
+      const lbl = entity?.label || entity?.name?.label || entity?.title?.label || "Detail";
+      t.push({ key: "selected", label: lbl, onClick: undefined });
+    }
+    return t;
+  }, [session, viewingType, selectedId]);
+
+  function goto(nextSession, nextViewing, nextSelectedId) {
+    setEditingField(null);
+    setIsUpdatingAll(false);
+    setExpandedRowId(null);
+    setSession(nextSession);
+    setViewingType(nextViewing);
+    setSelectedId(nextSelectedId);
+  }
+
+  const lockAll = isUpdatingAll;
+
+  /* ---- Confirm modal request (used by every field) ---- */
+  const requestConfirm = ({ fieldLabel, prev, next, onCommit }) => {
+    setConfirm({
+      title: "Save change?",
+      subtitle: "Field update",
+      fieldLabel, prev, next,
+      onConfirm: () => {
+        // (mock — would patch state here)
+        setConfirm(null);
+        onCommit?.();
+        setToast(`${fieldLabel} updated`);
+      },
+    });
+  };
+
+  /* ---- Filtered list helpers ---- */
+  const filterByOwner = (arr, key = "ownerType") =>
+    ownerType === "both" ? arr : arr.filter((x) => x[key] === ownerType);
+
+  const filteredMenus = filterByOwner(MOCK.menus);
+  const filteredItems = filterByOwner(Object.values(MOCK.items));
+  const filteredModifiers = filterByOwner(Object.values(MOCK.modifiers));
+  const filteredOptions = filterByOwner(Object.values(MOCK.options));
+
+  /* ---- Add btn config ---- */
+  const addBtnFor = {
+    menus: { kind: "menu", label: "New menu" },
+    items: { kind: "menuItem", label: "New menu item" },
+    modifiers: { kind: "modifier", label: "New modifier" },
+    options: { kind: "option", label: "New option" },
+  }[session];
+
+  /* ---- Owner type toggle (sessionToggle right side) ---- */
+  const toggleOwner = (v) => {
+    if (ownerType === "both") setOwnerType(v === "brand" ? "competitor" : "brand");
+    else if (ownerType === v) setOwnerType("both");
+    else setOwnerType("both");
+  };
+
+  /* ---- The sessionToggle top bar (with breadcrumb when in single view) ---- */
+  const sessions = [
+    { value: "menus", label: "Menus" },
+    { value: "items", label: "Items" },
+    { value: "modifiers", label: "Modifiers" },
+    { value: "options", label: "Options" },
+  ];
+
+  const renderTop = () => (
+    <div className={`menus_sessionToggle ${editingField || isUpdatingAll ? "" : ""}`}>
+      <aside className="menus_sessionToggle_sessions">
+        {sessions.map((s) => (
+          <button key={s.value}
+            className={`menus_sessionToggle_session_btn ${session === s.value && viewingType === "all" ? "active" : ""}`}
+            onClick={() => goto(s.value, "all", null)}>
+            {s.label}
+          </button>
+        ))}
+      </aside>
+      <div className="menus_sessionToggle_middle">
+        <Menus_breadcrumb trail={trail} />
+      </div>
+      <aside className="menus_sessionToggle_ownerTypes">
+        {!isUpdatingAll && viewingType === "all" && (
+          <_aFrag>
+            <button type="button"
+              className={`menus_sessionToggle_ownerType_btn ${ownerType === "brand" || ownerType === "both" ? "active" : ""} brand`}
+              onClick={() => toggleOwner("brand")} aria-label="Brand">
+              <span className="menus_sessionToggle_ownerType_iconWrap">
+                <span className="menus_sessionToggle_ownerType_icon" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#1d1b18" }}>{I.store}</span>
+                {(ownerType === "brand" || ownerType === "both") && <span className="menus_sessionToggle_ownerType_indicator" />}
+              </span>
+            </button>
+            <button type="button"
+              className={`menus_sessionToggle_ownerType_btn ${ownerType === "competitor" || ownerType === "both" ? "active" : ""} competitor`}
+              onClick={() => toggleOwner("competitor")} aria-label="Competitor">
+              <span className="menus_sessionToggle_ownerType_iconWrap">
+                <span className="menus_sessionToggle_ownerType_icon" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#1d1b18" }}>{I.rival}</span>
+                {(ownerType === "competitor" || ownerType === "both") && <span className="menus_sessionToggle_ownerType_indicator" />}
+              </span>
+            </button>
+          </_aFrag>
+        )}
+
+        {viewingType === "single" && (
+          <div className="menus_FieldUpdateBtn">
+            {!isUpdatingAll ? (
+              <button className="menus_FieldUpdateBtn_btn" onClick={() => { setEditingField(null); setIsUpdatingAll(true); }}>Update all</button>
+            ) : (
+              <>
+                <button className="menus_FieldUpdateBtn_btn" onClick={() => setIsUpdatingAll(false)}>Cancel</button>
+                <button className="menus_FieldUpdateBtn_btn" onClick={() => requestConfirm({
+                  fieldLabel: "All fields",
+                  prev: "(current)", next: "(your edits)",
+                  onCommit: () => { setIsUpdatingAll(false); },
+                })}>Confirm</button>
+              </>
+            )}
+          </div>
+        )}
+
+        {viewingType === "all" && addBtnFor && (
+          <div className="menus_FieldUpdateBtn">
+            <button className="menus_FieldUpdateBtn_btn" onClick={() => setShowForm(addBtnFor.kind)}>
+              + {addBtnFor.label}
+            </button>
+          </div>
+        )}
+      </aside>
+    </div>
+  );
+
+  /* ---- Body ---- */
+  const renderBody = () => {
+    // Menus session
+    if (session === "menus") {
+      if (viewingType === "all") {
+        return (
+          <div className="menus_session_menu">
+            {filteredMenus.length === 0 ? (
+              <div className="menus_empty_menus"><p>No menus match the current owner filter.</p></div>
+            ) : (
+              <Menus_table menus={filteredMenus} expandedId={expandedRowId} setExpandedId={setExpandedRowId}
+                onView={(m) => goto("menus", "single", m._id)}
+                onUpdate={(m) => { goto("menus", "single", m._id); setIsUpdatingAll(true); }}
+              />
+            )}
+          </div>
+        );
+      }
+      const menu = MOCK.menus.find((m) => m._id === selectedId);
+      if (!menu) return <div className="menus_empty_menus"><p>Menu not found.</p></div>;
+      return (
+        <div className="menus_session_menu">
+          <Menu_view_one menu={menu} lockAll={lockAll} editingField={editingField} setEditingField={setEditingField} requestConfirm={requestConfirm}
+            onViewItem={(it) => goto("items", "single", it._id)}
+            onUpdateItem={(it) => { goto("items", "single", it._id); setIsUpdatingAll(true); }}
+            expandedItemId={expandedRowId} setExpandedItemId={setExpandedRowId}
+          />
+        </div>
+      );
+    }
+
+    // Items session
+    if (session === "items") {
+      if (viewingType === "all") {
+        const items = filteredItems;
+        return (
+          <div className="menus_session_menuItem">
+            {items.length === 0 ? (<div className="menus_empty_menuItems"><p>No items match the current owner filter.</p></div>) : (
+              <Menus_menuItems_table items={items} expandedId={expandedRowId} setExpandedId={setExpandedRowId}
+                onView={(it) => goto("items", "single", it._id)}
+                onUpdate={(it) => { goto("items", "single", it._id); setIsUpdatingAll(true); }}
+              />
+            )}
+          </div>
+        );
+      }
+      const item = MOCK.items[selectedId];
+      if (!item) return <div className="menus_empty_menuItems"><p>Item not found.</p></div>;
+      return (
+        <div className="menus_session_menuItem">
+          <MenuItem_view_one item={item} lockAll={lockAll} editingField={editingField} setEditingField={setEditingField} requestConfirm={requestConfirm} />
+        </div>
+      );
+    }
+
+    // Modifiers session
+    if (session === "modifiers") {
+      if (viewingType === "all") {
+        const ms = filteredModifiers;
+        return (
+          <div className="menus_session_modifier">
+            {ms.length === 0 ? <div className="menus_empty_modifiers"><p>No modifiers match the current owner filter.</p></div> : (
+              <Menus_modifier_table modifiers={ms} expandedId={expandedRowId} setExpandedId={setExpandedRowId}
+                onView={(m) => goto("modifiers", "single", m._id)}
+                onUpdate={(m) => { goto("modifiers", "single", m._id); setIsUpdatingAll(true); }}
+              />
+            )}
+          </div>
+        );
+      }
+      const m = MOCK.modifiers[selectedId];
+      if (!m) return <div className="menus_empty_modifiers"><p>Modifier not found.</p></div>;
+      return (
+        <div className="menus_session_modifier">
+          <Modifier_view_one modifier={m} lockAll={lockAll} editingField={editingField} setEditingField={setEditingField} requestConfirm={requestConfirm}
+            onViewOption={(o) => goto("options", "single", o._id)} />
+        </div>
+      );
+    }
+
+    // Options session
+    if (session === "options") {
+      if (viewingType === "all") {
+        const os = filteredOptions;
+        return (
+          <div className="menus_session_option">
+            {os.length === 0 ? <div className="menus_empty_modifierOptions"><p>No options match the current owner filter.</p></div> : (
+              <Menus_option_table options={os} expandedId={expandedRowId} setExpandedId={setExpandedRowId}
+                onView={(o) => goto("options", "single", o._id)}
+                onUpdate={(o) => { goto("options", "single", o._id); setIsUpdatingAll(true); }}
+              />
+            )}
+          </div>
+        );
+      }
+      const o = MOCK.options[selectedId];
+      if (!o) return <div className="menus_empty_modifierOptions"><p>Option not found.</p></div>;
+      return (
+        <div className="menus_session_option">
+          <Option_view_one option={o} lockAll={lockAll} editingField={editingField} setEditingField={setEditingField} requestConfirm={requestConfirm} />
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <div className="menus">
+      {renderTop()}
+      {renderBody()}
+
+      <Menus_confirmModal
+        open={!!confirm}
+        title={confirm?.title}
+        subtitle={confirm?.subtitle}
+        fieldLabel={confirm?.fieldLabel}
+        prevValue={confirm?.prev}
+        nextValue={confirm?.next}
+        onCancel={() => setConfirm(null)}
+        onConfirm={() => confirm?.onConfirm?.()}
+      />
+
+      {showForm && (
+        <Menus_form kind={showForm} onClose={() => setShowForm(null)} onCreate={(payload) => {
+          setShowForm(null);
+          setToast(`Created ${payload.kind}: ${payload.label}`);
+        }} />
+      )}
+
+      {toast && <div className="menus_toast">{toast}</div>}
+    </div>
+  );
+}
+
+/* ============================================================================
+   App shell — mirrors the screenshot: left sidebar + top bar + Menus mount.
+============================================================================ */
+function AppShell() {
+  const [active] = _aState("Menus");
+  const items = ["branches", "Brands", "Competitors", "Employees", "Menus", "Recipes", "Earth", "Dashboard", "SalesChannel", "Suppliers"];
+
+  return (
+    <div className="shell">
+      <aside className="shell_side" aria-label="Primary navigation">
+        <span className="shell_side_pin" title="Pin"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" strokeWidth="2"><path d="M12 17v5M12 2v6M9 11h6"/></svg></span>
+        <hr />
+        {items.map((it) => (
+          <button key={it} className={`shell_side_item ${active === it ? "active" : ""}`}>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /></svg>
+            <span>{it}</span>
+          </button>
+        ))}
+      </aside>
+      <div className="shell_main">
+        <header className="shell_top">
+          <div className="shell_top_left">
+            <button className="shell_top_icon" aria-label="Settings">{I.settings}</button>
+          </div>
+          <div className="shell_top_center">
+            <span style={{ fontSize: 22 }}>{FLAGS.en}</span>
+            <button className="shell_top_btn active">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" strokeWidth="1.8"><path d="M3 21V9l9-6 9 6v12" /><path d="M9 21V12h6v9" /></svg>
+              Cloud Kitchens
+            </button>
+            <button className="shell_top_icon" aria-label="Account">{I.user}</button>
+          </div>
+          <div className="shell_top_right">
+            <button className="shell_top_icon" aria-label="Theme">{I.moon}</button>
+            <button className="shell_top_icon" aria-label="Sign out">{I.signout}</button>
+          </div>
+        </header>
+        <main className="shell_canvas">
+          <div className="shell_canvas_inner">
+            <MenusApp />
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<AppShell />);

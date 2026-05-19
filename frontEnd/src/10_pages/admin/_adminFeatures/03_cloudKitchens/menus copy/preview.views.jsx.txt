@@ -1,0 +1,391 @@
+/* ============================================================================
+   Views — tables, view_one components, creation forms.
+   Mirrors menus/01_menus_comps structure 1:1 so the JSX patterns are portable.
+============================================================================ */
+
+const { useState: _vState, useMemo: _vMemo, Fragment: _vFrag } = React;
+
+const MOCK = window.MOCK;
+const MOCK_CONST = window.MOCK_CONST;
+const I = window.I;
+const FLAGS = window.FLAGS;
+const {
+  Menus_iconUpdateBtn,
+  Menus_breadcrumb,
+  Menus_translations,
+  Menus_dropZone,
+  Menus_filePreview,
+  Menus_confirmModal,
+  Menus_fieldRow,
+  Menus_ownerBadge,
+} = window;
+
+const tally = (arr) => (arr ? arr.length : 0);
+
+/* ============================================================================
+   QuickView — the dropdown row body, generic.
+============================================================================ */
+function Menus_quickView({ open, fields, sections, actions, colSpan }) {
+  return (
+    <tr className="menus_quickView_row" data-quickview-open={open ? "true" : "false"}>
+      <td className="menus_quickView_cell" colSpan={colSpan}>
+        <div className={`menus_quickView ${open ? "menus_quickView--open" : ""}`}>
+          <div className="menus_quickView_inner">
+            {fields && fields.map((f, i) => (
+              <div key={i} className="menus_quickView_field">
+                <span className="menus_quickView_field_label">{f.label}</span>
+                <span className={`menus_quickView_field_value ${f.wrap ? "wrap" : ""}`}>{f.value ?? "—"}</span>
+              </div>
+            ))}
+            {sections && sections.map((s, i) => (
+              <div key={"s" + i} className="menus_quickView_section">
+                <span className="menus_quickView_section_title">{s.title}</span>
+                {s.body}
+              </div>
+            ))}
+            {actions && <div className="menus_quickView_actions">{actions}</div>}
+          </div>
+        </div>
+      </td>
+    </tr>
+  );
+}
+window.Menus_quickView = Menus_quickView;
+
+/* ============================================================================
+   Menus_table (menus session — view_all)
+============================================================================ */
+function Menus_table({ menus, onView, onUpdate, expandedId, setExpandedId }) {
+  const headers = [
+    "#", "Label", "Status", "Description", "Who Owns",
+    "Categories", "Today's Sales", "Created By", "Created At",
+    "Updated By", "Updated At", "Update", "View", "Dropdown",
+  ];
+
+  return (
+    <div className="menus_view_all">
+      <table className="menus_view_all_table">
+        <thead>
+          <tr>
+            {headers.map((h) => <th key={h} scope="col" className="menus_view_all_table_header">{h}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {menus.map((menu, idx) => (
+            <_vFrag key={menu._id}>
+              <tr className="menus_view_all_table_rows_provider">
+                <td className="menus_view_all_table_rows_provider_cell">{idx + 1}</td>
+                <td className="menus_view_all_table_rows_provider_cell">{menu.label}</td>
+                <td className="menus_view_all_table_rows_provider_cell">{menu.isActive ? "Active" : "Inactive"}</td>
+                <td className="menus_view_all_table_rows_provider_cell">{menu.description}</td>
+                <td className="menus_view_all_table_rows_provider_cell">{menu.ownerType}</td>
+                <td className="menus_view_all_table_rows_provider_cell">{menu.categories.length}</td>
+                <td className="menus_view_all_table_rows_provider_cell">15,150 | 85</td>
+                <td className="menus_view_all_table_rows_provider_cell createdBy">{menu.createdBy}</td>
+                <td className="menus_view_all_table_rows_provider_cell createdAt">{window.formatDate(menu.createdAt)}</td>
+                <td className="menus_view_all_table_rows_provider_cell updatedBy">{menu.updatedBy}</td>
+                <td className="menus_view_all_table_rows_provider_cell updatedAt">{window.formatDate(menu.updatedAt)}</td>
+                <td className="menus_view_all_table_rows_provider_cell">
+                  <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onUpdate(menu)}>Update</button>
+                </td>
+                <td className="menus_view_all_table_rows_provider_cell">
+                  <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onView(menu)}>View</button>
+                </td>
+                <td className="menus_view_all_table_rows_provider_cell" data-quickview-open={expandedId === menu._id ? "true" : "false"}>
+                  <button
+                    className="menus_view_all_table_rows_provider_cell_button dropdown"
+                    onClick={() => setExpandedId(expandedId === menu._id ? null : menu._id)}
+                    aria-expanded={expandedId === menu._id}>
+                    {expandedId === menu._id ? "Close" : "Quick"}
+                  </button>
+                </td>
+              </tr>
+              <Menus_quickView
+                open={expandedId === menu._id}
+                colSpan={headers.length}
+                fields={[
+                  { label: "Owner type", value: <Menus_ownerBadge value={menu.ownerType} /> },
+                  { label: "Status", value: menu.isActive ? "Active" : "Inactive" },
+                  { label: "Categories", value: menu.categories.length },
+                  { label: "Created", value: `${menu.createdBy} · ${window.formatDate(menu.createdAt)}` },
+                  { label: "Updated", value: `${menu.updatedBy} · ${window.formatDate(menu.updatedAt)}` },
+                  { label: "Description", value: menu.description, wrap: true },
+                ]}
+                sections={[
+                  {
+                    title: "Categories included",
+                    body: (
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                        {menu.categories.map((cid) => (
+                          <span key={cid} className="menus_pill">{MOCK.categories[cid]?.name?.label || cid}</span>
+                        ))}
+                      </div>
+                    ),
+                  },
+                ]}
+                actions={
+                  <>
+                    <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onView(menu)}>Open full view</button>
+                    <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onUpdate(menu)}>Update</button>
+                  </>
+                }
+              />
+            </_vFrag>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+window.Menus_table = Menus_table;
+
+/* ============================================================================
+   Menus_menuItems_table — per category items table with row expansion
+============================================================================ */
+function Menus_menuItems_table({ items, onView, onUpdate, expandedId, setExpandedId }) {
+  const headers = [
+    "#", "Image", "Name", "Price", "Cost", "Prep", "Owner", "Calories",
+    "Allergens", "Modifiers", "Update", "View", "Dropdown",
+  ];
+  return (
+    <div className="menus_menuItem_view_all">
+      <table className="menus_menuItem_view_all_table">
+        <thead><tr>{headers.map((h) => <th key={h} className="menus_menuItem_view_all_table_header">{h}</th>)}</tr></thead>
+        <tbody>
+          {items.map((item, idx) => (
+            <_vFrag key={item._id}>
+              <tr className="menus_menuItem_view_all_table_rows_provider">
+                <td className="menus_menuItem_view_all_table_rows_provider_cell index">{idx + 1}</td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell image">
+                  <button className="menus_menuItem_view_all_table_row btn" onClick={() => onView(item)}>
+                    <img className="menus_menuItem_view_all_table_row image" src={item.images?.main} alt={item.name.label} />
+                  </button>
+                </td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell label">{item.name.label}</td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell sellingPrice">{item.sellingPrice.gross}</td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell cost">{item.cost.estimatedCost}</td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell PrepTime">{item.preparationTimeMin}m</td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell ownerType">{item.ownerType}</td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell ownerType">{item.nutrition.calories} kcal</td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell ownerType">
+                  <span>{item.allergens[0] || "—"}</span>{item.allergens.length > 1 && <span>{item.allergens.length}</span>}
+                </td>
+                <td className="menus_menuItem_view_all_table_rows_provider_cell ownerType">
+                  <span>{item.modifiers[0] ? MOCK.modifiers[item.modifiers[0].modifier]?.title.label : "—"}</span>
+                  {item.modifiers.length > 1 && <span>{item.modifiers.length}</span>}
+                </td>
+                <td className="menus_view_all_table_rows_provider_cell">
+                  <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onUpdate(item)}>Update</button>
+                </td>
+                <td className="menus_view_all_table_rows_provider_cell">
+                  <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onView(item)}>View</button>
+                </td>
+                <td className="menus_view_all_table_rows_provider_cell" data-quickview-open={expandedId === item._id ? "true" : "false"}>
+                  <button className="menus_view_all_table_rows_provider_cell_button dropdown"
+                    onClick={() => setExpandedId(expandedId === item._id ? null : item._id)}>
+                    {expandedId === item._id ? "Close" : "Quick"}
+                  </button>
+                </td>
+              </tr>
+              <Menus_quickView
+                open={expandedId === item._id}
+                colSpan={headers.length}
+                fields={[
+                  { label: "SKU", value: item.sku },
+                  { label: "Owner", value: <Menus_ownerBadge value={item.ownerType} /> },
+                  { label: "Cuisine", value: item.cuisineType },
+                  { label: "Station", value: item.kitchenStation },
+                  { label: "Size", value: `${item.sizeByGrams} g` },
+                  { label: "Selling Price", value: `${item.sellingPrice.gross} (net ${item.sellingPrice.net}, VAT ${item.sellingPrice.VAT})` },
+                  { label: "Cost", value: `est. ${item.cost.estimatedCost} / actual ${item.cost.actualCost}` },
+                  { label: "Spicy level", value: item.spicyLevel },
+                  { label: "Dietary tags", value: item.dietaryTags.join(", ") || "—" },
+                  { label: "Allergens", value: item.allergens.join(", ") || "—" },
+                  { label: "Available in", value: item.availableInCategories.join(", ") },
+                  { label: "Cloud storage", value: `${item.cloudStorage.value}${item.cloudStorage.isDefault ? " (default)" : ""}` },
+                ]}
+                sections={[
+                  { title: "Short description", body: <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>{item.description.short.en}</p> },
+                ]}
+                actions={
+                  <>
+                    <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onView(item)}>Open full view</button>
+                    <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onUpdate(item)}>Update</button>
+                  </>
+                }
+              />
+            </_vFrag>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+window.Menus_menuItems_table = Menus_menuItems_table;
+
+/* ============================================================================
+   Menus_modifier_table — modifiers with row expansion
+============================================================================ */
+function Menus_modifier_table({ modifiers, onView, onUpdate, expandedId, setExpandedId }) {
+  const headers = ["#", "Menu Items", "Name", "Description", "Options", "Owner", "Active Timings", "Is Optional", "Selection Mode", "Is Free", "Update", "View", "Dropdown"];
+  return (
+    <div className="menus_modifier_table">
+      <table>
+        <thead><tr>{headers.map((h) => <th key={h} className="menus_modifier_table_header">{h}</th>)}</tr></thead>
+        <tbody>
+          {modifiers.map((m, idx) => (
+            <_vFrag key={m._id}>
+              <tr className="menus_modifier_table_rows_provider">
+                <td className="menus_modifier_table_rows_provider_cell">{idx + 1}</td>
+                <td className="menus_modifier_table_rows_provider_cell modifiers">
+                  {m.availableInMenuItems[0] ? (<><span>{m.availableInMenuItems[0]}</span>{m.availableInMenuItems.length > 1 && <span>{m.availableInMenuItems.length}</span>}</>) : <button className="menus_modifier_table_row btn" style={{ width: "auto", height: "auto", padding: "0.3rem 0.6rem" }}>Assign Menu Items</button>}
+                </td>
+                <td className="menus_modifier_table_rows_provider_cell label">{m.title.label}</td>
+                <td className="menus_modifier_table_rows_provider_cell description">{m.description.short.en}</td>
+                <td className="menus_modifier_table_rows_provider_cell image">
+                  <div className="menus_modifier_table_optionsStack" title={`${m.options.length} option(s)`}>
+                    {m.options.slice(0, 2).map((oid) => (
+                      <button key={oid} type="button" className="menus_modifier_table_row btn">
+                        <img className="menus_modifier_table_row image" src={MOCK.options[oid]?.images?.main} alt={MOCK.options[oid]?.name.label} />
+                      </button>
+                    ))}
+                    {m.options.length > 2 && (
+                      <button type="button" className="menus_modifier_table_row btn menus_modifier_table_row_btn--more">
+                        <span className="menus_modifier_table_row_moreLabel">+{m.options.length - 2}</span>
+                      </button>
+                    )}
+                  </div>
+                </td>
+                <td className="menus_modifier_table_rows_provider_cell ownerType">{m.ownerType}</td>
+                <td className="menus_modifier_table_rows_provider_cell activeTimings">
+                  {m.activeTimings.isAlwaysActive ? <span className="menus_modifier_table_activeTimings_always">Always Active</span> : (
+                    <div className="menus_modifier_table_activeTimings">
+                      <ul className="menus_modifier_table_activeTimings_list">
+                        {m.activeTimings.windows.map((w, i) => (
+                          <li key={i} className="menus_modifier_table_activeTimings_item">
+                            <span className="menus_modifier_table_activeTimings_range">{w.from}–{w.to}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </td>
+                <td className="menus_modifier_table_rows_provider_cell isOptional">{m.isOptional ? "Optional" : "Mandatory"}</td>
+                <td className="menus_modifier_table_rows_provider_cell selectionMode">{m.selectionMode}</td>
+                <td className="menus_modifier_table_rows_provider_cell isFree">{m.isFree ? "Free" : "Paid"}</td>
+                <td className="menus_modifier_table_rows_provider_cell"><button className="menus_modifier_table_rows_provider_cell_button" onClick={() => onUpdate(m)}>Update</button></td>
+                <td className="menus_modifier_table_rows_provider_cell"><button className="menus_modifier_table_rows_provider_cell_button" onClick={() => onView(m)}>View</button></td>
+                <td className="menus_modifier_table_rows_provider_cell" data-quickview-open={expandedId === m._id ? "true" : "false"}>
+                  <button className="menus_modifier_table_rows_provider_cell_button dropdown" onClick={() => setExpandedId(expandedId === m._id ? null : m._id)}>
+                    {expandedId === m._id ? "Close" : "Quick"}
+                  </button>
+                </td>
+              </tr>
+              <Menus_quickView
+                open={expandedId === m._id}
+                colSpan={headers.length}
+                fields={[
+                  { label: "Owner", value: <Menus_ownerBadge value={m.ownerType} /> },
+                  { label: "Selection", value: m.selectionMode },
+                  { label: "Optionality", value: m.isOptional ? "Optional" : "Mandatory" },
+                  { label: "Free", value: m.isFree ? "Free" : "Paid" },
+                  { label: "Options count", value: m.options.length },
+                  { label: "Used by", value: `${m.availableInMenuItems.length} item(s)` },
+                ]}
+                sections={[
+                  { title: "Description", body: <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>{m.description.long.en}</p> },
+                  { title: "Options", body: (
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                      {m.options.map((oid) => (
+                        <span key={oid} className="menus_pill">
+                          <img src={MOCK.options[oid]?.images?.main} alt="" style={{ width: 18, height: 18, borderRadius: 4, objectFit: "cover", marginRight: 4 }} />
+                          {MOCK.options[oid]?.name.label}
+                        </span>
+                      ))}
+                    </div>
+                  ) },
+                ]}
+                actions={
+                  <>
+                    <button className="menus_modifier_table_rows_provider_cell_button" onClick={() => onView(m)}>Open full view</button>
+                    <button className="menus_modifier_table_rows_provider_cell_button" onClick={() => onUpdate(m)}>Update</button>
+                  </>
+                }
+              />
+            </_vFrag>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+window.Menus_modifier_table = Menus_modifier_table;
+
+/* ============================================================================
+   Menus_option_table — options with row expansion
+============================================================================ */
+function Menus_option_table({ options, onView, onUpdate, expandedId, setExpandedId }) {
+  const headers = ["#", "Image", "Name", "Owner", "Description", "Modifiers", "Price", "Cost", "Is Free", "Nutrition", "Recipe", "TechCard", "Update", "View", "Dropdown"];
+  return (
+    <div className="menus_option_view_all">
+      <table className="menus_option_view_all_table">
+        <thead><tr>{headers.map((h) => <th key={h} className="menus_option_view_all_table_header">{h}</th>)}</tr></thead>
+        <tbody>
+          {options.map((opt, idx) => (
+            <_vFrag key={opt._id}>
+              <tr className="menus_option_view_all_table_rows_provider">
+                <td className="menus_option_view_all_table_rows_provider_cell index">{idx + 1}</td>
+                <td className="menus_option_view_all_table_rows_provider_cell image">
+                  <button className="menus_option_view_all_table_row btn" onClick={() => onView(opt)}>
+                    <img className="menus_option_view_all_table_row image" src={opt.images?.main} alt={opt.name.label} />
+                  </button>
+                </td>
+                <td className="menus_option_view_all_table_rows_provider_cell label">{opt.name.label}</td>
+                <td className="menus_option_view_all_table_rows_provider_cell ownerType">{opt.ownerType}</td>
+                <td className="menus_option_view_all_table_rows_provider_cell description">{opt.description.short.en}</td>
+                <td className="menus_option_view_all_table_rows_provider_cell modifiers">
+                  <span>{opt.availableInModifiers[0] || "—"}</span>{opt.availableInModifiers.length > 1 && <span>{opt.availableInModifiers.length}</span>}
+                </td>
+                <td className="menus_option_view_all_table_rows_provider_cell sellingPrice">{opt.sellingPrice.gross}</td>
+                <td className="menus_option_view_all_table_rows_provider_cell cost">{opt.cost.estimatedCost}</td>
+                <td className="menus_option_view_all_table_rows_provider_cell isFree">{opt.isFree ? "Free" : "Paid"}</td>
+                <td className="menus_option_view_all_table_rows_provider_cell nutrition">{opt.nutrition.calories} kcal</td>
+                <td className="menus_view_all_table_rows_provider_cell"><button className="menus_view_all_table_rows_provider_cell_button">Recipe</button></td>
+                <td className="menus_view_all_table_rows_provider_cell"><button className="menus_view_all_table_rows_provider_cell_button">TechCard</button></td>
+                <td className="menus_view_all_table_rows_provider_cell"><button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onUpdate(opt)}>Update</button></td>
+                <td className="menus_view_all_table_rows_provider_cell"><button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onView(opt)}>View</button></td>
+                <td className="menus_view_all_table_rows_provider_cell" data-quickview-open={expandedId === opt._id ? "true" : "false"}>
+                  <button className="menus_view_all_table_rows_provider_cell_button dropdown" onClick={() => setExpandedId(expandedId === opt._id ? null : opt._id)}>
+                    {expandedId === opt._id ? "Close" : "Quick"}
+                  </button>
+                </td>
+              </tr>
+              <Menus_quickView
+                open={expandedId === opt._id}
+                colSpan={headers.length}
+                fields={[
+                  { label: "Owner", value: <Menus_ownerBadge value={opt.ownerType} /> },
+                  { label: "Selling Price", value: `${opt.sellingPrice.gross} (net ${opt.sellingPrice.net})` },
+                  { label: "Cost", value: `est. ${opt.cost.estimatedCost} / actual ${opt.cost.actualCost}` },
+                  { label: "Calories", value: `${opt.nutrition.calories} kcal` },
+                  { label: "Macros", value: `P ${opt.nutrition.protein} · C ${opt.nutrition.carbs} · F ${opt.nutrition.fat}` },
+                  { label: "Available in modifiers", value: opt.availableInModifiers.join(", ") || "—" },
+                ]}
+                sections={[
+                  { title: "Description", body: <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>{opt.description.long.en}</p> },
+                ]}
+                actions={
+                  <>
+                    <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onView(opt)}>Open full view</button>
+                    <button className="menus_view_all_table_rows_provider_cell_button" onClick={() => onUpdate(opt)}>Update</button>
+                  </>
+                }
+              />
+            </_vFrag>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+window.Menus_option_table = Menus_option_table;

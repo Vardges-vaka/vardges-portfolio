@@ -1,0 +1,72 @@
+.menus_sessionToggle .disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menus_sessionToggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* height: 100%; */
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.menus_sessionToggle_ownerType_btn {
+  /* border: 1px solid var(--border-color, #000); */
+  border: none !important;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 4px;
+}
+
+.menus_sessionToggle_ownerType_btn.active {
+  opacity: 1 !important;
+}
+
+.menus_sessionToggle_ownerType_iconWrap {
+  position: relative;
+  display: inline-flex;
+  line-height: 0;
+}
+
+.menus_sessionToggle_ownerType_icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Green blinking dot — top-right of icon when this owner filter is on */
+.menus_sessionToggle_ownerType_indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-success-border);
+  box-shadow: 0 0 4px var(--primary-success-border);
+  transform: translate(25%, -25%);
+  animation: menus_sessionToggle_indicatorBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes menus_sessionToggle_indicatorBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

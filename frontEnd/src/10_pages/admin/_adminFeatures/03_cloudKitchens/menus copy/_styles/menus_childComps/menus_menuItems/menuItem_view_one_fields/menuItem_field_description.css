@@ -1,0 +1,12 @@
+/* ============================================================================
+   MenuItem — description field (refinements layered on view_one)
+============================================================================ */
+
+.menus_menuItem_view_one_topRight_description {
+  position: relative;
+}
+
+/* Tag the long version with a slightly taller default so users see ~6 lines. */
+.menus_menuItem_view_one_topRight_description_version.long .menus_menuItem_view_one_topRight_description_textarea {
+  min-height: 9rem;
+}

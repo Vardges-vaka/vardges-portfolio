@@ -1,0 +1,205 @@
+/* ============================================================================
+   Menus — design tokens & shared primitives
+   ----------------------------------------------------------------------------
+   All component stylesheets in this module read from these variables. The
+   parent design system (--text-primary-color, --border-primary-color, etc.)
+   wins automatically when defined upstream; the fallbacks below keep the
+   surface coherent in standalone preview.
+============================================================================ */
+
+.menus {
+  /* ---- Palette (warm neutrals + green success accent) ---- */
+  --menus-bg: var(--bg-primary-color, #fbfaf8);
+  --menus-bg-soft: var(--bg-secondary-color, #f3efe9);
+  --menus-bg-elev: var(--bg-primary-color, #ffffff);
+  --menus-bg-hover: color-mix(in srgb, var(--menus-bg-soft) 55%, transparent);
+
+  --menus-text: var(--text-primary-color, #1d1b18);
+  --menus-text-soft: var(--text-secondary-color, #5a544d);
+  --menus-text-faint: color-mix(in srgb, var(--menus-text) 55%, transparent);
+  --menus-title: var(--title-secondary-color, #1d1b18);
+
+  --menus-border: var(--border-primary-color, #d6cfc4);
+  --menus-border-soft: var(--border-secondary-color, #e6e0d6);
+  --menus-border-faint: color-mix(in srgb, var(--menus-border-soft) 45%, transparent);
+
+  --menus-accent: var(--primary-success-border, #2fc30b);
+  --menus-accent-soft: color-mix(in srgb, var(--menus-accent) 14%, transparent);
+  --menus-accent-text: color-mix(in srgb, var(--menus-accent) 70%, var(--menus-text));
+
+  --menus-danger: #c0392b;
+  --menus-danger-soft: color-mix(in srgb, var(--menus-danger) 12%, transparent);
+
+  --menus-shadow: var(--boxShadow-primary-color, rgba(20, 16, 10, 0.18));
+
+  /* ---- Geometry ---- */
+  --menus-radius-xs: 4px;
+  --menus-radius-sm: 6px;
+  --menus-radius-md: 8px;
+  --menus-radius-lg: 10px;
+  --menus-radius-xl: 14px;
+  --menus-radius-pill: 999px;
+
+  /* ---- Type scale ---- */
+  --menus-font: var(
+    --font-primary,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, sans-serif
+  );
+  --menus-font-mono: var(
+    --font-mono,
+    ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", monospace
+  );
+
+  --menus-text-xs: 0.6875rem;   /* 11 */
+  --menus-text-sm: 0.8125rem;   /* 13 */
+  --menus-text-base: 0.875rem;  /* 14 */
+  --menus-text-md: 0.9375rem;   /* 15 */
+  --menus-text-lg: 1.0625rem;   /* 17 */
+  --menus-text-xl: 1.375rem;    /* 22 */
+
+  /* ---- Motion ---- */
+  --menus-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --menus-ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --menus-dur-fast: 120ms;
+  --menus-dur: 200ms;
+  --menus-dur-slow: 320ms;
+
+  /* ---- Layout ---- */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-height: 100%;
+  padding: 14px 18px 32px;
+  box-sizing: border-box;
+  font-family: var(--menus-font);
+  font-size: var(--menus-text-base);
+  color: var(--menus-text);
+  background-color: var(--menus-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================================================
+   Shared primitives — used across tables, cards, headers.
+============================================================================ */
+
+/* Surface card — wraps tables, view_one panels, modals, etc. */
+.menus :where(.menus_card) {
+  background-color: var(--menus-bg-elev);
+  border: 1px solid var(--menus-border);
+  border-radius: var(--menus-radius-lg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow) 35%, transparent);
+}
+
+/* Pill — count chips, status flags. */
+.menus :where(.menus_pill) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: var(--menus-radius-pill);
+  font-size: var(--menus-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background-color: var(--menus-bg-soft);
+  color: var(--menus-text);
+  border: 1px solid var(--menus-border-faint);
+  white-space: nowrap;
+}
+
+/* Compact action button shared across tables. */
+.menus :where(.menus_actionBtn) {
+  appearance: none;
+  font: inherit;
+  min-width: 4.5rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--menus-border);
+  border-radius: var(--menus-radius-sm);
+  background-color: var(--menus-bg-elev);
+  color: var(--menus-text);
+  font-size: var(--menus-text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color var(--menus-dur) var(--menus-ease),
+    border-color var(--menus-dur) var(--menus-ease),
+    color var(--menus-dur) var(--menus-ease),
+    transform var(--menus-dur-fast) var(--menus-ease);
+}
+
+.menus :where(.menus_actionBtn:hover) {
+  background-color: var(--menus-bg-soft);
+  border-color: color-mix(in srgb, var(--menus-border) 65%, var(--menus-text));
+}
+
+.menus :where(.menus_actionBtn:active) {
+  transform: translateY(1px);
+}
+
+.menus :where(.menus_actionBtn:focus-visible) {
+  outline: 2px solid var(--menus-accent);
+  outline-offset: 2px;
+}
+
+/* Scrollbar polish for horizontal table overflow. */
+.menus *::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.menus *::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--menus-border) 70%, transparent);
+  border-radius: var(--menus-radius-pill);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.menus *::-webkit-scrollbar-thumb:hover {
+  background-color: var(--menus-border);
+  background-clip: padding-box;
+}
+.menus *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menus,
+  .menus * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================================
+   Toast — auto-dismissing confirmation pill anchored to the viewport bottom.
+   Lives outside .menus so transform/positioning is unaffected by parent
+   layout; the rule still sits in this stylesheet because it's a Menus-owned
+   primitive (set by handlers.setToast / dismissToast).
+============================================================================ */
+.menus_toast {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  padding: 10px 16px;
+  background: #1d1b18;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  animation: menus_toast_in 200ms ease both;
+}
+
+@keyframes menus_toast_in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

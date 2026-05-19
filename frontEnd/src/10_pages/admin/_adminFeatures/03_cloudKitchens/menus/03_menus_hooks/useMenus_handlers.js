@@ -1,455 +1,194 @@
+import { useCallback } from "react";
+
+// import {} from "../02_menus_helpers/_menus_helpers.index.js";
 import {
-  setByPath,
-  hydrateMenuForm,
-  pickSectionDraft,
-  pickAllSectionsDraft,
-  computeSectionDiff,
-  computeBulkDiff,
-} from "../02_menus_helpers/_menus_helpers.index.js";
-import {
-  SECTION_KEYS,
-  EDITABLE_SECTIONS,
+  VALID_VIEWING_SESSIONS,
+  MENUS,
+  MOCK_MENU_ITEMS,
+  MODIFIERS,
+  OPTIONS,
+  CATEGORIES,
 } from "../05_menus_cnst/_menus_cnst.index.js";
-import {
-  validateSection,
-  validateBulk,
-} from "../04_menus_vld/_menus_vld.index.js";
+// import {} from "../04_menus_vld/_menus_vld.index.js";
 
-const sectionPayload = (sectionKey, draft) => {
-  if (sectionKey === SECTION_KEYS.basic) {
-    return { isActive: draft?.isActive ?? true };
-  }
-  if (sectionKey === SECTION_KEYS.name) {
-    return { name: draft };
-  }
-  return { [sectionKey]: draft };
-};
+export const useMenus_handlers = ({ states, setters, apiHelpers, isDebug }) => {
+  const handleInitialFetch_menus = useCallback(() => {
+    setters.setMenus(MENUS);
+  }, [setters.setMenus]);
 
-const sectionIsDirty = (original, draft, sectionKey) => {
-  if (!draft) return false;
-  return computeSectionDiff(original, sectionPayload(sectionKey, draft), sectionKey).length > 0;
-};
+  const handleInitialFetch_items = useCallback(() => {
+    setters.setMenuItems(MOCK_MENU_ITEMS);
+  }, [setters.setMenuItems]);
 
-const bulkIsDirty = (original, bulkDrafts) => {
-  for (const sectionKey of Object.keys(bulkDrafts ?? {})) {
-    if (sectionIsDirty(original, bulkDrafts[sectionKey], sectionKey)) return true;
-  }
-  return false;
-};
+  const handleInitialFetch_modifiers = useCallback(() => {
+    setters.setModifiers(MODIFIERS);
+  }, [setters.setModifiers]);
 
-const toggleIdInArray = (arr, id) => {
-  const list = Array.isArray(arr) ? arr : [];
-  return list.includes(id) ? list.filter((item) => item !== id) : [...list, id];
-};
+  const handleInitialFetch_options = useCallback(() => {
+    setters.setOptions(OPTIONS);
+  }, [setters.setOptions]);
 
-export const useMenus_handlers = ({
-  states,
-  setters,
-  constants,
-  apiHelpers,
-  isDebug,
-}) => {
-  const {
-    menus,
-    detailSelectedId,
-    detailMode,
-    editingSection,
-    sectionDraft,
-    bulkDrafts,
-    addFormName,
-  } = states;
+  // done
+  const handleViewAll = useCallback(
+    (id) => {
+      setters.setViewingType("single");
+      setters.setSelectedMenu(states.menus.find((menu) => menu._id === id));
+      setters.setSelectedId(id);
+    },
+    [
+      setters.setViewingType,
+      setters.setSelectedMenu,
+      setters.setSelectedId,
+      states.menus,
+    ],
+  );
+  // TODO
+  const handleUpdateAll = useCallback(() => {
+    setters.setMenuItems(MOCK_MENU_ITEMS);
+  }, [setters.setMenuItems]);
+  //TODO
+  const handleDropdown = useCallback(() => {
+    setters.setMenuItems(MOCK_MENU_ITEMS);
+  }, [setters.setMenuItems]);
 
-  const {
-    setMenus,
-    setCategoriesList,
-    setBranchesList,
-    setBrandsList,
-    setViewMode,
-    setDetailMode,
-    setDetailSelectedId,
-    setCollapsedSections,
-    setEditingSection,
-    setSectionDraft,
-    setFieldErrors,
-    setBulkDrafts,
-    setBulkFieldErrors,
-    setShowAddForm,
-    setAddFormName,
-    setConfirmModal,
-    setDiscardModal,
-    setDeleteModal,
-    setIsLoading,
-    setIsSaving,
-    setError,
-  } = setters;
+  const handleView_MenuItem = useCallback(
+    (e) => {
+      const { id } = e.currentTarget.dataset;
+      if (!id) return;
+      setters.setSelectedMenuItemId(id);
+      let MenuItems = [];
+      if (states.viewingType === "all") {
+        MenuItems = states.menuItems.find((menuItem) => menuItem._id === id);
+      } else {
+        states.selectedMenu.categories?.forEach((category) => {
+          category.menuItems.forEach((menuItem) => {
+            MenuItems.push(menuItem.item);
+          });
+        });
+        MenuItems = MenuItems.find((menuItem) => menuItem._id === id);
+      }
+      setters.setViewingType("single");
+      setters.setSession("items");
+      setters.setSelectedMenuItem(MenuItems);
+    },
+    [
+      setters.setViewingType,
+      setters.setSelectedMenuItem,
+      setters.setSelectedMenuItemId,
+      states.menuItems,
+      states.viewingType,
+      states.selectedMenu,
+      setters.setSession,
+    ],
+  );
 
-  const { EMPTY_CONFIRM_MODAL, EMPTY_DISCARD_MODAL, EMPTY_DELETE_MODAL } = constants;
-  const {
-    Menu_add,
-    Menu_getAll,
-    Menu_update,
-    Menu_delete,
-    MenuCategory_getAll,
-    Branch_getAll,
-    Brand_getAll,
-  } = apiHelpers;
+  const handleUpdate_MenuItem = useCallback((e) => {}, []);
+  const handleDropdown_MenuItem = useCallback((e) => {}, []);
 
-  const selectedMenu = () => menus.find((m) => m._id === detailSelectedId);
+  const handleInitialFetch = useCallback(() => {
+    switch (states.session) {
+      case "menus":
+        handleInitialFetch_menus();
+        break;
+      case "items":
+        handleInitialFetch_items();
+        break;
+      case "modifiers":
+        handleInitialFetch_modifiers();
+        break;
+      case "options":
+        handleInitialFetch_options();
+        break;
+      default:
+        break;
+    }
+  }, [
+    states.session,
+    handleInitialFetch_menus,
+    handleInitialFetch_items,
+    handleInitialFetch_modifiers,
+    handleInitialFetch_options,
+  ]);
 
-  const handleFetchAll = async () => {
-    setIsLoading(true);
-    setError(null);
+  const handleViewingSession = useCallback(
+    (e) => {
+      const session = e.currentTarget.dataset.value;
+      if (VALID_VIEWING_SESSIONS.includes(session)) {
+        setters.setSession(session);
+      }
+    },
+    [setters],
+  );
 
-    const [menusRes, catsRes, branchesRes, brandsRes] = await Promise.all([
-      Menu_getAll(),
-      MenuCategory_getAll(),
-      Branch_getAll(),
-      Brand_getAll(),
-    ]);
+  const handleBackToMenus = useCallback(() => {
+    setters.setViewingType("all");
+    setters.setSession("menus");
+  }, [setters.setSession, setters.setViewingType]);
 
-    setIsLoading(false);
+  const initiateFieldUpdate = useCallback(() => {
+    setters.setIsUpdating(true);
+    setters.setUpdatingField(states.session);
+  }, [setters.setIsUpdating, setters.setUpdatingField, states.session]);
 
-    if (menusRes.success) {
-      setMenus(Array.isArray(menusRes.data) ? menusRes.data : []);
+  const handleCancelFieldUpdate = useCallback(() => {
+    if (!states.updatingFieldModal) {
+      setters.setUpdatingFieldModal(true);
     } else {
-      setError(menusRes.message);
+      setters.setIsUpdating(false);
+      setters.setUpdatingField(null);
+      setters.setUpdatingFieldModal(false);
     }
+  }, [
+    states.updatingFieldModal,
+    setters.setIsUpdating,
+    setters.setUpdatingField,
+    setters.setUpdatingFieldModal,
+  ]);
+  const handleConfirmFieldUpdate = useCallback(
+    (e) => {
+      if (!states.updatingFieldModal) {
+        setters.setUpdatingFieldModal(true);
+      } else {
+        // TODO: implement the logic to update the field
+        console.log("handleConfirmFieldUpdate Clicked");
+      }
+    },
+    [setters.setUpdatingFieldModal, states.updatingFieldModal],
+  );
+  const handleOwnerType = useCallback(
+    (e) => {
+      const clicked = e.currentTarget.dataset.value;
+      if (clicked !== "brand" && clicked !== "competitor") return;
 
-    setCategoriesList(Array.isArray(catsRes.data) ? catsRes.data : []);
-    setBranchesList(Array.isArray(branchesRes.data) ? branchesRes.data : []);
-    setBrandsList(Array.isArray(brandsRes.data) ? brandsRes.data : []);
-  };
-
-  const guardedNavigate = (doIt) => {
-    const original = selectedMenu();
-    const readDirty =
-      detailMode === "read" &&
-      editingSection &&
-      sectionIsDirty(original, sectionDraft, editingSection);
-    const bulkDirty = detailMode === "bulkEdit" && bulkIsDirty(original, bulkDrafts);
-
-    if (readDirty || bulkDirty) {
-      setDiscardModal({ isOpen: true, onConfirm: doIt });
-      return;
-    }
-
-    doIt();
-  };
-
-  const resetDetailDrafts = () => {
-    setEditingSection(null);
-    setSectionDraft({});
-    setFieldErrors({});
-    setBulkDrafts({});
-    setBulkFieldErrors({});
-    setDetailMode("read");
-  };
-
-  const handleSetViewMode = (mode) => {
-    if (mode === "detail") return;
-    guardedNavigate(() => {
-      resetDetailDrafts();
-      setViewMode(mode);
-    });
-  };
-
-  const handleViewMenu = (id) => {
-    setDetailSelectedId(id);
-    resetDetailDrafts();
-    setCollapsedSections({});
-    setViewMode("detail");
-  };
-
-  const handleEditMenu = (id) => {
-    const menu = menus.find((item) => item._id === id);
-    if (!menu) return;
-
-    setDetailSelectedId(id);
-    setEditingSection(null);
-    setSectionDraft({});
-    setFieldErrors({});
-    setBulkFieldErrors({});
-    setBulkDrafts(pickAllSectionsDraft(hydrateMenuForm(menu)));
-    setDetailMode("bulkEdit");
-    setCollapsedSections({});
-    setViewMode("detail");
-  };
-
-  const handleBackToList = () => {
-    guardedNavigate(() => {
-      setViewMode("list");
-      setDetailSelectedId(null);
-      resetDetailDrafts();
-      setError(null);
-    });
-  };
-
-  const handleShowAddForm = () => {
-    setAddFormName("");
-    setError(null);
-    setShowAddForm(true);
-  };
-
-  const handleCancelAddForm = () => {
-    setShowAddForm(false);
-    setAddFormName("");
-    setError(null);
-  };
-
-  const handleAddFormNameChange = (value) => setAddFormName(value);
-
-  const handleAddFormSubmit = async () => {
-    const trimmed = (addFormName ?? "").trim();
-    if (trimmed.length < 1) {
-      setError("Menu name (en) is required");
-      return;
-    }
-
-    setIsSaving(true);
-    setError(null);
-    const { success, message, data } = await Menu_add({ name: { en: trimmed } });
-    setIsSaving(false);
-
-    if (success && data) {
-      setMenus((prev) => [data, ...prev]);
-      setShowAddForm(false);
-      setAddFormName("");
-      return;
-    }
-
-    setError(message);
-  };
-
-  const handleSectionEditStart = (sectionKey) => {
-    const menu = selectedMenu();
-    if (!menu) return;
-
-    setSectionDraft(pickSectionDraft(hydrateMenuForm(menu), sectionKey));
-    setEditingSection(sectionKey);
-    setFieldErrors({});
-    setError(null);
-  };
-
-  const handleSectionEditCancel = () => {
-    const dirty = sectionIsDirty(selectedMenu(), sectionDraft, editingSection);
-    const clear = () => {
-      setEditingSection(null);
-      setSectionDraft({});
-      setFieldErrors({});
-      setError(null);
-    };
-
-    if (dirty) {
-      setDiscardModal({ isOpen: true, onConfirm: clear });
-      return;
-    }
-
-    clear();
-  };
-
-  const handleSectionDraftChange = (path, value) => {
-    setSectionDraft((prev) => setByPath(prev, path, value));
-  };
-
-  const handleIdToggle = (id) => {
-    setSectionDraft((prev) => toggleIdInArray(prev, id));
-  };
-
-  const handleSectionEditSubmit = () => {
-    const sectionKey = editingSection;
-    const original = selectedMenu();
-    if (!sectionKey || !original) return;
-
-    const validation = validateSection(sectionKey, sectionDraft);
-    if (!validation.ok) {
-      setFieldErrors(validation.errors);
-      setError("Please fix the highlighted fields");
-      return;
-    }
-
-    setFieldErrors({});
-    const payload = sectionPayload(sectionKey, sectionDraft);
-    const changes = computeSectionDiff(original, payload, sectionKey);
-
-    if (changes.length === 0) {
-      setEditingSection(null);
-      setSectionDraft({});
-      return;
-    }
-
-    setConfirmModal({ isOpen: true, sectionKey, changes, payload });
-  };
-
-  const handleBulkDraftChange = (sectionKey, path, value) => {
-    setBulkDrafts((prev) => ({
-      ...prev,
-      [sectionKey]: setByPath(prev?.[sectionKey] ?? {}, path, value),
-    }));
-  };
-
-  const handleBulkIdToggle = (sectionKey, id) => {
-    setBulkDrafts((prev) => ({
-      ...prev,
-      [sectionKey]: toggleIdInArray(prev?.[sectionKey], id),
-    }));
-  };
-
-  const handleBulkCancel = () => {
-    const dirty = bulkIsDirty(selectedMenu(), bulkDrafts);
-    const clear = () => {
-      setBulkDrafts({});
-      setBulkFieldErrors({});
-      setDetailMode("read");
-      setError(null);
-    };
-
-    if (dirty) {
-      setDiscardModal({ isOpen: true, onConfirm: clear });
-      return;
-    }
-
-    clear();
-  };
-
-  const handleBulkSubmit = () => {
-    const original = selectedMenu();
-    if (!original) return;
-
-    const validation = validateBulk(bulkDrafts);
-    if (!validation.ok) {
-      setBulkFieldErrors(validation.errors);
-      setError("Please fix the highlighted fields");
-      return;
-    }
-
-    setBulkFieldErrors({});
-    const payload = {};
-
-    for (const sectionKey of EDITABLE_SECTIONS) {
-      const draft = bulkDrafts?.[sectionKey];
-      if (!draft || !sectionIsDirty(original, draft, sectionKey)) continue;
-
-      Object.assign(payload, sectionPayload(sectionKey, draft));
-    }
-
-    const changes = computeBulkDiff(original, payload);
-    if (changes.length === 0) {
-      setBulkDrafts({});
-      setDetailMode("read");
-      return;
-    }
-
-    setConfirmModal({ isOpen: true, sectionKey: "bulk", changes, payload });
-  };
-
-  const handleConfirmModalCancel = () => setConfirmModal(EMPTY_CONFIRM_MODAL);
-
-  const handleConfirmModalConfirm = async () => {
-    const { payload, sectionKey } = states.confirmModal;
-    if (!payload || !detailSelectedId) return;
-
-    setIsSaving(true);
-    setError(null);
-    const { success, message, data } = await Menu_update(detailSelectedId, payload);
-    setIsSaving(false);
-
-    if (!success || !data) {
-      setError(message || "Update failed");
-      return;
-    }
-
-    setMenus((prev) =>
-      prev.map((menu) => (menu._id === detailSelectedId ? data : menu)),
-    );
-    setConfirmModal(EMPTY_CONFIRM_MODAL);
-
-    if (sectionKey === "bulk") {
-      setBulkDrafts({});
-      setBulkFieldErrors({});
-      setDetailMode("read");
-      return;
-    }
-
-    setEditingSection(null);
-    setSectionDraft({});
-    setFieldErrors({});
-  };
-
-  const handleDeleteRequest = (id) => {
-    const menu = menus.find((item) => item._id === id);
-    setDeleteModal({
-      isOpen: true,
-      menuId: id,
-      menuName: menu?.name?.en ?? "",
-    });
-  };
-
-  const handleDeleteConfirm = async () => {
-    const id = states.deleteModal.menuId;
-    if (!id) return;
-
-    setIsSaving(true);
-    setError(null);
-    const { success, message } = await Menu_delete(id);
-    setIsSaving(false);
-
-    if (success) {
-      setMenus((prev) => prev.filter((menu) => menu._id !== id));
-      setDeleteModal(EMPTY_DELETE_MODAL);
-      setViewMode("list");
-      setDetailSelectedId(null);
-      resetDetailDrafts();
-      return;
-    }
-
-    setError(message);
-  };
-
-  const handleDeleteCancel = () => setDeleteModal(EMPTY_DELETE_MODAL);
-
-  const handleDiscardConfirm = () => {
-    const fn = states.discardModal.onConfirm;
-    setDiscardModal(EMPTY_DISCARD_MODAL);
-    if (typeof fn === "function") fn();
-  };
-
-  const handleDiscardCancel = () => setDiscardModal(EMPTY_DISCARD_MODAL);
-
-  const handleToggleSectionCollapse = (sectionKey) => {
-    setCollapsedSections((prev) => ({
-      ...prev,
-      [sectionKey]: !prev?.[sectionKey],
-    }));
-  };
-
+      const { ownerType } = states;
+      if (ownerType === clicked) return;
+      if (ownerType === "both") {
+        setters.setOwnerType(clicked === "brand" ? "competitor" : "brand");
+        return;
+      }
+      setters.setOwnerType("both");
+    },
+    [states.ownerType, setters.setOwnerType],
+  );
   return {
     handlers: {
-      handleFetchAll,
-      handleSetViewMode,
-      handleViewMenu,
-      handleEditMenu,
-      handleBackToList,
-      handleShowAddForm,
-      handleCancelAddForm,
-      handleAddFormNameChange,
-      handleAddFormSubmit,
-      handleSectionEditStart,
-      handleSectionEditCancel,
-      handleSectionDraftChange,
-      handleIdToggle,
-      handleSectionEditSubmit,
-      handleBulkDraftChange,
-      handleBulkIdToggle,
-      handleBulkCancel,
-      handleBulkSubmit,
-      handleConfirmModalCancel,
-      handleConfirmModalConfirm,
-      handleDeleteRequest,
-      handleDeleteConfirm,
-      handleDeleteCancel,
-      handleDiscardConfirm,
-      handleDiscardCancel,
-      handleToggleSectionCollapse,
+      handleViewingSession,
+      handleOwnerType,
+      handleBackToMenus,
+      //
+      initiateFieldUpdate,
+      handleCancelFieldUpdate,
+      handleConfirmFieldUpdate,
+      handleInitialFetch,
+      //
+      handleUpdateAll,
+      handleViewAll,
+      handleDropdown,
+
+      //
+      handleUpdate_MenuItem,
+      handleView_MenuItem,
+      handleDropdown_MenuItem,
     },
   };
 };

@@ -22,20 +22,9 @@ export const componentMap = {
       () =>
         import("../../_adminFeatures/03_cloudKitchens/employees/Employees.jsx"),
     ),
-    cloudKitchens_modifiers: lazy(
-      () =>
-        import("../../_adminFeatures/03_cloudKitchens/modifiers/Modifiers.jsx"),
-    ),
     cloudKitchens_menus: lazy(
-      () => import("../../_adminFeatures/03_cloudKitchens/menus/Menus.jsx"),
-    ),
-    cloudKitchens_menuCategories: lazy(
       () =>
-        import("../../_adminFeatures/03_cloudKitchens/menuCategories/MenuCategories.jsx"),
-    ),
-    cloudKitchens_menuItems: lazy(
-      () =>
-        import("../../_adminFeatures/03_cloudKitchens/menuItems/MenuItems.jsx"),
+        import("../../_adminFeatures/03_cloudKitchens/menus copy/Menus.jsx"),
     ),
     cloudKitchens_competitors: lazy(
       () =>

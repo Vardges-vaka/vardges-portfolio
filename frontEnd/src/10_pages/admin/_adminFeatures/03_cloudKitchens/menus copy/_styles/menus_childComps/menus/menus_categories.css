@@ -1,0 +1,22 @@
+/* ============================================================================
+   Menus — Menus_categories list (categories inside a single menu)
+============================================================================ */
+
+.menus_categories {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.menus_categories > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menus_categories_menuItems {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}

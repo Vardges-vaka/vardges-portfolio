@@ -1,0 +1,369 @@
+/* eslint-disable react/jsx-key */
+/* ============================================================================
+   Menus — interactive preview app
+   ----------------------------------------------------------------------------
+   This file lives outside menus/. It is a clickable demo that imports the
+   polished CSS in menus/_styles/ and renders a working version of Menus.jsx
+   plus the sidebar/topbar shell from the user's app screenshot.
+
+   Mirror of the JSX patterns shipped in menus/01_menus_comps so behaviour you
+   see here matches what your integration will do.
+============================================================================ */
+
+const { useState, useMemo, useRef, useEffect, useCallback, Fragment } = React;
+
+/* ============================================================================
+   1. MOCK DATA — representative slice; same shape as MOCK_DATA_*.
+============================================================================ */
+
+// Pretty data-URI image: warm gradient labelled with the asset slot.
+const placeholderImg = (label, hueA = "%23f6e3c8", hueB = "%23d7b890") =>
+  `data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='42%25'%3E%3Cstop offset='0' stop-color='${hueA}'/%3E%3Cstop offset='1' stop-color='${hueB}'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23g)'/%3E%3Ctext x='120' y='128' text-anchor='middle' font-family='monospace' font-size='13' fill='%237a5a36'%3E${encodeURIComponent(label)}%3C/text%3E%3C/svg%3E`;
+
+const IMG = {
+  pavlova: placeholderImg("Strawberry Pavlova", "%23ffe3e3", "%23e36b6b"),
+  fondant: placeholderImg("Chocolate Fondant", "%23d3a48b", "%2374432b"),
+  borsch: placeholderImg("Borscht", "%23f1bfbf", "%23a02d2d"),
+  greekSalad: placeholderImg("Greek Salad", "%23dbe6c2", "%23627b3a"),
+  kiev: placeholderImg("Chicken Kiev", "%23f0d790", "%23a17a2a"),
+  bibimbap: placeholderImg("Bibimbap", "%23ecd6a0", "%2387602a"),
+  empanada: placeholderImg("Empanada", "%23ffe1a8", "%23a6661f"),
+  sauce: placeholderImg("Strawberry sauce", "%23f1bfbf", "%23d04848"),
+  cream: placeholderImg("Vanilla cream", "%23f5f0e6", "%23c2b994"),
+  chocolate: placeholderImg("Chocolate sauce", "%23b88557", "%235a3614"),
+};
+
+const BRAND_LOGO = placeholderImg("VK", "%23ffd9a0", "%23c47e25");
+const COMPETITOR_LOGO = placeholderImg("Od", "%23c8d8e6", "%231f3a5a");
+
+const MOCK = {
+  // ---- menus ----
+  menus: [
+    {
+      _id: "m1", label: "Main Dining Menu", description: "Our comprehensive dining menu featuring appetizers, mains, and desserts",
+      ownerType: "brand", isActive: true,
+      createdBy: "Vardges", updatedBy: "Boutros",
+      createdAt: "2025-01-18T08:14:32.000Z", updatedAt: "2026-04-22T11:37:05.000Z",
+      categories: ["cat-cold", "cat-desserts", "cat-soups"],
+    },
+    {
+      _id: "m2", label: "Italian Specialties", description: "Authentic Italian cuisine from pasta to pizza",
+      ownerType: "brand", isActive: true,
+      createdBy: "Anna", updatedBy: "Karen",
+      createdAt: "2025-04-05T14:28:19.000Z", updatedAt: "2026-01-09T09:52:41.000Z",
+      categories: ["cat-cold", "cat-desserts"],
+    },
+    {
+      _id: "m3", label: "Asian Fusion", description: "A journey through Asia's finest cuisines",
+      ownerType: "brand", isActive: false,
+      createdBy: "Suren", updatedBy: "Bella",
+      createdAt: "2025-06-12T10:03:55.000Z", updatedAt: "2026-03-15T16:20:08.000Z",
+      categories: ["cat-cold"],
+    },
+    {
+      _id: "m4", label: "Odesa Ma Seafood", description: "Competitor menu — grilled fish and coastal plates",
+      ownerType: "competitor", isActive: true,
+      createdBy: "External", updatedBy: "Scraper",
+      createdAt: "2026-04-28T13:21:07.000Z", updatedAt: "2026-05-19T06:03:44.000Z",
+      categories: ["cat-soups", "cat-desserts"],
+    },
+  ],
+
+  // ---- categories ----
+  categories: {
+    "cat-cold": {
+      _id: "cat-cold", name: { label: "Cold Appetizers" },
+      ownerType: "brand", isActive: true, displayOrder: 1,
+      createdBy: "Vardges", updatedBy: "Boutros",
+      description: { short: "Cold dishes with fresh ingredients", long: "A variety of cold appetizers, perfect for starting your meal with a refreshing touch." },
+      activeTimings: { isAlwaysActive: true, windows: [] },
+      menuItems: ["item-greek", "item-empanada"],
+    },
+    "cat-desserts": {
+      _id: "cat-desserts", name: { label: "Desserts" },
+      ownerType: "brand", isActive: true, displayOrder: 10,
+      createdBy: "Saira", updatedBy: "Imran",
+      description: { short: "Sweet finishers", long: "Handcrafted desserts ranging from cakes to puddings." },
+      activeTimings: {
+        isAlwaysActive: false,
+        windows: [
+          { label: "Lunch", from: "11:00", to: "15:00" },
+          { label: "Dinner", from: "18:00", to: "23:30" },
+        ],
+      },
+      menuItems: ["item-pavlova", "item-fondant"],
+    },
+    "cat-soups": {
+      _id: "cat-soups", name: { label: "Soups" },
+      ownerType: "brand", isActive: true, displayOrder: 4,
+      createdBy: "Rami", updatedBy: "Aly",
+      description: { short: "Hearty soups", long: "Creamy, chunky, or clear broths." },
+      activeTimings: {
+        isAlwaysActive: false,
+        windows: [{ label: "Lunch", from: "11:00", to: "16:00" }],
+      },
+      menuItems: ["item-borsch", "item-kiev"],
+    },
+  },
+
+  // ---- items ----
+  items: {
+    "item-pavlova": {
+      _id: "item-pavlova", ownerType: "brand", isActive: true, displayOrder: 70,
+      createdBy: "Vardges", updatedBy: "Boutros",
+      name: {
+        label: "Strawberry Pavlova",
+        translations: { en: "Strawberry Pavlova", ru: "Павлова с клубникой", ar: "بافلوفا بالفراولة", uk: "Павлова з полуницею" },
+        aggrigators: { en: "Strawberry Pavlova", ru: "Павлова с клубникой", ar: "بافلوفا بالفراولة" },
+      },
+      description: {
+        short: { en: "Crisp meringue shell, vanilla cream, fresh strawberries.", ru: "Хрустящее безе, ванильный крем, свежая клубника.", ar: "قشرة المرنغ المقرمشة، كريمة الفانيليا، الفراولة الطازجة." },
+        long: { en: "A classic pavlova baked low and slow until the outside crackles and the inside stays cloud-like. Finished tableside with lush vanilla cream, macerated strawberries, mint, and a whisper of balsamic.", ru: "Классическая павлова, выпеченная медленно до хрустящей корочки.", ar: "بافلوفا كلاسيكية، تخبز ببطء حتى تصبح القشرة مقرمشة." },
+        aggrigators: { en: "Strawberry Pavlova", ru: "Павлова с клубникой", ar: "بافلوفا بالفراولة" },
+        website: { short: "Classic pavlova with strawberries.", long: "Tableside vanilla cream, macerated strawberries, mint." },
+        google: "Strawberry Pavlova — tableside cream + berries",
+      },
+      images: {
+        main: IMG.pavlova, aggregators: IMG.pavlova, website: IMG.pavlova, google: IMG.pavlova,
+        highRes: IMG.pavlova, noBackgroundPng: null, jpg: IMG.pavlova, png: null, WebP: IMG.pavlova, ico: null,
+        other: [
+          { ref: "Plating Guide", path: IMG.pavlova, fileType: "pdf", sizeInBytes: 184000, description: "Plating instructions." },
+          { ref: "Allergens Sheet", path: IMG.pavlova, fileType: "xlsx", sizeInBytes: 24000, description: "Tracked allergens." },
+        ],
+      },
+      recipe: "obj:recipe-pavlova",
+      recipeFile: { pdf: "https://example.com/recipe-pavlova.pdf", word: "https://example.com/recipe-pavlova.docx", excel: null },
+      techCardFile: { pdf: "https://example.com/techcard-pavlova.pdf", word: null, excel: null },
+      cost: { actualCost: 8, estimatedCost: 7 },
+      sellingPrice: { gross: 44, net: 41.8, VAT: 2.2 },
+      nutrition: { source: "manual", calories: 320, protein: 6, carbs: 52, fat: 10, lastCalculatedAt: "2026-05-12T09:14:00Z" },
+      otherFiles: [
+        { ref: "Plating Guide", path: IMG.pavlova, fileType: "pdf", sizeInBytes: 184000, description: "Plating reference." },
+      ],
+      priceHistory: [
+        { from: "2025-09-01", to: "2026-02-01", gross: 40 },
+        { from: "2026-02-01", to: "2026-04-22", gross: 42 },
+        { from: "2026-04-22", to: null, gross: 44 },
+      ],
+      modifiers: [{ modifier: "mod-sauce", displayOrder: 0 }, { modifier: "mod-cream", displayOrder: 1 }],
+      sizeByGrams: 200, quantity: 0, dietaryTags: ["vegetarian"], allergens: ["egg", "dairy"],
+      spicyLevel: 0, preparationTimeMin: 10, sku: "DESS009",
+      kitchenStation: "pastry", cuisineType: "international",
+      mirroredWithOtherMenuItems: [{ brand: { logo: BRAND_LOGO, name: "Vkusnyashka" }, item: { image: IMG.pavlova, name: "Strawberry Pavlova" }, note: "Same item." }],
+      competesWithOtherMenuItems: [
+        { brand: { logo: COMPETITOR_LOGO, name: "Odesa Ma" }, item: { image: IMG.pavlova, name: "Berry Cloud" }, sellingPrice: { gross: 48 }, capturedAt: "2026-05-04" },
+        { brand: { logo: COMPETITOR_LOGO, name: "Pushkin" }, item: { image: IMG.pavlova, name: "Pavlova Royale" }, sellingPrice: { gross: 52 }, capturedAt: "2026-05-12" },
+      ],
+      source: "manual", externalId: "PAVLOVA001",
+      cloudStorage: { isDefault: true, value: "s3" },
+      availableInCategories: ["Desserts"],
+    },
+    "item-fondant": {
+      _id: "item-fondant", ownerType: "brand", isActive: true, displayOrder: 71,
+      createdBy: "Saira", updatedBy: "Imran",
+      name: { label: "Molten Chocolate Fondant", translations: { en: "Molten Chocolate Fondant", ru: "Шоколадный фондан", ar: "فوندان شوكولاتة" }, aggrigators: { en: "Molten Chocolate Fondant", ru: "Шоколадный фондан", ar: "فوندان شوكولاتة" } },
+      description: {
+        short: { en: "Warm chocolate cake with a flowing centre.", ru: "Тёплый шоколадный кекс с жидкой начинкой.", ar: "كعكة شوكولاتة دافئة مع مركز سائل." },
+        long: { en: "Bittersweet 70% chocolate, single-origin vanilla ice cream, raspberry coulis.", ru: "Шоколад 70%, ванильное мороженое, малиновый соус.", ar: "شوكولاتة 70%، آيس كريم بالفانيليا، صلصة التوت." },
+        aggrigators: { en: "Molten Chocolate Fondant", ru: "Фондан", ar: "فوندان" },
+        website: { short: "Molten chocolate fondant.", long: "70% chocolate, vanilla ice cream, raspberry coulis." },
+        google: "Molten Chocolate Fondant",
+      },
+      images: { main: IMG.fondant, aggregators: IMG.fondant, website: IMG.fondant, google: null, highRes: IMG.fondant, noBackgroundPng: null, jpg: IMG.fondant, png: null, WebP: null, ico: null, other: [] },
+      recipeFile: { pdf: "https://example.com/r.pdf", word: null, excel: null },
+      techCardFile: { pdf: null, word: "https://example.com/t.docx", excel: null },
+      cost: { actualCost: 9, estimatedCost: 8 }, sellingPrice: { gross: 52, net: 49.4, VAT: 2.6 },
+      nutrition: { source: "autoFromRecipe", calories: 540, protein: 8, carbs: 60, fat: 28, lastCalculatedAt: "2026-05-10T09:14:00Z" },
+      otherFiles: [], priceHistory: [{ from: "2026-03-01", to: null, gross: 52 }],
+      modifiers: [{ modifier: "mod-cream", displayOrder: 0 }],
+      sizeByGrams: 220, quantity: 0, dietaryTags: ["vegetarian"], allergens: ["gluten", "egg", "dairy"],
+      spicyLevel: 0, preparationTimeMin: 12, sku: "DESS010", kitchenStation: "pastry", cuisineType: "international",
+      mirroredWithOtherMenuItems: [], competesWithOtherMenuItems: [],
+      source: "manual", externalId: "FONDANT001", cloudStorage: { isDefault: true, value: "s3" }, availableInCategories: ["Desserts"],
+    },
+    "item-greek": {
+      _id: "item-greek", ownerType: "brand", isActive: true, displayOrder: 1,
+      createdBy: "Vardges", updatedBy: "Boutros",
+      name: {
+        label: "Greek Salad",
+        translations: { en: "Greek Salad", ru: "Греческий салат", ar: "سلطة يونانية", uk: "Грецький салат" },
+        aggrigators: { en: "Greek Salad", ru: "Греческий салат", ar: "سلطة يونانية" },
+      },
+      description: {
+        short: { en: "Tomato, cucumber, olives, feta, oregano.", ru: "Помидор, огурец, оливки, фета, орегано.", ar: "طماطم، خيار، زيتون، فيتا، أوريجانو." },
+        long: { en: "Sun-ripe tomatoes, kalamata olives, slab of feta, fresh oregano, peppery oil.", ru: "Спелые помидоры, оливки каламата, фета, орегано.", ar: "طماطم ناضجة، زيتون كالاماتا، فيتا، أوريجانو." },
+        aggrigators: { en: "Greek Salad", ru: "Греческий салат", ar: "سلطة يونانية" },
+        website: { short: "Greek salad.", long: "Sun-ripe tomatoes, olives, feta." },
+        google: "Greek Salad",
+      },
+      images: { main: IMG.greekSalad, aggregators: IMG.greekSalad, website: null, google: IMG.greekSalad, highRes: IMG.greekSalad, noBackgroundPng: null, jpg: IMG.greekSalad, png: IMG.greekSalad, WebP: null, ico: null, other: [] },
+      recipeFile: { pdf: "https://example.com/r.pdf", word: null, excel: "https://example.com/r.xlsx" },
+      techCardFile: { pdf: "https://example.com/t.pdf", word: null, excel: null },
+      cost: { actualCost: 4, estimatedCost: 3 }, sellingPrice: { gross: 32, net: 30.4, VAT: 1.6 },
+      nutrition: { source: "manual", calories: 240, protein: 7, carbs: 12, fat: 18, lastCalculatedAt: "2026-04-30T09:14:00Z" },
+      otherFiles: [], priceHistory: [],
+      modifiers: [{ modifier: "mod-sauce", displayOrder: 0 }],
+      sizeByGrams: 320, quantity: 0, dietaryTags: ["vegetarian", "glutenFree"], allergens: ["dairy"],
+      spicyLevel: 0, preparationTimeMin: 6, sku: "APP004", kitchenStation: "cold", cuisineType: "international",
+      mirroredWithOtherMenuItems: [], competesWithOtherMenuItems: [],
+      source: "manual", externalId: "GREEK001", cloudStorage: { isDefault: true, value: "s3" }, availableInCategories: ["Cold Appetizers"],
+    },
+    "item-empanada": {
+      _id: "item-empanada", ownerType: "brand", isActive: true, displayOrder: 63,
+      createdBy: "Suren", updatedBy: "Bella",
+      name: { label: "Beef Empanadas", translations: { en: "Beef Empanadas", ru: "Эмпанады с говядиной", ar: "إمبانادا اللحم" }, aggrigators: { en: "Beef Empanadas", ru: "Эмпанады", ar: "إمبانادا" } },
+      description: {
+        short: { en: "Pastries filled with seasoned beef and vegetables.", ru: "Пирожки с говядиной и овощами.", ar: "معجنات محشوة باللحم." },
+        long: { en: "Hand-folded empanadas, slow-braised beef, sofrito.", ru: "Эмпанады ручной работы, тушёная говядина.", ar: "إمبانادا يدوية، لحم بقري مطهو ببطء." },
+        aggrigators: { en: "Beef Empanadas", ru: "Эмпанады", ar: "إمبانادا" },
+        website: { short: "Beef empanadas.", long: "Slow-braised, hand-folded." },
+        google: "Beef Empanadas",
+      },
+      images: { main: IMG.empanada, aggregators: IMG.empanada, website: IMG.empanada, google: IMG.empanada, highRes: IMG.empanada, noBackgroundPng: null, jpg: IMG.empanada, png: null, WebP: null, ico: null, other: [] },
+      recipeFile: { pdf: null, word: null, excel: null }, techCardFile: { pdf: null, word: null, excel: null },
+      cost: { actualCost: 7, estimatedCost: 6 }, sellingPrice: { gross: 38, net: 36.1, VAT: 1.9 },
+      nutrition: { source: "autoFromRecipe", calories: 320, protein: 18, carbs: 32, fat: 14, lastCalculatedAt: "2026-05-15T09:14:00Z" },
+      otherFiles: [], priceHistory: [],
+      modifiers: [{ modifier: "mod-sauce", displayOrder: 0 }],
+      sizeByGrams: 200, quantity: 3, dietaryTags: [], allergens: ["gluten"],
+      spicyLevel: 1, preparationTimeMin: 14, sku: "APP006", kitchenStation: "fryer", cuisineType: "international",
+      mirroredWithOtherMenuItems: [], competesWithOtherMenuItems: [],
+      source: "manual", externalId: "EMPANADA001", cloudStorage: { isDefault: false, value: "r2" }, availableInCategories: ["Hot Appetizers", "Cold Appetizers"],
+    },
+    "item-borsch": {
+      _id: "item-borsch", ownerType: "brand", isActive: true, displayOrder: 21,
+      createdBy: "Rami", updatedBy: "Aly",
+      name: { label: "Classic Borscht", translations: { en: "Classic Borscht", ru: "Классический борщ", ar: "بورش كلاسيكي", uk: "Класичний борщ" }, aggrigators: { en: "Classic Borscht", ru: "Борщ", ar: "بورش" } },
+      description: {
+        short: { en: "Beetroot soup with beef and sour cream.", ru: "Борщ со свёклой, говядиной и сметаной.", ar: "حساء الشمندر باللحم وكريمة." },
+        long: { en: "Slow-simmered beef stock, beetroot, cabbage, dill, garnished with sour cream.", ru: "Медленно-варёный бульон, свёкла, капуста.", ar: "مرق لحم بقري، شمندر، ملفوف." },
+        aggrigators: { en: "Classic Borscht", ru: "Борщ", ar: "بورش" },
+        website: { short: "Classic Borscht.", long: "With sour cream + dill." }, google: "Classic Borscht",
+      },
+      images: { main: IMG.borsch, aggregators: IMG.borsch, website: IMG.borsch, google: IMG.borsch, highRes: IMG.borsch, noBackgroundPng: null, jpg: IMG.borsch, png: null, WebP: null, ico: null, other: [] },
+      recipeFile: { pdf: "https://example.com/borsch.pdf", word: null, excel: null }, techCardFile: { pdf: null, word: null, excel: null },
+      cost: { actualCost: 5, estimatedCost: 4 }, sellingPrice: { gross: 28, net: 26.6, VAT: 1.4 },
+      nutrition: { source: "manual", calories: 220, protein: 14, carbs: 18, fat: 8, lastCalculatedAt: "2026-05-08T09:14:00Z" },
+      otherFiles: [], priceHistory: [],
+      modifiers: [], sizeByGrams: 400, quantity: 0, dietaryTags: [], allergens: ["dairy", "celery"],
+      spicyLevel: 0, preparationTimeMin: 20, sku: "SOUP002", kitchenStation: "prep", cuisineType: "russian",
+      mirroredWithOtherMenuItems: [], competesWithOtherMenuItems: [],
+      source: "manual", externalId: "BORSCH001", cloudStorage: { isDefault: true, value: "s3" }, availableInCategories: ["Soups"],
+    },
+    "item-kiev": {
+      _id: "item-kiev", ownerType: "brand", isActive: true, displayOrder: 16,
+      createdBy: "Olga", updatedBy: "Dmitry",
+      name: { label: "Chicken Kiev", translations: { en: "Chicken Kiev", ru: "Котлета по-киевски", ar: "كييف بالدجاج", uk: "Котлета по-київськи" }, aggrigators: { en: "Chicken Kiev", ru: "Кiевская", ar: "كييف" } },
+      description: {
+        short: { en: "Crispy chicken with melted herb butter.", ru: "Хрустящая курица с травяным маслом.", ar: "دجاج مقرمش مع زبدة الأعشاب." },
+        long: { en: "Crisp panko, juicy chicken breast, garlic-herb butter that bursts at the cut.", ru: "Хрустящие сухари, сочная курица, чесночное масло.", ar: "بقسماط مقرمش، صدر دجاج، زبدة الثوم." },
+        aggrigators: { en: "Chicken Kiev", ru: "Кiевская", ar: "كييف" },
+        website: { short: "Chicken Kiev.", long: "Garlic-herb butter centre." }, google: "Chicken Kiev",
+      },
+      images: { main: IMG.kiev, aggregators: IMG.kiev, website: IMG.kiev, google: null, highRes: IMG.kiev, noBackgroundPng: IMG.kiev, jpg: IMG.kiev, png: IMG.kiev, WebP: null, ico: null, other: [] },
+      recipeFile: { pdf: null, word: null, excel: null }, techCardFile: { pdf: null, word: null, excel: null },
+      cost: { actualCost: 12, estimatedCost: 10 }, sellingPrice: { gross: 64, net: 60.8, VAT: 3.2 },
+      nutrition: { source: "autoFromRecipe", calories: 690, protein: 42, carbs: 22, fat: 38, lastCalculatedAt: "2026-05-14T09:14:00Z" },
+      otherFiles: [], priceHistory: [],
+      modifiers: [{ modifier: "mod-sauce", displayOrder: 0 }], sizeByGrams: 380, quantity: 0,
+      dietaryTags: [], allergens: ["dairy", "gluten", "egg"],
+      spicyLevel: 0, preparationTimeMin: 24, sku: "MAIN012", kitchenStation: "grill", cuisineType: "russian",
+      mirroredWithOtherMenuItems: [], competesWithOtherMenuItems: [{ brand: { logo: COMPETITOR_LOGO, name: "Dacha" }, item: { image: IMG.kiev, name: "Kievskaya" }, sellingPrice: { gross: 70 }, capturedAt: "2026-05-01" }],
+      source: "manual", externalId: "KIEV001", cloudStorage: { isDefault: true, value: "s3" }, availableInCategories: ["Soups"],
+    },
+  },
+
+  // ---- modifiers ----
+  modifiers: {
+    "mod-sauce": {
+      _id: "mod-sauce", ownerType: "brand",
+      title: { label: "Sauce", translations: { en: "Sauce", ru: "Соус", ar: "صلصة" } },
+      description: { short: { en: "Pick a sauce.", ru: "Выберите соус.", ar: "اختر الصلصة." }, long: { en: "A sauce that goes with the dish.", ru: "Соус к блюду.", ar: "صلصة." } },
+      isOptional: true, selectionMode: "single", isFree: true,
+      options: ["opt-strawberry", "opt-chocolate", "opt-cream"],
+      isActive: true, displayOrder: 1, createdBy: "Vardges", updatedBy: "Boutros",
+      activeTimings: { isAlwaysActive: true, windows: [] },
+      availableInMenuItems: ["Strawberry Pavlova", "Greek Salad", "Beef Empanadas", "Chicken Kiev"],
+    },
+    "mod-cream": {
+      _id: "mod-cream", ownerType: "brand",
+      title: { label: "Extra cream", translations: { en: "Extra cream", ru: "Дополнительный крем", ar: "كريمة إضافية" } },
+      description: { short: { en: "Generous cream dollop.", ru: "Большая порция крема.", ar: "كريمة وفيرة." }, long: { en: "Whipped vanilla cream, served on the side.", ru: "Взбитый крем сбоку.", ar: "كريمة جانبية." } },
+      isOptional: false, selectionMode: "multiple", isFree: false,
+      options: ["opt-cream"], isActive: true, displayOrder: 2, createdBy: "Anna", updatedBy: "Karen",
+      activeTimings: { isAlwaysActive: false, windows: [{ label: "Service", from: "11:00", to: "23:30" }] },
+      availableInMenuItems: ["Strawberry Pavlova", "Molten Chocolate Fondant"],
+    },
+    "mod-spice": {
+      _id: "mod-spice", ownerType: "competitor",
+      title: { label: "Spice level", translations: { en: "Spice level", ru: "Уровень острого", ar: "مستوى الحار" } },
+      description: { short: { en: "Choose how spicy.", ru: "Выберите остроту.", ar: "اختر مستوى الحار." }, long: { en: "From mild to fire.", ru: "От мягкого до огненного.", ar: "من خفيف إلى ناري." } },
+      isOptional: true, selectionMode: "single", isFree: true,
+      options: ["opt-strawberry"], isActive: true, displayOrder: 5,
+      createdBy: "External", updatedBy: "Scraper",
+      activeTimings: { isAlwaysActive: true, windows: [] }, availableInMenuItems: [],
+    },
+  },
+
+  // ---- options ----
+  options: {
+    "opt-strawberry": {
+      _id: "opt-strawberry", ownerType: "brand",
+      name: { label: "Strawberry coulis", translations: { en: "Strawberry coulis", ru: "Клубничный соус", ar: "صلصة فراولة" } },
+      description: { short: { en: "House-made strawberry sauce.", ru: "Домашний клубничный соус.", ar: "صلصة فراولة منزلية." }, long: { en: "Strained, lightly sweetened.", ru: "Процеженный, слегка подслащённый.", ar: "مصفاة، محلاة بخفة." } },
+      images: { main: IMG.sauce, aggregators: IMG.sauce, website: IMG.sauce, google: null, highRes: IMG.sauce, noBackgroundPng: null, jpg: IMG.sauce, png: null, WebP: null, ico: null, other: [] },
+      isActive: true, displayOrder: 1, createdBy: "Vardges", updatedBy: "Boutros",
+      isFree: false,
+      cost: { actualCost: 1.6, estimatedCost: 1.2 }, sellingPrice: { gross: 6, net: 5.7, VAT: 0.3 },
+      nutrition: { source: "manual", calories: 110, protein: 1, carbs: 14, fat: 2, lastCalculatedAt: "2026-05-12T09:14:00Z" },
+      recipeFile: { pdf: "https://example.com/strawb.pdf", word: null, excel: null },
+      techCardFile: { pdf: null, word: null, excel: null },
+      availableInModifiers: ["Sauce"], cloudStorage: { isDefault: true, value: "s3" },
+    },
+    "opt-chocolate": {
+      _id: "opt-chocolate", ownerType: "brand",
+      name: { label: "Dark chocolate sauce", translations: { en: "Dark chocolate sauce", ru: "Тёмный шоколадный соус", ar: "صلصة شوكولاتة داكنة" } },
+      description: { short: { en: "70% bittersweet sauce.", ru: "Тёмный 70%.", ar: "صلصة 70%." }, long: { en: "Made with single-origin chocolate.", ru: "Шоколад одного происхождения.", ar: "شوكولاتة من أصل واحد." } },
+      images: { main: IMG.chocolate, aggregators: IMG.chocolate, website: null, google: null, highRes: IMG.chocolate, noBackgroundPng: null, jpg: IMG.chocolate, png: null, WebP: null, ico: null, other: [] },
+      isActive: true, displayOrder: 2, createdBy: "Anna", updatedBy: "Karen", isFree: false,
+      cost: { actualCost: 2, estimatedCost: 1.6 }, sellingPrice: { gross: 8, net: 7.6, VAT: 0.4 },
+      nutrition: { source: "manual", calories: 180, protein: 2, carbs: 18, fat: 11, lastCalculatedAt: "2026-05-10T09:14:00Z" },
+      recipeFile: { pdf: null, word: null, excel: null }, techCardFile: { pdf: null, word: null, excel: null },
+      availableInModifiers: ["Sauce"], cloudStorage: { isDefault: true, value: "s3" },
+    },
+    "opt-cream": {
+      _id: "opt-cream", ownerType: "brand",
+      name: { label: "Vanilla cream", translations: { en: "Vanilla cream", ru: "Ванильный крем", ar: "كريمة الفانيليا" } },
+      description: { short: { en: "Whipped vanilla cream.", ru: "Взбитый ванильный крем.", ar: "كريمة فانيليا مخفوقة." }, long: { en: "Whipped daily, served chilled.", ru: "Взбивается ежедневно.", ar: "تخفق يوميا." } },
+      images: { main: IMG.cream, aggregators: IMG.cream, website: IMG.cream, google: null, highRes: IMG.cream, noBackgroundPng: null, jpg: IMG.cream, png: null, WebP: null, ico: null, other: [] },
+      isActive: true, displayOrder: 3, createdBy: "Suren", updatedBy: "Bella", isFree: false,
+      cost: { actualCost: 1.2, estimatedCost: 1 }, sellingPrice: { gross: 5, net: 4.75, VAT: 0.25 },
+      nutrition: { source: "manual", calories: 220, protein: 2, carbs: 6, fat: 22, lastCalculatedAt: "2026-04-30T09:14:00Z" },
+      recipeFile: { pdf: null, word: null, excel: null }, techCardFile: { pdf: null, word: null, excel: null },
+      availableInModifiers: ["Sauce", "Extra cream"], cloudStorage: { isDefault: true, value: "s3" },
+    },
+  },
+};
+
+const CUISINES = ["russian", "georgian", "caucasian", "international", "fastFood", "dessert", "beverage", "italian", "asian", "middleEastern", "indian"];
+const KITCHEN_STATIONS = ["grill", "cold", "fryer", "dessert", "beverage", "prep", "assembly", "bakery", "pastry"];
+const DIETARY_TAGS = ["vegetarian", "vegan", "halal", "kosher", "glutenFree", "keto", "dairyFree", "nutFree", "lowCarb", "highProtein"];
+const ALLERGENS = ["nuts", "peanuts", "dairy", "gluten", "egg", "shellfish", "fish", "soy", "sesame", "celery", "mustard", "sulphites"];
+const NUTRITION_SOURCES = ["manual", "autoFromRecipe"];
+const SELECTION_MODES = ["single", "multiple"];
+const CLOUD_STORAGES = ["s3", "gcs", "r2", "blob"];
+
+window.MOCK = MOCK;
+window.MOCK_CONST = { CUISINES, KITCHEN_STATIONS, DIETARY_TAGS, ALLERGENS, NUTRITION_SOURCES, SELECTION_MODES, CLOUD_STORAGES };
+window.formatDate = (d) => {
+  if (!d) return "—";
+  const x = new Date(d);
+  if (isNaN(x)) return d;
+  return x.toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+};
+window.formatBytes = (n) => {
+  if (!n && n !== 0) return "—";
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / 1024 / 1024).toFixed(1)} MB`;
+};

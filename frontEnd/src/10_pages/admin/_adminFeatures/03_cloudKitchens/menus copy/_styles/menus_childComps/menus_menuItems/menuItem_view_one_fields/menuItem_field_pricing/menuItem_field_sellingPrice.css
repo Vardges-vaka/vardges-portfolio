@@ -1,0 +1,54 @@
+/* ============================================================================
+   MenuItem — selling price (gross / net / VAT)
+============================================================================ */
+
+.menuItem_field_sellingPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menuItem_field_sellingPrice_versions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.menuItem_field_sellingPrice_version {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menuItem_field_sellingPrice_version label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menuItem_field_sellingPrice_input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-sm, 6px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text, #1d1b18);
+  font: inherit;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-variant-numeric: tabular-nums;
+  box-sizing: border-box;
+  transition: border-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menuItem_field_sellingPrice_input:read-only {
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 40%, transparent);
+  border-color: var(--menus-border-soft, #e6e0d6);
+}
+
+.menuItem_field_sellingPrice_input:focus {
+  outline: none;
+  border-color: var(--menus-accent, #2fc30b);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--menus-accent, #2fc30b) 18%, transparent);
+}

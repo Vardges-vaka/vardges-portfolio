@@ -1,0 +1,8 @@
+/* Menus session wrapper. See menus.css for tokens. */
+.menus_session_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}

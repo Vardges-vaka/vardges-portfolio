@@ -1,0 +1,16 @@
+/* ============================================================================
+   Menus — Menus_view_one (single menu detail)
+============================================================================ */
+
+.menus_view_one {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Hide the debug "states.menu.label: ..." paragraph the JSX still ships. */
+.menus_view_one > p {
+  display: none;
+}

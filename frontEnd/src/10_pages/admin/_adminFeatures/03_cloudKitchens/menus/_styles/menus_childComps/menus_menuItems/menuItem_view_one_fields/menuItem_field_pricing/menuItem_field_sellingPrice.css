@@ -1,0 +1,42 @@
+.menuItem_field_sellingPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  /* background-color: rgba(255, 255, 255, 0.434); */
+  border: 1px solid black;
+}
+
+.menuItem_field_sellingPrice_label {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.menuItem_field_sellingPrice_label label {
+  font-weight: 550;
+  font-size: 16px;
+}
+
+.menuItem_field_sellingPrice_controlls {
+  align-self: flex-end !important;
+  /* place-self: inherit; */
+}
+
+.menuItem_field_sellingPrice_versions {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /* box-sizing: border-box !important; */
+  padding: 10px;
+}
+
+.menuItem_field_sellingPrice_version {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* box-sizing: border-box !important; */
+}
+
+.menuItem_field_sellingPrice_input {
+  width: 100%;
+  box-sizing: border-box !important;
+}

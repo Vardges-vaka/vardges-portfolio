@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menus — interactive preview</title>
+
+    <!-- Foundation tokens -->
+    <link rel="stylesheet" href="_styles/menus.css" />
+    <!-- Top bar + breadcrumb -->
+    <link rel="stylesheet" href="_styles/menus_sessionToggle.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_FieldUpdateBtn.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_breadcrumb.css" />
+    <!-- Session wrappers -->
+    <link rel="stylesheet" href="_styles/menus_session_menu.css" />
+    <link rel="stylesheet" href="_styles/menus_session_menuItem.css" />
+    <link rel="stylesheet" href="_styles/menus_session_modifier.css" />
+    <link rel="stylesheet" href="_styles/menus_session_option.css" />
+    <!-- Menus session -->
+    <link rel="stylesheet" href="_styles/menus_childComps/menus/menus_view_all.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus/menus_view_one.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus/menus_categories.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus/menus_category_header.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus/menus_menu_header.css" />
+    <!-- Items session -->
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menus_menuItem_view_all.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menus_menuItem_view_one.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_name.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_description.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_pricing.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_cost.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_nutrition.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_images.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_modifiers.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_pricing/menuItem_field_cost.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_pricing/menuItem_field_sellingPrice.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_menuItems/menuItem_view_one_fields/menuItem_field_pricing/menuItem_field_priceHistory.css" />
+    <!-- Modifiers session -->
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_modifiers/menus_modifier_table.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_modifiers/menus_modifier_view_all.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_modifiers/menus_modifier_view_one.css" />
+    <!-- Options session -->
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_options/menus_option_view_all.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_options/menus_option_view_one.css" />
+    <!-- Modal + empty states -->
+    <link rel="stylesheet" href="_styles/menus_modals/menus_confirmModal_fieldUpdate.css" />
+    <link rel="stylesheet" href="_styles/menus_stateComps/menus_empty_menus.css" />
+    <link rel="stylesheet" href="_styles/menus_stateComps/menus_empty_menuItems.css" />
+    <link rel="stylesheet" href="_styles/menus_stateComps/menus_empty_modifiers.css" />
+    <link rel="stylesheet" href="_styles/menus_stateComps/menus_empty_modifierOptions.css" />
+    <!-- New shared components -->
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_translations.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_dropZone.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_filePreview.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_quickView.css" />
+    <link rel="stylesheet" href="_styles/menus_childComps/menus_iconUpdateBtn.css" />
+    <!-- Forms -->
+    <link rel="stylesheet" href="_styles/menus_forms/menus_forms.css" />
+
+    <style>
+      /* ============================================================
+         Preview shell (NOT part of menus/) — mocks the parent app.
+      ============================================================ */
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color-scheme: light;
+      }
+      html, body, #root { margin: 0; padding: 0; height: 100%; }
+      body { background: #efeae3; color: #1d1b18; }
+
+      .shell { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+      .shell_side {
+        background: #f6f2eb;
+        border-right: 1px solid #e3dccf;
+        padding: 14px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .shell_side_pin {
+        width: 36px; height: 36px;
+        display: inline-flex; align-items: center; justify-content: center;
+        border-radius: 8px; background: #fff; border: 1px solid #e3dccf;
+        margin-bottom: 6px;
+        color: #5a544d;
+      }
+      .shell_side hr {
+        margin: 4px 0 6px;
+        border: none;
+        border-top: 1px dashed #d6cfc4;
+      }
+      .shell_side_item {
+        appearance: none;
+        display: flex; align-items: center; gap: 10px;
+        padding: 8px 12px;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        color: #5a544d;
+        font: inherit;
+        font-size: 13px;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 200ms ease, color 200ms ease;
+      }
+      .shell_side_item:hover { background: #ece5d8; color: #1d1b18; }
+      .shell_side_item.active {
+        background: #fff;
+        border-color: #e3dccf;
+        color: #1d1b18;
+        font-weight: 600;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+      }
+      .shell_side_item svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+
+      .shell_main { display: flex; flex-direction: column; min-width: 0; }
+      .shell_top {
+        height: 56px;
+        display: flex; align-items: center; gap: 12px;
+        padding: 0 18px;
+        background: #f6f2eb;
+        border-bottom: 1px solid #e3dccf;
+      }
+      .shell_top_left, .shell_top_right { display: inline-flex; align-items: center; gap: 10px; }
+      .shell_top_center { flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; }
+      .shell_top_btn {
+        appearance: none;
+        background: #fff;
+        border: 1px solid #e3dccf;
+        border-radius: 8px;
+        padding: 6px 12px;
+        font: inherit; font-size: 13px;
+        color: #1d1b18;
+        cursor: pointer;
+        display: inline-flex; align-items: center; gap: 6px;
+      }
+      .shell_top_btn.active {
+        background: #efe7d5;
+        border-color: #c7b894;
+      }
+      .shell_top_icon {
+        appearance: none;
+        width: 32px; height: 32px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: #fff;
+        border: 1px solid #e3dccf;
+        border-radius: 8px;
+        color: #5a544d;
+        cursor: pointer;
+      }
+      .shell_top_icon:hover { background: #ece5d8; color: #1d1b18; }
+      .shell_top_icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+
+      /* The actual mount point — Menus sits here. Border mirrors the screenshot. */
+      .shell_canvas {
+        flex: 1;
+        padding: 14px;
+        min-width: 0;
+      }
+      .shell_canvas_inner {
+        background: #fbfaf8;
+        border-radius: 12px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.05);
+        min-height: 100%;
+        overflow: hidden;
+      }
+
+      /* Toast (auto-hides after a few seconds) */
+      .menus_toast {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 300;
+        padding: 10px 16px;
+        background: #1d1b18;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 999px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+        animation: toastIn 200ms ease both;
+      }
+      @keyframes toastIn {
+        from { opacity: 0; transform: translate(-50%, 8px); }
+        to   { opacity: 1; transform: translate(-50%, 0); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React + Babel -->
+    <script
+      src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+      integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+      integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+      integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+      crossorigin="anonymous"></script>
+
+    <!--
+      NOTE: the `.jsx.txt` extension is intentional. Vite (the project's dev
+      server) auto-transforms anything ending in .jsx into an ES module and
+      injects `import.meta.hot.*` HMR code. That breaks Babel-standalone
+      because Babel transforms these script tags as regular (non-module)
+      scripts. Using a `.txt` extension makes Vite serve the file as a raw
+      asset, so Babel-standalone receives the original JSX source.
+
+      You can therefore open this preview either:
+        - directly via `file://...` (no server needed), OR
+        - through Vite at  http://localhost:3210/<path>/preview.html
+    -->
+    <!-- Mock data first (declares window.MOCK / window.MOCK_CONST). -->
+    <script type="text/babel" src="preview.data.jsx.txt"></script>
+    <!-- Shared components (icons, translations, dropzone, modal, etc). -->
+    <script type="text/babel" src="preview.components.jsx.txt"></script>
+    <!-- Tables + view_one + forms. -->
+    <script type="text/babel" src="preview.views.jsx.txt"></script>
+    <!-- Main app + mount. -->
+    <script type="text/babel" src="preview.app.jsx.txt"></script>
+  </body>
+</html>

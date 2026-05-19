@@ -1,0 +1,23 @@
+/* ============================================================================
+   MenuItem — price-history panel
+============================================================================ */
+
+.menuItem_field_priceHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px dashed var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-sm, 6px);
+  min-height: 3.5rem;
+}
+
+.menuItem_field_priceHistory h1 {
+  margin: 0;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}

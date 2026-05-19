@@ -1,97 +1,84 @@
 import { useState } from "react";
 
-const EMPTY_CONFIRM_MODAL = {
-  isOpen: false,
-  sectionKey: null,
-  changes: [],
-  payload: null,
-};
+// temporary just to see quickly how it works
+const OPERATION_TYPES = ["viewing", "adding", "updating", "deleting"];
+const SESSIONS_TYPES = ["menus", "categories", "items", "modifiers", "options"];
+const VALID_VIEWING_SESSIONS = ["menus", "items", "modifiers", "options"];
+const VALID_VIEWING_TYPES = ["all", "single"];
 
-const EMPTY_DISCARD_MODAL = {
-  isOpen: false,
-  onConfirm: null,
-};
-
-const EMPTY_DELETE_MODAL = {
-  isOpen: false,
-  menuId: null,
-  menuName: "",
-};
+const OWNER_TYPES = ["brand", "competitor", "both"];
+// Menus_table_view_all
+// Menus_table_view_all
 
 export const useMenus_states = () => {
+  const [session, setSession] = useState("menus");
+  const [operation, setOperation] = useState("viewing");
+  const [viewingType, setViewingType] = useState("all");
+  const [ownerType, setOwnerType] = useState("brand");
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [updatingField, setUpdatingField] = useState(null);
+  const [updatingFieldModal, setUpdatingFieldModal] = useState(null);
+
   const [menus, setMenus] = useState([]);
-  const [categoriesList, setCategoriesList] = useState([]);
-  const [branchesList, setBranchesList] = useState([]);
-  const [brandsList, setBrandsList] = useState([]);
-  const [viewMode, setViewMode] = useState("list");
-  const [detailMode, setDetailMode] = useState("read");
-  const [detailSelectedId, setDetailSelectedId] = useState(null);
-  const [collapsedSections, setCollapsedSections] = useState({});
-  const [editingSection, setEditingSection] = useState(null);
-  const [sectionDraft, setSectionDraft] = useState({});
-  const [fieldErrors, setFieldErrors] = useState({});
-  const [bulkDrafts, setBulkDrafts] = useState({});
-  const [bulkFieldErrors, setBulkFieldErrors] = useState({});
-  const [showAddForm, setShowAddForm] = useState(false);
-  const [addFormName, setAddFormName] = useState("");
-  const [confirmModal, setConfirmModal] = useState(EMPTY_CONFIRM_MODAL);
-  const [discardModal, setDiscardModal] = useState(EMPTY_DISCARD_MODAL);
-  const [deleteModal, setDeleteModal] = useState(EMPTY_DELETE_MODAL);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
-  const [error, setError] = useState(null);
+  const [selectedMenu, setSelectedMenu] = useState(null);
+  const [selectedId, setSelectedId] = useState(null);
+
+  const [menuItems, setMenuItems] = useState([]);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+  const [selectedMenuItemId, setSelectedMenuItemId] = useState(null);
+
+  const [modifiers, setModifiers] = useState([]);
+  const [selectedModifier, setSelectedModifier] = useState(null);
+  const [selectedModifierId, setSelectedModifierId] = useState(null);
+
+  const [options, setOptions] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOptionId, setSelectedOptionId] = useState(null);
 
   return {
     states: {
+      session,
+      operation,
+      viewingType,
       menus,
-      categoriesList,
-      branchesList,
-      brandsList,
-      viewMode,
-      detailMode,
-      detailSelectedId,
-      collapsedSections,
-      editingSection,
-      sectionDraft,
-      fieldErrors,
-      bulkDrafts,
-      bulkFieldErrors,
-      showAddForm,
-      addFormName,
-      confirmModal,
-      discardModal,
-      deleteModal,
-      isLoading,
-      isSaving,
-      error,
+      selectedMenu,
+      selectedId,
+      ownerType,
+      isUpdating,
+      updatingField,
+      updatingFieldModal,
+      //
+      menuItems,
+      selectedMenuItem,
+      selectedMenuItemId,
+      modifiers,
+      selectedModifier,
+      selectedModifierId,
+      options,
+      selectedOption,
+      selectedOptionId,
     },
     setters: {
+      setSession,
+      setOperation,
+      setViewingType,
       setMenus,
-      setCategoriesList,
-      setBranchesList,
-      setBrandsList,
-      setViewMode,
-      setDetailMode,
-      setDetailSelectedId,
-      setCollapsedSections,
-      setEditingSection,
-      setSectionDraft,
-      setFieldErrors,
-      setBulkDrafts,
-      setBulkFieldErrors,
-      setShowAddForm,
-      setAddFormName,
-      setConfirmModal,
-      setDiscardModal,
-      setDeleteModal,
-      setIsLoading,
-      setIsSaving,
-      setError,
-    },
-    constants: {
-      EMPTY_CONFIRM_MODAL,
-      EMPTY_DISCARD_MODAL,
-      EMPTY_DELETE_MODAL,
+      setSelectedMenu,
+      setSelectedId,
+      setOwnerType,
+      setIsUpdating,
+      setUpdatingField,
+      setUpdatingFieldModal,
+      //
+      setMenuItems,
+      setSelectedMenuItem,
+      setSelectedMenuItemId,
+      setModifiers,
+      setSelectedModifier,
+      setSelectedModifierId,
+      setOptions,
+      setSelectedOption,
+      setSelectedOptionId,
     },
   };
 };

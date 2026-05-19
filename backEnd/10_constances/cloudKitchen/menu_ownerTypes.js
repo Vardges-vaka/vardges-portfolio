@@ -5,4 +5,4 @@
  * `refPath: "ownerType"` on the sibling `ownerId` field resolves correctly
  * when populating.
  */
-export const MENU_OWNER_TYPES = ["Brand", "Competitor"];
+export const MENU_OWNER_TYPES = ["brand", "competitor"];

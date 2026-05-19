@@ -1,0 +1,81 @@
+.menuItem_field_nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_controlls {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+/* Row of fields — wrap instead of one endless horizontal line */
+.menuItem_field_nutrition_versions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_version {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 88px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_version.source {
+  flex: 1 1 120px;
+}
+
+.menuItem_field_nutrition_version.lastCalculatedAt {
+  flex: 2 1 180px;
+}
+
+.menuItem_field_nutrition_version.calories,
+.menuItem_field_nutrition_version.protein,
+.menuItem_field_nutrition_version.carbs,
+.menuItem_field_nutrition_version.fat {
+  flex: 1 1 72px;
+}
+
+.menuItem_field_nutrition_version label {
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_version input,
+.menuItem_field_nutrition_input {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_version.lastCalculatedAt input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

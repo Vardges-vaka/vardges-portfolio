@@ -1,9 +1,0 @@
-export { default as MenuItems_list_item } from "./MenuItems_list_item.jsx";
-export { default as MenuItems_detail_sectionShell } from "./MenuItems_detail_sectionShell.jsx";
-export { default as MenuItems_detail_basic } from "./MenuItems_detail_basic.jsx";
-export { default as MenuItems_detail_name } from "./MenuItems_detail_name.jsx";
-export { default as MenuItems_detail_modifiers } from "./MenuItems_detail_modifiers.jsx";
-export { default as MenuItems_detail_descriptions } from "./MenuItems_detail_descriptions.jsx";
-export { default as MenuItems_detail_images } from "./MenuItems_detail_images.jsx";
-export { default as MenuItems_detail_recipeFile } from "./MenuItems_detail_recipeFile.jsx";
-export { default as MenuItems_detail_ingredients } from "./MenuItems_detail_ingredients.jsx";

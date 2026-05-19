@@ -1,0 +1,60 @@
+.menus_menuItem_view_all_table_row .btn {
+  border: none !important;
+}
+.menus_menuItem_view_all_table_row .image {
+  width: 50px;
+  height: 100%;
+  object-fit: cover;
+  border: none !important;
+}
+.menus_menuItem_view_all_table_header {
+  border: none !important;
+  background: transparent !important;
+  color: black !important;
+}
+.menus_menuItem_view_all_table th {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* width: 100%; */
+  /* gap: 1rem; */
+  border-bottom: 1px solid black !important;
+}
+.menus_menuItem_view_all_table th:hover {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+.menus_menuItem_view_all_table {
+  width: 100%;
+  min-width: 1188px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  color: var(--text-primary-color);
+  border: 1px solid var(--border-primary-color);
+  border-radius: 10px !important;
+  /* background-color: var(--bg-secondary-color); */
+  /* box-shadow: 0 1px 2px var(--boxShadow-primary-color); */
+}
+
+/* Subtle dashed rules between columns (`border-opacity` is invalid on borders). */
+.menus_menuItem_view_all_table thead th:not(:last-child),
+.menus_menuItem_view_all_table tbody td:not(:last-child) {
+  border-right: 1px dashed
+    color-mix(in srgb, var(--border-secondary-color) 40%, transparent);
+}
+.menus_menuItem_view_all_table_header {
+  text-align: center;
+  padding: 0.65rem 0.75rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--title-secondary-color);
+  background-color: rgba(225, 220, 220, 0.619) !important;
+  border-right: 1px solid black !important;
+
+  overflow: visible;
+  position: relative;
+  vertical-align: middle;
+}
+.menus_menuItem_view_all_table_rows_provider {
+  border-bottom: 1px solid var(--border-secondary-color);
+  overflow: visible;
+}
