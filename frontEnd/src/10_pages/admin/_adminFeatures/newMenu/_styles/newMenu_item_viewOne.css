@@ -1,0 +1,69 @@
+/* ============================================================================
+   NewMenu_item_viewOne — item-specific composition.
+============================================================================ */
+.NewMenu_item_viewOne_descriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.NewMenu_item_viewOne_descriptions_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.NewMenu_item_viewOne_pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: color-mix(in srgb, var(--newMenu_bgSoft) 35%, transparent);
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusMd);
+}
+
+.NewMenu_item_viewOne_pricing_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NewMenu_item_viewOne_pricing_row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.NewMenu_item_viewOne_priceHistory {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  font-size: var(--newMenu_textXs);
+}
+
+.NewMenu_item_viewOne_priceHistory th,
+.NewMenu_item_viewOne_priceHistory td {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--newMenu_borderSoft);
+  text-align: left;
+}
+
+.NewMenu_item_viewOne_fileStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.NewMenu_item_viewOne_mirrors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 880px) {
+  .NewMenu_item_viewOne_mirrors {
+    grid-template-columns: 1fr;
+  }
+}

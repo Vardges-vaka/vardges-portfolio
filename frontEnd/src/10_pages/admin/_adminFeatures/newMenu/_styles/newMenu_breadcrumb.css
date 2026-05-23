@@ -1,0 +1,51 @@
+/* ============================================================================
+   NewMenu_breadcrumb.
+============================================================================ */
+.NewMenu_breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.NewMenu_breadcrumb_crumb {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--newMenu_radiusSm, 6px);
+  padding: 4px 8px;
+  color: var(--newMenu_textSoft, #5a544d);
+  font-size: var(--newMenu_textSm, 0.8125rem);
+  font: inherit;
+  font-size: var(--newMenu_textSm, 0.8125rem);
+  cursor: pointer;
+  transition: background-color var(--newMenu_dur, 200ms) var(--newMenu_ease, ease),
+              color var(--newMenu_dur, 200ms) var(--newMenu_ease, ease);
+}
+
+.NewMenu_breadcrumb_crumb:hover:not(:disabled) {
+  background-color: var(--newMenu_bgSoft, #f3efe9);
+  color: var(--newMenu_text, #1d1b18);
+}
+
+.NewMenu_breadcrumb_crumb:focus-visible {
+  outline: 2px solid var(--newMenu_accent);
+  outline-offset: 2px;
+}
+
+.NewMenu_breadcrumb_crumb:disabled {
+  cursor: default;
+}
+
+.NewMenu_breadcrumb_crumb_current {
+  color: var(--newMenu_text, #1d1b18);
+  font-weight: 600;
+  background-color: var(--newMenu_bgSoft, #f3efe9);
+  border-color: var(--newMenu_borderFaint);
+}
+
+.NewMenu_breadcrumb_sep {
+  display: inline-flex;
+  color: var(--newMenu_textFaint, #a39c92);
+  line-height: 0;
+}

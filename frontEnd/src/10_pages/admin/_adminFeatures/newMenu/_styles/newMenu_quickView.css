@@ -1,0 +1,93 @@
+/* ============================================================================
+   NewMenu_quickView — collapsible row body inside any table.
+============================================================================ */
+.NewMenu_quickView_row {
+  background-color: transparent;
+}
+
+.NewMenu_quickView_cell {
+  padding: 0;
+  border-bottom: 1px solid var(--newMenu_borderSoft);
+}
+
+.NewMenu_quickView {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--newMenu_durSlow) var(--newMenu_easeOut);
+}
+
+.NewMenu_quickView_open {
+  max-height: 800px;
+}
+
+.NewMenu_quickView_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 18px;
+  background-color: color-mix(in srgb, var(--newMenu_bgSoft) 50%, var(--newMenu_bgElev));
+  border-top: 1px dashed var(--newMenu_borderSoft);
+}
+
+.NewMenu_quickView_fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.NewMenu_quickView_field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 10px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_borderFaint);
+  border-radius: var(--newMenu_radiusSm);
+}
+
+.NewMenu_quickView_field_label {
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_quickView_field_value {
+  font-size: var(--newMenu_textSm);
+  color: var(--newMenu_text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.NewMenu_quickView_field_value_wrap {
+  white-space: normal;
+}
+
+.NewMenu_quickView_sections {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.NewMenu_quickView_section_title {
+  display: block;
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--newMenu_textSoft);
+  margin-bottom: 4px;
+}
+
+.NewMenu_quickView_section_body {
+  font-size: var(--newMenu_textSm);
+  color: var(--newMenu_text);
+}
+
+.NewMenu_quickView_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

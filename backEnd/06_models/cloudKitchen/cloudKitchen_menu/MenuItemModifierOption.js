@@ -48,7 +48,7 @@ const menuItemModifierOptionSchema = new mongoose.Schema(
     },
     sellingPrice: getPriceSchema(),
     nutrition: getNutritionSchema(),
-
+    externalId: { type: String },
     cloudStorage: getCloudStorageSchema(),
     ...getSoftDeleteSchema(),
     ...getAuditFieldsSchema(),

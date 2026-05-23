@@ -1,0 +1,211 @@
+/* ============================================================================
+   Menus — sessionToggle (top bar)
+============================================================================ */
+
+.menus_sessionToggle {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin: 0 0 4px;
+  padding: 10px 14px;
+  background-color: color-mix(
+    in srgb,
+    var(--menus-bg-elev, #fff) 92%,
+    transparent
+  );
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border: 1px solid var(--menus-border);
+  border-radius: var(--menus-radius-lg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow) 30%, transparent);
+  box-sizing: border-box;
+  transition:
+    box-shadow var(--menus-dur) var(--menus-ease),
+    opacity var(--menus-dur) var(--menus-ease);
+}
+
+.menus_sessionToggle.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- Sessions group (left) — segmented control ---- */
+.menus_sessionToggle_sessions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background-color: var(--menus-bg-soft);
+  border: 1px solid var(--menus-border-faint);
+  border-radius: var(--menus-radius-lg);
+  justify-self: start;
+}
+
+.menus_sessionToggle_session_btn {
+  appearance: none;
+  font: inherit;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--menus-radius-sm);
+  background: transparent;
+  color: var(--menus-text-soft);
+  font-size: var(--menus-text-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    background-color var(--menus-dur) var(--menus-ease),
+    color var(--menus-dur) var(--menus-ease),
+    box-shadow var(--menus-dur) var(--menus-ease),
+    border-color var(--menus-dur) var(--menus-ease);
+}
+
+.menus_sessionToggle_session_btn:hover {
+  color: var(--menus-text);
+  background-color: color-mix(in srgb, var(--menus-bg-elev) 70%, transparent);
+}
+
+.menus_sessionToggle_session_btn.active {
+  background-color: var(--menus-bg-elev);
+  color: var(--menus-text);
+  border-color: var(--menus-border-soft);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow) 35%, transparent);
+}
+
+.menus_sessionToggle_session_btn:focus-visible {
+  outline: 2px solid var(--menus-accent);
+  outline-offset: 2px;
+}
+
+/* ---- Center label + back ---- */
+.menus_sessionToggle_middle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: center;
+  font-size: var(--menus-text-md);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--menus-title);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.menus_sessionToggle_middle .menus_sessionToggle_session_btn {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  font-size: var(--menus-text-sm);
+  padding: 4px 10px 4px 8px;
+  color: var(--menus-text-soft);
+  border-color: var(--menus-border-soft);
+  background-color: var(--menus-bg-elev);
+}
+
+.menus_sessionToggle_middle .menus_sessionToggle_session_btn::before {
+  content: "←";
+  margin-right: 2px;
+  font-weight: 600;
+}
+
+.menus_sessionToggle_middle .menus_sessionToggle_session_btn:hover {
+  background-color: var(--menus-bg-soft);
+  color: var(--menus-text);
+}
+
+/* ---- Owner types group (right) ---- */
+.menus_sessionToggle_ownerTypes {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: end;
+}
+
+.menus_sessionToggle_ownerType_btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent !important;
+  border-radius: var(--menus-radius-md);
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.45;
+  transition:
+    opacity var(--menus-dur) var(--menus-ease),
+    background-color var(--menus-dur) var(--menus-ease),
+    border-color var(--menus-dur) var(--menus-ease),
+    transform var(--menus-dur-fast) var(--menus-ease);
+}
+
+.menus_sessionToggle_ownerType_btn:hover {
+  opacity: 0.8;
+  background-color: var(--menus-bg-soft);
+}
+
+.menus_sessionToggle_ownerType_btn.active {
+  opacity: 1 !important;
+  background-color: var(--menus-bg-soft);
+  border-color: var(--menus-border-faint) !important;
+}
+
+.menus_sessionToggle_ownerType_btn:active {
+  transform: scale(0.94);
+}
+
+.menus_sessionToggle_ownerType_btn:focus-visible {
+  outline: 2px solid var(--menus-accent);
+  outline-offset: 2px;
+}
+
+.menus_sessionToggle_ownerType_iconWrap {
+  position: relative;
+  display: inline-flex;
+  line-height: 0;
+}
+
+.menus_sessionToggle_ownerType_icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* Green blinking dot — top-right of icon when this owner filter is on */
+.menus_sessionToggle_ownerType_indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--menus-accent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--menus-accent) 70%, transparent);
+  transform: translate(25%, -25%);
+  animation: menus_sessionToggle_indicatorBlink 1.4s ease-in-out infinite;
+}
+
+@keyframes menus_sessionToggle_indicatorBlink {
+  0%, 100% { opacity: 1; transform: translate(25%, -25%) scale(1); }
+  50%      { opacity: 0.35; transform: translate(25%, -25%) scale(0.85); }
+}
+
+/* ---- Responsive collapse ---- */
+@media (max-width: 880px) {
+  .menus_sessionToggle {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+  .menus_sessionToggle_sessions,
+  .menus_sessionToggle_ownerTypes,
+  .menus_sessionToggle_middle {
+    justify-self: stretch;
+    justify-content: center;
+  }
+}

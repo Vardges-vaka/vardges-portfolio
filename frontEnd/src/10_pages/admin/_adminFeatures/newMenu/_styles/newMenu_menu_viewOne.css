@@ -1,0 +1,21 @@
+/* ============================================================================
+   NewMenu_menu_viewOne — overrides for the menu-specific layout.
+============================================================================ */
+.NewMenu_menu_viewOne_header {
+  gap: 14px;
+}
+
+.NewMenu_menu_viewOne_category_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.NewMenu_menu_viewOne_category_title {
+  margin: 0;
+  font-size: var(--newMenu_textLg);
+  font-weight: 600;
+  color: var(--newMenu_text);
+}

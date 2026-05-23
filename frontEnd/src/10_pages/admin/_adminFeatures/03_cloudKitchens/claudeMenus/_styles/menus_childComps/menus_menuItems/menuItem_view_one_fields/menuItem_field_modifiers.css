@@ -1,0 +1,37 @@
+/* ============================================================================
+   MenuItem — modifiers section (single-item view)
+============================================================================ */
+
+.menuItem_field_modifiers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 25%, transparent);
+}
+
+.menuItem_field_modifiers > h1 {
+  margin: 0 0 4px;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+/* Override that h1 placeholder with the actual section name once the user
+   edits the JSX, but until then this gives it the right typographic role. */
+.menuItem_field_modifiers > h1::before {
+  content: "Modifiers";
+  display: inline;
+}
+
+.menuItem_field_modifiers > h1 {
+  font-size: 0;
+}
+.menuItem_field_modifiers > h1::before {
+  font-size: var(--menus-text-xs, 0.6875rem);
+}

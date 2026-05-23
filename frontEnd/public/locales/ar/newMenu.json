@@ -1,0 +1,30 @@
+{
+  "_NOTE": "Translations pending. Keys fall back to English defaults provided in components.",
+  "sessionToggle": {
+    "menus": "القوائم",
+    "items": "العناصر",
+    "modifiers": "المعدِّلات",
+    "options": "الخيارات",
+    "brand": "العلامة التجارية",
+    "competitor": "المنافس",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "updateAll": "تحديث الكل"
+  },
+  "tables": {
+    "update": "تحديث",
+    "view": "عرض",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "owner": "المالك",
+    "name": "الاسم",
+    "description": "الوصف",
+    "price": "السعر",
+    "cost": "التكلفة"
+  },
+  "confirmModal": {
+    "cancel": "إلغاء",
+    "yesConfirm": "نعم، تأكيد",
+    "yesDelete": "نعم، حذف"
+  }
+}

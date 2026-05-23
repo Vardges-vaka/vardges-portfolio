@@ -1,0 +1,79 @@
+/* ============================================================================
+   MenuItem — images field (main image + format-availability strip)
+============================================================================ */
+
+.menuItem_field_images {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.menuItem_field_images_mainImage {
+  width: 100% !important;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--menus-radius-md, 8px);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  background-color: var(--menus-bg-soft, #f3efe9);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 25%, transparent);
+  display: block;
+}
+
+.menuItem_field_images_types_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 6px !important;
+  justify-content: stretch;
+  align-items: stretch;
+  padding: 8px;
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 50%, transparent);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  border-radius: var(--menus-radius-md, 8px);
+}
+
+.menuItem_field_images_types_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--menus-radius-sm, 6px);
+  transition: transform var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menuItem_field_images_types_item:hover {
+  transform: translateY(-2px);
+}
+
+.menuItem_field_images_types {
+  cursor: pointer;
+  width: 100%;
+  max-width: 34px;
+  height: 34px;
+  border-radius: var(--menus-radius-sm, 6px);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text-soft, #5a544d);
+  padding: 6px;
+  box-sizing: border-box;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menuItem_field_images_types_item:hover .menuItem_field_images_types {
+  border-color: color-mix(in srgb, var(--menus-border, #d6cfc4) 70%, var(--menus-text, #1d1b18));
+  background-color: var(--menus-bg-soft, #f3efe9);
+}
+
+/* Active = format is present (green tint). */
+.menuItem_field_images_types.active {
+  border: 1px solid color-mix(in srgb, var(--menus-accent, #2fc30b) 60%, var(--menus-border, #d6cfc4));
+  background-color: var(--menus-accent-soft, color-mix(in srgb, #2fc30b 16%, transparent));
+  color: var(--menus-accent-text, #2fc30b);
+}

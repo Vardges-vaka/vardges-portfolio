@@ -1,0 +1,224 @@
+/* ============================================================================
+   Menus — MenuItem view_one (single item detail)
+============================================================================ */
+
+.menus_menuItem_view_one {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Top row — image card on the left, field stack on the right. */
+.menus_menuItem_view_one_top {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 18px;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 25%, transparent);
+  box-sizing: border-box;
+}
+
+/* Right-hand stack — name, description, pricing, nutrition. */
+.menus_menuItem_view_one_topRight {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 6px;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Ghost icon buttons — Pencil, User, etc. (cluster on each field's label row) */
+.menus_menuItem_view_one_topRight button {
+  appearance: none;
+  border: 1px solid transparent !important;
+  background-color: transparent !important;
+  color: var(--menus-text-soft, #5a544d) !important;
+  cursor: pointer;
+  padding: 6px !important;
+  margin: 0 !important;
+  border-radius: var(--menus-radius-sm, 6px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    transform var(--menus-dur-fast, 120ms) var(--menus-ease, ease);
+}
+
+.menus_menuItem_view_one_topRight button:hover {
+  background-color: var(--menus-bg-soft, #f3efe9) !important;
+  color: var(--menus-text, #1d1b18) !important;
+  border-color: var(--menus-border-soft, #e6e0d6) !important;
+  border-radius: var(--menus-radius-sm, 6px);
+}
+
+.menus_menuItem_view_one_topRight button:active { transform: scale(0.94); }
+
+.menus_menuItem_view_one_topRight button:focus-visible {
+  outline: 2px solid var(--menus-accent, #2fc30b);
+  outline-offset: 2px;
+}
+
+.menus_menuItem_view_one_topRight_controlls {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ---- Name field ---- */
+.menus_menuItem_view_one_topRight_name {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  width: 100%;
+}
+
+.menus_menuItem_view_one_topRight_name_label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+  gap: 8px;
+}
+
+.menus_menuItem_view_one_topRight_name_label label,
+.menus_menuItem_view_one_topRight_description_label label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--menus-text-soft, #5a544d);
+  margin: 0;
+}
+
+.menus_menuItem_view_one_topRight_name_input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-md, 8px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-title, #1d1b18);
+  font-size: var(--menus-text-lg, 1.0625rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  box-sizing: border-box;
+  transition: border-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menus_menuItem_view_one_topRight_name_input:read-only {
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 40%, transparent);
+  border-color: var(--menus-border-soft, #e6e0d6);
+}
+
+.menus_menuItem_view_one_topRight_name_input:focus {
+  outline: none;
+  border-color: var(--menus-accent, #2fc30b);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--menus-accent, #2fc30b) 18%, transparent);
+}
+
+/* ---- Description field ---- */
+.menus_menuItem_view_one_topRight_description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  width: 100%;
+}
+
+.menus_menuItem_view_one_topRight_description_label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+  gap: 8px;
+}
+
+.menus_menuItem_view_one_topRight_description_versions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 12px;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menus_menuItem_view_one_topRight_description_version {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 6px;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.menus_menuItem_view_one_topRight_description_version_label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.menus_menuItem_view_one_topRight_description_version_label label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--menus-text-soft, #5a544d);
+  margin: 0;
+}
+
+.menus_menuItem_view_one_topRight_description_textarea {
+  width: 100% !important;
+  min-height: 7.5rem;
+  padding: 10px 12px;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-md, 8px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text, #1d1b18);
+  font: inherit;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  line-height: 1.55;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.menus_menuItem_view_one_topRight_description_textarea:read-only {
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 40%, transparent);
+  border-color: var(--menus-border-soft, #e6e0d6);
+}
+
+.menus_menuItem_view_one_topRight_description_textarea:focus {
+  outline: none;
+  border-color: var(--menus-accent, #2fc30b);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--menus-accent, #2fc30b) 18%, transparent);
+}
+
+@media (max-width: 880px) {
+  .menus_menuItem_view_one_top {
+    grid-template-columns: 1fr;
+  }
+  .menus_menuItem_view_one_topRight_description_versions {
+    grid-template-columns: 1fr;
+  }
+}

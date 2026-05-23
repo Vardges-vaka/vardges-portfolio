@@ -1,0 +1,9 @@
+/* ============================================================================
+   Menus — Menus_modifier_view_all (wrapper around modifier table)
+============================================================================ */
+
+.menus_modifier_view_all {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}

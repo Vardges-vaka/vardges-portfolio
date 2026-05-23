@@ -1,0 +1,81 @@
+/* ============================================================================
+   Menus — file drop zone (recipe / techcard / other files)
+============================================================================ */
+
+.menus_dropZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 18px;
+  text-align: center;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1.5px dashed var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-md, 8px);
+  color: var(--menus-text-soft, #5a544d);
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    transform var(--menus-dur-fast, 120ms) var(--menus-ease, ease);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.menus_dropZone:hover,
+.menus_dropZone:focus-within {
+  border-color: color-mix(in srgb, var(--menus-border, #d6cfc4) 50%, var(--menus-text, #1d1b18));
+  background-color: var(--menus-bg-soft, #f3efe9);
+  color: var(--menus-text, #1d1b18);
+}
+
+.menus_dropZone.menus_dropZone--over {
+  border-color: var(--menus-accent, #2fc30b);
+  background-color: var(--menus-accent-soft, color-mix(in srgb, #2fc30b 14%, transparent));
+  color: var(--menus-accent-text, #2fc30b);
+  transform: scale(1.01);
+}
+
+.menus_dropZone.menus_dropZone--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.menus_dropZone_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: var(--menus-bg-soft, #f3efe9);
+  color: var(--menus-text, #1d1b18);
+  margin-bottom: 2px;
+}
+
+.menus_dropZone--over .menus_dropZone_icon {
+  background-color: color-mix(in srgb, var(--menus-accent, #2fc30b) 30%, transparent);
+  color: var(--menus-accent-text, #2fc30b);
+}
+
+.menus_dropZone_label {
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-weight: 600;
+  color: inherit;
+}
+
+.menus_dropZone_hint {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  letter-spacing: 0.04em;
+  color: var(--menus-text-faint, color-mix(in srgb, #1d1b18 55%, transparent));
+}
+
+.menus_dropZone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}

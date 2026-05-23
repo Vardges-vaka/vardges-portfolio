@@ -1,0 +1,174 @@
+/* ============================================================================
+   NewMenu_form — reuses the confirm modal's overlay / header / footer styles
+   and just adds the wizard-specific bits.
+============================================================================ */
+.NewMenu_form {
+  width: min(640px, 100% - 32px);
+  background-color: var(--newMenu_bgElev);
+  background: var(--bg-primary-color-modal);
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusLg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: NewMenu_confirmModal_pop 200ms var(--newMenu_easeOut) both;
+}
+
+.NewMenu_form_body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.NewMenu_form_steps {
+  display: flex;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.NewMenu_form_step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: var(--newMenu_radiusPill);
+  background-color: var(--newMenu_bgSoft);
+  color: var(--newMenu_textSoft);
+  font-size: var(--newMenu_textXs);
+  font-weight: 600;
+}
+
+.NewMenu_form_step_num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_borderSoft);
+}
+
+.NewMenu_form_step_active {
+  background-color: color-mix(
+    in srgb,
+    var(--newMenu_accent) 14%,
+    var(--newMenu_bgSoft)
+  );
+  color: var(--newMenu_accentText);
+  border: 1px solid color-mix(in srgb, var(--newMenu_accent) 35%, transparent);
+}
+
+.NewMenu_form_step_done {
+  background-color: color-mix(
+    in srgb,
+    var(--newMenu_accent) 10%,
+    var(--newMenu_bgSoft)
+  );
+  color: var(--newMenu_accentText);
+}
+
+.NewMenu_form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.NewMenu_form_label {
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_form_helper {
+  margin: 0;
+  font-size: var(--newMenu_textSm);
+  color: var(--newMenu_textFaint);
+}
+
+.NewMenu_form_input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusMd);
+  background-color: var(--newMenu_bgElev);
+  color: var(--newMenu_text);
+  font: inherit;
+  font-size: var(--newMenu_textBase);
+  box-sizing: border-box;
+}
+
+.NewMenu_form_input:focus {
+  outline: none;
+  border-color: var(--newMenu_accent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--newMenu_accent) 18%, transparent);
+}
+
+.NewMenu_form_ownerPicker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.NewMenu_form_ownerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 22px 14px;
+  background-color: var(--newMenu_bgElev);
+  border: 1.5px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusMd);
+  color: var(--newMenu_text);
+  cursor: pointer;
+  transition:
+    border-color var(--newMenu_dur) var(--newMenu_ease),
+    background-color var(--newMenu_dur) var(--newMenu_ease);
+}
+
+.NewMenu_form_ownerCard:hover {
+  background-color: var(--newMenu_bgSoft);
+}
+
+.NewMenu_form_ownerCard_selected {
+  border-color: var(--newMenu_accent);
+  background-color: color-mix(
+    in srgb,
+    var(--newMenu_accent) 10%,
+    var(--newMenu_bgElev)
+  );
+}
+
+.NewMenu_form_ownerCard_label {
+  font-size: var(--newMenu_textMd);
+  font-weight: 700;
+}
+
+.NewMenu_form_ownerCard_hint {
+  font-size: var(--newMenu_textXs);
+  color: var(--newMenu_textFaint);
+  text-align: center;
+}
+
+.NewMenu_form_actions {
+  justify-content: space-between !important;
+}
+.NewMenu_form_actions_left,
+.NewMenu_form_actions_right {
+  display: inline-flex;
+  gap: 8px;
+}
+
+@media (max-width: 540px) {
+  .NewMenu_form_ownerPicker {
+    grid-template-columns: 1fr;
+  }
+}

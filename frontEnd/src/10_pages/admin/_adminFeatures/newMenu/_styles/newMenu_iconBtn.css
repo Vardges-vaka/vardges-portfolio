@@ -1,0 +1,50 @@
+/* ============================================================================
+   NewMenu_iconBtn — ghost icon button.
+============================================================================ */
+.NewMenu_iconBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: var(--newMenu_radiusSm, 6px);
+  background: transparent;
+  color: var(--newMenu_textSoft, #5a544d);
+  cursor: pointer;
+  line-height: 0;
+  transition:
+    background-color var(--newMenu_dur, 200ms) var(--newMenu_ease, ease),
+    color var(--newMenu_dur, 200ms) var(--newMenu_ease, ease),
+    border-color var(--newMenu_dur, 200ms) var(--newMenu_ease, ease),
+    transform var(--newMenu_durFast, 120ms) var(--newMenu_ease, ease);
+}
+
+.NewMenu_iconBtn:hover {
+  background-color: var(--newMenu_bgSoft, #f3efe9);
+  color: var(--newMenu_text, #1d1b18);
+  border-color: var(--newMenu_borderSoft, #e6e0d6);
+}
+
+.NewMenu_iconBtn:active {
+  transform: scale(0.94);
+}
+
+.NewMenu_iconBtn:focus-visible {
+  outline: 2px solid var(--newMenu_accent, #2fc30b);
+  outline-offset: 2px;
+}
+
+.NewMenu_iconBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.NewMenu_iconBtn_active {
+  background-color: var(--newMenu_accentSoft);
+  color: var(--newMenu_accentText);
+  border-color: color-mix(in srgb, var(--newMenu_accent) 35%, transparent);
+}

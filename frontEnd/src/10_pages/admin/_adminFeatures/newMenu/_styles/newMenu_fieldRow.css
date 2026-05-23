@@ -1,0 +1,66 @@
+/* ============================================================================
+   NewMenu_fieldRow.
+============================================================================ */
+.NewMenu_fieldRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.NewMenu_fieldRow_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.NewMenu_fieldRow_label {
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--newMenu_textSoft);
+  margin: 0;
+}
+
+.NewMenu_fieldRow_controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.NewMenu_fieldRow_input,
+.NewMenu_fieldRow_textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusMd);
+  background-color: var(--newMenu_bgElev);
+  color: var(--newMenu_text);
+  font: inherit;
+  font-size: var(--newMenu_textSm);
+  box-sizing: border-box;
+  transition: border-color var(--newMenu_dur) var(--newMenu_ease),
+              box-shadow var(--newMenu_dur) var(--newMenu_ease);
+}
+
+.NewMenu_fieldRow_textarea {
+  min-height: 7rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.NewMenu_fieldRow_input:read-only,
+.NewMenu_fieldRow_textarea:read-only {
+  background-color: color-mix(in srgb, var(--newMenu_bgSoft) 40%, transparent);
+  border-color: var(--newMenu_borderSoft);
+}
+
+.NewMenu_fieldRow_input:focus,
+.NewMenu_fieldRow_textarea:focus {
+  outline: none;
+  border-color: var(--newMenu_accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--newMenu_accent) 18%, transparent);
+}

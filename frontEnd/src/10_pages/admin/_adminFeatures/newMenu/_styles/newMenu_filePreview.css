@@ -1,0 +1,53 @@
+/* ============================================================================
+   NewMenu_filePreview.
+============================================================================ */
+.NewMenu_filePreview {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusMd);
+  min-width: 80px;
+  max-width: 140px;
+  color: var(--newMenu_textSoft);
+  font-size: var(--newMenu_textXs);
+}
+
+.NewMenu_filePreview_empty {
+  opacity: 0.65;
+}
+
+.NewMenu_filePreview_thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 48px;
+  background-color: var(--newMenu_bgSoft);
+  border-radius: var(--newMenu_radiusSm);
+  overflow: hidden;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_filePreview_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.NewMenu_filePreview_label {
+  font-weight: 600;
+  color: var(--newMenu_text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.NewMenu_filePreview_meta {
+  font-family: var(--newMenu_fontMono);
+  color: var(--newMenu_textFaint);
+}

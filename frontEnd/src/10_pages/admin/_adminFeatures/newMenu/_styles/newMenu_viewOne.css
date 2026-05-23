@@ -1,0 +1,217 @@
+/* ============================================================================
+   NewMenu_viewOne — shared single-entity layout (menu / item / modifier /
+   option). Every view-one uses the same .NewMenu_viewOne shell + .section
+   cards so the visual language stays uniform.
+============================================================================ */
+.NewMenu_viewOne {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Top split — image column (left) + fields stack (right). Items + options use
+   this; the menu and modifier view-ones override with collapsed columns. */
+.NewMenu_viewOne_top {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 18px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusLg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--newMenu_shadow) 22%, transparent);
+  box-sizing: border-box;
+}
+
+.NewMenu_viewOne_top_image {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: start;
+}
+
+.NewMenu_viewOne_top_image_main {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--newMenu_radiusMd);
+  background-color: var(--newMenu_bgSoft);
+}
+
+.NewMenu_viewOne_top_image_alt_strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  gap: 6px;
+}
+
+.NewMenu_viewOne_top_image_alt {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--newMenu_radiusSm);
+  background-color: var(--newMenu_bgSoft);
+  color: var(--newMenu_textFaint);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NewMenu_viewOne_top_image_alt_active {
+  color: var(--newMenu_accent);
+  background-color: var(--newMenu_accentSoft);
+}
+
+.NewMenu_viewOne_top_fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.NewMenu_viewOne_descGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+@media (max-width: 880px) {
+  .NewMenu_viewOne_top {
+    grid-template-columns: 1fr;
+  }
+  .NewMenu_viewOne_descGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section card — used for fact grid, files, attached lists, etc. */
+.NewMenu_viewOne_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusLg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--newMenu_shadow) 18%, transparent);
+}
+
+.NewMenu_viewOne_section_title {
+  margin: 0;
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_viewOne_factGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.NewMenu_viewOne_fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 10px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_borderFaint);
+  border-radius: var(--newMenu_radiusSm);
+}
+
+.NewMenu_viewOne_fact_label {
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_viewOne_fact_value {
+  font-size: var(--newMenu_textSm);
+  color: var(--newMenu_text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.NewMenu_viewOne_fact_value_wrap {
+  white-space: normal;
+}
+
+.NewMenu_viewOne_pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.NewMenu_viewOne_header_titleRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.NewMenu_viewOne_header_title {
+  margin: 0;
+  font-size: var(--newMenu_textXl);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--newMenu_title);
+  line-height: 1.15;
+}
+
+/* Modifier-specific: contained options preview (NOT a modifier image). */
+.NewMenu_viewOne_optionsPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background-color: var(--newMenu_bgSoft);
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusMd);
+  min-width: 220px;
+  max-width: 340px;
+  flex: 1 1 240px;
+}
+
+.NewMenu_viewOne_optionsPreview_label {
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_viewOne_optionsPreview_chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px 3px 3px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusPill);
+  font-size: var(--newMenu_textXs);
+  color: var(--newMenu_text);
+  max-width: 13rem;
+}
+
+.NewMenu_viewOne_optionsPreview_chip img {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.NewMenu_viewOne_optionsPreview_chip_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10rem;
+}

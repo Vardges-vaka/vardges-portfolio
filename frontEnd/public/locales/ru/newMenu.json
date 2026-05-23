@@ -1,0 +1,30 @@
+{
+  "_NOTE": "Translations pending. Keys fall back to English defaults provided in components.",
+  "sessionToggle": {
+    "menus": "Меню",
+    "items": "Блюда",
+    "modifiers": "Модификаторы",
+    "options": "Опции",
+    "brand": "Бренд",
+    "competitor": "Конкурент",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "updateAll": "Обновить всё"
+  },
+  "tables": {
+    "update": "Обновить",
+    "view": "Просмотр",
+    "active": "Активно",
+    "inactive": "Неактивно",
+    "owner": "Владелец",
+    "name": "Название",
+    "description": "Описание",
+    "price": "Цена",
+    "cost": "Себестоимость"
+  },
+  "confirmModal": {
+    "cancel": "Отмена",
+    "yesConfirm": "Да, подтвердить",
+    "yesDelete": "Да, удалить"
+  }
+}

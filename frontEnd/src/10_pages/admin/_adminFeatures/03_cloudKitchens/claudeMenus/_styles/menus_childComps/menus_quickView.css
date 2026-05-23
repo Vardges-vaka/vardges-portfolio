@@ -1,0 +1,126 @@
+/* ============================================================================
+   Menus — quick view (row expansion / dropdown row)
+============================================================================ */
+
+.menus_quickView_row {
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 30%, transparent);
+}
+
+.menus_quickView_cell {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--menus-border-soft, #e6e0d6);
+}
+
+.menus_quickView {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height var(--menus-dur-slow, 320ms) var(--menus-ease-out, ease),
+    opacity var(--menus-dur-slow, 320ms) var(--menus-ease-out, ease);
+}
+
+.menus_quickView.menus_quickView--open {
+  max-height: 32rem;
+  opacity: 1;
+}
+
+.menus_quickView_inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px 18px;
+  padding: 16px 18px;
+  text-align: left;
+  border-left: 3px solid var(--menus-accent, #2fc30b);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--menus-accent, #2fc30b) 6%, transparent),
+    transparent 70%
+  );
+}
+
+.menus_quickView_field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.menus_quickView_field_label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menus_quickView_field_value {
+  font-size: var(--menus-text-sm, 0.8125rem);
+  color: var(--menus-text, #1d1b18);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menus_quickView_field_value.wrap {
+  white-space: normal;
+  text-wrap: pretty;
+  line-height: 1.45;
+}
+
+.menus_quickView_section {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed color-mix(in srgb, var(--menus-border-soft, #e6e0d6) 60%, transparent);
+}
+
+.menus_quickView_section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.menus_quickView_section_title {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menus_quickView_actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  padding-top: 6px;
+}
+
+/* Rotating chevron on the dropdown button */
+.menus_view_all_table_rows_provider_cell_button.dropdown,
+.menus_menuItem_view_all_table_rows_provider_cell_button.dropdown,
+.menus_modifier_table_rows_provider_cell_button.dropdown,
+.menus_option_view_all_table_rows_provider_cell_button.dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.menus_view_all_table_rows_provider_cell_button.dropdown::after,
+.menus_menuItem_view_all_table_rows_provider_cell_button.dropdown::after,
+.menus_modifier_table_rows_provider_cell_button.dropdown::after,
+.menus_option_view_all_table_rows_provider_cell_button.dropdown::after {
+  content: "\25BE";
+  font-size: 0.75em;
+  line-height: 1;
+  transition: transform var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+[data-quickview-open="true"] .menus_view_all_table_rows_provider_cell_button.dropdown::after,
+[data-quickview-open="true"] .menus_menuItem_view_all_table_rows_provider_cell_button.dropdown::after,
+[data-quickview-open="true"] .menus_modifier_table_rows_provider_cell_button.dropdown::after,
+[data-quickview-open="true"] .menus_option_view_all_table_rows_provider_cell_button.dropdown::after {
+  transform: rotate(180deg);
+}

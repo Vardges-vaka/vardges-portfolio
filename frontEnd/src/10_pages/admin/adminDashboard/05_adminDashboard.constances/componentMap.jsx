@@ -24,7 +24,10 @@ export const componentMap = {
     ),
     cloudKitchens_menus: lazy(
       () =>
-        import("../../_adminFeatures/03_cloudKitchens/menus copy/Menus.jsx"),
+        import("../../_adminFeatures/03_cloudKitchens/claudeMenus/Menus.jsx"),
+    ),
+    cloudKitchens_newMenu: lazy(
+      () => import("../../_adminFeatures/newMenu/NewMenu.jsx"),
     ),
     cloudKitchens_competitors: lazy(
       () =>

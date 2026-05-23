@@ -1,0 +1,30 @@
+{
+  "_NOTE": "Translations pending. Keys fall back to English defaults provided in components.",
+  "sessionToggle": {
+    "menus": "Մենյուներ",
+    "items": "Ճաշատեսակներ",
+    "modifiers": "Մոդիֆիկատորներ",
+    "options": "Տարբերակներ",
+    "brand": "Բրենդ",
+    "competitor": "Մրցակից",
+    "cancel": "Չեղարկել",
+    "confirm": "Հաստատել",
+    "updateAll": "Թարմացնել բոլորը"
+  },
+  "tables": {
+    "update": "Թարմացնել",
+    "view": "Դիտել",
+    "active": "Ակտիվ",
+    "inactive": "Ոչ ակտիվ",
+    "owner": "Սեփականատեր",
+    "name": "Անվանում",
+    "description": "Նկարագրություն",
+    "price": "Գին",
+    "cost": "Արժեք"
+  },
+  "confirmModal": {
+    "cancel": "Չեղարկել",
+    "yesConfirm": "Այո, հաստատել",
+    "yesDelete": "Այո, ջնջել"
+  }
+}

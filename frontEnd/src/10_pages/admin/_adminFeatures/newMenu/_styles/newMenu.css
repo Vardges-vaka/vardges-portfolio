@@ -1,0 +1,88 @@
+/* ============================================================================
+   NewMenu — design tokens + page-root layout.
+
+   Every CSS file inside newMenu/_styles reads these custom properties. The
+   project's global theme (lightTheme.css / darkTheme.css) wins via the var()
+   fallbacks below, so this stylesheet stays coherent in both light/dark and
+   degrades gracefully if a token is missing upstream.
+============================================================================ */
+
+.NewMenu {
+  /* ---- Palette (warm neutrals + green success accent) ---- */
+  --newMenu_bg: var(--bg-primary-color, #fbfaf8);
+  --newMenu_bgSoft: var(--bg-secondary-color, #f3efe9);
+  --newMenu_bgElev: var(--bg-primary-color, #ffffff);
+  --newMenu_bgHover: color-mix(in srgb, var(--newMenu_bgSoft) 55%, transparent);
+
+  --newMenu_text: var(--text-primary-color, #1d1b18);
+  --newMenu_textSoft: var(--text-secondary-color, #5a544d);
+  --newMenu_textFaint: color-mix(in srgb, var(--newMenu_text) 55%, transparent);
+  --newMenu_title: var(--title-secondary-color, #1d1b18);
+
+  --newMenu_border: var(--border-primary-color, #d6cfc4);
+  --newMenu_borderSoft: var(--border-secondary-color, #e6e0d6);
+  --newMenu_borderFaint: color-mix(in srgb, var(--newMenu_borderSoft) 45%, transparent);
+
+  --newMenu_accent: var(--primary-success-border, #2fc30b);
+  --newMenu_accentSoft: color-mix(in srgb, var(--newMenu_accent) 14%, transparent);
+  --newMenu_accentText: color-mix(in srgb, var(--newMenu_accent) 70%, var(--newMenu_text));
+
+  --newMenu_danger: #c0392b;
+  --newMenu_dangerSoft: color-mix(in srgb, var(--newMenu_danger) 12%, transparent);
+
+  --newMenu_shadow: var(--boxShadow-primary-color, rgba(20, 16, 10, 0.18));
+
+  /* ---- Geometry ---- */
+  --newMenu_radiusXs: 4px;
+  --newMenu_radiusSm: 6px;
+  --newMenu_radiusMd: 8px;
+  --newMenu_radiusLg: 10px;
+  --newMenu_radiusXl: 14px;
+  --newMenu_radiusPill: 999px;
+
+  /* ---- Type scale ---- */
+  --newMenu_font: var(--font-primary,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+  --newMenu_fontMono: var(--font-mono,
+    ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", monospace);
+
+  --newMenu_textXs: 0.6875rem;
+  --newMenu_textSm: 0.8125rem;
+  --newMenu_textBase: 0.875rem;
+  --newMenu_textMd: 0.9375rem;
+  --newMenu_textLg: 1.0625rem;
+  --newMenu_textXl: 1.375rem;
+
+  /* ---- Motion ---- */
+  --newMenu_ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --newMenu_easeOut: cubic-bezier(0.33, 1, 0.68, 1);
+  --newMenu_durFast: 120ms;
+  --newMenu_dur: 200ms;
+  --newMenu_durSlow: 320ms;
+
+  /* ---- Page-root layout ---- */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-height: 100%;
+  padding: 14px 18px 32px;
+  box-sizing: border-box;
+  font-family: var(--newMenu_font);
+  font-size: var(--newMenu_textBase);
+  color: var(--newMenu_text);
+  background-color: var(--newMenu_bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================================================
+   Reduced-motion override (accessibility).
+============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .NewMenu,
+  .NewMenu * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

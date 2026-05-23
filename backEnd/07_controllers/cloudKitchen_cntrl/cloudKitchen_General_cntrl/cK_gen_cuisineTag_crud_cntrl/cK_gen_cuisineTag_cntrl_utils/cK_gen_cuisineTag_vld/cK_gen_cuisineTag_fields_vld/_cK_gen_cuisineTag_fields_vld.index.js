@@ -1,0 +1,12 @@
+export { cK_gen_cuisineTag_update_value_vld } from "./cK_gen_cuisineTag_update_value_vld.js";
+export { cK_gen_cuisineTag_update_label_vld } from "./cK_gen_cuisineTag_update_label_vld.js";
+export { cK_gen_cuisineTag_update_description_vld } from "./cK_gen_cuisineTag_update_description_vld.js";
+export { cK_gen_cuisineTag_update_platforms_vld } from "./cK_gen_cuisineTag_update_platforms_vld.js";
+export { cK_gen_cuisineTag_update_kind_vld } from "./cK_gen_cuisineTag_update_kind_vld.js";
+export { cK_gen_cuisineTag_update_source_vld } from "./cK_gen_cuisineTag_update_source_vld.js";
+// ;
+// ;
+// ;
+// ;
+// ;
+// ;

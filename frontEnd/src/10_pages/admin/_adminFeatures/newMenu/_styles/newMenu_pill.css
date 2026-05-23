@@ -1,0 +1,47 @@
+/* ============================================================================
+   NewMenu_pill — count chips & status flags.
+============================================================================ */
+.NewMenu_pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--newMenu_radiusPill, 999px);
+  font-size: var(--newMenu_textXs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background-color: var(--newMenu_bgSoft, #f3efe9);
+  color: var(--newMenu_text, #1d1b18);
+  border: 1px solid var(--newMenu_borderFaint, transparent);
+  white-space: nowrap;
+}
+
+.NewMenu_pill_success {
+  background-color: color-mix(in srgb, var(--newMenu_accent) 14%, var(--newMenu_bgSoft));
+  color: var(--newMenu_accentText);
+  border-color: color-mix(in srgb, var(--newMenu_accent) 40%, transparent);
+}
+
+.NewMenu_pill_danger {
+  background-color: var(--newMenu_dangerSoft);
+  color: color-mix(in srgb, var(--newMenu_danger) 90%, var(--newMenu_text));
+  border-color: color-mix(in srgb, var(--newMenu_danger) 30%, transparent);
+}
+
+.NewMenu_pill_muted {
+  background-color: var(--newMenu_bgSoft);
+  color: var(--newMenu_textSoft);
+  border-color: var(--newMenu_borderSoft);
+}
+
+.NewMenu_pill_brand {
+  background-color: color-mix(in srgb, var(--newMenu_accent) 12%, var(--newMenu_bgSoft));
+  color: var(--newMenu_accentText);
+  border-color: color-mix(in srgb, var(--newMenu_accent) 35%, transparent);
+}
+
+.NewMenu_pill_competitor {
+  background-color: color-mix(in srgb, var(--newMenu_danger) 10%, var(--newMenu_bgSoft));
+  color: color-mix(in srgb, var(--newMenu_danger) 90%, var(--newMenu_text));
+  border-color: color-mix(in srgb, var(--newMenu_danger) 30%, transparent);
+}

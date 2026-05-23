@@ -1,0 +1,127 @@
+/* ============================================================================
+   MenuItem — nutrition field (source + calculatedAt + macros row)
+============================================================================ */
+
+.menuItem_field_nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 35%, transparent);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  border-radius: var(--menus-radius-md, 8px);
+}
+
+.menuItem_field_nutrition_label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_label > label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+  margin: 0;
+}
+
+.menuItem_field_nutrition_controlls {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_versions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_version {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 88px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_version.source {
+  flex: 1 1 120px;
+}
+
+.menuItem_field_nutrition_version.lastCalculatedAt {
+  flex: 2 1 180px;
+}
+
+.menuItem_field_nutrition_version.calories,
+.menuItem_field_nutrition_version.protein,
+.menuItem_field_nutrition_version.carbs,
+.menuItem_field_nutrition_version.fat {
+  flex: 1 1 72px;
+}
+
+.menuItem_field_nutrition_version > label {
+  align-self: flex-start;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+  box-sizing: border-box;
+}
+
+.menuItem_field_nutrition_version input,
+.menuItem_field_nutrition_input {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-sm, 6px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text, #1d1b18);
+  font: inherit;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-variant-numeric: tabular-nums;
+  box-sizing: border-box;
+  transition: border-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menuItem_field_nutrition_version input:read-only,
+.menuItem_field_nutrition_input:read-only {
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 40%, transparent);
+  border-color: var(--menus-border-soft, #e6e0d6);
+}
+
+.menuItem_field_nutrition_version input:focus,
+.menuItem_field_nutrition_input:focus {
+  outline: none;
+  border-color: var(--menus-accent, #2fc30b);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--menus-accent, #2fc30b) 18%, transparent);
+}
+
+.menuItem_field_nutrition_version.lastCalculatedAt input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

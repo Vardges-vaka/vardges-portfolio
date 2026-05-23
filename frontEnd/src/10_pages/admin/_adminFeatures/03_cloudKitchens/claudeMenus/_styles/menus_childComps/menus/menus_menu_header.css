@@ -1,0 +1,49 @@
+/* ============================================================================
+   Menus — single-menu header (label, description, owner, status, dates)
+============================================================================ */
+
+.Menus_menu_header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px;
+  padding: 20px 22px;
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 50%, transparent),
+    transparent 70%
+  );
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 25%, transparent);
+}
+
+.Menus_menu_header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--menus-title, #1d1b18);
+  line-height: 1.15;
+}
+
+.Menus_menu_header p {
+  margin: 0;
+  padding: 7px 0;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  color: var(--menus-text, #1d1b18);
+  border-bottom: 1px dashed color-mix(in srgb, var(--menus-border-soft, #e6e0d6) 60%, transparent);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.Menus_menu_header p:last-child {
+  border-bottom: none;
+}
+
+/* The label portion of "Label: -- value" reads as muted, the value as text. */
+.Menus_menu_header p {
+  color: var(--menus-text, #1d1b18);
+}

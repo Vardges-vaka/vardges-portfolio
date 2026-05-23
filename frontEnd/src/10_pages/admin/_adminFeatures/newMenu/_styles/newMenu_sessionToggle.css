@@ -1,0 +1,158 @@
+/* ============================================================================
+   NewMenu_sessionToggle.
+============================================================================ */
+.NewMenu_sessionToggle {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  background-color: color-mix(in srgb, var(--newMenu_bgElev) 95%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusLg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--newMenu_shadow) 22%, transparent);
+}
+
+.NewMenu_sessionToggle_sessions {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  background-color: var(--newMenu_bgSoft);
+  border-radius: var(--newMenu_radiusMd);
+}
+
+.NewMenu_sessionToggle_session {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--newMenu_radiusSm);
+  color: var(--newMenu_textSoft);
+  font: inherit;
+  font-size: var(--newMenu_textSm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--newMenu_dur) var(--newMenu_ease),
+              color var(--newMenu_dur) var(--newMenu_ease);
+}
+
+.NewMenu_sessionToggle_session:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--newMenu_bgElev) 90%, transparent);
+  color: var(--newMenu_text);
+}
+
+.NewMenu_sessionToggle_session:focus-visible {
+  outline: 2px solid var(--newMenu_accent);
+  outline-offset: 2px;
+}
+
+.NewMenu_sessionToggle_session_active {
+  background-color: var(--newMenu_bgElev);
+  color: var(--newMenu_text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.NewMenu_sessionToggle_middle {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.NewMenu_sessionToggle_actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.NewMenu_sessionToggle_owner {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusSm);
+  color: var(--newMenu_textSoft);
+  font: inherit;
+  font-size: var(--newMenu_textXs);
+  cursor: pointer;
+  transition: background-color var(--newMenu_dur) var(--newMenu_ease),
+              border-color var(--newMenu_dur) var(--newMenu_ease),
+              color var(--newMenu_dur) var(--newMenu_ease);
+}
+
+.NewMenu_sessionToggle_owner:hover {
+  background-color: var(--newMenu_bgSoft);
+  color: var(--newMenu_text);
+}
+
+.NewMenu_sessionToggle_owner_active.NewMenu_sessionToggle_owner_brand {
+  background-color: color-mix(in srgb, var(--newMenu_accent) 12%, var(--newMenu_bgElev));
+  border-color: color-mix(in srgb, var(--newMenu_accent) 35%, transparent);
+  color: var(--newMenu_accentText);
+}
+
+.NewMenu_sessionToggle_owner_active.NewMenu_sessionToggle_owner_competitor {
+  background-color: color-mix(in srgb, var(--newMenu_danger) 10%, var(--newMenu_bgElev));
+  border-color: color-mix(in srgb, var(--newMenu_danger) 30%, transparent);
+  color: color-mix(in srgb, var(--newMenu_danger) 90%, var(--newMenu_text));
+}
+
+.NewMenu_sessionToggle_owner_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.NewMenu_sessionToggle_add {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--newMenu_accent);
+  color: white;
+  border: 1px solid var(--newMenu_accent);
+  border-radius: var(--newMenu_radiusSm);
+  font: inherit;
+  font-size: var(--newMenu_textXs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter var(--newMenu_dur) var(--newMenu_ease);
+}
+.NewMenu_sessionToggle_add:hover { filter: brightness(1.06); }
+.NewMenu_sessionToggle_add:focus-visible { outline: 2px solid var(--newMenu_accent); outline-offset: 2px; }
+
+.NewMenu_sessionToggle_update {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusSm);
+  color: var(--newMenu_text);
+  font: inherit;
+  font-size: var(--newMenu_textXs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--newMenu_dur) var(--newMenu_ease);
+}
+.NewMenu_sessionToggle_update:hover { background-color: var(--newMenu_bgSoft); }
+
+.NewMenu_sessionToggle_update_primary {
+  background-color: var(--newMenu_accent);
+  border-color: var(--newMenu_accent);
+  color: white;
+}
+.NewMenu_sessionToggle_update_primary:hover { filter: brightness(1.06); background-color: var(--newMenu_accent); }
+
+@media (max-width: 880px) {
+  .NewMenu_sessionToggle {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

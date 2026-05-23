@@ -1,0 +1,194 @@
+/* ============================================================================
+   Menus — Menus_table (all menus)
+============================================================================ */
+
+.menus_view_all {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 30%, transparent);
+  box-sizing: border-box;
+}
+
+.menus_view_all_table {
+  width: 100%;
+  min-width: 1280px;
+  border-collapse: collapse;
+  font-size: var(--menus-text-base, 0.875rem);
+  color: var(--menus-text, #1d1b18);
+}
+
+/* Dashed column separators */
+.menus_view_all_table thead th:not(:last-child),
+.menus_view_all_table tbody td:not(:last-child) {
+  border-right: 1px dashed color-mix(in srgb, var(--menus-border-soft, #e6e0d6) 50%, transparent);
+}
+
+/* Header */
+.menus_view_all_table_header {
+  text-align: center;
+  padding: 0.7rem 0.85rem;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  letter-spacing: 0.02em;
+  color: var(--menus-title, #1d1b18);
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 70%, transparent);
+  border-bottom: 1px solid var(--menus-border, #d6cfc4);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Rows */
+.menus_view_all_table_rows_provider {
+  border-bottom: 1px solid var(--menus-border-soft, #e6e0d6);
+  transition: background-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menus_view_all_table_rows_provider:last-child {
+  border-bottom: none;
+}
+
+.menus_view_all_table_rows_provider:hover {
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 45%, transparent);
+}
+
+.menus_view_all_table_rows_provider_cell {
+  padding: 0.65rem 0.85rem;
+  vertical-align: middle;
+  text-align: center;
+  color: var(--menus-text, #1d1b18);
+  line-height: 1.4;
+}
+
+/* # column */
+.menus_view_all_table_rows_provider_cell:first-child {
+  font-weight: 600;
+  color: var(--menus-text-soft, #5a544d);
+  width: 3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Label (Menu name) — left-aligned, weighted */
+.menus_view_all_table_rows_provider_cell:nth-child(2) {
+  text-align: left;
+  font-weight: 600;
+  min-width: 12rem;
+  color: var(--menus-title, #1d1b18);
+}
+
+/* Status cell */
+.menus_view_all_table_rows_provider_cell:nth-child(3) {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+.menus_view_all_table_rows_provider_cell:nth-child(3)::before {
+  content: "";
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  background-color: color-mix(in srgb, var(--menus-text-soft, #5a544d) 60%, transparent);
+}
+
+/* Description — left, soft */
+.menus_view_all_table_rows_provider_cell:nth-child(4) {
+  text-align: left;
+  color: var(--menus-text-soft, #5a544d);
+  font-size: var(--menus-text-sm, 0.8125rem);
+  max-width: 22rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Owner */
+.menus_view_all_table_rows_provider_cell:nth-child(5) {
+  text-transform: capitalize;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  color: var(--menus-text-soft, #5a544d);
+}
+
+/* Count cells */
+.menus_view_all_table_rows_provider_cell:nth-child(6),
+.menus_view_all_table_rows_provider_cell:nth-child(7),
+.menus_view_all_table_rows_provider_cell:nth-child(8),
+.menus_view_all_table_rows_provider_cell:nth-child(9) {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--menus-text, #1d1b18);
+}
+
+/* Sales */
+.menus_view_all_table_rows_provider_cell:nth-child(10) {
+  font-variant-numeric: tabular-nums;
+  color: var(--menus-text, #1d1b18);
+  font-size: var(--menus-text-sm, 0.8125rem);
+}
+
+.menus_view_all_table_rows_provider_cell.createdBy,
+.menus_view_all_table_rows_provider_cell.updatedBy {
+  font-size: var(--menus-text-sm, 0.8125rem);
+  color: var(--menus-text, #1d1b18);
+}
+
+.menus_view_all_table_rows_provider_cell.createdAt,
+.menus_view_all_table_rows_provider_cell.updatedAt {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  color: var(--menus-text-soft, #5a544d);
+  white-space: nowrap;
+}
+
+/* Action buttons */
+.menus_view_all_table_rows_provider_cell_button {
+  appearance: none;
+  font: inherit;
+  min-width: 4.5rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-sm, 6px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text, #1d1b18);
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    transform var(--menus-dur-fast, 120ms) var(--menus-ease, ease);
+}
+
+.menus_view_all_table_rows_provider_cell_button:hover {
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border-color: color-mix(in srgb, var(--menus-border, #d6cfc4) 65%, var(--menus-text, #1d1b18));
+}
+
+.menus_view_all_table_rows_provider_cell_button:active {
+  transform: translateY(1px);
+}
+
+.menus_view_all_table_rows_provider_cell_button:focus-visible {
+  outline: 2px solid var(--menus-accent, #2fc30b);
+  outline-offset: 2px;
+}
+
+.menus_view_all_table tbody:empty::after {
+  content: "No menus to show";
+  display: block;
+  padding: 2rem;
+  text-align: center;
+  color: var(--menus-text-soft, #5a544d);
+  font-style: italic;
+}

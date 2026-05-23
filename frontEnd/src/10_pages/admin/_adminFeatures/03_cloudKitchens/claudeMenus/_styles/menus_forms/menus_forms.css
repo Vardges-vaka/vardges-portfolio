@@ -1,0 +1,188 @@
+/* ============================================================================
+   Menus — creation forms (menu / menuItem / modifier / option / category)
+   Multi-step: step 1 = pick ownerType; step 2 = label/title; step 3 = create.
+============================================================================ */
+
+.menus_form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(560px, 100%);
+}
+
+.menus_form_steps {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border-radius: var(--menus-radius-pill, 999px);
+  overflow: hidden;
+}
+
+.menus_form_step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--menus-text-faint, color-mix(in srgb, #1d1b18 50%, transparent));
+  border-right: 1px solid var(--menus-border-faint, color-mix(in srgb, #e6e0d6 50%, transparent));
+}
+
+.menus_form_step:last-child { border-right: none; }
+
+.menus_form_step.active {
+  color: var(--menus-title, #1d1b18);
+  background-color: var(--menus-bg-elev, #fff);
+}
+
+.menus_form_step.done {
+  color: var(--menus-accent-text, #2fc30b);
+}
+
+.menus_form_step_num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--menus-text-soft, #5a544d) 18%, transparent);
+  color: var(--menus-text, #1d1b18);
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 700;
+}
+
+.menus_form_step.active .menus_form_step_num {
+  background-color: var(--menus-text, #1d1b18);
+  color: var(--menus-bg-elev, #fff);
+}
+
+.menus_form_step.done .menus_form_step_num {
+  background-color: var(--menus-accent, #2fc30b);
+  color: var(--menus-bg-elev, #fff);
+}
+
+/* ---- Owner-type picker (step 1) ---- */
+.menus_form_ownerTypePicker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.menus_form_ownerType_card {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 16px;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1.5px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  color: var(--menus-text, #1d1b18);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    transform var(--menus-dur-fast, 120ms) var(--menus-ease, ease);
+}
+
+.menus_form_ownerType_card:hover {
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border-color: color-mix(in srgb, var(--menus-border, #d6cfc4) 55%, var(--menus-text, #1d1b18));
+}
+
+.menus_form_ownerType_card:active { transform: translateY(1px); }
+
+.menus_form_ownerType_card.selected {
+  background-color: var(--menus-accent-soft, color-mix(in srgb, #2fc30b 14%, transparent));
+  border-color: color-mix(in srgb, var(--menus-accent, #2fc30b) 60%, var(--menus-border, #d6cfc4));
+}
+
+.menus_form_ownerType_card svg {
+  width: 36px;
+  height: 36px;
+}
+
+.menus_form_ownerType_label {
+  font-size: var(--menus-text-md, 0.9375rem);
+  font-weight: 600;
+}
+
+.menus_form_ownerType_hint {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  color: var(--menus-text-soft, #5a544d);
+  text-align: center;
+}
+
+/* ---- Name field (step 2) ---- */
+.menus_form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menus_form_field label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menus_form_input,
+.menus_form_textarea,
+.menus_form_select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-md, 8px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text, #1d1b18);
+  font: inherit;
+  font-size: var(--menus-text-base, 0.875rem);
+  box-sizing: border-box;
+  transition: border-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menus_form_textarea { min-height: 6rem; resize: vertical; line-height: 1.5; }
+
+.menus_form_input:focus,
+.menus_form_textarea:focus,
+.menus_form_select:focus {
+  outline: none;
+  border-color: var(--menus-accent, #2fc30b);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--menus-accent, #2fc30b) 18%, transparent);
+}
+
+.menus_form_helper {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  color: var(--menus-text-soft, #5a544d);
+}
+
+/* ---- Footer actions ---- */
+.menus_form_actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--menus-border-soft, #e6e0d6);
+}
+
+.menus_form_actions_left,
+.menus_form_actions_right {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

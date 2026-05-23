@@ -1,0 +1,76 @@
+/* ============================================================================
+   NewMenu_translations.
+============================================================================ */
+.NewMenu_translations {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--newMenu_bgSoft) 60%, transparent);
+  border: 1px dashed var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusMd);
+  margin-top: 6px;
+}
+
+.NewMenu_translations_title {
+  margin: 0 0 2px;
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_translations_empty {
+  margin: 0;
+  font-size: var(--newMenu_textXs);
+  color: var(--newMenu_textFaint);
+  font-style: italic;
+}
+
+.NewMenu_translations_row {
+  display: grid;
+  grid-template-columns: 28px 1fr 36px;
+  align-items: center;
+  gap: 8px;
+}
+
+.NewMenu_translations_flag {
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+}
+
+.NewMenu_translations_input,
+.NewMenu_translations_textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusSm);
+  background: var(--newMenu_bgElev);
+  color: var(--newMenu_text);
+  font: inherit;
+  font-size: var(--newMenu_textSm);
+  box-sizing: border-box;
+}
+
+.NewMenu_translations_textarea { resize: vertical; }
+
+.NewMenu_translations_input:read-only,
+.NewMenu_translations_textarea:read-only {
+  background-color: color-mix(in srgb, var(--newMenu_bgSoft) 40%, transparent);
+}
+
+.NewMenu_translations_input:focus,
+.NewMenu_translations_textarea:focus {
+  outline: none;
+  border-color: var(--newMenu_accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--newMenu_accent) 18%, transparent);
+}
+
+.NewMenu_translations_code {
+  font-size: var(--newMenu_textXs);
+  font-family: var(--newMenu_fontMono);
+  color: var(--newMenu_textFaint);
+  text-transform: lowercase;
+}

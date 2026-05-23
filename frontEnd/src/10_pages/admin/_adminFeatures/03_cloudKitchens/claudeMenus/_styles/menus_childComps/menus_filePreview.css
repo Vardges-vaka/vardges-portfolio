@@ -1,0 +1,77 @@
+/* ============================================================================
+   Menus — file preview (image OR file-type icon)
+============================================================================ */
+
+.menus_filePreview {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: max-content;
+}
+
+.menus_filePreview_thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--menus-radius-md, 8px);
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  overflow: hidden;
+  color: var(--menus-text-soft, #5a544d);
+  transition:
+    transform var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    box-shadow var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menus_filePreview_thumb:hover {
+  transform: translateY(-1px) scale(1.04);
+  border-color: var(--menus-border, #d6cfc4);
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 22%, transparent);
+}
+
+.menus_filePreview_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.menus_filePreview_thumb svg {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.menus_filePreview_label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+  max-width: 5.5rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menus_filePreview_meta {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  color: var(--menus-text-faint, color-mix(in srgb, #1d1b18 55%, transparent));
+  font-variant-numeric: tabular-nums;
+}
+
+/* When rendered inside a strip — row of files */
+.menus_filePreview_strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 14px 18px;
+  padding: 12px;
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 30%, transparent);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  border-radius: var(--menus-radius-md, 8px);
+}

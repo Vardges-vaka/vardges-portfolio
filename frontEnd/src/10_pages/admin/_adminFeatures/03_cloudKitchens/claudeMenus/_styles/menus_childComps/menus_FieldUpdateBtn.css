@@ -1,0 +1,68 @@
+/* ============================================================================
+   Menus — FieldUpdateBtn (top-bar update/cancel/confirm)
+============================================================================ */
+
+.menus_FieldUpdateBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+  padding-left: 8px;
+  border-left: 1px solid var(--menus-border-faint, #e6e0d6);
+}
+
+.menus_FieldUpdateBtn_btn {
+  appearance: none;
+  font: inherit;
+  padding: 6px 12px;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-sm, 6px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text, #1d1b18);
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    transform var(--menus-dur-fast, 120ms) var(--menus-ease, ease);
+}
+
+.menus_FieldUpdateBtn_btn:hover {
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border-color: color-mix(in srgb, var(--menus-border, #d6cfc4) 60%, var(--menus-text, #1d1b18));
+}
+
+.menus_FieldUpdateBtn_btn:active { transform: translateY(1px); }
+
+.menus_FieldUpdateBtn_btn:focus-visible {
+  outline: 2px solid var(--menus-accent, #2fc30b);
+  outline-offset: 2px;
+}
+
+/* Confirm — last button in the row gets the accent treatment. */
+.menus_FieldUpdateBtn .menus_FieldUpdateBtn_btn:last-child:not(:only-child) {
+  background-color: var(--menus-accent-soft, color-mix(in srgb, #2fc30b 14%, transparent));
+  border-color: color-mix(in srgb, var(--menus-accent, #2fc30b) 45%, var(--menus-border, #d6cfc4));
+  color: var(--menus-accent-text, #2fc30b);
+  font-weight: 600;
+}
+
+.menus_FieldUpdateBtn .menus_FieldUpdateBtn_btn:last-child:not(:only-child):hover {
+  background-color: color-mix(in srgb, var(--menus-accent, #2fc30b) 22%, transparent);
+  border-color: color-mix(in srgb, var(--menus-accent, #2fc30b) 65%, var(--menus-border, #d6cfc4));
+}
+
+/* When only "Update" is shown, give it a soft tone so it reads as primary. */
+.menus_FieldUpdateBtn .menus_FieldUpdateBtn_btn:only-child {
+  background-color: var(--menus-text, #1d1b18);
+  border-color: var(--menus-text, #1d1b18);
+  color: var(--menus-bg-elev, #fff);
+}
+
+.menus_FieldUpdateBtn .menus_FieldUpdateBtn_btn:only-child:hover {
+  background-color: color-mix(in srgb, var(--menus-text, #1d1b18) 85%, var(--menus-accent, #2fc30b));
+  border-color: color-mix(in srgb, var(--menus-text, #1d1b18) 85%, var(--menus-accent, #2fc30b));
+}

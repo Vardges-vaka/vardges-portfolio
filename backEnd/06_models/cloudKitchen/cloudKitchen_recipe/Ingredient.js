@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import { AUDIT } from "../modelHelpers/.temp.index.js";
 const supplierSchema = new mongoose.Schema(
   {
     name: {

@@ -1,0 +1,24 @@
+/* ============================================================================
+   NewMenu_toast — auto-dismissing pill at the viewport bottom.
+============================================================================ */
+.NewMenu_toast {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  padding: 10px 18px;
+  background-color: #1d1b18;
+  color: #fff;
+  font-size: var(--newMenu_textSm);
+  font-weight: 500;
+  border-radius: var(--newMenu_radiusPill);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  animation: NewMenu_toast_in 200ms ease both;
+}
+
+@keyframes NewMenu_toast_in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}

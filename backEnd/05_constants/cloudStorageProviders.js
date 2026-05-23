@@ -5,9 +5,4 @@
  * gcs → gcs, // Google Cloud Storage
  */
 
-export const CLOUD_STORAGE_PROVIDERS = /** @type {const} */ ([
-  "s3",
-  "gcs",
-  "r2",
-  "blob",
-]);
+export const CLOUD_STORAGE_PROVIDERS = ["s3", "gcs", "r2", "blob"];

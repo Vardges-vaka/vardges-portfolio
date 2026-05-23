@@ -1,0 +1,40 @@
+/* ============================================================================
+   Menus — empty state: menus_empty_modifierOptions
+============================================================================ */
+
+.menus_empty_modifierOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 12rem;
+  padding: 28px 22px;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px dashed var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  color: var(--menus-text-soft, #5a544d);
+  text-align: center;
+}
+
+.menus_empty_modifierOptions::before {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+}
+
+.menus_empty_modifierOptions p {
+  margin: 0;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-weight: 500;
+  color: var(--menus-text-soft, #5a544d);
+  max-width: 32rem;
+  text-wrap: pretty;
+  line-height: 1.5;
+}

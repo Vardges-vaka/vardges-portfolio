@@ -1,0 +1,126 @@
+/* ============================================================================
+   NewMenu_table — shared table primitives.
+
+   Every entity table (NewMenu_table_menus / _items / _modifiers / _options)
+   uses these styles for thead / tbody / row / cell / action button so the
+   visual language is uniform across the page.
+============================================================================ */
+.NewMenu_table_wrap {
+  width: 100%;
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusLg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--newMenu_shadow) 22%, transparent);
+  overflow: auto;
+}
+
+.NewMenu_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--newMenu_textSm);
+  color: var(--newMenu_text);
+}
+
+.NewMenu_table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 10px 12px;
+  background-color: color-mix(in srgb, var(--newMenu_bgSoft) 70%, var(--newMenu_bgElev));
+  color: var(--newMenu_textSoft);
+  font-size: var(--newMenu_textXs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  border-bottom: 1px solid var(--newMenu_borderSoft);
+  white-space: nowrap;
+}
+
+.NewMenu_table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--newMenu_borderSoft);
+  vertical-align: middle;
+}
+
+.NewMenu_table_row:hover td {
+  background-color: var(--newMenu_bgHover);
+}
+
+.NewMenu_table_row_image {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--newMenu_radiusSm);
+  object-fit: cover;
+  background-color: var(--newMenu_bgSoft);
+  display: block;
+}
+
+.NewMenu_table_btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusSm);
+  background-color: var(--newMenu_bgElev);
+  color: var(--newMenu_text);
+  font: inherit;
+  font-size: var(--newMenu_textXs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--newMenu_dur) var(--newMenu_ease),
+              border-color var(--newMenu_dur) var(--newMenu_ease);
+}
+
+.NewMenu_table_btn:hover {
+  background-color: var(--newMenu_bgSoft);
+  border-color: var(--newMenu_border);
+}
+
+.NewMenu_table_btn:focus-visible {
+  outline: 2px solid var(--newMenu_accent);
+  outline-offset: 2px;
+}
+
+.NewMenu_table_btn_primary {
+  background-color: var(--newMenu_accentSoft);
+  border-color: color-mix(in srgb, var(--newMenu_accent) 35%, transparent);
+  color: var(--newMenu_accentText);
+}
+
+/* Options stack — used in modifiers table */
+.NewMenu_table_optionStack {
+  display: inline-flex;
+  align-items: center;
+}
+.NewMenu_table_optionStack_chip {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--newMenu_bgSoft);
+  border: 2px solid var(--newMenu_bgElev);
+  margin-left: -10px;
+}
+.NewMenu_table_optionStack_chip:first-child { margin-left: 0; }
+.NewMenu_table_optionStack_chip img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.NewMenu_table_optionStack_more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background-color: var(--newMenu_bgSoft);
+  border: 2px solid var(--newMenu_bgElev);
+  color: var(--newMenu_textSoft);
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  margin-left: -10px;
+}

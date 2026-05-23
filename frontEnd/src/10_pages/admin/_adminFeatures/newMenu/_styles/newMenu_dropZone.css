@@ -1,0 +1,51 @@
+/* ============================================================================
+   NewMenu_dropZone.
+============================================================================ */
+.NewMenu_dropZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 12px;
+  border: 1.5px dashed var(--newMenu_border);
+  border-radius: var(--newMenu_radiusMd);
+  background-color: color-mix(in srgb, var(--newMenu_bgSoft) 35%, transparent);
+  color: var(--newMenu_textSoft);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color var(--newMenu_dur) var(--newMenu_ease),
+              background-color var(--newMenu_dur) var(--newMenu_ease),
+              color var(--newMenu_dur) var(--newMenu_ease);
+}
+
+.NewMenu_dropZone:hover,
+.NewMenu_dropZone_over {
+  border-color: var(--newMenu_accent);
+  background-color: color-mix(in srgb, var(--newMenu_accent) 8%, var(--newMenu_bgElev));
+  color: var(--newMenu_text);
+}
+
+.NewMenu_dropZone_disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.NewMenu_dropZone_icon {
+  display: inline-flex;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_dropZone_label {
+  font-size: var(--newMenu_textSm);
+  font-weight: 600;
+}
+
+.NewMenu_dropZone_hint {
+  font-size: var(--newMenu_textXs);
+  color: var(--newMenu_textFaint);
+}
+
+.NewMenu_dropZone_input {
+  display: none;
+}

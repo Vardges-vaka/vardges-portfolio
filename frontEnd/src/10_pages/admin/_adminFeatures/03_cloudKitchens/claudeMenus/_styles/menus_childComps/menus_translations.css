@@ -1,0 +1,107 @@
+/* ============================================================================
+   Menus — translations / aggregator versions panel
+   (Pops below a name/description field; toggled via icon buttons.)
+============================================================================ */
+
+.menus_translations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 12px 14px;
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 60%, transparent);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  border-radius: var(--menus-radius-md, 8px);
+  animation: menus_translations_in 200ms var(--menus-ease-out, ease) both;
+}
+
+@keyframes menus_translations_in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.menus_translations_title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 2px;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menus_translations_row {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.menus_translations_flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 1.5rem;
+  border-radius: var(--menus-radius-xs, 4px);
+  overflow: hidden;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 700;
+  color: var(--menus-text, #1d1b18);
+  letter-spacing: 0.02em;
+}
+
+.menus_translations_flag svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.menus_translations_input,
+.menus_translations_textarea {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-sm, 6px);
+  background-color: var(--menus-bg-elev, #fff);
+  color: var(--menus-text, #1d1b18);
+  font: inherit;
+  font-size: var(--menus-text-sm, 0.8125rem);
+  box-sizing: border-box;
+  transition: border-color var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menus_translations_textarea {
+  min-height: 4rem;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.menus_translations_input:read-only,
+.menus_translations_textarea:read-only {
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 40%, transparent);
+  border-color: var(--menus-border-soft, #e6e0d6);
+}
+
+.menus_translations_input:focus,
+.menus_translations_textarea:focus {
+  outline: none;
+  border-color: var(--menus-accent, #2fc30b);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--menus-accent, #2fc30b) 18%, transparent);
+}
+
+/* Right-side language code badge */
+.menus_translations_code {
+  font-family: var(--menus-font-mono, ui-monospace, monospace);
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  color: var(--menus-text-soft, #5a544d);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 1.5rem;
+  text-align: right;
+}

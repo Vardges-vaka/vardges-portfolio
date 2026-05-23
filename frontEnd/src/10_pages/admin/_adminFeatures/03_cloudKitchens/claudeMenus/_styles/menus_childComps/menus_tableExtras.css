@@ -1,0 +1,69 @@
+/* ============================================================================
+   Inactive rows + image cell magnifier overlay + icon table headers.
+   Loaded into menus.css via @import.
+============================================================================ */
+
+/* Inactive row treatment — soft red wash + left tab. */
+.menus_view_all_table_rows_provider.inactive,
+.menus_menuItem_view_all_table_rows_provider.inactive,
+.menus_modifier_table_rows_provider.inactive,
+.menus_option_view_all_table_rows_provider.inactive {
+  background: color-mix(in srgb, #c0392b 4%, transparent);
+  outline: 1px dashed color-mix(in srgb, #c0392b 35%, transparent);
+  outline-offset: -2px;
+}
+.menus_view_all_table_rows_provider.inactive td:first-child,
+.menus_menuItem_view_all_table_rows_provider.inactive td:first-child,
+.menus_modifier_table_rows_provider.inactive td:first-child,
+.menus_option_view_all_table_rows_provider.inactive td:first-child {
+  position: relative;
+}
+.menus_view_all_table_rows_provider.inactive td:first-child::before,
+.menus_menuItem_view_all_table_rows_provider.inactive td:first-child::before,
+.menus_modifier_table_rows_provider.inactive td:first-child::before,
+.menus_option_view_all_table_rows_provider.inactive td:first-child::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: #c0392b;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Image cell — hover magnifier overlay. */
+.menus_imageCell { position: relative; display: inline-block; }
+.menus_imageCell::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0, 0, 0, .42);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+.menus_imageCell:hover::after { opacity: 1; }
+.menus_imageCell:hover .menus_imageCell_zoom { opacity: 1 !important; }
+
+/* Image cell corner edit button. */
+.menus_imageCell_edit {
+  position: absolute;
+  top: -6px; right: -6px;
+  background: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  z-index: 2;
+  color: var(--menus-text, #1d1b18);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+}
+.menus_imageCell:hover .menus_imageCell_edit { opacity: 1; }
+
+/* Icon-only table headers (Owner, Update, View, Quick look). */
+.menus_iconHeader {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 4px;
+  color: var(--menus-text-soft, #5a544d);
+}
+.menus_iconHeader svg { width: 16px; height: 16px; }

@@ -76,6 +76,12 @@ const cloudKitchens_SideBar = (t) => [
     icon: FoodMenu_Icon(),
     access: ["admin", "superAdmin"],
   },
+  {
+    label: t("newMenu", { defaultValue: "NewMenu" }),
+    path: "cloudKitchens_newMenu",
+    icon: FoodMenu_Icon(),
+    access: ["admin", "superAdmin"],
+  },
 
   // ---------------------------------------------
   {

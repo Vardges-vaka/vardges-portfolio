@@ -1,0 +1,407 @@
+/* ============================================================================
+   Menus — sales charts, panels, cells.
+============================================================================ */
+
+/* ---- Compact amount/qnt cell (used in table sales columns) ---- */
+.menus_salesCell {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.menus_salesCell_amount {
+  font-size: var(--menus-text-sm, 0.8125rem);
+  font-weight: 700;
+  color: var(--menus-text, #1d1b18);
+}
+
+.menus_salesCell_amount .menus_salesCell_currency {
+  font-size: 0.72em;
+  font-weight: 500;
+  color: var(--menus-text-soft, #5a544d);
+  margin-right: 0.18em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.menus_salesCell_qnt {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  color: var(--menus-text-soft, #5a544d);
+  font-weight: 500;
+}
+
+.menus_salesCell_qnt::before {
+  content: "×";
+  margin-right: 2px;
+  color: var(--menus-text-faint, color-mix(in srgb, #1d1b18 50%, transparent));
+}
+
+/* ---- Timeframe filter chip group ---- */
+.menus_salesFilter {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background-color: var(--menus-bg-soft, #f3efe9);
+  border: 1px solid var(--menus-border-faint, color-mix(in srgb, #e6e0d6 45%, transparent));
+  border-radius: var(--menus-radius-lg, 10px);
+}
+
+.menus_salesFilter_chip {
+  appearance: none;
+  font: inherit;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--menus-radius-sm, 6px);
+  color: var(--menus-text-soft, #5a544d);
+  cursor: pointer;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    box-shadow var(--menus-dur, 200ms) var(--menus-ease, ease);
+}
+
+.menus_salesFilter_chip:hover {
+  color: var(--menus-text, #1d1b18);
+  background-color: color-mix(in srgb, var(--menus-bg-elev, #fff) 70%, transparent);
+}
+
+.menus_salesFilter_chip.active {
+  color: var(--menus-text, #1d1b18);
+  background-color: var(--menus-bg-elev, #fff);
+  border-color: var(--menus-border-soft, #e6e0d6);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 30%, transparent);
+}
+
+/* ---- Chart card ---- */
+.menus_chart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 25%, transparent);
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menus_chart_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.menus_chart_titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.menus_chart_title {
+  margin: 0;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menus_chart_value {
+  font-size: var(--menus-text-xl, 1.375rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--menus-title, #1d1b18);
+  font-variant-numeric: tabular-nums;
+}
+
+.menus_chart_value_delta {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: var(--menus-radius-pill, 999px);
+  background-color: var(--menus-bg-soft, #f3efe9);
+  color: var(--menus-text-soft, #5a544d);
+  letter-spacing: 0.04em;
+}
+
+.menus_chart_value_delta.up {
+  background-color: var(--menus-accent-soft, color-mix(in srgb, #2fc30b 14%, transparent));
+  color: var(--menus-accent-text, #2fc30b);
+}
+
+.menus_chart_value_delta.down {
+  background-color: color-mix(in srgb, var(--menus-danger, #c0392b) 14%, transparent);
+  color: var(--menus-danger, #c0392b);
+}
+
+.menus_chart_svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.menus_chart_axis {
+  font-size: 10px;
+  fill: var(--menus-text-faint, color-mix(in srgb, #1d1b18 50%, transparent));
+  font-family: var(--menus-font-mono, monospace);
+}
+
+.menus_chart_grid {
+  stroke: color-mix(in srgb, var(--menus-border-soft, #e6e0d6) 50%, transparent);
+  stroke-dasharray: 2 4;
+  stroke-width: 1;
+}
+
+.menus_chart_line {
+  fill: none;
+  stroke: var(--menus-accent, #2fc30b);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.menus_chart_area {
+  fill: var(--menus-accent, #2fc30b);
+  fill-opacity: 0.14;
+}
+
+.menus_chart_dot {
+  fill: var(--menus-bg-elev, #fff);
+  stroke: var(--menus-accent, #2fc30b);
+  stroke-width: 2;
+}
+
+.menus_chart_cursor {
+  stroke: var(--menus-text-soft, #5a544d);
+  stroke-dasharray: 3 3;
+  stroke-width: 1;
+  opacity: 0.7;
+}
+
+.menus_chart_tooltip {
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--menus-text, #1d1b18);
+  color: var(--menus-bg-elev, #fff);
+  padding: 6px 10px;
+  border-radius: var(--menus-radius-sm, 6px);
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 40%, transparent);
+  transform: translate(-50%, calc(-100% - 8px));
+  z-index: 20;
+  font-variant-numeric: tabular-nums;
+}
+
+.menus_chart_tooltip_label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+/* Sparkline (used inside sales panel cards) */
+.menus_sparkline {
+  display: block;
+  width: 100%;
+  height: 32px;
+  overflow: visible;
+}
+
+.menus_sparkline_line {
+  fill: none;
+  stroke: var(--menus-accent, #2fc30b);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.menus_sparkline_area {
+  fill: var(--menus-accent, #2fc30b);
+  fill-opacity: 0.16;
+}
+
+/* ---- Sales panel: 8 timeframes grid ---- */
+.menus_salesPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background-color: var(--menus-bg-elev, #fff);
+  border: 1px solid var(--menus-border, #d6cfc4);
+  border-radius: var(--menus-radius-lg, 10px);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--menus-shadow, rgba(0,0,0,0.18)) 25%, transparent);
+}
+
+.menus_salesPanel_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.menus_salesPanel_title {
+  margin: 0;
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menus_salesPanel_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.menus_salesPanel_card {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 10px 12px;
+  background-color: color-mix(in srgb, var(--menus-bg-soft, #f3efe9) 40%, transparent);
+  border: 1px solid var(--menus-border-soft, #e6e0d6);
+  border-radius: var(--menus-radius-md, 8px);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  transition:
+    background-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    border-color var(--menus-dur, 200ms) var(--menus-ease, ease),
+    transform var(--menus-dur-fast, 120ms) var(--menus-ease, ease);
+}
+
+.menus_salesPanel_card:hover {
+  border-color: color-mix(in srgb, var(--menus-border, #d6cfc4) 55%, var(--menus-text, #1d1b18));
+  background-color: var(--menus-bg-elev, #fff);
+}
+
+.menus_salesPanel_card.active {
+  background-color: var(--menus-accent-soft, color-mix(in srgb, #2fc30b 14%, transparent));
+  border-color: color-mix(in srgb, var(--menus-accent, #2fc30b) 55%, var(--menus-border, #d6cfc4));
+}
+
+.menus_salesPanel_card_label {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--menus-text-soft, #5a544d);
+}
+
+.menus_salesPanel_card_amount {
+  font-size: var(--menus-text-lg, 1.0625rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  color: var(--menus-title, #1d1b18);
+}
+
+.menus_salesPanel_card_qnt {
+  font-size: var(--menus-text-xs, 0.6875rem);
+  color: var(--menus-text-soft, #5a544d);
+  font-variant-numeric: tabular-nums;
+}
+
+.menus_salesPanel_card_qnt::before {
+  content: "×";
+  margin-right: 2px;
+  color: var(--menus-text-faint, color-mix(in srgb, #1d1b18 50%, transparent));
+}
+
+/* ---- Donut (used for the sales-distribution slice) ---- */
+.menus_donut_wrap {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.menus_donut {
+  width: 100%;
+  height: auto;
+  max-width: 240px;
+  display: block;
+}
+
+.menus_donut_center {
+  font-family: var(--menus-font, sans-serif);
+  font-variant-numeric: tabular-nums;
+}
+
+.menus_donut_center_value {
+  font-size: 22px;
+  font-weight: 700;
+  fill: var(--menus-title, #1d1b18);
+}
+
+.menus_donut_center_label {
+  font-size: 9px;
+  fill: var(--menus-text-soft, #5a544d);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menus_donut_legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.menus_donut_legend_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--menus-text-sm, 0.8125rem);
+}
+
+.menus_donut_legend_swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.menus_donut_legend_label {
+  flex: 1;
+  min-width: 0;
+  color: var(--menus-text, #1d1b18);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menus_donut_legend_value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--menus-text, #1d1b18);
+}

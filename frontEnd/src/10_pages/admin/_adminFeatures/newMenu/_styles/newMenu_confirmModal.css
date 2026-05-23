@@ -1,0 +1,158 @@
+/* ============================================================================
+   NewMenu_confirmModal.
+============================================================================ */
+.NewMenu_confirmModal_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background-color: rgba(20, 16, 10, 0.45);
+  backdrop-filter: blur(2px);
+  animation: NewMenu_confirmModal_fadeIn 160ms ease both;
+}
+
+@keyframes NewMenu_confirmModal_fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.NewMenu_confirmModal {
+  width: min(560px, 100% - 32px);
+  background-color: var(--newMenu_bgElev);
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusLg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: NewMenu_confirmModal_pop 200ms var(--newMenu_easeOut) both;
+}
+
+@keyframes NewMenu_confirmModal_pop {
+  from { transform: translateY(6px) scale(0.99); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.NewMenu_confirmModal_header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--newMenu_borderSoft);
+}
+
+.NewMenu_confirmModal_subtitle {
+  margin: 0 0 4px;
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_confirmModal_title {
+  margin: 0;
+  font-size: var(--newMenu_textLg);
+  font-weight: 600;
+  color: var(--newMenu_title);
+}
+
+.NewMenu_confirmModal_close {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--newMenu_textSoft);
+  padding: 6px;
+  border-radius: var(--newMenu_radiusSm);
+  cursor: pointer;
+}
+.NewMenu_confirmModal_close:hover { background-color: var(--newMenu_bgSoft); color: var(--newMenu_text); }
+
+.NewMenu_confirmModal_body {
+  padding: 16px;
+  font-size: var(--newMenu_textSm);
+  line-height: 1.55;
+  color: var(--newMenu_text);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.NewMenu_confirmModal_body p { margin: 0; }
+
+.NewMenu_confirmModal_diff {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.NewMenu_confirmModal_diff_col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background-color: var(--newMenu_bgSoft);
+  border: 1px solid var(--newMenu_borderSoft);
+  border-radius: var(--newMenu_radiusSm);
+}
+
+.NewMenu_confirmModal_diff_col_label {
+  font-size: var(--newMenu_textXs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--newMenu_textSoft);
+}
+
+.NewMenu_confirmModal_diff_col_value {
+  font-size: var(--newMenu_textSm);
+  color: var(--newMenu_text);
+  word-break: break-word;
+}
+
+.NewMenu_confirmModal_diff_col_next {
+  background-color: color-mix(in srgb, var(--newMenu_accent) 8%, var(--newMenu_bgSoft));
+  border-color: color-mix(in srgb, var(--newMenu_accent) 32%, transparent);
+}
+
+.NewMenu_confirmModal_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--newMenu_borderSoft);
+  background-color: color-mix(in srgb, var(--newMenu_bgSoft) 60%, transparent);
+}
+
+.NewMenu_confirmModal_btn {
+  appearance: none;
+  padding: 7px 14px;
+  border: 1px solid var(--newMenu_border);
+  border-radius: var(--newMenu_radiusSm);
+  background-color: var(--newMenu_bgElev);
+  color: var(--newMenu_text);
+  font: inherit;
+  font-size: var(--newMenu_textSm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--newMenu_dur) var(--newMenu_ease),
+              filter var(--newMenu_dur) var(--newMenu_ease);
+}
+.NewMenu_confirmModal_btn:hover { background-color: var(--newMenu_bgSoft); }
+.NewMenu_confirmModal_btn:focus-visible { outline: 2px solid var(--newMenu_accent); outline-offset: 2px; }
+
+.NewMenu_confirmModal_btn_primary {
+  background-color: var(--newMenu_accent);
+  border-color: var(--newMenu_accent);
+  color: white;
+}
+.NewMenu_confirmModal_btn_primary:hover { filter: brightness(1.06); background-color: var(--newMenu_accent); }
+
+.NewMenu_confirmModal_btn_danger {
+  background-color: var(--newMenu_danger);
+  border-color: var(--newMenu_danger);
+  color: white;
+}
+.NewMenu_confirmModal_btn_danger:hover { filter: brightness(1.06); background-color: var(--newMenu_danger); }
