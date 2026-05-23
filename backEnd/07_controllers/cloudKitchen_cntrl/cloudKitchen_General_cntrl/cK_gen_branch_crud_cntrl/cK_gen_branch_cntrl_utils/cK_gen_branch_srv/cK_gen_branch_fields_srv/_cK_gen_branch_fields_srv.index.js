@@ -1,0 +1,11 @@
+export { cK_gen_branch_update_name_srv } from "./cK_gen_branch_update_name_srv.js";
+export { cK_gen_branch_update_location_srv } from "./cK_gen_branch_update_location_srv.js";
+export { cK_gen_branch_update_contact_srv } from "./cK_gen_branch_update_contact_srv.js";
+export { cK_gen_branch_update_files_srv } from "./cK_gen_branch_update_files_srv.js";
+export { cK_gen_branch_update_operations_srv } from "./cK_gen_branch_update_operations_srv.js";
+export { cK_gen_branch_update_expenses_srv } from "./cK_gen_branch_update_expenses_srv.js";
+export { cK_gen_branch_update_contracts_srv } from "./cK_gen_branch_update_contracts_srv.js";
+export { cK_gen_branch_update_employees_srv } from "./cK_gen_branch_update_employees_srv.js";
+export { cK_gen_branch_update_equipments_srv } from "./cK_gen_branch_update_equipments_srv.js";
+export { cK_gen_branch_update_brands_srv } from "./cK_gen_branch_update_brands_srv.js";
+export { cK_gen_branch_update_notes_srv } from "./cK_gen_branch_update_notes_srv.js";

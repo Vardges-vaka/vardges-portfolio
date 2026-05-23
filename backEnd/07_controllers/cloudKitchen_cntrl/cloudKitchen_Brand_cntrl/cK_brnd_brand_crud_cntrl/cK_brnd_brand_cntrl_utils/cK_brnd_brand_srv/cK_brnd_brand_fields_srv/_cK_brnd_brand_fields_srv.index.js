@@ -1,0 +1,17 @@
+export { cK_brnd_brand_update_name_srv } from "./cK_brnd_brand_update_name_srv.js";
+export { cK_brnd_brand_update_tagline_srv } from "./cK_brnd_brand_update_tagline_srv.js";
+export { cK_brnd_brand_update_files_srv } from "./cK_brnd_brand_update_files_srv.js";
+export { cK_brnd_brand_update_socials_srv } from "./cK_brnd_brand_update_socials_srv.js";
+export { cK_brnd_brand_update_registeredIn_srv } from "./cK_brnd_brand_update_registeredIn_srv.js";
+export { cK_brnd_brand_update_description_srv } from "./cK_brnd_brand_update_description_srv.js";
+export { cK_brnd_brand_update_priceRange_srv } from "./cK_brnd_brand_update_priceRange_srv.js";
+export { cK_brnd_brand_update_cuisineTags_srv } from "./cK_brnd_brand_update_cuisineTags_srv.js";
+export { cK_brnd_brand_update_website_srv } from "./cK_brnd_brand_update_website_srv.js";
+export { cK_brnd_brand_update_contracts_srv } from "./cK_brnd_brand_update_contracts_srv.js";
+export { cK_brnd_brand_update_integrations_srv } from "./cK_brnd_brand_update_integrations_srv.js";
+export { cK_brnd_brand_update_siblings_srv } from "./cK_brnd_brand_update_siblings_srv.js";
+export { cK_brnd_brand_update_employees_srv } from "./cK_brnd_brand_update_employees_srv.js";
+export { cK_brnd_brand_update_equipments_srv } from "./cK_brnd_brand_update_equipments_srv.js";
+export { cK_brnd_brand_update_branches_srv } from "./cK_brnd_brand_update_branches_srv.js";
+export { cK_brnd_brand_update_menus_srv } from "./cK_brnd_brand_update_menus_srv.js";
+export { cK_brnd_brand_update_competitors_srv } from "./cK_brnd_brand_update_competitors_srv.js";

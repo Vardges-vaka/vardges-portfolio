@@ -1,0 +1,12 @@
+export { default as CK_BRANCH_CONFIG } from "./CK_BRANCH_API.config.js";
+export { default as CK_EMPLOYEE_CONFIG } from "./CK_EMPLOYEE_API.config.js";
+export { default as CK_EQUIPMENT_CONFIG } from "./CK_EQUIPMENT_API.config.js";
+export { default as CK_CUSTOMER_CONFIG } from "./CK_CUSTOMER_API.config.js";
+export { default as CK_CUISINE_TAG_CONFIG } from "./CK_CUISINE_TAG_API.config.js";
+export { default as CK_INTEGRATION_CONFIG } from "./CK_INTEGRATION_API.config.js";
+export { default as CK_INVOICE_CONFIG } from "./CK_INVOICE_API.config.js";
+export { default as CK_RATING_CONFIG } from "./CK_RATING_API.config.js";
+export { default as CK_SALES_CHANNEL_CONFIG } from "./CK_SALES_CHANNEL_API.config.js";
+export { default as CK_SALES_CHANNEL_METRICS_CONFIG } from "./CK_SALES_CHANNEL_METRICS_API.config.js";
+export { default as CK_SALES_PLATFORM_CONFIG } from "./CK_SALES_PLATFORM_API.config.js";
+export { default as CK_CONTRACT_CONFIG } from "./CK_CONTRACT_API.config.js";

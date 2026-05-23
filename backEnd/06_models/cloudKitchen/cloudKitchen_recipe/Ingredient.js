@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { AUDIT } from "../modelHelpers/.temp.index.js";
-const supplierSchema = new mongoose.Schema(
+
+const ingredientSchema = new mongoose.Schema(
   {
     name: {
       label: { type: String },
@@ -14,7 +15,6 @@ const supplierSchema = new mongoose.Schema(
     },
     cost: { type: Number },
 
-    
     files: {
       logo: { type: String },
       invoices: [
@@ -36,6 +36,6 @@ const supplierSchema = new mongoose.Schema(
   },
   { timestamps: true },
 );
-const Supplier = mongoose.model("Supplier", supplierSchema);
+const Ingredient = mongoose.model("Ingredient", ingredientSchema);
 
-export default Supplier;
+export default Ingredient;

@@ -1,15 +1,12 @@
-// branch;
-// contract;
-// cuisineTag;
-// customer;
-// employee;
-// equipment;
-// itegration;
-// ivoice;
-// rating;
-// salesChannel;
-// salesChannelMetrics;
-// salesPlatform;
-// website;
-
-cuisineTagRoutes
+export { default as cK_gen_cuisineTagRoutes } from "./cuisineTagRoutes.js";
+export { default as cK_gen_customerRoutes } from "./customerRoutes.js";
+export { default as cK_gen_branchRoutes } from "./branchRoutes.js";
+export { default as cK_gen_employeeRoutes } from "./employeeRoutes.js";
+export { default as cK_gen_equipmentRoutes } from "./equipmentRoutes.js";
+export { default as cK_gen_integrationRoutes } from "./integrationRoutes.js";
+export { default as cK_gen_invoiceRoutes } from "./invoiceRoutes.js";
+export { default as cK_gen_ratingRoutes } from "./ratingRoutes.js";
+export { default as cK_gen_salesChannelRoutes } from "./salesChannelRoutes.js";
+export { default as cK_gen_salesChannelMetricsRoutes } from "./salesChannelMetricsRoutes.js";
+export { default as cK_gen_salesPlatformRoutes } from "./salesPlatformRoutes.js";
+export { default as cK_gen_contractRoutes } from "./contractRoutes.js";

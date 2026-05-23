@@ -1,0 +1,15 @@
+export { cK_gen_employee_update_name_srv } from "./cK_gen_employee_update_name_srv.js";
+export { cK_gen_employee_update_personalDetails_srv } from "./cK_gen_employee_update_personalDetails_srv.js";
+export { cK_gen_employee_update_address_srv } from "./cK_gen_employee_update_address_srv.js";
+export { cK_gen_employee_update_files_srv } from "./cK_gen_employee_update_files_srv.js";
+export { cK_gen_employee_update_uniform_srv } from "./cK_gen_employee_update_uniform_srv.js";
+export { cK_gen_employee_update_certifications_srv } from "./cK_gen_employee_update_certifications_srv.js";
+export { cK_gen_employee_update_employmentInfo_srv } from "./cK_gen_employee_update_employmentInfo_srv.js";
+export { cK_gen_employee_update_legalDocs_srv } from "./cK_gen_employee_update_legalDocs_srv.js";
+export { cK_gen_employee_update_salary_srv } from "./cK_gen_employee_update_salary_srv.js";
+export { cK_gen_employee_update_attendanceInfo_srv } from "./cK_gen_employee_update_attendanceInfo_srv.js";
+export { cK_gen_employee_update_relatedTo_srv } from "./cK_gen_employee_update_relatedTo_srv.js";
+export { cK_gen_employee_update_branch_srv } from "./cK_gen_employee_update_branch_srv.js";
+export { cK_gen_employee_update_contracts_srv } from "./cK_gen_employee_update_contracts_srv.js";
+export { cK_gen_employee_update_associatedBrands_srv } from "./cK_gen_employee_update_associatedBrands_srv.js";
+export { cK_gen_employee_update_notes_srv } from "./cK_gen_employee_update_notes_srv.js";

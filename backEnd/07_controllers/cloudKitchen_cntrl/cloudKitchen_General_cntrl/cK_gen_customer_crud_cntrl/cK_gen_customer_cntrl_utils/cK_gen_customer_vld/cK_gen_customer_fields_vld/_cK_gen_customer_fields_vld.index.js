@@ -1,0 +1,9 @@
+export { cK_gen_customer_update_name_vld } from "./cK_gen_customer_update_name_vld.js";
+export { cK_gen_customer_update_aliases_vld } from "./cK_gen_customer_update_aliases_vld.js";
+export { cK_gen_customer_update_contact_vld } from "./cK_gen_customer_update_contact_vld.js";
+export { cK_gen_customer_update_addresses_vld } from "./cK_gen_customer_update_addresses_vld.js";
+export { cK_gen_customer_update_encounteredOn_vld } from "./cK_gen_customer_update_encounteredOn_vld.js";
+export { cK_gen_customer_update_orderStats_vld } from "./cK_gen_customer_update_orderStats_vld.js";
+export { cK_gen_customer_update_complaints_vld } from "./cK_gen_customer_update_complaints_vld.js";
+export { cK_gen_customer_update_source_vld } from "./cK_gen_customer_update_source_vld.js";
+export { cK_gen_customer_update_notes_vld } from "./cK_gen_customer_update_notes_vld.js";

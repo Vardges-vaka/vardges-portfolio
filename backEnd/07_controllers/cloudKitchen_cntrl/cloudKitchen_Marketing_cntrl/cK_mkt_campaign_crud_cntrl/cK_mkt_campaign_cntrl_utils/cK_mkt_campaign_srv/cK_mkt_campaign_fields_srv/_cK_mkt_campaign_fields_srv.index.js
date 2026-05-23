@@ -1,0 +1,17 @@
+export { cK_mkt_campaign_update_name_srv } from "./cK_mkt_campaign_update_name_srv.js";
+export { cK_mkt_campaign_update_description_srv } from "./cK_mkt_campaign_update_description_srv.js";
+export { cK_mkt_campaign_update_kind_srv } from "./cK_mkt_campaign_update_kind_srv.js";
+export { cK_mkt_campaign_update_source_srv } from "./cK_mkt_campaign_update_source_srv.js";
+export { cK_mkt_campaign_update_platformPromoId_srv } from "./cK_mkt_campaign_update_platformPromoId_srv.js";
+export { cK_mkt_campaign_update_status_srv } from "./cK_mkt_campaign_update_status_srv.js";
+export { cK_mkt_campaign_update_lifecycle_srv } from "./cK_mkt_campaign_update_lifecycle_srv.js";
+export { cK_mkt_campaign_update_validity_srv } from "./cK_mkt_campaign_update_validity_srv.js";
+export { cK_mkt_campaign_update_valueType_srv } from "./cK_mkt_campaign_update_valueType_srv.js";
+export { cK_mkt_campaign_update_value_srv } from "./cK_mkt_campaign_update_value_srv.js";
+export { cK_mkt_campaign_update_cap_srv } from "./cK_mkt_campaign_update_cap_srv.js";
+export { cK_mkt_campaign_update_currency_srv } from "./cK_mkt_campaign_update_currency_srv.js";
+export { cK_mkt_campaign_update_funding_srv } from "./cK_mkt_campaign_update_funding_srv.js";
+export { cK_mkt_campaign_update_conditions_srv } from "./cK_mkt_campaign_update_conditions_srv.js";
+export { cK_mkt_campaign_update_salesChannels_srv } from "./cK_mkt_campaign_update_salesChannels_srv.js";
+export { cK_mkt_campaign_update_files_srv } from "./cK_mkt_campaign_update_files_srv.js";
+export { cK_mkt_campaign_update_notes_srv } from "./cK_mkt_campaign_update_notes_srv.js";

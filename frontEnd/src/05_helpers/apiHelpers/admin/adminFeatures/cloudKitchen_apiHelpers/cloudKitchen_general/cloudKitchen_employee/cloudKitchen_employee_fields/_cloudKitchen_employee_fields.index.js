@@ -1,0 +1,15 @@
+export { default as CK_gen_employee_update_name } from "./CK_gen_employee_update_name.js";
+export { default as CK_gen_employee_update_personalDetails } from "./CK_gen_employee_update_personalDetails.js";
+export { default as CK_gen_employee_update_address } from "./CK_gen_employee_update_address.js";
+export { default as CK_gen_employee_update_files } from "./CK_gen_employee_update_files.js";
+export { default as CK_gen_employee_update_uniform } from "./CK_gen_employee_update_uniform.js";
+export { default as CK_gen_employee_update_certifications } from "./CK_gen_employee_update_certifications.js";
+export { default as CK_gen_employee_update_employmentInfo } from "./CK_gen_employee_update_employmentInfo.js";
+export { default as CK_gen_employee_update_legalDocs } from "./CK_gen_employee_update_legalDocs.js";
+export { default as CK_gen_employee_update_salary } from "./CK_gen_employee_update_salary.js";
+export { default as CK_gen_employee_update_attendanceInfo } from "./CK_gen_employee_update_attendanceInfo.js";
+export { default as CK_gen_employee_update_relatedTo } from "./CK_gen_employee_update_relatedTo.js";
+export { default as CK_gen_employee_update_branch } from "./CK_gen_employee_update_branch.js";
+export { default as CK_gen_employee_update_contracts } from "./CK_gen_employee_update_contracts.js";
+export { default as CK_gen_employee_update_associatedBrands } from "./CK_gen_employee_update_associatedBrands.js";
+export { default as CK_gen_employee_update_notes } from "./CK_gen_employee_update_notes.js";

@@ -1,0 +1,16 @@
+export { default as cK_gen_equipment_update_name_cntrl } from "./cK_gen_equipment_update_name_cntrl.js";
+export { default as cK_gen_equipment_update_category_cntrl } from "./cK_gen_equipment_update_category_cntrl.js";
+export { default as cK_gen_equipment_update_assetTag_cntrl } from "./cK_gen_equipment_update_assetTag_cntrl.js";
+export { default as cK_gen_equipment_update_description_cntrl } from "./cK_gen_equipment_update_description_cntrl.js";
+export { default as cK_gen_equipment_update_storedIn_cntrl } from "./cK_gen_equipment_update_storedIn_cntrl.js";
+export { default as cK_gen_equipment_update_branch_cntrl } from "./cK_gen_equipment_update_branch_cntrl.js";
+export { default as cK_gen_equipment_update_status_cntrl } from "./cK_gen_equipment_update_status_cntrl.js";
+export { default as cK_gen_equipment_update_purchase_cntrl } from "./cK_gen_equipment_update_purchase_cntrl.js";
+export { default as cK_gen_equipment_update_warranty_cntrl } from "./cK_gen_equipment_update_warranty_cntrl.js";
+export { default as cK_gen_equipment_update_decommissionedAt_cntrl } from "./cK_gen_equipment_update_decommissionedAt_cntrl.js";
+export { default as cK_gen_equipment_update_decommissionReason_cntrl } from "./cK_gen_equipment_update_decommissionReason_cntrl.js";
+export { default as cK_gen_equipment_update_maintenance_cntrl } from "./cK_gen_equipment_update_maintenance_cntrl.js";
+export { default as cK_gen_equipment_update_contracts_cntrl } from "./cK_gen_equipment_update_contracts_cntrl.js";
+export { default as cK_gen_equipment_update_files_cntrl } from "./cK_gen_equipment_update_files_cntrl.js";
+export { default as cK_gen_equipment_update_depreciation_cntrl } from "./cK_gen_equipment_update_depreciation_cntrl.js";
+export { default as cK_gen_equipment_update_notes_cntrl } from "./cK_gen_equipment_update_notes_cntrl.js";

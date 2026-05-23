@@ -1,0 +1,17 @@
+export { default as CK_gen_integration_update_provider } from "./CK_gen_integration_update_provider.js";
+export { default as CK_gen_integration_update_kind } from "./CK_gen_integration_update_kind.js";
+export { default as CK_gen_integration_update_accountLabel } from "./CK_gen_integration_update_accountLabel.js";
+export { default as CK_gen_integration_update_description } from "./CK_gen_integration_update_description.js";
+export { default as CK_gen_integration_update_status } from "./CK_gen_integration_update_status.js";
+export { default as CK_gen_integration_update_lifecycle } from "./CK_gen_integration_update_lifecycle.js";
+export { default as CK_gen_integration_update_links } from "./CK_gen_integration_update_links.js";
+export { default as CK_gen_integration_update_payment } from "./CK_gen_integration_update_payment.js";
+export { default as CK_gen_integration_update_loginCredentials } from "./CK_gen_integration_update_loginCredentials.js";
+export { default as CK_gen_integration_update_kam } from "./CK_gen_integration_update_kam.js";
+export { default as CK_gen_integration_update_support } from "./CK_gen_integration_update_support.js";
+export { default as CK_gen_integration_update_scheduledMaintenances } from "./CK_gen_integration_update_scheduledMaintenances.js";
+export { default as CK_gen_integration_update_brands } from "./CK_gen_integration_update_brands.js";
+export { default as CK_gen_integration_update_branches } from "./CK_gen_integration_update_branches.js";
+export { default as CK_gen_integration_update_contract } from "./CK_gen_integration_update_contract.js";
+export { default as CK_gen_integration_update_files } from "./CK_gen_integration_update_files.js";
+export { default as CK_gen_integration_update_notes } from "./CK_gen_integration_update_notes.js";

@@ -1,0 +1,12 @@
+export { cK_mkt_adSpend_update_salesChannel_vld } from "./cK_mkt_adSpend_update_salesChannel_vld.js";
+export { cK_mkt_adSpend_update_kind_vld } from "./cK_mkt_adSpend_update_kind_vld.js";
+export { cK_mkt_adSpend_update_period_vld } from "./cK_mkt_adSpend_update_period_vld.js";
+export { cK_mkt_adSpend_update_amount_vld } from "./cK_mkt_adSpend_update_amount_vld.js";
+export { cK_mkt_adSpend_update_basis_vld } from "./cK_mkt_adSpend_update_basis_vld.js";
+export { cK_mkt_adSpend_update_isContractual_vld } from "./cK_mkt_adSpend_update_isContractual_vld.js";
+export { cK_mkt_adSpend_update_contract_vld } from "./cK_mkt_adSpend_update_contract_vld.js";
+export { cK_mkt_adSpend_update_metrics_vld } from "./cK_mkt_adSpend_update_metrics_vld.js";
+export { cK_mkt_adSpend_update_netSalesForPeriod_vld } from "./cK_mkt_adSpend_update_netSalesForPeriod_vld.js";
+export { cK_mkt_adSpend_update_source_vld } from "./cK_mkt_adSpend_update_source_vld.js";
+export { cK_mkt_adSpend_update_files_vld } from "./cK_mkt_adSpend_update_files_vld.js";
+export { cK_mkt_adSpend_update_notes_vld } from "./cK_mkt_adSpend_update_notes_vld.js";

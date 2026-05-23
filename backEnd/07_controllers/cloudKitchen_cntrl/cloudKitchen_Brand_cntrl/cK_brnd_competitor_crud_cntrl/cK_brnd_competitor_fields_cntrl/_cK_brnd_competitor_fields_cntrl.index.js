@@ -1,0 +1,10 @@
+export { default as cK_brnd_competitor_update_name_cntrl } from "./cK_brnd_competitor_update_name_cntrl.js";
+export { default as cK_brnd_competitor_update_description_cntrl } from "./cK_brnd_competitor_update_description_cntrl.js";
+export { default as cK_brnd_competitor_update_menus_cntrl } from "./cK_brnd_competitor_update_menus_cntrl.js";
+export { default as cK_brnd_competitor_update_priceRange_cntrl } from "./cK_brnd_competitor_update_priceRange_cntrl.js";
+export { default as cK_brnd_competitor_update_cuisineTags_cntrl } from "./cK_brnd_competitor_update_cuisineTags_cntrl.js";
+export { default as cK_brnd_competitor_update_files_cntrl } from "./cK_brnd_competitor_update_files_cntrl.js";
+export { default as cK_brnd_competitor_update_contact_cntrl } from "./cK_brnd_competitor_update_contact_cntrl.js";
+export { default as cK_brnd_competitor_update_socialMedia_cntrl } from "./cK_brnd_competitor_update_socialMedia_cntrl.js";
+export { default as cK_brnd_competitor_update_globalObservations_cntrl } from "./cK_brnd_competitor_update_globalObservations_cntrl.js";
+export { default as cK_brnd_competitor_update_branches_cntrl } from "./cK_brnd_competitor_update_branches_cntrl.js";

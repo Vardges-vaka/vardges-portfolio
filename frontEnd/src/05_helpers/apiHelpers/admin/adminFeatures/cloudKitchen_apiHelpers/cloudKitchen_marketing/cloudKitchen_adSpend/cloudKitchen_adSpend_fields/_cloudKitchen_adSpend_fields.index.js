@@ -1,0 +1,12 @@
+export { default as CK_mkt_adSpend_update_salesChannel } from "./CK_mkt_adSpend_update_salesChannel.js";
+export { default as CK_mkt_adSpend_update_kind } from "./CK_mkt_adSpend_update_kind.js";
+export { default as CK_mkt_adSpend_update_period } from "./CK_mkt_adSpend_update_period.js";
+export { default as CK_mkt_adSpend_update_amount } from "./CK_mkt_adSpend_update_amount.js";
+export { default as CK_mkt_adSpend_update_basis } from "./CK_mkt_adSpend_update_basis.js";
+export { default as CK_mkt_adSpend_update_isContractual } from "./CK_mkt_adSpend_update_isContractual.js";
+export { default as CK_mkt_adSpend_update_contract } from "./CK_mkt_adSpend_update_contract.js";
+export { default as CK_mkt_adSpend_update_metrics } from "./CK_mkt_adSpend_update_metrics.js";
+export { default as CK_mkt_adSpend_update_netSalesForPeriod } from "./CK_mkt_adSpend_update_netSalesForPeriod.js";
+export { default as CK_mkt_adSpend_update_source } from "./CK_mkt_adSpend_update_source.js";
+export { default as CK_mkt_adSpend_update_files } from "./CK_mkt_adSpend_update_files.js";
+export { default as CK_mkt_adSpend_update_notes } from "./CK_mkt_adSpend_update_notes.js";

@@ -1,0 +1,16 @@
+export { default as CK_gen_equipment_update_name } from "./CK_gen_equipment_update_name.js";
+export { default as CK_gen_equipment_update_category } from "./CK_gen_equipment_update_category.js";
+export { default as CK_gen_equipment_update_assetTag } from "./CK_gen_equipment_update_assetTag.js";
+export { default as CK_gen_equipment_update_description } from "./CK_gen_equipment_update_description.js";
+export { default as CK_gen_equipment_update_storedIn } from "./CK_gen_equipment_update_storedIn.js";
+export { default as CK_gen_equipment_update_branch } from "./CK_gen_equipment_update_branch.js";
+export { default as CK_gen_equipment_update_status } from "./CK_gen_equipment_update_status.js";
+export { default as CK_gen_equipment_update_purchase } from "./CK_gen_equipment_update_purchase.js";
+export { default as CK_gen_equipment_update_warranty } from "./CK_gen_equipment_update_warranty.js";
+export { default as CK_gen_equipment_update_decommissionedAt } from "./CK_gen_equipment_update_decommissionedAt.js";
+export { default as CK_gen_equipment_update_decommissionReason } from "./CK_gen_equipment_update_decommissionReason.js";
+export { default as CK_gen_equipment_update_maintenance } from "./CK_gen_equipment_update_maintenance.js";
+export { default as CK_gen_equipment_update_contracts } from "./CK_gen_equipment_update_contracts.js";
+export { default as CK_gen_equipment_update_files } from "./CK_gen_equipment_update_files.js";
+export { default as CK_gen_equipment_update_depreciation } from "./CK_gen_equipment_update_depreciation.js";
+export { default as CK_gen_equipment_update_notes } from "./CK_gen_equipment_update_notes.js";

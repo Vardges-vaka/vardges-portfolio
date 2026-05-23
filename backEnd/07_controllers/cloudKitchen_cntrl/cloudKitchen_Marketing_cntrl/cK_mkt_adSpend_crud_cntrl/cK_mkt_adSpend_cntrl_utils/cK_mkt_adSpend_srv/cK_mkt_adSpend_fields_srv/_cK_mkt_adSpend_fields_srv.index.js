@@ -1,0 +1,12 @@
+export { cK_mkt_adSpend_update_salesChannel_srv } from "./cK_mkt_adSpend_update_salesChannel_srv.js";
+export { cK_mkt_adSpend_update_kind_srv } from "./cK_mkt_adSpend_update_kind_srv.js";
+export { cK_mkt_adSpend_update_period_srv } from "./cK_mkt_adSpend_update_period_srv.js";
+export { cK_mkt_adSpend_update_amount_srv } from "./cK_mkt_adSpend_update_amount_srv.js";
+export { cK_mkt_adSpend_update_basis_srv } from "./cK_mkt_adSpend_update_basis_srv.js";
+export { cK_mkt_adSpend_update_isContractual_srv } from "./cK_mkt_adSpend_update_isContractual_srv.js";
+export { cK_mkt_adSpend_update_contract_srv } from "./cK_mkt_adSpend_update_contract_srv.js";
+export { cK_mkt_adSpend_update_metrics_srv } from "./cK_mkt_adSpend_update_metrics_srv.js";
+export { cK_mkt_adSpend_update_netSalesForPeriod_srv } from "./cK_mkt_adSpend_update_netSalesForPeriod_srv.js";
+export { cK_mkt_adSpend_update_source_srv } from "./cK_mkt_adSpend_update_source_srv.js";
+export { cK_mkt_adSpend_update_files_srv } from "./cK_mkt_adSpend_update_files_srv.js";
+export { cK_mkt_adSpend_update_notes_srv } from "./cK_mkt_adSpend_update_notes_srv.js";

@@ -1,0 +1,11 @@
+export { cK_gen_branch_update_name_vld } from "./cK_gen_branch_update_name_vld.js";
+export { cK_gen_branch_update_location_vld } from "./cK_gen_branch_update_location_vld.js";
+export { cK_gen_branch_update_contact_vld } from "./cK_gen_branch_update_contact_vld.js";
+export { cK_gen_branch_update_files_vld } from "./cK_gen_branch_update_files_vld.js";
+export { cK_gen_branch_update_operations_vld } from "./cK_gen_branch_update_operations_vld.js";
+export { cK_gen_branch_update_expenses_vld } from "./cK_gen_branch_update_expenses_vld.js";
+export { cK_gen_branch_update_contracts_vld } from "./cK_gen_branch_update_contracts_vld.js";
+export { cK_gen_branch_update_employees_vld } from "./cK_gen_branch_update_employees_vld.js";
+export { cK_gen_branch_update_equipments_vld } from "./cK_gen_branch_update_equipments_vld.js";
+export { cK_gen_branch_update_brands_vld } from "./cK_gen_branch_update_brands_vld.js";
+export { cK_gen_branch_update_notes_vld } from "./cK_gen_branch_update_notes_vld.js";

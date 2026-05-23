@@ -1,0 +1,9 @@
+export { cK_gen_customer_update_name_srv } from "./cK_gen_customer_update_name_srv.js";
+export { cK_gen_customer_update_aliases_srv } from "./cK_gen_customer_update_aliases_srv.js";
+export { cK_gen_customer_update_contact_srv } from "./cK_gen_customer_update_contact_srv.js";
+export { cK_gen_customer_update_addresses_srv } from "./cK_gen_customer_update_addresses_srv.js";
+export { cK_gen_customer_update_encounteredOn_srv } from "./cK_gen_customer_update_encounteredOn_srv.js";
+export { cK_gen_customer_update_orderStats_srv } from "./cK_gen_customer_update_orderStats_srv.js";
+export { cK_gen_customer_update_complaints_srv } from "./cK_gen_customer_update_complaints_srv.js";
+export { cK_gen_customer_update_source_srv } from "./cK_gen_customer_update_source_srv.js";
+export { cK_gen_customer_update_notes_srv } from "./cK_gen_customer_update_notes_srv.js";

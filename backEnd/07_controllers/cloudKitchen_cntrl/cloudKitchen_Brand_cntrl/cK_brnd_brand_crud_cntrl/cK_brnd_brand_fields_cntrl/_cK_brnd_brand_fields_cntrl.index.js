@@ -1,0 +1,17 @@
+export { default as cK_brnd_brand_update_name_cntrl } from "./cK_brnd_brand_update_name_cntrl.js";
+export { default as cK_brnd_brand_update_tagline_cntrl } from "./cK_brnd_brand_update_tagline_cntrl.js";
+export { default as cK_brnd_brand_update_files_cntrl } from "./cK_brnd_brand_update_files_cntrl.js";
+export { default as cK_brnd_brand_update_socials_cntrl } from "./cK_brnd_brand_update_socials_cntrl.js";
+export { default as cK_brnd_brand_update_registeredIn_cntrl } from "./cK_brnd_brand_update_registeredIn_cntrl.js";
+export { default as cK_brnd_brand_update_description_cntrl } from "./cK_brnd_brand_update_description_cntrl.js";
+export { default as cK_brnd_brand_update_priceRange_cntrl } from "./cK_brnd_brand_update_priceRange_cntrl.js";
+export { default as cK_brnd_brand_update_cuisineTags_cntrl } from "./cK_brnd_brand_update_cuisineTags_cntrl.js";
+export { default as cK_brnd_brand_update_website_cntrl } from "./cK_brnd_brand_update_website_cntrl.js";
+export { default as cK_brnd_brand_update_contracts_cntrl } from "./cK_brnd_brand_update_contracts_cntrl.js";
+export { default as cK_brnd_brand_update_integrations_cntrl } from "./cK_brnd_brand_update_integrations_cntrl.js";
+export { default as cK_brnd_brand_update_siblings_cntrl } from "./cK_brnd_brand_update_siblings_cntrl.js";
+export { default as cK_brnd_brand_update_employees_cntrl } from "./cK_brnd_brand_update_employees_cntrl.js";
+export { default as cK_brnd_brand_update_equipments_cntrl } from "./cK_brnd_brand_update_equipments_cntrl.js";
+export { default as cK_brnd_brand_update_branches_cntrl } from "./cK_brnd_brand_update_branches_cntrl.js";
+export { default as cK_brnd_brand_update_menus_cntrl } from "./cK_brnd_brand_update_menus_cntrl.js";
+export { default as cK_brnd_brand_update_competitors_cntrl } from "./cK_brnd_brand_update_competitors_cntrl.js";

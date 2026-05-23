@@ -1,0 +1,15 @@
+export { cK_gen_rating_update_salesChannel_srv } from "./cK_gen_rating_update_salesChannel_srv.js";
+export { cK_gen_rating_update_order_srv } from "./cK_gen_rating_update_order_srv.js";
+export { cK_gen_rating_update_platformOrderId_srv } from "./cK_gen_rating_update_platformOrderId_srv.js";
+export { cK_gen_rating_update_customer_srv } from "./cK_gen_rating_update_customer_srv.js";
+export { cK_gen_rating_update_stars_srv } from "./cK_gen_rating_update_stars_srv.js";
+export { cK_gen_rating_update_comment_srv } from "./cK_gen_rating_update_comment_srv.js";
+export { cK_gen_rating_update_receivedAt_srv } from "./cK_gen_rating_update_receivedAt_srv.js";
+export { cK_gen_rating_update_customerNameSnapshot_srv } from "./cK_gen_rating_update_customerNameSnapshot_srv.js";
+export { cK_gen_rating_update_customerLoyaltyTier_srv } from "./cK_gen_rating_update_customerLoyaltyTier_srv.js";
+export { cK_gen_rating_update_sentimentTag_srv } from "./cK_gen_rating_update_sentimentTag_srv.js";
+export { cK_gen_rating_update_itemFeedback_srv } from "./cK_gen_rating_update_itemFeedback_srv.js";
+export { cK_gen_rating_update_attachments_srv } from "./cK_gen_rating_update_attachments_srv.js";
+export { cK_gen_rating_update_reply_srv } from "./cK_gen_rating_update_reply_srv.js";
+export { cK_gen_rating_update_source_srv } from "./cK_gen_rating_update_source_srv.js";
+export { cK_gen_rating_update_notes_srv } from "./cK_gen_rating_update_notes_srv.js";

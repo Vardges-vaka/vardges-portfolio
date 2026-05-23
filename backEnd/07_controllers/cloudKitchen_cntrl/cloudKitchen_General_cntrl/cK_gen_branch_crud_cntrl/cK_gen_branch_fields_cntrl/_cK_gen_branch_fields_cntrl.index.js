@@ -1,0 +1,11 @@
+export { default as cK_gen_branch_update_name_cntrl } from "./cK_gen_branch_update_name_cntrl.js";
+export { default as cK_gen_branch_update_location_cntrl } from "./cK_gen_branch_update_location_cntrl.js";
+export { default as cK_gen_branch_update_contact_cntrl } from "./cK_gen_branch_update_contact_cntrl.js";
+export { default as cK_gen_branch_update_files_cntrl } from "./cK_gen_branch_update_files_cntrl.js";
+export { default as cK_gen_branch_update_operations_cntrl } from "./cK_gen_branch_update_operations_cntrl.js";
+export { default as cK_gen_branch_update_expenses_cntrl } from "./cK_gen_branch_update_expenses_cntrl.js";
+export { default as cK_gen_branch_update_contracts_cntrl } from "./cK_gen_branch_update_contracts_cntrl.js";
+export { default as cK_gen_branch_update_employees_cntrl } from "./cK_gen_branch_update_employees_cntrl.js";
+export { default as cK_gen_branch_update_equipments_cntrl } from "./cK_gen_branch_update_equipments_cntrl.js";
+export { default as cK_gen_branch_update_brands_cntrl } from "./cK_gen_branch_update_brands_cntrl.js";
+export { default as cK_gen_branch_update_notes_cntrl } from "./cK_gen_branch_update_notes_cntrl.js";

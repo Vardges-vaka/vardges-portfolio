@@ -1,0 +1,17 @@
+export { default as CK_mkt_campaign_update_name } from "./CK_mkt_campaign_update_name.js";
+export { default as CK_mkt_campaign_update_description } from "./CK_mkt_campaign_update_description.js";
+export { default as CK_mkt_campaign_update_kind } from "./CK_mkt_campaign_update_kind.js";
+export { default as CK_mkt_campaign_update_source } from "./CK_mkt_campaign_update_source.js";
+export { default as CK_mkt_campaign_update_platformPromoId } from "./CK_mkt_campaign_update_platformPromoId.js";
+export { default as CK_mkt_campaign_update_status } from "./CK_mkt_campaign_update_status.js";
+export { default as CK_mkt_campaign_update_lifecycle } from "./CK_mkt_campaign_update_lifecycle.js";
+export { default as CK_mkt_campaign_update_validity } from "./CK_mkt_campaign_update_validity.js";
+export { default as CK_mkt_campaign_update_valueType } from "./CK_mkt_campaign_update_valueType.js";
+export { default as CK_mkt_campaign_update_value } from "./CK_mkt_campaign_update_value.js";
+export { default as CK_mkt_campaign_update_cap } from "./CK_mkt_campaign_update_cap.js";
+export { default as CK_mkt_campaign_update_currency } from "./CK_mkt_campaign_update_currency.js";
+export { default as CK_mkt_campaign_update_funding } from "./CK_mkt_campaign_update_funding.js";
+export { default as CK_mkt_campaign_update_conditions } from "./CK_mkt_campaign_update_conditions.js";
+export { default as CK_mkt_campaign_update_salesChannels } from "./CK_mkt_campaign_update_salesChannels.js";
+export { default as CK_mkt_campaign_update_files } from "./CK_mkt_campaign_update_files.js";
+export { default as CK_mkt_campaign_update_notes } from "./CK_mkt_campaign_update_notes.js";

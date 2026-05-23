@@ -1,0 +1,10 @@
+export { default as CK_brnd_competitor_update_name } from "./CK_brnd_competitor_update_name.js";
+export { default as CK_brnd_competitor_update_description } from "./CK_brnd_competitor_update_description.js";
+export { default as CK_brnd_competitor_update_menus } from "./CK_brnd_competitor_update_menus.js";
+export { default as CK_brnd_competitor_update_priceRange } from "./CK_brnd_competitor_update_priceRange.js";
+export { default as CK_brnd_competitor_update_cuisineTags } from "./CK_brnd_competitor_update_cuisineTags.js";
+export { default as CK_brnd_competitor_update_files } from "./CK_brnd_competitor_update_files.js";
+export { default as CK_brnd_competitor_update_contact } from "./CK_brnd_competitor_update_contact.js";
+export { default as CK_brnd_competitor_update_socialMedia } from "./CK_brnd_competitor_update_socialMedia.js";
+export { default as CK_brnd_competitor_update_globalObservations } from "./CK_brnd_competitor_update_globalObservations.js";
+export { default as CK_brnd_competitor_update_branches } from "./CK_brnd_competitor_update_branches.js";

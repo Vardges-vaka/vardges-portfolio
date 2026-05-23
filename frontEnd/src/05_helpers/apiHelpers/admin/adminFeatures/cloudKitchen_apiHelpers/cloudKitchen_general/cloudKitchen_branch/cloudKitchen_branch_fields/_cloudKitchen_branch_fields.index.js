@@ -1,0 +1,11 @@
+export { default as CK_gen_branch_update_name } from "./CK_gen_branch_update_name.js";
+export { default as CK_gen_branch_update_location } from "./CK_gen_branch_update_location.js";
+export { default as CK_gen_branch_update_contact } from "./CK_gen_branch_update_contact.js";
+export { default as CK_gen_branch_update_files } from "./CK_gen_branch_update_files.js";
+export { default as CK_gen_branch_update_operations } from "./CK_gen_branch_update_operations.js";
+export { default as CK_gen_branch_update_expenses } from "./CK_gen_branch_update_expenses.js";
+export { default as CK_gen_branch_update_contracts } from "./CK_gen_branch_update_contracts.js";
+export { default as CK_gen_branch_update_employees } from "./CK_gen_branch_update_employees.js";
+export { default as CK_gen_branch_update_equipments } from "./CK_gen_branch_update_equipments.js";
+export { default as CK_gen_branch_update_brands } from "./CK_gen_branch_update_brands.js";
+export { default as CK_gen_branch_update_notes } from "./CK_gen_branch_update_notes.js";

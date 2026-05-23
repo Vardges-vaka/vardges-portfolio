@@ -1,0 +1,10 @@
+export { cK_gen_salesChannel_update_branch_vld } from "./cK_gen_salesChannel_update_branch_vld.js";
+export { cK_gen_salesChannel_update_brand_vld } from "./cK_gen_salesChannel_update_brand_vld.js";
+export { cK_gen_salesChannel_update_platform_vld } from "./cK_gen_salesChannel_update_platform_vld.js";
+export { cK_gen_salesChannel_update_storeUrl_vld } from "./cK_gen_salesChannel_update_storeUrl_vld.js";
+export { cK_gen_salesChannel_update_storeIds_vld } from "./cK_gen_salesChannel_update_storeIds_vld.js";
+export { cK_gen_salesChannel_update_status_vld } from "./cK_gen_salesChannel_update_status_vld.js";
+export { cK_gen_salesChannel_update_commissionPct_vld } from "./cK_gen_salesChannel_update_commissionPct_vld.js";
+export { cK_gen_salesChannel_update_ratings_vld } from "./cK_gen_salesChannel_update_ratings_vld.js";
+export { cK_gen_salesChannel_update_excludedMenuItems_vld } from "./cK_gen_salesChannel_update_excludedMenuItems_vld.js";
+export { cK_gen_salesChannel_update_notes_vld } from "./cK_gen_salesChannel_update_notes_vld.js";

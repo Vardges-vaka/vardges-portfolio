@@ -1,0 +1,17 @@
+export { cK_brnd_brand_update_name_vld } from "./cK_brnd_brand_update_name_vld.js";
+export { cK_brnd_brand_update_tagline_vld } from "./cK_brnd_brand_update_tagline_vld.js";
+export { cK_brnd_brand_update_files_vld } from "./cK_brnd_brand_update_files_vld.js";
+export { cK_brnd_brand_update_socials_vld } from "./cK_brnd_brand_update_socials_vld.js";
+export { cK_brnd_brand_update_registeredIn_vld } from "./cK_brnd_brand_update_registeredIn_vld.js";
+export { cK_brnd_brand_update_description_vld } from "./cK_brnd_brand_update_description_vld.js";
+export { cK_brnd_brand_update_priceRange_vld } from "./cK_brnd_brand_update_priceRange_vld.js";
+export { cK_brnd_brand_update_cuisineTags_vld } from "./cK_brnd_brand_update_cuisineTags_vld.js";
+export { cK_brnd_brand_update_website_vld } from "./cK_brnd_brand_update_website_vld.js";
+export { cK_brnd_brand_update_contracts_vld } from "./cK_brnd_brand_update_contracts_vld.js";
+export { cK_brnd_brand_update_integrations_vld } from "./cK_brnd_brand_update_integrations_vld.js";
+export { cK_brnd_brand_update_siblings_vld } from "./cK_brnd_brand_update_siblings_vld.js";
+export { cK_brnd_brand_update_employees_vld } from "./cK_brnd_brand_update_employees_vld.js";
+export { cK_brnd_brand_update_equipments_vld } from "./cK_brnd_brand_update_equipments_vld.js";
+export { cK_brnd_brand_update_branches_vld } from "./cK_brnd_brand_update_branches_vld.js";
+export { cK_brnd_brand_update_menus_vld } from "./cK_brnd_brand_update_menus_vld.js";
+export { cK_brnd_brand_update_competitors_vld } from "./cK_brnd_brand_update_competitors_vld.js";

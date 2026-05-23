@@ -1,0 +1,9 @@
+export { default as CK_gen_customer_update_name } from "./CK_gen_customer_update_name.js";
+export { default as CK_gen_customer_update_aliases } from "./CK_gen_customer_update_aliases.js";
+export { default as CK_gen_customer_update_contact } from "./CK_gen_customer_update_contact.js";
+export { default as CK_gen_customer_update_addresses } from "./CK_gen_customer_update_addresses.js";
+export { default as CK_gen_customer_update_encounteredOn } from "./CK_gen_customer_update_encounteredOn.js";
+export { default as CK_gen_customer_update_orderStats } from "./CK_gen_customer_update_orderStats.js";
+export { default as CK_gen_customer_update_complaints } from "./CK_gen_customer_update_complaints.js";
+export { default as CK_gen_customer_update_source } from "./CK_gen_customer_update_source.js";
+export { default as CK_gen_customer_update_notes } from "./CK_gen_customer_update_notes.js";

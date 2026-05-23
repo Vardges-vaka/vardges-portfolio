@@ -1,0 +1,9 @@
+export { default as cK_gen_customer_update_name_cntrl } from "./cK_gen_customer_update_name_cntrl.js";
+export { default as cK_gen_customer_update_aliases_cntrl } from "./cK_gen_customer_update_aliases_cntrl.js";
+export { default as cK_gen_customer_update_contact_cntrl } from "./cK_gen_customer_update_contact_cntrl.js";
+export { default as cK_gen_customer_update_addresses_cntrl } from "./cK_gen_customer_update_addresses_cntrl.js";
+export { default as cK_gen_customer_update_encounteredOn_cntrl } from "./cK_gen_customer_update_encounteredOn_cntrl.js";
+export { default as cK_gen_customer_update_orderStats_cntrl } from "./cK_gen_customer_update_orderStats_cntrl.js";
+export { default as cK_gen_customer_update_complaints_cntrl } from "./cK_gen_customer_update_complaints_cntrl.js";
+export { default as cK_gen_customer_update_source_cntrl } from "./cK_gen_customer_update_source_cntrl.js";
+export { default as cK_gen_customer_update_notes_cntrl } from "./cK_gen_customer_update_notes_cntrl.js";

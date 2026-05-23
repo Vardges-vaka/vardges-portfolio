@@ -1,0 +1,16 @@
+export { cK_gen_equipment_update_name_srv } from "./cK_gen_equipment_update_name_srv.js";
+export { cK_gen_equipment_update_category_srv } from "./cK_gen_equipment_update_category_srv.js";
+export { cK_gen_equipment_update_assetTag_srv } from "./cK_gen_equipment_update_assetTag_srv.js";
+export { cK_gen_equipment_update_description_srv } from "./cK_gen_equipment_update_description_srv.js";
+export { cK_gen_equipment_update_storedIn_srv } from "./cK_gen_equipment_update_storedIn_srv.js";
+export { cK_gen_equipment_update_branch_srv } from "./cK_gen_equipment_update_branch_srv.js";
+export { cK_gen_equipment_update_status_srv } from "./cK_gen_equipment_update_status_srv.js";
+export { cK_gen_equipment_update_purchase_srv } from "./cK_gen_equipment_update_purchase_srv.js";
+export { cK_gen_equipment_update_warranty_srv } from "./cK_gen_equipment_update_warranty_srv.js";
+export { cK_gen_equipment_update_decommissionedAt_srv } from "./cK_gen_equipment_update_decommissionedAt_srv.js";
+export { cK_gen_equipment_update_decommissionReason_srv } from "./cK_gen_equipment_update_decommissionReason_srv.js";
+export { cK_gen_equipment_update_maintenance_srv } from "./cK_gen_equipment_update_maintenance_srv.js";
+export { cK_gen_equipment_update_contracts_srv } from "./cK_gen_equipment_update_contracts_srv.js";
+export { cK_gen_equipment_update_files_srv } from "./cK_gen_equipment_update_files_srv.js";
+export { cK_gen_equipment_update_depreciation_srv } from "./cK_gen_equipment_update_depreciation_srv.js";
+export { cK_gen_equipment_update_notes_srv } from "./cK_gen_equipment_update_notes_srv.js";

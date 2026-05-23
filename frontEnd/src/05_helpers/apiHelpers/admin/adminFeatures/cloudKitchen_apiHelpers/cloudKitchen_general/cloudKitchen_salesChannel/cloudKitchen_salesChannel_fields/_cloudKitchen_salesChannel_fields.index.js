@@ -1,0 +1,10 @@
+export { default as CK_gen_salesChannel_update_branch } from "./CK_gen_salesChannel_update_branch.js";
+export { default as CK_gen_salesChannel_update_brand } from "./CK_gen_salesChannel_update_brand.js";
+export { default as CK_gen_salesChannel_update_platform } from "./CK_gen_salesChannel_update_platform.js";
+export { default as CK_gen_salesChannel_update_storeUrl } from "./CK_gen_salesChannel_update_storeUrl.js";
+export { default as CK_gen_salesChannel_update_storeIds } from "./CK_gen_salesChannel_update_storeIds.js";
+export { default as CK_gen_salesChannel_update_status } from "./CK_gen_salesChannel_update_status.js";
+export { default as CK_gen_salesChannel_update_commissionPct } from "./CK_gen_salesChannel_update_commissionPct.js";
+export { default as CK_gen_salesChannel_update_ratings } from "./CK_gen_salesChannel_update_ratings.js";
+export { default as CK_gen_salesChannel_update_excludedMenuItems } from "./CK_gen_salesChannel_update_excludedMenuItems.js";
+export { default as CK_gen_salesChannel_update_notes } from "./CK_gen_salesChannel_update_notes.js";

@@ -1,0 +1,17 @@
+export { cK_gen_integration_update_provider_srv } from "./cK_gen_integration_update_provider_srv.js";
+export { cK_gen_integration_update_kind_srv } from "./cK_gen_integration_update_kind_srv.js";
+export { cK_gen_integration_update_accountLabel_srv } from "./cK_gen_integration_update_accountLabel_srv.js";
+export { cK_gen_integration_update_description_srv } from "./cK_gen_integration_update_description_srv.js";
+export { cK_gen_integration_update_status_srv } from "./cK_gen_integration_update_status_srv.js";
+export { cK_gen_integration_update_lifecycle_srv } from "./cK_gen_integration_update_lifecycle_srv.js";
+export { cK_gen_integration_update_links_srv } from "./cK_gen_integration_update_links_srv.js";
+export { cK_gen_integration_update_payment_srv } from "./cK_gen_integration_update_payment_srv.js";
+export { cK_gen_integration_update_loginCredentials_srv } from "./cK_gen_integration_update_loginCredentials_srv.js";
+export { cK_gen_integration_update_kam_srv } from "./cK_gen_integration_update_kam_srv.js";
+export { cK_gen_integration_update_support_srv } from "./cK_gen_integration_update_support_srv.js";
+export { cK_gen_integration_update_scheduledMaintenances_srv } from "./cK_gen_integration_update_scheduledMaintenances_srv.js";
+export { cK_gen_integration_update_brands_srv } from "./cK_gen_integration_update_brands_srv.js";
+export { cK_gen_integration_update_branches_srv } from "./cK_gen_integration_update_branches_srv.js";
+export { cK_gen_integration_update_contract_srv } from "./cK_gen_integration_update_contract_srv.js";
+export { cK_gen_integration_update_files_srv } from "./cK_gen_integration_update_files_srv.js";
+export { cK_gen_integration_update_notes_srv } from "./cK_gen_integration_update_notes_srv.js";
