@@ -1,0 +1,10 @@
+export { default as cloudKitchens_new_SideBar } from "./cloudKitchens.config.jsx";
+export { default as CK_dashboard } from "./cK_dashboard/CK_dashboard.jsx";
+export { default as CK_mapStudio } from "./cK_mapStudio/CK_mapStudio.jsx";
+export { default as CK_simulation } from "./cK_simulation/CK_simulation.jsx";
+export { default as CK_salesAndOrders } from "./cK_salesAndOrders/CK_salesAndOrders.jsx";
+export { default as CK_menus } from "./cK_menus/CK_menus.jsx";
+export { default as CK_recipesAndStock } from "./cK_recipesAndStock/CK_recipesAndStock.jsx";
+export { default as CK_marketing } from "./cK_marketing/CK_marketing.jsx";
+export { default as CK_competitors } from "./cK_competitors/CK_competitors.jsx";
+export { default as CK_setup } from "./cK_setup/CK_setup.jsx";

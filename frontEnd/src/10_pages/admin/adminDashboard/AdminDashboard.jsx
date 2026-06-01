@@ -11,7 +11,6 @@ const AdminDashboard = () => {
   const { states, handlers, ActiveSubsection_states } = useAdminDashboard();
 
   isDebug && console.log("AdminDashboard rendered");
-  console.log("AdminDashboard rendered");
 
   const ActiveSubsection = renderSubsection({
     states: { ...ActiveSubsection_states },

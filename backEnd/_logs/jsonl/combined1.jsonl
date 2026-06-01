@@ -24120,3 +24120,55 @@
   "timestamp": "2026-05-23 16:55:14",
   "type": "controller_error"
 }
+{
+  "controller": "⚠️ ☠️ 🚨 | brand_getAll_cntrl.js | ",
+  "error": "Cannot populate path `menu` because it is not in your schema. Set the `strictPopulate` option to false to override.",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | brand_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Cannot populate path `menu` because it is not in your schema. Set the `strictPopulate` option to false to override.\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at brand_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/_utils/brandServices/brandServices_crud/brand_getAll_srv.js:19:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async brand_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/brandCntrl_crud/brand_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-28 18:24:50",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | employee_getAll_cntrl.js | ",
+  "error": "Cannot populate path `workingBranch` because it is not in your schema. Set the `strictPopulate` option to false to override.",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | employee_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Cannot populate path `workingBranch` because it is not in your schema. Set the `strictPopulate` option to false to override.\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at employee_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/employeeCntrl/_utils/employeeServices/employeeServices_crud/employee_getAll_srv.js:21:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async employee_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/employeeCntrl/employeeCntrl_crud/employee_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-28 18:24:50",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | brand_getAll_cntrl.js | ",
+  "error": "Cannot populate path `menu` because it is not in your schema. Set the `strictPopulate` option to false to override.",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | brand_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Cannot populate path `menu` because it is not in your schema. Set the `strictPopulate` option to false to override.\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at brand_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/_utils/brandServices/brandServices_crud/brand_getAll_srv.js:19:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async brand_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/brandCntrl/brandCntrl_crud/brand_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-28 18:25:38",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | employee_getAll_cntrl.js | ",
+  "error": "Cannot populate path `workingBranch` because it is not in your schema. Set the `strictPopulate` option to false to override.",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | employee_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Cannot populate path `workingBranch` because it is not in your schema. Set the `strictPopulate` option to false to override.\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at employee_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/employeeCntrl/_utils/employeeServices/employeeServices_crud/employee_getAll_srv.js:21:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async employee_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/employeeCntrl/employeeCntrl_crud/employee_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-05-28 18:25:39",
+  "type": "controller_error"
+}

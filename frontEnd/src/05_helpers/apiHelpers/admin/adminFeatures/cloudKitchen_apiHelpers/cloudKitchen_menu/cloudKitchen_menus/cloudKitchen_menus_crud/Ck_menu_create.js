@@ -1,7 +1,7 @@
-import { CK_API_CONFIG } from "../../../../../../../../03_config/config.index.js";
+import { CK_MENU_API_CONFIG } from "../../../../../../../../03_config/config.index.js";
 
 const { ENDPOINT, PROPERTIES, DISPLAY_NAME } =
-  CK_API_CONFIG.CRUD.CREATE;
+  CK_MENU_API_CONFIG.CRUD.CREATE;
 const isDebug = true;
 
 

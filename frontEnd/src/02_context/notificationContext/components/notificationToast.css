@@ -1,0 +1,354 @@
+/* ============================================================================
+ * Notification Toasts — self-contained styles
+ * ----------------------------------------------------------------------------
+ * Drop-in toast notifications. No external dependencies — all CSS variables
+ * are defined locally, in this file.
+ *
+ * Light / dark mode resolution (most-specific wins):
+ *   1. `[data-theme="light"]` / `[data-theme="dark"]` on any ancestor
+ *   2. `@media (prefers-color-scheme: dark)`  — system preference
+ *   3. `:root` defaults                       — light
+ *
+ * Override any variable in your own stylesheet to customize.
+ * ========================================================================== */
+
+
+/* ─── Light defaults ──────────────────────────────────────────────────────── */
+
+:root {
+  --notify-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --notify-icon-bg: rgba(0, 0, 0, 0.08);
+  --notify-close-hover-bg: rgba(0, 0, 0, 0.08);
+
+  --notify-success-bg: #ecfdf5;
+  --notify-success-text: #065f46;
+  --notify-success-border: #10b981;
+
+  --notify-error-bg: #fef2f2;
+  --notify-error-text: #991b1b;
+  --notify-error-border: #ef4444;
+
+  --notify-warning-bg: #fffbeb;
+  --notify-warning-text: #92400e;
+  --notify-warning-border: #f59e0b;
+
+  --notify-info-bg: #eff6ff;
+  --notify-info-text: #1e3a8a;
+  --notify-info-border: #3b82f6;
+
+  --notify-loading-bg: #f3f4f6;
+  --notify-loading-text: #374151;
+  --notify-loading-border: #9ca3af;
+}
+
+
+/* ─── Auto dark mode (system preference) ──────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --notify-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --notify-icon-bg: rgba(255, 255, 255, 0.10);
+    --notify-close-hover-bg: rgba(255, 255, 255, 0.10);
+
+    --notify-success-bg: #052e25;
+    --notify-success-text: #a7f3d0;
+    --notify-success-border: #10b981;
+
+    --notify-error-bg: #2c0d10;
+    --notify-error-text: #fecaca;
+    --notify-error-border: #ef4444;
+
+    --notify-warning-bg: #2a1b03;
+    --notify-warning-text: #fde68a;
+    --notify-warning-border: #f59e0b;
+
+    --notify-info-bg: #0b1d3a;
+    --notify-info-text: #bfdbfe;
+    --notify-info-border: #3b82f6;
+
+    --notify-loading-bg: #1f2937;
+    --notify-loading-text: #e5e7eb;
+    --notify-loading-border: #6b7280;
+  }
+}
+
+
+/* ─── Explicit theme overrides (always win over media query) ──────────────── */
+
+[data-theme="light"] {
+  --notify-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --notify-icon-bg: rgba(0, 0, 0, 0.08);
+  --notify-close-hover-bg: rgba(0, 0, 0, 0.08);
+
+  --notify-success-bg: #ecfdf5;
+  --notify-success-text: #065f46;
+  --notify-success-border: #10b981;
+
+  --notify-error-bg: #fef2f2;
+  --notify-error-text: #991b1b;
+  --notify-error-border: #ef4444;
+
+  --notify-warning-bg: #fffbeb;
+  --notify-warning-text: #92400e;
+  --notify-warning-border: #f59e0b;
+
+  --notify-info-bg: #eff6ff;
+  --notify-info-text: #1e3a8a;
+  --notify-info-border: #3b82f6;
+
+  --notify-loading-bg: #f3f4f6;
+  --notify-loading-text: #374151;
+  --notify-loading-border: #9ca3af;
+}
+
+[data-theme="dark"] {
+  --notify-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --notify-icon-bg: rgba(255, 255, 255, 0.10);
+  --notify-close-hover-bg: rgba(255, 255, 255, 0.10);
+
+  --notify-success-bg: #052e25;
+  --notify-success-text: #a7f3d0;
+  --notify-success-border: #10b981;
+
+  --notify-error-bg: #2c0d10;
+  --notify-error-text: #fecaca;
+  --notify-error-border: #ef4444;
+
+  --notify-warning-bg: #2a1b03;
+  --notify-warning-text: #fde68a;
+  --notify-warning-border: #f59e0b;
+
+  --notify-info-bg: #0b1d3a;
+  --notify-info-text: #bfdbfe;
+  --notify-info-border: #3b82f6;
+
+  --notify-loading-bg: #1f2937;
+  --notify-loading-text: #e5e7eb;
+  --notify-loading-border: #6b7280;
+}
+
+
+/* ─── Container ───────────────────────────────────────────────────────────── */
+
+.notificationContainer {
+  position: fixed;
+  top: 16px;
+  inset-inline-end: 16px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  max-width: 380px;
+  width: calc(100% - 32px);
+}
+
+
+/* ─── Toast ───────────────────────────────────────────────────────────────── */
+
+.notificationToast {
+  position: relative;
+  overflow: hidden;
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  box-shadow: var(--notify-shadow);
+  animation: notificationToast-in 220ms ease-out;
+}
+
+[dir="rtl"] .notificationToast {
+  animation: notificationToast-in-rtl 220ms ease-out;
+}
+
+.notificationToast--exiting {
+  animation: notificationToast-out 220ms ease-in forwards;
+}
+
+[dir="rtl"] .notificationToast--exiting {
+  animation: notificationToast-out-rtl 220ms ease-in forwards;
+}
+
+.notificationToast--success {
+  background: var(--notify-success-bg);
+  color: var(--notify-success-text);
+  border-color: var(--notify-success-border);
+}
+.notificationToast--error {
+  background: var(--notify-error-bg);
+  color: var(--notify-error-text);
+  border-color: var(--notify-error-border);
+}
+.notificationToast--warning {
+  background: var(--notify-warning-bg);
+  color: var(--notify-warning-text);
+  border-color: var(--notify-warning-border);
+}
+.notificationToast--info {
+  background: var(--notify-info-bg);
+  color: var(--notify-info-text);
+  border-color: var(--notify-info-border);
+}
+.notificationToast--loading {
+  background: var(--notify-loading-bg);
+  color: var(--notify-loading-text);
+  border-color: var(--notify-loading-border);
+}
+
+
+/* ─── Icon ────────────────────────────────────────────────────────────────── */
+
+.notificationToast__icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--notify-icon-bg);
+}
+
+.notificationToast__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.notificationToast__spinner {
+  animation: notificationToast-spin 900ms linear infinite;
+}
+
+
+/* ─── Body ────────────────────────────────────────────────────────────────── */
+
+.notificationToast__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notificationToast__title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.notificationToast__message {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.95;
+  word-break: break-word;
+}
+
+
+/* ─── Close button ────────────────────────────────────────────────────────── */
+
+.notificationToast__close {
+  flex-shrink: 0;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 2px 8px;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: opacity 120ms ease, background 120ms ease;
+}
+
+.notificationToast__close:hover {
+  opacity: 1;
+  background: var(--notify-close-hover-bg);
+}
+
+
+/* ─── Progress bar (pause-on-hover) ───────────────────────────────────────── */
+
+.notificationToast__progress {
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  height: 3px;
+  width: 100%;
+  background: currentColor;
+  opacity: 0.4;
+  transform-origin: left center;
+  animation: notificationToast-progress linear forwards;
+  animation-duration: var(--toast-duration, 4000ms);
+}
+
+[dir="rtl"] .notificationToast__progress {
+  transform-origin: right center;
+}
+
+.notificationToast--paused .notificationToast__progress {
+  animation-play-state: paused;
+}
+
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+
+@keyframes notificationToast-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes notificationToast-in-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes notificationToast-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+@keyframes notificationToast-out-rtl {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes notificationToast-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes notificationToast-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

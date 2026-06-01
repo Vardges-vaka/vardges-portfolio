@@ -18,11 +18,11 @@ const AdminNavBar_Items = (t) => {
       icon: AboutIcon(),
       to: "vkusno",
     },
-    // {
-    //   label: t("me"),
-    //   icon: Me_Icons(),
-    //   to: "me",
-    // },
+    {
+      label: "New Cloud Kitchens",
+      icon: Me_Icons(),
+      to: "cloudKitchens_new",
+    },
   ];
 };
 
