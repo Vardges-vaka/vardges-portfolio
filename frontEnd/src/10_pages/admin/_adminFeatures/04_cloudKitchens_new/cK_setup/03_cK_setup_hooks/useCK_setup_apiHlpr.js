@@ -24,7 +24,7 @@ import {
   CK_brnd_brand_update_competitors,
 } from "../../../../../../05_helpers/_helpers.index";
 
-export const useCK_setup_apiHelpers = ({ TOAST }) => {
+export const useCK_setup_apiHlpr = ({ TOAST }) => {
   const brand_create = useCallback(() => {}, []);
   const brand_getAll = useCallback(() => {}, []);
   const brand_getOne = useCallback(() => {}, []);

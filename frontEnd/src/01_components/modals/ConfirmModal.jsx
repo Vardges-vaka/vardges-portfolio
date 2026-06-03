@@ -16,6 +16,8 @@ import "../_styles/modals/confirmModal.css";
  * @param {() => void} onConfirm
  * @param {() => void} onCancel
  * @param {boolean} [closeOnBackdropClick=true]
+ * @param {string} [cancelOperation]
+ * @param {string} [confirmOperation]
  */
 const ConfirmModal = ({
   isOpen,
@@ -28,6 +30,8 @@ const ConfirmModal = ({
   onConfirm,
   onCancel,
   closeOnBackdropClick = true,
+  cancelOperation,
+  confirmOperation,
 }) => {
   const titleId = useId();
 
@@ -73,6 +77,8 @@ const ConfirmModal = ({
           confirmLabel={confirmLabel}
           onConfirm={onConfirm}
           onCancel={onCancel}
+          cancelOperation={cancelOperation}
+          confirmOperation={confirmOperation}
         />
       </div>
     </div>

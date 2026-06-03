@@ -1,0 +1,45 @@
+.cK_setup_sessionToggler {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5%;
+  background-color: var(--bg-secondary-color);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.cK_setup_sessionToggler_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 5%;
+  padding: 5px 10px;
+  gap: 5px;
+}
+
+.cK_setup_sessionToggler_session_btn {
+  /* border-radius: 5%; */
+  padding: 2px;
+  border: none;
+}
+
+.cK_setup_sessionToggler_session_icon {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+.cK_setup_sessionToggler_session_icon:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+.cK_setup_sessionToggler_session_btn.active {
+  border: 1px dashed var(--border-secondary-color);
+  border-radius: 0%;
+}
+
+.cK_setup_sessionToggler_middle {
+}
+
+.cK_setup_sessionToggler_right {
+}

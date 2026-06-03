@@ -3,6 +3,7 @@
 Reference + configure-once data (the configure-rarely tail). Tabs: Integrations, Sales Platforms, Sales Channels, Contracts, Cuisine Tags, Customers, Invoices, Website, Brands. Schemas: Integration, SalesPlatform, SalesChannel, Contract, CuisineTag, Customer, Invoice, Website, Brand. Sidebar item: Setup.
 
 ## Layout
+
 - `CK_setup.jsx` — parent component
 - `cK_setup.cinfig.js` — feature config
 - `_styles/cK_setup.css` — feature CSS (CSS-vars only)
