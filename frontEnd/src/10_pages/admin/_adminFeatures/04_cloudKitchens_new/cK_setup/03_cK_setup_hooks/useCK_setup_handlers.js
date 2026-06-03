@@ -11,6 +11,8 @@ export const useCK_setup_handlers = ({
   channels,
   cuisineTags,
   salesPlatforms,
+  integrations,
+  contracts,
 }) => {
   const handleSessionChange = useCallback(
     (session) => {
@@ -35,6 +37,12 @@ export const useCK_setup_handlers = ({
         case "channels":
           await channels.handlers.handleinitialfetch();
           break;
+        case "integrations":
+          await integrations.handlers.handleinitialfetch();
+          break;
+        case "contracts":
+          await contracts.handlers.handleinitialfetch();
+          break;
         default:
           break;
       }
@@ -44,6 +52,8 @@ export const useCK_setup_handlers = ({
       cuisineTags.handlers.handleinitialfetch,
       salesPlatforms.handlers.handleinitialfetch,
       channels.handlers.handleinitialfetch,
+      integrations.handlers.handleinitialfetch,
+      contracts.handlers.handleinitialfetch,
     ],
   );
   const handleAddNew = useCallback(async () => {
@@ -70,6 +80,12 @@ export const useCK_setup_handlers = ({
       case "channels":
         await channels.handlers.handleAddnew();
         break;
+      case "integrations":
+        await integrations.handlers.handleAddnew();
+        break;
+      case "contracts":
+        await contracts.handlers.handleAddnew();
+        break;
       default:
         break;
     }
@@ -78,6 +94,8 @@ export const useCK_setup_handlers = ({
     cuisineTags.handlers.handleaddnew,
     salesPlatforms.handlers.handleaddnew,
     channels.handlers.handleaddnew,
+    integrations.handlers.handleaddnew,
+    contracts.handlers.handleaddnew,
     states.activeSession,
   ]);
 

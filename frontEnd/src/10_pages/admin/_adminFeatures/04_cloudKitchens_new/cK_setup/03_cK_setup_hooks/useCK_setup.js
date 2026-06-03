@@ -8,6 +8,8 @@ import {
   useCK_setup_channels,
   useCK_setup_cuisineTags,
   useCK_setup_salesPlatforms,
+  useCK_setup_integrations,
+  useCK_setup_contracts,
 } from "./_cK_setup_hooks.index.js";
 import { useNotificationContext } from "../../../../../../02_context/context.index.js";
 
@@ -18,6 +20,8 @@ export const useCK_setup = () => {
   const channels = useCK_setup_channels({ TOAST, t });
   const cuisineTags = useCK_setup_cuisineTags({ TOAST, t });
   const salesPlatforms = useCK_setup_salesPlatforms({ TOAST, t });
+  const integrations = useCK_setup_integrations({ TOAST, t });
+  const contracts = useCK_setup_contracts({ TOAST, t });
 
   const { states, setters, refs } = useCK_setup_states();
   const { apiHelpers } = useCK_setup_apiHlpr({ TOAST });
@@ -32,6 +36,8 @@ export const useCK_setup = () => {
     channels,
     cuisineTags,
     salesPlatforms,
+    integrations,
+    contracts,
   });
   useEffect(() => {
     handlers.handleInitialFetch(states.activeSession);
@@ -66,6 +72,8 @@ export const useCK_setup = () => {
       cuisineTags: cuisineTags,
       salesPlatforms: salesPlatforms,
       channels: channels,
+      integrations: integrations,
+      contracts: contracts,
     },
     t: t,
   };

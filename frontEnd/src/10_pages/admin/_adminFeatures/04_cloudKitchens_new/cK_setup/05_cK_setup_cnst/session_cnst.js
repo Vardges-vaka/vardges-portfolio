@@ -41,6 +41,8 @@ import {
   Employees_Icon,
   Brands_Icon,
   FoodMenu_Icon,
+  Operations_Icon,
+  Files_Icon,
 } from "../../../../../../01_components/_components.index.js";
 
 const VALID_SESSIONS = () => {
@@ -56,6 +58,14 @@ const VALID_SESSIONS = () => {
     },
 
     { value: "channels", label: "Channels", icon: () => Dashboard_Icon() },
+
+    {
+      value: "integrations",
+      label: "Integrations",
+      icon: () => Operations_Icon(),
+    },
+
+    { value: "contracts", label: "Contracts", icon: () => Files_Icon() },
   ];
 };
 const VALID_SESSION_OPERATIONS = ["viewing", "adding", "updating", "deleting"];

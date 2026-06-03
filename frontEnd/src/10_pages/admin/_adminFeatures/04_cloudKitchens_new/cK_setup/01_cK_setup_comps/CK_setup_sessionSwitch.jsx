@@ -3,6 +3,8 @@ import {
   CK_setup_cuisineTags,
   CK_setup_salesPlatforms,
   CK_setup_channels,
+  CK_setup_integrations,
+  CK_setup_contracts,
 } from "./cK_setup_sessions/_cK_setup_sessions.index";
 import "../_styles/cK_setup_sessionSwitch.css";
 
@@ -16,6 +18,10 @@ const getSessionComponent = (session) => {
       return CK_setup_salesPlatforms;
     case "channels":
       return CK_setup_channels;
+    case "integrations":
+      return CK_setup_integrations;
+    case "contracts":
+      return CK_setup_contracts;
     default:
       return CK_setup_brands;
   }

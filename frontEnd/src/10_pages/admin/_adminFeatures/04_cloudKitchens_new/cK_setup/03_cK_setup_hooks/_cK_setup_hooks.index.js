@@ -2,6 +2,8 @@
 export * from "./cK_setup_channels_hooks/_cK_setup_channels_hooks.index.js";
 export * from "./cK_setup_cuisineTags_hooks/_cK_setup_cuisineTags_hooks.index.js";
 export * from "./cK_setup_salesPlatforms_hooks/_cK_setup_salesPlatforms_hooks.index.js";
+export * from "./cK_setup_integrations_hooks/_cK_setup_integrations_hooks.index.js";
+export * from "./cK_setup_contracts_hooks/_cK_setup_contracts_hooks.index.js";
 
 export { useCK_setup_states } from "./CK_setup_states.js";
 export { useCK_setup_apiHlpr } from "./useCK_setup_apiHlpr.js";
