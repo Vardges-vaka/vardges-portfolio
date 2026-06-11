@@ -1,19 +1,11 @@
-import {
-  request_failed,
-  request_success,
-} from "../../../../../../../03_services/_services.index.js";
-import { sample_schemaField_vld_util } from "../../../../../../../02_utils/_utils.index.js";
+import { request_success } from "../../../../../../../03_services/_services.index.js";
 
 const displayName = " | cK_brnd_brand_updateAll_vld.js | ";
 const isDebug = true;
 
+// TODO: real field validation. For now pass the body through (shallow copy so
+// the middleware's req.body.sanitizedData assignment can't create a cycle).
 export const cK_brnd_brand_updateAll_vld = async (req) => {
-  const data = req.body.body_Data || req.body;
-
-  const result = sample_schemaField_vld_util(data);
-  if (!result.isValid) {
-    return request_failed(result.message, displayName, isDebug);
-  } else {
-    return request_success(displayName, isDebug, result.sanitized);
-  }
+  const data = { ...(req.body?.body_Data || req.body || {}) };
+  return request_success(displayName, isDebug, data);
 };

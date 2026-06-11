@@ -1,0 +1,9 @@
+export { default as GenericInput, mapDataProps } from "./GenericInput.jsx";
+export { default as Input_text } from "./Input_text.jsx";
+export { default as Input_password } from "./Input_password.jsx";
+export { default as Input_email } from "./Input_email.jsx";
+export { default as Input_tel } from "./Input_tel.jsx";
+export { default as Input_number } from "./Input_number.jsx";
+export { default as Input_date } from "./Input_date.jsx";
+export { default as Input_search } from "./Input_search.jsx";
+export { default as Input_url } from "./Input_url.jsx";

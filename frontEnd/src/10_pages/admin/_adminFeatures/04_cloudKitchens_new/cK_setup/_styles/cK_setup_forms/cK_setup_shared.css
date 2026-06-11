@@ -1,0 +1,199 @@
+/* Shared list + inline edit-pane styles used by every Setup session's
+   viewAll list and "continue building" inline editor. */
+
+/* ── Row list ─────────────────────────────────────────────── */
+.cK_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cK_listRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.75rem;
+  background-color: var(--bg-secondary-color);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.12s ease;
+}
+
+.cK_listRow:hover {
+  border-color: var(--btn-primary-border-color);
+  box-shadow: 0 4px 14px
+    color-mix(in srgb, var(--title-secondary-color) 14%, transparent);
+  transform: translateY(-1px);
+}
+
+.cK_listRow_avatar {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+}
+
+.cK_listRow_main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cK_listRow_titleLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cK_listRow_title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--title-secondary-color);
+}
+
+.cK_listRow_badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  color: var(--text-primary-color);
+  background-color: color-mix(
+    in srgb,
+    var(--title-secondary-color) 14%,
+    var(--bg-primary-color)
+  );
+  border: 1px solid var(--border-secondary-color);
+}
+
+.cK_listRow_sub {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--text-secondary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cK_listRow_muted {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.cK_listRow_meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  text-align: right;
+}
+
+.cK_listRow_id {
+  font-size: 0.68rem;
+  font-family: monospace;
+  color: var(--text-secondary-color);
+  opacity: 0.6;
+}
+
+.cK_listRow_editBtn {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--btn-primary-border-color);
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.cK_listRow_editBtn:hover {
+  background-color: var(--btn-primary-bg-color-HOV);
+  color: var(--btn-primary-text-color-HOV);
+}
+
+/* ── Inline edit pane ─────────────────────────────────────── */
+.cK_editPane {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cK_editPane_bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.25rem;
+  background-color: var(--bg-primary-color);
+  border-bottom: 1px solid var(--border-secondary-color);
+}
+
+.cK_editPane_title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--title-secondary-color);
+}
+
+.cK_editPane_actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cK_editPane_btn {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.45rem 1.1rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.cK_editPane_btn_secondary {
+  color: var(--btn-secondary-text-color);
+  background-color: var(--btn-secondary-bg-color);
+  border-color: var(--btn-secondary-border-color);
+}
+
+.cK_editPane_btn_secondary:hover {
+  color: var(--btn-secondary-text-color-HOV);
+  background-color: var(--btn-secondary-bg-color-HOV);
+}
+
+.cK_editPane_btn_primary {
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+  border-color: var(--btn-primary-border-color);
+}
+
+.cK_editPane_btn_primary:hover {
+  color: var(--btn-primary-text-color-HOV);
+  background-color: var(--btn-primary-bg-color-HOV);
+}

@@ -11,15 +11,24 @@ import {
 
 const brandSchema = new mongoose.Schema(
   {
+    // ── Basic ───────────────────────────────────────────────
     name: { type: String },
     tagline: {
       value: { type: String },
       translations: getLocalizedTextSchema(),
     },
-    files: getStorageSchema(),
-    socials: [socialAccountSchema()],
-    registeredIn: registeredInSchema(),
     description: getDescriptionSchema(),
+
+    // ── Files ───────────────────────────────────────────────
+
+
+    files: getStorageSchema(),
+
+    // ── Socials ───────────────────────────────────────────────
+    socials: [socialAccountSchema()],
+
+    // ── Registered in ───────────────────────────────────────────────
+    registeredIn: registeredInSchema(),
     priceRange: { type: String, enum: BRAND_PRICE_RANGES },
     cuisineTags: [{ type: mongoose.Schema.Types.ObjectId, ref: "CuisineTag" }],
     website: { type: mongoose.Schema.Types.ObjectId, ref: "Website" },

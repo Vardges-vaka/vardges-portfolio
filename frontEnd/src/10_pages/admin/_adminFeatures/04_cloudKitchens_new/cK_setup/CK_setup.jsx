@@ -31,33 +31,6 @@ const CK_setup = () => {
         childProps={stp_sessionSwitch_props.childProps}
         t={stp_sessionSwitch_props.t}
       />
-      {["update", "delete", "image"].map((operation) => (
-        <button
-          key={operation}
-          data-operation={operation}
-          onClick={handlers.initiateModalOpening}>
-          {operation}
-        </button>
-      ))}
-
-      {/* <CK_setup_confirmUpdate_modal
-        isOpen={modal_props.isOpen}
-        states={modal_props.states}
-        handlers={modal_props.handlers}
-        t={t}
-      />
-      <CK_setup_confirmDelete_modal
-        isOpen={modal_props.isOpen}
-        states={modal_props.states}
-        handlers={modal_props.handlers}
-        t={t}
-      />
-      <CK_setup_image_modal
-        isOpen={modal_props.isOpen}
-        states={modal_props.states}
-        handlers={modal_props.handlers}
-        t={t}
-      /> */}
     </div>
   );
 };

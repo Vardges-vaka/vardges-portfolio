@@ -1,0 +1,50 @@
+/* A single labelled control inside FormModal. */
+.formModal_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.formModal_fieldLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+.formModal_fieldReq {
+  color: var(--primary-error-border);
+}
+
+.formModal_input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-primary-color);
+
+  color: var(--text-primary-color);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.formModal_input:focus {
+  outline: none;
+  border-color: var(--btn-primary-border-color);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--btn-primary-border-color) 30%, transparent);
+}
+
+.formModal_textarea {
+  resize: vertical;
+  min-height: 3.5rem;
+  line-height: 1.45;
+}
+
+.formModal_fieldError {
+  font-size: 0.78rem;
+  color: var(--primary-error-border);
+}

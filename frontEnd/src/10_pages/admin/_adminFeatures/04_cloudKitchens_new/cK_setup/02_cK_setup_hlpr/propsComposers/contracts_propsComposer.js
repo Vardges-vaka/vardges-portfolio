@@ -7,10 +7,14 @@ export const contracts_propsComposer = (states, handlers, t) => {
   };
   const stp_contracts_addForm_props = {
     states: {
-      contractFormData: states.contractFormData,
-      contractFormData_full: states.contractFormData_full,
+      isOpen: states.activeOperation === "adding",
+      values: states.contractFormData,
     },
-    handlers: {},
+    handlers: {
+      onChange: handlers.handleFormChange,
+      onSubmit: handlers.handleCreateSubmit,
+      onCancel: handlers.handleCancelAdd,
+    },
     childComps: {},
     t: t,
   };

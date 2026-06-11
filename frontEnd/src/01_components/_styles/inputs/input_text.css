@@ -1,0 +1,130 @@
+/* Root field shell — label, control row, hints */
+.input_text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_text__fieldWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: var(--input-primary-border-color);
+  border-radius: 0.5rem;
+  background-color: var(--input-primary-bg-color);
+  box-shadow: var(--input-primary-boxShadow);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.input_text__fieldWrap:hover:not(.input_text__fieldWrap--disabled) {
+  border: var(--input-primary-border-color-HOV);
+  box-shadow: var(--input-primary-boxShadow-HOV);
+}
+
+.input_text__fieldWrap:focus-within:not(.input_text__fieldWrap--disabled) {
+  border: var(--input-primary-border-color-FOC);
+  box-shadow: var(--input-primary-boxShadow-FOC);
+}
+
+.input_text__fieldWrap--disabled {
+  border: var(--input-primary-border-color-DIS);
+  box-shadow: var(--input-primary-boxShadow-DIS);
+  opacity: 0.72;
+}
+
+.input_text__fieldWrap--error {
+  border-color: var(--primary-error-border);
+}
+
+.input_text__fieldWrap--success {
+  border-color: var(--primary-success-border);
+}
+
+.input_text__input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Inline label + field on one row */
+.input_text__inlineRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_text__inlineRow .input_text__fieldWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.input_text__inlineRow--labelbefore {
+  flex-direction: row;
+}
+
+.input_text__inlineRow--labelafter {
+  flex-direction: row;
+}
+
+.input_text--labelInline {
+  gap: 0.35rem;
+}
+
+/* sm / md / lg — field row */
+.input_text--sm .input_text__fieldWrap {
+  min-height: 2rem;
+}
+
+.input_text--sm .input_text__input {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+}
+
+.input_text--md .input_text__fieldWrap {
+  min-height: 2.35rem;
+}
+
+.input_text--md .input_text__input {
+  font-size: 0.875rem;
+  padding: 0.42rem 0.7rem;
+}
+
+.input_text--lg .input_text__fieldWrap {
+  min-height: 2.75rem;
+}
+
+.input_text--lg .input_text__input {
+  font-size: 1rem;
+  padding: 0.52rem 0.85rem;
+}
+
+.input_text--sm .input_text__fieldWrap--withLeftIcon .input_text__input {
+  padding-left: 0.15rem;
+}
+
+.input_text--sm .input_text__fieldWrap--withRightIcon .input_text__input {
+  padding-right: 0.15rem;
+}
+
+.input_text--md .input_text__fieldWrap--withLeftIcon .input_text__input {
+  padding-left: 0.2rem;
+}
+
+.input_text--md .input_text__fieldWrap--withRightIcon .input_text__input {
+  padding-right: 0.2rem;
+}
+
+.input_text--lg .input_text__fieldWrap--withLeftIcon .input_text__input {
+  padding-left: 0.25rem;
+}
+
+.input_text--lg .input_text__fieldWrap--withRightIcon .input_text__input {
+  padding-right: 0.25rem;
+}

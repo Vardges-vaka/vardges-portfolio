@@ -6,7 +6,7 @@ import {
 export const useCK_setup_cuisineTags_states = () => {
   const [cuisineTags, setCuisineTags] = useState([]);
   const [activeOperation, setActiveOperation] = useState("viewing");
-  const [activeViewingType, setActiveViewingType] = useState("one");
+  const [activeViewingType, setActiveViewingType] = useState("all");
   const [selectedCuisineTag, setSelectedCuisineTag] = useState(null);
   const [cuisineTagFormData, setCuisineTagFormData] =
     useState(DFLT_F_D_CUISINE_TAG);

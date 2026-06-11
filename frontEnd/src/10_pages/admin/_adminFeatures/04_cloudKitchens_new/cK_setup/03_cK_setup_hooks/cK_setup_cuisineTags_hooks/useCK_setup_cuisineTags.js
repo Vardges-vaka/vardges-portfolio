@@ -22,6 +22,7 @@ export const useCK_setup_cuisineTags = ({ TOAST, t }) => {
     stp_cuisineTags_addForm_props,
     stp_cuisineTags_viewOne_props,
     stp_cuisineTags_viewAll_props,
+    stp_cuisineTags_full_props,
   } = cuisineTags_propsComposer(states, handlers, t);
 
   return {
@@ -39,6 +40,7 @@ export const useCK_setup_cuisineTags = ({ TOAST, t }) => {
       stp_cuisineTags_addForm_props: stp_cuisineTags_addForm_props,
       stp_cuisineTags_viewOne_props: stp_cuisineTags_viewOne_props,
       stp_cuisineTags_viewAll_props: stp_cuisineTags_viewAll_props,
+      stp_cuisineTags_full_props: stp_cuisineTags_full_props,
     },
     t,
     TOAST,

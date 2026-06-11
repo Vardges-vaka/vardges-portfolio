@@ -6,7 +6,7 @@ import {
 } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
 export const useCK_setup_brands_states = () => {
   const [activeOperation, setActiveOperation] = useState("viewing");
-  const [activeViewingType, setActiveViewingType] = useState("one");
+  const [activeViewingType, setActiveViewingType] = useState("all");
   const [addingStep, setAddingStep] = useState("step1");
   const [brands, setBrands] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState(null);

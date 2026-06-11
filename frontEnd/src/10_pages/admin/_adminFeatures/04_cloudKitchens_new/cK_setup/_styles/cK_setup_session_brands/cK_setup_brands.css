@@ -1,0 +1,66 @@
+/* Inline "continue building" edit pane (not a modal). */
+.cK_setup_brand_edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cK_setup_brand_edit_bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.25rem;
+  background-color: var(--bg-primary-color);
+  border-bottom: 1px solid var(--border-secondary-color);
+}
+
+.cK_setup_brand_edit_title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--title-secondary-color);
+}
+
+.cK_setup_brand_edit_actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cK_setup_brand_edit_btn {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.45rem 1.1rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.cK_setup_brand_edit_btn_secondary {
+  color: var(--btn-secondary-text-color);
+  background-color: var(--btn-secondary-bg-color);
+  border-color: var(--btn-secondary-border-color);
+}
+
+.cK_setup_brand_edit_btn_secondary:hover {
+  color: var(--btn-secondary-text-color-HOV);
+  background-color: var(--btn-secondary-bg-color-HOV);
+}
+
+.cK_setup_brand_edit_btn_primary {
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+  border-color: var(--btn-primary-border-color);
+}
+
+.cK_setup_brand_edit_btn_primary:hover {
+  color: var(--btn-primary-text-color-HOV);
+  background-color: var(--btn-primary-bg-color-HOV);
+}

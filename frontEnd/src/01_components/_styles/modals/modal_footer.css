@@ -1,0 +1,64 @@
+.modal_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 0.85rem 1.1rem;
+  border-top: 1px solid var(--border-secondary-color);
+  flex-shrink: 0;
+}
+
+.modal_footer_btn {
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.modal_footer_btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.modal_footer_btnSecondary {
+  color: var(--btn-secondary-text-color);
+  background-color: var(--btn-secondary-bg-color);
+  border-color: var(--btn-secondary-border-color);
+  box-shadow: 0 1px 2px var(--btn-secondary-boxShadow-color);
+}
+
+.modal_footer_btnSecondary:hover:not(:disabled) {
+  color: var(--btn-secondary-text-color-HOV);
+  background-color: var(--btn-secondary-bg-color-HOV);
+}
+
+.modal_footer_btnPrimary {
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+  border-color: var(--btn-primary-border-color);
+  box-shadow: 0 1px 2px var(--btn-primary-boxShadow-color);
+}
+
+.modal_footer_btnPrimary:hover:not(:disabled) {
+  color: var(--btn-primary-text-color-HOV);
+  background-color: var(--btn-primary-bg-color-HOV);
+}
+
+.modal_footer_btnPrimaryDanger {
+  border-color: var(--primary-error-border);
+  box-shadow: 0 1px 2px
+    color-mix(in srgb, var(--primary-error-border) 35%, transparent);
+}
+
+.modal_footer_btnPrimaryDanger:hover:not(:disabled) {
+  border-color: var(--primary-error-border);
+}

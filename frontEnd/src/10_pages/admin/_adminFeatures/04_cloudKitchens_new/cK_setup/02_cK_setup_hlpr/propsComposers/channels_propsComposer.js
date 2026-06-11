@@ -7,10 +7,14 @@ export const channels_propsComposer = (states, handlers, t) => {
   };
   const stp_channels_addForm_props = {
     states: {
-      channelFormData: states.channelFormData,
-      channelFormData_full: states.channelFormData_full,
+      isOpen: states.activeOperation === "adding",
+      values: states.channelFormData,
     },
-    handlers: {},
+    handlers: {
+      onChange: handlers.handleFormChange,
+      onSubmit: handlers.handleCreateSubmit,
+      onCancel: handlers.handleCancelAdd,
+    },
     childComps: {},
     t: t,
   };

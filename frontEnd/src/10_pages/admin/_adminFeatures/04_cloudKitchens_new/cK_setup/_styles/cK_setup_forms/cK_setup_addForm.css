@@ -1,0 +1,179 @@
+/* Shared styling for the add_initial / add_full / add_file forms.
+   These render INSIDE Modal (which owns the dialog chrome + buttons). */
+
+.cK_setup_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cK_setup_form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+}
+
+.cK_setup_form_label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+.cK_setup_form_req {
+  color: var(--primary-error-border);
+}
+
+.cK_setup_form_input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.cK_setup_form_input:focus {
+  outline: none;
+  border-color: var(--btn-primary-border-color);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--btn-primary-border-color) 30%, transparent);
+}
+
+.cK_setup_form_textarea {
+  resize: vertical;
+  min-height: 3.5rem;
+  line-height: 1.45;
+}
+
+/* Placeholder used by the not-yet-built add_file form. */
+.cK_setup_form_placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  border: 1.5px dashed var(--border-primary-color);
+  border-radius: 0.75rem;
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+}
+
+/* ── Sectioned forms (add_full) ──────────────────────────── */
+.cK_setup_form_section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 0.7rem;
+  background-color: color-mix(
+    in srgb,
+    var(--title-secondary-color) 4%,
+    transparent
+  );
+}
+
+.cK_setup_form_sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cK_setup_form_sectionTitle {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--title-secondary-color);
+}
+
+.cK_setup_form_row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.65rem;
+}
+
+.cK_setup_form_checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.cK_setup_form_check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.cK_setup_form_hint {
+  margin: 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-secondary-color);
+}
+
+.cK_setup_form_social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 0.6rem;
+  background-color: var(--bg-secondary-color);
+}
+
+.cK_setup_form_socialHead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cK_setup_form_socialIdx {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+}
+
+.cK_setup_form_socialHead .cK_setup_form_ghostBtn {
+  margin-left: auto;
+}
+
+.cK_setup_form_ghostBtn {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.3rem 0.65rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--btn-secondary-border-color);
+  color: var(--btn-secondary-text-color);
+  background-color: var(--btn-secondary-bg-color);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.cK_setup_form_ghostBtn:hover {
+  background-color: var(--btn-secondary-bg-color-HOV);
+  color: var(--btn-secondary-text-color-HOV);
+}
+
+.cK_setup_form_ghostBtn_danger {
+  border-color: var(--primary-error-border);
+  color: var(--primary-error-border);
+}

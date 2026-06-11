@@ -3,7 +3,7 @@
 export const useCK_setup_states = () => {
   const [activeSession, setActiveSession] = useState("brands");
   const [activeOperation, setActiveOperation] = useState("viewing");
-  const [activeViewingType, setActiveViewingType] = useState("one");
+  const [activeViewingType, setActiveViewingType] = useState("all");
 
   const [brands, setBrands] = useState([]);
   const [cuisineTags, setCuisineTags] = useState([]);

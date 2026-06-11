@@ -17,17 +17,37 @@ export const brands_propsComposer = (states, handlers, t) => {
     states: {
       brands: states.brands,
     },
-    handlers: {},
+    handlers: {
+      onEditFull: handlers.handleEditFull,
+    },
     childComps: {},
     t: t,
   };
   const stp_brands_addForm_props = {
     states: {
-      brandFormData: states.brandFormData,
-      brandFormData_full: states.brandFormData_full,
-      brandFormData_files: states.brandFormData_files,
+      isOpen: states.activeOperation === "adding",
+      values: states.brandFormData,
     },
-    handlers: {},
+    handlers: {
+      onChange: handlers.handleFormChange,
+      onSubmit: handlers.handleCreateSubmit,
+      onCancel: handlers.handleCancelAdd,
+    },
+    childComps: {},
+    t: t,
+  };
+  const stp_brands_full_props = {
+    states: {
+      isOpen: states.activeOperation === "updating",
+      values: states.brandFormData_full,
+    },
+    handlers: {
+      onChange: handlers.handleFullFormChange,
+      onSubmit: handlers.handleUpdateSubmit,
+      onCancel: handlers.handleCancelFull,
+      onAddSocial: handlers.handleAddSocial,
+      onRemoveSocial: handlers.handleRemoveSocial,
+    },
     childComps: {},
     t: t,
   };
@@ -36,5 +56,6 @@ export const brands_propsComposer = (states, handlers, t) => {
     stp_brands_viewOne_props,
     stp_brands_viewAll_props,
     stp_brands_addForm_props,
+    stp_brands_full_props,
   };
 };

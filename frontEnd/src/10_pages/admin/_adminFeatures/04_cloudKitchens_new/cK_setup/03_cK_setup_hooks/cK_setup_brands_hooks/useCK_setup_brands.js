@@ -22,6 +22,7 @@ export const useCK_setup_brands = ({ TOAST, t }) => {
     stp_brands_viewOne_props,
     stp_brands_viewAll_props,
     stp_brands_addForm_props,
+    stp_brands_full_props,
   } = brands_propsComposer(states, handlers, t);
   return {
     states: {
@@ -38,6 +39,7 @@ export const useCK_setup_brands = ({ TOAST, t }) => {
       stp_brands_viewOne_props: stp_brands_viewOne_props,
       stp_brands_viewAll_props: stp_brands_viewAll_props,
       stp_brands_addForm_props: stp_brands_addForm_props,
+      stp_brands_full_props: stp_brands_full_props,
     },
     t,
     TOAST,

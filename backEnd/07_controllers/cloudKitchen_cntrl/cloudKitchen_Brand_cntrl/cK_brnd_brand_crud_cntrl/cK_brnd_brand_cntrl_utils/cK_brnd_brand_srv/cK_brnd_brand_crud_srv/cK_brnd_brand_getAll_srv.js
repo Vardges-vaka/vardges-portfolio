@@ -3,22 +3,32 @@ import { catch_errorHandler_service } from "../../../../../../../03_services/_se
 
 const displayName = " | cK_brnd_brand_getAll_srv.js | ";
 
+// For now we return EVERYTHING — all brands, fully populated. Once the
+// frontend settles on what it actually renders, trim the populate list and
+// project only the needed fields.
 export const cK_brnd_brand_getAll_srv = async (req, isDebug) => {
   isDebug && console.log(`▄︻デ══━一💥${displayName}[STARTED]`);
-  isDebug && console.log(`💾${displayName}[REQUEST]`, req.body.sanitizedData);
 
   try {
-    const sanitizedData = req.body.sanitizedData;
+    const brands = await Brand.find()
+      .populate("cuisineTags")
+      .populate("website")
+      .populate("contracts")
+      .populate("integrations")
+      .populate("siblings")
+      .populate("employees")
+      .populate("equipments")
+      .populate("branches")
+      .populate("menus")
+      .populate("competitors")
+      .lean();
 
-    const newRecord = new Brand(sanitizedData);
-    await newRecord.save();
-
-    isDebug && console.log(`✅${displayName}Brand saved: ${newRecord._id}`);
+    isDebug && console.log(`✅${displayName}Fetched ${brands.length} brand(s)`);
 
     return {
       success: true,
-      message: "Brand operation completed successfully",
-      data: {},
+      message: `Fetched ${brands.length} brand(s)`,
+      data: brands,
     };
   } catch (error) {
     return catch_errorHandler_service(displayName, isDebug, error);

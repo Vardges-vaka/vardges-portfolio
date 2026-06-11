@@ -5,20 +5,17 @@ const displayName = " | cK_gen_cuisineTag_getAll_srv.js | ";
 
 export const cK_gen_cuisineTag_getAll_srv = async (req, isDebug) => {
   isDebug && console.log(`▄︻デ══━一💥${displayName}[STARTED]`);
-  isDebug && console.log(`💾${displayName}[REQUEST]`, req.body.sanitizedData);
 
   try {
-    const sanitizedData = req.body.sanitizedData;
+    const cuisineTags = await CuisineTag.find().lean();
 
-    const newMenu = new CuisineTag(sanitizedData);
-    await newMenu.save();
-
-    isDebug && console.log(`✅${displayName}Menu created: ${newMenu._id}`);
+    isDebug &&
+      console.log(`✅${displayName}Fetched ${cuisineTags.length} tag(s)`);
 
     return {
       success: true,
-      message: "Menu created successfully", // needs to be edited properly, to be added a proper internationalizated message.
-      data: {},
+      message: `Fetched ${cuisineTags.length} cuisine tag(s)`,
+      data: cuisineTags,
     };
   } catch (error) {
     return catch_errorHandler_service(displayName, isDebug, error);

@@ -1,0 +1,27 @@
+.GenericInput {
+  margin: 0;
+  width: 100%;
+  font: inherit;
+  color: var(--input-primary-text-color);
+  background: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.GenericInput::placeholder {
+  color: var(--input-primary-plHolder-color);
+}
+
+.GenericInput:hover:not(:disabled):not(:read-only)::placeholder {
+  color: var(--input-primary-plHolder-color-HOV);
+}
+
+.GenericInput:disabled {
+  cursor: not-allowed;
+  color: var(--input-primary-plHolder-color-DIS);
+}
+
+.GenericInput:disabled::placeholder {
+  color: var(--input-primary-plHolder-color-DIS);
+}

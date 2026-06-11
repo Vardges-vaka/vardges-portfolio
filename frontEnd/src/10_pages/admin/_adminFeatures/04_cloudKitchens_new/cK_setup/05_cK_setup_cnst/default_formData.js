@@ -111,16 +111,118 @@ const FILES_USED_IN_ENUM_VALUES = [
 
 const BRAND_PRICE_RANGES = ["budget", "mid", "premium"];
 
-const DFLT_F_D_CHANNEL = {};
-const DFLT_F_D_CHANNEL_FULL = {};
-const DFLT_F_D_CUISINE_TAG = {};
-const DFLT_F_D_CUISINE_TAG_FULL = {};
-const DFLT_F_D_SALES_PLATFORM = {};
-const DFLT_F_D_SALES_PLATFORM_FULL = {};
-const DFLT_F_D_INTEGRATION = {};
-const DFLT_F_D_INTEGRATION_FULL = {};
-const DFLT_F_D_CONTRACT = {};
-const DFLT_F_D_CONTRACT_FULL = {};
+// ── CuisineTag ─────────────────────────────────────────────
+const DFLT_F_D_CUISINE_TAG = {
+  value: "",
+  label: "",
+  kind: "",
+};
+const DFLT_F_D_CUISINE_TAG_FULL = {
+  value: "",
+  label: "",
+  description: "",
+  platforms: [],
+  kind: "",
+  source: "",
+};
+
+// ── SalesPlatform ──────────────────────────────────────────
+const DFLT_F_D_SALES_PLATFORM = {
+  name: "",
+  notes: "",
+};
+const DFLT_F_D_SALES_PLATFORM_FULL = {
+  name: "",
+  notes: "",
+  links: {
+    logoUrl: "",
+    websiteUrl: "",
+    partnerPortalUrl: "",
+    other: [],
+  },
+  kam: {},
+  loginCredentials: [],
+  support: [],
+};
+
+// ── SalesChannel ───────────────────────────────────────────
+const DFLT_F_D_CHANNEL = {
+  brand: "",
+  branch: "",
+  platform: "",
+  storeUrl: "",
+};
+const DFLT_F_D_CHANNEL_FULL = {
+  brand: "",
+  branch: "",
+  platform: "",
+  storeUrl: "",
+  storeIds: [],
+  status: { value: "queued" },
+  commissionPct: "",
+  ratings: { average: "", count: 0 },
+  excludedMenuItems: [],
+  notes: "",
+};
+
+// ── Integration ────────────────────────────────────────────
+const DFLT_F_D_INTEGRATION = {
+  provider: "",
+  kind: "",
+  accountLabel: "",
+};
+const DFLT_F_D_INTEGRATION_FULL = {
+  provider: "",
+  kind: "",
+  accountLabel: "",
+  description: "",
+  status: "onboarding",
+  lifecycle: {},
+  links: { websiteUrl: "", portalUrl: "", other: [] },
+  payment: {
+    cycle: "",
+    amount: "",
+    currency: "AED",
+    method: "",
+    status: "",
+    notes: "",
+  },
+  loginCredentials: [],
+  kam: {},
+  support: [],
+  scheduledMaintenances: [],
+  brands: [],
+  branches: [],
+  contract: null,
+  notes: "",
+};
+
+// ── Contract ───────────────────────────────────────────────
+const DFLT_F_D_CONTRACT = {
+  title: "",
+  kind: "",
+  ownerType: "",
+  counterparty: { name: "" },
+};
+const DFLT_F_D_CONTRACT_FULL = {
+  title: "",
+  description: "",
+  kind: "",
+  ownerType: "",
+  ownerId: "",
+  counterparty: { name: "" },
+  effectiveFrom: "",
+  effectiveTo: "",
+  autoRenew: false,
+  terminationNoticeDays: { byUs: "", byThem: "" },
+  status: "draft",
+  commissionPct: "",
+  additionalCharges: [],
+  commitments: [],
+  payment: { amount: "", cycle: "" },
+  history: [],
+  notes: "",
+};
 
 export {
   DFLT_F_D_CHANNEL,

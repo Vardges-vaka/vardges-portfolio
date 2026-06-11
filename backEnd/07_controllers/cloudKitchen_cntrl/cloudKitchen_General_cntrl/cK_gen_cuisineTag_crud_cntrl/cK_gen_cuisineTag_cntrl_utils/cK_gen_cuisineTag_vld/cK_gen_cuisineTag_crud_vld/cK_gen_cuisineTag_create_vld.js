@@ -1,19 +1,10 @@
-import {
-  request_failed,
-  request_success,
-} from "../../../../../../../03_services/_services.index.js";
-import { sample_schemaField_vld_util } from "../../../../../../../02_utils/_utils.index.js";
+import { request_success } from "../../../../../../../03_services/_services.index.js";
 
 const displayName = " | cK_gen_cuisineTag_create_vld.js | ";
 const isDebug = true;
 
+// TODO: real validation. Pass-through (shallow copy avoids a req.body cycle).
 export const cK_gen_cuisineTag_create_vld = async (req) => {
-  const data = req.body.body_Data || req.body;
-
-  const result = sample_schemaField_vld_util(data);
-  if (!result.isValid) {
-    return request_failed(result.message, displayName, isDebug);
-  } else {
-    return request_success(displayName, isDebug, result.sanitized);
-  }
+  const data = { ...(req.body?.body_Data || req.body || {}) };
+  return request_success(displayName, isDebug, data);
 };

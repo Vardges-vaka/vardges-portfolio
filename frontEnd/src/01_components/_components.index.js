@@ -78,3 +78,4 @@ export { default as Brand_product_Icons } from "./uiComponents/dashboard_Icons/B
 export * from "./toolTips/_tooltips.index.js";
 export * from "./loaders/_loaders.index.js";
 export * from "./modals/_components_modals.index.js";
+export * from "./inputs/_components_inputs.js";

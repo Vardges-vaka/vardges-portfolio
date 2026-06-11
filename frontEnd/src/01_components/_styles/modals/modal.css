@@ -1,0 +1,56 @@
+/* Root overlay + panel shell (theme vars from 09_styles lightTheme / darkTheme). */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--confirmModal-backdrop-bg);
+  box-sizing: border-box;
+}
+
+.modal_dialog {
+  width: min(42rem, 100%);
+  max-height: min(90vh, 100%);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 0.85rem;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-secondary-color);
+  box-shadow: 0 4px 24px var(--confirmModal-panel-shadow);
+  color: var(--text-primary-color);
+  box-sizing: border-box;
+}
+
+.modal_dialogForm {
+  width: min(38rem, 100%);
+  background-color: var(--bg-primary-color-modal);
+}
+
+.modal_body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+  padding: 1rem 1.1rem;
+  flex: 1;
+}
+
+/* FormModal: fields live inside modal_body; form fills the slot. */
+.modal_bodyForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  min-height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal_dialog {
+    scroll-behavior: auto;
+  }
+}

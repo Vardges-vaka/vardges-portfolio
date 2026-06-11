@@ -7,10 +7,14 @@ export const salesPlatforms_propsComposer = (states, handlers, t) => {
   };
   const stp_salesPlatforms_addForm_props = {
     states: {
-      salesPlatformFormData: states.salesPlatformFormData,
-      salesPlatformFormData_full: states.salesPlatformFormData_full,
+      isOpen: states.activeOperation === "adding",
+      values: states.salesPlatformFormData,
     },
-    handlers: {},
+    handlers: {
+      onChange: handlers.handleFormChange,
+      onSubmit: handlers.handleCreateSubmit,
+      onCancel: handlers.handleCancelAdd,
+    },
     childComps: {},
     t: t,
   };

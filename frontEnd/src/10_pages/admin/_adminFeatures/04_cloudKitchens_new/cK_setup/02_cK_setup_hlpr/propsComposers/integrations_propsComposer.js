@@ -7,10 +7,14 @@ export const integrations_propsComposer = (states, handlers, t) => {
   };
   const stp_integrations_addForm_props = {
     states: {
-      integrationFormData: states.integrationFormData,
-      integrationFormData_full: states.integrationFormData_full,
+      isOpen: states.activeOperation === "adding",
+      values: states.integrationFormData,
     },
-    handlers: {},
+    handlers: {
+      onChange: handlers.handleFormChange,
+      onSubmit: handlers.handleCreateSubmit,
+      onCancel: handlers.handleCancelAdd,
+    },
     childComps: {},
     t: t,
   };

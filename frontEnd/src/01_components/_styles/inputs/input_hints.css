@@ -1,0 +1,43 @@
+.input_hints {
+  margin: 0;
+  width: 100%;
+  line-height: 1.4;
+  color: var(--text-secondary-color);
+  text-align: left;
+}
+
+.input_hints--textLeft {
+  text-align: left;
+}
+
+.input_hints--textCenter {
+  text-align: center;
+}
+
+.input_hints--textRight {
+  text-align: right;
+}
+
+.input_hints--hint {
+  color: var(--text-secondary-color);
+}
+
+.input_hints--error {
+  color: var(--primary-error-border);
+}
+
+.input_hints--success {
+  color: var(--primary-success-border);
+}
+
+.input_hints--sm {
+  font-size: 0.72rem;
+}
+
+.input_hints--md {
+  font-size: 0.78rem;
+}
+
+.input_hints--lg {
+  font-size: 0.85rem;
+}

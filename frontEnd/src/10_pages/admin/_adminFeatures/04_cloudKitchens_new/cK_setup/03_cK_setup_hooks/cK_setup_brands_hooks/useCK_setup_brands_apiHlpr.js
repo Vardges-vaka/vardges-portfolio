@@ -27,11 +27,17 @@ import {
 } from "../../../../../../../05_helpers/_helpers.index";
 
 export const useCK_setup_brands_apiHlpr = ({ TOAST }) => {
-  const brand_create = useCallback(() => {}, []);
-  const brand_getAll = useCallback(() => {}, []);
+  const brand_create = useCallback(
+    (payload) => CK_brnd_brand_create(payload),
+    [],
+  );
+  const brand_getAll = useCallback(() => CK_brnd_brand_getAll(), []);
   const brand_getOne = useCallback(() => {}, []);
   const brand_delete = useCallback(() => {}, []);
-  const brand_updateAll = useCallback(() => {}, []);
+  const brand_updateAll = useCallback(
+    (payload) => CK_brnd_brand_updateAll(payload),
+    [],
+  );
   const brand_update_name = useCallback(() => {}, []);
   const brand_update_tagline = useCallback(() => {}, []);
   const brand_update_files = useCallback(() => {}, []);

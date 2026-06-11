@@ -1,0 +1,93 @@
+.input_icon_cnt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--input-primary-icon-color);
+}
+
+.input_icon {
+  display: block;
+  flex-shrink: 0;
+  color: inherit;
+  stroke: currentColor;
+}
+
+/* Field-row icons — fixed slot for input alignment */
+.input_icon_cnt--sm {
+  width: 1.65rem;
+  padding: 0 0.2rem;
+}
+
+.input_icon--sm {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.input_icon_cnt--md {
+  width: 2rem;
+  padding: 0 0.25rem;
+}
+
+.input_icon--md {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.input_icon_cnt--lg {
+  width: 2.35rem;
+  padding: 0 0.3rem;
+}
+
+.input_icon--lg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Label icons — hug content; no fixed slot width */
+.input_icon_cnt--inLabel {
+  width: auto;
+  min-width: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.input_icon_cnt--inLabel img.input_icon {
+  width: 1.1rem;
+  height: 0.75rem;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.input_icon_cnt--inLabel .input_icon--sm {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.input_icon_cnt--inLabel img.input_icon.input_icon--sm {
+  height: 0.65rem;
+}
+
+.input_icon_cnt--inLabel .input_icon--lg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.input_icon_cnt--inLabel img.input_icon.input_icon--lg {
+  height: 0.85rem;
+}
+
+.input_icon_cnt[role="button"] {
+  cursor: pointer;
+  border-radius: 0.35rem;
+  transition: opacity 0.15s ease;
+}
+
+.input_icon_cnt[role="button"]:hover {
+  opacity: 0.82;
+}
+
+.input_icon_cnt[role="button"]:focus-visible {
+  outline: 2px solid var(--border-primary-color);
+  outline-offset: 1px;
+}

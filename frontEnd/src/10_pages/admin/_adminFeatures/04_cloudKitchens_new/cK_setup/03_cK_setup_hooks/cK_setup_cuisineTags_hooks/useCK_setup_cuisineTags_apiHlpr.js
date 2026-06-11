@@ -19,11 +19,17 @@ export const useCK_setup_cuisineTags_apiHlpr = ({ TOAST }) => {
   //   const brand_create = useCallback(() => {}, []);
 
   // Crud
-  const cuisTag_create = useCallback(() => {}, []);
-  const cuisTag_getAll = useCallback(() => {}, []);
+  const cuisTag_create = useCallback(
+    (payload) => CK_gen_cuisineTag_create(payload),
+    [],
+  );
+  const cuisTag_getAll = useCallback(() => CK_gen_cuisineTag_getAll(), []);
   const cuisTag_getOne = useCallback(() => {}, []);
   const cuisTag_delete = useCallback(() => {}, []);
-  const cuisTag_updateAll = useCallback(() => {}, []);
+  const cuisTag_updateAll = useCallback(
+    (payload) => CK_gen_cuisineTag_updateAll(payload),
+    [],
+  );
   // Fields
   const cuisTag_update_value = useCallback(() => {}, []);
   const cuisTag_update_label = useCallback(() => {}, []);

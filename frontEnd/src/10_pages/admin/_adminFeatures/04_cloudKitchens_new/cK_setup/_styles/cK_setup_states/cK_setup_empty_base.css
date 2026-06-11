@@ -1,0 +1,110 @@
+/* Shared empty-state styling for every Setup session.
+   Each cK_setup_empty_<session>.css @imports this so the look stays consistent. */
+
+.cK_setup_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  min-height: 24rem;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+  border: 1.5px dashed var(--border-primary-color);
+  border-radius: 1.1rem;
+  background-color: var(--bg-secondary-color);
+  background-image: radial-gradient(
+    circle at 50% -10%,
+    color-mix(in srgb, var(--title-secondary-color) 8%, transparent),
+    transparent 55%
+  );
+  color: var(--text-primary-color);
+}
+
+.cK_setup_empty_iconWrap {
+  display: grid;
+  place-items: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+  background-color: color-mix(
+    in srgb,
+    var(--title-secondary-color) 12%,
+    var(--bg-primary-color)
+  );
+  border: 1px solid var(--border-secondary-color);
+  box-shadow: 0 6px 18px
+    color-mix(in srgb, var(--title-secondary-color) 16%, transparent);
+}
+
+.cK_setup_empty_iconImg {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.cK_setup_empty_title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--title-secondary-color);
+}
+
+.cK_setup_empty_subtitle {
+  margin: 0;
+  max-width: 28rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-secondary-color);
+}
+
+.cK_setup_empty_cta {
+  margin-top: 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--btn-primary-border-color);
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+  box-shadow: 0 1px 2px var(--btn-primary-boxShadow-color);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.12s ease,
+    box-shadow 0.15s ease;
+}
+
+.cK_setup_empty_cta:hover {
+  color: var(--btn-primary-text-color-HOV);
+  background-color: var(--btn-primary-bg-color-HOV);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--btn-primary-bg-color) 35%, transparent);
+}
+
+.cK_setup_empty_cta:active {
+  transform: translateY(0);
+}
+
+.cK_setup_empty_cta_plus {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cK_setup_empty_cta {
+    transition: none;
+  }
+  .cK_setup_empty_cta:hover {
+    transform: none;
+  }
+}

@@ -1726,3 +1726,105 @@
   "timestamp": "2026-05-28 18:25:39",
   "type": "controller_error"
 }
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js | ",
+  "error": "Operation `brands.find()` buffering timed out after 10000ms",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Operation `brands.find()` buffering timed out after 10000ms\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at cK_brnd_brand_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_cntrl_utils/cK_brnd_brand_srv/cK_brnd_brand_crud_srv/cK_brnd_brand_getAll_srv.js:34:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async cK_brnd_brand_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-06-04 22:03:14",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_brnd_brand_create_cntrl.js | ",
+  "error": "Maximum call stack size exceeded",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_brnd_brand_create_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Maximum call stack size exceeded\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at cK_brnd_brand_create_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_cntrl_utils/cK_brnd_brand_srv/cK_brnd_brand_crud_srv/cK_brnd_brand_create_srv.js:44:12)\n    at cK_brnd_brand_create_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_create_cntrl.js:13:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/05_middlewares/vld_sntzr_mddlwre.js:21:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 500,
+  "timestamp": "2026-06-04 22:03:19",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_brnd_brand_create_cntrl.js | ",
+  "error": "Maximum call stack size exceeded",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_brnd_brand_create_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Maximum call stack size exceeded\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at cK_brnd_brand_create_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_cntrl_utils/cK_brnd_brand_srv/cK_brnd_brand_crud_srv/cK_brnd_brand_create_srv.js:44:12)\n    at cK_brnd_brand_create_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_create_cntrl.js:13:46)\n    at Layer.handleRequest (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\vardg\\OneDrive\\Desktop\\Codding\\vardges.me\\backEnd\\node_modules\\router\\lib\\route.js:157:13)\n    at file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/05_middlewares/vld_sntzr_mddlwre.js:21:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+  "statusCode": 500,
+  "timestamp": "2026-06-04 22:06:34",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>| ",
+  "error": "Internal Server Error in Service",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | user_authCheck_cntrl.js | |<=>|  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Internal Server Error in Service\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at user_authCheck_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/_utils/userServices/userServices_auth/user_authCheck_srv.js:92:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async user_authCheck_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/userCntrl/userCntrl_auth/user_authCheck_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-06-04 22:22:52",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js | ",
+  "error": "connect ETIMEDOUT 35.244.23.215:27017",
+  "errorType": "INTERNAL_ERROR",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: connect ETIMEDOUT 35.244.23.215:27017\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at cK_brnd_brand_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_cntrl_utils/cK_brnd_brand_srv/cK_brnd_brand_crud_srv/cK_brnd_brand_getAll_srv.js:34:12)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at runNextTicks (node:internal/process/task_queues:69:3)\n    at process.processTimers (node:internal/timers:526:9)\n    at async cK_brnd_brand_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-06-04 22:31:44",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js | ",
+  "error": "connect ETIMEDOUT 35.244.23.215:27017",
+  "errorType": "INTERNAL_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: connect ETIMEDOUT 35.244.23.215:27017\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at cK_brnd_brand_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_cntrl_utils/cK_brnd_brand_srv/cK_brnd_brand_crud_srv/cK_brnd_brand_getAll_srv.js:34:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async cK_brnd_brand_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-06-04 22:32:07",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js | ",
+  "error": "connect ETIMEDOUT 35.244.23.215:27017",
+  "errorType": "INTERNAL_ERROR",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_brnd_brand_getAll_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: connect ETIMEDOUT 35.244.23.215:27017\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at cK_brnd_brand_getAll_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_cntrl_utils/cK_brnd_brand_srv/cK_brnd_brand_crud_srv/cK_brnd_brand_getAll_srv.js:34:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async cK_brnd_brand_getAll_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_Brand_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_crud_cntrl/cK_brnd_brand_getAll_cntrl.js:13:40)",
+  "statusCode": 500,
+  "timestamp": "2026-06-04 22:44:01",
+  "type": "controller_error"
+}
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_gen_cuisineTag_create_cntrl.js | ",
+  "error": "CuisineTag validation failed: kind: `sample` is not a valid enum value for path `kind`.",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_gen_cuisineTag_create_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: CuisineTag validation failed: kind: `sample` is not a valid enum value for path `kind`.\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at cK_gen_cuisineTag_create_srv (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_General_cntrl/cK_gen_cuisineTag_crud_cntrl/cK_gen_cuisineTag_cntrl_utils/cK_gen_cuisineTag_srv/cK_gen_cuisineTag_crud_srv/cK_gen_cuisineTag_create_srv.js:46:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async cK_gen_cuisineTag_create_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_General_cntrl/cK_gen_cuisineTag_crud_cntrl/cK_gen_cuisineTag_crud_cntrl/cK_gen_cuisineTag_create_cntrl.js:13:40)",
+  "statusCode": 400,
+  "timestamp": "2026-06-11 17:59:38",
+  "type": "controller_error"
+}
