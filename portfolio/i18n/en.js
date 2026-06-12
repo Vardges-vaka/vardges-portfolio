@@ -1,0 +1,429 @@
+// English — master dictionary. All other locales mirror this structure exactly.
+export default {
+  meta: {
+    name: "Vardges Petrosyan",
+    role: "Full-Stack Developer × Hospitality Leader",
+    location: "Dubai, United Arab Emirates",
+  },
+
+  nav: {
+    home: "Home",
+    tech: "Tech",
+    bar: "Hospitality",
+    contact: "Contact",
+    theme: "Toggle theme",
+    language: "Language",
+    menu: "Menu",
+    close: "Close",
+  },
+
+  contact: {
+    kicker: "Contact",
+    title: "Let's talk.",
+    sub: "Whether it's a product to build, a system to secure, or a bar to transform — I answer fast.",
+    emailLabel: "Email",
+    phoneLabel: "Phone",
+    linkedinLabel: "LinkedIn",
+    locationLabel: "Based in",
+    locationValue: "Dubai, UAE",
+    ctaEmail: "Write me an email",
+    ctaLinkedIn: "Connect on LinkedIn",
+  },
+
+  footer: {
+    line: "Designed & built by Vardges Petrosyan — React, canvas and far too much coffee.",
+    rights: "All rights reserved.",
+    top: "Back to top",
+  },
+
+  home: {
+    hero: {
+      kicker: "Dubai · United Arab Emirates",
+      name: "Vardges Petrosyan",
+      tagline: "Two crafts. One standard: excellence.",
+      techWord: "The Engineer",
+      techSub: "MERN · Cloud · Security",
+      barWord: "The Alchemist",
+      barSub: "Bars · Beverage · Hospitality",
+      enterTech: "Enter the tech side",
+      enterBar: "Enter the bar side",
+      scroll: "Scroll to explore",
+    },
+    marquee: [
+      "Dubai",
+      "Full-Stack Developer",
+      "Bar Director",
+      "33 Countries",
+      "MERN Stack",
+      "Mixology",
+      "Cloud & Security",
+      "4 Languages",
+    ],
+    intro: {
+      kicker: "Who I am",
+      title: "Two crafts. One discipline.",
+      p1: "For 14 years I ran bars — from Yerevan to the Metropol in Moscow to Dubai's busiest sports bar. Hospitality taught me the hardest skill there is: reading people, under pressure, every single night.",
+      p2: "Then I taught myself to build software. Not toy projects — a real production platform with a multi-cloud storage engine, hardened auth, and four languages, deployed on AWS.",
+      p3: "Code scales what hospitality taught me: care about the person on the other side. That's the whole philosophy — in a cocktail or in an API.",
+      badges: ["Self-taught", "Bilingual mindset", "Detail-obsessed", "Guest-first"],
+    },
+    stats: {
+      kicker: "The numbers",
+      title: "A career, measured.",
+      items: [
+        { value: 14, suffix: "+", label: "years in hospitality" },
+        { value: 33, suffix: "", label: "countries explored" },
+        { value: 500, suffix: "+", label: "recipes mastered" },
+        { value: 20, suffix: "+", label: "outlets managed" },
+        { value: 4, suffix: "", label: "languages spoken" },
+        { value: 1, suffix: "", label: "production platform built" },
+      ],
+    },
+    timeline: {
+      kicker: "The journey",
+      title: "From the bar counter to the cloud console.",
+      sub: "Every stop added an ingredient. This is the full recipe.",
+      legend: { bar: "Hospitality", tech: "Technology", hybrid: "Both worlds" },
+      items: [
+        {
+          year: "2011",
+          title: "First shift behind the bar",
+          place: "Congress Hotel · Yerevan, Armenia",
+          text: "Bar-back to bartender. The lesson that stuck: a good bartender mixes smiles and stories, not just drinks.",
+          type: "bar",
+        },
+        {
+          year: "2013",
+          title: "Head Bartender at the Metropol",
+          place: "Hotel Metropol · Moscow, Russia",
+          text: "Leading the Shalyapin Bar with an inventory of 500+ beverages for Moscow's elite hospitality scene.",
+          type: "bar",
+        },
+        {
+          year: "2013–14",
+          title: "Beach by day, disco by night",
+          place: "Miramar Al Aqah Beach Resort · Fujairah, UAE",
+          text: "Acting Head Bartender across a beach bar and a nightclub — adaptability, served on tap.",
+          type: "bar",
+        },
+        {
+          year: "2015–16",
+          title: "Head Bartender, Blu Sky Lounge",
+          place: "Southern Sun · Abu Dhabi, UAE",
+          text: "Promoted on merit. Running operations and mentoring the team in a high-energy rooftop lounge.",
+          type: "bar",
+        },
+        {
+          year: "2018",
+          title: "Twenty outlets at once",
+          place: "Subah Group · Sheraton Al Khalidiya, Abu Dhabi",
+          text: "Group Bar Manager across 20+ F&B outlets — a crash course in large-scale hospitality strategy.",
+          type: "bar",
+        },
+        {
+          year: "2018–24",
+          title: "Bar Manager, BFF Sports Bar",
+          place: "Dubai, UAE",
+          text: "Six years running one of Dubai's leading sports bars: menus, team, events, and relentless growth.",
+          type: "bar",
+        },
+        {
+          year: "2022",
+          title: "Founder, The Cocktail Tree",
+          place: "Dubai, UAE",
+          text: "Beverage consulting, training and menu engineering — pouring 14 years of experience into other venues.",
+          type: "hybrid",
+        },
+        {
+          year: "2023",
+          title: "The pivot: learning to code",
+          place: "Self-taught · Dubai, UAE",
+          text: "JavaScript, React, Node, MongoDB — nights and weekends, building real systems instead of tutorials.",
+          type: "tech",
+        },
+        {
+          year: "2024",
+          title: "Director of Marketing & BD",
+          place: "Vkusno · Dubai, UAE",
+          text: "Growing a restaurant brand across Talabat, Careem, Deliveroo and Noon — where hospitality meets digital.",
+          type: "hybrid",
+        },
+        {
+          year: "Now",
+          title: "Shipping vardges.me",
+          place: "Production · AWS",
+          text: "A full-stack operations platform with a multi-cloud storage engine, secure sessions and 4-language i18n.",
+          type: "tech",
+        },
+      ],
+    },
+    doors: {
+      kicker: "Choose a path",
+      title: "Same person. Pick your poison.",
+      tech: {
+        title: "The tech portfolio",
+        sub: "Full-stack engineering, cloud architecture and a security-first mindset.",
+        cta: "Explore /tech",
+      },
+      bar: {
+        title: "The hospitality portfolio",
+        sub: "14 years of bars, beverage programs and guest experiences across three countries.",
+        cta: "Explore /bar",
+      },
+    },
+  },
+
+  tech: {
+    hero: {
+      kicker: "vardges.me/tech",
+      title: "I build systems end-to-end.",
+      sub: "Self-taught full-stack developer out of the hospitality world. I design, build, secure and ship complete web platforms — and I sweat the details, because I spent 14 years in a job where details are everything.",
+      open: "Open to opportunities — development · security · automation",
+      ctaProject: "See the case study",
+      ctaContact: "Get in touch",
+    },
+    about: {
+      kicker: "The origin story",
+      title: "From bar counters to cloud consoles.",
+      p1: "Most developers learn to handle pressure from production incidents. I learned it from a full bar on match night. Same skill: stay calm, triage fast, fix the right thing first.",
+      p2: "I taught myself the MERN stack and went straight for the hard parts — authentication, cloud infrastructure, internationalization, deployment. Not because a course said so, but because my own product needed them.",
+      p3: "Now I'm going deeper into security: hardening what I build, understanding how it breaks, and aiming my curiosity at cybersecurity as a discipline.",
+    },
+    stack: {
+      kicker: "Arsenal",
+      title: "The stack I actually ship with.",
+      sub: "Every item below is in production code I wrote — not a logo wall.",
+      groups: [
+        {
+          name: "Frontend",
+          items: ["React 19", "Vite", "React Router 7", "Context API", "Framer Motion", "i18next — 4 locales + RTL", "CSS design systems"],
+        },
+        {
+          name: "Backend",
+          items: ["Node.js", "Express", "MongoDB + Mongoose", "Session auth (connect-mongo)", "Layered architecture", "REST API design", "Validation pipelines"],
+        },
+        {
+          name: "Cloud & DevOps",
+          items: ["AWS — EC2 · ALB · CodeBuild", "Google Cloud Storage + Monitoring", "AWS S3 + CloudWatch", "Cloudflare R2", "Azure Blob + Monitor", "CI build pipelines"],
+        },
+        {
+          name: "Security & practice",
+          items: ["Input validation layers", "Least-privilege IAM", "Helmet + secure cookies", "Trust-proxy hardening", "Secrets hygiene", "Automation & AI tooling"],
+        },
+      ],
+    },
+    project: {
+      kicker: "Case study",
+      title: "One platform, four clouds.",
+      name: "vardges.me — Operations Platform",
+      desc: "A production MERN platform I designed, built and deployed solo: an operations dashboard for managing dark-kitchen restaurant chains, with file storage that can live on any of four cloud providers.",
+      bullets: [
+        {
+          title: "Multi-cloud storage engine",
+          text: "One interface over Google Cloud Storage, AWS S3, Cloudflare R2 and Azure Blob — with live health pings and provider monitoring built in.",
+        },
+        {
+          title: "Security first",
+          text: "Server-side sessions in MongoDB, Helmet headers, secure cookies behind an AWS load balancer, and a validator layer in front of every write.",
+        },
+        {
+          title: "Speaks four languages",
+          text: "Full internationalization in English, Russian, Armenian and Arabic — including right-to-left layout support.",
+        },
+        {
+          title: "Really deployed",
+          text: "AWS EC2 behind an Application Load Balancer with CodeBuild CI, health endpoints designed for the balancer's checks.",
+        },
+      ],
+      stackLine: "React · Node · Express · MongoDB · AWS · GCP · Cloudflare · Azure",
+      mockNote: "Live provider health — a real feature of the platform",
+    },
+    security: {
+      kicker: "Security mindset",
+      title: "Built paranoid, on purpose.",
+      sub: "Hospitality teaches you to spot trouble before it reaches the bar. I write software the same way.",
+      cards: [
+        {
+          title: "Defense in depth",
+          text: "Every request passes route guards, validators and sanitizers before it ever touches data.",
+        },
+        {
+          title: "Least privilege",
+          text: "Scoped IAM roles per cloud provider — nothing gets one permission more than it needs.",
+        },
+        {
+          title: "Hardened sessions",
+          text: "Server-side sessions, secure cookies, and trust-proxy configured correctly behind the load balancer.",
+        },
+        {
+          title: "Breaking to learn",
+          text: "Moving deeper into offensive and defensive security — labs, CTFs and a healthy distrust of my own code.",
+        },
+      ],
+    },
+    certs: {
+      kicker: "Certificates",
+      title: "Paper trail.",
+      items: [
+        "AI Infrastructure and Operations Fundamentals",
+        "Use AI as a Creative or Expert Partner",
+        "Design Prompts for Everyday Work Tasks",
+      ],
+    },
+    cta: {
+      title: "Need someone who ships and secures?",
+      sub: "I'm open to roles in web development, security and automation — on site in Dubai or remote.",
+      button: "Hire me",
+    },
+  },
+
+  bar: {
+    hero: {
+      kicker: "Est. 2011 · Yerevan → Moscow → Dubai",
+      title: "Part science. Part theatre. All hospitality.",
+      sub: "Bar manager, beverage consultant and founder of The Cocktail Tree — I build bars that people come back to.",
+      cta1: "Taste the journey",
+      cta2: "Work with me",
+    },
+    numbers: {
+      kicker: "Poured in numbers",
+      title: "Fourteen years, distilled.",
+      items: [
+        { value: 14, suffix: "+", label: "years of service" },
+        { value: 500, suffix: "+", label: "recipes by heart" },
+        { value: 20, suffix: "+", label: "outlets managed" },
+        { value: 33, suffix: "", label: "countries travelled" },
+        { value: 65, suffix: "+", label: "cities explored" },
+      ],
+      globeNote: "One bus tour. 33 countries. 65+ cities. Endless inspiration for the back bar.",
+    },
+    menu: {
+      kicker: "The journey",
+      title: "A career, served as a tasting menu.",
+      sub: "Eight courses. Three countries. One standard.",
+      courses: [
+        {
+          course: "Aperitivo",
+          year: "2011–13",
+          role: "Bartender",
+          venue: "Congress Hotel, Venice Bar",
+          city: "Yerevan, Armenia",
+          text: "Where it began. Bar-back to bartender — learning that the craft is people, not just pours.",
+        },
+        {
+          course: "First Pour",
+          year: "2013",
+          role: "Head Bartender",
+          venue: "Hotel Metropol, Shalyapin Bar",
+          city: "Moscow, Russia",
+          text: "Leading a legendary hotel bar with 500+ beverages in inventory and zero room for error.",
+        },
+        {
+          course: "Sunset Course",
+          year: "2013–14",
+          role: "Acting Head Bartender",
+          venue: "Miramar Al Aqah Beach Resort",
+          city: "Fujairah, UAE",
+          text: "Beach bar by day, Bliss Disco by night — two venues, two tempos, one bartender.",
+        },
+        {
+          course: "Signature Serve",
+          year: "2015–16",
+          role: "Head Bartender",
+          venue: "Southern Sun, Blu Sky Lounge",
+          city: "Abu Dhabi, UAE",
+          text: "Promoted on the floor. Running service and mentoring the team in a rooftop sports lounge.",
+        },
+        {
+          course: "Grand Tasting",
+          year: "2018",
+          role: "Group Bar Manager",
+          venue: "Subah Group · Sheraton Al Khalidiya",
+          city: "Abu Dhabi, UAE",
+          text: "20+ outlets across the capital — strategy, standards and training at group scale.",
+        },
+        {
+          course: "Main Course",
+          year: "2018–24",
+          role: "Bar Manager",
+          venue: "BFF Sports Bar",
+          city: "Dubai, UAE",
+          text: "Six years at the helm of one of Dubai's leading sports bars — menu, team, events, growth.",
+        },
+        {
+          course: "Digestif",
+          year: "2022–now",
+          role: "Founder",
+          venue: "The Cocktail Tree",
+          city: "Dubai, UAE",
+          text: "Consulting, training and menu engineering — sharing the recipe book with the industry.",
+        },
+        {
+          course: "Chef's Surprise",
+          year: "2024–now",
+          role: "Director of Marketing & BD",
+          venue: "Vkusno",
+          city: "Dubai, UAE",
+          text: "Taking a restaurant brand digital — growth across every major delivery platform in the UAE.",
+        },
+      ],
+    },
+    tree: {
+      kicker: "The Cocktail Tree",
+      title: "Consulting, with roots.",
+      desc: "The Cocktail Tree is my consultancy — six roots, like the six classic cocktail families. It exists to make great beverage programs accessible to any venue, from neighborhood bar to hotel group.",
+      services: [
+        {
+          title: "Menu engineering",
+          text: "Cocktail lists that fit your concept, your guests and your margins — not someone else's trends.",
+        },
+        {
+          title: "Staff training & masterclasses",
+          text: "From first shake to flair — practical training that survives a Friday night rush.",
+        },
+        {
+          title: "Bar audits & cost control",
+          text: "Pour costs, inventory discipline and waste — found, fixed and kept fixed.",
+        },
+        {
+          title: "Concept & opening support",
+          text: "Layout, workflow, equipment and first menu — for openings that start strong.",
+        },
+        {
+          title: "Supplier & inventory strategy",
+          text: "The right back bar at the right price, with relationships that outlast promotions.",
+        },
+        {
+          title: "Guest experience design",
+          text: "Service rituals, signature serves and the small moments guests tell stories about.",
+        },
+      ],
+    },
+    vkusno: {
+      kicker: "Beyond the bar",
+      title: "Hospitality, gone digital.",
+      role: "Director of Marketing & Business Development — Vkusno, Dubai",
+      desc: "Running growth for an authentic Russian-cuisine brand in the UAE — proof that the same instincts that fill a bar can fill an order queue.",
+      points: [
+        "Partnerships with Talabat, Careem, Deliveroo and Noon Food",
+        "Brand identity, website and mobile-app development oversight",
+        "SEO, social media and influencer campaigns",
+        "Loyalty programs and seasonal retention campaigns",
+      ],
+    },
+    certs: {
+      kicker: "Credentials",
+      title: "Trained, certified, negotiated.",
+      items: [
+        "Hotel & Hospitality Management — Zabeel International University",
+        "Strategic Negotiation",
+        "Negotiation Foundations",
+      ],
+    },
+    cta: {
+      title: "Let's raise the bar. Literally.",
+      sub: "Consulting, beverage programs, openings, training — or a bar that just needs to make money again.",
+      button: "Book a consultation",
+    },
+  },
+};

@@ -10,28 +10,18 @@ import {
 } from "./02_context/context.index";
 
 // Layouts & Routes
-import {
-  AdminLayout,
-  PublicLayout,
-  AdminRoutes,
-  PublicRoutes,
-} from "./06_routes/_routes.index.js";
+import { AdminLayout, AdminRoutes } from "./06_routes/_routes.index.js";
 
-// ! Global Styles
+// Public portfolio (standalone module — own theme, own i18n, no backend)
+import PortfolioApp from "./portfolio/PortfolioApp.jsx";
+
+// ! Global Styles (admin side)
 import "./09_styles/globalColors.css";
 import "./09_styles/globalSpacing.css";
 import "./09_styles/lightTheme.css";
 import "./09_styles/darkTheme.css";
 import "./09_styles/App.css";
 import "./09_styles/globalColorsNew.css";
-/*
-
-
-
-
-
-
-*/
 
 function App() {
   return (
@@ -47,10 +37,8 @@ function App() {
                     <Route path="*" element={<AdminRoutes />} />
                   </Route>
 
-                  {/* // ! Public Routes */}
-                  <Route path="/*" element={<PublicLayout />}>
-                    <Route path="*" element={<PublicRoutes />} />
-                  </Route>
+                  {/* // ! Public Portfolio */}
+                  <Route path="/*" element={<PortfolioApp />} />
                 </Routes>
               </Suspense>
             </Router>
