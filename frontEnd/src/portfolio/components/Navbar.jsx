@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { Sun, Moon, Menu, X, ChevronDown, Globe } from "lucide-react";
 import { usePortfolioLang, usePortfolioTheme } from "../context/usePortfolio.js";
+import ModeToggle from "./ModeToggle.jsx";
 import { CONTACT_ANCHOR_ID } from "../portfolio.constants.js";
 
 const Navbar = () => {
@@ -54,6 +55,7 @@ const Navbar = () => {
     { to: "/", label: t("nav.home"), end: true },
     { to: "/tech", label: t("nav.tech"), end: false },
     { to: "/bar", label: t("nav.bar"), end: false },
+    { to: "/lab", label: t("nav.lab"), end: false },
   ];
 
   return (
@@ -82,6 +84,8 @@ const Navbar = () => {
           </nav>
 
           <div className="vp-nav__tools">
+            <ModeToggle />
+
             <div className="vp-nav__lang" ref={langRef}>
               <button
                 type="button"
@@ -203,6 +207,9 @@ const Navbar = () => {
                 </button>
               </Motion.div>
             </nav>
+            <div className="vp-mobile-menu__mode">
+              <ModeToggle compact />
+            </div>
           </Motion.div>
         )}
       </AnimatePresence>

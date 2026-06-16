@@ -25,3 +25,10 @@
   font-weight: 600;
   color: var(--text-secondary-color);
 }
+
+.emailEnginesTest__note {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-secondary-color);
+}

@@ -9,40 +9,47 @@ import {
   MapPin,
   Send,
   Loader2,
-  CheckCircle2,
   ArrowUpRight,
+  Wine,
+  GlassWater,
+  MessageSquare,
+  Code2,
 } from "lucide-react";
 import DiscordIcon from "./DiscordIcon.jsx";
 import Reveal from "./Reveal.jsx";
-import { usePortfolioLang } from "../context/usePortfolio.js";
+import CvButtons from "./CvButtons.jsx";
+import { usePortfolioLang, usePortfolioMode } from "../context/usePortfolio.js";
 import { CONTACT, CONTACT_ANCHOR_ID } from "../portfolio.constants.js";
 
+const variantForPath = (p) => (p.startsWith("/tech") ? "tech" : p.startsWith("/bar") ? "bar" : "home");
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
- * Contact section with a real form.
- *
- * TODO(Vardges): wire `submitContact` to your backend. The payload shape is
- * stable — POST it to e.g. /api/public/contact and return the usual
- * { success, message, data } envelope. See NOTES.md → "Contact form backend".
+ * Contact — a mode-aware experience, not a plain form.
+ *   Engineer / Both  → a terminal that "POSTs" your request and streams a 200 OK.
+ *   Bartender        → "pull up a stool" — order what you came for.
+ * Both share validation + submitContact. The send is currently simulated; wire
+ * submitContact to a real endpoint (Formspree / serverless) — see NOTES.md.
  */
 const submitContact = async (payload) => {
-  // --- replace this block with the real API call -------------------------
-  // const res = await fetch("/api/public/contact", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify(payload),
-  // });
-  // return res.json();
-  console.info("[contact-form] payload ready for backend:", payload);
-  await new Promise((resolve) => setTimeout(resolve, 1100));
+  // --- replace with the real API call (POST → { success, message, data }) ---
+  console.info("[contact] payload ready for backend:", payload);
+  await new Promise((resolve) => setTimeout(resolve, 1200));
   return { success: true };
-  // -----------------------------------------------------------------------
+  // -------------------------------------------------------------------------
 };
+
+const INTENTS = [
+  { key: "tech", icon: Code2 },
+  { key: "bar", icon: Wine },
+  { key: "other", icon: MessageSquare },
+];
 
 const ContactSection = () => {
   const { t, lang } = usePortfolioLang();
+  const { showTech, showBar } = usePortfolioMode();
   const location = useLocation();
+  const barMode = showBar && !showTech;
   const [values, setValues] = useState({ name: "", email: "", topic: "tech", message: "", company: "" });
   const [errors, setErrors] = useState({});
   const [phase, setPhase] = useState("idle"); // idle | sending | sent
@@ -60,6 +67,7 @@ const ContactSection = () => {
     setValues((v) => ({ ...v, [field]: e.target.value }));
     setErrors((err) => ({ ...err, [field]: undefined }));
   };
+  const setTopic = (topic) => setValues((v) => ({ ...v, topic }));
 
   const validate = () => {
     const next = {};
@@ -74,9 +82,8 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (phase === "sending") return;
-    if (values.company) return; // honeypot — bots only
+    if (values.company) return; // honeypot
     if (!validate()) return;
-
     setPhase("sending");
     const payload = {
       name: values.name.trim(),
@@ -101,8 +108,42 @@ const ContactSection = () => {
     setPhase("idle");
   };
 
+  const honeypot = (
+    <input
+      type="text"
+      name="company"
+      value={values.company}
+      onChange={setField("company")}
+      className="vp-form__honeypot"
+      tabIndex={-1}
+      autoComplete="off"
+      aria-hidden="true"
+    />
+  );
+
+  const intentChips = (
+    <div className="vp-cform__intents" role="group" aria-label={t(barMode ? "contact.stool.intent" : "contact.cli.intent")}>
+      {INTENTS.map((it) => {
+        const { key } = it;
+        const Icon = it.icon;
+        return (
+          <button
+            key={key}
+            type="button"
+            className={`vp-cform__intent ${values.topic === key ? "is-on" : ""}`}
+            aria-pressed={values.topic === key}
+            onClick={() => setTopic(key)}
+          >
+            <Icon size={14} aria-hidden="true" />
+            {t(`contact.intents.${key}`)}
+          </button>
+        );
+      })}
+    </div>
+  );
+
   return (
-    <section className="vp-section vp-contact-sec" id={CONTACT_ANCHOR_ID}>
+    <section className="vp-section vp-contact-sec" id={CONTACT_ANCHOR_ID} data-cmode={barMode ? "bar" : "tech"}>
       <div className="vp-container vp-contact-sec__grid">
         {/* ---- left rail: heading + direct channels ---- */}
         <div className="vp-contact-sec__info">
@@ -140,123 +181,106 @@ const ContactSection = () => {
               ))}
             </ul>
           </Reveal>
+          <Reveal delay={0.16}>
+            <CvButtons variant={variantForPath(location.pathname)} />
+          </Reveal>
         </div>
 
-        {/* ---- right rail: the form ---- */}
+        {/* ---- right rail: the mode-aware contact experience ---- */}
         <Reveal delay={0.15} className="vp-contact-sec__form-wrap">
-          <div className="vp-form-card">
-            <AnimatePresence mode="wait">
-              {phase === "sent" ? (
-                <Motion.div
-                  key="sent"
-                  className="vp-form-success"
-                  initial={{ opacity: 0, scale: 0.92 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <span className="vp-form-success__ring">
-                    <CheckCircle2 size={42} aria-hidden="true" />
-                  </span>
-                  <h3>{t("form.successTitle")}</h3>
-                  <p>{t("form.successText")}</p>
-                  <button type="button" className="vp-btn vp-btn--ghost" onClick={reset}>
-                    {t("form.sendAnother")}
-                  </button>
-                </Motion.div>
-              ) : (
-                <Motion.form
-                  key="form"
-                  className="vp-form"
-                  onSubmit={handleSubmit}
-                  noValidate
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="vp-form__row">
-                    <div className={`vp-field ${errors.name ? "has-error" : ""}`}>
-                      <label htmlFor="vp-f-name">{t("form.name")}</label>
-                      <input
-                        id="vp-f-name"
-                        type="text"
-                        autoComplete="name"
-                        placeholder={t("form.namePh")}
-                        value={values.name}
-                        onChange={setField("name")}
-                      />
-                      {errors.name && <span className="vp-field__error">{errors.name}</span>}
+          {barMode ? (
+            /* ===== BARTENDER: pull up a stool ===== */
+            <div className="vp-cform vp-cform--bar">
+              <div className="vp-cform__bar-top">
+                <span className="vp-cform__neon">{t("contact.stool.open")}</span>
+              </div>
+              <AnimatePresence mode="wait">
+                {phase === "sent" ? (
+                  <Motion.div key="ok" className="vp-cform__done" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}>
+                    <span className="vp-cform__done-icon vp-cform__done-icon--bar"><GlassWater size={40} /></span>
+                    <h3>{t("contact.stool.successTitle")}</h3>
+                    <p>{t("contact.stool.success")}</p>
+                    <button type="button" className="vp-btn vp-btn--ghost" onClick={reset}>{t("form.sendAnother")}</button>
+                  </Motion.div>
+                ) : (
+                  <Motion.form key="form" className="vp-cform__body" onSubmit={handleSubmit} noValidate initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    <h3 className="vp-cform__heading vp-cform__heading--serif">{t("contact.stool.heading")}</h3>
+                    <p className="vp-cform__hint">{t("contact.stool.hint")}</p>
+                    {intentChips}
+                    <div className="vp-cform__row">
+                      <div className={`vp-field ${errors.name ? "has-error" : ""}`}>
+                        <input id="vp-f-name" type="text" autoComplete="name" placeholder={t("form.namePh")} value={values.name} onChange={setField("name")} />
+                        {errors.name && <span className="vp-field__error">{errors.name}</span>}
+                      </div>
+                      <div className={`vp-field ${errors.email ? "has-error" : ""}`}>
+                        <input id="vp-f-email" type="email" autoComplete="email" placeholder={t("form.emailPh")} value={values.email} onChange={setField("email")} />
+                        {errors.email && <span className="vp-field__error">{errors.email}</span>}
+                      </div>
                     </div>
-                    <div className={`vp-field ${errors.email ? "has-error" : ""}`}>
-                      <label htmlFor="vp-f-email">{t("form.email")}</label>
-                      <input
-                        id="vp-f-email"
-                        type="email"
-                        autoComplete="email"
-                        placeholder={t("form.emailPh")}
-                        value={values.email}
-                        onChange={setField("email")}
-                      />
-                      {errors.email && <span className="vp-field__error">{errors.email}</span>}
+                    <div className={`vp-field ${errors.message ? "has-error" : ""}`}>
+                      <textarea id="vp-f-message" rows={4} placeholder={t("contact.stool.notePh")} value={values.message} onChange={setField("message")} />
+                      {errors.message && <span className="vp-field__error">{errors.message}</span>}
                     </div>
-                  </div>
-
-                  <div className="vp-field">
-                    <label htmlFor="vp-f-topic">{t("form.topic")}</label>
-                    <div className="vp-field__select-wrap">
-                      <select id="vp-f-topic" value={values.topic} onChange={setField("topic")}>
-                        <option value="tech">{t("form.topicTech")}</option>
-                        <option value="hospitality">{t("form.topicBar")}</option>
-                        <option value="other">{t("form.topicOther")}</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className={`vp-field ${errors.message ? "has-error" : ""}`}>
-                    <label htmlFor="vp-f-message">{t("form.message")}</label>
-                    <textarea
-                      id="vp-f-message"
-                      rows={5}
-                      placeholder={t("form.messagePh")}
-                      value={values.message}
-                      onChange={setField("message")}
-                    />
-                    {errors.message && <span className="vp-field__error">{errors.message}</span>}
-                  </div>
-
-                  {/* honeypot — invisible to humans, irresistible to bots */}
-                  <input
-                    type="text"
-                    name="company"
-                    value={values.company}
-                    onChange={setField("company")}
-                    className="vp-form__honeypot"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    aria-hidden="true"
-                  />
-
-                  <div className="vp-form__foot">
-                    <p className="vp-form__privacy">{t("form.privacy")}</p>
-                    <button type="submit" className="vp-btn vp-btn--primary vp-form__submit" disabled={phase === "sending"}>
-                      {phase === "sending" ? (
-                        <>
-                          <Loader2 size={16} className="vp-spin" aria-hidden="true" />
-                          {t("form.sending")}
-                        </>
-                      ) : (
-                        <>
-                          <Send size={15} className="vp-arrow" aria-hidden="true" />
-                          {t("form.submit")}
-                        </>
-                      )}
+                    {honeypot}
+                    <button type="submit" className="vp-btn vp-btn--gold vp-cform__send" disabled={phase === "sending"}>
+                      {phase === "sending" ? <><Loader2 size={16} className="vp-spin" aria-hidden="true" /> {t("contact.stool.sending")}</> : <><Wine size={15} aria-hidden="true" /> {t("contact.stool.order")}</>}
                     </button>
-                  </div>
-                </Motion.form>
-              )}
-            </AnimatePresence>
-          </div>
+                  </Motion.form>
+                )}
+              </AnimatePresence>
+            </div>
+          ) : (
+            /* ===== ENGINEER / BOTH: the terminal ===== */
+            <div className="vp-cform vp-cform--cli" dir="ltr">
+              <div className="vp-cform__cli-bar">
+                <span className="vp-terminal__dot vp-terminal__dot--r" />
+                <span className="vp-terminal__dot vp-terminal__dot--y" />
+                <span className="vp-terminal__dot vp-terminal__dot--g" />
+                <span className="vp-cform__cli-title">{t("contact.cli.host")}</span>
+              </div>
+              <AnimatePresence mode="wait">
+                {phase === "sent" ? (
+                  <Motion.div key="ok" className="vp-cform__cli-body" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    <p className="vp-cform__cli-line"><span className="vp-cform__prompt">$</span> curl -X POST /api/contact</p>
+                    <p className="vp-cform__cli-line vp-cform__cli-line--dim">&gt; {t("contact.cli.posting")}</p>
+                    <p className="vp-cform__cli-line vp-cform__cli-ok">&lt; {t("contact.cli.ok")}</p>
+                    <pre className="vp-cform__cli-json">{t("contact.cli.okBody")}</pre>
+                    <p className="vp-cform__cli-msg">{t("form.successText")}</p>
+                    <button type="button" className="vp-btn vp-btn--ghost vp-cform__send" onClick={reset}>{t("form.sendAnother")}</button>
+                  </Motion.div>
+                ) : (
+                  <Motion.form key="form" className="vp-cform__cli-body" onSubmit={handleSubmit} noValidate initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    <p className="vp-cform__cli-line vp-cform__cli-line--dim">{t("contact.cli.hint")}</p>
+                    <label className="vp-cform__cli-field">
+                      <span className="vp-cform__prompt">name<span>:</span></span>
+                      <input type="text" autoComplete="name" placeholder={t("form.namePh")} value={values.name} onChange={setField("name")} />
+                    </label>
+                    {errors.name && <span className="vp-cform__cli-err"># {errors.name}</span>}
+                    <label className="vp-cform__cli-field">
+                      <span className="vp-cform__prompt">email<span>:</span></span>
+                      <input type="email" autoComplete="email" placeholder={t("form.emailPh")} value={values.email} onChange={setField("email")} />
+                    </label>
+                    {errors.email && <span className="vp-cform__cli-err"># {errors.email}</span>}
+                    <div className="vp-cform__cli-field vp-cform__cli-field--intent">
+                      <span className="vp-cform__prompt">intent<span>:</span></span>
+                      {intentChips}
+                    </div>
+                    <label className="vp-cform__cli-field vp-cform__cli-field--msg">
+                      <span className="vp-cform__prompt">message<span>:</span></span>
+                      <textarea rows={3} placeholder={t("form.messagePh")} value={values.message} onChange={setField("message")} />
+                    </label>
+                    {errors.message && <span className="vp-cform__cli-err"># {errors.message}</span>}
+                    {honeypot}
+                    <button type="submit" className="vp-cform__cli-send" disabled={phase === "sending"}>
+                      <span className="vp-cform__prompt">$</span>
+                      {phase === "sending" ? <><Loader2 size={14} className="vp-spin" aria-hidden="true" /> {t("contact.cli.sending")}</> : <><Send size={13} aria-hidden="true" /> {t("contact.cli.send")}</>}
+                      <span className="vp-cform__caret" aria-hidden="true" />
+                    </button>
+                  </Motion.form>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
         </Reveal>
       </div>
     </section>

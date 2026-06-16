@@ -1,8 +1,8 @@
-/* Root field shell — label, control row, hints */
+/* Input_text — field shell layout + states (colors from 09_styles/INPUT.css) */
 .input_text {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: var(--input-gap);
   width: 100%;
   box-sizing: border-box;
 }
@@ -11,39 +11,41 @@
   display: flex;
   align-items: center;
   width: 100%;
-  border: var(--input-primary-border-color);
-  border-radius: 0.5rem;
-  background-color: var(--input-primary-bg-color);
-  box-shadow: var(--input-primary-boxShadow);
-  transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease,
-    background-color 0.15s ease;
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  background-color: var(--input-bg);
+  box-shadow: var(--input-shadow);
+  transition: var(--input-transition);
   box-sizing: border-box;
 }
 
 .input_text__fieldWrap:hover:not(.input_text__fieldWrap--disabled) {
-  border: var(--input-primary-border-color-HOV);
-  box-shadow: var(--input-primary-boxShadow-HOV);
+  border: var(--input-border-hov);
+  background-color: var(--input-bg-hov);
+  box-shadow: var(--input-shadow-hov);
 }
 
 .input_text__fieldWrap:focus-within:not(.input_text__fieldWrap--disabled) {
-  border: var(--input-primary-border-color-FOC);
-  box-shadow: var(--input-primary-boxShadow-FOC);
+  border: var(--input-border-foc);
+  background-color: var(--input-bg-foc);
+  box-shadow: var(--input-shadow-foc);
 }
 
 .input_text__fieldWrap--disabled {
-  border: var(--input-primary-border-color-DIS);
-  box-shadow: var(--input-primary-boxShadow-DIS);
+  border: var(--input-border-dis);
+  background-color: var(--input-bg-dis);
+  box-shadow: var(--input-shadow-dis);
   opacity: 0.72;
 }
 
 .input_text__fieldWrap--error {
-  border-color: var(--primary-error-border);
+  border: 1px solid var(--input-error-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-error-border) 18%, transparent);
 }
 
 .input_text__fieldWrap--success {
-  border-color: var(--primary-success-border);
+  border: 1px solid var(--input-success-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-success-border) 18%, transparent);
 }
 
 .input_text__input {
@@ -55,7 +57,7 @@
 .input_text__inlineRow {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: var(--input-inline-gap);
   width: 100%;
   box-sizing: border-box;
 }
@@ -65,19 +67,11 @@
   min-width: 0;
 }
 
-.input_text__inlineRow--labelbefore {
-  flex-direction: row;
-}
-
-.input_text__inlineRow--labelafter {
-  flex-direction: row;
-}
-
 .input_text--labelInline {
-  gap: 0.35rem;
+  gap: var(--input-gap);
 }
 
-/* sm / md / lg — field row */
+/* sm / md / lg — field row sizing (layout only, not colors) */
 .input_text--sm .input_text__fieldWrap {
   min-height: 2rem;
 }
@@ -127,4 +121,26 @@
 
 .input_text--lg .input_text__fieldWrap--withRightIcon .input_text__input {
   padding-right: 0.25rem;
+}
+
+/* Character counter on the right inside the field row */
+.input_text__fieldWrap--withLength .input_text__input {
+  padding-right: 0.2rem;
+}
+
+.input_text--sm .input_text__fieldWrap--withLength .field_length--inline {
+  padding-right: 0.45rem;
+}
+
+.input_text--md .input_text__fieldWrap--withLength .field_length--inline {
+  padding-right: 0.55rem;
+}
+
+.input_text--lg .input_text__fieldWrap--withLength .field_length--inline {
+  padding-right: 0.65rem;
+}
+
+.input_text__fieldWrap--withLength.input_text__fieldWrap--withRightIcon
+  .field_length--inline {
+  padding-right: 0.15rem;
 }

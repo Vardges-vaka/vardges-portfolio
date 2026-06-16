@@ -1,0 +1,44 @@
+.field_hints {
+  margin: 0;
+  width: 100%;
+  line-height: 1.4;
+  color: var(--field-hint-text);
+  text-align: left;
+}
+
+.field_hints--textLeft {
+  text-align: left;
+  margin-left: 3px;
+}
+
+.field_hints--textCenter {
+  text-align: center;
+}
+
+.field_hints--textRight {
+  text-align: right;
+}
+
+.field_hints--hint {
+  color: var(--field-hint-text);
+}
+
+.field_hints--error {
+  color: var(--field-error-text);
+}
+
+.field_hints--success {
+  color: var(--field-success-text);
+}
+
+.field_hints--sm {
+  font-size: 0.72rem;
+}
+
+.field_hints--md {
+  font-size: 0.78rem;
+}
+
+.field_hints--lg {
+  font-size: 0.85rem;
+}

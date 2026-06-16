@@ -1,9 +1,10 @@
-import { forwardRef, useId } from "react";
+import { forwardRef, useId, useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import {
   Input_label,
   Input_icon,
   Input_hints,
+  Input_length,
 } from "./input_childComps/_input_childComps.index.js";
 import GenericInput from "./GenericInput.jsx";
 import { INPUT_SIZE_TYPES } from "./input_helpers/inputSizeTypes.js";
@@ -16,12 +17,15 @@ import {
 } from "./input_helpers/inputLabelLayout.js";
 import "../_styles/inputs/input_text.css";
 
+const getCharCount = (val) => String(val ?? "").length;
+
 const Input_text = forwardRef(function Input_text(
   {
     labelProps = {},
     leftIconProps = {},
     rightIconProps = {},
     hintsProps = {},
+    lengthProps = {},
 
     className,
     baseStyle = true,
@@ -30,6 +34,11 @@ const Input_text = forwardRef(function Input_text(
     id: idProp,
     disabled,
     required,
+    maxLength,
+    value,
+    defaultValue,
+    onChange,
+    onInput,
     ...inputProps
   },
   ref,
@@ -37,6 +46,40 @@ const Input_text = forwardRef(function Input_text(
   const autoId = useId();
   const id = idProp ?? autoId;
   const hintId = `${id}-hint`;
+  const lengthId = `${id}-length`;
+
+  const showLength = Boolean(lengthProps.isActive && maxLength != null);
+
+  const [charCount, setCharCount] = useState(() =>
+    getCharCount(value ?? defaultValue),
+  );
+
+  useEffect(() => {
+    if (value !== undefined) {
+      setCharCount(getCharCount(value));
+    }
+  }, [value]);
+
+  const handleChange = useCallback(
+    (e) => {
+      setCharCount(getCharCount(e.target.value));
+      onChange?.(e);
+    },
+    [onChange],
+  );
+
+  const handleInput = useCallback(
+    (e) => {
+      setCharCount(getCharCount(e.target.value));
+      onInput?.(e);
+    },
+    [onInput],
+  );
+
+  const describedBy =
+    [hintsProps.isActive ? hintId : null, showLength ? lengthId : null]
+      .filter(Boolean)
+      .join(" ") || undefined;
 
   const labelPosition = normalizeLabelPosition(labelProps.position);
   const inlinePosition = labelProps.inlinePosition ?? "before";
@@ -56,6 +99,7 @@ const Input_text = forwardRef(function Input_text(
     "input_text__fieldWrap",
     leftIconProps.isActive && "input_text__fieldWrap--withLeftIcon",
     rightIconProps.isActive && "input_text__fieldWrap--withRightIcon",
+    showLength && "input_text__fieldWrap--withLength",
     disabled && "input_text__fieldWrap--disabled",
     hintsProps.isActive &&
       hintsProps.type === "error" &&
@@ -99,11 +143,27 @@ const Input_text = forwardRef(function Input_text(
         className="input_text__input"
         disabled={disabled}
         required={required}
+        maxLength={maxLength}
+        value={value}
+        defaultValue={defaultValue}
         aria-invalid={
           hintsProps.isActive && hintsProps.type === "error" ? true : undefined
         }
-        aria-describedby={hintsProps.isActive ? hintId : undefined}
+        aria-describedby={describedBy}
+        onChange={handleChange}
+        onInput={handleInput}
         {...inputProps}
+      />
+
+      <Input_length
+        baseStyle
+        id={lengthId}
+        placement="inline"
+        {...sharedSize}
+        {...lengthProps}
+        isActive={showLength}
+        current={charCount}
+        max={maxLength}
       />
 
       <Input_icon baseStyle {...sharedSize} {...rightIconProps} />
@@ -185,12 +245,18 @@ Input_text.propTypes = {
     textPosition: PropTypes.oneOf(HINT_TEXT_POSITIONS),
     className: PropTypes.string,
   }),
+  lengthProps: PropTypes.shape({
+    isActive: PropTypes.bool,
+    textPosition: PropTypes.oneOf(HINT_TEXT_POSITIONS),
+    className: PropTypes.string,
+  }),
   className: PropTypes.string,
   baseStyle: PropTypes.bool,
   sizeType: PropTypes.oneOf(INPUT_SIZE_TYPES),
   id: PropTypes.string,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
+  maxLength: PropTypes.number,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholder: PropTypes.string,
@@ -198,6 +264,7 @@ Input_text.propTypes = {
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
+  onInput: PropTypes.func,
 };
 
 Input_text.displayName = "Input_text";

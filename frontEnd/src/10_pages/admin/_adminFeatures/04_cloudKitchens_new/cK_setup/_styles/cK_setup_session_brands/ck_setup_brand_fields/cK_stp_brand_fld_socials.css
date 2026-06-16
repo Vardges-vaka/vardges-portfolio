@@ -1,0 +1,64 @@
+.cK_stp_brand_fld_socials {
+  --cK_social-card-width: 300px;
+  --cK_social-deck-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --cK_social-deck-duration: 0.72s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cK_stp_brand_fld_socials__headActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cK_stp_brand_fld_socials__deck {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 320px;
+  padding: 0.75rem 0;
+  overflow-x: clip;
+  overflow-y: visible;
+  position: relative;
+}
+
+.cK_stp_brand_fld_socials__deckItem {
+  flex: 0 0 auto;
+  width: var(--cK_social-card-width);
+  position: relative;
+  backface-visibility: hidden;
+}
+
+.cK_stp_brand_fld_socials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.cK_stp_brand_fld_socials__gridItem {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .cK_stp_brand_fld_socials__deck {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .cK_stp_brand_fld_socials__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cK_stp_brand_fld_socials__deckItem {
+    transition-duration: 0.01ms !important;
+  }
+}

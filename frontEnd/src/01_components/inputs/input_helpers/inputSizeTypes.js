@@ -1,3 +1,4 @@
-export const INPUT_SIZE_TYPES = ["sm", "md", "lg"];
-
-export default INPUT_SIZE_TYPES;
+export {
+  FIELD_SIZE_TYPES as INPUT_SIZE_TYPES,
+  FIELD_ICON_PX as INPUT_ICON_PX,
+} from "../../fieldParts/field_helpers/fieldSizeTypes.js";

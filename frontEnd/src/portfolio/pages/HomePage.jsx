@@ -2,12 +2,18 @@ import { Link } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import { ArrowRight, Code2, Martini, ChevronDown } from "lucide-react";
 import { usePortfolioLang, usePortfolioTheme } from "../context/usePortfolio.js";
-import ParticleField from "../components/canvas/ParticleField.jsx";
 import Reveal from "../components/Reveal.jsx";
 import Counter from "../components/Counter.jsx";
 import TiltCard from "../components/TiltCard.jsx";
-import MediaPlaceholder from "../components/MediaPlaceholder.jsx";
+import Media from "../components/Media.jsx";
 import ContactSection from "../components/ContactSection.jsx";
+import Testimonials from "../components/Testimonials.jsx";
+import SectionAtmosphere from "../components/fx/SectionAtmosphere.jsx";
+import AsciiField from "../components/fx/AsciiField.jsx";
+import Prism3D from "../components/fx/Prism3D.jsx";
+import NowPanel from "../components/NowPanel.jsx";
+import LifeMap from "../components/interactive/LifeMap.jsx";
+import { TESTIMONIALS } from "../data/testimonials.js";
 import "../styles/home.css";
 
 const HomePage = () => {
@@ -23,18 +29,21 @@ const HomePage = () => {
   const badges = t("home.intro.badges");
 
   return (
-    <main className="vp-page vp-page--home">
+    <main className="vp-page vp-page--home" id="vp-main" tabIndex={-1}>
       {/* ============ HERO ============ */}
       <section className="vp-home-hero">
-        <ParticleField
-          colorA={isDark ? "#38e1c8" : "#0b8d7b"}
-          colorB={isDark ? "#e9a23b" : "#b06f14"}
-          lineRGB={isDark ? "150,158,180" : "70,76,95"}
-        />
         <div className="vp-home-hero__glow vp-home-hero__glow--a" aria-hidden="true" />
         <div className="vp-home-hero__glow vp-home-hero__glow--b" aria-hidden="true" />
 
         <div className="vp-home-hero__content">
+          <Motion.div
+            initial={{ opacity: 0, y: 18, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Prism3D techLabel={t("home.hero.techWord")} barLabel={t("home.hero.barWord")} />
+          </Motion.div>
+
           <Motion.p
             className="vp-kicker vp-home-hero__kicker"
             initial={{ opacity: 0, y: 16 }}
@@ -70,6 +79,7 @@ const HomePage = () => {
 
           <div className="vp-home-hero__doors">
             <Motion.div
+              className="vp-door-wrap vp-door-wrap--tech"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -88,6 +98,7 @@ const HomePage = () => {
             </Motion.div>
 
             <Motion.div
+              className="vp-door-wrap vp-door-wrap--bar"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -134,6 +145,27 @@ const HomePage = () => {
         </div>
       </div>
 
+      {/* ============ NOW PANEL ============ */}
+      <div className="vp-container vp-now-wrap">
+        <Reveal>
+          <NowPanel />
+        </Reveal>
+      </div>
+
+      {/* ============ LIFE MAP ============ */}
+      <section className="vp-section vp-home-map">
+        <div className="vp-container">
+          <Reveal>
+            <p className="vp-kicker">{t("lifemap.kicker")}</p>
+            <h2 className="vp-h2">{t("lifemap.title")}</h2>
+            <p className="vp-sub">{t("lifemap.sub")}</p>
+          </Reveal>
+        </div>
+        <Reveal delay={0.1}>
+          <LifeMap />
+        </Reveal>
+      </section>
+
       {/* ============ INTRO ============ */}
       <section className="vp-section vp-home-intro">
         <div className="vp-container vp-home-intro__grid">
@@ -167,7 +199,7 @@ const HomePage = () => {
               <div className="vp-monogram">
                 <div className="vp-monogram__ring" aria-hidden="true" />
                 <div className="vp-monogram__ring vp-monogram__ring--2" aria-hidden="true" />
-                <MediaPlaceholder
+                <Media
                   assetId="ASSET-H1"
                   type="image"
                   label="Portrait — Vardges Petrosyan"
@@ -203,6 +235,7 @@ const HomePage = () => {
 
       {/* ============ TIMELINE ============ */}
       <section className="vp-section vp-home-timeline">
+        <SectionAtmosphere kind="topo" />
         <div className="vp-container">
           <Reveal>
             <p className="vp-kicker">{t("home.timeline.kicker")}</p>
@@ -241,6 +274,7 @@ const HomePage = () => {
 
       {/* ============ DOORS (bottom) ============ */}
       <section className="vp-section vp-home-doors">
+        <AsciiField color={isDark ? "#38e1c8" : "#0b8d7b"} />
         <div className="vp-container">
           <Reveal>
             <p className="vp-kicker">{t("home.doors.kicker")}</p>
@@ -272,6 +306,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* ============ TESTIMONIALS ============ */}
+      <Testimonials items={TESTIMONIALS} variant="home" />
 
       {/* ============ CONTACT ============ */}
       <ContactSection />

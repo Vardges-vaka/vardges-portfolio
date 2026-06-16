@@ -1,0 +1,121 @@
+:root {
+  /* ========== LIGHT THEME COLORS ========== */
+
+  /* 
+
+
+  
+  --input_label_text
+  --input_label_text_HOV
+  --input_label_bg
+  --input_label_bg_HOV
+  --input_label_border
+  --input_label_border_HOV
+  --input_label_box_SH
+  --input_label_box_SH_HOV
+  --input_label_icon_stroke
+  --input_label_icon_stroke_HOV
+  --input_label_icon_bg
+  --input_label_icon_bg_HOV
+  --input_label_icon_border
+  --input_label_icon_border_HOV
+  --input_label_icon_box_SH
+  --input_label_icon_box_SH_HOV
+
+  --input_hint_text
+  --input_hint_text_HOV
+  --input_hint_bg
+  --input_hint_bg_HOV
+  --input_hint_border
+  --input_hint_border_HOV
+  --input_hint_box_SH
+  --input_hint_box_SH_HOV
+
+
+  
+  */
+  --L-input-primary-bg-color: rgb(241, 235, 235);
+  --L-input-primary-text-color: rgba(1, 1, 1, 0.792);
+  --L-input-primary-text-color-FOC: rgb(0, 0, 0);
+  --L-input-primary-text-color-HOV: rgb(45, 44, 44);
+  --L-input-primary-plHolder-color: rgba(129, 130, 128, 0.764);
+  --L-input-primary-plHolder-color-HOV: rgb(74, 69, 69);
+  --L-input-primary-plHolder-color-DIS: rgba(99, 97, 97, 0.707);
+  --L-input-primary-label-color: #7a10ab;
+  --L-input-primary-label-color-HOV: #560c78;
+  --L-input-primary-border-color: 1px solid #571b738e;
+  --L-input-primary-icon-color: #7c22a6;
+
+  --L-input-primary-border-color-HOV: 1px solid #560c78;
+  --L-input-primary-border-color-FOC: 1px solid #480666;
+  --L-input-primary-border-color-DIS: 1px solid #ff0000;
+  --L-input-primary-boxShadow: 0 2px 8px 0 #7f3b9f29, 0 1.5px 4px 0 #571b730d;
+  --L-input-primary-boxShadow-FOC: 0 2px 6px 0 #7f3b9f3d, 0 1px 4px 0 #571b731a;
+  --L-input-primary-boxShadow-DIS: 0 2px 6px 0 #fc00003d, 0 1px 4px 0 #ff00001a;
+  --L-input-primary-boxShadow-HOV: 0 2px 6px 0 #7f3b9f3d, 0 1px 4px 0 #571b731a;
+  /* ========== DARK THEME COLORS ========== */
+
+  --D-input-primary-bg-color: rgb(90, 13, 116);
+  --D-input-primary-text-color: rgba(255, 255, 255, 0.929);
+  --D-input-primary-text-color-FOC: rgb(255, 255, 255);
+  --D-input-primary-text-color-HOV: rgb(255, 196, 0);
+  --D-input-primary-plHolder-color: rgba(252, 254, 250, 0.764);
+  --D-input-primary-plHolder-color-HOV: rgb(183, 157, 11);
+  --D-input-primary-plHolder-color-DIS: rgba(255, 255, 255, 0.764);
+  --D-input-primary-label-color: #f1bd03;
+  --D-input-primary-label-color-HOV: #0acd37;
+  --D-input-primary-border-color: 1px solid #ff6200c2;
+  --D-input-primary-icon-color: #ffcc00;
+  --D-input-primary-border-color-HOV: 1px solid #2e005d;
+  --D-input-primary-border-color-FOC: 1px solid #ff8300;
+  --D-input-primary-border-color-DIS: 1px solid #ff0000;
+  --D-input-primary-boxShadow: 0 2px 8px 0 #2f005dbd, 0 1.5px 4px 0 #571b730d;
+  --D-input-primary-boxShadow-FOC: 0 2px 6px 0 #ff8300, 0 1px 4px 0 #571b731a;
+  --D-input-primary-boxShadow-DIS: 0 2px 6px 0 #ff000096, 0 1px 4px 0 #ff00001a;
+  --D-input-primary-boxShadow-HOV: 0 1px 3px 0 #ff62008f, 0 1px 2px 0 #ff6200a2;
+}
+
+/* ========== DARK THEME COLORS ========== */
+[data-theme="dark"] {
+  /* ! ⬇️⬇️⬇️===INPUT COLORS===⬇️⬇️⬇️ ------------------------------------------------------------------------------------------------------------------*/
+  --input-primary-bg-color: var(--D-input-primary-bg-color);
+  --input-primary-text-color: var(--D-input-primary-text-color);
+  --input-primary-text-color-FOC: var(--D-input-primary-text-color-FOC);
+  --input-primary-text-color-HOV: var(--D-input-primary-text-color-HOV);
+  --input-primary-plHolder-color: var(--D-input-primary-plHolder-color);
+  --input-primary-plHolder-color-HOV: var(--D-input-primary-plHolder-color-HOV);
+  --input-primary-label-text: var(--D-input-primary-label-color);
+  --input-primary-label-text-HOV: var(--D-input-primary-label-color-HOV);
+  --input-primary-border-color: var(--D-input-primary-border-color);
+  --input-primary-icon-color: var(--D-input-primary-icon-color);
+  --input-primary-border-color-HOV: var(--D-input-primary-border-color-HOV);
+  --input-primary-border-color-FOC: var(--D-input-primary-border-color-FOC);
+  --input-primary-border-color-DIS: var(--D-input-primary-border-color-DIS);
+  --input-primary-boxShadow: var(--D-input-primary-boxShadow);
+  --input-primary-boxShadow-FOC: var(--D-input-primary-boxShadow-FOC);
+  --input-primary-boxShadow-DIS: var(--D-input-primary-boxShadow-DIS);
+  --input-primary-boxShadow-HOV: var(--D-input-primary-boxShadow-HOV);
+  --input-primary-plHolder-color-DIS: var(--D-input-primary-plHolder-color-DIS);
+}
+
+/* ========== LIGHT THEME COLORS ========== */
+[data-theme="light"] {
+  --input-primary-bg-color: var(--L-input-primary-bg-color);
+  --input-primary-text-color: var(--L-input-primary-text-color);
+  --input-primary-text-color-FOC: var(--L-input-primary-text-color-FOC);
+  --input-primary-text-color-HOV: var(--L-input-primary-text-color-HOV);
+  --input-primary-plHolder-color: var(--L-input-primary-plHolder-color);
+  --input-primary-plHolder-color-HOV: var(--L-input-primary-plHolder-color-HOV);
+  --input-primary-label-text: var(--L-input-primary-label-color);
+  --input-primary-label-text-HOV: var(--L-input-primary-label-color-HOV);
+  --input-primary-border-color: var(--L-input-primary-border-color);
+  --input-primary-icon-color: var(--L-input-primary-icon-color);
+  --input-primary-border-color-HOV: var(--L-input-primary-border-color-HOV);
+  --input-primary-border-color-FOC: var(--L-input-primary-border-color-FOC);
+  --input-primary-border-color-DIS: var(--L-input-primary-border-color-DIS);
+  --input-primary-boxShadow: var(--L-input-primary-boxShadow);
+  --input-primary-boxShadow-FOC: var(--L-input-primary-boxShadow-FOC);
+  --input-primary-boxShadow-DIS: var(--L-input-primary-boxShadow-DIS);
+  --input-primary-boxShadow-HOV: var(--L-input-primary-boxShadow-HOV);
+  --input-primary-plHolder-color-DIS: var(--L-input-primary-plHolder-color-DIS);
+}

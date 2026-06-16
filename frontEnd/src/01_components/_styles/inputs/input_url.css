@@ -1,0 +1,183 @@
+/* Input_url — same shell as input_text + URL validation states */
+.input_url {
+  display: flex;
+  flex-direction: column;
+  gap: var(--input-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_url__fieldWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  background-color: var(--input-bg);
+  box-shadow: var(--input-shadow);
+  transition: var(--input-transition);
+  box-sizing: border-box;
+}
+
+.input_url__fieldWrap:hover:not(.input_url__fieldWrap--disabled) {
+  border: var(--input-border-hov);
+  background-color: var(--input-bg-hov);
+  box-shadow: var(--input-shadow-hov);
+}
+
+.input_url__fieldWrap:focus-within:not(.input_url__fieldWrap--disabled) {
+  border: var(--input-border-foc);
+  background-color: var(--input-bg-foc);
+  box-shadow: var(--input-shadow-foc);
+}
+
+.input_url__fieldWrap--disabled {
+  border: var(--input-border-dis);
+  background-color: var(--input-bg-dis);
+  box-shadow: var(--input-shadow-dis);
+  opacity: 0.72;
+}
+
+.input_url__fieldWrap--error {
+  border: 1px solid var(--input-error-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-error-border) 18%, transparent);
+}
+
+.input_url__fieldWrap--success {
+  border: 1px solid var(--input-success-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-success-border) 18%, transparent);
+}
+
+.input_url__fieldWrap--warning {
+  border: 1px solid var(--primary-warning-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary-warning-border) 18%, transparent);
+}
+
+.input_url__input {
+  flex: 1;
+  min-width: 0;
+}
+
+.input_url__inlineRow {
+  display: flex;
+  align-items: center;
+  gap: var(--input-inline-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_url__inlineRow .input_url__fieldWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.input_url--labelInline {
+  gap: var(--input-gap);
+}
+
+.input_url--sm .input_url__fieldWrap {
+  min-height: 2rem;
+}
+
+.input_url--sm .input_url__input {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+}
+
+.input_url--md .input_url__fieldWrap {
+  min-height: 2.35rem;
+}
+
+.input_url--md .input_url__input {
+  font-size: 0.875rem;
+  padding: 0.42rem 0.7rem;
+}
+
+.input_url--lg .input_url__fieldWrap {
+  min-height: 2.75rem;
+}
+
+.input_url--lg .input_url__input {
+  font-size: 1rem;
+  padding: 0.52rem 0.85rem;
+}
+
+.input_url--sm .input_url__fieldWrap--withLeftIcon .input_url__input {
+  padding-left: 0.15rem;
+}
+
+.input_url--sm .input_url__fieldWrap--withRightIcon .input_url__input {
+  padding-right: 0.15rem;
+}
+
+.input_url--md .input_url__fieldWrap--withLeftIcon .input_url__input {
+  padding-left: 0.2rem;
+}
+
+.input_url--md .input_url__fieldWrap--withRightIcon .input_url__input {
+  padding-right: 0.2rem;
+}
+
+.input_url--lg .input_url__fieldWrap--withLeftIcon .input_url__input {
+  padding-left: 0.25rem;
+}
+
+.input_url--lg .input_url__fieldWrap--withRightIcon .input_url__input {
+  padding-right: 0.25rem;
+}
+
+.input_url__statusIcon--success {
+  color: var(--input-success-border);
+}
+
+.input_url__statusIcon--warning {
+  color: var(--primary-warning-border);
+}
+
+.input_url__statusIcon--error {
+  color: var(--input-error-border);
+}
+
+.input_url__hint--warning {
+  color: var(--primary-warning-border);
+}
+
+.input_url__actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.1rem;
+  padding-right: 0.25rem;
+}
+
+.input_url__actionIcon {
+  cursor: pointer;
+  color: var(--input-icon);
+  transition: color 0.12s ease;
+}
+
+.input_url__actionIcon:hover:not(.input_url__actionIcon--disabled) {
+  color: var(--input-text-foc);
+}
+
+.input_url__actionIcon--disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.input_url__fieldWrap--readOnly .input_url__input {
+  cursor: default;
+  text-overflow: ellipsis;
+}
+
+.input_url--sm .input_url__fieldWrap--withActions .input_url__input {
+  padding-right: 0.1rem;
+}
+
+.input_url--md .input_url__fieldWrap--withActions .input_url__input {
+  padding-right: 0.15rem;
+}
+
+.input_url--lg .input_url__fieldWrap--withActions .input_url__input {
+  padding-right: 0.2rem;
+}

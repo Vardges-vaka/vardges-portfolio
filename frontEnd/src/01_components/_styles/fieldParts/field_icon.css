@@ -1,0 +1,78 @@
+.field_icon_cnt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--field-icon);
+}
+
+.field_icon {
+  display: block;
+  flex-shrink: 0;
+  color: inherit;
+  stroke: currentColor;
+}
+
+.field_icon--sm,
+img.field_icon.field_icon--sm {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.field_icon--md,
+img.field_icon.field_icon--md {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.field_icon--lg,
+img.field_icon.field_icon--lg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+img.field_icon {
+  object-fit: contain;
+  object-position: center;
+}
+
+.field_icon_cnt--sm {
+  width: 1.65rem;
+  padding: 0 0.2rem;
+}
+
+.field_icon_cnt--md {
+  width: 2rem;
+  padding: 0 0.25rem;
+}
+
+.field_icon_cnt--lg {
+  width: 2.35rem;
+  padding: 0 0.3rem;
+}
+
+.field_icon_cnt--inLabel {
+  width: auto;
+  min-width: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.field_icon_cnt--decorative {
+  pointer-events: none;
+}
+
+.field_icon_cnt[role="button"] {
+  cursor: pointer;
+  border-radius: 0.35rem;
+  transition: opacity 0.15s ease;
+}
+
+.field_icon_cnt[role="button"]:hover {
+  opacity: 0.82;
+}
+
+.field_icon_cnt[role="button"]:focus-visible {
+  outline: 2px solid var(--border-primary-color);
+  outline-offset: 1px;
+}

@@ -1,0 +1,4 @@
+/* Select_relational — variant hook (shared styles in select_field.css) */
+.select_relational {
+  /* reserved for relational-specific overrides */
+}

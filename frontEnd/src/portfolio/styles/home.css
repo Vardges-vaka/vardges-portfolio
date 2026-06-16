@@ -99,6 +99,8 @@
   color: var(--vp-text2);
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   margin-bottom: clamp(2.2rem, 4.5vw, 3.6rem);
+  /* contrast floor over the brightest part of the scene */
+  text-shadow: 0 1px 12px color-mix(in srgb, var(--vp-bg) 70%, transparent);
 }
 
 /* the two doors */
@@ -117,9 +119,11 @@
   padding: 1.6rem 1.7rem;
   border-radius: 22px;
   border: 1px solid var(--vp-line);
-  background: color-mix(in srgb, var(--vp-bg) 45%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* higher-opacity tint + lighter blur: readable and far cheaper to composite
+     over the continuously-repainting scene than a heavy backdrop blur */
+  background: color-mix(in srgb, var(--vp-bg) 68%, transparent);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
@@ -182,6 +186,7 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: var(--track-md);
+  text-shadow: 0 1px 10px color-mix(in srgb, var(--vp-bg) 70%, transparent);
   z-index: 2;
 }
 .vp-home-hero__scroll svg {
@@ -199,6 +204,10 @@
   grid-template-columns: 1.25fr 0.75fr;
   gap: clamp(2.5rem, 6vw, 5rem);
   align-items: center;
+}
+/* faint contrast floor for the long body copy sitting over the live scene */
+.vp-home-intro__text .vp-sub {
+  text-shadow: 0 1px 10px color-mix(in srgb, var(--vp-bg) 55%, transparent);
 }
 .vp-home-intro__punch {
   color: var(--vp-text);
@@ -239,12 +248,15 @@
   width: 78%;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1px dashed color-mix(in srgb, var(--c-tech) 45%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--c-tech) 38%, transparent);
   animation: vp-spin 36s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.6;
 }
 .vp-monogram__ring--2 {
   width: 60%;
-  border-color: color-mix(in srgb, var(--c-bar) 45%, transparent);
+  border-color: color-mix(in srgb, var(--c-bar) 38%, transparent);
   animation-direction: reverse;
   animation-duration: 26s;
 }
@@ -253,27 +265,45 @@
     transform: rotate(360deg);
   }
 }
+/* real headshot fills the card like a framed photo (works on both themes) */
 .vp-monogram .vp-monogram__portrait {
-  width: 68%;
-  position: relative;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
   z-index: 1;
-  border-radius: 18px;
-  box-shadow: 0 20px 48px color-mix(in srgb, var(--vp-shadow) 60%, transparent);
+  border-radius: 26px;
+}
+.vp-monogram::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top, color-mix(in srgb, #05060a 88%, transparent) 0%, transparent 38%);
 }
 .vp-monogram__caption {
   font-family: var(--vpf-mono);
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: var(--track-md);
-  color: var(--vp-text2);
+  color: #d9dde8;
   text-align: center;
   max-width: 84%;
-  position: relative;
+  position: absolute;
+  bottom: 1.1rem;
+  inset-inline: 0;
+  margin-inline: auto;
+  z-index: 3;
 }
 
 /* ---------- stats section ---------- */
 .vp-home-stats {
-  background: var(--vp-bg2);
+  background: color-mix(in srgb, var(--vp-bg2) 80%, transparent);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   border-block: 1px solid var(--vp-line);
 }
 
@@ -346,7 +376,10 @@
   position: relative;
   border: 1px solid var(--vp-line);
   border-radius: 20px;
-  background: var(--vp-surface);
+  /* real translucent panel so card text stays legible over the moving scene */
+  background: color-mix(in srgb, var(--vp-bg2) 80%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 1.5rem 1.6rem;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -529,4 +562,143 @@
   .vp-bigdoor {
     min-height: 220px;
   }
+}
+
+/* ============================================================
+   LIFE MAP — interactive mind-map of two crafts
+   ============================================================ */
+.vp-lifemap {
+  width: min(1180px, 96vw);
+  margin-inline: auto;
+  margin-top: 2.4rem;
+}
+.vp-lifemap__stage {
+  position: relative;
+  height: clamp(480px, 66vh, 680px);
+  border: 1px solid var(--vp-line);
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(680px circle at 22% 18%, color-mix(in srgb, var(--c-tech) 8%, transparent), transparent 60%),
+    radial-gradient(620px circle at 82% 88%, color-mix(in srgb, var(--c-bar) 7%, transparent), transparent 60%),
+    var(--vp-bg2);
+}
+.vp-mindbg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.vp-mindbg__canvas { display: block; width: 100%; height: 100%; }
+.vp-lifemap__canvas {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+.vp-lifemap__links { position: absolute; top: 0; inset-inline-start: 0; overflow: visible; }
+.vp-lifemap__link { stroke-width: 1.6; }
+.vp-lifemap__link--tech { stroke: color-mix(in srgb, var(--c-tech) 60%, transparent); }
+.vp-lifemap__link--bar { stroke: color-mix(in srgb, var(--c-bar) 60%, transparent); }
+.vp-lifemap__link--journey { stroke: color-mix(in srgb, #5ec8c8 55%, transparent); }
+.vp-lifemap__link--lang { stroke: color-mix(in srgb, #9b8cff 55%, transparent); }
+.vp-lifemap__link--ethos { stroke: color-mix(in srgb, #f0789e 50%, transparent); }
+.vp-lifemap__link--root { stroke: color-mix(in srgb, var(--vp-text) 30%, transparent); }
+
+.vp-lifemap__node-anchor { position: absolute; top: 0; inset-inline-start: 0; }
+.vp-lifemap__node {
+  --nc: var(--vp-line);
+  position: relative;
+  transform: translateY(-50%);
+  width: var(--node-w, auto);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding-inline: 14px;
+  border-radius: 11px;
+  border: 1px solid color-mix(in srgb, var(--nc) 55%, var(--vp-line));
+  background: color-mix(in srgb, var(--vp-bg2) 88%, transparent);
+  color: var(--vp-text);
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--vp-shadow) 30%, transparent);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+.vp-lifemap__node-label { overflow: hidden; text-overflow: ellipsis; }
+.vp-lifemap__node.has-children,
+.vp-lifemap__node.has-link { cursor: pointer; }
+.vp-lifemap__node.has-children:hover,
+.vp-lifemap__node.has-link:hover {
+  border-color: var(--nc);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--nc) 22%, transparent);
+}
+.vp-lifemap__node.is-open {
+  border-color: var(--nc);
+  background: color-mix(in srgb, var(--nc) 12%, var(--vp-bg2));
+}
+.vp-lifemap__node-chev {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: var(--nc);
+  background: color-mix(in srgb, var(--nc) 16%, transparent);
+  flex: none;
+}
+.vp-lifemap__node--root {
+  --nc: var(--c-tech);
+  font-family: var(--vpf-display);
+  font-weight: 800;
+  font-size: 0.96rem;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--c-tech) 18%, var(--vp-bg2)), color-mix(in srgb, var(--c-bar) 18%, var(--vp-bg2)));
+  border-color: color-mix(in srgb, var(--c-tech) 45%, transparent);
+}
+.vp-lifemap__node--root .vp-lifemap__node-chev { color: var(--vp-text); background: color-mix(in srgb, var(--vp-text) 14%, transparent); }
+.vp-lifemap__node--tech { --nc: var(--c-tech); }
+.vp-lifemap__node--bar { --nc: var(--c-bar); }
+.vp-lifemap__node--journey { --nc: #5ec8c8; }
+.vp-lifemap__node--lang { --nc: #9b8cff; }
+.vp-lifemap__node--ethos { --nc: #f0789e; }
+
+.vp-lifemap__hint {
+  text-align: center;
+  margin-top: 1rem;
+  font-family: var(--vpf-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--vp-text2);
+  opacity: 0.75;
+}
+
+/* mode-aware hero doors — lead with the visitor's chosen craft */
+.vp-root[data-mode="bar"] .vp-door-wrap--bar { order: -1; }
+.vp-root[data-mode="tech"] .vp-door-wrap--tech { order: -1; }
+
+/* ===== live "now" panel ===== */
+.vp-now-wrap { margin-top: -1.5rem; margin-bottom: 1rem; display: flex; justify-content: center; }
+.vp-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-line);
+  background: color-mix(in srgb, var(--vp-bg2) 70%, transparent);
+}
+.vp-now__time { display: inline-flex; align-items: center; gap: 7px; font-family: var(--vpf-mono); font-size: 0.84rem; font-weight: 700; color: var(--vp-text); }
+.vp-now__time svg { color: var(--acc); }
+.vp-now__tz { font-size: 0.66rem; font-weight: 600; color: var(--vp-text2); letter-spacing: 0.04em; }
+.vp-now__divider { width: 1px; height: 16px; background: var(--vp-line); }
+.vp-now__statuses { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.vp-now__statuses li { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; color: var(--vp-text2); }
+.vp-now__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 0 color-mix(in srgb, var(--acc) 60%, transparent); animation: vp-now-pulse 2.4s ease-out infinite; animation-delay: var(--d, 0s); }
+@keyframes vp-now-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--acc) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 7px transparent; }
+}
+@media (max-width: 600px) {
+  .vp-now { gap: 10px; }
+  .vp-now__divider { display: none; }
 }

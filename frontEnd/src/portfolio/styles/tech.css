@@ -109,7 +109,9 @@
 
 /* ---------- about ---------- */
 .vp-tech-about {
-  background: var(--vp-bg2);
+  background: color-mix(in srgb, var(--vp-bg2) 80%, transparent);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   border-block: 1px solid var(--vp-line);
 }
 .vp-tech-about__grid {
@@ -329,7 +331,9 @@
 
 /* ---------- security ---------- */
 .vp-tech-security {
-  background: var(--vp-bg2);
+  background: color-mix(in srgb, var(--vp-bg2) 80%, transparent);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   border-block: 1px solid var(--vp-line);
 }
 .vp-tech-security__grid {
@@ -435,11 +439,10 @@
   inset: 0;
   pointer-events: none;
   background: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(0, 0, 0, 0.14) 3px 4px);
-  opacity: 0.25;
-  mix-blend-mode: overlay;
+  opacity: 0.18;
 }
 .vp-root[data-theme="light"] .vp-scanlines {
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
 /* periodic RGB-split glitch on the hero title */
@@ -711,11 +714,28 @@
   font-size: 0.76rem;
   color: var(--vp-text2);
 }
+.vp-proj-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+.vp-proj-card__deepdive {
+  font-size: 0.84rem;
+  padding: 9px 17px;
+}
+.vp-proj-card__deepdive svg {
+  margin-inline-end: 7px;
+}
 .vp-proj-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 0.9rem;
+}
+.vp-proj-card__actions .vp-proj-links {
+  margin-top: 0;
 }
 .vp-proj-links__item {
   display: inline-flex;
@@ -767,5 +787,129 @@
   }
   .vp-mock__name {
     width: 110px;
+  }
+}
+
+/* ===== Skills & connections (radar + graph merged) ===== */
+.vp-skills-graph__top {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: 2.6rem;
+  align-items: center;
+  margin-top: 2.2rem;
+}
+.vp-skills-graph__aside-title {
+  font-family: var(--vpf-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+}
+.vp-graph-sec__intro {
+  margin-bottom: 1.4rem;
+}
+.vp-graph-sec__title {
+  font-family: var(--vpf-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+  margin: 0.2rem 0 0.5rem;
+}
+@media (max-width: 820px) {
+  .vp-skills-graph__top {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+
+/* ===== Show-all toggle (projects + certs) ===== */
+.vp-showall {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+.vp-showall__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Lab teaser card (on /tech) ===== */
+.vp-lab-teaser {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.6rem 1.9rem;
+  border: 1px solid var(--vp-line);
+  border-radius: 22px;
+  background:
+    radial-gradient(520px circle at 0% 0%, color-mix(in srgb, var(--c-tech) 12%, transparent), transparent 60%),
+    var(--vp-bg2);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.vp-lab-teaser:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--c-tech) 50%, transparent);
+  box-shadow: 0 22px 50px color-mix(in srgb, var(--c-tech) 12%, transparent);
+}
+.vp-lab-teaser__icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: var(--c-tech);
+  border: 1px solid color-mix(in srgb, var(--c-tech) 35%, transparent);
+  background: color-mix(in srgb, var(--c-tech) 10%, transparent);
+}
+.vp-lab-teaser__text {
+  flex: 1;
+  min-width: 0;
+}
+.vp-lab-teaser__title {
+  font-family: var(--vpf-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0.1rem 0 0.35rem;
+}
+.vp-lab-teaser__cta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--c-tech);
+  white-space: nowrap;
+}
+.vp-lab-teaser:hover .vp-arrow {
+  transform: translateX(4px);
+}
+/* gold variant for the hospitality page */
+.vp-lab-teaser--bar {
+  background:
+    radial-gradient(520px circle at 0% 0%, color-mix(in srgb, var(--c-bar) 14%, transparent), transparent 60%),
+    var(--vp-bg2);
+}
+.vp-lab-teaser--bar:hover {
+  border-color: color-mix(in srgb, var(--c-bar) 50%, transparent);
+  box-shadow: 0 22px 50px color-mix(in srgb, var(--c-bar) 14%, transparent);
+}
+.vp-lab-teaser--bar .vp-lab-teaser__icon {
+  color: var(--c-bar);
+  border-color: color-mix(in srgb, var(--c-bar) 35%, transparent);
+  background: color-mix(in srgb, var(--c-bar) 12%, transparent);
+}
+.vp-lab-teaser--bar .vp-lab-teaser__title {
+  font-family: var(--vpf-serif);
+}
+.vp-lab-teaser--bar .vp-lab-teaser__cta {
+  color: var(--c-bar);
+}
+@media (max-width: 680px) {
+  .vp-lab-teaser {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
   }
 }

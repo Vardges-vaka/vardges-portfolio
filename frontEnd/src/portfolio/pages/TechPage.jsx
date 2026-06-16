@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Code2,
@@ -9,8 +10,6 @@ import {
   KeyRound,
   Lock,
   FlaskConical,
-  Languages,
-  Rocket,
   ChevronRight,
   Database,
   Cpu,
@@ -19,16 +18,21 @@ import {
   Braces,
   Bug,
 } from "lucide-react";
+
 import { usePortfolioLang, usePortfolioTheme } from "../context/usePortfolio.js";
-import CodeRain from "../components/canvas/CodeRain.jsx";
 import Reveal from "../components/Reveal.jsx";
 import TiltCard from "../components/TiltCard.jsx";
 import Magnetic from "../components/Magnetic.jsx";
 import ProjectsGrid from "../components/ProjectsGrid.jsx";
-import CertGallery from "../components/CertGallery.jsx";
+import CertWall from "../components/CertWall.jsx";
 import ContactSection from "../components/ContactSection.jsx";
+import SkillsRadar from "../components/SkillsRadar.jsx";
+import KnowledgeGraph from "../components/interactive/KnowledgeGraph.jsx";
+import SectionAtmosphere from "../components/fx/SectionAtmosphere.jsx";
+import AsciiField from "../components/fx/AsciiField.jsx";
 import { SAMPLE_PROJECTS } from "../data/sampleProjects.js";
-import { TECH_CERTS } from "../data/certificates.js";
+import { ALL_TECH_CERTS } from "../data/certificates.js";
+import { techSkillStrengths } from "../data/graphData.js";
 import { CONTACT_ANCHOR_ID } from "../portfolio.constants.js";
 import "../styles/tech.css";
 
@@ -107,8 +111,6 @@ const Terminal = () => {
 
 const GROUP_ICONS = [Code2, Server, Cloud, Shield];
 const SECURITY_ICONS = [ShieldCheck, KeyRound, Lock, FlaskConical];
-const BULLET_ICONS = [Cloud, Lock, Languages, Rocket];
-const PROVIDERS = ["Google Cloud Storage", "AWS S3", "Cloudflare R2", "Azure Blob"];
 
 // brand/tech names — intentionally not translated
 const TECH_TICKER = [
@@ -124,6 +126,18 @@ const TECH_TICKER = [
   "CI/CD",
   "Automation",
   "i18n",
+];
+
+// radar axis key -> graph skill id. Values are derived (evidence-based) from the
+// number of earned certs + projects that feed each skill — see techSkillStrengths.
+const TECH_AXES = [
+  ["frontend", "sk-frontend"],
+  ["backend", "sk-backend"],
+  ["cloud", "sk-cloud"],
+  ["security", "sk-security"],
+  ["automation", "sk-automation"],
+  ["ai", "sk-ai"],
+  ["data", "sk-data"],
 ];
 
 // floating decorative icons for the about section — position/timing via CSS vars
@@ -142,22 +156,26 @@ const TechPage = () => {
   const { isDark } = usePortfolioTheme();
 
   const groups = t("tech.stack.groups");
-  const bullets = t("tech.project.bullets");
   const securityCards = t("tech.security.cards");
   const heroTitle = t("tech.hero.title");
+
+  // evidence-based radar: strength = earned certs + projects feeding each skill
+  const radarData = useMemo(() => {
+    const s = techSkillStrengths();
+    const max = Math.max(1, ...TECH_AXES.map(([, id]) => s[id] || 0));
+    return {
+      color: "tech",
+      axes: TECH_AXES.map(([key, id]) => ({ key, value: Math.round(48 + 50 * ((s[id] || 0) / max)) })),
+    };
+  }, []);
 
   const scrollToContact = () =>
     document.getElementById(CONTACT_ANCHOR_ID)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <main className="vp-page vp-page--tech">
+    <main className="vp-page vp-page--tech" id="vp-main" tabIndex={-1}>
       {/* ============ HERO ============ */}
       <section className="vp-tech-hero">
-        <CodeRain
-          color={isDark ? "#38e1c8" : "#0b8d7b"}
-          fadeRGB={isDark ? "6,9,12" : "244,243,238"}
-          opacity={isDark ? 0.5 : 0.35}
-        />
         <div className="vp-tech-hero__floor" aria-hidden="true" />
         <div className="vp-orb vp-orb--a" aria-hidden="true" />
         <div className="vp-orb vp-orb--b" aria-hidden="true" />
@@ -288,8 +306,39 @@ const TechPage = () => {
         </div>
       </section>
 
+      {/* ============ SKILLS & CONNECTIONS (radar + graph) ============ */}
+      <section className="vp-section vp-skills-graph" id="vp-skills">
+        <div className="vp-container">
+          <Reveal>
+            <p className="vp-kicker">{t("skills.connect.kicker")}</p>
+            <h2 className="vp-h2">{t("skills.connect.title")}</h2>
+            <p className="vp-sub">{t("skills.connect.sub")}</p>
+          </Reveal>
+
+          <div className="vp-skills-graph__top">
+            <Reveal delay={0.1} className="vp-skills-graph__radar">
+              <SkillsRadar data={radarData} variant="tech" />
+            </Reveal>
+            <Reveal delay={0.16} className="vp-skills-graph__aside">
+              <h3 className="vp-skills-graph__aside-title">{t("skills.connect.radarTitle")}</h3>
+              <p className="vp-sub">{t("skills.evidenceNote")}</p>
+            </Reveal>
+          </div>
+        </div>
+
+        <Reveal delay={0.1} className="vp-graph-sec__wrap">
+          <div className="vp-container vp-graph-sec__intro">
+            <p className="vp-kicker">{t("graph.kicker")}</p>
+            <h3 className="vp-graph-sec__title">{t("graph.title")}</h3>
+            <p className="vp-sub">{t("graph.sub")}</p>
+          </div>
+          <KnowledgeGraph />
+        </Reveal>
+      </section>
+
       {/* ============ PROJECTS ============ */}
       <section className="vp-section vp-tech-projects" id="vp-projects">
+        <AsciiField color={isDark ? "#38e1c8" : "#0b8d7b"} className="vp-ascii--top" />
         <div className="vp-container">
           <Reveal>
             <p className="vp-kicker">{t("tech.projects.kicker")}</p>
@@ -300,76 +349,36 @@ const TechPage = () => {
               {t("tech.projects.sampleNote")}
             </p>
           </Reveal>
-          <ProjectsGrid projects={SAMPLE_PROJECTS} />
+          <ProjectsGrid projects={SAMPLE_PROJECTS} previewCount={3} />
         </div>
       </section>
 
-      {/* ============ CASE STUDY (deep dive) ============ */}
-      <section className="vp-section vp-tech-project" id="vp-tech-project">
+      {/* ============ CERTS ============ */}
+      <section className="vp-section vp-tech-certs">
+        <SectionAtmosphere kind="dots" />
         <div className="vp-container">
           <Reveal>
-            <p className="vp-kicker">{t("tech.project.kicker")}</p>
-            <h2 className="vp-h2">{t("tech.project.title")}</h2>
+            <p className="vp-kicker">{t("tech.certs.kicker")}</p>
+            <h2 className="vp-h2">{t("tech.certs.title")}</h2>
+            <p className="vp-sub">{t("tech.certs.sub")}</p>
           </Reveal>
-
-          <div className="vp-tech-project__panel">
-            <div className="vp-tech-project__info">
-              <Reveal>
-                <h3 className="vp-tech-project__name">{t("tech.project.name")}</h3>
-                <p className="vp-sub">{t("tech.project.desc")}</p>
-                <p className="vp-tech-project__stackline" dir="ltr">
-                  {t("tech.project.stackLine")}
-                </p>
-              </Reveal>
-              <div className="vp-tech-project__bullets">
-                {bullets.map((b, i) => {
-                  const Icon = BULLET_ICONS[i] ?? Cloud;
-                  return (
-                    <Reveal key={b.title} delay={0.06 + i * 0.07}>
-                      <div className="vp-tech-project__bullet">
-                        <span className="vp-icon-pill">
-                          <Icon size={16} aria-hidden="true" />
-                        </span>
-                        <div>
-                          <h4>{b.title}</h4>
-                          <p>{b.text}</p>
-                        </div>
-                      </div>
-                    </Reveal>
-                  );
-                })}
-              </div>
-            </div>
-
-            <Reveal delay={0.2} className="vp-tech-project__mock-wrap">
-              <div className="vp-mock" dir="ltr">
-                <div className="vp-mock__bar">
-                  <span className="vp-mock__dot" />
-                  <span className="vp-mock__dot" />
-                  <span className="vp-mock__dot" />
-                  <span className="vp-mock__url">vardges.me/admin — cloud monitor</span>
-                </div>
-                <div className="vp-mock__body">
-                  {PROVIDERS.map((p, i) => (
-                    <div className="vp-mock__row" key={p} style={{ "--d": `${i * 0.4}s` }}>
-                      <span className="vp-mock__pulse" aria-hidden="true" />
-                      <span className="vp-mock__name">{p}</span>
-                      <span className="vp-mock__bar-track">
-                        <span className="vp-mock__bar-fill" style={{ "--w": `${88 - i * 9}%` }} />
-                      </span>
-                      <span className="vp-mock__ok">OK</span>
-                    </div>
-                  ))}
-                </div>
-                <p className="vp-mock__note">{t("tech.project.mockNote")}</p>
-              </div>
-            </Reveal>
-          </div>
+          <CertWall
+            certs={ALL_TECH_CERTS}
+            viewLabel={t("tech.certs.view")}
+            viewPathLabel={t("tech.certs.viewPath")}
+            plannedLabel={t("tech.certs.planned")}
+            labels={t("certCats")}
+            variant="tech"
+            previewCount={6}
+            showAllLabel={t("tech.certs.showAll")}
+            showLessLabel={t("tech.certs.showLess")}
+          />
         </div>
       </section>
 
       {/* ============ SECURITY ============ */}
       <section className="vp-section vp-tech-security">
+        <SectionAtmosphere kind="grid" />
         <div className="vp-container">
           <Reveal>
             <p className="vp-kicker">{t("tech.security.kicker")}</p>
@@ -395,14 +404,25 @@ const TechPage = () => {
         </div>
       </section>
 
-      {/* ============ CERTS ============ */}
-      <section className="vp-section vp-tech-certs">
+      {/* ============ LAB TEASER ============ */}
+      <section className="vp-section vp-lab-teaser-sec">
         <div className="vp-container">
           <Reveal>
-            <p className="vp-kicker">{t("tech.certs.kicker")}</p>
-            <h2 className="vp-h2">{t("tech.certs.title")}</h2>
+            <Link to="/lab" className="vp-lab-teaser">
+              <span className="vp-lab-teaser__icon" aria-hidden="true">
+                <FlaskConical size={24} />
+              </span>
+              <div className="vp-lab-teaser__text">
+                <p className="vp-kicker">{t("tech.lab.kicker")}</p>
+                <h2 className="vp-lab-teaser__title">{t("tech.lab.title")}</h2>
+                <p className="vp-sub">{t("tech.lab.sub")}</p>
+              </div>
+              <span className="vp-lab-teaser__cta">
+                {t("tech.lab.cta")}
+                <ArrowRight size={16} className="vp-arrow" aria-hidden="true" />
+              </span>
+            </Link>
           </Reveal>
-          <CertGallery certs={TECH_CERTS} viewLabel={t("tech.certs.view")} variant="tech" />
         </div>
       </section>
 

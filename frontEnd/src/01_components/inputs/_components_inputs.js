@@ -7,3 +7,4 @@ export { default as Input_number } from "./Input_number.jsx";
 export { default as Input_date } from "./Input_date.jsx";
 export { default as Input_search } from "./Input_search.jsx";
 export { default as Input_url } from "./Input_url.jsx";
+export { default as Input_textArea } from "./Input_textArea.jsx";

@@ -1,0 +1,29 @@
+/* Select_multi — checkbox-style multi picker */
+.select_multi__menuItem {
+  gap: 0.45rem;
+}
+
+.select_multi__check {
+  flex-shrink: 0;
+  width: 0.95rem;
+  height: 0.95rem;
+  border: var(--select-border);
+  border-radius: 0.2rem;
+  background: var(--select-bg);
+  box-sizing: border-box;
+}
+
+.select_multi__check--on {
+  background: color-mix(in srgb, var(--select-icon) 28%, var(--select-bg));
+  border-color: var(--select-icon);
+  box-shadow: inset 0 0 0 2px var(--select-bg);
+}
+
+.select_multi__summary {
+  color: var(--select-text);
+}
+
+.select_multi__trigger:not(:disabled) .select_field__multiSummary:empty,
+.select_multi__summary:only-child {
+  color: var(--select-placeholder);
+}

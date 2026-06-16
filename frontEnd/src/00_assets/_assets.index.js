@@ -1,37 +1,22 @@
 import ArmenianFlag from "./flagIcons/armenia_flag.svg";
-
 import RussianFlag from "./flagIcons/russia_flag.svg";
-
 import BritishFlag from "./flagIcons/uk_flag.svg";
-
 import ArabicFlag from "./flagIcons/saudi_flag.svg";
-
 import Devicon from "./developerIcon.svg";
-
 import Hospitalityicon from "./hospitalityIcon.svg";
-
+export * from "./social_icons/_social_icons.index.js";
 // NavBar Icons
 
 import AboutIcon from "./navBarIcons/aboutIcon.svg";
-
 import AchievementsIcon from "./navBarIcons/achievementsIcon.svg";
-
 import EducationIcon from "./navBarIcons/educationIcon.svg";
-
 import ExperienceIcon from "./navBarIcons/experienceIcon.svg";
-
 import GoalsIcon from "./navBarIcons/goalsIcon.svg";
-
 import ProjectsIcon from "./navBarIcons/projectsIcon.svg";
-
 import SkillsIcon from "./navBarIcons/projectsIcon.svg";
-
 import ValuesIcon from "./navBarIcons/projectsIcon.svg";
-
 import ContactIcon from "./navBarIcons/projectsIcon.svg";
-
 import placeholder from "./placeholder.png";
-
 import Careem_logo from "./aggrigatorLogos/Careem_logo.png";
 import Deliveroo_logo from "./aggrigatorLogos/Deliveroo_logo.png";
 import Keeta_logo from "./aggrigatorLogos/Keeta_logo.png";

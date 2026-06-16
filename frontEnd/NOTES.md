@@ -1,146 +1,119 @@
 # Portfolio — Asset & Integration Notes
 
-Everything you need to replace placeholders and wire the portfolio to your backend.
-Each placeholder on the site shows its **ASSET ID** badge — find it here.
+How the portfolio loads your real media, what's wired, and the few things still left for you.
 
 ---
 
-## 1. How to replace a media placeholder
+## ⚡ Assets I still need from you
 
-Every placeholder is a `<MediaPlaceholder assetId="ASSET-XX" … />` component
-(`src/portfolio/components/MediaPlaceholder.jsx`).
-To replace one, swap the component for a real element **keeping the same `className` prop** so layout/hover styles still apply:
-
-```jsx
-// image
-<img
-  src="/media/portrait.jpg"
-  alt="Vardges Petrosyan"
-  className="vp-monogram__portrait"
-  style={{ aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 18, width: "70%" }}
-/>
-
-// video (autoplay, silent, looped — like a gif but lighter)
-<video
-  src="/media/bar-service.mp4"
-  autoPlay
-  muted
-  loop
-  playsInline
-  style={{ aspectRatio: "16 / 10", objectFit: "cover", borderRadius: 18, width: "100%" }}
-/>
-```
-
-Recommended: put files in `frontEnd/public/media/` (create the folder) and reference them as `/media/<file>`.
-For videos: mp4 (H.264), under ~8 MB, 10–20 s loop, no audio track. **No audio assets are required anywhere on the site.**
+| Asset | Where it goes | Why / how |
+|---|---|---|
+| **`og-image.png`** (1200×630) | `frontEnd/public/og-image.png` | The social share preview (LinkedIn/WhatsApp/X). Scrapers don't render SVG, so export the ready-made design at `public/og-image.svg` to PNG (any SVG→PNG tool, or Figma/Canva export at 1200×630) and drop it in. Until then the title/description still share fine — just no image. |
+| **Analytics account** | — | The privacy-friendly Plausible tag is already in `index.html`. It only starts collecting once you create the site at **plausible.io** (paid) for domain `vardges.me`. Prefer free? Say the word and I'll swap it for self-hosted **Umami**. |
+| **GitHub / Discord URLs** | `src/portfolio/portfolio.constants.js` | Replace the two `TODO(Vardges)` placeholders. |
+| *(optional)* `apple-touch-icon.png` 180×180 + icons 192/512 | `public/` | Only needed for pixel-perfect iOS/Android install icons. The SVG favicon already covers modern browsers + Chrome install. |
+| *(optional)* `ASSET-CARELINK`, `ASSET-VKUSNO`, `ASSET-BARFLOW`, `ASSET-PHISHGUARD`, `ASSET-PORTFOLIO` images, `ASSET-B1.mp4`, `ASSET-B2.jpg` | `src/portfolio/media/` | Real screenshots for the newer projects + the bar atmosphere video/macro. Each shows a labeled placeholder until you drop a file with that exact name. |
 
 ---
 
-## 2. Asset list
+## 1. How media loading works
 
-### ASSET-H1 — Portrait (Home → "Who I am" card)
-- **Type:** image · **Aspect:** 4:5 · **Mood:** premium, warm, confident
-- **Best option:** a real professional photo of you. Dark background, single warm light source, business-casual — ideally holding a cocktail shaker with a laptop nearby (the "two crafts" story in one frame).
-- **AI prompt:** `Professional studio portrait of a confident man in his early 30s, dark teal-to-charcoal gradient background, dramatic rim lighting with warm amber accent light from the side, wearing a dark shirt, slight smile, cinematic color grade, shallow depth of field, 4:5 portrait crop, photorealistic, high-end editorial photography`
-- **Search terms:** *(use your own photo — stock defeats the purpose here)*
+All images/videos and PDFs live in **`src/portfolio/media/`** and are wired **automatically**
+at build time by `src/portfolio/lib/media.js` (Vite `import.meta.glob`). Just drop a correctly-named file.
 
-### ASSET-P1 — Project thumbnail: vardges.me platform (Tech → Projects, featured card)
-- **Type:** image · **Aspect:** 16:11
-- **Best option:** a real screenshot of your admin dashboard (the cloud monitor page) — recruiters love real UI. Dark theme, tight crop.
-- **AI prompt:** `Sleek dark-mode SaaS operations dashboard UI on a laptop screen, teal accent color #38e1c8, cloud storage health monitors with green status indicators, charts and provider cards, floating in dark space with soft teal glow, 3D perspective product shot, octane render, high detail`
-- **Search terms:** `dark dashboard ui mockup laptop` (Unsplash / Pexels)
+- **Images**: filename-without-extension = the `assetId` (e.g. `ASSET-P1` → `ASSET-P1.png`). Supports png/jpg/jpeg/webp/avif/gif/svg.
+- **Videos** (mp4/webm/mov): resolve the same way, render as muted autoplay loops.
+- **No match → animated placeholder** (shows the assetId so you know what to add). Nothing breaks.
 
-### ASSET-P2 — Project thumbnail: ReviewRadar (Tech → Projects)
-- **Type:** image · **Aspect:** 16:10
-- **AI prompt:** `Dark analytics dashboard showing customer review sentiment analysis, red and green sentiment cards, star ratings, notification feed on the right side, modern flat UI design, teal and dark navy palette, isometric perspective, clean vector illustration style`
-- **Search terms:** `review sentiment dashboard illustration dark`
-
-### ASSET-P3 — Project thumbnail: PourCost (Tech → Projects)
-- **Type:** image · **Aspect:** 16:10
-- **AI prompt:** `Split-scene illustration: left side a cocktail jigger pouring liquid, right side a clean dark finance dashboard with cost charts and percentages, connected by a glowing teal line, modern flat illustration, dark background, amber and teal accents`
-- **Search terms:** `bar inventory app illustration`, `cocktail cost calculator ui`
-
-### ASSET-P4 — Project thumbnail: Breach Lab (Tech → Projects)
-- **Type:** image (a subtle looping **gif/video also works great** here) · **Aspect:** 16:10
-- **AI prompt:** `Dark hacker-aesthetic terminal screen with green and teal code, a glowing wireframe padlock hologram floating above the keyboard, shallow depth of field, moody cyberpunk lighting, photorealistic, dark teal color grade`
-- **Search terms:** `cybersecurity terminal padlock dark` (Unsplash: "cybersecurity")
-
-### ASSET-B1 — Bar service video (Hospitality → "Atmosphere", wide slot)
-- **Type:** video (mp4 loop, 10–20 s, muted) · **Aspect:** 16:10
-- **Best option:** real footage of you in service at the bar.
-- **Search terms (free stock video):** `bartender pouring cocktail slow motion dark bar` (Pexels Videos / Coverr)
-- **AI video prompt (Runway / Pika):** `Slow motion: a bartender's hands pouring a deep amber cocktail through a strainer into a coupe glass, dark moody bar, warm golden backlight, bokeh bottles in background, cinematic, 24fps`
-
-### ASSET-B2 — Cocktail macro (Hospitality → "Atmosphere")
-- **Type:** image · **Aspect:** 4:5
-- **AI prompt:** `Macro photography of a craft cocktail in a crystal coupe, amber liquid with a flamed orange peel garnish, dark background, dramatic warm side lighting, tiny bubbles and condensation visible, art-deco bar blurred behind, photorealistic, editorial food photography`
-- **Search terms:** `craft cocktail dark background macro` (Unsplash)
-
-### ASSET-B3 — Masterclass / training (Hospitality → "Atmosphere")
-- **Type:** image · **Aspect:** 4:5
-- **Best option:** a real photo from one of your trainings/masterclasses.
-- **AI prompt:** `A bar trainer demonstrating a cocktail shake to three attentive young bartenders behind a professional bar, warm amber lighting, bottles backlit on shelves, candid documentary style, shallow depth of field`
-- **Search terms:** `bartender training masterclass`
+Wired real images: `ASSET-P1` (CloudOps), `ASSET-P2` (Sentio), `ASSET-P3` (Cocktail Tree), `ASSET-P4` (Breach Lab), `ASSET-B3` (masterclass), `ASSET-H1` (portrait).
 
 ---
 
-## 3. Certificate PDFs
+## 2. CVs — wired ✅
 
-Drop your real PDFs into **`frontEnd/public/certs/`** with these exact filenames
-(defined in `src/portfolio/data/certificates.js`):
-
-| File | Certificate |
-|---|---|
-| `ai-infrastructure-fundamentals.pdf` | AI Infrastructure and Operations Fundamentals |
-| `ai-creative-expert-partner.pdf` | Use AI as a Creative or Expert Partner |
-| `design-prompts-everyday-tasks.pdf` | Design Prompts for Everyday Work Tasks |
-| `hotel-hospitality-management.pdf` | Hotel & Hospitality Management (Zabeel) |
-| `strategic-negotiation.pdf` | Strategic Negotiation |
-| `negotiation-foundations.pdf` | Negotiation Foundations |
-
-Until the files exist, the "View PDF" buttons will 404 — expected.
+Three CV buttons (Full / Tech / Hospitality) appear in the contact section, with the page-relevant one
+highlighted. Files: `CV_tech.pdf`, `Cv_Bar.pdf`, `Cv_Both.pdf` in `src/portfolio/media/` — resolved in
+`src/portfolio/data/cvs.js`. To change a CV, just replace the PDF.
 
 ---
 
-## 4. Social links (GitHub / Discord)
+## 3. Certificates — wired ✅
 
-Update the two `TODO(Vardges)` placeholders in `src/portfolio/portfolio.constants.js`:
-`github` / `githubDisplay` and `discord` / `discordDisplay`.
-They feed the contact-section channel list **and** the footer social buttons.
+All ~24 earned tech PDFs auto-link into the filterable cert wall (`src/portfolio/data/certificates.js`).
+On top of those, 20 **cybersecurity roadmap** certs (`CYBER_CERTS`, `planned: true`, `cat: "cyber"`) link to
+the syllabus PDFs in `src/portfolio/media/cyber/`. These render with a "Planned" badge and a "View path"
+link — they are clearly shown as *not yet earned*, never as completed. The wall + knowledge graph use the
+combined `ALL_TECH_CERTS`.
+Hospitality certs have `file: null` (no PDFs supplied) and render as credentials without a download
+button — drop a PDF + set `file: certByName("…")` to enable it.
 
----
-
-## 5. Contact form → backend
-
-The form lives in `src/portfolio/components/ContactSection.jsx`.
-Replace the simulated `submitContact()` (clearly marked block) with the real call:
-
-```
-POST /api/public/contact
-Content-Type: application/json
-{
-  "name":    string,                        // trimmed, required
-  "email":   string,                        // trimmed, required, format-checked client-side
-  "topic":   "tech" | "hospitality" | "other",
-  "message": string,                        // trimmed, required
-  "lang":    "en" | "ru" | "hy" | "ar",
-  "source":  string,                        // pathname the form was sent from: "/", "/tech", "/bar"
-  "sentAt":  string                         // ISO timestamp
-}
-```
-
-Respond with your usual `{ success, message, data }` envelope — the UI switches to the
-success state when `success === true`. A hidden honeypot field (`company`) is already
-in the form; if it arrives non-empty on the backend, silently drop the request.
+### Translations for data-driven prose
+Cert descriptions, project tagline/description/highlights, and testimonial quotes are English in the data
+files and translated **by id** in `src/portfolio/i18n/extra/{ru,hy,ar}.js` (deep-merged in `dictionaries.js`).
+`t(path, fallback)` returns the English data string when a translation is missing. Testimonials show a
+"Translated with AI" disclaimer in any non-English language. To add/adjust a translation, edit the matching
+id under `certInfo` / `projectInfo` / `testimonialInfo` in those three files.
 
 ---
 
-## 6. Projects → backend
+## 4. Testimonials — wired ✅
 
-Sample objects live in `src/portfolio/data/sampleProjects.js` with the full shape
-documented at the top of the file (id, slug, title, tagline, description, year,
-status, featured, stack[], media{type, assetId, alt}, links{live, github, anchor}, metrics[]).
+Five LinkedIn recommendations (condensed in `src/portfolio/data/testimonials.js`, sourced from
+`media/LinkedIn_Testemonials.md`) show on the hospitality and home pages. They're all hospitality —
+add tech recommendations later with `track: "tech"` and they'll appear on the tech page.
 
-Suggested endpoint: `GET /api/public/projects` → `{ success, message, data: Project[] }`.
-When you switch to the API, replace `media.assetId` with a real `media.url` and swap the
-`MediaPlaceholder` in `src/portfolio/components/ProjectsGrid.jsx` for an `<img>` / `<video>`.
+---
+
+## 5. Projects + deep-dive — wired ✅
+
+`src/portfolio/data/sampleProjects.js` now holds 9 projects, each with a `highlights` list. Clicking a
+card (image or title) opens a deep-dive modal. Swap to a backend later with
+`GET /api/public/projects → { success, message, data: Project[] }`, same shape.
+
+---
+
+## 6. Contact form → backend (still a TODO)
+
+`src/portfolio/components/ContactSection.jsx` — replace the simulated `submitContact()` with your API:
+`POST /api/public/contact { name, email, topic, message, lang, source, sentAt } → { success, message, data }`.
+A hidden honeypot (`company`) is included — drop the request if it arrives non-empty.
+
+---
+
+## 7. SEO / shareability — wired ✅
+
+- `index.html` has full meta, Open Graph, Twitter cards and JSON-LD Person schema, keyword-tuned for
+  **web development, cybersecurity, and hospitality (bar / beverage / F&B)**.
+- Per-route titles/descriptions update at runtime (`src/portfolio/lib/seo.js`) for the browser + Google.
+- `public/robots.txt`, `public/sitemap.xml`, `public/site.webmanifest`, `public/favicon.svg`, `public/og-image.svg`.
+- Note: social scrapers read the **static** `index.html` (they don't run JS), so the share preview is the
+  combined one for all routes. Per-route share previews would need prerendering/SSR — a future step.
+
+---
+
+## 8. Accessibility — wired ✅
+
+Skip-to-content link, focus moved to `<main>` on route change with a screen-reader live-region
+announcement, `<html lang/dir>` kept in sync, reduced-motion honored everywhere, and a
+`prefers-reduced-data` / Data-Saver fallback that drops the motif canvas on metered connections.
+
+---
+
+## 8a. Audience mode + the home mind-map (no action needed)
+
+- **Audience mode** (`context/PortfolioModeContext.jsx`) is a 4th global context — `tech | both | bar`, default `both`, persisted in localStorage, mirrored onto `<html data-mode>` and `.vp-root[data-mode]`. The 3D toggler (`components/ModeToggle.jsx`) lives in the navbar (desktop + mobile) on every page. Use `usePortfolioMode()` → `{ mode, setMode, showTech, showBar, isBoth }`.
+- Mode reacts across the site: the **Lab** filters its zones (Security / Bar / Both); the **home mind-map** auto-opens the chosen branch and dims the other; the **home hero doors** reorder to lead with the chosen craft.
+- **The mind-map** (`components/interactive/LifeMap.jsx`) is a hand-rolled tidy-tree of "a life in two crafts" — click a branch to expand; it re-lays-out + auto-fits; RTL-mirrored; data + i18n in `lifemap.*`. Edit the `TREE` constant to change branches.
+
+## 8b. The knowledge graph & the Lab (no action needed)
+
+- `components/interactive/KnowledgeGraph.jsx` is now **variant-driven** (`variant="tech" | "bar"`). Tech graphs certificates ↔ skills ↔ projects; bar graphs **experiences ↔ crafts** with a career chain (experience→experience) and a **filter-by-country** sub-filter. Both live in a merged "… & connections" section alongside the proficiency radar. Edit `buildTechGraph` / `buildBarGraph` + their `EDGES` in `data/graphData.js` to change connections. Bar experiences reuse the translated tasting-menu prose via `courseIndex` → `bar.menu.courses[i]`, so no separate experience translations are needed.
+- The tech radar is **evidence-based** (strength = earned certs + projects feeding each skill, via `techSkillStrengths`); the bar radar stays self-rated (14-year veteran).
+- **The Lab** (`/lab`, `pages/LabPage.jsx`) is the shared, mode-filtered playground. **Security zone:** spot-the-phish · **Crack the Vault** (password cracker) · **Hash Forge** (live SHA-1/256/512 + avalanche) · **Cipher Lab** (Caesar decode, the secret is a cocktail recipe). **Behind-the-bar zone:** cocktail builder · **Guess the Cocktail** · **Shake or Stir?** · **Pour-Cost Lab** (the consultancy calculator) · **Name That Spirit** (trivia). Add new games inside the relevant `{showTech && …}` / `{showBar && …}` block. Game framing is fully translated; cocktail names/specs and cipher/terminal content stay in their original form by design.
+- **The mode toggler** (`components/ModeToggle.jsx`) is three glossy 3D orbs in a recessed track (active one rises + glows). **Contact** (`components/ContactSection.jsx`) is mode-aware: a terminal `POST /contact` (streams a 200 OK) for Engineer/Both, "pull up a stool / place your order" for Bartender. The submit is still simulated — wire `submitContact`. The home has a live Dubai-clock **NowPanel** and the mind-map's animated **MindBackdrop** (neural field with firing pulses).
+
+## 9. The background FX system (no action needed)
+
+`src/portfolio/components/fx/` — `SceneBackground`, `MotifCanvas`, `AsciiField`, `SectionAtmosphere`,
+`ScrollProgress`. Tuned for performance (no live backdrop blurs, paused off-screen/off-tab). Styles in
+`src/portfolio/styles/fx.css`.

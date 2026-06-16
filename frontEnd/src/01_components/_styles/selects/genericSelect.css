@@ -1,0 +1,38 @@
+/* Base native <select> reset — used inside field shells */
+.GenericSelect {
+  margin: 0;
+  width: 100%;
+  font: inherit;
+  color: var(--select-text);
+  background: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.GenericSelect:invalid,
+.GenericSelect option[value=""][disabled] {
+  color: var(--select-placeholder);
+}
+
+.GenericSelect:focus {
+  color: var(--select-text-foc);
+}
+
+.GenericSelect:disabled {
+  cursor: not-allowed;
+  color: var(--select-text-dis);
+}
+
+.GenericSelect option {
+  color: var(--select-text);
+  background: var(--select-bg-foc);
+}
+
+.GenericSelect option:disabled {
+  color: var(--select-placeholder-dis);
+}

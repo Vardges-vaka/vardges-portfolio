@@ -8,26 +8,24 @@ import {
   HeartHandshake,
   Check,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { usePortfolioLang, usePortfolioTheme } from "../context/usePortfolio.js";
-import Bubbles from "../components/canvas/Bubbles.jsx";
 import WireGlobe from "../components/canvas/WireGlobe.jsx";
 import Reveal from "../components/Reveal.jsx";
 import Counter from "../components/Counter.jsx";
 import TiltCard from "../components/TiltCard.jsx";
 import Magnetic from "../components/Magnetic.jsx";
-import MediaPlaceholder from "../components/MediaPlaceholder.jsx";
-import CertGallery from "../components/CertGallery.jsx";
+import CertWall from "../components/CertWall.jsx";
 import ContactSection from "../components/ContactSection.jsx";
+import Testimonials from "../components/Testimonials.jsx";
+import SkillsRadar from "../components/SkillsRadar.jsx";
+import KnowledgeGraph from "../components/interactive/KnowledgeGraph.jsx";
+import SectionAtmosphere from "../components/fx/SectionAtmosphere.jsx";
 import { BAR_CERTS } from "../data/certificates.js";
+import { TESTIMONIALS } from "../data/testimonials.js";
+import { SKILLS } from "../data/skills.js";
 import { CONTACT_ANCHOR_ID } from "../portfolio.constants.js";
 import "../styles/bar.css";
-
-// Atmosphere strip — placeholder media, see NOTES.md for each asset brief
-const BAR_MEDIA = [
-  { assetId: "ASSET-B1", type: "video", label: "Bar in motion — service night", aspect: "16 / 10" },
-  { assetId: "ASSET-B2", type: "image", label: "Signature cocktail macro", aspect: "4 / 5" },
-  { assetId: "ASSET-B3", type: "image", label: "Masterclass / staff training", aspect: "4 / 5" },
-];
 
 const SERVICE_ICONS = [Martini, GraduationCap, ClipboardList, Rocket, Boxes, HeartHandshake];
 const AGGREGATORS = ["Talabat", "Careem", "Deliveroo", "Noon Food"];
@@ -45,10 +43,9 @@ const BarPage = () => {
     document.getElementById(CONTACT_ANCHOR_ID)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <main className="vp-page vp-page--bar">
+    <main className="vp-page vp-page--bar" id="vp-main" tabIndex={-1}>
       {/* ============ HERO ============ */}
       <section className="vp-bar-hero">
-        <Bubbles rgb={isDark ? "233,178,92" : "146,98,21"} />
         <div className="vp-bar-hero__vignette" aria-hidden="true" />
 
         <div className="vp-bar-hero__frame">
@@ -146,8 +143,39 @@ const BarPage = () => {
         </div>
       </section>
 
+      {/* ============ CRAFT & CONNECTIONS (radar + experience graph) ============ */}
+      <section className="vp-section vp-skills-graph vp-skills-graph--bar" id="vp-bar-craft">
+        <div className="vp-container">
+          <Reveal>
+            <p className="vp-kicker">{t("bar.craft.kicker")}</p>
+            <h2 className="vp-h2 vp-h2--serif">{t("bar.craft.title")}</h2>
+            <p className="vp-sub">{t("bar.craft.sub")}</p>
+          </Reveal>
+
+          <div className="vp-skills-graph__top">
+            <Reveal delay={0.1} className="vp-skills-graph__radar">
+              <SkillsRadar data={SKILLS.bar} variant="bar" />
+            </Reveal>
+            <Reveal delay={0.16} className="vp-skills-graph__aside">
+              <h3 className="vp-skills-graph__aside-title">{t("bar.craft.radarTitle")}</h3>
+              <p className="vp-sub">{t("bar.craft.radarNote")}</p>
+            </Reveal>
+          </div>
+        </div>
+
+        <Reveal delay={0.1} className="vp-graph-sec__wrap">
+          <div className="vp-container vp-graph-sec__intro">
+            <p className="vp-kicker">{t("graph.kicker")}</p>
+            <h3 className="vp-graph-sec__title">{t("graph.title")}</h3>
+            <p className="vp-sub">{t("bar.craft.graphSub")}</p>
+          </div>
+          <KnowledgeGraph variant="bar" />
+        </Reveal>
+      </section>
+
       {/* ============ THE COCKTAIL TREE ============ */}
       <section className="vp-section vp-bar-tree">
+        <SectionAtmosphere kind="glow" />
         <div className="vp-container">
           <Reveal>
             <p className="vp-kicker">{t("bar.tree.kicker")}</p>
@@ -173,28 +201,25 @@ const BarPage = () => {
         </div>
       </section>
 
-      {/* ============ ATMOSPHERE / MEDIA ============ */}
-      <section className="vp-section vp-bar-gallery">
+      {/* ============ LAB TEASER ============ */}
+      <section className="vp-section vp-lab-teaser-sec">
         <div className="vp-container">
           <Reveal>
-            <p className="vp-kicker">{t("bar.media.kicker")}</p>
-            <h2 className="vp-h2 vp-h2--serif">{t("bar.media.title")}</h2>
-            <p className="vp-sub">{t("bar.media.sub")}</p>
+            <Link to="/lab" className="vp-lab-teaser vp-lab-teaser--bar">
+              <span className="vp-lab-teaser__icon" aria-hidden="true">
+                <Martini size={24} />
+              </span>
+              <div className="vp-lab-teaser__text">
+                <p className="vp-kicker">{t("bar.lab.kicker")}</p>
+                <h2 className="vp-lab-teaser__title">{t("bar.lab.title")}</h2>
+                <p className="vp-sub">{t("bar.lab.sub")}</p>
+              </div>
+              <span className="vp-lab-teaser__cta">
+                {t("bar.lab.cta")}
+                <ArrowRight size={16} className="vp-arrow" aria-hidden="true" />
+              </span>
+            </Link>
           </Reveal>
-          <div className="vp-bar-gallery__grid">
-            {BAR_MEDIA.map((m, i) => (
-              <Reveal key={m.assetId} delay={0.08 + i * 0.09} className={i === 0 ? "vp-bar-gallery__wide" : ""}>
-                <div className="vp-bar-gallery__item">
-                  <MediaPlaceholder
-                    assetId={m.assetId}
-                    type={m.type}
-                    label={m.label}
-                    aspect={m.aspect}
-                  />
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -238,9 +263,17 @@ const BarPage = () => {
             <p className="vp-kicker">{t("bar.certs.kicker")}</p>
             <h2 className="vp-h2 vp-h2--serif">{t("bar.certs.title")}</h2>
           </Reveal>
-          <CertGallery certs={BAR_CERTS} viewLabel={t("bar.certs.view")} variant="bar" />
+          <CertWall
+            certs={BAR_CERTS}
+            viewLabel={t("bar.certs.view")}
+            labels={t("certCats")}
+            variant="bar"
+          />
         </div>
       </section>
+
+      {/* ============ TESTIMONIALS ============ */}
+      <Testimonials items={TESTIMONIALS} variant="bar" />
 
       {/* ============ CTA ============ */}
       <section className="vp-section vp-cta-band vp-cta-band--bar">

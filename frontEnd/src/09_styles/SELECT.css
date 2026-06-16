@@ -1,0 +1,125 @@
+:root {
+  --select-radius: 0.5rem;
+  --select-gap: 0.35rem;
+  --select-inline-gap: 0.65rem;
+  --select-transition:
+    border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+  --L_select_bg: rgb(255, 252, 248);
+  --L_select_bg_hov: rgb(255, 252, 248);
+  --L_select_bg_foc: rgb(255, 255, 255);
+  --L_select_bg_dis: rgb(245, 242, 240);
+
+  --L_select_text: rgba(20, 18, 24, 0.88);
+  --L_select_text_foc: rgb(10, 8, 14);
+  --L_select_text_dis: rgba(99, 97, 97, 0.72);
+
+  --L_select_placeholder: rgba(129, 130, 128, 0.76);
+  --L_select_placeholder_dis: rgba(99, 97, 97, 0.55);
+
+  --L_select_border: 1px solid rgba(87, 27, 115, 0.56);
+  --L_select_border_hov: 1px solid #560c78;
+  --L_select_border_foc: 1px solid #480666;
+  --L_select_border_dis: 1px solid rgba(160, 160, 160, 0.45);
+
+  --L_select_shadow:
+    0 2px 8px rgba(127, 59, 159, 0.16), 0 1px 3px rgba(87, 27, 115, 0.05);
+  --L_select_shadow_hov:
+    0 2px 6px rgba(127, 59, 159, 0.24), 0 1px 4px rgba(87, 27, 115, 0.1);
+  --L_select_shadow_foc:
+    0 2px 6px rgba(127, 59, 159, 0.24), 0 0 0 2px rgba(127, 59, 159, 0.12);
+  --L_select_shadow_dis: none;
+
+  --L_select_icon: #7c22a6;
+
+  --L_select_error_border: rgb(255, 0, 0);
+  --L_select_success_border: rgb(47, 180, 0);
+
+  --D_select_bg: rgb(58, 12, 76);
+  --D_select_bg_hov: rgb(62, 14, 82);
+  --D_select_bg_foc: rgb(66, 16, 88);
+  --D_select_bg_dis: rgb(48, 10, 62);
+
+  --D_select_text: rgba(255, 255, 255, 0.93);
+  --D_select_text_foc: rgb(255, 255, 255);
+  --D_select_text_dis: rgba(255, 255, 255, 0.45);
+
+  --D_select_placeholder: rgba(252, 254, 250, 0.64);
+  --D_select_placeholder_dis: rgba(255, 255, 255, 0.35);
+
+  --D_select_border: 1px solid rgba(255, 98, 0, 0.76);
+  --D_select_border_hov: 1px solid #2e005d;
+  --D_select_border_foc: 1px solid #ff8300;
+  --D_select_border_dis: 1px solid rgba(255, 255, 255, 0.2);
+
+  --D_select_shadow:
+    0 2px 8px rgba(47, 0, 93, 0.74), 0 1px 3px rgba(87, 27, 115, 0.05);
+  --D_select_shadow_hov:
+    0 1px 3px rgba(255, 98, 0, 0.56), 0 1px 2px rgba(255, 98, 0, 0.64);
+  --D_select_shadow_foc:
+    0 2px 6px rgba(255, 131, 0, 0.55), 0 0 0 2px rgba(255, 131, 0, 0.18);
+  --D_select_shadow_dis: none;
+
+  --D_select_icon: #ffcc00;
+
+  --D_select_error_border: rgb(255, 0, 0);
+  --D_select_success_border: rgb(45, 195, 11);
+}
+
+[data-theme="light"] {
+  --select-bg: var(--L_select_bg);
+  --select-bg-hov: var(--L_select_bg_hov);
+  --select-bg-foc: var(--L_select_bg_foc);
+  --select-bg-dis: var(--L_select_bg_dis);
+
+  --select-text: var(--L_select_text);
+  --select-text-foc: var(--L_select_text_foc);
+  --select-text-dis: var(--L_select_text_dis);
+
+  --select-placeholder: var(--L_select_placeholder);
+  --select-placeholder-dis: var(--L_select_placeholder_dis);
+
+  --select-border: var(--L_select_border);
+  --select-border-hov: var(--L_select_border_hov);
+  --select-border-foc: var(--L_select_border_foc);
+  --select-border-dis: var(--L_select_border_dis);
+
+  --select-shadow: var(--L_select_shadow);
+  --select-shadow-hov: var(--L_select_shadow_hov);
+  --select-shadow-foc: var(--L_select_shadow_foc);
+  --select-shadow-dis: var(--L_select_shadow_dis);
+
+  --select-icon: var(--L_select_icon);
+
+  --select-error-border: var(--L_select_error_border);
+  --select-success-border: var(--L_select_success_border);
+}
+
+[data-theme="dark"] {
+  --select-bg: var(--D_select_bg);
+  --select-bg-hov: var(--D_select_bg_hov);
+  --select-bg-foc: var(--D_select_bg_foc);
+  --select-bg-dis: var(--D_select_bg_dis);
+
+  --select-text: var(--D_select_text);
+  --select-text-foc: var(--D_select_text_foc);
+  --select-text-dis: var(--D_select_text_dis);
+
+  --select-placeholder: var(--D_select_placeholder);
+  --select-placeholder-dis: var(--D_select_placeholder_dis);
+
+  --select-border: var(--D_select_border);
+  --select-border-hov: var(--D_select_border_hov);
+  --select-border-foc: var(--D_select_border_foc);
+  --select-border-dis: var(--D_select_border_dis);
+
+  --select-shadow: var(--D_select_shadow);
+  --select-shadow-hov: var(--D_select_shadow_hov);
+  --select-shadow-foc: var(--D_select_shadow_foc);
+  --select-shadow-dis: var(--D_select_shadow_dis);
+
+  --select-icon: var(--D_select_icon);
+
+  --select-error-border: var(--D_select_error_border);
+  --select-success-border: var(--D_select_success_border);
+}

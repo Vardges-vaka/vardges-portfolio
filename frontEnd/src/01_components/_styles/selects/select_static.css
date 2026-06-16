@@ -1,0 +1,257 @@
+/* Select_static — field shell (colors from 09_styles/SELECT.css) */
+.select_static {
+  display: flex;
+  flex-direction: column;
+  gap: var(--select-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.select_static__fieldWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: var(--select-border);
+  border-radius: var(--select-radius);
+  background-color: var(--select-bg);
+  box-shadow: var(--select-shadow);
+  transition: var(--select-transition);
+  box-sizing: border-box;
+}
+
+.select_static__fieldWrap:hover:not(.select_static__fieldWrap--disabled) {
+  border: var(--select-border-hov);
+  background-color: var(--select-bg-hov);
+  box-shadow: var(--select-shadow-hov);
+}
+
+.select_static__fieldWrap:focus-within:not(.select_static__fieldWrap--disabled) {
+  border: var(--select-border-foc);
+  background-color: var(--select-bg-foc);
+  box-shadow: var(--select-shadow-foc);
+}
+
+.select_static__fieldWrap--disabled {
+  border: var(--select-border-dis);
+  background-color: var(--select-bg-dis);
+  box-shadow: var(--select-shadow-dis);
+  opacity: 0.72;
+}
+
+.select_static__fieldWrap--error {
+  border: 1px solid var(--select-error-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--select-error-border) 18%, transparent);
+}
+
+.select_static__fieldWrap--success {
+  border: 1px solid var(--select-success-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--select-success-border) 18%, transparent);
+}
+
+.select_static__select {
+  flex: 1;
+  min-width: 0;
+}
+
+.select_static__inlineRow {
+  display: flex;
+  align-items: center;
+  gap: var(--select-inline-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.select_static__inlineRow .select_static__fieldWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.select_static--labelInline {
+  gap: var(--select-gap);
+}
+
+.select_static--sm .select_static__fieldWrap {
+  min-height: 2rem;
+}
+
+.select_static--sm .select_static__select {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+}
+
+.select_static--md .select_static__fieldWrap {
+  min-height: 2.35rem;
+}
+
+.select_static--md .select_static__select {
+  font-size: 0.875rem;
+  padding: 0.42rem 0.7rem;
+}
+
+.select_static--lg .select_static__fieldWrap {
+  min-height: 2.75rem;
+}
+
+.select_static--lg .select_static__select {
+  font-size: 1rem;
+  padding: 0.52rem 0.85rem;
+}
+
+.select_static--sm .select_static__fieldWrap--withLeftIcon .select_static__select {
+  padding-left: 0.15rem;
+}
+
+.select_static--sm .select_static__fieldWrap--withRightIcon .select_static__select {
+  padding-right: 0.15rem;
+}
+
+.select_static--md .select_static__fieldWrap--withLeftIcon .select_static__select {
+  padding-left: 0.2rem;
+}
+
+.select_static--md .select_static__fieldWrap--withRightIcon .select_static__select {
+  padding-right: 0.2rem;
+}
+
+.select_static--lg .select_static__fieldWrap--withLeftIcon .select_static__select {
+  padding-left: 0.25rem;
+}
+
+.select_static--lg .select_static__fieldWrap--withRightIcon .select_static__select {
+  padding-right: 0.25rem;
+}
+
+.select_static__fieldWrap--withRightIcon .field_icon_cnt {
+  color: var(--select-icon);
+}
+
+/* ── Rich picker (options with icons) ── */
+.select_static__fieldWrap--rich {
+  position: relative;
+}
+
+.select_static__rich {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.select_static__trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: var(--select-text);
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.select_static__trigger:disabled {
+  cursor: not-allowed;
+  color: var(--select-text-dis);
+}
+
+.select_static__triggerContent {
+  width: 100%;
+}
+
+.select_static--sm .select_static__trigger {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+}
+
+.select_static--md .select_static__trigger {
+  font-size: 0.875rem;
+  padding: 0.42rem 0.7rem;
+}
+
+.select_static--lg .select_static__trigger {
+  font-size: 1rem;
+  padding: 0.52rem 0.85rem;
+}
+
+.select_static--sm .select_static__fieldWrap--withLeftIcon .select_static__trigger {
+  padding-left: 0.15rem;
+}
+
+.select_static--sm .select_static__fieldWrap--withRightIcon .select_static__trigger {
+  padding-right: 0.15rem;
+}
+
+.select_static--md .select_static__fieldWrap--withLeftIcon .select_static__trigger {
+  padding-left: 0.2rem;
+}
+
+.select_static--md .select_static__fieldWrap--withRightIcon .select_static__trigger {
+  padding-right: 0.2rem;
+}
+
+.select_static--lg .select_static__fieldWrap--withLeftIcon .select_static__trigger {
+  padding-left: 0.25rem;
+}
+
+.select_static--lg .select_static__fieldWrap--withRightIcon .select_static__trigger {
+  padding-right: 0.25rem;
+}
+
+.select_static__menu {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  max-height: 14rem;
+  overflow-y: auto;
+  border: var(--select-border-foc);
+  border-radius: var(--select-radius);
+  background-color: var(--select-bg-foc);
+  box-shadow: var(--select-shadow-foc);
+  box-sizing: border-box;
+}
+
+.select_static__menuItem {
+  display: flex;
+  align-items: center;
+  padding: 0.42rem 0.7rem;
+  color: var(--select-text);
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+  box-sizing: border-box;
+}
+
+.select_static--sm .select_static__menuItem {
+  padding: 0.3rem 0.55rem;
+  font-size: 0.8rem;
+}
+
+.select_static--lg .select_static__menuItem {
+  padding: 0.52rem 0.85rem;
+  font-size: 1rem;
+}
+
+.select_static__menuItem:hover:not(.select_static__menuItem--disabled) {
+  background-color: color-mix(in srgb, var(--select-icon) 12%, transparent);
+}
+
+.select_static__menuItem--selected {
+  background-color: color-mix(in srgb, var(--select-icon) 18%, transparent);
+}
+
+.select_static__menuItem--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.select_static__fieldWrap--open .select_static__fieldWrap--withRightIcon .field_icon svg {
+  transform: rotate(180deg);
+  transition: transform 0.15s ease;
+}

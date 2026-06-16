@@ -3,6 +3,14 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  // react-three-fiber pulls its own React-using deps; force a single React copy
+  // so hooks resolve against one instance (fixes "Invalid hook call" in dev).
+  resolve: {
+    dedupe: ["react", "react-dom"],
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react/jsx-runtime"],
+  },
   server: {
     port: 3210,
     proxy: {

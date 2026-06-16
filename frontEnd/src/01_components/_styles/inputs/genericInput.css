@@ -1,8 +1,9 @@
+/* Base native <input> reset — used inside field shells (Input_text, etc.) */
 .GenericInput {
   margin: 0;
   width: 100%;
   font: inherit;
-  color: var(--input-primary-text-color);
+  color: var(--input-text);
   background: transparent;
   border: none;
   outline: none;
@@ -10,18 +11,22 @@
 }
 
 .GenericInput::placeholder {
-  color: var(--input-primary-plHolder-color);
+  color: var(--input-placeholder);
 }
 
 .GenericInput:hover:not(:disabled):not(:read-only)::placeholder {
-  color: var(--input-primary-plHolder-color-HOV);
+  color: var(--input-placeholder-hov);
+}
+
+.GenericInput:focus {
+  color: var(--input-text-foc);
 }
 
 .GenericInput:disabled {
   cursor: not-allowed;
-  color: var(--input-primary-plHolder-color-DIS);
+  color: var(--input-text-dis);
 }
 
 .GenericInput:disabled::placeholder {
-  color: var(--input-primary-plHolder-color-DIS);
+  color: var(--input-placeholder-dis);
 }

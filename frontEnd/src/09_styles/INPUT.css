@@ -1,0 +1,180 @@
+:root {
+  /* ── Layout (shared across themes) ── */
+  --input-radius: 0.5rem;
+  --input-gap: 0.35rem;
+  --input-inline-gap: 0.65rem;
+  --input-transition:
+    border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+  /* ── Light palette ── */
+  --L_input_bg: rgb(255, 252, 248);
+  --L_input_bg_hov: rgb(255, 252, 248);
+  --L_input_bg_foc: rgb(255, 255, 255);
+  --L_input_bg_dis: rgb(245, 242, 240);
+
+  --L_input_text: rgba(20, 18, 24, 0.88);
+  --L_input_text_foc: rgb(10, 8, 14);
+  --L_input_text_dis: rgba(99, 97, 97, 0.72);
+
+  --L_input_placeholder: rgba(129, 130, 128, 0.76);
+  --L_input_placeholder_hov: rgb(74, 69, 69);
+  --L_input_placeholder_dis: rgba(99, 97, 97, 0.55);
+
+  --L_input_border: 1px solid rgba(87, 27, 115, 0.56);
+  --L_input_border_hov: 1px solid #560c78;
+  --L_input_border_foc: 1px solid #480666;
+  --L_input_border_dis: 1px solid rgba(160, 160, 160, 0.45);
+
+  --L_input_shadow:
+    0 2px 8px rgba(127, 59, 159, 0.16), 0 1px 3px rgba(87, 27, 115, 0.05);
+  --L_input_shadow_hov:
+    0 2px 6px rgba(127, 59, 159, 0.24), 0 1px 4px rgba(87, 27, 115, 0.1);
+  --L_input_shadow_foc:
+    0 2px 6px rgba(127, 59, 159, 0.24), 0 0 0 2px rgba(127, 59, 159, 0.12);
+  --L_input_shadow_dis: none;
+
+  --L_input_label_text: #010101;
+  --L_input_label_text_hov: #560c78;
+
+  --L_input_icon: #7c22a6;
+
+  --L_input_hint_text: rgba(74, 69, 69, 0.88);
+
+  --L_input_error_text: rgb(192, 40, 40);
+  --L_input_error_border: rgb(255, 0, 0);
+
+  --L_input_success_text: rgb(34, 120, 28);
+  --L_input_success_border: rgb(47, 180, 0);
+
+  /* ── Dark palette ── */
+  --D_input_bg: rgb(58, 12, 76);
+  --D_input_bg_hov: rgb(62, 14, 82);
+  --D_input_bg_foc: rgb(66, 16, 88);
+  --D_input_bg_dis: rgb(48, 10, 62);
+
+  --D_input_text: rgba(255, 255, 255, 0.93);
+  --D_input_text_foc: rgb(255, 255, 255);
+  --D_input_text_dis: rgba(255, 255, 255, 0.45);
+
+  --D_input_placeholder: rgba(252, 254, 250, 0.64);
+  --D_input_placeholder_hov: rgb(183, 157, 11);
+  --D_input_placeholder_dis: rgba(255, 255, 255, 0.35);
+
+  --D_input_border: 1px solid rgba(255, 98, 0, 0.76);
+  --D_input_border_hov: 1px solid #2e005d;
+  --D_input_border_foc: 1px solid #ff8300;
+  --D_input_border_dis: 1px solid rgba(255, 255, 255, 0.2);
+
+  --D_input_shadow:
+    0 2px 8px rgba(47, 0, 93, 0.74), 0 1px 3px rgba(87, 27, 115, 0.05);
+  --D_input_shadow_hov:
+    0 1px 3px rgba(255, 98, 0, 0.56), 0 1px 2px rgba(255, 98, 0, 0.64);
+  --D_input_shadow_foc:
+    0 2px 6px rgba(255, 131, 0, 0.55), 0 0 0 2px rgba(255, 131, 0, 0.18);
+  --D_input_shadow_dis: none;
+
+  --D_input_label_text: #f1bd03;
+  --D_input_label_text_hov: #0acd37;
+
+  --D_input_icon: #ffcc00;
+
+  --D_input_hint_text: rgba(255, 255, 255, 0.72);
+
+  --D_input_error_text: rgb(255, 120, 120);
+  --D_input_error_border: rgb(255, 0, 0);
+
+  --D_input_success_text: rgb(120, 220, 90);
+  --D_input_success_border: rgb(45, 195, 11);
+}
+
+/* ── Light theme semantic tokens ── */
+[data-theme="light"] {
+  --input-bg: var(--L_input_bg);
+  --input-bg-hov: var(--L_input_bg_hov);
+  --input-bg-foc: var(--L_input_bg_foc);
+  --input-bg-dis: var(--L_input_bg_dis);
+
+  --input-text: var(--L_input_text);
+  --input-text-foc: var(--L_input_text_foc);
+  --input-text-dis: var(--L_input_text_dis);
+
+  --input-placeholder: var(--L_input_placeholder);
+  --input-placeholder-hov: var(--L_input_placeholder_hov);
+  --input-placeholder-dis: var(--L_input_placeholder_dis);
+
+  --input-border: var(--L_input_border);
+  --input-border-hov: var(--L_input_border_hov);
+  --input-border-foc: var(--L_input_border_foc);
+  --input-border-dis: var(--L_input_border_dis);
+
+  --input-shadow: var(--L_input_shadow);
+  --input-shadow-hov: var(--L_input_shadow_hov);
+  --input-shadow-foc: var(--L_input_shadow_foc);
+  --input-shadow-dis: var(--L_input_shadow_dis);
+
+  --input-label-text: var(--L_input_label_text);
+  --input-label-text-hov: var(--L_input_label_text_hov);
+
+  --input-icon: var(--L_input_icon);
+
+  --input-hint-text: var(--L_input_hint_text);
+
+  --input-error-text: var(--L_input_error_text);
+  --input-error-border: var(--L_input_error_border);
+
+  --input-success-text: var(--L_input_success_text);
+  --input-success-border: var(--L_input_success_border);
+
+  --field-label-text: var(--L_input_label_text);
+  --field-label-text-hov: var(--L_input_label_text_hov);
+  --field-icon: var(--L_input_icon);
+  --field-hint-text: var(--L_input_hint_text);
+  --field-error-text: var(--L_input_error_text);
+  --field-success-text: var(--L_input_success_text);
+}
+
+/* ── Dark theme semantic tokens ── */
+[data-theme="dark"] {
+  --input-bg: var(--D_input_bg);
+  --input-bg-hov: var(--D_input_bg_hov);
+  --input-bg-foc: var(--D_input_bg_foc);
+  --input-bg-dis: var(--D_input_bg_dis);
+
+  --input-text: var(--D_input_text);
+  --input-text-foc: var(--D_input_text_foc);
+  --input-text-dis: var(--D_input_text_dis);
+
+  --input-placeholder: var(--D_input_placeholder);
+  --input-placeholder-hov: var(--D_input_placeholder_hov);
+  --input-placeholder-dis: var(--D_input_placeholder_dis);
+
+  --input-border: var(--D_input_border);
+  --input-border-hov: var(--D_input_border_hov);
+  --input-border-foc: var(--D_input_border_foc);
+  --input-border-dis: var(--D_input_border_dis);
+
+  --input-shadow: var(--D_input_shadow);
+  --input-shadow-hov: var(--D_input_shadow_hov);
+  --input-shadow-foc: var(--D_input_shadow_foc);
+  --input-shadow-dis: var(--D_input_shadow_dis);
+
+  --input-label-text: var(--D_input_label_text);
+  --input-label-text-hov: var(--D_input_label_text_hov);
+
+  --input-icon: var(--D_input_icon);
+
+  --input-hint-text: var(--D_input_hint_text);
+
+  --input-error-text: var(--D_input_error_text);
+  --input-error-border: var(--D_input_error_border);
+
+  --input-success-text: var(--D_input_success_text);
+  --input-success-border: var(--D_input_success_border);
+
+  --field-label-text: var(--D_input_label_text);
+  --field-label-text-hov: var(--D_input_label_text_hov);
+  --field-icon: var(--D_input_icon);
+  --field-hint-text: var(--D_input_hint_text);
+  --field-error-text: var(--D_input_error_text);
+  --field-success-text: var(--D_input_success_text);
+}

@@ -20,12 +20,15 @@ export const PortfolioLanguageProvider = ({ children }) => {
     localStorage.setItem(STORAGE_KEY, code);
   }, []);
 
-  // t() resolves dot-paths; falls back to English, then to the path itself.
+  // t() resolves dot-paths; falls back to English, then to `fallback` (if given),
+  // then to the path itself. The `fallback` arg lets components keep canonical
+  // English prose in data files and translate it by id (e.g. project / cert text).
   const t = useCallback(
-    (path) => {
+    (path, fallback) => {
       const value = resolve(DICTIONARIES[lang], path);
       if (value !== undefined) return value;
-      const fallback = resolve(DICTIONARIES[DEFAULT_LANG], path);
+      const enValue = resolve(DICTIONARIES[DEFAULT_LANG], path);
+      if (enValue !== undefined) return enValue;
       return fallback !== undefined ? fallback : path;
     },
     [lang],

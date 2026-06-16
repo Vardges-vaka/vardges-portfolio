@@ -11,9 +11,7 @@
   justify-content: center;
   padding: calc(var(--vp-nav-h) + 2.5rem) 5vw 4rem;
   overflow: hidden;
-  background:
-    radial-gradient(900px circle at 50% 110%, color-mix(in srgb, var(--c-bar) 10%, transparent), transparent 60%),
-    var(--vp-bg);
+  background: transparent;
 }
 .vp-bar-hero__vignette {
   position: absolute;
@@ -132,7 +130,9 @@
 
 /* ---------- tasting menu ---------- */
 .vp-bar-menu {
-  background: var(--vp-bg2);
+  background: color-mix(in srgb, var(--vp-bg2) 80%, transparent);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   border-block: 1px solid var(--vp-line);
 }
 .vp-menu {

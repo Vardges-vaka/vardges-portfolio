@@ -1,0 +1,167 @@
+/* Input_textArea — multi-line field (colors from 09_styles/INPUT.css) */
+.input_textArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--input-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_textArea__fieldWrap {
+  /* Resize lives on the bordered shell — not the textarea — so width/height track the handle */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  resize: vertical;
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  background-color: var(--input-bg);
+  box-shadow: var(--input-shadow);
+  transition: var(--input-transition);
+  box-sizing: border-box;
+}
+
+.input_textArea__fieldWrap:hover:not(.input_textArea__fieldWrap--disabled) {
+  border: var(--input-border-hov);
+  background-color: var(--input-bg-hov);
+  box-shadow: var(--input-shadow-hov);
+}
+
+.input_textArea__fieldWrap:focus-within:not(.input_textArea__fieldWrap--disabled) {
+  border: var(--input-border-foc);
+  background-color: var(--input-bg-foc);
+  box-shadow: var(--input-shadow-foc);
+}
+
+.input_textArea__fieldWrap--disabled {
+  border: var(--input-border-dis);
+  background-color: var(--input-bg-dis);
+  box-shadow: var(--input-shadow-dis);
+  opacity: 0.72;
+}
+
+.input_textArea__fieldWrap--error {
+  border: 1px solid var(--input-error-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-error-border) 18%, transparent);
+}
+
+.input_textArea__fieldWrap--success {
+  border: 1px solid var(--input-success-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-success-border) 18%, transparent);
+}
+
+.input_textArea__textarea {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  line-height: 1.45;
+  color: var(--input-text);
+  box-sizing: border-box;
+  resize: none;
+}
+
+.input_textArea__textarea::placeholder {
+  color: var(--input-placeholder);
+}
+
+.input_textArea__textarea:hover:not(:disabled):not(:read-only)::placeholder {
+  color: var(--input-placeholder-hov);
+}
+
+.input_textArea__textarea:focus {
+  color: var(--input-text-foc);
+}
+
+.input_textArea__textarea:disabled {
+  cursor: not-allowed;
+  color: var(--input-text-dis);
+}
+
+.input_textArea__textarea:disabled::placeholder {
+  color: var(--input-placeholder-dis);
+}
+
+/* Resize modifiers — applied to fieldWrap (the visible bordered box) */
+.input_textArea--resizeNone .input_textArea__fieldWrap {
+  resize: none;
+}
+
+.input_textArea--resizeVertical .input_textArea__fieldWrap {
+  resize: vertical;
+}
+
+.input_textArea--resizeHorizontal .input_textArea__fieldWrap {
+  resize: horizontal;
+}
+
+.input_textArea--resizeBoth .input_textArea__fieldWrap {
+  resize: both;
+}
+
+/* Inline label + field */
+.input_textArea__inlineRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--input-inline-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_textArea__inlineRow .input_textArea__fieldWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.input_textArea--labelInline {
+  gap: var(--input-gap);
+}
+
+/* sm / md / lg — min-height on shell so vertical resize has a starting size */
+.input_textArea--sm .input_textArea__fieldWrap {
+  min-height: 3.5rem;
+}
+
+.input_textArea--sm .input_textArea__textarea {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.55rem;
+}
+
+.input_textArea--md .input_textArea__fieldWrap {
+  min-height: 4.5rem;
+}
+
+.input_textArea--md .input_textArea__textarea {
+  font-size: 0.875rem;
+  padding: 0.42rem 0.7rem;
+}
+
+.input_textArea--lg .input_textArea__fieldWrap {
+  min-height: 5.5rem;
+}
+
+.input_textArea--lg .input_textArea__textarea {
+  font-size: 1rem;
+  padding: 0.52rem 0.85rem;
+}
+
+/* Counter sits inside the bordered shell — trim textarea bottom padding */
+.input_textArea__fieldWrap--withLength .input_textArea__textarea {
+  padding-bottom: 0.2rem;
+}
+
+.input_textArea--sm .input_textArea__fieldWrap--withLength .input_textArea__textarea {
+  padding-bottom: 0.15rem;
+}
+
+.input_textArea--lg .input_textArea__fieldWrap--withLength .input_textArea__textarea {
+  padding-bottom: 0.25rem;
+}

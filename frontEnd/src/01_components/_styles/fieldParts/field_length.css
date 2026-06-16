@@ -1,0 +1,59 @@
+.field_length {
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--field-hint-text);
+  text-align: right;
+  user-select: none;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.field_length--textLeft {
+  text-align: left;
+}
+
+.field_length--textCenter {
+  text-align: center;
+}
+
+.field_length--textRight {
+  text-align: right;
+}
+
+.field_length--nearLimit {
+  color: color-mix(in srgb, var(--field-error-text) 72%, var(--field-hint-text));
+}
+
+.field_length--atLimit {
+  color: var(--field-error-text);
+  font-weight: 600;
+}
+
+.field_length--sm {
+  font-size: 0.68rem;
+}
+
+.field_length--md {
+  font-size: 0.72rem;
+}
+
+.field_length--lg {
+  font-size: 0.78rem;
+}
+
+.field_length--footer {
+  display: block;
+  width: 100%;
+  padding: 0.15rem 0.7rem 0.35rem;
+}
+
+.field_length--inline {
+  display: block;
+  width: auto;
+  padding: 0 0.55rem 0 0.2rem;
+  white-space: nowrap;
+  line-height: 1;
+  text-align: right;
+}

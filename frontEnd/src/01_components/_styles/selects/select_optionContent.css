@@ -1,0 +1,39 @@
+.select_optionContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+  width: 100%;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.select_optionContent--placeholder {
+  color: var(--select-placeholder);
+}
+
+.select_optionContent--iconOnly {
+  justify-content: flex-start;
+  width: auto;
+}
+
+.select_optionContent__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select_optionContent--iconOnly .select_optionContent__label {
+  flex: 0;
+}
+
+.select_optionContent--full .select_optionContent__label {
+  flex: 1;
+}
+
+/* Field_icon inside option rows — match select icon colour + size tier */
+.select_optionContent .field_icon_cnt--inLabel {
+  color: var(--select-icon);
+}

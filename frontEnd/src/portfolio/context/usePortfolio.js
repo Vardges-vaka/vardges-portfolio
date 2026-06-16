@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PortfolioThemeContext, PortfolioLanguageContext } from "./portfolioContexts.js";
+import { PortfolioThemeContext, PortfolioLanguageContext, PortfolioModeContext } from "./portfolioContexts.js";
 
 export const usePortfolioTheme = () => {
   const ctx = useContext(PortfolioThemeContext);
@@ -10,5 +10,11 @@ export const usePortfolioTheme = () => {
 export const usePortfolioLang = () => {
   const ctx = useContext(PortfolioLanguageContext);
   if (!ctx) throw new Error("usePortfolioLang must be used inside PortfolioLanguageProvider");
+  return ctx;
+};
+
+export const usePortfolioMode = () => {
+  const ctx = useContext(PortfolioModeContext);
+  if (!ctx) throw new Error("usePortfolioMode must be used inside PortfolioModeProvider");
   return ctx;
 };
