@@ -1,21 +1,6 @@
 import { useCallback } from "react";
 import { setByPath } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
-import {
-  DFLT_F_D_CUISINE_TAG,
-  DFLT_F_D_CUISINE_TAG_FULL,
-} from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
-
-const isPlainObj = (v) => v && typeof v === "object" && !Array.isArray(v);
-
-const seedFullFromTag = (tag = {}) => ({
-  ...DFLT_F_D_CUISINE_TAG_FULL,
-  value: tag.value || "",
-  label: tag.label || "",
-  description: tag.description || "",
-  kind: tag.kind || "",
-  source: tag.source || "",
-  platforms: Array.isArray(tag.platforms) ? tag.platforms : [],
-});
+import { DFLT_F_D_CUISINE_TAG } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
 
 export const useCK_setup_cuisineTags_handlers = ({
   states,
@@ -31,6 +16,8 @@ export const useCK_setup_cuisineTags_handlers = ({
     return res;
   }, [apiHelpers.cuisTag_getAll, setters.setCuisineTags]);
 
+  const handleFetchCatalog = useCallback(async () => fetchAll(), [fetchAll]);
+
   const handleinitialfetch = useCallback(async () => {
     const res = await fetchAll();
     if (res?.success) {
@@ -44,6 +31,7 @@ export const useCK_setup_cuisineTags_handlers = ({
         message: res?.message || "Could not fetch",
       });
     }
+    return res;
   }, [fetchAll, TOAST]);
 
   const handleAddnew = useCallback(async () => {
@@ -88,84 +76,102 @@ export const useCK_setup_cuisineTags_handlers = ({
     setters.setActiveOperation("viewing");
   }, [setters.setCuisineTagFormData, setters.setActiveOperation]);
 
-  // ── Full edit ───────────────────────────────────────────
-  const handleEditFull = useCallback(
-    (tag) => {
-      setters.setSelectedCuisineTag(tag);
-      setters.setCuisineTagFormData_full(seedFullFromTag(tag));
-      setters.setActiveOperation("updating");
-    },
-    [
-      setters.setSelectedCuisineTag,
-      setters.setCuisineTagFormData_full,
-      setters.setActiveOperation,
-    ],
-  );
-
-  const handleFullFormChange = useCallback(
-    (name, value) => {
-      setters.setCuisineTagFormData_full((prev) => setByPath(prev, name, value));
-    },
-    [setters.setCuisineTagFormData_full],
-  );
-
-  const handleUpdateSubmit = useCallback(async () => {
-    const id = states.selectedCuisineTag?._id;
-    if (!id) {
-      TOAST.error({ title: "Update failed", message: "No tag selected" });
-      return;
-    }
-    const res = await apiHelpers.cuisTag_updateAll({
-      id,
-      ...states.cuisineTagFormData_full,
-    });
-    if (res?.success) {
-      TOAST.success({
-        title: "Cuisine Tag Updated",
-        message: res.message || "Updated successfully",
+  // ── Inline row update (viewAll catalog) ─────────────────
+  const handleInlineUpdateSubmit = useCallback(
+    async (tagId, formData) => {
+      if (!tagId) {
+        TOAST.error({ title: "Update failed", message: "No tag selected" });
+        return false;
+      }
+      const res = await apiHelpers.cuisTag_updateAll({
+        id: tagId,
+        ...formData,
       });
-      setters.setCuisineTagFormData_full(DFLT_F_D_CUISINE_TAG_FULL);
-      setters.setSelectedCuisineTag(null);
-      setters.setActiveOperation("viewing");
-      await fetchAll();
-    } else {
+      if (res?.success) {
+        TOAST.success({
+          title: "Cuisine Tag Updated",
+          message: res.message || "Updated successfully",
+        });
+        await fetchAll();
+        return true;
+      }
       TOAST.error({
         title: "Update failed",
         message: res?.message || "Could not update",
       });
-    }
-  }, [
-    apiHelpers.cuisTag_updateAll,
-    states.selectedCuisineTag,
-    states.cuisineTagFormData_full,
-    setters.setCuisineTagFormData_full,
-    setters.setSelectedCuisineTag,
-    setters.setActiveOperation,
-    TOAST,
-    fetchAll,
-  ]);
+      return false;
+    },
+    [apiHelpers.cuisTag_updateAll, TOAST, fetchAll],
+  );
 
-  const handleCancelFull = useCallback(() => {
-    setters.setCuisineTagFormData_full(DFLT_F_D_CUISINE_TAG_FULL);
-    setters.setSelectedCuisineTag(null);
-    setters.setActiveOperation("viewing");
-  }, [
-    setters.setCuisineTagFormData_full,
-    setters.setSelectedCuisineTag,
-    setters.setActiveOperation,
-  ]);
+  const buildTagUpdatePayload = useCallback((tag, overrides = {}) => {
+    return {
+      value: tag?.value ?? "",
+      label: tag?.label ?? "",
+      description: tag?.description ?? "",
+      kind: tag?.kind ?? "",
+      source: tag?.source ?? "",
+      platforms: Array.isArray(tag?.platforms) ? tag.platforms : [],
+      ...overrides,
+    };
+  }, []);
+
+  const handleAddTagField = useCallback(
+    async (tagId, field, value) => {
+      const tag = states.cuisineTags.find((item) => item?._id === tagId);
+      if (!tag?._id) {
+        TOAST.error({ title: "Update failed", message: "Tag not found" });
+        return false;
+      }
+
+      const overrides =
+        field === "description"
+          ? { description: value }
+          : field === "source"
+            ? { source: value }
+            : field === "platforms"
+              ? { platforms: value }
+              : {};
+
+      const res = await apiHelpers.cuisTag_updateAll({
+        id: tagId,
+        ...buildTagUpdatePayload(tag, overrides),
+      });
+
+      if (res?.success) {
+        TOAST.success({
+          title: "Cuisine Tag Updated",
+          message: res.message || "Field saved successfully",
+        });
+        await fetchAll();
+        return true;
+      }
+
+      TOAST.error({
+        title: "Update failed",
+        message: res?.message || "Could not save field",
+      });
+      return false;
+    },
+    [
+      apiHelpers.cuisTag_updateAll,
+      buildTagUpdatePayload,
+      states.cuisineTags,
+      TOAST,
+      fetchAll,
+    ],
+  );
 
   return {
     handlers: {
       handleinitialfetch,
+      handleFetchCatalog,
       handleAddnew,
       handleFormChange,
       handleCreateSubmit,
       handleCancelAdd,
-      handleEditFull,
-      handleFullFormChange,
-      handleUpdateSubmit,
-      handleCancelFull,
+      handleInlineUpdateSubmit,
+      handleAddTagField,
     },
   };
 };

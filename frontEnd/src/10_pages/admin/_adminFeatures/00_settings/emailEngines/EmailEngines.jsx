@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   Input_text,
   Input_url,
+  Input_search,
   Input_date,
   Input_textArea,
   Select_static,
@@ -24,39 +25,26 @@ import "./testing.css";
 const SELECT_FULL_SHELL = {
   labelProps: {
     isActive: true,
-
     iconProps: {
       isActive: true,
-
       type: "lucide",
-
       lucidIcon: "Tag",
     },
   },
-
   leftIconProps: {
     isActive: true,
-
     type: "lucide",
-
     lucidIcon: "Filter",
   },
-
   rightIconProps: {
     isActive: true,
-
     type: "lucide",
-
     lucidIcon: "ChevronDown",
-
     decorative: true,
   },
-
   hintsProps: {
     isActive: true,
-
     type: "hint",
-
     message: "Helper text under the field.",
   },
 };
@@ -103,6 +91,10 @@ const EmailEngines = () => {
   const [weekValue, setWeekValue] = useState("");
 
   const [dateTimeValue, setDateTimeValue] = useState("");
+
+  const [searchBasic, setSearchBasic] = useState("");
+
+  const [searchWithAction, setSearchWithAction] = useState("italian");
 
   const PRICE_RANGE_OPTIONS = [
     { value: "budget", label: "Budget" },
@@ -544,6 +536,41 @@ const EmailEngines = () => {
           hintsProps={{ isActive: false }}
           value="https://www.thsreabsjkahsj.com/example-brand-profile"
           readOnlyMaxChars={5}
+        />
+      </section>
+
+      <section className="emailEnginesTest__section">
+        <h2>Input_search</h2>
+
+        <Input_search
+          labelProps={{ isActive: true, message: "Default (search + clear)" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "Left Search and right Clear are always on by default.",
+          }}
+          placeholder="Search…"
+          value={searchBasic}
+          onChange={(e) => setSearchBasic(e.target.value)}
+        />
+
+        <Input_search
+          labelProps={{ isActive: true, message: "With optional 2nd-right icon" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "SlidersHorizontal sits left of Clear; both are clickable.",
+          }}
+          placeholder="Search cuisine tags…"
+          value={searchWithAction}
+          onChange={(e) => setSearchWithAction(e.target.value)}
+          secondaryRightIconProps={{
+            isActive: true,
+            type: "lucide",
+            lucidIcon: "SlidersHorizontal",
+            title: "Open filters",
+            onClick: () => window.alert("Filter action clicked"),
+          }}
         />
       </section>
     </div>

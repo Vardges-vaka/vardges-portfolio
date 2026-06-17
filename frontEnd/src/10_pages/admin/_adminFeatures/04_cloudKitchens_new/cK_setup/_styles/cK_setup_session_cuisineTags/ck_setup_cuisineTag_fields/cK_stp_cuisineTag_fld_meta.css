@@ -1,0 +1,38 @@
+.cK_stp_cuisineTag_fld_meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  overflow: visible;
+}
+
+.cK_stp_cuisineTag_fld_meta__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  align-items: end;
+  overflow: visible;
+}
+
+.cK_stp_cuisineTag_fld_meta__menuSpacer {
+  flex-shrink: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: height 0.32s ease;
+}
+
+.cK_stp_cuisineTag_fld_meta__menuSpacer--open {
+  height: 15rem;
+}
+
+@media (max-width: 900px) {
+  .cK_stp_cuisineTag_fld_meta__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cK_stp_cuisineTag_fld_meta__menuSpacer {
+    transition: none;
+  }
+}

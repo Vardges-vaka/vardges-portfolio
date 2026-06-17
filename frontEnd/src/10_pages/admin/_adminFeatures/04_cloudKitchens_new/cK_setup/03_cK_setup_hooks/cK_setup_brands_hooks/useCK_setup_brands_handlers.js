@@ -15,6 +15,12 @@ const DEFAULT_SOCIAL = {
   notes: "",
 };
 
+// Brand.cuisineTags may be ObjectId strings or populated docs from getAll.
+const normalizeCuisineTagIds = (tags = []) =>
+  (Array.isArray(tags) ? tags : [])
+    .map((tag) => (typeof tag === "string" ? tag : tag?._id))
+    .filter(Boolean);
+
 // Seed the full-edit form from an existing brand doc, defending against the
 // legacy shape (name/tagline as objects, socials as an object not an array).
 const seedFullFromBrand = (brand = {}) => ({
@@ -42,6 +48,7 @@ const seedFullFromBrand = (brand = {}) => ({
     Array.isArray(brand.socials) && brand.socials.length
       ? brand.socials
       : [{ ...DEFAULT_SOCIAL }],
+  cuisineTags: normalizeCuisineTagIds(brand.cuisineTags),
 });
 
 export const useCK_setup_brands_handlers = ({
@@ -153,6 +160,31 @@ export const useCK_setup_brands_handlers = ({
     [setters.setBrandFormData_full],
   );
 
+  const handleAddCuisineTag = useCallback(
+    (tagId) => {
+      if (!tagId) return;
+      setters.setBrandFormData_full((prev) => {
+        const current = normalizeCuisineTagIds(prev.cuisineTags);
+        if (current.includes(tagId)) return prev;
+        return { ...prev, cuisineTags: [...current, tagId] };
+      });
+    },
+    [setters.setBrandFormData_full],
+  );
+
+  const handleRemoveCuisineTag = useCallback(
+    (tagId) => {
+      if (!tagId) return;
+      setters.setBrandFormData_full((prev) => ({
+        ...prev,
+        cuisineTags: normalizeCuisineTagIds(prev.cuisineTags).filter(
+          (id) => id !== tagId,
+        ),
+      }));
+    },
+    [setters.setBrandFormData_full],
+  );
+
   const handleUpdateSubmit = useCallback(async () => {
     const id = states.selectedBrand?._id;
     if (!id) {
@@ -210,6 +242,8 @@ export const useCK_setup_brands_handlers = ({
       handleFullFormChange,
       handleAddSocial,
       handleRemoveSocial,
+      handleAddCuisineTag,
+      handleRemoveCuisineTag,
       handleUpdateSubmit,
       handleCancelFull,
     },

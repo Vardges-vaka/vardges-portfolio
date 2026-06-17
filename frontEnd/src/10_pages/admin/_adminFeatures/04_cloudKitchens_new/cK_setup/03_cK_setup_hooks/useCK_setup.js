@@ -15,10 +15,11 @@ import { useNotificationContext } from "../../../../../../02_context/context.ind
 
 export const useCK_setup = () => {
   const { t } = useTranslation("setup");
-  const { TOAST } = useNotificationContext();
-  const brands = useCK_setup_brands({ TOAST, t });
-  const channels = useCK_setup_channels({ TOAST, t });
+  const { TOAST } = useNotificationContext();  
   const cuisineTags = useCK_setup_cuisineTags({ TOAST, t });
+  const brands = useCK_setup_brands({ TOAST, t, cuisineTags: cuisineTags.states.cuisineTags });
+  const channels = useCK_setup_channels({ TOAST, t });
+
   const salesPlatforms = useCK_setup_salesPlatforms({ TOAST, t });
   const integrations = useCK_setup_integrations({ TOAST, t });
   const contracts = useCK_setup_contracts({ TOAST, t });

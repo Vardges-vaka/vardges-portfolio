@@ -1,4 +1,5 @@
-export const brands_propsComposer = (states, handlers, t) => {
+export const brands_propsComposer = (states, handlers, t, cuisineTags) => {
+  // console.log("states in brands_propsComposer", cuisineTags);
   const stp_empty_brand_props = {
     states: {},
     handlers: { handleAddnew: handlers.handleAddnew },
@@ -8,6 +9,7 @@ export const brands_propsComposer = (states, handlers, t) => {
   const stp_brands_viewOne_props = {
     states: {
       brand: states.selectedBrand,
+      cuisineTags: cuisineTags,
     },
     handlers: {},
     childComps: {},
@@ -27,6 +29,7 @@ export const brands_propsComposer = (states, handlers, t) => {
     states: {
       isOpen: states.activeOperation === "adding",
       values: states.brandFormData,
+      cuisineTags: cuisineTags,
     },
     handlers: {
       onChange: handlers.handleFormChange,
@@ -40,6 +43,7 @@ export const brands_propsComposer = (states, handlers, t) => {
     states: {
       isOpen: states.activeOperation === "updating",
       values: states.brandFormData_full,
+      cuisineTags: cuisineTags,
     },
     handlers: {
       onChange: handlers.handleFullFormChange,
@@ -47,6 +51,8 @@ export const brands_propsComposer = (states, handlers, t) => {
       onCancel: handlers.handleCancelFull,
       onAddSocial: handlers.handleAddSocial,
       onRemoveSocial: handlers.handleRemoveSocial,
+      onAddCuisineTag: handlers.handleAddCuisineTag,
+      onRemoveCuisineTag: handlers.handleRemoveCuisineTag,
     },
     childComps: {},
     t: t,

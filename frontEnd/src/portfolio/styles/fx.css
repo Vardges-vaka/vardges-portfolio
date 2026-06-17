@@ -397,6 +397,7 @@
 .vp-certwall__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  align-items: start;
   gap: 18px;
 }
 .vp-cert-card__pending {
@@ -1114,7 +1115,9 @@
 }
 .vp-kg {
   position: relative;
-  width: min(1240px, 96vw);
+  width: 100%;
+  max-width: min(1240px, 96vw);
+  min-width: 0;
   margin-inline: auto;
 }
 .vp-kg__toolbar {
@@ -1178,6 +1181,14 @@
 .vp-root[data-theme="light"] .vp-kg__leg--project .vp-kg__leg-dot { background: #a4650e; }
 .vp-root[data-theme="light"] .vp-kg__leg--experience .vp-kg__leg-dot { background: #a4650e; }
 .vp-root[data-theme="light"] .vp-kg__leg--testimonial .vp-kg__leg-dot { background: #c2456f; }
+/* universe graph — side-based legend (engineering / hospitality / bridges) */
+.vp-kg__leg--tech .vp-kg__leg-dot { background: var(--c-tech); }
+.vp-kg__leg--bar .vp-kg__leg-dot { background: var(--c-bar); }
+.vp-kg__leg--bridge .vp-kg__leg-dot { background: #f4d06f; box-shadow: 0 0 8px rgba(244, 208, 111, 0.7); }
+.vp-kg__leg--tech:not(.is-off) { border-color: color-mix(in srgb, var(--c-tech) 45%, transparent); }
+.vp-kg__leg--bar:not(.is-off) { border-color: color-mix(in srgb, var(--c-bar) 45%, transparent); }
+.vp-kg__leg--bridge:not(.is-off) { border-color: color-mix(in srgb, #f4d06f 55%, transparent); }
+.vp-root[data-theme="light"] .vp-kg__leg--bridge .vp-kg__leg-dot { background: #b8860b; box-shadow: 0 0 8px rgba(184, 134, 11, 0.5); }
 
 .vp-kg__tune-btn {
   display: inline-flex;
@@ -1247,7 +1258,8 @@
   opacity: 0.85;
 }
 .vp-kg__canvas {
-  position: relative;
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -1417,6 +1429,8 @@
 .vp-kg__badge--project { color: var(--c-bar); }
 .vp-kg__badge--experience { color: var(--c-bar); }
 .vp-kg__badge--testimonial { color: #f0789e; }
+.vp-kg__badge--bridge { color: #d8a93a; }
+.vp-root[data-theme="light"] .vp-kg__badge--bridge { color: #b8860b; }
 .vp-root[data-theme="light"] .vp-kg__badge--skill { color: #5b46c8; }
 .vp-root[data-theme="light"] .vp-kg__badge--testimonial { color: #c2456f; }
 .vp-kg__planned--ai { color: #f0789e; border-color: color-mix(in srgb, #f0789e 40%, transparent); }
@@ -1464,6 +1478,7 @@
 .vp-kg__pill--project:hover { border-color: var(--c-bar); }
 .vp-kg__pill--experience:hover { border-color: var(--c-bar); }
 .vp-kg__pill--testimonial:hover { border-color: #f0789e; }
+.vp-kg__pill--bridge:hover { border-color: #f4d06f; }
 .vp-kg__actions { display: flex; flex-direction: column; gap: 10px; margin-top: 1.6rem; }
 .vp-kg__btn { width: 100%; }
 /* the panel slides in from the inline-start in RTL, so flip the cast shadow */

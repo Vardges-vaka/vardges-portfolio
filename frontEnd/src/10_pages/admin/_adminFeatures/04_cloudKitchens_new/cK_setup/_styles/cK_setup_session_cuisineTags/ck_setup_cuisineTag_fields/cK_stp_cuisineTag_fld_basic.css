@@ -1,0 +1,5 @@
+.cK_stp_cuisineTag_fld_basic {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}

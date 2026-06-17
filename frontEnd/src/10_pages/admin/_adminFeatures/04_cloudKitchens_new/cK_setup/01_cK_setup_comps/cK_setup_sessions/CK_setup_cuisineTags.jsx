@@ -26,28 +26,28 @@ const CK_setup_cuisineTags = ({ states, handlers, childProps, t }) => {
       )}
 
       {states.activeOperation === "viewing" &&
-      states.cuisineTags.length === 0 ? (
-        <CK_setup_empty_cuisineTags
-          states={stp_empty_cuisineTags_props.states}
-          handlers={stp_empty_cuisineTags_props.handlers}
-          childProps={stp_empty_cuisineTags_props.childProps}
-          t={stp_empty_cuisineTags_props.t}
-        />
-      ) : states.activeViewingType === "one" ? (
-        <CK_setup_cuisineTags_viewOne
-          states={stp_cuisineTags_viewOne_props.states}
-          handlers={stp_cuisineTags_viewOne_props.handlers}
-          childProps={stp_cuisineTags_viewOne_props.childProps}
-          t={stp_cuisineTags_viewOne_props.t}
-        />
-      ) : (
-        <CK_setup_cuisineTags_viewAll
-          states={stp_cuisineTags_viewAll_props.states}
-          handlers={stp_cuisineTags_viewAll_props.handlers}
-          childProps={stp_cuisineTags_viewAll_props.childProps}
-          t={stp_cuisineTags_viewAll_props.t}
-        />
-      )}
+        (states.cuisineTags.length === 0 ? (
+          <CK_setup_empty_cuisineTags
+            states={stp_empty_cuisineTags_props.states}
+            handlers={stp_empty_cuisineTags_props.handlers}
+            childProps={stp_empty_cuisineTags_props.childProps}
+            t={stp_empty_cuisineTags_props.t}
+          />
+        ) : states.activeViewingType === "one" ? (
+          <CK_setup_cuisineTags_viewOne
+            states={stp_cuisineTags_viewOne_props.states}
+            handlers={stp_cuisineTags_viewOne_props.handlers}
+            childProps={stp_cuisineTags_viewOne_props.childProps}
+            t={stp_cuisineTags_viewOne_props.t}
+          />
+        ) : (
+          <CK_setup_cuisineTags_viewAll
+            states={stp_cuisineTags_viewAll_props.states}
+            handlers={stp_cuisineTags_viewAll_props.handlers}
+            childProps={stp_cuisineTags_viewAll_props.childProps}
+            t={stp_cuisineTags_viewAll_props.t}
+          />
+        ))}
     </div>
   );
 };

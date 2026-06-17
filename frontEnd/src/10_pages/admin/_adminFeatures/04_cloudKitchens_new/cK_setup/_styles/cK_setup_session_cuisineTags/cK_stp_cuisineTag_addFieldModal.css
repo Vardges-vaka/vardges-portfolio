@@ -1,0 +1,121 @@
+/* Dynamic height: dialog grows with content; menus escape via overflow visible. */
+.cK_stp_cuisineTag_addFieldModal_dialog {
+  height: auto;
+  overflow: visible;
+}
+
+.cK_stp_cuisineTag_addFieldModal_dialog .modal_body {
+  overflow: visible;
+  flex: 0 1 auto;
+}
+
+.cK_stp_cuisineTag_addFieldModal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: visible;
+}
+
+.cK_stp_cuisineTag_addFieldModal_form .select_static,
+.cK_stp_cuisineTag_addFieldModal_form .select_multi {
+  overflow: visible;
+}
+
+.cK_stp_cuisineTag_addFieldModal_form .select_static__rich,
+.cK_stp_cuisineTag_addFieldModal_form .select_multi__rich {
+  position: relative;
+  z-index: 3;
+}
+
+.cK_stp_cuisineTag_addFieldModal_form .select_static__menu,
+.cK_stp_cuisineTag_addFieldModal_form .select_field__menu {
+  z-index: 50;
+}
+
+.cK_stp_cuisineTag_addFieldModal__platformsField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cK_stp_cuisineTag_addFieldModal__platformIcons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding-inline: 0.15rem;
+}
+
+.cK_stp_cuisineTag_addFieldModal__platformChip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cK_stp_cuisineTag_addFieldModal__platformChipRemove {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.3rem;
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  padding: 0;
+  border: 1.5px solid var(--btn-primary-text-color-HOV, #fff);
+  border-radius: 999px;
+  cursor: pointer;
+  background-color: var(--brands-error-color);
+  color: var(--btn-primary-text-color-HOV, #fff);
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.cK_stp_cuisineTag_addFieldModal__platformChipRemove:hover {
+  background-color: color-mix(in srgb, var(--brands-error-color) 88%, #000);
+  border-color: var(--btn-primary-text-color-HOV, #fff);
+  color: var(--btn-primary-text-color-HOV, #fff);
+}
+
+.cK_stp_cuisineTag_addFieldModal__platformIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cK_stp_cuisineTag_addFieldModal__platformIconMissing {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+  background-color: var(--bg-secondary-color);
+  border: 1px dashed var(--border-secondary-color);
+}
+
+/* Smoothly reserves room for the absolute-positioned menu so Save stays visible. */
+.cK_stp_cuisineTag_addFieldModal__menuSpacer {
+  flex-shrink: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: height 0.32s ease;
+}
+
+.cK_stp_cuisineTag_addFieldModal__menuSpacer--open {
+  height: 15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cK_stp_cuisineTag_addFieldModal__menuSpacer {
+    transition: none;
+  }
+}

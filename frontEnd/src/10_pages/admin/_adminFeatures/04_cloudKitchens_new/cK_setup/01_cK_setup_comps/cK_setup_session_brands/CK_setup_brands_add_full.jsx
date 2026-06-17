@@ -15,9 +15,6 @@ import {
 } from "./ck_setup_brand_fields/_ck_setup_brand_fields.index.js";
 
 const CK_setup_brands_add_full = ({ states, handlers, t }) => {
-  const v = states.values ?? {};
-  const set = (name) => (e) => handlers.onChange?.(name, e.target.value);
-
   return (
     <div className="cK_setup_form">
       {/* */}

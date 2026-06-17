@@ -6,7 +6,6 @@ const URL_INPUT_PROPS = {
   labelProps: { isActive: false },
   hintsProps: { isActive: false },
   sizeType: "sm",
-  autoValidate: true,
   readOnly: false,
   readOnlyMaxChars: 10,
 };
@@ -99,15 +98,20 @@ const Card_social_active = ({
                   placeholder="Link — https://…"
                   value={link}
                   onChange={handleFieldChange("link")}
+                  autoValidate={true}
                 />
                 <Input_url
                   {...URL_INPUT_PROPS}
                   value={notes}
                   placeholder="Notes"
                   onChange={handleFieldChange("notes")}
+                  autoValidate={true}
                 />
                 <Input_textArea
-                  {...URL_INPUT_PROPS}
+                  labelProps={{ isActive: false }}
+                  hintsProps={{ isActive: false }}
+                  sizeType="sm"
+                  readOnly={false}
                   maxLength={consoleLink.length + 100}
                   rows={2}
                   lengthProps={{ isActive: true }}

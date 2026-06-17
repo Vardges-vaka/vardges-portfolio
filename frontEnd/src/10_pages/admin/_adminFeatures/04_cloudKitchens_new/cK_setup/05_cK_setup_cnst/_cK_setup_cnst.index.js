@@ -20,3 +20,10 @@ export {
   CONTRACT_OWNER_TYPE_OPTIONS,
 } from "./create_fields.js";
 export { TAGLINE_INFO } from "./info_cnst.js";
+
+export {
+  SAMPLE_CUISINE_TAGS,
+  AGGREGATOR_PLATFORMS,
+  CUISINE_TYPES,
+  CUISINE_TAG_SOURCE_OPTIONS,
+} from "./CusineTags_Sample.js";

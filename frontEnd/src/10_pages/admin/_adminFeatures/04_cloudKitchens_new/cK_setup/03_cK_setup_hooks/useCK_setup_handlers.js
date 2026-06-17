@@ -26,7 +26,10 @@ export const useCK_setup_handlers = ({
     async (session) => {
       switch (session) {
         case "brands":
-          await brands.handlers.handleinitialfetch();
+          await Promise.all([
+            brands.handlers.handleinitialfetch(),
+            cuisineTags.handlers.handleFetchCatalog?.(),
+          ]);
           break;
         case "cuisineTags":
           await cuisineTags.handlers.handleinitialfetch();
@@ -49,6 +52,7 @@ export const useCK_setup_handlers = ({
     },
     [
       brands.handlers.handleinitialfetch,
+      cuisineTags.handlers.handleFetchCatalog,
       cuisineTags.handlers.handleinitialfetch,
       salesPlatforms.handlers.handleinitialfetch,
       channels.handlers.handleinitialfetch,

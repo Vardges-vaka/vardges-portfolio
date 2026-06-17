@@ -24,6 +24,13 @@ import Noon_logo from "./aggrigatorLogos/Noon_logo.png";
 import Talabat_logo from "./aggrigatorLogos/Talabat_logo.png";
 
 // Cloud-kitchen / competitors mock visuals (logos + menu item photos)
+import Beverage_Logo from "./aggrigatorLogos/Beverage_Logo.png";
+import Category_Logo from "./aggrigatorLogos/Category_Logo.png";
+import Cuisine_Logo from "./aggrigatorLogos/Cuisine_Logo.png";
+import Dessert_Logo from "./aggrigatorLogos/Dessert_Logo.png";
+import Dietary_Logo from "./aggrigatorLogos/Dietary_Logo.png";
+import MealType_Logo from "./aggrigatorLogos/MealType_Logo.png";
+import Other_Logo from "./aggrigatorLogos/Other_Logo.png";
 
 export {
   dacha_logo,
@@ -94,4 +101,12 @@ export {
   Keeta_logo,
   Noon_logo,
   Talabat_logo,
+  //
+  Beverage_Logo,
+  Category_Logo,
+  Cuisine_Logo,
+  Dessert_Logo,
+  Dietary_Logo,
+  MealType_Logo,
+  Other_Logo,
 };

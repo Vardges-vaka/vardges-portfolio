@@ -84,9 +84,9 @@ const TREE = {
   ],
 };
 
-const ROW = 46;
-const COLGAP = 64;
-const PAD = 40;
+const ROW = 50;
+const COLGAP = 78;
+const PAD = 44;
 const measure = (label) => Math.min(244, Math.max(86, label.length * 7.7 + 38));
 const SPRING = { type: "spring", stiffness: 260, damping: 30 };
 
@@ -97,13 +97,19 @@ const LifeMap = () => {
   const stageRef = useRef(null);
   const [stage, setStage] = useState({ w: 900, h: 600 });
 
-  // expanded set — root always; the mode's branch opens first
-  const [expanded, setExpanded] = useState(() => new Set(["root"]));
+  // expanded set — root + the visible craft branch(es) open by default so the
+  // map lands as a full constellation rather than a lonely hub
+  const [expanded, setExpanded] = useState(() => {
+    const s = new Set(["root"]);
+    if (showTech) s.add("eng");
+    if (showBar) s.add("bar");
+    return s;
+  });
   useEffect(() => {
     setExpanded(() => {
       const s = new Set(["root"]);
-      if (showTech && !isBoth) s.add("eng");
-      if (showBar && !isBoth) s.add("bar");
+      if (showTech) s.add("eng");
+      if (showBar) s.add("bar");
       return s;
     });
   }, [showTech, showBar, isBoth]);
@@ -186,7 +192,7 @@ const LifeMap = () => {
     });
 
     // fit transform (scale to stage, centre)
-    const sc = Math.min((stage.w - PAD * 2) / boxW, (stage.h - PAD * 2) / boxH, 1.1);
+    const sc = Math.min((stage.w - PAD * 2) / boxW, (stage.h - PAD * 2) / boxH, 1.5);
     const scale = Number.isFinite(sc) && sc > 0 ? sc : 1;
     const tx = (stage.w - boxW * scale) / 2;
     const ty = (stage.h - boxH * scale) / 2;

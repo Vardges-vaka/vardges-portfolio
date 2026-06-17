@@ -10,8 +10,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--vp-nav-h) + 3rem) 5vw 5rem;
+  padding: calc(var(--vp-nav-h) + 3rem) 5vw 7rem;
   overflow: hidden;
+}
+.vp-home-hero__bottom {
+  position: absolute;
+  bottom: 20px;
+  inset-inline: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  padding-inline: 16px;
 }
 /* soft glows — radial gradients instead of filter:blur (much cheaper on GPU) */
 .vp-home-hero__glow {
@@ -174,9 +185,6 @@
 }
 
 .vp-home-hero__scroll {
-  position: absolute;
-  bottom: 26px;
-  inset-inline: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,7 +195,6 @@
   text-transform: uppercase;
   letter-spacing: var(--track-md);
   text-shadow: 0 1px 10px color-mix(in srgb, var(--vp-bg) 70%, transparent);
-  z-index: 2;
 }
 .vp-home-hero__scroll svg {
   animation: vp-bob 1.8s ease-in-out infinite;
@@ -343,27 +350,31 @@
 
 .vp-tl {
   position: relative;
-  margin-top: 4rem;
+  margin-top: 2.6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.3rem;
 }
+/* the spine draws itself in on scroll (scaleY animated in JS) */
 .vp-tl__line {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 1px;
+  width: 2px;
+  transform: translateX(-50%);
+  transform-origin: top center;
+  border-radius: 2px;
   background: linear-gradient(
     to bottom,
     transparent,
-    var(--vp-line) 8%,
-    var(--vp-line) 92%,
+    color-mix(in srgb, var(--c-tech) 55%, var(--vp-line)) 9%,
+    color-mix(in srgb, var(--c-bar) 55%, var(--vp-line)) 91%,
     transparent
   );
 }
 .vp-tl__item {
-  width: calc(50% - 44px);
+  width: calc(50% - 40px);
   position: relative;
 }
 .vp-tl__item--left {
@@ -372,17 +383,43 @@
 .vp-tl__item--right {
   margin-inline-start: auto;
 }
+/* connector line from the card to the spine */
+.vp-tl__item::after {
+  content: "";
+  position: absolute;
+  top: 2.1rem;
+  height: 2px;
+  width: 40px;
+}
+.vp-tl__item--left::after {
+  inset-inline-end: -40px;
+  background: linear-gradient(to right, color-mix(in srgb, var(--vp-text) 26%, transparent), transparent);
+}
+.vp-tl__item--right::after {
+  inset-inline-start: -40px;
+  background: linear-gradient(to left, color-mix(in srgb, var(--vp-text) 26%, transparent), transparent);
+}
 .vp-tl__card {
   position: relative;
   border: 1px solid var(--vp-line);
-  border-radius: 20px;
-  /* real translucent panel so card text stays legible over the moving scene */
-  background: color-mix(in srgb, var(--vp-bg2) 80%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 1.5rem 1.6rem;
+  border-radius: 18px;
+  /* opaque enough to stay legible over the moving topo scene — no live blur (perf) */
+  background: color-mix(in srgb, var(--vp-bg2) 93%, transparent);
+  padding: 1.35rem 1.5rem;
+  overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
+/* type-colored accent bar down the inner edge */
+.vp-tl__card::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 3px;
+}
+.vp-tl__card--bar::before { background: var(--c-bar); }
+.vp-tl__card--tech::before { background: var(--c-tech); }
+.vp-tl__card--hybrid::before { background: linear-gradient(to bottom, var(--c-tech), var(--c-bar)); }
 .vp-tl__card:hover {
   transform: translateY(-4px);
 }
@@ -400,41 +437,49 @@
 }
 .vp-tl__dot {
   position: absolute;
-  top: 1.9rem;
-  width: 13px;
-  height: 13px;
+  top: 1.7rem;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border: 3px solid var(--vp-bg);
+  z-index: 1;
 }
 .vp-tl__item--left .vp-tl__dot {
-  inset-inline-end: -51px;
+  inset-inline-end: -47px;
 }
 .vp-tl__item--right .vp-tl__dot {
-  inset-inline-start: -51px;
+  inset-inline-start: -47px;
 }
 .vp-tl__dot--bar {
   background: var(--c-bar);
-  box-shadow: 0 0 14px color-mix(in srgb, var(--c-bar) 70%, transparent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--c-bar) 75%, transparent);
 }
 .vp-tl__dot--tech {
   background: var(--c-tech);
-  box-shadow: 0 0 14px color-mix(in srgb, var(--c-tech) 70%, transparent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--c-tech) 75%, transparent);
 }
 .vp-tl__dot--hybrid {
   background: linear-gradient(120deg, var(--c-tech), var(--c-bar));
-  box-shadow: 0 0 14px color-mix(in srgb, var(--c-bar) 60%, transparent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--c-bar) 65%, transparent);
 }
 .vp-tl__year {
+  display: inline-block;
   font-family: var(--vpf-mono);
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   letter-spacing: var(--track-md);
   color: var(--vp-text2);
+  border: 1px solid var(--vp-line);
+  border-radius: 999px;
+  padding: 3px 10px;
 }
+.vp-tl__card--bar .vp-tl__year { color: var(--c-bar); border-color: color-mix(in srgb, var(--c-bar) 35%, transparent); }
+.vp-tl__card--tech .vp-tl__year { color: var(--c-tech); border-color: color-mix(in srgb, var(--c-tech) 35%, transparent); }
+.vp-tl__card--hybrid .vp-tl__year { color: var(--c-tech); border-color: color-mix(in srgb, var(--c-tech) 35%, transparent); }
 .vp-tl__title {
   font-family: var(--vpf-display);
   font-weight: 700;
   font-size: 1.12rem;
-  margin-block: 0.5rem 0.25rem;
+  margin-block: 0.6rem 0.25rem;
   line-height: 1.3;
 }
 .vp-tl__place {
@@ -446,6 +491,106 @@
 .vp-tl__text {
   font-size: 0.93rem;
   color: var(--vp-text2);
+}
+
+/* ---------- the Journey, reimagined: a layered "recipe" ---------- */
+.vp-recipe {
+  position: relative;
+  margin-top: 2.4rem;
+  max-width: 720px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+/* the spine of the "glass" tying the layers together */
+.vp-recipe__rail {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  inset-inline-start: -16px;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, var(--c-bar), color-mix(in srgb, var(--c-tech), var(--c-bar)) 55%, var(--c-tech));
+  opacity: 0.5;
+}
+.vp-recipe__layer {
+  --lc: var(--c-tech);
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  border: 1px solid var(--vp-line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--vp-bg2) 90%, transparent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.vp-recipe__layer:hover {
+  transform: translateX(5px);
+  border-color: color-mix(in srgb, var(--lc) 50%, transparent);
+  box-shadow: 0 14px 36px color-mix(in srgb, var(--lc) 15%, transparent);
+}
+.vp-recipe__layer--bar { --lc: var(--c-bar); }
+.vp-recipe__layer--tech { --lc: var(--c-tech); }
+.vp-recipe__layer--hybrid { --lc: color-mix(in srgb, var(--c-tech), var(--c-bar)); }
+/* the craft-coloured "ingredient" tab — the layers stack into a drink */
+.vp-recipe__tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 1.05rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--lc) 34%, var(--vp-bg2)), color-mix(in srgb, var(--lc) 12%, var(--vp-bg2)));
+  border-inline-end: 1px solid color-mix(in srgb, var(--lc) 38%, transparent);
+}
+.vp-recipe__flow {
+  position: absolute;
+  inset: -40% 0;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--lc) 32%, transparent), transparent);
+  animation: vp-recipe-flow 5.5s linear infinite;
+  pointer-events: none;
+}
+@keyframes vp-recipe-flow {
+  0% { transform: translateY(-60%); }
+  100% { transform: translateY(60%); }
+}
+.vp-recipe__num {
+  position: relative;
+  font-family: var(--vpf-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--lc) 78%, white);
+  opacity: 0.9;
+}
+.vp-recipe__year {
+  position: relative;
+  font-family: var(--vpf-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--vp-text);
+}
+.vp-recipe__body { padding: 1.05rem 1.4rem; min-width: 0; }
+.vp-recipe__title {
+  font-family: var(--vpf-display);
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.3;
+}
+.vp-recipe__place {
+  font-size: 0.84rem;
+  color: var(--vp-text2);
+  font-weight: 600;
+  margin: 0.3rem 0 0.55rem;
+}
+.vp-recipe__text { font-size: 0.92rem; color: var(--vp-text2); line-height: 1.5; }
+@media (prefers-reduced-motion: reduce) {
+  .vp-recipe__flow { animation: none; }
+}
+@media (max-width: 560px) {
+  .vp-recipe__layer { grid-template-columns: 86px 1fr; }
+  .vp-recipe__body { padding: 0.9rem 1.1rem; }
+  .vp-recipe__rail { display: none; }
 }
 
 /* ---------- bottom doors ---------- */
@@ -551,6 +696,13 @@
     inset-inline-end: auto;
     inset-inline-start: -39px;
   }
+  .vp-tl__item--left::after,
+  .vp-tl__item--right::after {
+    inset-inline-end: auto;
+    inset-inline-start: -34px;
+    width: 34px;
+    background: linear-gradient(to left, color-mix(in srgb, var(--vp-text) 26%, transparent), transparent);
+  }
 }
 @media (max-width: 640px) {
   .vp-home-hero__doors {
@@ -592,14 +744,20 @@
   transform-origin: 0 0;
   will-change: transform;
 }
-.vp-lifemap__links { position: absolute; top: 0; inset-inline-start: 0; overflow: visible; }
-.vp-lifemap__link { stroke-width: 1.6; }
-.vp-lifemap__link--tech { stroke: color-mix(in srgb, var(--c-tech) 60%, transparent); }
-.vp-lifemap__link--bar { stroke: color-mix(in srgb, var(--c-bar) 60%, transparent); }
-.vp-lifemap__link--journey { stroke: color-mix(in srgb, #5ec8c8 55%, transparent); }
-.vp-lifemap__link--lang { stroke: color-mix(in srgb, #9b8cff 55%, transparent); }
-.vp-lifemap__link--ethos { stroke: color-mix(in srgb, #f0789e 50%, transparent); }
-.vp-lifemap__link--root { stroke: color-mix(in srgb, var(--vp-text) 30%, transparent); }
+.vp-lifemap__links {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  overflow: visible;
+  filter: drop-shadow(0 0 5px rgba(130, 150, 210, 0.3));
+}
+.vp-lifemap__link { stroke-width: 2; }
+.vp-lifemap__link--tech { stroke: color-mix(in srgb, var(--c-tech) 78%, transparent); }
+.vp-lifemap__link--bar { stroke: color-mix(in srgb, var(--c-bar) 78%, transparent); }
+.vp-lifemap__link--journey { stroke: color-mix(in srgb, #5ec8c8 72%, transparent); }
+.vp-lifemap__link--lang { stroke: color-mix(in srgb, #9b8cff 72%, transparent); }
+.vp-lifemap__link--ethos { stroke: color-mix(in srgb, #f0789e 68%, transparent); }
+.vp-lifemap__link--root { stroke: color-mix(in srgb, var(--vp-text) 38%, transparent); }
 
 .vp-lifemap__node-anchor { position: absolute; top: 0; inset-inline-start: 0; }
 .vp-lifemap__node {
@@ -620,7 +778,7 @@
   font-size: 0.84rem;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 6px 18px color-mix(in srgb, var(--vp-shadow) 30%, transparent);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--vp-shadow) 30%, transparent), 0 0 22px color-mix(in srgb, var(--nc) 14%, transparent);
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
 }
 .vp-lifemap__node-label { overflow: hidden; text-overflow: ellipsis; }
@@ -649,9 +807,19 @@
   --nc: var(--c-tech);
   font-family: var(--vpf-display);
   font-weight: 800;
-  font-size: 0.96rem;
-  background: linear-gradient(120deg, color-mix(in srgb, var(--c-tech) 18%, var(--vp-bg2)), color-mix(in srgb, var(--c-bar) 18%, var(--vp-bg2)));
-  border-color: color-mix(in srgb, var(--c-tech) 45%, transparent);
+  font-size: 1rem;
+  height: 42px;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--c-tech) 22%, var(--vp-bg2)), color-mix(in srgb, var(--c-bar) 22%, var(--vp-bg2)));
+  border-color: color-mix(in srgb, var(--c-tech) 55%, transparent);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--c-tech) 34%, transparent), 0 8px 30px color-mix(in srgb, var(--c-tech) 20%, transparent);
+  animation: vp-hub-pulse 3.4s ease-out infinite;
+}
+@keyframes vp-hub-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--c-tech) 32%, transparent), 0 8px 30px color-mix(in srgb, var(--c-tech) 18%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 16px transparent, 0 8px 30px color-mix(in srgb, var(--c-tech) 18%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vp-lifemap__node--root { animation: none; }
 }
 .vp-lifemap__node--root .vp-lifemap__node-chev { color: var(--vp-text); background: color-mix(in srgb, var(--vp-text) 14%, transparent); }
 .vp-lifemap__node--tech { --nc: var(--c-tech); }
@@ -702,3 +870,37 @@
   .vp-now { gap: 10px; }
   .vp-now__divider { display: none; }
 }
+
+/* ============ UNIVERSE GRAPH ============ */
+.vp-home-universe { position: relative; }
+.vp-home-universe__sub {
+  max-width: 64ch;
+  margin-bottom: 1.6rem;
+}
+.vp-home-universe .vp-kg { margin-top: 0.5rem; }
+.vp-home-universe__hint {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--vp-text2);
+  opacity: 0.85;
+}
+.vp-home-universe__hint::before {
+  content: "✦";
+  color: #f4d06f;
+  margin-inline-end: 0.4rem;
+}
+
+/* ============ MIND MAP (reveal on demand) ============ */
+.vp-map-toggle {
+  margin-top: 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--acc) 40%, transparent);
+  background: color-mix(in srgb, var(--acc) 8%, transparent);
+  color: var(--acc);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+.vp-map-toggle:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--acc) 15%, transparent);
+  border-color: color-mix(in srgb, var(--acc) 60%, transparent);
+}
+.vp-home-map__reveal { overflow: hidden; }

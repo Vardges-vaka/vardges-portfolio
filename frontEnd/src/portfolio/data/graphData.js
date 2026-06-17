@@ -29,8 +29,9 @@ const SKILLS = [
   { id: "sk-grc", label: "GRC & Compliance", desc: "Governance, risk and compliance — frameworks, controls and audit readiness." },
 ];
 
-// short, sidebar-friendly descriptions per certificate id (canonical English)
-const CERT_DESC = {
+// short, sidebar-friendly descriptions per certificate id (canonical English).
+// Exported so the cert-wall flip card can show the same prose on its back.
+export const CERT_DESC = {
   // --- earned ---
   "c-it-automation": "Google's six-course professional certificate: Python, Git, configuration management, cloud automation and real-world task automation.",
   "c-tmc-fullstack": "End-to-end web development — building and shipping complete front-to-back applications.",
@@ -392,4 +393,81 @@ export function buildBarGraph() {
     .map(([source, target, kind]) => ({ source, target, kind }));
 
   return { nodes, links };
+}
+
+/* ============================================================
+   UNIVERSE GRAPH — "two crafts, one standard"
+   ============================================================
+   Merges the tech and bar graphs into one constellation and joins them with
+   BRIDGE nodes: the analogies that make the two crafts the same discipline.
+   Each bridge links one tech skill to one bar craft (kind "br"). Node ids are
+   already unique across the two graphs (sk-/c-/p- vs bk-/xp-/t-), so they
+   simply concatenate. Every node carries a `side` (tech | bar | bridge) — the
+   universe view colours and clusters by side and reveals/dims by audience mode.
+   Bridge label/why are canonical English here; the UI resolves a translated
+   version via graph.bridges.<id>.{label,why} with these as the fallback. */
+const BRIDGES = [
+  {
+    id: "br-experience",
+    tech: "sk-frontend",
+    bar: "bk-guest",
+    label: "Experience design",
+    why: "A guest at the bar or a user in an app — either way you're designing how someone feels, moment to moment.",
+  },
+  {
+    id: "br-cost",
+    tech: "sk-cloud",
+    bar: "bk-cost",
+    label: "Cost discipline",
+    why: "Pour cost or cloud spend — the same instinct: know your numbers, cut the waste, protect the margin.",
+  },
+  {
+    id: "br-system",
+    tech: "sk-backend",
+    bar: "bk-menu",
+    label: "Systems thinking",
+    why: "A cocktail menu and an API are both systems — sequenced, balanced and built to hold up under load.",
+  },
+  {
+    id: "br-triage",
+    tech: "sk-security",
+    bar: "bk-leadership",
+    label: "Reading the room",
+    why: "Reading a room and triaging an incident are one reflex: spot what's off, stay calm, fix the right thing first.",
+  },
+  {
+    id: "br-scale",
+    tech: "sk-automation",
+    bar: "bk-training",
+    label: "Multiplying yourself",
+    why: "Automation removes the work only you can do; training builds a team that doesn't need you to. Both scale one person.",
+  },
+];
+
+/** Build { nodes, links } for the merged cross-craft universe graph. */
+export function buildUniverseGraph() {
+  const tech = buildTechGraph();
+  const bar = buildBarGraph();
+  tech.nodes.forEach((n) => (n.side = "tech"));
+  bar.nodes.forEach((n) => (n.side = "bar"));
+
+  const bridgeNodes = BRIDGES.map((b) => ({
+    id: b.id,
+    label: b.label,
+    type: "bridge",
+    side: "bridge",
+    why: b.why,
+    desc: b.why,
+    pair: [b.tech, b.bar],
+  }));
+
+  const nodes = [...tech.nodes, ...bar.nodes, ...bridgeNodes];
+  const valid = new Set(nodes.map((n) => n.id));
+  const bridgeLinks = [];
+  BRIDGES.forEach((b) => {
+    if (valid.has(b.tech)) bridgeLinks.push({ source: b.id, target: b.tech, kind: "br" });
+    if (valid.has(b.bar)) bridgeLinks.push({ source: b.id, target: b.bar, kind: "br" });
+  });
+
+  return { nodes, links: [...tech.links, ...bar.links, ...bridgeLinks] };
 }

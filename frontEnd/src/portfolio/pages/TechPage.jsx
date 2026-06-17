@@ -26,13 +26,12 @@ import Magnetic from "../components/Magnetic.jsx";
 import ProjectsGrid from "../components/ProjectsGrid.jsx";
 import CertWall from "../components/CertWall.jsx";
 import ContactSection from "../components/ContactSection.jsx";
-import SkillsRadar from "../components/SkillsRadar.jsx";
-import KnowledgeGraph from "../components/interactive/KnowledgeGraph.jsx";
+import SkillsGraphPanel from "../components/SkillsGraphPanel.jsx";
 import SectionAtmosphere from "../components/fx/SectionAtmosphere.jsx";
 import AsciiField from "../components/fx/AsciiField.jsx";
 import { SAMPLE_PROJECTS } from "../data/sampleProjects.js";
 import { ALL_TECH_CERTS } from "../data/certificates.js";
-import { techSkillStrengths } from "../data/graphData.js";
+import { techSkillStrengths, CERT_DESC } from "../data/graphData.js";
 import { CONTACT_ANCHOR_ID } from "../portfolio.constants.js";
 import "../styles/tech.css";
 
@@ -306,34 +305,17 @@ const TechPage = () => {
         </div>
       </section>
 
-      {/* ============ SKILLS & CONNECTIONS (radar + graph) ============ */}
+      {/* ============ SKILLS & CONNECTIONS (radar ⇄ graph, one stage) ============ */}
       <section className="vp-section vp-skills-graph" id="vp-skills">
         <div className="vp-container">
           <Reveal>
             <p className="vp-kicker">{t("skills.connect.kicker")}</p>
             <h2 className="vp-h2">{t("skills.connect.title")}</h2>
-            <p className="vp-sub">{t("skills.connect.sub")}</p>
           </Reveal>
-
-          <div className="vp-skills-graph__top">
-            <Reveal delay={0.1} className="vp-skills-graph__radar">
-              <SkillsRadar data={radarData} variant="tech" />
-            </Reveal>
-            <Reveal delay={0.16} className="vp-skills-graph__aside">
-              <h3 className="vp-skills-graph__aside-title">{t("skills.connect.radarTitle")}</h3>
-              <p className="vp-sub">{t("skills.evidenceNote")}</p>
-            </Reveal>
-          </div>
+          <Reveal delay={0.1}>
+            <SkillsGraphPanel variant="tech" radarData={radarData} />
+          </Reveal>
         </div>
-
-        <Reveal delay={0.1} className="vp-graph-sec__wrap">
-          <div className="vp-container vp-graph-sec__intro">
-            <p className="vp-kicker">{t("graph.kicker")}</p>
-            <h3 className="vp-graph-sec__title">{t("graph.title")}</h3>
-            <p className="vp-sub">{t("graph.sub")}</p>
-          </div>
-          <KnowledgeGraph />
-        </Reveal>
       </section>
 
       {/* ============ PROJECTS ============ */}
@@ -349,7 +331,7 @@ const TechPage = () => {
               {t("tech.projects.sampleNote")}
             </p>
           </Reveal>
-          <ProjectsGrid projects={SAMPLE_PROJECTS} previewCount={3} />
+          <ProjectsGrid projects={SAMPLE_PROJECTS} step={3} />
         </div>
       </section>
 
@@ -369,9 +351,13 @@ const TechPage = () => {
             plannedLabel={t("tech.certs.planned")}
             labels={t("certCats")}
             variant="tech"
-            previewCount={6}
+            step={8}
             showAllLabel={t("tech.certs.showAll")}
             showLessLabel={t("tech.certs.showLess")}
+            loadMoreLabel={t("tech.certs.loadMore")}
+            descFor={(c) => t(`certInfo.${c.id}.desc`, CERT_DESC[c.id])}
+            flipLabel={t("tech.certs.flip")}
+            backLabel={t("tech.certs.back")}
           />
         </div>
       </section>

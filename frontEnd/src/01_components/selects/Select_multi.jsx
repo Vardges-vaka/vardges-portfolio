@@ -10,6 +10,7 @@ import {
   useState,
   useRef,
   useCallback,
+  useEffect,
 } from "react";
 import PropTypes from "prop-types";
 import { Select_fieldShell, Select_optionContent } from "./select_childComps/_select_childComps.index.js";
@@ -50,6 +51,7 @@ const Select_multi = forwardRef(function Select_multi(
     onChange,
     onBlur,
     onFocus,
+    onOpenChange,
   },
   ref,
 ) {
@@ -112,6 +114,10 @@ const Select_multi = forwardRef(function Select_multi(
   );
 
   useSelectClickOutside(isOpen, wrapRef, () => setIsOpen(false));
+
+  useEffect(() => {
+    onOpenChange?.(isOpen);
+  }, [isOpen, onOpenChange]);
 
   const sharedFieldA11y = {
     "aria-invalid":

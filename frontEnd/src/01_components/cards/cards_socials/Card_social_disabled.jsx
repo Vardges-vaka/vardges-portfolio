@@ -6,7 +6,6 @@ const READONLY_INPUT_PROPS = {
   labelProps: { isActive: false },
   hintsProps: { isActive: false },
   sizeType: "sm",
-  autoValidate: true,
   readOnly: true,
   readOnlyMaxChars: 10,
 };
@@ -64,16 +63,23 @@ const Card_social_disabled = ({
           <div className="card_social_disabled__form">
             <Input_url
               {...READONLY_INPUT_PROPS}
+              autoValidate={true}
               placeholder="Link — https://…"
               value={link}
             />
             <Input_url
               {...READONLY_INPUT_PROPS}
+              autoValidate={true}
               value={notes}
               placeholder="Notes"
             />
             <Input_textArea
-              {...READONLY_INPUT_PROPS}
+              // {...READONLY_INPUT_PROPS}
+              // autoValidate={true}
+              labelProps={{ isActive: false }}
+              hintsProps={{ isActive: false }}
+              sizeType="sm"
+              readOnly={false}
               maxLength={Math.max(consoleLink.length + 100, 100)}
               rows={2}
               lengthProps={{ isActive: false }}

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Github, ExternalLink, ArrowDown, Maximize2, Telescope, Plus, Minus } from "lucide-react";
+import { useRef, useState } from "react";
+import { Github, ExternalLink, Maximize2, Telescope, Plus, Minus } from "lucide-react";
 import PropTypes from "prop-types";
 import Media from "./Media.jsx";
 import Reveal from "./Reveal.jsx";
@@ -39,12 +39,6 @@ const ProjectLinks = ({ links }) => {
           {t("tech.projects.live")}
         </a>
       )}
-      {links.anchor && (
-        <a href={links.anchor} className="vp-proj-links__item">
-          <ArrowDown size={15} aria-hidden="true" />
-          {t("tech.projects.details")}
-        </a>
-      )}
     </div>
   );
 };
@@ -53,7 +47,6 @@ ProjectLinks.propTypes = {
   links: PropTypes.shape({
     github: PropTypes.string,
     live: PropTypes.string,
-    anchor: PropTypes.string,
   }).isRequired,
 };
 
@@ -146,20 +139,31 @@ ProjectCard.propTypes = {
 /**
  * Renders the projects feed. Cards open a deep-dive modal. Data comes from
  * data/sampleProjects.js — swap in the backend fetch later, markup unchanged.
- * With `previewCount`, only the featured card + that many cards show until the
- * visitor clicks "Show all".
+ * Starts collapsed to just the featured card; "Load more" reveals `step` cards
+ * at a time, "Show all" reveals everything, "Show less" collapses again.
  */
-const ProjectsGrid = ({ projects, previewCount }) => {
+const ProjectsGrid = ({ projects, step = 3 }) => {
   const { t } = usePortfolioLang();
+  const rootRef = useRef(null);
   const [active, setActive] = useState(null);
-  const [expanded, setExpanded] = useState(false);
+  const [visible, setVisible] = useState(0); // how many of `rest` are revealed
   const featured = projects.find((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
-  const collapsible = typeof previewCount === "number" && rest.length > previewCount;
-  const shown = collapsible && !expanded ? rest.slice(0, previewCount) : rest;
+  const shown = rest.slice(0, visible);
+  const remaining = rest.length - visible;
+  const allShown = visible >= rest.length;
+
+  // collapse, then bring the section heading back into view (so the page doesn't
+  // jump to the footer when the tall list disappears beneath the button)
+  const collapse = () => {
+    const el = rootRef.current;
+    const y = el ? el.getBoundingClientRect().top + window.scrollY - 96 : 0;
+    setVisible(0);
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
 
   return (
-    <div className="vp-projects">
+    <div className="vp-projects" ref={rootRef}>
       {featured && (
         <Reveal>
           <ProjectCard project={featured} featured onOpen={setActive} />
@@ -174,12 +178,34 @@ const ProjectsGrid = ({ projects, previewCount }) => {
         ))}
       </div>
 
-      {collapsible && (
+      {rest.length > 0 && (
         <div className="vp-showall">
-          <button type="button" className="vp-btn vp-btn--ghost vp-showall__btn" onClick={() => setExpanded((v) => !v)}>
-            {expanded ? <Minus size={15} aria-hidden="true" /> : <Plus size={15} aria-hidden="true" />}
-            {expanded ? t("tech.projects.showLess") : `${t("tech.projects.showAll")} (${rest.length})`}
-          </button>
+          {!allShown && (
+            <>
+              <button
+                type="button"
+                className="vp-btn vp-showall__btn vp-showall__btn--more"
+                onClick={() => setVisible((v) => Math.min(rest.length, v + step))}
+              >
+                <Plus size={15} aria-hidden="true" />
+                {t("tech.projects.loadMore")}
+                <span className="vp-showall__num">+{Math.min(step, remaining)}</span>
+              </button>
+              <button
+                type="button"
+                className="vp-btn vp-showall__btn vp-showall__btn--all"
+                onClick={() => setVisible(rest.length)}
+              >
+                {t("tech.projects.showAll")} ({rest.length})
+              </button>
+            </>
+          )}
+          {allShown && rest.length > step && (
+            <button type="button" className="vp-btn vp-showall__btn" onClick={collapse}>
+              <Minus size={15} aria-hidden="true" />
+              {t("tech.projects.showLess")}
+            </button>
+          )}
         </div>
       )}
 
@@ -190,7 +216,7 @@ const ProjectsGrid = ({ projects, previewCount }) => {
 
 ProjectsGrid.propTypes = {
   projects: PropTypes.arrayOf(PropTypes.object).isRequired,
-  previewCount: PropTypes.number,
+  step: PropTypes.number,
 };
 
 export default ProjectsGrid;

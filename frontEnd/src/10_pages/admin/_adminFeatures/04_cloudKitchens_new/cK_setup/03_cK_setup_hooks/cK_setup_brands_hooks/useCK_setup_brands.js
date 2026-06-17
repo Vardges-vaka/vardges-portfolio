@@ -6,7 +6,7 @@ import {
 } from "./_cK_setup_brands_hooks.index.js";
 import { brands_propsComposer } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
 
-export const useCK_setup_brands = ({ TOAST, t }) => {
+export const useCK_setup_brands = ({ TOAST, t, cuisineTags }) => {
   const { states, setters, refs } = useCK_setup_brands_states();
   const { apiHelpers } = useCK_setup_brands_apiHlpr({ TOAST });
   const { handlers } = useCK_setup_brands_handlers({
@@ -23,7 +23,7 @@ export const useCK_setup_brands = ({ TOAST, t }) => {
     stp_brands_viewAll_props,
     stp_brands_addForm_props,
     stp_brands_full_props,
-  } = brands_propsComposer(states, handlers, t);
+  } = brands_propsComposer(states, handlers, t, cuisineTags);
   return {
     states: {
       activeOperation: states.activeOperation,

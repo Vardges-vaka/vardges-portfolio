@@ -241,8 +241,12 @@ html:has(.vp-root[data-theme="light"]) {
   margin-inline: auto;
 }
 .vp-section {
-  padding-block: clamp(4.5rem, 9vw, 8rem);
+  padding-block: clamp(2rem, 3.5vw, 3.25rem);
   position: relative;
+}
+/* tighter still where two like sections meet (no double-padding pile-up) */
+.vp-section + .vp-section {
+  padding-top: clamp(1.5rem, 2.5vw, 2.5rem);
 }
 
 /* ---------- buttons / chips / pills ---------- */
@@ -791,12 +795,71 @@ html:has(.vp-root[data-theme="light"]) {
   border: 1px solid var(--vp-line);
   border-radius: 22px;
   background: linear-gradient(160deg, var(--vp-surface), transparent 60%), var(--vp-bg2);
-  padding: 1.8rem 1.6rem 1.5rem;
   min-height: 235px;
+  perspective: 1400px;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+/* flip — front is the credential, back is what it covers */
+.vp-cert-card__flip {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.vp-cert-card__flip.is-flipped {
+  transform: rotateY(180deg);
+}
+.vp-cert-card__face {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  padding: 1.8rem 1.6rem 1.5rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.vp-cert-card__face--front {
+  position: relative;
+  min-height: 235px;
+}
+.vp-cert-card__face--back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+.vp-cert-card__back-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--vp-text2);
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+.vp-cert-card__flip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  font-family: var(--vpf-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--vp-text2);
+  border: 1px solid var(--vp-line);
+  border-radius: 999px;
+  padding: 7px 11px;
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+.vp-cert-card__flip-btn:hover {
+  color: var(--acc);
+  border-color: color-mix(in srgb, var(--acc) 45%, transparent);
+  background: color-mix(in srgb, var(--acc) 8%, transparent);
+}
+.vp-cert-card__flip-btn--back {
+  align-self: flex-start;
+  margin-top: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vp-cert-card__flip { transition: none; }
 }
 .vp-cert-card:hover {
   transform: translateY(-7px) rotate(-0.6deg);
@@ -887,6 +950,10 @@ html:has(.vp-root[data-theme="light"]) {
 .vp-cert-card__foot {
   margin-top: auto;
   padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 .vp-cert-card__pdf {
   display: inline-flex;
@@ -909,7 +976,8 @@ html:has(.vp-root[data-theme="light"]) {
   .vp-certgal {
     grid-template-columns: 1fr;
   }
-  .vp-cert-card {
+  .vp-cert-card,
+  .vp-cert-card__face--front {
     min-height: 0;
   }
 }
@@ -1437,23 +1505,30 @@ a.vp-channels__row:hover .vp-arrow {
    ============================================================ */
 .vp-cform { border-radius: 18px; overflow: hidden; }
 
-/* shared intent chips */
-.vp-cform__intents { display: flex; flex-wrap: wrap; gap: 8px; }
-.vp-cform__intent {
+/* shared intent chips — selector scoped under .vp-cform__intents so it outranks
+   the global `.vp-root button` reset (which zeroes button padding/border) */
+.vp-cform__intents { display: flex; flex-wrap: wrap; gap: 10px; }
+.vp-cform__intents .vp-cform__intent {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 7px 13px;
+  gap: 8px;
+  padding: 11px 20px;
   border-radius: 999px;
   border: 1px solid var(--vp-line);
   background: color-mix(in srgb, var(--vp-bg) 40%, transparent);
   color: var(--vp-text2);
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.vp-cform__intent.is-on { color: var(--acc); border-color: color-mix(in srgb, var(--acc) 50%, transparent); background: color-mix(in srgb, var(--acc) 12%, transparent); }
-.vp-cform__intent:hover { color: var(--vp-text); }
+.vp-cform__intents .vp-cform__intent svg { width: 17px; height: 17px; }
+.vp-cform__intents .vp-cform__intent.is-on {
+  color: var(--acc);
+  border-color: color-mix(in srgb, var(--acc) 55%, transparent);
+  background: color-mix(in srgb, var(--acc) 14%, transparent);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--acc) 14%, transparent);
+}
+.vp-cform__intents .vp-cform__intent:hover { color: var(--vp-text); transform: translateY(-1px); }
 .vp-cform__send { width: 100%; margin-top: 1.2rem; justify-content: center; }
 
 /* ---------- ENGINEER / BOTH: terminal ---------- */
@@ -1558,6 +1633,16 @@ a.vp-channels__row:hover .vp-arrow {
 .vp-cform__done-icon { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; color: var(--acc); border: 2px solid color-mix(in srgb, var(--acc) 40%, transparent); margin-bottom: 0.4rem; }
 .vp-cform__done-icon--bar { color: var(--c-bar); border-color: color-mix(in srgb, var(--c-bar) 45%, transparent); }
 .vp-cform__done h3 { font-size: 1.3rem; }
+
+/* ---------- BOTH / HOSPITALITY: clean, friendly form ---------- */
+.vp-cform--simple {
+  border: 1px solid var(--vp-line);
+  background:
+    radial-gradient(520px circle at 100% 0%, color-mix(in srgb, var(--acc) 9%, transparent), transparent 60%),
+    var(--vp-bg2);
+}
+.vp-cform--simple .vp-cform__body { padding-top: 22px; }
+
 @media (max-width: 560px) {
   .vp-cform__row { grid-template-columns: 1fr; }
 }

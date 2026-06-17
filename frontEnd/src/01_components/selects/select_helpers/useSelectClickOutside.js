@@ -11,8 +11,8 @@ export const useSelectClickOutside = (isOpen, wrapRef, onClose) => {
       }
     };
 
-    document.addEventListener("mousedown", handlePointerDown);
-    return () => document.removeEventListener("mousedown", handlePointerDown);
+    document.addEventListener("mousedown", handlePointerDown, true);
+    return () => document.removeEventListener("mousedown", handlePointerDown, true);
   }, [isOpen, wrapRef, onClose]);
 };
 

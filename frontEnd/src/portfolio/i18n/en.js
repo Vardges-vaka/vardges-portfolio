@@ -26,6 +26,8 @@ export default {
     kicker: "The map",
     title: "A life in two crafts.",
     sub: "Click any branch to open it — the whole story, mapped.",
+    show: "Show the mind map",
+    hide: "Hide the mind map",
     hint: "Click a node to expand · the off-craft branch dims with your audience mode",
     nodes: {
       eng: "The Engineer",
@@ -199,8 +201,13 @@ export default {
     connect: {
       kicker: "Skills & systems",
       title: "What I'm strong at — and how it all connects.",
-      sub: "The radar is the snapshot; the graph is the map. Together they show both where I'm strong and how every certificate, skill and project links up.",
+      sub: "Every certificate feeds a skill; every skill powers a project. Toggle the node types, filter, tune the physics, and click any node to read it.",
       radarTitle: "Strength, earned not claimed",
+      viewLabel: "Switch between the graph and the proficiency radar",
+      view: { graph: "Graph", radar: "Radar", both: "Both" },
+      cap: {
+        both: "The radar is the snapshot; the graph is the proof — the same skills, two ways to read them.",
+      },
     },
     evidenceNote: "This isn't a self-rating. Each skill's strength is computed from how many certificates I've earned and projects I've shipped that feed it — so the shape reflects evidence, not opinion. The cybersecurity roadmap (planned, in the graph) is deliberately left out here; it's where I'm heading, not where I am.",
     axes: {
@@ -250,20 +257,26 @@ export default {
     legendProject: "Projects",
     legendExperience: "Experiences",
     legendTestimonial: "Recommendations",
+    legendTech: "Engineering",
+    legendBar: "Hospitality",
+    legendBridge: "Bridges",
     typeCert: "Certificate",
     typeSkill: "Skill",
     typeProject: "Project",
     typeExperience: "Experience",
     typeTestimonial: "Recommendation",
+    typeBridge: "Bridge",
+    bridgeSub: "Where the two crafts meet",
     filterCountries: "Filter experiences by country",
     countries: { Armenia: "Armenia", Russia: "Russia", UAE: "UAE" },
     seeJourney: "See it in the journey",
     rel: {
       cert: { skill: "Builds these skills", project: "Enabled these projects" },
-      skill: { cert: "Fed by these certificates", project: "Powers these projects", experience: "Built across these roles", testimonial: "Praised in" },
+      skill: { cert: "Fed by these certificates", project: "Powers these projects", experience: "Built across these roles", testimonial: "Praised in", bridge: "Bridges to the other craft" },
       project: { skill: "Skills it uses", cert: "Built on these certificates", project: "Related projects" },
       experience: { skill: "Crafts it built", experience: "Career path", testimonial: "What people said" },
       testimonial: { experience: "Worked with me at", skill: "What they praised" },
+      bridge: { skill: "Connects these crafts" },
     },
     skills: {
       "sk-frontend": { name: "Frontend", desc: "React, modern CSS, interactive UIs and design systems." },
@@ -286,6 +299,28 @@ export default {
       "bk-openings": { name: "Openings & concept", desc: "Layout, workflow, equipment and a first menu that lands." },
       "bk-supplier": { name: "Supplier & inventory", desc: "The right back bar at the right price, with relationships that outlast promos." },
       "bk-brand": { name: "Brand & growth", desc: "Identity, marketing and delivery growth beyond the bar itself." },
+    },
+    bridges: {
+      "br-experience": {
+        label: "Experience design",
+        why: "A guest at the bar or a user in an app — either way you're designing how someone feels, moment to moment.",
+      },
+      "br-cost": {
+        label: "Cost discipline",
+        why: "Pour cost or cloud spend — the same instinct: know your numbers, cut the waste, protect the margin.",
+      },
+      "br-system": {
+        label: "Systems thinking",
+        why: "A cocktail menu and an API are both systems — sequenced, balanced and built to hold up under load.",
+      },
+      "br-triage": {
+        label: "Reading the room",
+        why: "Reading a room and triaging an incident are one reflex: spot what's off, stay calm, fix the right thing first.",
+      },
+      "br-scale": {
+        label: "Multiplying yourself",
+        why: "Automation removes the work only you can do; training builds a team that doesn't need you to. Both scale one person.",
+      },
     },
   },
 
@@ -352,6 +387,10 @@ export default {
       successTitle: "Order's in!",
       success: "I'll be right with you — usually within 24 hours. 🍸",
     },
+    simple: {
+      heading: "Drop me a line.",
+      hint: "Tell me what you're working on — I reply within 24 hours.",
+    },
   },
 
   form: {
@@ -409,6 +448,12 @@ export default {
     now: {
       tz: "Dubai · GST",
       statuses: ["Building vardges.me", "Open to roles", "On the cybersecurity roadmap"],
+    },
+    universe: {
+      kicker: "Two crafts, one standard",
+      title: "Where the two crafts meet.",
+      sub: "Engineering on one side, hospitality on the other — and the bridges that prove they're the same discipline. Drag a star, click a bridge, or switch the audience mode up top to light up one craft.",
+      hint: "The gold nodes are the bridges — ideas both crafts share.",
     },
     intro: {
       kicker: "Who I am",
@@ -627,6 +672,7 @@ export default {
       view: "View case study",
       showAll: "Show all projects",
       showLess: "Show fewer",
+      loadMore: "Load more",
     },
     certs: {
       kicker: "Certificates",
@@ -637,6 +683,9 @@ export default {
       planned: "Planned",
       showAll: "Show all certificates",
       showLess: "Show fewer",
+      loadMore: "Load more",
+      flip: "What it covers",
+      back: "Back",
     },
     lab: {
       kicker: "Take a break",

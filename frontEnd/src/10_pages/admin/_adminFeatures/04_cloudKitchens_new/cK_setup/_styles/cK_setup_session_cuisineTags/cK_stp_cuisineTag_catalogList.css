@@ -1,0 +1,44 @@
+.cK_stp_cuisineTag_catalogList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cK_stp_cuisineTag_catalogList__selectRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  align-items: end;
+}
+
+.cK_stp_cuisineTag_catalogList__resetFilters {
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  border: 1px solid var(--border-primary-color);
+  color: var(--text-secondary-color);
+  background-color: var(--bg-primary-color);
+  justify-self: start;
+}
+
+.cK_stp_cuisineTag_catalogList__resetFilters:hover {
+  color: var(--text-primary-color);
+  border-color: var(--btn-primary-border-color);
+}
+
+.cK_stp_cuisineTag_catalogList__tableWrap {
+  margin-top: 0.25rem;
+}
+
+.cK_stp_cuisineTag_catalogList__table {
+  min-width: 62rem;
+}
+
+@media (max-width: 900px) {
+  .cK_stp_cuisineTag_catalogList__selectRow {
+    grid-template-columns: 1fr;
+  }
+}

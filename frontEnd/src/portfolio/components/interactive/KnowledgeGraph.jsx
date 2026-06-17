@@ -28,23 +28,29 @@ import {
   Clock,
   Route,
   Quote,
+  Waypoints,
 } from "lucide-react";
-import { usePortfolioLang, usePortfolioTheme } from "../../context/usePortfolio.js";
-import { buildTechGraph, buildBarGraph } from "../../data/graphData.js";
+import { usePortfolioLang, usePortfolioTheme, usePortfolioMode } from "../../context/usePortfolio.js";
+import { buildTechGraph, buildBarGraph, buildUniverseGraph } from "../../data/graphData.js";
 import { SAMPLE_PROJECTS } from "../../data/sampleProjects.js";
 import ProjectModal from "../ProjectModal.jsx";
 
 const PALETTE = {
-  dark: { cert: "#38e1c8", skill: "#9b8cff", project: "#e9a23b", experience: "#e9a23b", testimonial: "#f0789e", line: "220,225,238", text: "#e8eaf0", dim: "#8b91a3", bg: "13,17,28" },
-  light: { cert: "#0b8d7b", skill: "#5b46c8", project: "#a4650e", experience: "#a4650e", testimonial: "#c2456f", line: "40,44,60", text: "#15161d", dim: "#585e6e", bg: "245,247,252" },
+  dark: { cert: "#38e1c8", skill: "#9b8cff", project: "#e9a23b", experience: "#e9a23b", testimonial: "#f0789e", tech: "#38e1c8", bar: "#e9a23b", bridge: "#f4d06f", line: "220,225,238", text: "#e8eaf0", dim: "#8b91a3", bg: "13,17,28" },
+  light: { cert: "#0b8d7b", skill: "#5b46c8", project: "#a4650e", experience: "#a4650e", testimonial: "#c2456f", tech: "#0b8d7b", bar: "#a4650e", bridge: "#b8860b", line: "40,44,60", text: "#15161d", dim: "#585e6e", bg: "245,247,252" },
 };
-const BASE_R = { skill: 15, project: 11, cert: 6.5, experience: 11, testimonial: 8.5 };
-const TYPE_ICON = { cert: Award, skill: Sparkles, project: Boxes, experience: Briefcase, testimonial: Quote };
+const BASE_R = { skill: 15, project: 11, cert: 6.5, experience: 11, testimonial: 8.5, bridge: 13 };
+const TYPE_ICON = { cert: Award, skill: Sparkles, project: Boxes, experience: Briefcase, testimonial: Quote, bridge: Waypoints };
 const CAT_ORDER = ["dev", "auto", "ai", "foundations", "cyber"];
 const COUNTRY_ORDER = ["Armenia", "Russia", "UAE"];
 const NODE_SIZE_MUL = { s: 0.8, m: 1, l: 1.32 };
 
-// per-page graph config: which node types, and the sub-filter dimension
+// per-page graph config.
+//   types    — the node types present (drives the panel's relationship sections)
+//   groupBy  — node field the legend toggles + colours map to ("type" default, "side" for universe)
+//   groups   — the legend buttons (defaults to `types`)
+//   sub      — optional second-level filter dimension
+//   mode     — true → the audience-mode lens reveals/dims groups (universe only)
 const CONFIGS = {
   tech: {
     build: buildTechGraph,
@@ -56,6 +62,20 @@ const CONFIGS = {
     types: ["experience", "skill", "testimonial"],
     sub: { type: "experience", field: "country", order: COUNTRY_ORDER, i18nPrefix: "graph.countries", labelKey: "graph.filterCountries" },
   },
+  universe: {
+    build: buildUniverseGraph,
+    types: ["bridge", "skill", "cert", "project", "experience", "testimonial"],
+    groupBy: "side",
+    groups: ["tech", "bridge", "bar"],
+    mode: true,
+  },
+};
+
+// audience mode → which universe side-groups are lit
+const MODE_GROUPS = {
+  tech: { tech: true, bridge: false, bar: false },
+  bar: { tech: false, bridge: false, bar: true },
+  both: { tech: true, bridge: true, bar: true },
 };
 
 const DEFAULTS = {
@@ -69,11 +89,23 @@ const DEFAULTS = {
 
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
+// hex (#rrggbb) → rgba() with the given alpha — for the bridge edge glow
+const hexA = (hex, a) => {
+  const h = hex.replace("#", "");
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${a})`;
+};
+
 const KnowledgeGraph = ({ variant = "tech" }) => {
   const cfg = CONFIGS[variant] ?? CONFIGS.tech;
   const { sub } = cfg;
+  const groupBy = cfg.groupBy ?? "type"; // node field the legend toggles + colours key off
+  const groupKeys = cfg.groups ?? cfg.types; // the legend buttons
   const { t, dir, lang } = usePortfolioLang();
   const { isDark } = usePortfolioTheme();
+  const { mode } = usePortfolioMode();
   const wrapRef = useRef(null);
   const canvasRef = useRef(null);
   const bgCanvasRef = useRef(null);
@@ -92,7 +124,9 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
   const [selected, setSelected] = useState(null);
   const [modalProject, setModalProject] = useState(null);
   const [controlsOpen, setControlsOpen] = useState(false);
-  const [types, setTypes] = useState(() => Object.fromEntries(cfg.types.map((ty) => [ty, true])));
+  const [groups, setGroups] = useState(() =>
+    cfg.mode ? { ...MODE_GROUPS[mode] } : Object.fromEntries(groupKeys.map((g) => [g, true])),
+  );
   const [subs, setSubs] = useState(() => new Set(sub ? sub.order : []));
   const [tune, setTune] = useState(DEFAULTS);
 
@@ -103,6 +137,7 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
   const displayLabel = (n) => {
     if (n.type === "skill") return t(`graph.skills.${n.id}.name`, n.label);
     if (n.type === "experience") return courseOf(n)?.venue ?? n.label;
+    if (n.type === "bridge") return t(`graph.bridges.${n.id}.label`, n.label);
     return n.label;
   };
 
@@ -149,26 +184,26 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
 
   // counts shown in the legend / sub-filter chips
   const counts = useMemo(() => {
-    const byType = {};
+    const byGroup = {};
     const bySub = {};
     graph.nodes.forEach((n) => {
-      byType[n.type] = (byType[n.type] || 0) + 1;
+      byGroup[n[groupBy]] = (byGroup[n[groupBy]] || 0) + 1;
       if (sub && n.type === sub.type && n[sub.field]) bySub[n[sub.field]] = (bySub[n[sub.field]] || 0) + 1;
     });
-    return { byType, bySub };
-  }, [graph, sub]);
+    return { byGroup, bySub };
+  }, [graph, sub, groupBy]);
 
   const presentSubs = useMemo(() => (sub ? sub.order.filter((v) => counts.bySub[v]) : []), [counts, sub]);
 
-  // is a node currently visible under the type / sub-filter?
-  const isVisible = (n, typeState, subState) => {
-    if (!typeState[n.type]) return false;
+  // is a node currently visible under the group / sub-filter?
+  const isVisible = (n, groupState, subState) => {
+    if (!groupState[n[groupBy]]) return false;
     if (sub && n.type === sub.type && n[sub.field] && !subState.has(n[sub.field])) return false;
     return true;
   };
 
   // keep refs in sync for the imperative draw/sim loop
-  filterRef.current = { types, subs, isVisible };
+  filterRef.current = { groups, subs, isVisible };
   paramsRef.current = { ...tune, nodeSizeMul: NODE_SIZE_MUL[tune.nodeSize] ?? 1 };
 
   useEffect(() => {
@@ -189,7 +224,7 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
 
     const recomputeActive = () => {
       const f = filterRef.current;
-      const active = nodes.filter((n) => f.isVisible(n, f.types, f.subs));
+      const active = nodes.filter((n) => f.isVisible(n, f.groups, f.subs));
       const visIds = new Set(active.map((n) => n.id));
       const activeLinks = links.filter((l) => {
         const s = typeof l.source === "object" ? l.source.id : l.source;
@@ -205,12 +240,12 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
     const size = () => {
       w = wrap.clientWidth;
       h = wrap.clientHeight;
+      // only set the drawing-buffer resolution; CSS (width/height: 100%) owns the
+      // display size, so the canvas can't prop the stage open at a stale width
       [canvas, bg].forEach((c) => {
         if (!c) return;
         c.width = w * dpr;
         c.height = h * dpr;
-        c.style.width = `${w}px`;
-        c.style.height = `${h}px`;
       });
     };
     size();
@@ -285,8 +320,14 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
       if (l.kind === "cs") return 64;
       if (l.kind === "ps" || l.kind === "es" || l.kind === "tk") return 78;
       if (l.kind === "cp" || l.kind === "te") return 110;
+      if (l.kind === "br") return 120;
       return 150; // pp / ee / fallback
     };
+    // universe view pulls the two crafts apart so the bridges sit in the middle
+    const bySide = cfg.groupBy === "side";
+    const colorBySide = (cfg.colorBy ?? cfg.groupBy) === "side";
+    const sideForce = () =>
+      forceX((d) => (d.side === "tech" ? w * 0.26 : d.side === "bar" ? w * 0.74 : w * 0.5)).strength(0.16);
     const sim = forceSimulation(nodes)
       .force("charge", forceManyBody().strength((d) => (d.type === "skill" ? -420 : -150) * paramsRef.current.repelForce))
       .force("link", forceLink(links).id((d) => d.id).distance(linkDist).strength(paramsRef.current.linkForce))
@@ -294,6 +335,7 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
       .force("collide", forceCollide().radius((d) => effR(d) + 6).iterations(2))
       .force("x", forceX(w / 2).strength(paramsRef.current.centerForce))
       .force("y", forceY(h / 2).strength(paramsRef.current.centerForce));
+    if (bySide) sim.force("side", sideForce());
     simRef.current = sim;
     recomputeActive();
 
@@ -318,6 +360,25 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
         const s = l.source;
         const tg = l.target;
         const on = lit && lit.has(s.id) && lit.has(tg.id) && (s.id === focusId || tg.id === focusId);
+        if (l.kind === "br") {
+          // bridge links — the glowing connective tissue between the two crafts
+          const a = lit ? (on ? 0.95 : 0.1) : 0.7;
+          if (!lit || on) {
+            ctx.beginPath();
+            ctx.moveTo(s.x, s.y);
+            ctx.lineTo(tg.x, tg.y);
+            ctx.strokeStyle = hexA(pal.bridge, a * 0.28);
+            ctx.lineWidth = (5.5 * p.linkWidth) / tf.k;
+            ctx.stroke();
+          }
+          ctx.beginPath();
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(tg.x, tg.y);
+          ctx.strokeStyle = hexA(pal.bridge, a);
+          ctx.lineWidth = ((on ? 2.1 : 1.6) * p.linkWidth) / tf.k;
+          ctx.stroke();
+          return;
+        }
         ctx.beginPath();
         ctx.moveTo(s.x, s.y);
         ctx.lineTo(tg.x, tg.y);
@@ -337,7 +398,7 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
       aNodes.forEach((n) => {
         const r = effR(n);
         const faded = lit && !lit.has(n.id);
-        const color = pal[n.type];
+        const color = pal[colorBySide ? n.side : n.type] ?? pal[n.type];
         ctx.globalAlpha = faded ? 0.22 : 1;
 
         ctx.beginPath();
@@ -351,8 +412,13 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
           ctx.stroke();
           ctx.setLineDash([]);
         } else {
+          if (n.type === "bridge" && !faded) {
+            ctx.shadowColor = pal.bridge;
+            ctx.shadowBlur = 14;
+          }
           ctx.fillStyle = color;
           ctx.fill();
+          ctx.shadowBlur = 0;
         }
 
         if ((n.id === selectedId || n.id === hoverId) && !faded) {
@@ -614,7 +680,13 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
 
   useEffect(() => {
     dataRef.current?.applyFilter?.();
-  }, [types, subs]);
+  }, [groups, subs]);
+
+  // audience mode drives which crafts the universe reveals (universe variant only)
+  useEffect(() => {
+    if (cfg.mode) setGroups({ ...MODE_GROUPS[mode] });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
 
   useEffect(() => {
     if (selected) {
@@ -628,8 +700,8 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
 
   const selectById = (id) => {
     const node = graph.nodes.find((n) => n.id === id) || null;
-    if (node && filterRef.current && !filterRef.current.isVisible(node, types, subs)) {
-      setTypes((prev) => ({ ...prev, [node.type]: true }));
+    if (node && filterRef.current && !filterRef.current.isVisible(node, groups, subs)) {
+      setGroups((prev) => ({ ...prev, [node[groupBy]]: true }));
       if (sub && node.type === sub.type && node[sub.field]) setSubs((prev) => new Set(prev).add(node[sub.field]));
     }
     activeRef.current.selectedId = node ? node.id : null;
@@ -651,7 +723,7 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
     document.getElementById("vp-bar-menu")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const toggleType = (type) => setTypes((prev) => ({ ...prev, [type]: !prev[type] }));
+  const toggleGroup = (g) => setGroups((prev) => ({ ...prev, [g]: !prev[g] }));
   const toggleSub = (value) =>
     setSubs((prev) => {
       const next = new Set(prev);
@@ -676,17 +748,17 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
     <div className="vp-kg">
       <div className="vp-kg__toolbar">
         <div className="vp-kg__filters" role="group" aria-label={t("graph.filterTypes")}>
-          {cfg.types.map((type) => (
+          {groupKeys.map((g) => (
             <button
-              key={type}
+              key={g}
               type="button"
-              className={`vp-kg__leg vp-kg__leg--${type} ${types[type] ? "" : "is-off"}`}
-              aria-pressed={types[type]}
-              onClick={() => toggleType(type)}
+              className={`vp-kg__leg vp-kg__leg--${g} ${groups[g] ? "" : "is-off"}`}
+              aria-pressed={groups[g]}
+              onClick={() => toggleGroup(g)}
             >
               <span className="vp-kg__leg-dot" aria-hidden="true" />
-              {t(`graph.legend${cap(type)}`)}
-              <span className="vp-kg__leg-count">{counts.byType[type] ?? 0}</span>
+              {t(`graph.legend${cap(g)}`)}
+              <span className="vp-kg__leg-count">{counts.byGroup[g] ?? 0}</span>
             </button>
           ))}
         </div>
@@ -704,7 +776,7 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
 
       {/* sub-filter (cert category on tech, country on bar) */}
       <AnimatePresence initial={false}>
-        {sub && types[sub.type] && presentSubs.length > 1 && (
+        {sub && groups[sub.type] && presentSubs.length > 1 && (
           <Motion.div
             className="vp-kg__cats"
             role="group"
@@ -849,9 +921,12 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
                   ? t(`graph.skills.${selected.id}.name`, selected.label)
                   : selected.type === "experience"
                     ? selCourse?.role ?? selected.role ?? selected.label
-                    : selected.fullLabel || selected.label}
+                    : selected.type === "bridge"
+                      ? t(`graph.bridges.${selected.id}.label`, selected.label)
+                      : selected.fullLabel || selected.label}
               </h3>
 
+              {selected.type === "bridge" && <p className="vp-kg__org">{t("graph.bridgeSub")}</p>}
               {selected.type === "cert" && <p className="vp-kg__org">{selected.org}</p>}
               {selected.type === "project" && (
                 <p className="vp-kg__org">
@@ -879,7 +954,9 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
                       ? selCourse?.text ?? selected.desc
                       : selected.type === "testimonial"
                         ? t(`testimonialInfo.${selected.id}.quote`, selected.quote)
-                        : t(`projectInfo.${selected.id}.description`, selected.desc)}
+                        : selected.type === "bridge"
+                          ? t(`graph.bridges.${selected.id}.why`, selected.desc)
+                          : t(`projectInfo.${selected.id}.description`, selected.desc)}
               </p>
 
               {selected.type === "project" && selected.stack && (
@@ -945,7 +1022,7 @@ const KnowledgeGraph = ({ variant = "tech" }) => {
 };
 
 KnowledgeGraph.propTypes = {
-  variant: PropTypes.oneOf(["tech", "bar"]),
+  variant: PropTypes.oneOf(["tech", "bar", "universe"]),
 };
 
 export default KnowledgeGraph;

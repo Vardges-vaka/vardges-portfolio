@@ -65,6 +65,7 @@ const Select_static = forwardRef(function Select_static(
     onChange,
     onBlur,
     onFocus,
+    onOpenChange,
     ...selectProps
   },
   ref,
@@ -149,6 +150,10 @@ const Select_static = forwardRef(function Select_static(
   }, [disabled]);
 
   useEffect(() => {
+    onOpenChange?.(isOpen);
+  }, [isOpen, onOpenChange]);
+
+  useEffect(() => {
     if (!isOpen) return;
 
     const handlePointerDown = (event) => {
@@ -157,8 +162,9 @@ const Select_static = forwardRef(function Select_static(
       }
     };
 
-    document.addEventListener("mousedown", handlePointerDown);
-    return () => document.removeEventListener("mousedown", handlePointerDown);
+    document.addEventListener("mousedown", handlePointerDown, true);
+    return () =>
+      document.removeEventListener("mousedown", handlePointerDown, true);
   }, [isOpen]);
 
   const labelPosition = normalizeLabelPosition(labelProps.position);

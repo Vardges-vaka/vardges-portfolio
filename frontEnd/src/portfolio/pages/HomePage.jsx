@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion as Motion } from "framer-motion";
-import { ArrowRight, Code2, Martini, ChevronDown } from "lucide-react";
+import { AnimatePresence, motion as Motion } from "framer-motion";
+import { ArrowRight, Code2, Martini, ChevronDown, Network, ChevronUp } from "lucide-react";
 import { usePortfolioLang, usePortfolioTheme } from "../context/usePortfolio.js";
 import Reveal from "../components/Reveal.jsx";
 import Counter from "../components/Counter.jsx";
@@ -13,12 +14,14 @@ import AsciiField from "../components/fx/AsciiField.jsx";
 import Prism3D from "../components/fx/Prism3D.jsx";
 import NowPanel from "../components/NowPanel.jsx";
 import LifeMap from "../components/interactive/LifeMap.jsx";
+import KnowledgeGraph from "../components/interactive/KnowledgeGraph.jsx";
 import { TESTIMONIALS } from "../data/testimonials.js";
 import "../styles/home.css";
 
 const HomePage = () => {
   const { t } = usePortfolioLang();
   const { isDark } = usePortfolioTheme();
+  const [showMap, setShowMap] = useState(false);
 
   const name = t("home.hero.name");
   const words = name.split(" ");
@@ -119,13 +122,16 @@ const HomePage = () => {
         </div>
 
         <Motion.div
-          className="vp-home-hero__scroll"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 1 }}
+          className="vp-home-hero__bottom"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.45, duration: 0.9 }}
         >
-          <span>{t("home.hero.scroll")}</span>
-          <ChevronDown size={16} aria-hidden="true" />
+          <NowPanel />
+          <div className="vp-home-hero__scroll">
+            <span>{t("home.hero.scroll")}</span>
+            <ChevronDown size={16} aria-hidden="true" />
+          </div>
         </Motion.div>
       </section>
 
@@ -144,27 +150,6 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-
-      {/* ============ NOW PANEL ============ */}
-      <div className="vp-container vp-now-wrap">
-        <Reveal>
-          <NowPanel />
-        </Reveal>
-      </div>
-
-      {/* ============ LIFE MAP ============ */}
-      <section className="vp-section vp-home-map">
-        <div className="vp-container">
-          <Reveal>
-            <p className="vp-kicker">{t("lifemap.kicker")}</p>
-            <h2 className="vp-h2">{t("lifemap.title")}</h2>
-            <p className="vp-sub">{t("lifemap.sub")}</p>
-          </Reveal>
-        </div>
-        <Reveal delay={0.1}>
-          <LifeMap />
-        </Reveal>
-      </section>
 
       {/* ============ INTRO ============ */}
       <section className="vp-section vp-home-intro">
@@ -213,6 +198,58 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* ============ UNIVERSE GRAPH ============ */}
+      <section className="vp-section vp-home-universe">
+        <div className="vp-container">
+          <Reveal>
+            <p className="vp-kicker">{t("home.universe.kicker")}</p>
+            <h2 className="vp-h2">{t("home.universe.title")}</h2>
+            <p className="vp-sub vp-home-universe__sub">{t("home.universe.sub")}</p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <KnowledgeGraph variant="universe" />
+          </Reveal>
+          <p className="vp-home-universe__hint">{t("home.universe.hint")}</p>
+        </div>
+      </section>
+
+      {/* ============ MIND MAP (revealed on demand) ============ */}
+      <section className="vp-section vp-home-map">
+        <div className="vp-container">
+          <Reveal>
+            <p className="vp-kicker">{t("lifemap.kicker")}</p>
+            <h2 className="vp-h2">{t("lifemap.title")}</h2>
+            <p className="vp-sub">{t("lifemap.sub")}</p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <button
+              type="button"
+              className="vp-btn vp-map-toggle"
+              aria-expanded={showMap}
+              onClick={() => setShowMap((v) => !v)}
+            >
+              <Network size={16} aria-hidden="true" />
+              {showMap ? t("lifemap.hide") : t("lifemap.show")}
+              {showMap ? <ChevronUp size={15} aria-hidden="true" /> : <ChevronDown size={15} aria-hidden="true" />}
+            </button>
+          </Reveal>
+        </div>
+        <AnimatePresence initial={false}>
+          {showMap && (
+            <Motion.div
+              key="map"
+              className="vp-home-map__reveal"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <LifeMap />
+            </Motion.div>
+          )}
+        </AnimatePresence>
+      </section>
+
       {/* ============ STATS ============ */}
       <section className="vp-section vp-home-stats">
         <div className="vp-container">
@@ -251,22 +288,28 @@ const HomePage = () => {
             </div>
           </Reveal>
 
-          <div className="vp-tl">
-            <div className="vp-tl__line" aria-hidden="true" />
+          <div className="vp-recipe">
+            <div className="vp-recipe__rail" aria-hidden="true" />
             {timeline.map((item, i) => (
-              <Reveal
+              <Motion.div
                 key={`${item.year}-${item.title}`}
-                delay={0.05}
-                className={`vp-tl__item ${i % 2 ? "vp-tl__item--right" : "vp-tl__item--left"}`}
+                className={`vp-recipe__layer vp-recipe__layer--${item.type}`}
+                initial={{ opacity: 0, y: 26, scale: 0.985 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-70px" }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className={`vp-tl__card vp-tl__card--${item.type}`}>
-                  <span className={`vp-tl__dot vp-tl__dot--${item.type}`} aria-hidden="true" />
-                  <span className="vp-tl__year">{item.year}</span>
-                  <h3 className="vp-tl__title">{item.title}</h3>
-                  <p className="vp-tl__place">{item.place}</p>
-                  <p className="vp-tl__text">{item.text}</p>
+                <div className="vp-recipe__tab">
+                  <span className="vp-recipe__num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="vp-recipe__year">{item.year}</span>
+                  <span className="vp-recipe__flow" aria-hidden="true" />
                 </div>
-              </Reveal>
+                <div className="vp-recipe__body">
+                  <h3 className="vp-recipe__title">{item.title}</h3>
+                  <p className="vp-recipe__place">{item.place}</p>
+                  <p className="vp-recipe__text">{item.text}</p>
+                </div>
+              </Motion.div>
             ))}
           </div>
         </div>
