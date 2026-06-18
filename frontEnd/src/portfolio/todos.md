@@ -1,5 +1,3 @@
-# Schemas and collections
-
 stack
 skills
 projects

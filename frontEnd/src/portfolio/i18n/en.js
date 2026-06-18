@@ -53,11 +53,9 @@ export default {
   },
 
   cv: {
-    heading: "Download CV",
     tech: "Tech CV",
     bar: "Hospitality CV",
     both: "Full CV",
-    sub: "Pick the version that fits the role — tech, hospitality, or the full story.",
   },
 
   testimonials: {
@@ -201,8 +199,6 @@ export default {
     connect: {
       kicker: "Skills & systems",
       title: "What I'm strong at — and how it all connects.",
-      sub: "Every certificate feeds a skill; every skill powers a project. Toggle the node types, filter, tune the physics, and click any node to read it.",
-      radarTitle: "Strength, earned not claimed",
       viewLabel: "Switch between the graph and the proficiency radar",
       view: { graph: "Graph", radar: "Radar", both: "Both" },
       cap: {
@@ -375,17 +371,6 @@ export default {
       posting: "POST https://vardges.me/api/contact",
       ok: "200 OK",
       okBody: '{ "status": "received", "reply_within": "24h" }',
-    },
-    stool: {
-      open: "OPEN",
-      heading: "Pull up a stool.",
-      hint: "What can I get you? Tell me what you came for.",
-      intent: "What you came for",
-      order: "Place the order",
-      sending: "pouring…",
-      notePh: "Tell me about your venue, your team, or the night you're planning…",
-      successTitle: "Order's in!",
-      success: "I'll be right with you — usually within 24 hours. 🍸",
     },
     simple: {
       heading: "Drop me a line.",

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { Suspense, lazy, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, MotionConfig, motion as Motion } from "framer-motion";
 import PropTypes from "prop-types";
@@ -21,12 +21,14 @@ import Footer from "./components/Footer.jsx";
 import SkipLink from "./components/SkipLink.jsx";
 import SceneBackground from "./components/fx/SceneBackground.jsx";
 import ScrollProgress from "./components/fx/ScrollProgress.jsx";
-import HomePage from "./pages/HomePage.jsx";
-import TechPage from "./pages/TechPage.jsx";
-import BarPage from "./pages/BarPage.jsx";
-import LabPage from "./pages/LabPage.jsx";
-import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { applySeo, SEO } from "./lib/seo.js";
+
+// route-level code-splitting — each page is its own chunk, loaded on demand
+const HomePage = lazy(() => import("./pages/HomePage.jsx"));
+const TechPage = lazy(() => import("./pages/TechPage.jsx"));
+const BarPage = lazy(() => import("./pages/BarPage.jsx"));
+const LabPage = lazy(() => import("./pages/LabPage.jsx"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 
 // Route-level enter/exit transition.
 const PageFade = ({ children }) => (
@@ -102,8 +104,9 @@ const PortfolioShell = () => {
         <ScrollProgress />
         <div className="vp-grain" aria-hidden="true" />
         <Navbar />
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
+        <Suspense fallback={<div className="vp-route-loading" aria-hidden="true" />}>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
             <Route
               path="/"
               element={
@@ -144,8 +147,9 @@ const PortfolioShell = () => {
                 </PageFade>
               }
             />
-          </Routes>
-        </AnimatePresence>
+            </Routes>
+          </AnimatePresence>
+        </Suspense>
         <Footer />
         <div
           ref={liveRef}

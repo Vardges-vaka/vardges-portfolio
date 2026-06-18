@@ -20,25 +20,17 @@ import Reveal from "./Reveal.jsx";
 import CvButtons from "./CvButtons.jsx";
 import { usePortfolioLang, usePortfolioMode } from "../context/usePortfolio.js";
 import { CONTACT, CONTACT_ANCHOR_ID } from "../portfolio.constants.js";
+import { submitContact, EMAIL_RE } from "../lib/contactService.js";
 
 const variantForPath = (p) => (p.startsWith("/tech") ? "tech" : p.startsWith("/bar") ? "bar" : "home");
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
  * Contact — two forms, chosen by context.
  *   Tech context (the /tech page, or home in Engineer mode) → a terminal that
  *     "POSTs" your request and streams a 200 OK — dev catnip.
  *   Everything else (Both / Hospitality) → a clean, friendly short form.
- * Both share validation + submitContact. The send is currently simulated; wire
- * submitContact to a real endpoint (Formspree / serverless) — see NOTES.md.
+ * Validation + delivery live in lib/contactService.js (submitContact is simulated).
  */
-const submitContact = async (payload) => {
-  // --- replace with the real API call (POST → { success, message, data }) ---
-  console.info("[contact] payload ready for backend:", payload);
-  await new Promise((resolve) => setTimeout(resolve, 1200));
-  return { success: true };
-  // -------------------------------------------------------------------------
-};
 
 const INTENTS = [
   { key: "tech", icon: Code2 },

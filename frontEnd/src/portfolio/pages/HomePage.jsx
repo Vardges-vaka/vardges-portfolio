@@ -14,7 +14,7 @@ import AsciiField from "../components/fx/AsciiField.jsx";
 import Prism3D from "../components/fx/Prism3D.jsx";
 import NowPanel from "../components/NowPanel.jsx";
 import LifeMap from "../components/interactive/LifeMap.jsx";
-import KnowledgeGraph from "../components/interactive/KnowledgeGraph.jsx";
+import KnowledgeGraph from "../components/interactive/LazyKnowledgeGraph.jsx";
 import { TESTIMONIALS } from "../data/testimonials.js";
 import "../styles/home.css";
 

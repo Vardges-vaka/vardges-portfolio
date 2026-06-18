@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Network, Radar as RadarIcon, Layers } from "lucide-react";
 import { usePortfolioLang } from "../context/usePortfolio.js";
 import SkillsRadar from "./SkillsRadar.jsx";
-import KnowledgeGraph from "./interactive/KnowledgeGraph.jsx";
+import KnowledgeGraph from "./interactive/LazyKnowledgeGraph.jsx";
 
 /**
  * One stage for the proficiency radar and the knowledge graph, switched in place
