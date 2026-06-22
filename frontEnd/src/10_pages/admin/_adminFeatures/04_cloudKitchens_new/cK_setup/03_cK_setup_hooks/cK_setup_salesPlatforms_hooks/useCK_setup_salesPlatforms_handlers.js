@@ -1,60 +1,383 @@
 import { useCallback } from "react";
 import { setByPath } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
-import { DFLT_F_D_SALES_PLATFORM } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
+import {
+  seedFullFromSalesPlatform,
+  isSalesPlatformDraftDirty,
+  getSalesPlatformChangedFieldKeys,
+  pickSalesPlatformFieldPayload,
+  SALES_PLATFORM_FIELD_API_MAP,
+  SALES_PLATFORM_DETAIL_FIELD_LABELS,
+} from "../../02_cK_setup_hlpr/salesPlatformDetail_helpers.js";
+import {
+  DFLT_F_D_SALES_PLATFORM,
+  DFLT_F_D_SALES_PLATFORM_FULL,
+} from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
+
+const resetDetailState = (setters) => {
+  setters.setDetailMode("read");
+  setters.setEditingField(null);
+  setters.setActiveOperation("viewing");
+  setters.setActiveViewingType("all");
+  setters.setSalesPlatformDraft(DFLT_F_D_SALES_PLATFORM_FULL);
+  setters.setSalesPlatformDraftBaseline(null);
+  setters.setSelectedSalesPlatform(null);
+  setters.setConfirmUpdateModalOpen(false);
+  setters.setConfirmUpdateMode("global");
+  setters.setConfirmUpdateFieldKeys([]);
+  setters.setUnsavedModalOpen(false);
+  setters.setPendingNavigation(null);
+};
 
 export const useCK_setup_salesPlatforms_handlers = ({
   states,
   setters,
-  refs,
   apiHelpers,
   TOAST,
-  t,
+  onSessionChange,
 }) => {
-  const handleinitialfetch = useCallback(
-    async () => {
-      // const response = await apiHelpers.salesPlatform_getAll();
-      // setters.setSalesPlatforms(response.data);
+  const fetchAll = useCallback(async () => {
+    const res = await apiHelpers.slsPlatform_getAll();
+    if (res?.success) setters.setSalesPlatforms(res.data || []);
+    return res;
+  }, [apiHelpers.slsPlatform_getAll, setters.setSalesPlatforms]);
+
+  const handleinitialfetch = useCallback(async () => {
+    const res = await fetchAll();
+    if (res?.success) {
       TOAST.success({
-        title: "Sales Platforms Fetched",
-        message: `Sales platforms fetched successfully`,
+        title: "Sales platforms loaded",
+        message: res.message || "Sales platforms fetched successfully",
       });
-    },
-    [
-      // apiHelpers.salesPlatform_getAll,
-      // setters.setSalesPlatforms
-    ],
+    } else {
+      TOAST.error({
+        title: "Failed to load sales platforms",
+        message: res?.message || "Could not fetch sales platforms",
+      });
+    }
+  }, [fetchAll, TOAST]);
+
+  const hasUnsavedDetailChanges = useCallback(
+    () => isSalesPlatformDraftDirty(states),
+    [states],
   );
-  const handleAddnew = useCallback(async () => {
-    console.log("useCK_setup_salesPlatforms_handlers: handleAddnew ()");
-    setters.setActiveOperation("adding");
-  }, [setters.setActiveOperation]);
+
+  const seedDetail = useCallback(
+    (item, mode = "read") => {
+      const draft = seedFullFromSalesPlatform(item);
+      setters.setSelectedSalesPlatform(item);
+      setters.setSalesPlatformDraft(draft);
+      setters.setSalesPlatformDraftBaseline(draft);
+      setters.setDetailMode(mode);
+      setters.setEditingField(null);
+      setters.setActiveViewingType("one");
+      setters.setActiveOperation("viewing");
+    },
+    [setters],
+  );
+
+  const executePendingNavigation = useCallback(
+    (action) => {
+      if (!action) return;
+      resetDetailState(setters);
+      setters.setActiveViewingType("all");
+      if (action.type === "session") {
+        onSessionChange?.(action.session);
+        return;
+      }
+      if (action.type === "viewAll") return;
+      if (action.type === "viewItem") {
+        seedDetail(action.item, action.mode || "read");
+        return;
+      }
+      if (action.type === "addNew") {
+        setters.setActiveOperation("adding");
+      }
+    },
+    [onSessionChange, seedDetail, setters],
+  );
+
+  const handleRequestNavigation = useCallback(
+    (action) => {
+      if (hasUnsavedDetailChanges()) {
+        setters.setPendingNavigation(action);
+        setters.setUnsavedModalOpen(true);
+        return;
+      }
+      executePendingNavigation(action);
+    },
+    [executePendingNavigation, hasUnsavedDetailChanges, setters],
+  );
+
+  const handleUnsavedConfirm = useCallback(() => {
+    const action = states.pendingNavigation;
+    setters.setUnsavedModalOpen(false);
+    setters.setPendingNavigation(null);
+    resetDetailState(setters);
+    executePendingNavigation(action);
+  }, [executePendingNavigation, setters, states.pendingNavigation]);
+
+  const handleUnsavedCancel = useCallback(() => {
+    setters.setUnsavedModalOpen(false);
+    setters.setPendingNavigation(null);
+  }, [setters]);
+
+  const handleBackToList = useCallback(() => {
+    handleRequestNavigation({ type: "viewAll" });
+  }, [handleRequestNavigation]);
+
+  const handleViewItem = useCallback(
+    (item) =>
+      handleRequestNavigation({ type: "viewItem", item, mode: "read" }),
+    [handleRequestNavigation],
+  );
+
+  const handleUpdateFromList = useCallback(
+    (item) =>
+      handleRequestNavigation({ type: "viewItem", item, mode: "editAll" }),
+    [handleRequestNavigation],
+  );
+
+  const handleDeleteRequest = useCallback(
+    (item) => {
+      setters.setSalesPlatformToDelete(item);
+      setters.setDeleteModalOpen(true);
+    },
+    [setters],
+  );
+
+  const handleDeleteCancel = useCallback(() => {
+    setters.setDeleteModalOpen(false);
+    setters.setSalesPlatformToDelete(null);
+  }, [setters]);
+
+  const handleDeleteConfirm = useCallback(async () => {
+    const item = states.salesPlatformToDelete;
+    const id = item?._id;
+    if (!id) {
+      TOAST.error({ title: "Delete failed", message: "No item selected" });
+      return;
+    }
+    const res = await apiHelpers.slsPlatform_delete({ id });
+    setters.setDeleteModalOpen(false);
+    setters.setSalesPlatformToDelete(null);
+    if (res?.success) {
+      TOAST.success({
+        title: "Sales platform deleted",
+        message: res.message || "Deleted successfully",
+      });
+      if (states.selectedSalesPlatform?._id === id) {
+        resetDetailState(setters);
+        setters.setActiveViewingType("all");
+      }
+      await fetchAll();
+    } else {
+      TOAST.error({
+        title: "Delete failed",
+        message: res?.message || "Could not delete sales platform",
+      });
+    }
+  }, [apiHelpers.slsPlatform_delete, fetchAll, setters, states, TOAST]);
+
+  const handleGlobalUpdateClick = useCallback(() => {
+    setters.setDetailMode("editAll");
+    setters.setEditingField(null);
+  }, [setters]);
+
+  const handleGlobalCancel = useCallback(() => {
+    if (states.salesPlatformDraftBaseline) {
+      setters.setSalesPlatformDraft(states.salesPlatformDraftBaseline);
+    }
+    setters.setDetailMode("read");
+    setters.setEditingField(null);
+  }, [setters, states.salesPlatformDraftBaseline]);
+
+  const handleFieldUpdateClick = useCallback(
+    (fieldKey) => {
+      setters.setEditingField(fieldKey);
+      setters.setDetailMode("read");
+    },
+    [setters],
+  );
+
+  const handleFieldCancel = useCallback(() => {
+    if (states.salesPlatformDraftBaseline) {
+      setters.setSalesPlatformDraft(states.salesPlatformDraftBaseline);
+    }
+    setters.setEditingField(null);
+  }, [setters, states.salesPlatformDraftBaseline]);
+
+  const openConfirmUpdateModal = useCallback(
+    (mode, fieldKeys) => {
+      if (!fieldKeys.length) {
+        TOAST.info({
+          title: "No changes",
+          message: "Update one or more fields before confirming.",
+        });
+        return;
+      }
+      setters.setConfirmUpdateMode(mode);
+      setters.setConfirmUpdateFieldKeys(fieldKeys);
+      setters.setConfirmUpdateModalOpen(true);
+    },
+    [TOAST, setters],
+  );
+
+  const handleGlobalConfirmClick = useCallback(() => {
+    const changed = getSalesPlatformChangedFieldKeys(
+      states.salesPlatformDraftBaseline,
+      states.salesPlatformDraft,
+    );
+    openConfirmUpdateModal("global", changed);
+  }, [openConfirmUpdateModal, states]);
+
+  const handleFieldConfirmClick = useCallback(() => {
+    const fieldKey = states.editingField;
+    if (!fieldKey) return;
+    const changed = getSalesPlatformChangedFieldKeys(
+      states.salesPlatformDraftBaseline,
+      states.salesPlatformDraft,
+      [fieldKey],
+    );
+    openConfirmUpdateModal("field", changed);
+  }, [openConfirmUpdateModal, states]);
+
+  const handleConfirmUpdateCancel = useCallback(() => {
+    setters.setConfirmUpdateModalOpen(false);
+    setters.setConfirmUpdateFieldKeys([]);
+  }, [setters]);
+
+  const applyFieldUpdate = useCallback(
+    async (fieldKey, id, draft) => {
+      const apiKey = SALES_PLATFORM_FIELD_API_MAP[fieldKey];
+      const body = pickSalesPlatformFieldPayload(fieldKey, draft);
+      const fn = apiHelpers[apiKey];
+      if (!fn) {
+        return { success: false, message: `No API for field: ${fieldKey}` };
+      }
+      return fn({ id, ...body });
+    },
+    [apiHelpers],
+  );
+
+  const handleConfirmUpdateConfirm = useCallback(async () => {
+    const id = states.selectedSalesPlatform?._id;
+    if (!id) {
+      TOAST.error({ title: "Update failed", message: "No item selected" });
+      return;
+    }
+    const fieldKeys = states.confirmUpdateFieldKeys;
+    if (!fieldKeys.length) {
+      handleConfirmUpdateCancel();
+      return;
+    }
+    setters.setIsSaving(true);
+    try {
+      if (states.confirmUpdateMode === "global") {
+        const res = await apiHelpers.slsPlatform_updateAll({
+          id,
+          ...states.salesPlatformDraft,
+        });
+        if (!res?.success) {
+          TOAST.error({
+            title: "Update failed",
+            message: res?.message || "Could not update sales platform",
+          });
+          return;
+        }
+      } else {
+        for (const fieldKey of fieldKeys) {
+          const res = await applyFieldUpdate(
+            fieldKey,
+            id,
+            states.salesPlatformDraft,
+          );
+          if (!res?.success) {
+            TOAST.error({
+              title: "Update failed",
+              message:
+                res?.message ||
+                `Could not update ${SALES_PLATFORM_DETAIL_FIELD_LABELS[fieldKey]}`,
+            });
+            return;
+          }
+        }
+      }
+      TOAST.success({
+        title: "Sales platform updated",
+        message: "Changes saved successfully",
+      });
+      const listRes = await fetchAll();
+      const refreshed =
+        listRes?.data?.find?.((x) => x._id === id) ||
+        states.selectedSalesPlatform;
+      const nextDraft = seedFullFromSalesPlatform(refreshed);
+      setters.setSelectedSalesPlatform(refreshed);
+      setters.setSalesPlatformDraft(nextDraft);
+      setters.setSalesPlatformDraftBaseline(nextDraft);
+      setters.setDetailMode("read");
+      setters.setEditingField(null);
+      setters.setConfirmUpdateModalOpen(false);
+      setters.setConfirmUpdateFieldKeys([]);
+    } finally {
+      setters.setIsSaving(false);
+    }
+  }, [
+    TOAST,
+    apiHelpers.slsPlatform_updateAll,
+    applyFieldUpdate,
+    fetchAll,
+    handleConfirmUpdateCancel,
+    setters,
+    states,
+  ]);
+
+  const handleAddnew = useCallback(() => {
+    handleRequestNavigation({ type: "addNew" });
+  }, [handleRequestNavigation]);
 
   const handleFormChange = useCallback(
     (name, value) => {
       setters.setSalesPlatformFormData((prev) => setByPath(prev, name, value));
     },
-    [setters.setSalesPlatformFormData],
+    [setters],
+  );
+
+  const handleDraftChange = useCallback(
+    (name, value) => {
+      setters.setSalesPlatformDraft((prev) => setByPath(prev, name, value));
+    },
+    [setters],
   );
 
   const handleCreateSubmit = useCallback(async () => {
-    // const response = await apiHelpers.salesPlatform_create(states.salesPlatformFormData);
-    console.log("salesPlatforms create submit:", states.salesPlatformFormData);
-    TOAST.success({
-      title: "Sales Platform Created",
-      message: `Sales platform created successfully`,
-    });
-    setters.setSalesPlatformFormData(DFLT_F_D_SALES_PLATFORM);
-    setters.setActiveOperation("viewing");
-  }, [
-    states.salesPlatformFormData,
-    setters.setSalesPlatformFormData,
-    setters.setActiveOperation,
-  ]);
+    const res = await apiHelpers.slsPlatform_create(states.salesPlatformFormData);
+    if (res?.success) {
+      TOAST.success({
+        title: "Sales platform created",
+        message: res.message || "Created successfully",
+      });
+      setters.setSalesPlatformFormData(DFLT_F_D_SALES_PLATFORM);
+      setters.setActiveOperation("viewing");
+      await fetchAll();
+    } else {
+      TOAST.error({
+        title: "Create failed",
+        message: res?.message || "Could not create sales platform",
+      });
+    }
+  }, [apiHelpers.slsPlatform_create, fetchAll, setters, states, TOAST]);
 
   const handleCancelAdd = useCallback(() => {
     setters.setSalesPlatformFormData(DFLT_F_D_SALES_PLATFORM);
     setters.setActiveOperation("viewing");
-  }, [setters.setSalesPlatformFormData, setters.setActiveOperation]);
+  }, [setters]);
+
+  const itemDisplayName = useCallback(() => {
+    const fromDelete = states.salesPlatformToDelete?.name;
+    if (fromDelete) return fromDelete;
+    if (states.salesPlatformDraft?.name) return states.salesPlatformDraft.name;
+    return states.selectedSalesPlatform?.name || "Sales platform";
+  }, [states]);
 
   return {
     handlers: {
@@ -63,6 +386,27 @@ export const useCK_setup_salesPlatforms_handlers = ({
       handleFormChange,
       handleCreateSubmit,
       handleCancelAdd,
+      handleViewItem,
+      handleUpdateFromList,
+      handleDeleteRequest,
+      handleDeleteConfirm,
+      handleDeleteCancel,
+      handleBackToList,
+      handleGlobalUpdateClick,
+      handleGlobalCancel,
+      handleGlobalConfirmClick,
+      handleFieldUpdateClick,
+      handleFieldCancel,
+      handleFieldConfirmClick,
+      handleDraftChange,
+      handleConfirmUpdateConfirm,
+      handleConfirmUpdateCancel,
+      handleRequestNavigation,
+      handleUnsavedConfirm,
+      handleUnsavedCancel,
+      hasUnsavedDetailChanges,
+      resetDetailState: () => resetDetailState(setters),
+      itemDisplayName,
     },
   };
 };

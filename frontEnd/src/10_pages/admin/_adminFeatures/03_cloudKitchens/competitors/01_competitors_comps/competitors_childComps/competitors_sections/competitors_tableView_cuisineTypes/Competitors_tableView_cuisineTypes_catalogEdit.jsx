@@ -44,7 +44,7 @@ const Competitors_tableView_cuisineTypes_catalogEdit = ({
                     (selected ? " cuisineTypesCatalogEdit__chipSelected" : "") +
                     (isDetail ? " cuisineTypesCatalogEdit__chipFocused" : "")
                   }
-                  data-cuisine-kind={tag.type}
+                  data-cuisine-kind={tag.kind || tag.type}
                   aria-pressed={selected}
                   aria-label={handlers.chipAria(tag.label)}
                   onClick={() => handlers.onCatalogChipClick(tag.value)}>

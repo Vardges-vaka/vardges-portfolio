@@ -46,6 +46,14 @@
   --L_input_success_text: rgb(34, 120, 28);
   --L_input_success_border: rgb(47, 180, 0);
 
+  --L_input_file_dropzone_bg: rgb(255, 252, 248);
+  --L_input_file_dropzone_bg_drag: rgb(255, 255, 255);
+  --L_input_file_dropzone_border: rgba(87, 27, 115, 0.42);
+  --L_input_file_dropzone_border_drag: #560c78;
+  --L_input_file_progress_track: rgba(87, 27, 115, 0.14);
+  --L_input_file_progress_fill: #7c22a6;
+  --L_input_file_meta_text: rgba(74, 69, 69, 0.88);
+
   /* ── Dark palette ── */
   --D_input_bg: rgb(58, 12, 76);
   --D_input_bg_hov: rgb(62, 14, 82);
@@ -85,6 +93,14 @@
 
   --D_input_success_text: rgb(120, 220, 90);
   --D_input_success_border: rgb(45, 195, 11);
+
+  --D_input_file_dropzone_bg: rgb(48, 10, 62);
+  --D_input_file_dropzone_bg_drag: rgb(58, 12, 76);
+  --D_input_file_dropzone_border: rgba(255, 255, 255, 0.24);
+  --D_input_file_dropzone_border_drag: #ff8300;
+  --D_input_file_progress_track: rgba(255, 255, 255, 0.14);
+  --D_input_file_progress_fill: #ff8300;
+  --D_input_file_meta_text: rgba(255, 255, 255, 0.72);
 }
 
 /* ── Light theme semantic tokens ── */
@@ -124,6 +140,14 @@
 
   --input-success-text: var(--L_input_success_text);
   --input-success-border: var(--L_input_success_border);
+
+  --input-file-dropzone-bg: var(--L_input_file_dropzone_bg);
+  --input-file-dropzone-bg-drag: var(--L_input_file_dropzone_bg_drag);
+  --input-file-dropzone-border: var(--L_input_file_dropzone_border);
+  --input-file-dropzone-border-drag: var(--L_input_file_dropzone_border_drag);
+  --input-file-progress-track: var(--L_input_file_progress_track);
+  --input-file-progress-fill: var(--L_input_file_progress_fill);
+  --input-file-meta-text: var(--L_input_file_meta_text);
 
   --field-label-text: var(--L_input_label_text);
   --field-label-text-hov: var(--L_input_label_text_hov);
@@ -170,6 +194,14 @@
 
   --input-success-text: var(--D_input_success_text);
   --input-success-border: var(--D_input_success_border);
+
+  --input-file-dropzone-bg: var(--D_input_file_dropzone_bg);
+  --input-file-dropzone-bg-drag: var(--D_input_file_dropzone_bg_drag);
+  --input-file-dropzone-border: var(--D_input_file_dropzone_border);
+  --input-file-dropzone-border-drag: var(--D_input_file_dropzone_border_drag);
+  --input-file-progress-track: var(--D_input_file_progress_track);
+  --input-file-progress-fill: var(--D_input_file_progress_fill);
+  --input-file-meta-text: var(--D_input_file_meta_text);
 
   --field-label-text: var(--D_input_label_text);
   --field-label-text-hov: var(--D_input_label_text_hov);

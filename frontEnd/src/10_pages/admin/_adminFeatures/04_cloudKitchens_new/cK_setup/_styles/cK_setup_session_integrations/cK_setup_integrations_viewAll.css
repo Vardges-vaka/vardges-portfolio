@@ -1,1 +1,5 @@
-/* cK_setup_integrations_viewAll */
+.cK_setup_integrations_viewAll {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

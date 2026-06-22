@@ -1,0 +1,40 @@
+.cK_stp_brand_fld_fileAudit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.cK_stp_brand_fld_fileAudit__title {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--title-secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cK_stp_brand_fld_fileAudit__grid {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, auto) minmax(0, 1fr);
+  gap: 0.35rem 0.75rem;
+  margin: 0;
+}
+
+.cK_stp_brand_fld_fileAudit__term {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+}
+
+.cK_stp_brand_fld_fileAudit__value {
+  margin: 0;
+  font-size: 0.74rem;
+  color: var(--text-primary-color);
+  word-break: break-word;
+}
+
+.cK_stp_brand_fld_fileAudit__value--deleted {
+  color: var(--btn-danger-bg-color, var(--input-error-text));
+}

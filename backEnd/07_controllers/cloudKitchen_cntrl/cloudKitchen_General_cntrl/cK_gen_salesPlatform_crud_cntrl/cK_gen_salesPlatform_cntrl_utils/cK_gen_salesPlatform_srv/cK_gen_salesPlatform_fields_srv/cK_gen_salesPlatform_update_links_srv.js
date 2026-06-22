@@ -1,28 +1,10 @@
 import { SalesPlatform } from "../../../../../../../06_models/_models.index.js";
-import { catch_errorHandler_service } from "../../../../../../../03_services/_services.index.js";
+import { cK_gen_makeUpdateSrv } from "../../../../_cK_gen_shared/cK_gen_crud_srv_utils.js";
 
 const displayName = " | cK_gen_salesPlatform_update_links_srv.js | ";
 
-export const cK_gen_salesPlatform_update_links_srv = async (req, isDebug) => {
-  isDebug && console.log(`▄︻デ══━一💥${displayName}[STARTED]`);
-  isDebug && console.log(`💾${displayName}[REQUEST]`, req.body.sanitizedData);
-
-  try {
-    const sanitizedData = req.body.sanitizedData;
-
-    const newRecord = new SalesPlatform(sanitizedData);
-    await newRecord.save();
-
-    isDebug && console.log(`✅${displayName}SalesPlatform created: ${newRecord._id}`);
-
-    return {
-      success: true,
-      message: "SalesPlatform created successfully",
-      data: {},
-    };
-  } catch (error) {
-    return catch_errorHandler_service(displayName, isDebug, error);
-  } finally {
-    isDebug && console.log(`🏁🏁🏁${displayName}[COMPLETED]`);
-  }
-};
+export const cK_gen_salesPlatform_update_links_srv = cK_gen_makeUpdateSrv({
+  Model: SalesPlatform,
+  entityLabel: "Sales platform",
+  displayName,
+});

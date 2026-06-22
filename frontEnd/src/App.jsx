@@ -24,6 +24,7 @@ import "./09_styles/App.css";
 import "./09_styles/globalColorsNew.css";
 import "./09_styles/INPUT.css";
 import "./09_styles/SELECT.css";
+import "./09_styles/COMPONENTS.css";
 
 function App() {
   return (

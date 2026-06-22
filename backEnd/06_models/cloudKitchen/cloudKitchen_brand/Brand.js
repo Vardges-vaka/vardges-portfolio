@@ -21,7 +21,6 @@ const brandSchema = new mongoose.Schema(
 
     // ── Files ───────────────────────────────────────────────
 
-
     files: getStorageSchema(),
 
     // ── Socials ───────────────────────────────────────────────
@@ -30,18 +29,19 @@ const brandSchema = new mongoose.Schema(
     // ── Registered in ───────────────────────────────────────────────
     registeredIn: registeredInSchema(),
     priceRange: { type: String, enum: BRAND_PRICE_RANGES },
-    cuisineTags: [{ type: mongoose.Schema.Types.ObjectId, ref: "CuisineTag" }],
-    website: { type: mongoose.Schema.Types.ObjectId, ref: "Website" },
-    contracts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Contract" }],
     integrations: [
       { type: mongoose.Schema.Types.ObjectId, ref: "Integration" },
     ],
     siblings: [{ type: mongoose.Schema.Types.ObjectId, ref: "Brand" }],
+    website: { type: mongoose.Schema.Types.ObjectId, ref: "Website" },
+    // ── Relations ───────────────────────────────────────────────
+    cuisineTags: [{ type: mongoose.Schema.Types.ObjectId, ref: "CuisineTag" }],
+    contracts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Contract" }],
+    competitors: [{ type: mongoose.Schema.Types.ObjectId, ref: "Competitor" }],
     employees: [{ type: mongoose.Schema.Types.ObjectId, ref: "Employee" }],
     equipments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Equipment" }],
     branches: [{ type: mongoose.Schema.Types.ObjectId, ref: "Branch" }],
     menus: [{ type: mongoose.Schema.Types.ObjectId, ref: "Menu" }],
-    competitors: [{ type: mongoose.Schema.Types.ObjectId, ref: "Competitor" }],
     ...AUDIT,
   },
   { timestamps: true },

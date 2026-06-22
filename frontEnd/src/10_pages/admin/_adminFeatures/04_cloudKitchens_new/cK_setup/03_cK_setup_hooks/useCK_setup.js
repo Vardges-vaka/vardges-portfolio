@@ -13,18 +13,46 @@ import {
 } from "./_cK_setup_hooks.index.js";
 import { useNotificationContext } from "../../../../../../02_context/context.index.js";
 
+const SESSION_GUARD_MAP = {
+  brands: "brands",
+  salesPlatforms: "salesPlatforms",
+  integrations: "integrations",
+};
+
 export const useCK_setup = () => {
   const { t } = useTranslation("setup");
-  const { TOAST } = useNotificationContext();  
-  const cuisineTags = useCK_setup_cuisineTags({ TOAST, t });
-  const brands = useCK_setup_brands({ TOAST, t, cuisineTags: cuisineTags.states.cuisineTags });
-  const channels = useCK_setup_channels({ TOAST, t });
+  const { TOAST } = useNotificationContext();
+  const { states, setters, refs } = useCK_setup_states();
 
-  const salesPlatforms = useCK_setup_salesPlatforms({ TOAST, t });
-  const integrations = useCK_setup_integrations({ TOAST, t });
+  const applySessionChange = useCallback(
+    (sessionValue) => {
+      setters.setActiveSession(sessionValue);
+    },
+    [setters.setActiveSession],
+  );
+
+  const cuisineTags = useCK_setup_cuisineTags({ TOAST, t });
+  const brands = useCK_setup_brands({
+    TOAST,
+    t,
+    cuisineTags: cuisineTags.states.cuisineTags,
+    onSessionChange: applySessionChange,
+  });
+  const channels = useCK_setup_channels({ TOAST, t });
+  const salesPlatforms = useCK_setup_salesPlatforms({
+    TOAST,
+    t,
+    onSessionChange: applySessionChange,
+  });
+  const integrations = useCK_setup_integrations({
+    TOAST,
+    t,
+    onSessionChange: applySessionChange,
+  });
   const contracts = useCK_setup_contracts({ TOAST, t });
 
-  const { states, setters, refs } = useCK_setup_states();
+  const sessionModules = { brands, salesPlatforms, integrations };
+
   const { apiHelpers } = useCK_setup_apiHlpr({ TOAST });
   const { handlers } = useCK_setup_handlers({
     states,
@@ -39,70 +67,65 @@ export const useCK_setup = () => {
     salesPlatforms,
     integrations,
     contracts,
+    sessionModules,
   });
+
   useEffect(() => {
     handlers.handleInitialFetch(states.activeSession);
   }, [handlers.handleInitialFetch, states.activeSession]);
 
-  const handler = () => {
+  const handleViewAllToggle = useCallback(() => {
+    const activeKey = SESSION_GUARD_MAP[states.activeSession];
+    const activeModule = activeKey ? sessionModules[activeKey] : null;
+
+    if (activeModule?.states?.activeViewingType === "one") {
+      activeModule.guards.handleRequestNavigation({ type: "viewAll" });
+      return;
+    }
+
     if (states.activeViewingType === "one") {
       setters.setActiveViewingType("all");
     } else {
       setters.setActiveViewingType("one");
     }
-  };
+  }, [
+    sessionModules,
+    setters.setActiveViewingType,
+    states.activeSession,
+    states.activeViewingType,
+  ]);
+
   const stp_sessionToggler_props = {
-    states: {
-      activeSession: states.activeSession,
-    },
+    states: { activeSession: states.activeSession },
     handlers: {
       handleSessionChange: handlers.handleSessionChange,
       handleAddNew: handlers.handleAddNew,
-      handle: handler,
+      handle: handleViewAllToggle,
     },
     childProps: {},
-    t: t,
+    t,
   };
+
   const stp_sessionSwitch_props = {
-    states: {
-      activeSession: states.activeSession,
-    },
+    states: { activeSession: states.activeSession },
     handlers: {},
     childProps: {
-      brands: brands,
-      cuisineTags: cuisineTags,
-      salesPlatforms: salesPlatforms,
-      channels: channels,
-      integrations: integrations,
-      contracts: contracts,
+      brands,
+      cuisineTags,
+      salesPlatforms,
+      channels,
+      integrations,
+      contracts,
     },
-    t: t,
+    t,
   };
-  // const 
-
-  // const modal_props = {
-  //   states: {
-  //     isOpen: modalOpen ? true : false,
-  //     title:
-  //       states.activeOperation === "update"
-  //         ? "Confirm the Update"
-  //         : "Confirm the Delete",
-  //     cancelLabel: "Cancel",
-  //     confirmLabel: "Confirm",
-  //   },
-  //   handlers: {
-  //     onConfirm: handlers.handleModalOnConfirm,
-  //     onCancel: handlers.handleModalOnCancel,
-  //   },
-  // };
 
   return {
     states: {},
     handlers: { initiateModalOpening: handlers.initiateModalOpening },
     childProps: {
-      stp_sessionSwitch_props: stp_sessionSwitch_props,
-      stp_sessionToggler_props: stp_sessionToggler_props,
-      // modal_props: modal_props,
+      stp_sessionSwitch_props,
+      stp_sessionToggler_props,
     },
     t,
     TOAST,

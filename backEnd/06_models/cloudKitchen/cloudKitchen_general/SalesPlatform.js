@@ -5,7 +5,9 @@ import {
   getKAMSchema,
   getPlatformSupportSchema,
 } from "../modelHelpers/.temp.index.js";
+/*
 
+*/
 const salesPlatformSchema = new mongoose.Schema(
   {
     name: { type: String, required: true }, // "Talabat"

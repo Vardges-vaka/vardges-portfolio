@@ -1,30 +1,71 @@
+import { BRAND_DETAIL_FIELD_LABELS } from "../brandDetail_helpers.js";
+
 export const brands_propsComposer = (states, handlers, t, cuisineTags) => {
-  // console.log("states in brands_propsComposer", cuisineTags);
   const stp_empty_brand_props = {
     states: {},
     handlers: { handleAddnew: handlers.handleAddnew },
     childComps: {},
     t: t,
   };
+
   const stp_brands_viewOne_props = {
     states: {
       brand: states.selectedBrand,
+      brandDraft: states.brandDraft,
+      brandFilesDraft: states.brandFilesDraft,
+      detailMode: states.detailMode,
+      editingField: states.editingField,
+      confirmUpdateModalOpen: states.confirmUpdateModalOpen,
+      confirmUpdateLabels: states.confirmUpdateFieldKeys.map(
+        (key) => BRAND_DETAIL_FIELD_LABELS[key] || key,
+      ),
+      isSaving: states.isSaving,
       cuisineTags: cuisineTags,
+      linkedCuisineTags: states.selectedBrand?.cuisineTags ?? [],
     },
-    handlers: {},
+    handlers: {
+      onBackToList: handlers.handleBackToList,
+      onGlobalUpdate: handlers.handleGlobalUpdateClick,
+      onGlobalCancel: handlers.handleGlobalCancel,
+      onGlobalConfirm: handlers.handleGlobalConfirmClick,
+      onFieldUpdate: handlers.handleFieldUpdateClick,
+      onFieldCancel: handlers.handleFieldCancel,
+      onFieldConfirm: handlers.handleFieldConfirmClick,
+      onDraftChange: handlers.handleDraftChange,
+      onAddSocial: handlers.handleAddSocial,
+      onRemoveSocial: handlers.handleRemoveSocial,
+      onAddCuisineTag: handlers.handleAddCuisineTag,
+      onRemoveCuisineTag: handlers.handleRemoveCuisineTag,
+      onLogoVariantChange: handlers.handleLogoVariantChange,
+      onLogoVariantFieldChange: handlers.handleLogoVariantFieldChange,
+      onOtherFileChange: handlers.handleOtherFileChange,
+      onAddOtherFiles: handlers.handleAddOtherFiles,
+      onConfirmUpdateConfirm: handlers.handleConfirmUpdateConfirm,
+      onConfirmUpdateCancel: handlers.handleConfirmUpdateCancel,
+      brandDisplayName: handlers.brandDisplayName,
+    },
     childComps: {},
     t: t,
   };
+
   const stp_brands_viewAll_props = {
     states: {
       brands: states.brands,
+      deleteModalOpen: states.deleteModalOpen,
+      isSaving: states.isSaving,
     },
     handlers: {
-      onEditFull: handlers.handleEditFull,
+      onView: handlers.handleViewBrand,
+      onUpdate: handlers.handleUpdateBrandFromList,
+      onDelete: handlers.handleDeleteBrandRequest,
+      onDeleteConfirm: handlers.handleDeleteConfirm,
+      onDeleteCancel: handlers.handleDeleteCancel,
+      brandDisplayName: handlers.brandDisplayName,
     },
     childComps: {},
     t: t,
   };
+
   const stp_brands_addForm_props = {
     states: {
       isOpen: states.activeOperation === "adding",
@@ -39,29 +80,26 @@ export const brands_propsComposer = (states, handlers, t, cuisineTags) => {
     childComps: {},
     t: t,
   };
-  const stp_brands_full_props = {
+
+  const stp_brands_modals_props = {
     states: {
-      isOpen: states.activeOperation === "updating",
-      values: states.brandFormData_full,
-      cuisineTags: cuisineTags,
+      unsavedModalOpen: states.unsavedModalOpen,
+      isSaving: states.isSaving,
     },
     handlers: {
-      onChange: handlers.handleFullFormChange,
-      onSubmit: handlers.handleUpdateSubmit,
-      onCancel: handlers.handleCancelFull,
-      onAddSocial: handlers.handleAddSocial,
-      onRemoveSocial: handlers.handleRemoveSocial,
-      onAddCuisineTag: handlers.handleAddCuisineTag,
-      onRemoveCuisineTag: handlers.handleRemoveCuisineTag,
+      onUnsavedConfirm: handlers.handleUnsavedConfirm,
+      onUnsavedCancel: handlers.handleUnsavedCancel,
+      brandDisplayName: handlers.brandDisplayName,
     },
     childComps: {},
     t: t,
   };
+
   return {
     stp_empty_brand_props,
     stp_brands_viewOne_props,
     stp_brands_viewAll_props,
     stp_brands_addForm_props,
-    stp_brands_full_props,
+    stp_brands_modals_props,
   };
 };

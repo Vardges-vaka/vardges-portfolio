@@ -1,0 +1,167 @@
+.cK_stp_cuisineTag_platformIconStack {
+  --cK_platformStack-icon-size: 50px;
+  --cK_platformStack-gap: 0.5rem;
+  --cK_platformStack-transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--cK_platformStack-gap);
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
+.cK_stp_cuisineTag_platformIconStack--sm {
+  --cK_platformStack-icon-size: 1.875rem;
+  --cK_platformStack-gap: 0.45rem;
+}
+
+.cK_stp_cuisineTag_platformIconStack__shell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  min-width: calc(
+    3 * var(--cK_platformStack-icon-size) + 2 * var(--cK_platformStack-gap)
+  );
+}
+
+.cK_stp_cuisineTag_platformIconStack--base {
+  transition: opacity var(--cK_platformStack-transition);
+}
+
+.cK_stp_cuisineTag_platformIconStack__shell--open
+  .cK_stp_cuisineTag_platformIconStack--base {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.cK_stp_cuisineTag_platformIconStack--expanded {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 50%;
+  z-index: 2;
+  justify-content: flex-end;
+  padding: 0.1rem 0.15rem;
+  border-radius: 0.35rem;
+  background-color: var(--bg-primary-color);
+  box-shadow: -0.35rem 0 0.65rem color-mix(
+    in srgb,
+    var(--bg-primary-color) 88%,
+    transparent
+  );
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(0.35rem);
+  transition:
+    opacity var(--cK_platformStack-transition),
+    transform var(--cK_platformStack-transition),
+    visibility var(--cK_platformStack-transition);
+}
+
+.cK_stp_cuisineTag_platformIconStack--expandedVisible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+.cK_stp_cuisineTag_platformIconStack__item {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.cK_stp_cuisineTag_platformIconStack__icon {
+  width: var(--cK_platformStack-icon-size);
+  height: var(--cK_platformStack-icon-size);
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 0.35rem;
+  display: block;
+}
+
+.cK_stp_cuisineTag_platformIconStack__missing {
+  display: grid;
+  place-items: center;
+  width: var(--cK_platformStack-icon-size);
+  height: var(--cK_platformStack-icon-size);
+  border-radius: 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-secondary-color);
+  background-color: var(--bg-secondary-color);
+  border: 1px dashed var(--border-primary-color);
+}
+
+.cK_stp_cuisineTag_platformIconStack--sm
+  .cK_stp_cuisineTag_platformIconStack__missing {
+  font-size: 0.82rem;
+}
+
+.cK_stp_cuisineTag_platformIconStack__count {
+  position: absolute;
+  top: -0.28rem;
+  inset-inline-end: -0.28rem;
+  min-width: 0.95rem;
+  height: 0.95rem;
+  padding: 0 0.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--bg-primary-color);
+  background: var(--btn-primary-bg-color, var(--text-primary-color));
+  color: var(--btn-primary-text-color, var(--bg-primary-color));
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 0.95rem;
+  text-align: center;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.cK_stp_cuisineTag_platformIconStack__overflow {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: var(--cK_platformStack-icon-size);
+  height: var(--cK_platformStack-icon-size);
+  border-radius: 0.35rem;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-primary-color);
+  color: var(--text-secondary-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: default;
+}
+
+.cK_stp_cuisineTag_platformIconStack--sm
+  .cK_stp_cuisineTag_platformIconStack__overflow {
+  font-size: 0.62rem;
+}
+
+.cK_stp_cuisineTag_platformIconStack__item--add {
+  position: relative;
+  z-index: 3;
+}
+
+.cK_stp_cuisineTag_platformIconStack--expandedVisible
+  .cK_stp_cuisineTag_platformIconStack__item,
+.cK_stp_cuisineTag_platformIconStack--expandedVisible
+  .cK_stp_cuisineTag_platformIconStack__overflow {
+  animation: cK_platformStackItemIn var(--cK_platformStack-transition);
+}
+
+@keyframes cK_platformStackItemIn {
+  from {
+    opacity: 0.45;
+    transform: translateX(0.18rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

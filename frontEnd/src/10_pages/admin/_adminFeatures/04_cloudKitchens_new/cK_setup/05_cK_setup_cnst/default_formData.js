@@ -109,14 +109,14 @@ const FILES_USED_IN_ENUM_VALUES = [
   "other",
 ];
 
+const FILES_USED_IN_OPTIONS = FILES_USED_IN_ENUM_VALUES.map((value) => ({
+  value,
+  label: value,
+}));
+
 const BRAND_PRICE_RANGES = ["budget", "mid", "premium"];
 
 // ── CuisineTag ─────────────────────────────────────────────
-const DFLT_F_D_CUISINE_TAG = {
-  value: "",
-  label: "",
-  kind: "",
-};
 const DFLT_F_D_CUISINE_TAG_FULL = {
   value: "",
   label: "",
@@ -227,7 +227,6 @@ const DFLT_F_D_CONTRACT_FULL = {
 export {
   DFLT_F_D_CHANNEL,
   DFLT_F_D_CHANNEL_FULL,
-  DFLT_F_D_CUISINE_TAG,
   DFLT_F_D_CUISINE_TAG_FULL,
   DFLT_F_D_SALES_PLATFORM,
   DFLT_F_D_SALES_PLATFORM_FULL,
@@ -238,4 +237,5 @@ export {
   DFLT_F_D_BRAND_INITIAL,
   DFLT_F_D_BRAND_FULL,
   DFLT_F_D_FILES,
+  FILES_USED_IN_OPTIONS,
 };

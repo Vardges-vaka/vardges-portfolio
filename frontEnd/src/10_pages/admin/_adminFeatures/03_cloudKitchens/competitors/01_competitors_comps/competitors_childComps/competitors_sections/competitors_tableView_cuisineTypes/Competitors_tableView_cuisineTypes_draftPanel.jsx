@@ -33,7 +33,7 @@ const Competitors_tableView_cuisineTypes_draftPanel = ({
               <button
                 type="button"
                 className="Competitors_tableView_cuisineTypes_draftChip"
-                data-cuisine-kind={tag.type}
+                data-cuisine-kind={tag.kind || tag.type}
                 onClick={() =>
                   handlers?.handleCatalogChipClick?.({ value: tag.value })
                 }

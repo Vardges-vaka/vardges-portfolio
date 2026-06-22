@@ -104,7 +104,8 @@
   border-inline-start-color: var(--primary-hint-border);
 }
 
-.cuisineTypesCatalogEdit__chip[data-cuisine-kind="dessertBeverage"] {
+.cuisineTypesCatalogEdit__chip[data-cuisine-kind="dessert"],
+.cuisineTypesCatalogEdit__chip[data-cuisine-kind="beverage"] {
   border-inline-start-color: var(--primary-error-border);
 }
 

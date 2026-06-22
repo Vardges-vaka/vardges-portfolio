@@ -11,6 +11,60 @@
   align-items: end;
 }
 
+.cK_stp_cuisineTag_catalogList__filterActions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  grid-column: 1 / -1;
+  justify-self: start;
+  flex-wrap: nowrap;
+  min-width: 0;
+  width: 100%;
+}
+
+.cK_stp_cuisineTag_catalogList__filterIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.cK_stp_cuisineTag_catalogList__filterIconWrap {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.cK_stp_cuisineTag_catalogList__filterIcon {
+  width: 1.875rem;
+  height: 1.875rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cK_stp_cuisineTag_catalogList__filterIcon--platform {
+  border-radius: 0.35rem;
+}
+
+.cK_stp_cuisineTag_catalogList__filterIconCount {
+  position: absolute;
+  top: -0.28rem;
+  right: -0.28rem;
+  min-width: 0.95rem;
+  height: 0.95rem;
+  padding: 0 0.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--bg-primary-color);
+  background: var(--btn-primary-bg-color, var(--text-primary-color));
+  color: var(--btn-primary-text-color, var(--bg-primary-color));
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 0.95rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .cK_stp_cuisineTag_catalogList__resetFilters {
   font: inherit;
   font-size: 0.76rem;
@@ -21,7 +75,13 @@
   border: 1px solid var(--border-primary-color);
   color: var(--text-secondary-color);
   background-color: var(--bg-primary-color);
-  justify-self: start;
+}
+
+.cK_stp_cuisineTag_catalogList__filterCount {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+  white-space: nowrap;
 }
 
 .cK_stp_cuisineTag_catalogList__resetFilters:hover {
@@ -34,7 +94,7 @@
 }
 
 .cK_stp_cuisineTag_catalogList__table {
-  min-width: 62rem;
+  min-width: 54rem;
 }
 
 @media (max-width: 900px) {

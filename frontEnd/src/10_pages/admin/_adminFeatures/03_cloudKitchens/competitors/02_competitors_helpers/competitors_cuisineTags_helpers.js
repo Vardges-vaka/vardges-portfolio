@@ -1,13 +1,16 @@
 import { CUISINE_TAGS } from "../05_competitors_cnst/_competitors_cnst.index.js";
 
-/** Stable section order for UI grouped by `type`. */
+/** Stable section order for UI grouped by `kind`. */
 export const CUISINE_TAG_TYPE_ORDER = [
   "cuisine",
   "category",
   "dietary",
   "mealType",
-  "dessertBeverage",
+  "dessert",
+  "beverage",
 ];
+
+const getTagKind = (tag) => tag?.kind || tag?.type || "other";
 
 export function findCuisineTagByValue(value) {
   if (value == null || value === "") return null;
@@ -132,7 +135,7 @@ export function buildSavedCuisineTypes({ values, legacyRows }) {
 export function groupCuisineTagsByTypeOrdered(tags = CUISINE_TAGS) {
   const bucket = new Map();
   for (const tag of tags) {
-    const ty = tag.type || "other";
+    const ty = getTagKind(tag);
     if (!bucket.has(ty)) bucket.set(ty, []);
     bucket.get(ty).push(tag);
   }
@@ -197,7 +200,7 @@ export function getCatalogTagsForValues(valueIds) {
   const out = [];
   for (const ty of CUISINE_TAG_TYPE_ORDER) {
     for (const tag of CUISINE_TAGS) {
-      if (tag.type === ty && set.has(tag.value)) out.push(tag);
+      if (getTagKind(tag) === ty && set.has(tag.value)) out.push(tag);
     }
   }
   return out;

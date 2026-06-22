@@ -111,6 +111,20 @@ const getLoginCredentialSchema = () => {
   );
 };
 
+/*
+pdf
+png
+webp
+ico
+svg
+jpg
+png_noBackground
+pngLarge
+jpgLarge
+
+
+
+*/
 const getGeneralFilesSchema = () => {
   return new mongoose.Schema(
     {
@@ -120,6 +134,7 @@ const getGeneralFilesSchema = () => {
       description: getDescriptionSchema(),
       notes: { type: String },
       ref: { type: mongoose.Schema.Types.ObjectId },
+      title: { type: String },
       usedIn: {
         type: String,
         enum: [
@@ -139,7 +154,7 @@ const getGeneralFilesSchema = () => {
           // etc... I will Add all the necessary ones later on
         ],
       },
-      title: { type: String },
+
       ...AUDIT,
     },
     { _id: false },

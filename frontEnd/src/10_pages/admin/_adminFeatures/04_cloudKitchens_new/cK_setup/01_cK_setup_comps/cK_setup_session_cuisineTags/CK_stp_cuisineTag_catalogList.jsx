@@ -6,23 +6,19 @@ import {
   DFLT_F_D_CUISINE_TAG_FULL,
 } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
 import { CUISINE_TAG_SOURCE_ICONS } from "../tempIcons/_.index.js";
-import { setByPath } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
+import { setByPath, tagMatchesFilters, hasActiveCuisineTagFilters, buildFilterOptionsWithSelectAll, createMultiFilterChangeHandler, getFilterOptionValues, shouldShowSelectAllForFilter, collectSelectedFilterIcons } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
 import CK_stp_brand_cuisineTagRow from "../cK_setup_session_brands/ck_setup_brand_fields/CK_stp_brand_cuisineTagRow.jsx";
 import CK_stp_cuisineTag_inlineEditPanel from "./CK_stp_cuisineTag_inlineEditPanel.jsx";
 import CK_stp_cuisineTag_addFieldModal from "./CK_stp_cuisineTag_addFieldModal.jsx";
+import CK_stp_cuisineTag_platformIconStack from "../cK_setup_shared/CK_stp_cuisineTag_platformIconStack.jsx";
 import {
-  Select_static,
+  Select_multi,
   Input_search,
 } from "../../../../../../../01_components/_components.index.js";
 import "../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_cuisineTags.css";
 import "../../_styles/cK_setup_session_cuisineTags/cK_stp_cuisineTag_catalogList.css";
 
 const svgLeftIcon = (src) => (src ? { type: "svg", svg_src: src } : null);
-
-const withAllOption = (allLabel, items) => [
-  { value: "all", label: allLabel },
-  ...items,
-];
 
 const seedDraftFromTag = (tag = {}) => ({
   ...DFLT_F_D_CUISINE_TAG_FULL,
@@ -31,38 +27,20 @@ const seedDraftFromTag = (tag = {}) => ({
   description: tag.description || "",
   kind: tag.kind || "",
   source: tag.source || "",
-  platforms: Array.isArray(tag.platforms) ? tag.platforms : [],
+  platforms: Array.isArray(tag.platforms) ? [...tag.platforms] : [],
 });
 
-const tagMatchesFilters = (
-  tag,
-  { search, kindFilter, sourceFilter, platformFilter },
-) => {
-  if (kindFilter !== "all" && tag.kind !== kindFilter) return false;
-  if (sourceFilter !== "all" && tag.source !== sourceFilter) return false;
+const normalizeDraft = (draft = {}) => ({
+  value: draft.value ?? "",
+  label: draft.label ?? "",
+  description: draft.description ?? "",
+  kind: draft.kind ?? "",
+  source: draft.source ?? "",
+  platforms: [...(Array.isArray(draft.platforms) ? draft.platforms : [])].sort(),
+});
 
-  if (platformFilter !== "all") {
-    const tagPlatforms = Array.isArray(tag.platforms) ? tag.platforms : [];
-    if (!tagPlatforms.includes(platformFilter)) return false;
-  }
-
-  const needle = search.trim().toLowerCase();
-  if (!needle) return true;
-
-  const haystack = [
-    tag.label,
-    tag.value,
-    tag.description,
-    tag.kind,
-    tag.source,
-    ...(tag.platforms || []),
-  ]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-
-  return haystack.includes(needle);
-};
+const areDraftsEqual = (left, right) =>
+  JSON.stringify(normalizeDraft(left)) === JSON.stringify(normalizeDraft(right));
 
 const EDIT_PANEL_MS = 320;
 
@@ -83,12 +61,15 @@ const CK_stp_cuisineTag_catalogList = ({
   t,
 }) => {
   const [search, setSearch] = useState("");
-  const [kindFilter, setKindFilter] = useState("all");
-  const [sourceFilter, setSourceFilter] = useState("all");
-  const [platformFilter, setPlatformFilter] = useState("all");
+  const [kindFilter, setKindFilter] = useState([]);
+  const [sourceFilter, setSourceFilter] = useState([]);
+  const [platformFilter, setPlatformFilter] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
-  const [editingTagId, setEditingTagId] = useState(null);
+  const [panelTagId, setPanelTagId] = useState(null);
+  const [panelMode, setPanelMode] = useState("view");
   const [editDraft, setEditDraft] = useState(null);
+  const [editBaseline, setEditBaseline] = useState(null);
+  const [enteredEditFromView, setEnteredEditFromView] = useState(false);
   const [editPanelExpanded, setEditPanelExpanded] = useState(false);
   const closeEditTimerRef = useRef(null);
   const editPanelRef = useRef(null);
@@ -101,41 +82,115 @@ const CK_stp_cuisineTag_catalogList = ({
 
   const kindFilterOptions = useMemo(
     () =>
-      withAllOption(
-        "All kinds",
-        CUISINE_TYPES.map((ct) => ({
-          value: ct.value,
-          label: ct.label,
-          leftIcon: svgLeftIcon(ct.logo),
-        })),
-      ),
+      CUISINE_TYPES.map((ct) => ({
+        value: ct.value,
+        label: ct.label,
+        leftIcon: svgLeftIcon(ct.logo),
+      })),
     [],
   );
 
   const sourceFilterOptions = useMemo(
     () =>
-      withAllOption(
-        "All sources",
-        CUISINE_TAG_SOURCE_OPTIONS.map((src) => ({
-          value: src.value,
-          label: src.label,
-          leftIcon: svgLeftIcon(CUISINE_TAG_SOURCE_ICONS[src.value]),
-        })),
-      ),
+      CUISINE_TAG_SOURCE_OPTIONS.map((src) => ({
+        value: src.value,
+        label: src.label,
+        leftIcon: svgLeftIcon(CUISINE_TAG_SOURCE_ICONS[src.value]),
+      })),
     [],
   );
 
   const platformFilterOptions = useMemo(
     () =>
-      withAllOption(
-        "All platforms",
-        AGGREGATOR_PLATFORMS.map((platform) => ({
-          value: platform.value,
-          label: platform.label,
-          leftIcon: svgLeftIcon(platform.logo),
-        })),
-      ),
+      AGGREGATOR_PLATFORMS.map((platform) => ({
+        value: platform.value,
+        label: platform.label,
+        leftIcon: svgLeftIcon(platform.logo),
+      })),
     [],
+  );
+
+  const kindFilterValues = useMemo(
+    () => getFilterOptionValues(kindFilterOptions),
+    [kindFilterOptions],
+  );
+
+  const sourceFilterValues = useMemo(
+    () => getFilterOptionValues(sourceFilterOptions),
+    [sourceFilterOptions],
+  );
+
+  const platformFilterValues = useMemo(
+    () => getFilterOptionValues(platformFilterOptions),
+    [platformFilterOptions],
+  );
+
+  const showKindSelectAll = shouldShowSelectAllForFilter(
+    sourceFilter,
+    platformFilter,
+  );
+  const showSourceSelectAll = shouldShowSelectAllForFilter(
+    kindFilter,
+    platformFilter,
+  );
+  const showPlatformSelectAll = shouldShowSelectAllForFilter(
+    kindFilter,
+    sourceFilter,
+  );
+
+  const kindSelectOptions = useMemo(
+    () => buildFilterOptionsWithSelectAll(kindFilterOptions, showKindSelectAll),
+    [kindFilterOptions, showKindSelectAll],
+  );
+
+  const sourceSelectOptions = useMemo(
+    () =>
+      buildFilterOptionsWithSelectAll(sourceFilterOptions, showSourceSelectAll),
+    [sourceFilterOptions, showSourceSelectAll],
+  );
+
+  const platformSelectOptions = useMemo(
+    () =>
+      buildFilterOptionsWithSelectAll(
+        platformFilterOptions,
+        showPlatformSelectAll,
+      ),
+    [platformFilterOptions, showPlatformSelectAll],
+  );
+
+  const selectedFilterIcons = useMemo(
+    () =>
+      collectSelectedFilterIcons({
+        kindFilter,
+        sourceFilter,
+        platformFilter,
+        kindOptions: kindFilterOptions,
+        sourceOptions: sourceFilterOptions,
+        platformOptions: platformFilterOptions,
+        tags,
+        filters,
+      }),
+    [
+      kindFilter,
+      sourceFilter,
+      platformFilter,
+      kindFilterOptions,
+      sourceFilterOptions,
+      platformFilterOptions,
+      tags,
+      search,
+    ],
+  );
+
+  const otherFilterIcons = useMemo(
+    () =>
+      selectedFilterIcons.filter((icon) => icon.filterType !== "platform"),
+    [selectedFilterIcons],
+  );
+
+  const platformFilterIcons = useMemo(
+    () => selectedFilterIcons.filter((icon) => icon.filterType === "platform"),
+    [selectedFilterIcons],
   );
 
   const filteredTags = useMemo(() => {
@@ -144,17 +199,13 @@ const CK_stp_cuisineTag_catalogList = ({
       .sort((a, b) => (a.label || "").localeCompare(b.label || ""));
   }, [tags, search, kindFilter, sourceFilter, platformFilter]);
 
-  const hasActiveFilters =
-    search.trim() ||
-    kindFilter !== "all" ||
-    sourceFilter !== "all" ||
-    platformFilter !== "all";
+  const hasActiveFilters = hasActiveCuisineTagFilters(filters);
 
   const resetFilters = () => {
     setSearch("");
-    setKindFilter("all");
-    setSourceFilter("all");
-    setPlatformFilter("all");
+    setKindFilter([]);
+    setSourceFilter([]);
+    setPlatformFilter([]);
   };
 
   const toggleFilters = () => {
@@ -169,34 +220,49 @@ const CK_stp_cuisineTag_catalogList = ({
     }
   }, []);
 
-  const closeEdit = useCallback(() => {
+  const closePanel = useCallback(() => {
     clearCloseEditTimer();
     setEditPanelExpanded(false);
     closeEditTimerRef.current = window.setTimeout(() => {
-      setEditingTagId(null);
+      setPanelTagId(null);
+      setPanelMode("view");
       setEditDraft(null);
+      setEditBaseline(null);
+      setEnteredEditFromView(false);
       closeEditTimerRef.current = null;
     }, EDIT_PANEL_MS);
   }, [clearCloseEditTimer]);
 
-  const openEdit = useCallback(
-    (tag) => {
+  const openPanel = useCallback(
+    (tag, mode) => {
       if (!tag?._id) return;
-      if (editingTagId === tag._id) {
-        closeEdit();
+
+      if (panelTagId === tag._id && panelMode === mode) {
+        closePanel();
         return;
       }
 
       clearCloseEditTimer();
-      const isSwitching = Boolean(editingTagId && editingTagId !== tag._id);
+      const isSwitchingTag = Boolean(panelTagId && panelTagId !== tag._id);
+      const isModeSwitch =
+        panelTagId === tag._id && panelMode !== mode;
 
-      setEditingTagId(tag._id);
-      setEditDraft(seedDraftFromTag(tag));
+      const baseline = seedDraftFromTag(tag);
 
-      if (isSwitching) {
+      setPanelTagId(tag._id);
+      setPanelMode(mode);
+      setEditDraft(baseline);
+      setEditBaseline(baseline);
+      setEnteredEditFromView(false);
+
+      if (isSwitchingTag) {
         setEditPanelExpanded(true);
         editScrollDelayRef.current = 80;
         pendingEditScrollRef.current = true;
+        return;
+      }
+
+      if (isModeSwitch) {
         return;
       }
 
@@ -207,11 +273,30 @@ const CK_stp_cuisineTag_catalogList = ({
         window.requestAnimationFrame(() => setEditPanelExpanded(true));
       });
     },
-    [editingTagId, closeEdit, clearCloseEditTimer],
+    [panelTagId, panelMode, closePanel, clearCloseEditTimer],
+  );
+
+  const openView = useCallback((tag) => openPanel(tag, "view"), [openPanel]);
+  const openEdit = useCallback((tag) => openPanel(tag, "edit"), [openPanel]);
+  const enablePanelEdit = useCallback(() => {
+    setEnteredEditFromView(true);
+    setPanelMode("edit");
+  }, []);
+
+  const handleRowUpdate = useCallback(
+    (tag) => {
+      if (!tag?._id) return;
+      if (panelTagId === tag._id && panelMode === "view") {
+        enablePanelEdit();
+        return;
+      }
+      openEdit(tag);
+    },
+    [panelTagId, panelMode, enablePanelEdit, openEdit],
   );
 
   useEffect(() => {
-    if (!pendingEditScrollRef.current || !editPanelExpanded || !editingTagId) {
+    if (!pendingEditScrollRef.current || !editPanelExpanded || !panelTagId) {
       return;
     }
 
@@ -233,17 +318,39 @@ const CK_stp_cuisineTag_catalogList = ({
     }, delay);
 
     return () => window.clearTimeout(timer);
-  }, [editPanelExpanded, editingTagId]);
+  }, [editPanelExpanded, panelTagId]);
 
   const handleDraftChange = useCallback((name, value) => {
+    if (panelMode === "view") return;
     setEditDraft((prev) => setByPath(prev, name, value));
-  }, []);
+  }, [panelMode]);
+
+  const isDraftDirty = useMemo(() => {
+    if (!editDraft || !editBaseline) return false;
+    return !areDraftsEqual(editDraft, editBaseline);
+  }, [editDraft, editBaseline]);
+
+  const handlePanelCancel = useCallback(() => {
+    if (panelMode === "view") {
+      closePanel();
+      return;
+    }
+
+    if (enteredEditFromView) {
+      setEditDraft(editBaseline);
+      setPanelMode("view");
+      setEnteredEditFromView(false);
+      return;
+    }
+
+    closePanel();
+  }, [panelMode, enteredEditFromView, editBaseline, closePanel]);
 
   const handleConfirmUpdate = useCallback(async () => {
-    if (!editingTagId || !editDraft) return;
-    const ok = await handlers.onConfirmUpdate?.(editingTagId, editDraft);
-    if (ok) closeEdit();
-  }, [editingTagId, editDraft, handlers, closeEdit]);
+    if (!panelTagId || !editDraft || panelMode === "view" || !isDraftDirty) return;
+    const ok = await handlers.onConfirmUpdate?.(panelTagId, editDraft);
+    if (ok) closePanel();
+  }, [panelTagId, panelMode, editDraft, isDraftDirty, handlers, closePanel]);
 
   const closeFieldModal = useCallback(() => {
     setFieldModal(null);
@@ -309,37 +416,92 @@ const CK_stp_cuisineTag_catalogList = ({
 
         {showFilters ? (
           <div className="cK_stp_cuisineTag_catalogList__selectRow">
-            <Select_static
+            <Select_multi
               optionsType="leftIcon"
               labelProps={{ isActive: true, message: "Kind" }}
-              options={kindFilterOptions}
+              options={kindSelectOptions}
               placeholder="All kinds"
+              emptySummary="All kinds"
               value={kindFilter}
-              onChange={(e) => setKindFilter(e.target.value)}
+              onChange={createMultiFilterChangeHandler(
+                setKindFilter,
+                kindFilterValues,
+              )}
             />
-            <Select_static
+            <Select_multi
               optionsType="leftIcon"
               labelProps={{ isActive: true, message: "Source" }}
-              options={sourceFilterOptions}
+              options={sourceSelectOptions}
               placeholder="All sources"
+              emptySummary="All sources"
               value={sourceFilter}
-              onChange={(e) => setSourceFilter(e.target.value)}
+              onChange={createMultiFilterChangeHandler(
+                setSourceFilter,
+                sourceFilterValues,
+              )}
             />
-            <Select_static
+            <Select_multi
               optionsType="leftIcon"
               labelProps={{ isActive: true, message: "Platform" }}
-              options={platformFilterOptions}
+              options={platformSelectOptions}
               placeholder="All platforms"
+              emptySummary="All platforms"
               value={platformFilter}
-              onChange={(e) => setPlatformFilter(e.target.value)}
+              onChange={createMultiFilterChangeHandler(
+                setPlatformFilter,
+                platformFilterValues,
+              )}
             />
             {hasActiveFilters ? (
-              <button
-                type="button"
-                className="cK_stp_cuisineTag_catalogList__resetFilters"
-                onClick={resetFilters}>
-                Reset filters
-              </button>
+              <div className="cK_stp_cuisineTag_catalogList__filterActions">
+                <button
+                  type="button"
+                  className="cK_stp_cuisineTag_catalogList__resetFilters"
+                  onClick={resetFilters}>
+                  Reset filters
+                </button>
+                <span className="cK_stp_cuisineTag_catalogList__filterCount">
+                  {filteredTags.length} found
+                </span>
+                {selectedFilterIcons.length ? (
+                  <div
+                    className="cK_stp_cuisineTag_catalogList__filterIcons"
+                    aria-label="Active filter selections">
+                    {otherFilterIcons.map((icon) => (
+                      <span
+                        key={icon.key}
+                        className="cK_stp_cuisineTag_catalogList__filterIconWrap"
+                        title={
+                          icon.count != null
+                            ? `${icon.label} (${icon.count})`
+                            : icon.label
+                        }>
+                        <img
+                          className="cK_stp_cuisineTag_catalogList__filterIcon"
+                          src={icon.src}
+                          alt={icon.label}
+                        />
+                        {icon.count != null ? (
+                          <span className="cK_stp_cuisineTag_catalogList__filterIconCount">
+                            {icon.count}
+                          </span>
+                        ) : null}
+                      </span>
+                    ))}
+                    {platformFilterIcons.length ? (
+                      <CK_stp_cuisineTag_platformIconStack
+                        sizeType="sm"
+                        items={platformFilterIcons.map((icon) => ({
+                          key: icon.key,
+                          src: icon.src,
+                          label: icon.label,
+                          count: icon.count,
+                        }))}
+                      />
+                    ) : null}
+                  </div>
+                ) : null}
+              </div>
             ) : null}
           </div>
         ) : null}
@@ -372,12 +534,17 @@ const CK_stp_cuisineTag_catalogList = ({
                 <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__source">
                   Source
                 </span>
+                <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__active">
+                  Status
+                </span>
                 <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__action">
                   Actions
                 </span>
               </li>
               {filteredTags.map((tag, i) => {
-                const isEditing = editingTagId === tag._id;
+                const isPanelOpen = panelTagId === tag._id;
+                const isViewActive = isPanelOpen && panelMode === "view";
+                const isEditing = isPanelOpen && panelMode === "edit";
 
                 return (
                   <Fragment key={tag._id}>
@@ -385,24 +552,29 @@ const CK_stp_cuisineTag_catalogList = ({
                       tag={tag}
                       index={i + 1}
                       mode="manage"
+                      isViewActive={isViewActive}
                       isUpdateActive={isEditing}
                       allowFieldAdd
                       onAddField={openFieldModal}
                       onContinueBuilding={() => openEdit(tag)}
                       onDelete={handlers.onDelete}
-                      onUpdate={() => openEdit(tag)}
-                      onView={handlers.onView}
+                      onUpdate={() => handleRowUpdate(tag)}
+                      onView={() => openView(tag)}
+                      onToggleActive={handlers.onToggleActive}
                     />
-                    {editingTagId === tag._id && editDraft ? (
+                    {isPanelOpen && editDraft ? (
                       <CK_stp_cuisineTag_inlineEditPanel
                         ref={editPanelRef}
                         tag={tag}
                         isExpanded={editPanelExpanded}
+                        readOnly={panelMode === "view"}
+                        isSaveDisabled={!isDraftDirty}
                         states={inlineFormStates}
                         handlers={inlineFormHandlers}
                         t={t}
-                        onCancel={closeEdit}
+                        onCancel={handlePanelCancel}
                         onSubmit={handleConfirmUpdate}
+                        onEnableEdit={enablePanelEdit}
                       />
                     ) : null}
                   </Fragment>

@@ -20,7 +20,7 @@
   gap: 0;
   border-radius: 0.85rem;
   border: 1px solid var(--border-primary-color);
-  background-color: var(--bg-secondary-color);
+  background-color: var(--bg-primary-color-modal);
   box-shadow: 0 4px 24px var(--confirmModal-panel-shadow);
   color: var(--text-primary-color);
   box-sizing: border-box;

@@ -187,7 +187,8 @@
   border-inline-start-color: var(--primary-hint-border);
 }
 
-.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="dessertBeverage"] {
+.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="dessert"],
+.Competitors_tableView_cuisineTypes_draftChip[data-cuisine-kind="beverage"] {
   border-inline-start-color: var(--primary-error-border);
 }
 

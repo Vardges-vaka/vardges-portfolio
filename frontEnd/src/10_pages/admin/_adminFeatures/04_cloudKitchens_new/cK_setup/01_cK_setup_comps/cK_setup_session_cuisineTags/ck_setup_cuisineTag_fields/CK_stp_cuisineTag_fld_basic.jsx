@@ -4,9 +4,18 @@ import {
 } from "../../../../../../../../01_components/_components.index.js";
 import "../../../_styles/cK_setup_session_cuisineTags/ck_setup_cuisineTag_fields/cK_stp_cuisineTag_fld_basic.css";
 
-const CK_stp_cuisineTag_fld_basic = ({ states, handlers, t }) => {
+const CK_stp_cuisineTag_fld_basic = ({ states, handlers, t, readOnly = false }) => {
   const v = states.values ?? {};
+  const fieldErrors = states.fieldErrors ?? {};
   const set = (name) => (e) => handlers.onChange?.(name, e.target.value);
+
+  const valueHint = fieldErrors.value
+    ? { isActive: true, type: "error", message: fieldErrors.value }
+    : { isActive: false };
+
+  const labelHint = fieldErrors.label
+    ? { isActive: true, type: "error", message: fieldErrors.label }
+    : { isActive: false };
 
   return (
     <section className="cK_stp_cuisineTag_fld_basic">
@@ -14,7 +23,9 @@ const CK_stp_cuisineTag_fld_basic = ({ states, handlers, t }) => {
       <div className="cK_setup_form_row">
         <Input_text
           required
+          disabled={readOnly}
           labelProps={{ isActive: true, message: "Value (slug)" }}
+          hintsProps={valueHint}
           value={v.value ?? ""}
           onChange={set("value")}
           placeholder="e.g. italian"
@@ -24,7 +35,9 @@ const CK_stp_cuisineTag_fld_basic = ({ states, handlers, t }) => {
         />
         <Input_text
           required
+          disabled={readOnly}
           labelProps={{ isActive: true, message: "Label" }}
+          hintsProps={labelHint}
           value={v.label ?? ""}
           onChange={set("label")}
           placeholder="e.g. Italian"
@@ -35,6 +48,7 @@ const CK_stp_cuisineTag_fld_basic = ({ states, handlers, t }) => {
       </div>
 
       <Input_textArea
+        disabled={readOnly}
         labelProps={{ isActive: true, message: "Description" }}
         maxLength={2000}
         lengthProps={{ isActive: true }}

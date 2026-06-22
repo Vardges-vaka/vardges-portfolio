@@ -150,6 +150,53 @@
   color: var(--btn-primary-text-color-HOV);
 }
 
+.cK_brandRow_actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.cK_brandRow_actionBtn {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 0.45rem;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cK_brandRow_actionBtn:hover:not(:disabled) {
+  border-color: var(--btn-primary-border-color);
+  color: var(--btn-primary-bg-color);
+}
+
+.cK_brandRow_actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cK_brandRow_actionBtn_danger:hover:not(:disabled) {
+  border-color: var(--btn-danger-border-color, var(--btn-primary-border-color));
+  color: var(--btn-danger-bg-color, var(--btn-primary-bg-color));
+}
+
+.cK_brandRow_deleteModalBody {
+  color: var(--text-primary-color);
+}
+
+.cK_brandRow_deleteModalBody p {
+  margin: 0;
+}
+
 @media (max-width: 640px) {
   .cK_brandRow {
     grid-template-columns: auto 1fr;

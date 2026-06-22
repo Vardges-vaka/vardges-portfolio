@@ -2,7 +2,6 @@ export { VALID_SESSIONS } from "./session_cnst.js";
 export {
   DFLT_F_D_CHANNEL,
   DFLT_F_D_CHANNEL_FULL,
-  DFLT_F_D_CUISINE_TAG,
   DFLT_F_D_CUISINE_TAG_FULL,
   DFLT_F_D_SALES_PLATFORM,
   DFLT_F_D_SALES_PLATFORM_FULL,
@@ -13,6 +12,7 @@ export {
   DFLT_F_D_BRAND_INITIAL,
   DFLT_F_D_BRAND_FULL,
   DFLT_F_D_FILES,
+  FILES_USED_IN_OPTIONS,
 } from "./default_formData.js";
 export {
   PRICE_RANGE_OPTIONS,
@@ -22,7 +22,6 @@ export {
 export { TAGLINE_INFO } from "./info_cnst.js";
 
 export {
-  SAMPLE_CUISINE_TAGS,
   AGGREGATOR_PLATFORMS,
   CUISINE_TYPES,
   CUISINE_TAG_SOURCE_OPTIONS,

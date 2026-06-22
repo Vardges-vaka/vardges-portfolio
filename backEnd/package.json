@@ -15,7 +15,8 @@
     "r2:ping": "node scripts/r2BucketPing.mjs",
     "r2:monitor:ping": "node scripts/r2MonitorPing.mjs",
     "msft:ping":         "node scripts/msftBucketPing.mjs",
-    "msft:monitor:ping": "node scripts/msftMonitorPing.mjs"
+    "msft:monitor:ping": "node scripts/msftMonitorPing.mjs",
+    "seed:cuisineTags": "node scripts/seedCuisineTags.mjs"
   },
   "author": "Vardges Petrosyan",
   "license": "ISC",

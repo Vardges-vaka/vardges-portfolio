@@ -1,16 +1,31 @@
+import { useState } from "react";
 import {
   CUISINE_TYPES,
   AGGREGATOR_PLATFORMS,
   CUISINE_TAG_SOURCE_OPTIONS,
 } from "../../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
 import { CUISINE_TAG_SOURCE_ICONS } from "../../tempIcons/_.index.js";
+import { isCuisineTagDeleted } from "../../../02_cK_setup_hlpr/cuisineTagAudit_hlpr.js";
+import CK_stp_cuisineTag_platformIconStack from "../../cK_setup_shared/CK_stp_cuisineTag_platformIconStack.jsx";
+import { Toggler } from "../../../../../../../../01_components/_components.index.js";
 import { Trash2, Eye, Pencil, Plus, CirclePlus } from "lucide-react";
 import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_cuisineTagRow.css";
 
 const ICON_SIZE_PX = 50;
 const ACTION_ICON_SIZE_PX = 16;
 const ADD_FIELD_ICON_SIZE_PX = 28;
-const PLATFORM_ADD_MORE_THRESHOLD = 5;
+const DESC_MAX_LEN = 250;
+
+const truncateDescription = (text, maxLen = DESC_MAX_LEN) => {
+  if (!text || text.length <= maxLen) {
+    return { preview: text, isTruncated: false };
+  }
+
+  return {
+    preview: `${text.slice(0, maxLen).trimEnd()}…`,
+    isTruncated: true,
+  };
+};
 
 const kindMeta = (kind) =>
   CUISINE_TYPES.find((ct) => ct.value === kind) || {
@@ -72,6 +87,8 @@ const CK_stp_brand_cuisineTagRow = ({
   onDelete,
   onUpdate,
   onView,
+  onToggleActive,
+  isViewActive = false,
   isUpdateActive = false,
   allowFieldAdd = false,
   onAddField,
@@ -81,6 +98,13 @@ const CK_stp_brand_cuisineTagRow = ({
   const platforms = resolvePlatforms(tag?.platforms);
   const label = tag?.label?.trim?.() || "";
   const description = tag?.description?.trim?.() || "";
+  const { preview: descriptionPreview, isTruncated: isDescriptionTruncated } =
+    truncateDescription(description);
+  const [platformExtraSlots, setPlatformExtraSlots] = useState(0);
+
+  const handlePlatformOpenChange = (isOpen, { extraSlotCount = 0 } = {}) => {
+    setPlatformExtraSlots(isOpen ? extraSlotCount : 0);
+  };
 
   const hasDescription = Boolean(description);
   const hasPlatforms = platforms.length > 0;
@@ -88,10 +112,11 @@ const CK_stp_brand_cuisineTagRow = ({
 
   const openFieldAdd = (field) => () => onAddField?.(tag, field);
   const tagName = label || tag?.value || "tag";
-  const canAddPlatforms =
-    allowFieldAdd && onAddField && platforms.length < PLATFORM_ADD_MORE_THRESHOLD;
+  const canAddPlatforms = allowFieldAdd && Boolean(onAddField);
   const isAssigned = mode === "assigned";
   const isManage = mode === "manage";
+  const isView = mode === "view";
+  const isDeleted = isManage && isCuisineTagDeleted(tag);
   const actionLabel = isAssigned
     ? `Remove ${label || tag?.value || "tag"}`
     : `Add ${label || tag?.value || "tag"}`;
@@ -102,8 +127,14 @@ const CK_stp_brand_cuisineTagRow = ({
         "cK_stp_brand_cuisineTagRow" +
         (isAssigned ? " cK_stp_brand_cuisineTagRow--assigned" : "") +
         (isManage ? " cK_stp_brand_cuisineTagRow--manage" : "") +
-        (isUpdateActive ? " cK_stp_brand_cuisineTagRow--editing" : "")
-      }>
+        (isView ? " cK_stp_brand_cuisineTagRow--view" : "") +
+        (isViewActive ? " cK_stp_brand_cuisineTagRow--viewing" : "") +
+        (isUpdateActive ? " cK_stp_brand_cuisineTagRow--editing" : "") +
+        (isDeleted ? " cK_stp_brand_cuisineTagRow--deleted" : "") +
+        (isDescriptionTruncated ? " cK_stp_brand_cuisineTagRow--descTruncated" : "") +
+        (platformExtraSlots > 0 ? " cK_stp_brand_cuisineTagRow--platformsOpen" : "")
+      }
+      style={{ "--cK_platformStack-extra-slots": platformExtraSlots }}>
       <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__index">
         {index}
       </span>
@@ -143,7 +174,18 @@ const CK_stp_brand_cuisineTagRow = ({
         }
         title={description || "Missing description"}>
         {hasDescription ? (
-          description
+          isDescriptionTruncated ? (
+            <>
+              <span className="cK_stp_brand_cuisineTagRow__descPreview">
+                {descriptionPreview}
+              </span>
+              <span className="cK_stp_brand_cuisineTagRow__descFull">
+                {description}
+              </span>
+            </>
+          ) : (
+            description
+          )
         ) : allowFieldAdd && onAddField ? (
           <AddFieldIconBtn
             label={`Add description for ${tagName}`}
@@ -156,37 +198,30 @@ const CK_stp_brand_cuisineTagRow = ({
 
       <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__platforms">
         {hasPlatforms || canAddPlatforms ? (
-          <span className="cK_stp_brand_cuisineTagRow__platformIcons">
-            {platforms.map((platform) =>
-              platform.logo ? (
-                <img
-                  key={platform.value}
-                  className="cK_stp_brand_cuisineTagRow__icon"
-                  src={platform.logo}
-                  alt={platform.label}
-                  title={platform.label}
-                  width={ICON_SIZE_PX}
-                  height={ICON_SIZE_PX}
+          <CK_stp_cuisineTag_platformIconStack
+            items={platforms.map((platform) => ({
+              key: platform.value,
+              src: platform.logo,
+              label: platform.label,
+            }))}
+            canAdd={canAddPlatforms}
+            onOpenChange={handlePlatformOpenChange}
+            iconClassName="cK_stp_brand_cuisineTagRow__icon"
+            missingIconClassName="cK_stp_brand_cuisineTagRow__missingIcon"
+            addSlot={
+              canAddPlatforms ? (
+                <AddFieldIconBtn
+                  variant={hasPlatforms ? "more" : "add"}
+                  label={
+                    hasPlatforms
+                      ? `Add more platforms for ${tagName}`
+                      : `Add platforms for ${tagName}`
+                  }
+                  onClick={openFieldAdd("platforms")}
                 />
-              ) : (
-                <MissingIcon
-                  key={platform.value}
-                  title={platform.label || "Missing platform"}
-                />
-              ),
-            )}
-            {canAddPlatforms ? (
-              <AddFieldIconBtn
-                variant={hasPlatforms ? "more" : "add"}
-                label={
-                  hasPlatforms
-                    ? `Add more platforms for ${tagName}`
-                    : `Add platforms for ${tagName}`
-                }
-                onClick={openFieldAdd("platforms")}
-              />
-            ) : null}
-          </span>
+              ) : null
+            }
+          />
         ) : (
           <MissingIcon title="Missing platforms" />
         )}
@@ -213,58 +248,68 @@ const CK_stp_brand_cuisineTagRow = ({
         )}
       </span>
 
-      <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__action">
-        {isManage ? (
-          <span className="cK_stp_brand_cuisineTagRow__actions">
+      {isManage ? (
+        <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__active">
+          <Toggler
+            sizeType="lg"
+            checked={tag?.isActive !== false}
+            onChange={(e) => onToggleActive?.(tag, e.target.checked)}
+            aria-label={`Toggle active state for ${tagName}`}
+          />
+        </span>
+      ) : null}
 
-            <button
-              type="button"
-              className="cK_stp_brand_cuisineTagRow__btn cK_stp_brand_cuisineTagRow__btn--delete cK_stp_brand_cuisineTagRow__btn--icon"
-              aria-label={`Delete ${label || tag?.value || "tag"}`}
-              title="Delete"
-              onClick={() => onDelete?.(tag)}>
-              <Trash2 size={ACTION_ICON_SIZE_PX} aria-hidden="true" />
-            </button>
+      {!isView ? (
+        <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__action">
+          {isManage ? (
+            <span className="cK_stp_brand_cuisineTagRow__actions">
+              <button
+                type="button"
+                className={
+                  "cK_stp_brand_cuisineTagRow__btn cK_stp_brand_cuisineTagRow__btn--update cK_stp_brand_cuisineTagRow__btn--icon" +
+                  (isUpdateActive
+                    ? " cK_stp_brand_cuisineTagRow__btn--updateActive"
+                    : "")
+                }
+                aria-label={`Update ${label || tag?.value || "tag"}`}
+                aria-pressed={isUpdateActive}
+                title="Update"
+                onClick={() => onUpdate?.(tag)}>
+                <Pencil size={ACTION_ICON_SIZE_PX} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                className={
+                  "cK_stp_brand_cuisineTagRow__btn cK_stp_brand_cuisineTagRow__btn--view cK_stp_brand_cuisineTagRow__btn--icon" +
+                  (isViewActive
+                    ? " cK_stp_brand_cuisineTagRow__btn--viewActive"
+                    : "")
+                }
+                aria-label={`View ${label || tag?.value || "tag"}`}
+                aria-pressed={isViewActive}
+                title="View"
+                onClick={() => onView?.(tag)}>
+                <Eye size={ACTION_ICON_SIZE_PX} aria-hidden="true" />
+              </button>
+            </span>
+          ) : (
             <button
               type="button"
               className={
-                "cK_stp_brand_cuisineTagRow__btn cK_stp_brand_cuisineTagRow__btn--update cK_stp_brand_cuisineTagRow__btn--icon" +
-                (isUpdateActive
-                  ? " cK_stp_brand_cuisineTagRow__btn--updateActive"
-                  : "")
+                "cK_stp_brand_cuisineTagRow__btn" +
+                (isAssigned
+                  ? " cK_stp_brand_cuisineTagRow__btn--remove"
+                  : " cK_stp_brand_cuisineTagRow__btn--add")
               }
-              aria-label={`Update ${label || tag?.value || "tag"}`}
-              aria-pressed={isUpdateActive}
-              title="Update"
-              onClick={() => onUpdate?.(tag)}>
-              <Pencil size={ACTION_ICON_SIZE_PX} aria-hidden="true" />
+              aria-label={actionLabel}
+              onClick={() =>
+                isAssigned ? onRemove?.(tag?._id) : onAdd?.(tag?._id)
+              }>
+              {isAssigned ? "Remove" : "Add"}
             </button>
-            <button
-              type="button"
-              className="cK_stp_brand_cuisineTagRow__btn cK_stp_brand_cuisineTagRow__btn--view cK_stp_brand_cuisineTagRow__btn--icon"
-              aria-label={`View ${label || tag?.value || "tag"}`}
-              title="View"
-              onClick={() => onView?.(tag)}>
-              <Eye size={ACTION_ICON_SIZE_PX} aria-hidden="true" />
-            </button>
-          </span>
-        ) : (
-          <button
-            type="button"
-            className={
-              "cK_stp_brand_cuisineTagRow__btn" +
-              (isAssigned
-                ? " cK_stp_brand_cuisineTagRow__btn--remove"
-                : " cK_stp_brand_cuisineTagRow__btn--add")
-            }
-            aria-label={actionLabel}
-            onClick={() =>
-              isAssigned ? onRemove?.(tag?._id) : onAdd?.(tag?._id)
-            }>
-            {isAssigned ? "Remove" : "Add"}
-          </button>
-        )}
-      </span>
+          )}
+        </span>
+      ) : null}
     </li>
   );
 };

@@ -1,6 +1,12 @@
 import { useCallback } from "react";
-import { setByPath } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
-import { DFLT_F_D_CUISINE_TAG } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
+import {
+  setByPath,
+  validateCuisineTagCreate,
+  buildCuisineTagValueFieldError,
+} from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
+import { DFLT_F_D_CUISINE_TAG_FULL } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
+
+const EMPTY_FORM_ERRORS = {};
 
 export const useCK_setup_cuisineTags_handlers = ({
   states,
@@ -35,25 +41,63 @@ export const useCK_setup_cuisineTags_handlers = ({
   }, [fetchAll, TOAST]);
 
   const handleAddnew = useCallback(async () => {
+    setters.setCuisineTagFormData(DFLT_F_D_CUISINE_TAG_FULL);
+    setters.setCuisineTagFormErrors(EMPTY_FORM_ERRORS);
     setters.setActiveOperation("adding");
-  }, [setters.setActiveOperation]);
+  }, [
+    setters.setActiveOperation,
+    setters.setCuisineTagFormData,
+    setters.setCuisineTagFormErrors,
+  ]);
 
-  // ── Initial create ──────────────────────────────────────
   const handleFormChange = useCallback(
     (name, value) => {
       setters.setCuisineTagFormData((prev) => setByPath(prev, name, value));
+      setters.setCuisineTagFormErrors((prev) => {
+        const next = { ...prev };
+
+        if (name === "value") {
+          const valueError = buildCuisineTagValueFieldError(
+            value,
+            states.cuisineTags,
+          );
+          if (valueError) next.value = valueError;
+          else delete next.value;
+          return next;
+        }
+
+        if (next[name]) {
+          delete next[name];
+        }
+        return next;
+      });
     },
-    [setters.setCuisineTagFormData],
+    [setters.setCuisineTagFormData, setters.setCuisineTagFormErrors, states.cuisineTags],
   );
 
   const handleCreateSubmit = useCallback(async () => {
+    const validation = validateCuisineTagCreate(
+      states.cuisineTagFormData,
+      states.cuisineTags,
+    );
+
+    if (!validation.isValid) {
+      setters.setCuisineTagFormErrors(validation.errors);
+      TOAST.error({
+        title: "Could not create cuisine tag",
+        message: validation.message || "Fix the highlighted fields and try again.",
+      });
+      return;
+    }
+
     const res = await apiHelpers.cuisTag_create(states.cuisineTagFormData);
     if (res?.success) {
       TOAST.success({
         title: "Cuisine Tag Created",
         message: res.message || "Created successfully",
       });
-      setters.setCuisineTagFormData(DFLT_F_D_CUISINE_TAG);
+      setters.setCuisineTagFormData(DFLT_F_D_CUISINE_TAG_FULL);
+      setters.setCuisineTagFormErrors(EMPTY_FORM_ERRORS);
       setters.setActiveOperation("viewing");
       await fetchAll();
     } else {
@@ -65,16 +109,23 @@ export const useCK_setup_cuisineTags_handlers = ({
   }, [
     apiHelpers.cuisTag_create,
     states.cuisineTagFormData,
+    states.cuisineTags,
     setters.setCuisineTagFormData,
+    setters.setCuisineTagFormErrors,
     setters.setActiveOperation,
     TOAST,
     fetchAll,
   ]);
 
   const handleCancelAdd = useCallback(() => {
-    setters.setCuisineTagFormData(DFLT_F_D_CUISINE_TAG);
+    setters.setCuisineTagFormData(DFLT_F_D_CUISINE_TAG_FULL);
+    setters.setCuisineTagFormErrors(EMPTY_FORM_ERRORS);
     setters.setActiveOperation("viewing");
-  }, [setters.setCuisineTagFormData, setters.setActiveOperation]);
+  }, [
+    setters.setCuisineTagFormData,
+    setters.setCuisineTagFormErrors,
+    setters.setActiveOperation,
+  ]);
 
   // ── Inline row update (viewAll catalog) ─────────────────
   const handleInlineUpdateSubmit = useCallback(
@@ -112,9 +163,40 @@ export const useCK_setup_cuisineTags_handlers = ({
       kind: tag?.kind ?? "",
       source: tag?.source ?? "",
       platforms: Array.isArray(tag?.platforms) ? tag.platforms : [],
+      isActive: tag?.isActive !== false,
       ...overrides,
     };
   }, []);
+
+  const handleToggleActive = useCallback(
+    async (tag, nextActive) => {
+      if (!tag?._id) {
+        TOAST.error({ title: "Update failed", message: "Tag not found" });
+        return false;
+      }
+
+      const res = await apiHelpers.cuisTag_updateAll({
+        id: tag._id,
+        ...buildTagUpdatePayload(tag, { isActive: nextActive }),
+      });
+
+      if (res?.success) {
+        TOAST.success({
+          title: nextActive ? "Tag activated" : "Tag deactivated",
+          message: res.message || "Status updated successfully",
+        });
+        await fetchAll();
+        return true;
+      }
+
+      TOAST.error({
+        title: "Update failed",
+        message: res?.message || "Could not update status",
+      });
+      return false;
+    },
+    [apiHelpers.cuisTag_updateAll, buildTagUpdatePayload, TOAST, fetchAll],
+  );
 
   const handleAddTagField = useCallback(
     async (tagId, field, value) => {
@@ -172,6 +254,7 @@ export const useCK_setup_cuisineTags_handlers = ({
       handleCancelAdd,
       handleInlineUpdateSubmit,
       handleAddTagField,
+      handleToggleActive,
     },
   };
 };

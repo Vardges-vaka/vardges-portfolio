@@ -7,7 +7,11 @@ export const cK_gen_cuisineTag_getAll_srv = async (req, isDebug) => {
   isDebug && console.log(`▄︻デ══━一💥${displayName}[STARTED]`);
 
   try {
-    const cuisineTags = await CuisineTag.find().lean();
+    const cuisineTags = await CuisineTag.find()
+      .populate("createdBy", "name email")
+      .populate("updatedBy", "name email")
+      .populate("deletedBy", "name email")
+      .lean();
 
     isDebug &&
       console.log(`✅${displayName}Fetched ${cuisineTags.length} tag(s)`);

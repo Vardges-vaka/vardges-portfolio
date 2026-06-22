@@ -4,65 +4,63 @@ import {
   AGGREGATOR_PLATFORMS,
   CUISINE_TAG_SOURCE_OPTIONS,
 } from "../../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
+import {
+  normalizeCuisineTagIds,
+} from "../../../02_cK_setup_hlpr/brandDetail_helpers.js";
+import {
+  tagMatchesFilters,
+  hasActiveCuisineTagFilters,
+  buildFilterOptionsWithSelectAll,
+  createMultiFilterChangeHandler,
+  getFilterOptionValues,
+  shouldShowSelectAllForFilter,
+  collectSelectedFilterIcons,
+} from "../../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
 import { CUISINE_TAG_SOURCE_ICONS } from "../../tempIcons/_.index.js";
 import CK_stp_brand_cuisineTagRow from "./CK_stp_brand_cuisineTagRow.jsx";
+import CK_stp_cuisineTag_platformIconStack from "../../cK_setup_shared/CK_stp_cuisineTag_platformIconStack.jsx";
 import {
-  Select_static,
+  Select_multi,
   Input_search,
 } from "../../../../../../../../01_components/_components.index.js";
 import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_cuisineTags.css";
 
-const normalizeAssignedIds = (tags = []) =>
-  (Array.isArray(tags) ? tags : [])
-    .map((item) => (typeof item === "string" ? item : item?._id))
+const normalizeAssignedIds = normalizeCuisineTagIds;
+
+const resolveAssignedTagRecords = (rawItems = [], catalogById) =>
+  (Array.isArray(rawItems) ? rawItems : [])
+    .map((item) => {
+      if (item && typeof item === "object" && item._id) {
+        const fromCatalog = catalogById.get(item._id);
+        return fromCatalog ? { ...fromCatalog, ...item } : item;
+      }
+
+      const id = typeof item === "string" ? item : item?._id;
+      if (!id) return null;
+
+      return (
+        catalogById.get(id) || {
+          _id: id,
+          label: id,
+          value: id,
+        }
+      );
+    })
     .filter(Boolean);
 
 const svgLeftIcon = (src) => (src ? { type: "svg", svg_src: src } : null);
 
-const withAllOption = (allLabel, items) => [
-  { value: "all", label: allLabel },
-  ...items,
-];
-
-const tagMatchesFilters = (
-  tag,
-  { search, kindFilter, sourceFilter, platformFilter },
-) => {
-  if (kindFilter !== "all" && tag.kind !== kindFilter) return false;
-  if (sourceFilter !== "all" && tag.source !== sourceFilter) return false;
-
-  if (platformFilter !== "all") {
-    const tagPlatforms = Array.isArray(tag.platforms) ? tag.platforms : [];
-    if (!tagPlatforms.includes(platformFilter)) return false;
-  }
-
-  const needle = search.trim().toLowerCase();
-  if (!needle) return true;
-
-  const haystack = [
-    tag.label,
-    tag.value,
-    tag.description,
-    tag.kind,
-    tag.source,
-    ...(tag.platforms || []),
-  ]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-
-  return haystack.includes(needle);
-};
-
-const CuisineTagList = ({ title, tags, mode, emptyMessage, handlers }) => (
+const CuisineTagList = ({ title, tags, emptyMessage }) => (
   <div className="cK_stp_brand_fld_cuisineTags__listBlock">
-    <h5 className="cK_stp_brand_fld_cuisineTags__listTitle">{title}</h5>
+    {title ? (
+      <h5 className="cK_stp_brand_fld_cuisineTags__listTitle">{title}</h5>
+    ) : null}
     {tags.length === 0 ? (
       <p className="cK_stp_brand_fld_cuisineTags__empty">{emptyMessage}</p>
     ) : (
       <div className="cK_stp_brand_fld_cuisineTags__tableWrap">
         <ul className="cK_stp_brand_fld_cuisineTags__table">
-          <li className="cK_stp_brand_cuisineTagRow cK_stp_brand_cuisineTagRow--head">
+          <li className="cK_stp_brand_cuisineTagRow cK_stp_brand_cuisineTagRow--head cK_stp_brand_cuisineTagRow--view">
             <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__index">
               #
             </span>
@@ -81,18 +79,13 @@ const CuisineTagList = ({ title, tags, mode, emptyMessage, handlers }) => (
             <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__source">
               Source
             </span>
-            <span className="cK_stp_brand_cuisineTagRow__cell cK_stp_brand_cuisineTagRow__action">
-              {mode === "assigned" ? "Remove" : "Add"}
-            </span>
           </li>
           {tags.map((tag, i) => (
             <CK_stp_brand_cuisineTagRow
               key={tag._id}
               tag={tag}
               index={i + 1}
-              mode={mode}
-              onAdd={handlers.onAddCuisineTag}
-              onRemove={handlers.onRemoveCuisineTag}
+              mode="view"
             />
           ))}
         </ul>
@@ -101,57 +94,103 @@ const CuisineTagList = ({ title, tags, mode, emptyMessage, handlers }) => (
   </div>
 );
 
-const CK_stp_brand_fld_cuisineTags = ({ states, handlers }) => {
+const CK_stp_brand_fld_cuisineTags = ({ states }) => {
   const catalog = states.cuisineTags ?? [];
+  const assignedSource = useMemo(() => {
+    const linked = states.linkedCuisineTags;
+    if (Array.isArray(linked) && linked.length) return linked;
+    return states.values?.cuisineTags ?? [];
+  }, [states.linkedCuisineTags, states.values?.cuisineTags]);
+
   const assignedIds = useMemo(
-    () => new Set(normalizeAssignedIds(states.values?.cuisineTags)),
-    [states.values?.cuisineTags],
+    () => new Set(normalizeAssignedIds(assignedSource)),
+    [assignedSource],
   );
 
   const [search, setSearch] = useState("");
-  const [kindFilter, setKindFilter] = useState("all");
-  const [sourceFilter, setSourceFilter] = useState("all");
-  const [platformFilter, setPlatformFilter] = useState("all");
+  const [kindFilter, setKindFilter] = useState([]);
+  const [sourceFilter, setSourceFilter] = useState([]);
+  const [platformFilter, setPlatformFilter] = useState([]);
+  const [showFilters, setShowFilters] = useState(false);
 
   const filters = { search, kindFilter, sourceFilter, platformFilter };
 
   const kindFilterOptions = useMemo(
     () =>
-      withAllOption(
-        "All kinds",
-        CUISINE_TYPES.map((ct) => ({
-          value: ct.value,
-          label: ct.label,
-          leftIcon: svgLeftIcon(ct.logo),
-        })),
-      ),
+      CUISINE_TYPES.map((ct) => ({
+        value: ct.value,
+        label: ct.label,
+        leftIcon: svgLeftIcon(ct.logo),
+      })),
     [],
   );
 
   const sourceFilterOptions = useMemo(
     () =>
-      withAllOption(
-        "All sources",
-        CUISINE_TAG_SOURCE_OPTIONS.map((src) => ({
-          value: src.value,
-          label: src.label,
-          leftIcon: svgLeftIcon(CUISINE_TAG_SOURCE_ICONS[src.value]),
-        })),
-      ),
+      CUISINE_TAG_SOURCE_OPTIONS.map((src) => ({
+        value: src.value,
+        label: src.label,
+        leftIcon: svgLeftIcon(CUISINE_TAG_SOURCE_ICONS[src.value]),
+      })),
     [],
   );
 
   const platformFilterOptions = useMemo(
     () =>
-      withAllOption(
-        "All platforms",
-        AGGREGATOR_PLATFORMS.map((platform) => ({
-          value: platform.value,
-          label: platform.label,
-          leftIcon: svgLeftIcon(platform.logo),
-        })),
-      ),
+      AGGREGATOR_PLATFORMS.map((platform) => ({
+        value: platform.value,
+        label: platform.label,
+        leftIcon: svgLeftIcon(platform.logo),
+      })),
     [],
+  );
+
+  const kindFilterValues = useMemo(
+    () => getFilterOptionValues(kindFilterOptions),
+    [kindFilterOptions],
+  );
+
+  const sourceFilterValues = useMemo(
+    () => getFilterOptionValues(sourceFilterOptions),
+    [sourceFilterOptions],
+  );
+
+  const platformFilterValues = useMemo(
+    () => getFilterOptionValues(platformFilterOptions),
+    [platformFilterOptions],
+  );
+
+  const showKindSelectAll = shouldShowSelectAllForFilter(
+    sourceFilter,
+    platformFilter,
+  );
+  const showSourceSelectAll = shouldShowSelectAllForFilter(
+    kindFilter,
+    platformFilter,
+  );
+  const showPlatformSelectAll = shouldShowSelectAllForFilter(
+    kindFilter,
+    sourceFilter,
+  );
+
+  const kindSelectOptions = useMemo(
+    () => buildFilterOptionsWithSelectAll(kindFilterOptions, showKindSelectAll),
+    [kindFilterOptions, showKindSelectAll],
+  );
+
+  const sourceSelectOptions = useMemo(
+    () =>
+      buildFilterOptionsWithSelectAll(sourceFilterOptions, showSourceSelectAll),
+    [sourceFilterOptions, showSourceSelectAll],
+  );
+
+  const platformSelectOptions = useMemo(
+    () =>
+      buildFilterOptionsWithSelectAll(
+        platformFilterOptions,
+        showPlatformSelectAll,
+      ),
+    [platformFilterOptions, showPlatformSelectAll],
   );
 
   const catalogById = useMemo(() => {
@@ -162,13 +201,55 @@ const CK_stp_brand_fld_cuisineTags = ({ states, handlers }) => {
     return map;
   }, [catalog]);
 
+  const assignedTagPool = useMemo(
+    () =>
+      resolveAssignedTagRecords(assignedSource, catalogById).sort((a, b) =>
+        (a.label || "").localeCompare(b.label || ""),
+      ),
+    [assignedSource, catalogById],
+  );
+
+  const selectedFilterIcons = useMemo(
+    () =>
+      collectSelectedFilterIcons({
+        kindFilter,
+        sourceFilter,
+        platformFilter,
+        kindOptions: kindFilterOptions,
+        sourceOptions: sourceFilterOptions,
+        platformOptions: platformFilterOptions,
+        tags: assignedTagPool,
+        filters,
+      }),
+    [
+      kindFilter,
+      sourceFilter,
+      platformFilter,
+      kindFilterOptions,
+      sourceFilterOptions,
+      platformFilterOptions,
+      assignedTagPool,
+      search,
+    ],
+  );
+
+  const otherFilterIcons = useMemo(
+    () =>
+      selectedFilterIcons.filter((icon) => icon.filterType !== "platform"),
+    [selectedFilterIcons],
+  );
+
+  const platformFilterIcons = useMemo(
+    () => selectedFilterIcons.filter((icon) => icon.filterType === "platform"),
+    [selectedFilterIcons],
+  );
+
   const assignedTags = useMemo(() => {
-    return [...assignedIds]
-      .map((id) => catalogById.get(id) || { _id: id, label: id, value: id })
+    return resolveAssignedTagRecords(assignedSource, catalogById)
       .filter((tag) => tagMatchesFilters(tag, filters))
       .sort((a, b) => (a.label || "").localeCompare(b.label || ""));
   }, [
-    assignedIds,
+    assignedSource,
     catalogById,
     search,
     kindFilter,
@@ -176,147 +257,144 @@ const CK_stp_brand_fld_cuisineTags = ({ states, handlers }) => {
     platformFilter,
   ]);
 
-  const availableTags = useMemo(() => {
-    return catalog
-      .filter((tag) => {
-        if (!tag?._id || assignedIds.has(tag._id)) return false;
-        return tagMatchesFilters(tag, filters);
-      })
-      .sort((a, b) => (a.label || "").localeCompare(b.label || ""));
-  }, [catalog, assignedIds, search, kindFilter, sourceFilter, platformFilter]);
-
-  const emptyCatalog = catalog.length === 0;
-  const hasActiveFilters =
-    search.trim() ||
-    kindFilter !== "all" ||
-    sourceFilter !== "all" ||
-    platformFilter !== "all";
+  const hasActiveFilters = hasActiveCuisineTagFilters(filters);
 
   const resetFilters = () => {
     setSearch("");
-    setKindFilter("all");
-    setSourceFilter("all");
-    setPlatformFilter("all");
+    setKindFilter([]);
+    setSourceFilter([]);
+    setPlatformFilter([]);
   };
-  const [showfilters, setShowfilters] = useState(false);
-  const handleShowfilters = () => {
-    setShowfilters(!showfilters);
-    resetFilters();
-  };
-  const [showAvailable, setShowAvailable] = useState(false);
-  const handleShowAvailable = () => {
-    setShowAvailable(!showAvailable);
-  };
+
+  const showSearchPanel = Boolean(states.cuisineTagsSearchOpen);
+
   return (
     <section className="cK_stp_brand_fld_cuisineTags">
-      <div className="cK_setup_form_sectionHead">
-        <div>
-          <h4 className="cK_setup_form_sectionTitle">Cuisine Tags</h4>
-          <p className="cK_stp_brand_fld_cuisineTags__subtitle">
-            Link catalog tags to this brand.
-          </p>
-        </div>
-        <div className="cK_stp_brand_fld_cuisineTags__stats">
-          <span className="cK_stp_brand_fld_cuisineTags__stat">
-            <strong>{assignedIds.size}</strong> on brand
-          </span>
-          <span className="cK_stp_brand_fld_cuisineTags__stat">
-            <strong>{availableTags.length}</strong> available
-          </span>
-        </div>
-      </div>
-
       <div className="cK_stp_brand_fld_cuisineTags__filters">
-        <CuisineTagList
-          title="On this brand"
-          tags={assignedTags}
-          mode="assigned"
-          emptyMessage={
-            hasActiveFilters
-              ? "No assigned tags match the current filters."
-              : "No cuisine tags linked yet. Add tags from the catalog below."
-          }
-          handlers={handlers}
-        />
-        <button
-          type="button"
-          className="cK_stp_brand_fld_cuisineTags__clearSearch"
-          onClick={handleShowAvailable}>
-          See available
-        </button>
-        {showAvailable && (
-          <div className="cK_stp_brand_fld_cuisineTags__filters">
-            <Input_search
-              labelProps={{ isActive: false }}
-              placeholder="Search cuisine tags…"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              onClear={() => setSearch("")}
-              secondaryRightIconProps={{
-                isActive: true,
-                type: "lucide",
-                lucidIcon: "SlidersHorizontal",
-                title: "Open filters",
-                onClick: handleShowfilters,
-              }}
+        {showSearchPanel ? (
+          <Input_search
+            labelProps={{ isActive: false }}
+            placeholder="Search linked tags…"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onClear={() => setSearch("")}
+            secondaryRightIconProps={{
+              isActive: true,
+              type: "lucide",
+              lucidIcon: "SlidersHorizontal",
+              title: showFilters ? "Hide filters" : "Show filters",
+              onClick: () => setShowFilters((prev) => !prev),
+            }}
+          />
+        ) : null}
+
+        {showSearchPanel && showFilters ? (
+          <div className="cK_stp_brand_fld_cuisineTags__selectRow">
+            <Select_multi
+              optionsType="leftIcon"
+              labelProps={{ isActive: true, message: "Kind" }}
+              options={kindSelectOptions}
+              placeholder="All kinds"
+              emptySummary="All kinds"
+              value={kindFilter}
+              onChange={createMultiFilterChangeHandler(
+                setKindFilter,
+                kindFilterValues,
+              )}
             />
-            {showfilters && (
-              <div className="cK_stp_brand_fld_cuisineTags__selectRow">
-                <Select_static
-                  optionsType="leftIcon"
-                  labelProps={{ isActive: true, message: "Kind" }}
-                  options={kindFilterOptions}
-                  placeholder="All kinds"
-                  value={kindFilter}
-                  onChange={(e) => setKindFilter(e.target.value)}
-                />
-                <Select_static
-                  optionsType="leftIcon"
-                  labelProps={{ isActive: true, message: "Source" }}
-                  options={sourceFilterOptions}
-                  placeholder="All sources"
-                  value={sourceFilter}
-                  onChange={(e) => setSourceFilter(e.target.value)}
-                />
-                <Select_static
-                  optionsType="leftIcon"
-                  labelProps={{ isActive: true, message: "Platform" }}
-                  options={platformFilterOptions}
-                  placeholder="All platforms"
-                  value={platformFilter}
-                  onChange={(e) => setPlatformFilter(e.target.value)}
-                />
-                {hasActiveFilters ? (
-                  <button
-                    type="button"
-                    className="cK_stp_brand_fld_cuisineTags__resetFilters"
-                    onClick={resetFilters}>
-                    Reset filters
-                  </button>
+            <Select_multi
+              optionsType="leftIcon"
+              labelProps={{ isActive: true, message: "Source" }}
+              options={sourceSelectOptions}
+              placeholder="All sources"
+              emptySummary="All sources"
+              value={sourceFilter}
+              onChange={createMultiFilterChangeHandler(
+                setSourceFilter,
+                sourceFilterValues,
+              )}
+            />
+            <Select_multi
+              optionsType="leftIcon"
+              labelProps={{ isActive: true, message: "Platform" }}
+              options={platformSelectOptions}
+              placeholder="All platforms"
+              emptySummary="All platforms"
+              value={platformFilter}
+              onChange={createMultiFilterChangeHandler(
+                setPlatformFilter,
+                platformFilterValues,
+              )}
+            />
+            {hasActiveFilters ? (
+              <div className="cK_stp_brand_fld_cuisineTags__filterActions">
+                <button
+                  type="button"
+                  className="cK_stp_brand_fld_cuisineTags__resetFilters"
+                  onClick={resetFilters}>
+                  Reset filters
+                </button>
+                {selectedFilterIcons.length ? (
+                  <div
+                    className="cK_stp_brand_fld_cuisineTags__filterIcons"
+                    aria-label="Active filter selections">
+                    {otherFilterIcons.map((icon) => (
+                      <span
+                        key={icon.key}
+                        className="cK_stp_brand_fld_cuisineTags__filterIconWrap"
+                        title={
+                          icon.count != null
+                            ? `${icon.label} (${icon.count})`
+                            : icon.label
+                        }>
+                        <img
+                          className="cK_stp_brand_fld_cuisineTags__filterIcon"
+                          src={icon.src}
+                          alt={icon.label}
+                        />
+                        {icon.count != null ? (
+                          <span className="cK_stp_brand_fld_cuisineTags__filterIconCount">
+                            {icon.count}
+                          </span>
+                        ) : null}
+                      </span>
+                    ))}
+                    {platformFilterIcons.length ? (
+                      <CK_stp_cuisineTag_platformIconStack
+                        sizeType="sm"
+                        items={platformFilterIcons.map((icon) => ({
+                          key: icon.key,
+                          src: icon.src,
+                          label: icon.label,
+                          count: icon.count,
+                        }))}
+                      />
+                    ) : null}
+                  </div>
                 ) : null}
               </div>
-            )}
-
-            {emptyCatalog ? (
-              <p className="cK_stp_brand_fld_cuisineTags__empty">
-                No cuisine tags in the catalog yet. Create tags in the Cuisine
-                Tags session first.
-              </p>
-            ) : (
-              <CuisineTagList
-                title="Catalog — add tags"
-                tags={availableTags}
-                mode="catalog"
-                emptyMessage={
-                  hasActiveFilters
-                    ? "No matching tags to add."
-                    : "All catalog tags are already on this brand."
-                }
-                handlers={handlers}
-              />
-            )}
+            ) : null}
           </div>
-        )}
+        ) : null}
+
+        {showSearchPanel && hasActiveFilters ? (
+          <p className="cK_stp_brand_fld_cuisineTags__filterSummary">
+            Showing <strong>{assignedTags.length}</strong> of{" "}
+            <strong>{assignedIds.size}</strong> linked tags
+          </p>
+        ) : null}
+
+        <CuisineTagList
+          title=""
+          tags={assignedTags}
+          emptyMessage={
+            assignedIds.size === 0
+              ? "No cuisine tags linked to this brand yet."
+              : hasActiveFilters
+                ? "No linked tags match the current filters."
+                : "No cuisine tags linked to this brand yet."
+          }
+        />
       </div>
     </section>
   );

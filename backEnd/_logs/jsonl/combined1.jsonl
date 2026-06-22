@@ -24274,3 +24274,16 @@
   "timestamp": "2026-06-11 17:59:38",
   "type": "controller_error"
 }
+{
+  "controller": "⚠️ ☠️ 🚨 | cK_gen_integration_create_cntrl.js | ",
+  "error": "Integration validation failed: kind: `Sample` is not a valid enum value for path `kind`.",
+  "errorType": "VALIDATION_ERROR",
+  "ip": "::1",
+  "level": "error",
+  "message": "⚠️ ☠️ 🚨 ⚠️ ☠️ 🚨 | cK_gen_integration_create_cntrl.js |  |<=>| [ERROR]",
+  "service": "backend-api",
+  "stack": "Error: Integration validation failed: kind: `Sample` is not a valid enum value for path `kind`.\n    at catch_errorHandler_service (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/03_services/service_returnHandler.js:6:9)\n    at file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_General_cntrl/_cK_gen_shared/cK_gen_crud_srv_utils.js:46:14\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async cK_gen_integration_create_cntrl (file:///C:/Users/vardg/OneDrive/Desktop/Codding/vardges.me/backEnd/07_controllers/cloudKitchen_cntrl/cloudKitchen_General_cntrl/cK_gen_integration_crud_cntrl/cK_gen_integration_crud_cntrl/cK_gen_integration_create_cntrl.js:13:40)",
+  "statusCode": 400,
+  "timestamp": "2026-06-18 18:03:21",
+  "type": "controller_error"
+}

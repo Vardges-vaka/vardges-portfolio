@@ -1,0 +1,209 @@
+.cK_stp_brand_fld_logoFormats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cK_stp_brand_fld_logoFormats__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cK_stp_brand_fld_logoFormats__title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--title-secondary-color);
+}
+
+.cK_stp_brand_fld_logoFormats__count {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-secondary-color);
+}
+
+.cK_stp_brand_fld_logoFormats__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cK_stp_brand_fld_logoFormats__row {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 7rem) minmax(4.5rem, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.5rem;
+  background-color: var(--bg-primary-color);
+}
+
+.cK_stp_brand_fld_logoFormats__row--present {
+  border-color: color-mix(
+    in srgb,
+    var(--btn-primary-bg-color) 35%,
+    var(--border-primary-color)
+  );
+}
+
+.cK_stp_brand_fld_logoFormats__row--missing {
+  opacity: 0.88;
+}
+
+.cK_stp_brand_fld_logoFormats__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+.cK_stp_brand_fld_logoFormats__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cK_stp_brand_fld_logoFormats__status--present {
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+}
+
+.cK_stp_brand_fld_logoFormats__status--missing {
+  color: var(--text-secondary-color);
+  background-color: color-mix(
+    in srgb,
+    var(--border-primary-color) 55%,
+    transparent
+  );
+}
+
+.cK_stp_brand_fld_logoFormats__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.cK_stp_brand_fld_logoFormats__openLink {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--btn-primary-bg-color);
+  text-decoration: none;
+}
+
+.cK_stp_brand_fld_logoFormats__openLink:hover {
+  text-decoration: underline;
+}
+
+.cK_stp_brand_fld_logoFormats__picker {
+  min-width: 0;
+  flex: 1;
+}
+
+.cK_stp_brand_fld_logoFormats__picker .input_file__dropzone {
+  min-height: 2.35rem;
+  padding: 0.35rem 0.55rem;
+}
+
+.cK_stp_brand_fld_logoFormats__picker .input_file__emptyText,
+.cK_stp_brand_fld_logoFormats__picker .input_file__acceptHint {
+  font-size: 0.72rem;
+}
+
+.cK_stp_brand_fld_logoFormats--edit {
+  min-width: 0;
+}
+
+.cK_stp_brand_fld_logoFormats__row--edit {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+  padding: 0.55rem 0.65rem;
+}
+
+.cK_stp_brand_fld_logoFormats__row--edit.cK_stp_brand_fld_logoFormats__row--open {
+  padding-bottom: 0.75rem;
+}
+
+.cK_stp_brand_fld_logoFormats__toggle {
+  grid-row: 1;
+  grid-column: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.4rem;
+  background-color: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.cK_stp_brand_fld_logoFormats__toggle:hover {
+  border-color: var(--btn-primary-border-color);
+  color: var(--btn-primary-bg-color);
+}
+
+.cK_stp_brand_fld_logoFormats__chevron {
+  font-size: 0.62rem;
+  line-height: 1;
+}
+
+.cK_stp_brand_fld_logoFormats__summary {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.cK_stp_brand_fld_logoFormats__panel {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--border-primary-color);
+}
+
+.cK_stp_brand_fld_logoFormats__fieldRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+@media (max-width: 640px) {
+  .cK_stp_brand_fld_logoFormats__row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .cK_stp_brand_fld_logoFormats__actions {
+    justify-content: flex-start;
+  }
+
+  .cK_stp_brand_fld_logoFormats__fieldRow {
+    grid-template-columns: 1fr;
+  }
+}

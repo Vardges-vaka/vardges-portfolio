@@ -12,7 +12,7 @@ import "../../../_styles/cK_setup_session_cuisineTags/ck_setup_cuisineTag_fields
 
 const svgLeftIcon = (src) => (src ? { type: "svg", svg_src: src } : null);
 
-const CK_stp_cuisineTag_fld_meta = ({ states, handlers, t }) => {
+const CK_stp_cuisineTag_fld_meta = ({ states, handlers, t, readOnly = false }) => {
   const v = states.values ?? {};
   const set = (name) => (e) => handlers.onChange?.(name, e.target.value);
   const [selectMenuOpen, setSelectMenuOpen] = useState(false);
@@ -71,6 +71,7 @@ const CK_stp_cuisineTag_fld_meta = ({ states, handlers, t }) => {
       <div className="cK_stp_cuisineTag_fld_meta__row">
         <Select_static
           optionsType="leftIcon"
+          disabled={readOnly}
           labelProps={{ isActive: true, message: "Kind" }}
           options={kindOptions}
           placeholder="Pick kind…"
@@ -79,6 +80,7 @@ const CK_stp_cuisineTag_fld_meta = ({ states, handlers, t }) => {
           onOpenChange={handleSelectOpenChange}
         />
         <Select_static
+          disabled={readOnly}
           labelProps={{ isActive: true, message: "Source" }}
           options={CUISINE_TAG_SOURCE_OPTIONS}
           placeholder="Pick source…"
@@ -88,6 +90,7 @@ const CK_stp_cuisineTag_fld_meta = ({ states, handlers, t }) => {
         />
         <Select_multi
           optionsType="leftIcon"
+          disabled={readOnly}
           labelProps={{ isActive: true, message: "Platforms" }}
           options={platformOptions}
           placeholder="Pick platforms…"

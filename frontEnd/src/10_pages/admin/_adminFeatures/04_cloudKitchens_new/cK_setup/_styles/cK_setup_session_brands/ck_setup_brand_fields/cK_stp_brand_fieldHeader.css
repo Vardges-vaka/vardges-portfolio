@@ -1,0 +1,99 @@
+.cK_stp_brand_fieldHeader {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--border-secondary-color);
+  background-color: color-mix(
+    in srgb,
+    var(--bg-primary-color) 55%,
+    var(--bg-secondary-color)
+  );
+}
+
+.cK_stp_brand_fieldHeader__start {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.cK_stp_brand_fieldHeader__title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--title-secondary-color);
+  white-space: nowrap;
+}
+
+.cK_stp_brand_fieldHeader__middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.cK_stp_brand_fieldHeader__end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.cK_stp_brand_fieldHeader__btn {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.45rem;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.cK_stp_brand_fieldHeader__btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cK_stp_brand_fieldHeader__btn_primary {
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+  border-color: var(--btn-primary-border-color);
+}
+
+.cK_stp_brand_fieldHeader__btn_primary:hover:not(:disabled) {
+  background-color: var(--btn-primary-bg-color-HOV);
+  color: var(--btn-primary-text-color-HOV);
+}
+
+.cK_stp_brand_fieldHeader__btn_secondary {
+  color: var(--text-primary-color);
+  background-color: var(--bg-primary-color);
+  border-color: var(--border-primary-color);
+}
+
+.cK_stp_brand_fieldHeader__btn_secondary:hover:not(:disabled) {
+  border-color: var(--btn-primary-border-color);
+}
+
+@media (max-width: 900px) {
+  .cK_stp_brand_fieldHeader {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .cK_stp_brand_fieldHeader__middle {
+    justify-content: flex-start;
+  }
+
+  .cK_stp_brand_fieldHeader__end {
+    justify-content: flex-start;
+  }
+}

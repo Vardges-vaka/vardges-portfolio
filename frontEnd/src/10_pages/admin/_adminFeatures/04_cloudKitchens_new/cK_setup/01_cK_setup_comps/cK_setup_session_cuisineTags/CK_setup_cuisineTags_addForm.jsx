@@ -1,10 +1,20 @@
-import { useId } from "react";
+import { useId, useMemo } from "react";
 import { Modal } from "../../../../../../../01_components/_components.index.js";
-import { CK_setup_cuisineTags_add_initial } from "./_cK_setup_session_cuisineTags.index.js";
+import { validateCuisineTagCreate } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
+import CK_stp_cuisineTag_editFields from "./CK_stp_cuisineTag_editFields.jsx";
 import "../../_styles/cK_setup_session_cuisineTags/cK_setup_cuisineTags_addForm.css";
 
 const CK_setup_cuisineTags_addForm = ({ states, handlers, childProps, t }) => {
   const formId = useId();
+  const fieldErrors = states.fieldErrors ?? {};
+
+  const isConfirmDisabled = useMemo(() => {
+    const validation = validateCuisineTagCreate(
+      states.values ?? {},
+      states.existingTags ?? [],
+    );
+    return !validation.isValid;
+  }, [states.values, states.existingTags]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,12 +28,16 @@ const CK_setup_cuisineTags_addForm = ({ states, handlers, childProps, t }) => {
       onCancel={handlers.onCancel}
       onConfirm={handlers.onSubmit}
       withFooter
-      dialogClassName="modal_dialogForm"
+      dialogClassName="modal_dialogForm cK_setup_cuisineTags_addForm"
       formId={formId}
-      footerLabels={{ confirmLabel: "Create" }}>
+      footerLabels={{ confirmLabel: "Create" }}
+      footerStates={{ isConfirmDisabled }}>
       <form id={formId} className="modal_bodyForm" onSubmit={handleSubmit}>
-        <CK_setup_cuisineTags_add_initial
-          states={states}
+        <CK_stp_cuisineTag_editFields
+          states={{
+            values: states.values,
+            fieldErrors,
+          }}
           handlers={handlers}
           t={t}
         />

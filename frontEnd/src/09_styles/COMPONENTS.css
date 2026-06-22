@@ -1,0 +1,108 @@
+:root {
+  /* ── Layout (shared across themes) ── */
+  --toggler-gap: 0.35rem;
+  --toggler-inline-gap: 0.65rem;
+  --toggler-transition:
+    background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease;
+
+  /* ── Light palette ── */
+  --L_toggler_track_bg: rgba(87, 27, 115, 0.14);
+  --L_toggler_track_bg_on: #7c22a6;
+  --L_toggler_track_border: rgba(87, 27, 115, 0.38);
+  --L_toggler_track_border_on: #560c78;
+  --L_toggler_track_shadow: inset 0 1px 2px rgba(20, 18, 24, 0.08);
+  --L_toggler_track_shadow_on:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 0 0 1px rgba(124, 34, 166, 0.22),
+    0 2px 8px rgba(124, 34, 166, 0.28);
+  --L_toggler_thumb_bg: rgb(255, 255, 255);
+  --L_toggler_thumb_shadow: 0 1px 3px rgba(20, 18, 24, 0.28);
+  --L_toggler_focus_ring: 0 0 0 2px rgba(124, 34, 166, 0.28);
+
+  /* ── Dark palette ── */
+  --D_toggler_track_bg: rgba(255, 255, 255, 0.12);
+  --D_toggler_track_bg_on: #ff8300;
+  --D_toggler_track_border: rgba(255, 255, 255, 0.22);
+  --D_toggler_track_border_on: #ffcc00;
+  --D_toggler_track_shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+  --D_toggler_track_shadow_on:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 0 10px rgba(255, 131, 0, 0.42);
+  --D_toggler_thumb_bg: rgb(255, 255, 255);
+  --D_toggler_thumb_shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  --D_toggler_focus_ring: 0 0 0 2px rgba(255, 131, 0, 0.35);
+}
+
+[data-theme="light"] {
+  --toggler-track-bg: var(--L_toggler_track_bg);
+  --toggler-track-bg-on: var(--L_toggler_track_bg_on);
+  --toggler-track-border: var(--L_toggler_track_border);
+  --toggler-track-border-on: var(--L_toggler_track_border_on);
+  --toggler-track-shadow: var(--L_toggler_track_shadow);
+  --toggler-track-shadow-on: var(--L_toggler_track_shadow_on);
+  --toggler-thumb-bg: var(--L_toggler_thumb_bg);
+  --toggler-thumb-shadow: var(--L_toggler_thumb_shadow);
+  --toggler-focus-ring: var(--L_toggler_focus_ring);
+}
+
+[data-theme="dark"] {
+  --toggler-track-bg: var(--D_toggler_track_bg);
+  --toggler-track-bg-on: var(--D_toggler_track_bg_on);
+  --toggler-track-border: var(--D_toggler_track_border);
+  --toggler-track-border-on: var(--D_toggler_track_border_on);
+  --toggler-track-shadow: var(--D_toggler_track_shadow);
+  --toggler-track-shadow-on: var(--D_toggler_track_shadow_on);
+  --toggler-thumb-bg: var(--D_toggler_thumb_bg);
+  --toggler-thumb-shadow: var(--D_toggler_thumb_shadow);
+  --toggler-focus-ring: var(--D_toggler_focus_ring);
+}
+
+/* ── Checkbox tokens ── */
+:root {
+  --checkbox-gap: 0.35rem;
+  --checkbox-inline-gap: 0.55rem;
+  --checkbox-transition:
+    background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease,
+    opacity 0.15s ease, transform 0.12s ease;
+
+  --L_checkbox_box_bg: rgb(255, 252, 248);
+  --L_checkbox_box_bg_on: #7c22a6;
+  --L_checkbox_box_border: rgba(87, 27, 115, 0.56);
+  --L_checkbox_box_border_on: #560c78;
+  --L_checkbox_box_shadow: 0 1px 2px rgba(20, 18, 24, 0.06);
+  --L_checkbox_box_shadow_on: 0 1px 4px rgba(124, 34, 166, 0.28);
+  --L_checkbox_check_color: rgb(255, 255, 255);
+  --L_checkbox_focus_ring: 0 0 0 2px rgba(124, 34, 166, 0.28);
+
+  --D_checkbox_box_bg: rgb(58, 12, 76);
+  --D_checkbox_box_bg_on: #ff8300;
+  --D_checkbox_box_border: rgba(255, 255, 255, 0.28);
+  --D_checkbox_box_border_on: #ffcc00;
+  --D_checkbox_box_shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+  --D_checkbox_box_shadow_on: 0 0 8px rgba(255, 131, 0, 0.38);
+  --D_checkbox_check_color: rgb(20, 18, 24);
+  --D_checkbox_focus_ring: 0 0 0 2px rgba(255, 131, 0, 0.35);
+}
+
+[data-theme="light"] {
+  --checkbox-box-bg: var(--L_checkbox_box_bg);
+  --checkbox-box-bg-on: var(--L_checkbox_box_bg_on);
+  --checkbox-box-border: var(--L_checkbox_box_border);
+  --checkbox-box-border-on: var(--L_checkbox_box_border_on);
+  --checkbox-box-shadow: var(--L_checkbox_box_shadow);
+  --checkbox-box-shadow-on: var(--L_checkbox_box_shadow_on);
+  --checkbox-check-color: var(--L_checkbox_check_color);
+  --checkbox-focus-ring: var(--L_checkbox_focus_ring);
+}
+
+[data-theme="dark"] {
+  --checkbox-box-bg: var(--D_checkbox_box_bg);
+  --checkbox-box-bg-on: var(--D_checkbox_box_bg_on);
+  --checkbox-box-border: var(--D_checkbox_box_border);
+  --checkbox-box-border-on: var(--D_checkbox_box_border_on);
+  --checkbox-box-shadow: var(--D_checkbox_box_shadow);
+  --checkbox-box-shadow-on: var(--D_checkbox_box_shadow_on);
+  --checkbox-check-color: var(--D_checkbox_check_color);
+  --checkbox-focus-ring: var(--D_checkbox_focus_ring);
+}

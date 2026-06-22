@@ -13,13 +13,30 @@ export const useCK_setup_handlers = ({
   salesPlatforms,
   integrations,
   contracts,
+  sessionModules = {},
 }) => {
   const handleSessionChange = useCallback(
     (session) => {
-      console.log("session", session);
+      const activeKey = states.activeSession;
+      const activeModule = sessionModules[activeKey];
+
+      if (activeModule?.guards?.hasUnsavedDetailChanges?.()) {
+        activeModule.guards.handleRequestNavigation({
+          type: "session",
+          session: session.value,
+        });
+        return;
+      }
+
+      // Leave read-only or edit UI on the session we're leaving.
+      activeModule?.guards?.resetDetailState?.();
       setters.setActiveSession(session.value);
     },
-    [setters.setActiveSession],
+    [
+      sessionModules,
+      setters.setActiveSession,
+      states.activeSession,
+    ],
   );
 
   const handleInitialFetch = useCallback(

@@ -56,7 +56,8 @@
   border-color: var(--primary-hint-border);
 }
 
-.cuisineTypesEditHeader__typeBtn[data-cuisine-type="dessertBeverage"].cuisineTypesEditHeader__typeBtnActive {
+.cuisineTypesEditHeader__typeBtn[data-cuisine-type="dessert"].cuisineTypesEditHeader__typeBtnActive,
+.cuisineTypesEditHeader__typeBtn[data-cuisine-type="beverage"].cuisineTypesEditHeader__typeBtnActive {
   border-color: var(--primary-error-border);
 }
 

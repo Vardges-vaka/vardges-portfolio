@@ -6,7 +6,6 @@ import Devicon from "./developerIcon.svg";
 import Hospitalityicon from "./hospitalityIcon.svg";
 export * from "./social_icons/_social_icons.index.js";
 // NavBar Icons
-
 import AboutIcon from "./navBarIcons/aboutIcon.svg";
 import AchievementsIcon from "./navBarIcons/achievementsIcon.svg";
 import EducationIcon from "./navBarIcons/educationIcon.svg";

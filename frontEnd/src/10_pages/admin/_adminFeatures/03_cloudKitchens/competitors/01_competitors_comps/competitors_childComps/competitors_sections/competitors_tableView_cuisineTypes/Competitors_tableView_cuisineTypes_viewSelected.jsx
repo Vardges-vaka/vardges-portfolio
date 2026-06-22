@@ -28,7 +28,7 @@ const Competitors_tableView_cuisineTypes_viewSelected = ({
                   "cuisineTypesViewSelected__chip" +
                   (isDetail ? " cuisineTypesViewSelected__chipFocused" : "")
                 }
-                data-cuisine-kind={tag.type}
+                data-cuisine-kind={tag.kind || tag.type}
                 onClick={() => handlers.onSelectCatalog(tag.value)}>
                 {tag.label}
               </button>

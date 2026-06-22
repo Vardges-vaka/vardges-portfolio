@@ -12,6 +12,10 @@ import {
   Select_searchable,
   Select_grouped,
   Select_boolean,
+  Toggler,
+  Input_checkbox,
+  Input_image,
+  Input_file,
   Competitors_Icon,
   Employees_Icon,
   Brands_Icon,
@@ -95,6 +99,30 @@ const EmailEngines = () => {
   const [searchBasic, setSearchBasic] = useState("");
 
   const [searchWithAction, setSearchWithAction] = useState("italian");
+
+  const [togglerEmail, setTogglerEmail] = useState(true);
+
+  const [togglerSms, setTogglerSms] = useState(false);
+
+  const [checkboxTerms, setCheckboxTerms] = useState(false);
+
+  const [checkboxNewsletter, setCheckboxNewsletter] = useState(true);
+
+  const [imageFile, setImageFile] = useState(null);
+
+  const [imageFileSmall, setImageFileSmall] = useState(null);
+
+  const [imageFilesGallery, setImageFilesGallery] = useState([]);
+
+  const [docFile, setDocFile] = useState(null);
+
+  const [attachmentFiles, setAttachmentFiles] = useState([]);
+
+  const EXISTING_CONTRACT_URL =
+    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+
+  const EXISTING_LOGO_PREVIEW =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png";
 
   const PRICE_RANGE_OPTIONS = [
     { value: "budget", label: "Budget" },
@@ -571,6 +599,207 @@ const EmailEngines = () => {
             title: "Open filters",
             onClick: () => window.alert("Filter action clicked"),
           }}
+        />
+      </section>
+
+      <section className="emailEnginesTest__section">
+        <h2>Toggler</h2>
+
+        <Toggler
+          fullWidth
+          labelProps={{
+            isActive: true,
+            message: "Email notifications",
+            position: "inline",
+            iconProps: {
+              isActive: true,
+              type: "lucide",
+              lucidIcon: "Mail",
+            },
+          }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "Standard switch — purple (light) / orange (dark) when on.",
+          }}
+          checked={togglerEmail}
+          onChange={(e) => setTogglerEmail(e.target.checked)}
+        />
+
+        <Toggler
+          sizeType="sm"
+          labelProps={{
+            isActive: true,
+            message: "SMS alerts (sm)",
+            position: "inline",
+          }}
+          checked={togglerSms}
+          onChange={(e) => setTogglerSms(e.target.checked)}
+        />
+
+        <Toggler
+          labelProps={{ isActive: true, message: "Disabled switch" }}
+          hintsProps={{ isActive: true, type: "hint", message: "Off and not interactive." }}
+          disabled
+          defaultChecked={false}
+        />
+      </section>
+
+      <section className="emailEnginesTest__section">
+        <h2>Input_checkbox</h2>
+
+        <Input_checkbox
+          fullWidth
+          labelProps={{
+            isActive: true,
+            message: "I accept the terms and conditions",
+            position: "inline",
+            inlinePosition: "after",
+          }}
+          hintsProps={{
+            isActive: true,
+            type: checkboxTerms ? "success" : "hint",
+            message: checkboxTerms
+              ? "Terms accepted."
+              : "Required before submitting the form.",
+          }}
+          checked={checkboxTerms}
+          onChange={(e) => setCheckboxTerms(e.target.checked)}
+        />
+
+        <Input_checkbox
+          sizeType="sm"
+          labelProps={{
+            isActive: true,
+            message: "Subscribe to newsletter (sm)",
+            position: "inline",
+            inlinePosition: "after",
+          }}
+          checked={checkboxNewsletter}
+          onChange={(e) => setCheckboxNewsletter(e.target.checked)}
+        />
+
+        <Input_checkbox
+          labelProps={{
+            isActive: true,
+            message: "Disabled checkbox",
+            position: "inline",
+            inlinePosition: "after",
+          }}
+          hintsProps={{ isActive: true, type: "hint", message: "Checked and locked." }}
+          disabled
+          defaultChecked
+        />
+      </section>
+
+      <section className="emailEnginesTest__section">
+        <h2>Input_image</h2>
+
+        <Input_image
+          labelProps={{ isActive: true, message: "Brand logo" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "Single upload — preview panel is opt-in via showPreviewPanel.",
+          }}
+          simulateUpload
+          showPreviewPanel
+          file={imageFile}
+          onChange={(event) => setImageFile(event.target.files?.[0] ?? null)}
+        />
+
+        <Input_image
+          sizeType="sm"
+          labelProps={{ isActive: true, message: "Avatar (max 2 MB)" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "No preview panel — meta row + progress only.",
+          }}
+          simulateUpload
+          maxSizeBytes={2 * 1024 * 1024}
+          file={imageFileSmall}
+          onChange={(event) =>
+            setImageFileSmall(event.target.files?.[0] ?? null)
+          }
+        />
+
+        <Input_image
+          multiple
+          maxFiles={4}
+          labelProps={{ isActive: true, message: "Gallery (multiple)" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "Append images on each pick/drop — remove individually from meta or preview.",
+          }}
+          simulateUpload
+          showPreviewPanel
+          previewPanelLabel="Gallery preview"
+          files={imageFilesGallery}
+          onChange={(event) => setImageFilesGallery([...event.target.files])}
+        />
+
+        <Input_image
+          labelProps={{ isActive: true, message: "Existing logo (edit mode)" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "previewUrl only — enable showPreviewPanel to show the current server image.",
+          }}
+          showPreviewPanel
+          previewUrl={EXISTING_LOGO_PREVIEW}
+          previewPanelLabel="Current logo"
+        />
+      </section>
+
+      <section className="emailEnginesTest__section">
+        <h2>Input_file</h2>
+
+        <Input_file
+          labelProps={{ isActive: true, message: "Contract (PDF only)" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "Single upload — meta row + progress. Preview panel is opt-in.",
+          }}
+          accept=".pdf,application/pdf"
+          acceptHint="PDF only · max 10 MB"
+          maxSizeBytes={10 * 1024 * 1024}
+          simulateUpload
+          file={docFile}
+          onChange={(event) => setDocFile(event.target.files?.[0] ?? null)}
+        />
+
+        <Input_file
+          labelProps={{ isActive: true, message: "Attachments (mixed types)" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "Multiple append — images get thumbnails, other files show icon cards.",
+          }}
+          multiple
+          maxFiles={5}
+          accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp,image/*"
+          acceptHint="PDF, Word, or images"
+          simulateUpload
+          showPreviewPanel
+          previewPanelLabel="Attachment preview"
+          files={attachmentFiles}
+          onChange={(event) => setAttachmentFiles([...event.target.files])}
+        />
+
+        <Input_file
+          labelProps={{ isActive: true, message: "Existing contract (edit mode)" }}
+          hintsProps={{
+            isActive: true,
+            type: "hint",
+            message: "previewUrl + showPreviewPanel — non-image files render as a file card with open link.",
+          }}
+          showPreviewPanel
+          previewUrl={EXISTING_CONTRACT_URL}
+          previewFileName="signed-contract.pdf"
+          previewPanelLabel="Current file"
         />
       </section>
     </div>

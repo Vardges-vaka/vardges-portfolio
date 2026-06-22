@@ -9,20 +9,14 @@ export const cuisineTags_propsComposer = (states, handlers, t) => {
     states: {
       isOpen: states.activeOperation === "adding",
       values: states.cuisineTagFormData,
+      fieldErrors: states.cuisineTagFormErrors,
+      existingTags: states.cuisineTags,
     },
     handlers: {
       onChange: handlers.handleFormChange,
       onSubmit: handlers.handleCreateSubmit,
       onCancel: handlers.handleCancelAdd,
     },
-    childComps: {},
-    t: t,
-  };
-  const stp_cuisineTags_viewOne_props = {
-    states: {
-      cuisineTag: states.selectedCuisineTag,
-    },
-    handlers: {},
     childComps: {},
     t: t,
   };
@@ -33,10 +27,9 @@ export const cuisineTags_propsComposer = (states, handlers, t) => {
     handlers: {
       onConfirmUpdate: handlers.handleInlineUpdateSubmit,
       onAddTagField: handlers.handleAddTagField,
+      onToggleActive: handlers.handleToggleActive,
       onDelete: (tag) =>
         window.alert(`Delete placeholder — tag: ${tag?.label || tag?._id}`),
-      onView: (tag) =>
-        window.alert(`View placeholder — tag: ${tag?.label || tag?._id}`),
     },
     childComps: {},
     t: t,
@@ -44,7 +37,6 @@ export const cuisineTags_propsComposer = (states, handlers, t) => {
   return {
     stp_empty_cuisineTags_props,
     stp_cuisineTags_addForm_props,
-    stp_cuisineTags_viewOne_props,
     stp_cuisineTags_viewAll_props,
   };
 };

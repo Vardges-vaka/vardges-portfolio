@@ -20,14 +20,12 @@ export const useCK_setup_cuisineTags = ({ TOAST, t }) => {
   const {
     stp_empty_cuisineTags_props,
     stp_cuisineTags_addForm_props,
-    stp_cuisineTags_viewOne_props,
     stp_cuisineTags_viewAll_props,
   } = cuisineTags_propsComposer(states, handlers, t);
 
   return {
     states: {
       activeOperation: states.activeOperation,
-      activeViewingType: states.activeViewingType,
       cuisineTags: states.cuisineTags,
     },
     handlers: {
@@ -38,7 +36,6 @@ export const useCK_setup_cuisineTags = ({ TOAST, t }) => {
     childProps: {
       stp_empty_cuisineTags_props: stp_empty_cuisineTags_props,
       stp_cuisineTags_addForm_props: stp_cuisineTags_addForm_props,
-      stp_cuisineTags_viewOne_props: stp_cuisineTags_viewOne_props,
       stp_cuisineTags_viewAll_props: stp_cuisineTags_viewAll_props,
     },
     t,

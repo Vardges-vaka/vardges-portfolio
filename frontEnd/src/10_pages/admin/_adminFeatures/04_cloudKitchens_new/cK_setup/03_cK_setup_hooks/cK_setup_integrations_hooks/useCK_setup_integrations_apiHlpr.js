@@ -1,12 +1,10 @@
 import { useCallback } from "react";
 import {
-  // Crud
   CK_gen_integration_create,
   CK_gen_integration_getAll,
   CK_gen_integration_getOne,
   CK_gen_integration_delete,
   CK_gen_integration_updateAll,
-  // Fields
   CK_gen_integration_update_provider,
   CK_gen_integration_update_kind,
   CK_gen_integration_update_accountLabel,
@@ -24,43 +22,102 @@ import {
   CK_gen_integration_update_contract,
   CK_gen_integration_update_files,
   CK_gen_integration_update_notes,
-} from "../../../../../../../05_helpers/_helpers.index";
+} from "../../../../../../../05_helpers/_helpers.index.js";
 
-export const useCK_setup_integrations_apiHlpr = ({ TOAST }) => {
-  // crud
-  const integration_create = useCallback(() => {}, []);
-  const integration_getAll = useCallback(() => {}, []);
-  const integration_getOne = useCallback(() => {}, []);
-  const integration_delete = useCallback(() => {}, []);
-  const integration_updateAll = useCallback(() => {}, []);
-  // Fields
-  const integration_update_provider = useCallback(() => {}, []);
-  const integration_update_kind = useCallback(() => {}, []);
-  const integration_update_accountLabel = useCallback(() => {}, []);
-  const integration_update_description = useCallback(() => {}, []);
-  const integration_update_status = useCallback(() => {}, []);
-  const integration_update_lifecycle = useCallback(() => {}, []);
-  const integration_update_links = useCallback(() => {}, []);
-  const integration_update_payment = useCallback(() => {}, []);
-  const integration_update_loginCredentials = useCallback(() => {}, []);
-  const integration_update_kam = useCallback(() => {}, []);
-  const integration_update_support = useCallback(() => {}, []);
-  const integration_update_scheduledMaintenances = useCallback(() => {}, []);
-  const integration_update_brands = useCallback(() => {}, []);
-  const integration_update_branches = useCallback(() => {}, []);
-  const integration_update_contract = useCallback(() => {}, []);
-  const integration_update_files = useCallback(() => {}, []);
-  const integration_update_notes = useCallback(() => {}, []);
+export const useCK_setup_integrations_apiHlpr = () => {
+  const integration_create = useCallback(
+    (payload) => CK_gen_integration_create(payload),
+    [],
+  );
+  const integration_getAll = useCallback(() => CK_gen_integration_getAll(), []);
+  const integration_getOne = useCallback(
+    (payload) => CK_gen_integration_getOne(payload),
+    [],
+  );
+  const integration_delete = useCallback(
+    (payload) => CK_gen_integration_delete(payload),
+    [],
+  );
+  const integration_updateAll = useCallback(
+    (payload) => CK_gen_integration_updateAll(payload),
+    [],
+  );
+  const integration_update_provider = useCallback(
+    (payload) => CK_gen_integration_update_provider(payload),
+    [],
+  );
+  const integration_update_kind = useCallback(
+    (payload) => CK_gen_integration_update_kind(payload),
+    [],
+  );
+  const integration_update_accountLabel = useCallback(
+    (payload) => CK_gen_integration_update_accountLabel(payload),
+    [],
+  );
+  const integration_update_description = useCallback(
+    (payload) => CK_gen_integration_update_description(payload),
+    [],
+  );
+  const integration_update_status = useCallback(
+    (payload) => CK_gen_integration_update_status(payload),
+    [],
+  );
+  const integration_update_lifecycle = useCallback(
+    (payload) => CK_gen_integration_update_lifecycle(payload),
+    [],
+  );
+  const integration_update_links = useCallback(
+    (payload) => CK_gen_integration_update_links(payload),
+    [],
+  );
+  const integration_update_payment = useCallback(
+    (payload) => CK_gen_integration_update_payment(payload),
+    [],
+  );
+  const integration_update_loginCredentials = useCallback(
+    (payload) => CK_gen_integration_update_loginCredentials(payload),
+    [],
+  );
+  const integration_update_kam = useCallback(
+    (payload) => CK_gen_integration_update_kam(payload),
+    [],
+  );
+  const integration_update_support = useCallback(
+    (payload) => CK_gen_integration_update_support(payload),
+    [],
+  );
+  const integration_update_scheduledMaintenances = useCallback(
+    (payload) => CK_gen_integration_update_scheduledMaintenances(payload),
+    [],
+  );
+  const integration_update_brands = useCallback(
+    (payload) => CK_gen_integration_update_brands(payload),
+    [],
+  );
+  const integration_update_branches = useCallback(
+    (payload) => CK_gen_integration_update_branches(payload),
+    [],
+  );
+  const integration_update_contract = useCallback(
+    (payload) => CK_gen_integration_update_contract(payload),
+    [],
+  );
+  const integration_update_files = useCallback(
+    (payload) => CK_gen_integration_update_files(payload),
+    [],
+  );
+  const integration_update_notes = useCallback(
+    (payload) => CK_gen_integration_update_notes(payload),
+    [],
+  );
 
   return {
     apiHelpers: {
-      // crud
       integration_create,
       integration_getAll,
       integration_getOne,
       integration_delete,
       integration_updateAll,
-      // Fields
       integration_update_provider,
       integration_update_kind,
       integration_update_accountLabel,

@@ -1,12 +1,30 @@
 import { useCallback } from "react";
-import { setByPath } from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
+import {
+  setByPath,
+  seedFullFromBrand,
+  normalizeCuisineTagIds,
+  isBrandDraftDirty,
+  getChangedFieldKeys,
+  pickFieldPayload,
+  FIELD_API_MAP,
+  BRAND_DETAIL_FIELD_LABELS,
+  isBrandViewOnlyField,
+} from "../../02_cK_setup_hlpr/_cK_setup_hlpr.index.js";
+import {
+  buildEmptyFileItem,
+  buildLogoVariantTitle,
+  findLogoVariantIndex,
+  isBrandFilesChanged,
+  isLogoVariantItem,
+  seedFilesFromBrand,
+  stripPendingFiles,
+  normalizeBrandFiles,
+} from "../../02_cK_setup_hlpr/brandFiles_hlpr.js";
 import {
   DFLT_F_D_BRAND_INITIAL,
   DFLT_F_D_BRAND_FULL,
 } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
 
-const asText = (v) => (typeof v === "string" ? v : v?.value) || "";
-const isPlainObj = (v) => v && typeof v === "object" && !Array.isArray(v);
 const DEFAULT_SOCIAL = {
   isActive: true,
   name: "",
@@ -15,41 +33,37 @@ const DEFAULT_SOCIAL = {
   notes: "",
 };
 
-// Brand.cuisineTags may be ObjectId strings or populated docs from getAll.
-const normalizeCuisineTagIds = (tags = []) =>
-  (Array.isArray(tags) ? tags : [])
-    .map((tag) => (typeof tag === "string" ? tag : tag?._id))
-    .filter(Boolean);
+const fileItemFromPicker = (file, title = "", slotKey = "") => {
+  if (!file) return buildEmptyFileItem(title);
 
-// Seed the full-edit form from an existing brand doc, defending against the
-// legacy shape (name/tagline as objects, socials as an object not an array).
-const seedFullFromBrand = (brand = {}) => ({
-  ...DFLT_F_D_BRAND_FULL,
-  name: asText(brand.name),
-  tagline: {
-    value: asText(brand.tagline),
-    translations: {
-      ...DFLT_F_D_BRAND_FULL.tagline.translations,
-      ...(isPlainObj(brand.tagline?.translations)
-        ? brand.tagline.translations
-        : {}),
-    },
-  },
-  description: {
-    ...DFLT_F_D_BRAND_FULL.description,
-    ...(isPlainObj(brand.description) ? brand.description : {}),
-  },
-  priceRange: brand.priceRange || "",
-  registeredIn: {
-    ...DFLT_F_D_BRAND_FULL.registeredIn,
-    ...(isPlainObj(brand.registeredIn) ? brand.registeredIn : {}),
-  },
-  socials:
-    Array.isArray(brand.socials) && brand.socials.length
-      ? brand.socials
-      : [{ ...DEFAULT_SOCIAL }],
-  cuisineTags: normalizeCuisineTagIds(brand.cuisineTags),
-});
+  return {
+    ...buildEmptyFileItem(title),
+    title: title || file.name,
+    format: slotKey || file.type || "",
+    sizeIn_KB: file.size ? Math.round(file.size / 1024) : "",
+    url: URL.createObjectURL(file),
+    _pendingFile: file,
+  };
+};
+
+const asText = (v) => (typeof v === "string" ? v : v?.value) || "";
+
+const resetDetailState = (setters) => {
+  setters.setDetailMode("read");
+  setters.setEditingField(null);
+  setters.setActiveOperation("viewing");
+  setters.setActiveViewingType("all");
+  setters.setBrandDraft(DFLT_F_D_BRAND_FULL);
+  setters.setBrandDraftBaseline(null);
+  setters.setBrandFilesDraft(normalizeBrandFiles());
+  setters.setBrandFilesBaseline(null);
+  setters.setSelectedBrand(null);
+  setters.setConfirmUpdateModalOpen(false);
+  setters.setConfirmUpdateMode("global");
+  setters.setConfirmUpdateFieldKeys([]);
+  setters.setUnsavedModalOpen(false);
+  setters.setPendingNavigation(null);
+};
 
 export const useCK_setup_brands_handlers = ({
   states,
@@ -58,6 +72,7 @@ export const useCK_setup_brands_handlers = ({
   apiHelpers,
   TOAST,
   t,
+  onSessionChange,
 }) => {
   const fetchAll = useCallback(async () => {
     const res = await apiHelpers.brand_getAll();
@@ -80,16 +95,403 @@ export const useCK_setup_brands_handlers = ({
     }
   }, [fetchAll, TOAST]);
 
-  const handleAddnew = useCallback(async () => {
-    setters.setActiveOperation("adding");
-  }, [setters.setActiveOperation]);
+  const hasUnsavedDetailChanges = useCallback(
+    () => isBrandDraftDirty(states),
+    [states],
+  );
 
-  // ── Initial create ──────────────────────────────────────
+  const seedDetailFromBrand = useCallback(
+    (brand, mode = "read") => {
+      const draft = seedFullFromBrand(brand);
+      const files = seedFilesFromBrand(brand);
+      setters.setSelectedBrand(brand);
+      setters.setBrandDraft(draft);
+      setters.setBrandDraftBaseline(draft);
+      setters.setBrandFilesDraft(files);
+      setters.setBrandFilesBaseline(files);
+      setters.setDetailMode(mode);
+      setters.setEditingField(null);
+      setters.setActiveViewingType("one");
+      setters.setActiveOperation("viewing");
+    },
+    [
+      setters.setSelectedBrand,
+      setters.setBrandDraft,
+      setters.setBrandDraftBaseline,
+      setters.setBrandFilesDraft,
+      setters.setBrandFilesBaseline,
+      setters.setDetailMode,
+      setters.setEditingField,
+      setters.setActiveViewingType,
+      setters.setActiveOperation,
+    ],
+  );
+
+  const executePendingNavigation = useCallback(
+    (action) => {
+      if (!action) return;
+
+      resetDetailState(setters);
+      setters.setActiveViewingType("all");
+
+      if (action.type === "session") {
+        onSessionChange?.(action.session);
+        return;
+      }
+
+      if (action.type === "viewAll") return;
+
+      if (action.type === "viewBrand") {
+        seedDetailFromBrand(action.brand, action.mode || "read");
+        return;
+      }
+
+      if (action.type === "addNew") {
+        setters.setActiveOperation("adding");
+      }
+    },
+    [onSessionChange, seedDetailFromBrand, setters],
+  );
+
+  const handleRequestNavigation = useCallback(
+    (action) => {
+      if (hasUnsavedDetailChanges()) {
+        setters.setPendingNavigation(action);
+        setters.setUnsavedModalOpen(true);
+        return;
+      }
+      executePendingNavigation(action);
+    },
+    [
+      executePendingNavigation,
+      hasUnsavedDetailChanges,
+      setters.setPendingNavigation,
+      setters.setUnsavedModalOpen,
+    ],
+  );
+
+  const handleUnsavedConfirm = useCallback(() => {
+    const action = states.pendingNavigation;
+    setters.setUnsavedModalOpen(false);
+    setters.setPendingNavigation(null);
+    // Always leave edit/update UI when discarding — even if navigation action is missing.
+    resetDetailState(setters);
+    executePendingNavigation(action);
+  }, [
+    executePendingNavigation,
+    setters.setPendingNavigation,
+    setters.setUnsavedModalOpen,
+    states.pendingNavigation,
+  ]);
+
+  const handleUnsavedCancel = useCallback(() => {
+    setters.setUnsavedModalOpen(false);
+    setters.setPendingNavigation(null);
+  }, [setters.setPendingNavigation, setters.setUnsavedModalOpen]);
+
+  const handleBackToList = useCallback(() => {
+    handleRequestNavigation({ type: "viewAll" });
+  }, [handleRequestNavigation]);
+
+  const handleViewBrand = useCallback(
+    (brand) =>
+      handleRequestNavigation({ type: "viewBrand", brand, mode: "read" }),
+    [handleRequestNavigation],
+  );
+
+  const handleUpdateBrandFromList = useCallback(
+    (brand) =>
+      handleRequestNavigation({ type: "viewBrand", brand, mode: "editAll" }),
+    [handleRequestNavigation],
+  );
+
+  const handleDeleteBrandRequest = useCallback(
+    (brand) => {
+      setters.setBrandToDelete(brand);
+      setters.setDeleteModalOpen(true);
+    },
+    [setters.setBrandToDelete, setters.setDeleteModalOpen],
+  );
+
+  const handleDeleteCancel = useCallback(() => {
+    setters.setDeleteModalOpen(false);
+    setters.setBrandToDelete(null);
+  }, [setters.setBrandToDelete, setters.setDeleteModalOpen]);
+
+  const handleDeleteConfirm = useCallback(async () => {
+    const brand = states.brandToDelete;
+    const id = brand?._id;
+    if (!id) {
+      TOAST.error({ title: "Delete failed", message: "No brand selected" });
+      return;
+    }
+
+    const res = await apiHelpers.brand_delete({ id });
+    setters.setDeleteModalOpen(false);
+    setters.setBrandToDelete(null);
+
+    if (res?.success) {
+      TOAST.success({
+        title: "Brand deleted",
+        message: res.message || "Brand deleted successfully",
+      });
+      if (states.selectedBrand?._id === id) {
+        resetDetailState(setters);
+        setters.setActiveViewingType("all");
+      }
+      await fetchAll();
+    } else {
+      TOAST.error({
+        title: "Delete failed",
+        message: res?.message || "Could not delete brand",
+      });
+    }
+  }, [
+    apiHelpers.brand_delete,
+    fetchAll,
+    setters,
+    states.brandToDelete,
+    states.selectedBrand,
+    TOAST,
+  ]);
+
+  const handleGlobalUpdateClick = useCallback(() => {
+    setters.setDetailMode("editAll");
+    setters.setEditingField(null);
+  }, [setters.setDetailMode, setters.setEditingField]);
+
+  const handleGlobalCancel = useCallback(() => {
+    if (states.brandDraftBaseline) {
+      setters.setBrandDraft(states.brandDraftBaseline);
+    }
+    setters.setDetailMode("read");
+    setters.setEditingField(null);
+  }, [
+    setters.setBrandDraft,
+    setters.setDetailMode,
+    setters.setEditingField,
+    states.brandDraftBaseline,
+  ]);
+
+  const handleFieldUpdateClick = useCallback(
+    (fieldKey) => {
+      if (isBrandViewOnlyField(fieldKey)) return;
+      setters.setEditingField(fieldKey);
+      setters.setDetailMode("read");
+    },
+    [setters.setDetailMode, setters.setEditingField],
+  );
+
+  const handleFieldCancel = useCallback(() => {
+    if (states.editingField === "files" && states.brandFilesBaseline) {
+      setters.setBrandFilesDraft(states.brandFilesBaseline);
+    } else if (states.brandDraftBaseline) {
+      setters.setBrandDraft(states.brandDraftBaseline);
+    }
+    setters.setEditingField(null);
+  }, [
+    setters.setBrandDraft,
+    setters.setBrandFilesDraft,
+    setters.setEditingField,
+    states.brandDraftBaseline,
+    states.brandFilesBaseline,
+    states.editingField,
+  ]);
+
+  const openConfirmUpdateModal = useCallback(
+    (mode, fieldKeys) => {
+      if (!fieldKeys.length) {
+        TOAST.info({
+          title: "No changes",
+          message: "Update one or more fields before confirming.",
+        });
+        return;
+      }
+      setters.setConfirmUpdateMode(mode);
+      setters.setConfirmUpdateFieldKeys(fieldKeys);
+      setters.setConfirmUpdateModalOpen(true);
+    },
+    [
+      TOAST,
+      setters.setConfirmUpdateFieldKeys,
+      setters.setConfirmUpdateModalOpen,
+      setters.setConfirmUpdateMode,
+    ],
+  );
+
+  const handleGlobalConfirmClick = useCallback(() => {
+    const changed = getChangedFieldKeys(
+      states.brandDraftBaseline,
+      states.brandDraft,
+    );
+    openConfirmUpdateModal("global", changed);
+  }, [
+    openConfirmUpdateModal,
+    states.brandDraft,
+    states.brandDraftBaseline,
+  ]);
+
+  const handleFieldConfirmClick = useCallback(() => {
+    const fieldKey = states.editingField;
+    if (!fieldKey) return;
+
+    if (fieldKey === "files") {
+      if (
+        !isBrandFilesChanged(
+          states.brandFilesBaseline,
+          states.brandFilesDraft,
+        )
+      ) {
+        TOAST.info({
+          title: "No changes",
+          message: "Update one or more files before confirming.",
+        });
+        return;
+      }
+      openConfirmUpdateModal("field", ["files"]);
+      return;
+    }
+
+    const changed = getChangedFieldKeys(
+      states.brandDraftBaseline,
+      states.brandDraft,
+      [fieldKey],
+    );
+    openConfirmUpdateModal("field", changed);
+  }, [
+    TOAST,
+    openConfirmUpdateModal,
+    states.brandDraft,
+    states.brandDraftBaseline,
+    states.brandFilesBaseline,
+    states.brandFilesDraft,
+    states.editingField,
+  ]);
+
+  const handleConfirmUpdateCancel = useCallback(() => {
+    setters.setConfirmUpdateModalOpen(false);
+    setters.setConfirmUpdateFieldKeys([]);
+  }, [setters.setConfirmUpdateFieldKeys, setters.setConfirmUpdateModalOpen]);
+
+  const applyFieldUpdate = useCallback(
+    async (fieldKey, id) => {
+      const apiKey = FIELD_API_MAP[fieldKey];
+      const fn = apiHelpers[apiKey];
+      if (!fn) {
+        return {
+          success: false,
+          message: `No API helper for field: ${fieldKey}`,
+        };
+      }
+
+      if (fieldKey === "files") {
+        return fn({
+          id,
+          files: stripPendingFiles(states.brandFilesDraft),
+        });
+      }
+
+      const body = pickFieldPayload(fieldKey, states.brandDraft);
+      return fn({ id, ...body });
+    },
+    [apiHelpers, states.brandDraft, states.brandFilesDraft],
+  );
+
+  const handleConfirmUpdateConfirm = useCallback(async () => {
+    const id = states.selectedBrand?._id;
+    if (!id) {
+      TOAST.error({ title: "Update failed", message: "No brand selected" });
+      return;
+    }
+
+    const fieldKeys = states.confirmUpdateFieldKeys;
+    if (!fieldKeys.length) {
+      handleConfirmUpdateCancel();
+      return;
+    }
+
+    setters.setIsSaving(true);
+
+    try {
+      if (states.confirmUpdateMode === "global") {
+        const res = await apiHelpers.brand_updateAll({
+          id,
+          ...states.brandDraft,
+        });
+        if (!res?.success) {
+          TOAST.error({
+            title: "Update failed",
+            message: res?.message || "Could not update brand",
+          });
+          return;
+        }
+      } else {
+        for (const fieldKey of fieldKeys) {
+          const res = await applyFieldUpdate(fieldKey, id);
+          if (!res?.success) {
+            TOAST.error({
+              title: "Update failed",
+              message:
+                res?.message ||
+                `Could not update ${BRAND_DETAIL_FIELD_LABELS[fieldKey] || fieldKey}`,
+            });
+            return;
+          }
+        }
+      }
+
+      TOAST.success({
+        title: "Brand updated",
+        message: "Changes saved successfully",
+      });
+
+      const listRes = await fetchAll();
+      const refreshed =
+        listRes?.data?.find?.((b) => b._id === id) || states.selectedBrand;
+      const nextDraft = seedFullFromBrand(refreshed);
+      const nextFiles = seedFilesFromBrand(refreshed);
+
+      setters.setSelectedBrand(refreshed);
+      setters.setBrandDraft(nextDraft);
+      setters.setBrandDraftBaseline(nextDraft);
+      setters.setBrandFilesDraft(nextFiles);
+      setters.setBrandFilesBaseline(nextFiles);
+      setters.setDetailMode("read");
+      setters.setEditingField(null);
+      setters.setConfirmUpdateModalOpen(false);
+      setters.setConfirmUpdateFieldKeys([]);
+    } finally {
+      setters.setIsSaving(false);
+    }
+  }, [
+    TOAST,
+    apiHelpers.brand_updateAll,
+    applyFieldUpdate,
+    fetchAll,
+    handleConfirmUpdateCancel,
+    setters,
+    states.brandDraft,
+    states.confirmUpdateFieldKeys,
+    states.confirmUpdateMode,
+    states.selectedBrand,
+  ]);
+
+  const handleAddnew = useCallback(() => {
+    handleRequestNavigation({ type: "addNew" });
+  }, [handleRequestNavigation]);
+
   const handleFormChange = useCallback(
     (name, value) => {
       setters.setBrandFormData((prev) => setByPath(prev, name, value));
     },
     [setters.setBrandFormData],
+  );
+
+  const handleDraftChange = useCallback(
+    (name, value) => {
+      setters.setBrandDraft((prev) => setByPath(prev, name, value));
+    },
+    [setters.setBrandDraft],
   );
 
   const handleCreateSubmit = useCallback(async () => {
@@ -122,114 +524,139 @@ export const useCK_setup_brands_handlers = ({
     setters.setActiveOperation("viewing");
   }, [setters.setBrandFormData, setters.setActiveOperation]);
 
-  // ── Full edit ("continue building") ─────────────────────
-  const handleEditFull = useCallback(
-    (brand) => {
-      setters.setSelectedBrand(brand);
-      setters.setBrandFormData_full(seedFullFromBrand(brand));
-      setters.setActiveOperation("updating");
-    },
-    [
-      setters.setSelectedBrand,
-      setters.setBrandFormData_full,
-      setters.setActiveOperation,
-    ],
-  );
-
-  const handleFullFormChange = useCallback(
-    (name, value) => {
-      setters.setBrandFormData_full((prev) => setByPath(prev, name, value));
-    },
-    [setters.setBrandFormData_full],
-  );
-
   const handleAddSocial = useCallback(() => {
-    setters.setBrandFormData_full((prev) => ({
+    setters.setBrandDraft((prev) => ({
       ...prev,
       socials: [...(prev.socials || []), { ...DEFAULT_SOCIAL }],
     }));
-  }, [setters.setBrandFormData_full]);
+  }, [setters.setBrandDraft]);
 
   const handleRemoveSocial = useCallback(
     (index) => {
-      setters.setBrandFormData_full((prev) => ({
+      setters.setBrandDraft((prev) => ({
         ...prev,
         socials: (prev.socials || []).filter((_, i) => i !== index),
       }));
     },
-    [setters.setBrandFormData_full],
+    [setters.setBrandDraft],
   );
 
   const handleAddCuisineTag = useCallback(
     (tagId) => {
       if (!tagId) return;
-      setters.setBrandFormData_full((prev) => {
+      setters.setBrandDraft((prev) => {
         const current = normalizeCuisineTagIds(prev.cuisineTags);
         if (current.includes(tagId)) return prev;
         return { ...prev, cuisineTags: [...current, tagId] };
       });
     },
-    [setters.setBrandFormData_full],
+    [setters.setBrandDraft],
   );
 
   const handleRemoveCuisineTag = useCallback(
     (tagId) => {
       if (!tagId) return;
-      setters.setBrandFormData_full((prev) => ({
+      setters.setBrandDraft((prev) => ({
         ...prev,
         cuisineTags: normalizeCuisineTagIds(prev.cuisineTags).filter(
           (id) => id !== tagId,
         ),
       }));
     },
-    [setters.setBrandFormData_full],
+    [setters.setBrandDraft],
   );
 
-  const handleUpdateSubmit = useCallback(async () => {
-    const id = states.selectedBrand?._id;
-    if (!id) {
-      TOAST.error({ title: "Update failed", message: "No brand selected" });
-      return;
-    }
-    const res = await apiHelpers.brand_updateAll({
-      id,
-      ...states.brandFormData_full,
-    });
-    if (res?.success) {
-      TOAST.success({
-        title: "Brand Updated",
-        message: res.message || "Brand updated successfully",
-      });
-      setters.setBrandFormData_full(DFLT_F_D_BRAND_FULL);
-      setters.setSelectedBrand(null);
-      setters.setActiveOperation("viewing");
-      await fetchAll();
-    } else {
-      TOAST.error({
-        title: "Update failed",
-        message: res?.message || "Could not update brand",
-      });
-    }
-  }, [
-    apiHelpers.brand_updateAll,
-    states.selectedBrand,
-    states.brandFormData_full,
-    setters.setBrandFormData_full,
-    setters.setSelectedBrand,
-    setters.setActiveOperation,
-    TOAST,
-    fetchAll,
-  ]);
+  const handleLogoVariantChange = useCallback(
+    (slotKey, file) => {
+      if (!file || !slotKey) return;
 
-  const handleCancelFull = useCallback(() => {
-    setters.setBrandFormData_full(DFLT_F_D_BRAND_FULL);
-    setters.setSelectedBrand(null);
-    setters.setActiveOperation("viewing");
-  }, [
-    setters.setBrandFormData_full,
-    setters.setSelectedBrand,
-    setters.setActiveOperation,
-  ]);
+      setters.setBrandFilesDraft((prev) => {
+        const items = [...(prev.items || [])];
+        const variantTitle = buildLogoVariantTitle(slotKey);
+        const variantIndex = findLogoVariantIndex(items, slotKey);
+        const nextItem = fileItemFromPicker(file, variantTitle, slotKey);
+
+        if (variantIndex >= 0) {
+          items[variantIndex] = { ...items[variantIndex], ...nextItem };
+        } else {
+          items.unshift(nextItem);
+        }
+
+        return { ...prev, items };
+      });
+    },
+    [setters.setBrandFilesDraft],
+  );
+
+  const handleLogoVariantFieldChange = useCallback(
+    (slotKey, path, value) => {
+      if (!slotKey || !path) return;
+
+      setters.setBrandFilesDraft((prev) => {
+        const items = [...(prev.items || [])];
+        let variantIndex = findLogoVariantIndex(items, slotKey);
+        const variantTitle = buildLogoVariantTitle(slotKey);
+
+        if (variantIndex < 0) {
+          items.unshift({
+            ...buildEmptyFileItem(variantTitle),
+            title: variantTitle,
+            format: slotKey,
+            usedIn: "branding",
+          });
+          variantIndex = 0;
+        }
+
+        items[variantIndex] = setByPath(items[variantIndex], path, value);
+        return { ...prev, items };
+      });
+    },
+    [setters.setBrandFilesDraft],
+  );
+
+  const handleOtherFileChange = useCallback(
+    (otherIndex, file) => {
+      if (!file) return;
+      setters.setBrandFilesDraft((prev) => {
+        const items = [...(prev.items || [])];
+        const otherIndices = items
+          .map((_, index) => index)
+          .filter((index) => !isLogoVariantItem(items[index]));
+        const targetIndex = otherIndices[otherIndex];
+
+        if (targetIndex == null) return prev;
+
+        items[targetIndex] = fileItemFromPicker(
+          file,
+          items[targetIndex]?.title || file.name,
+        );
+        return { ...prev, items };
+      });
+    },
+    [setters.setBrandFilesDraft],
+  );
+
+  const handleAddOtherFiles = useCallback(
+    (fileList) => {
+      if (!fileList?.length) return;
+      setters.setBrandFilesDraft((prev) => ({
+        ...prev,
+        items: [
+          ...(prev.items || []),
+          ...fileList.map((file) => fileItemFromPicker(file, file.name)),
+        ],
+      }));
+    },
+    [setters.setBrandFilesDraft],
+  );
+
+  const brandDisplayName = useCallback(() => {
+    const fromDelete = asText(states.brandToDelete?.name);
+    if (fromDelete) return fromDelete;
+    const fromDraft = asText(states.brandDraft?.name);
+    if (fromDraft) return fromDraft;
+    return asText(states.selectedBrand?.name) || "Brand";
+  }, [states.brandDraft, states.brandToDelete, states.selectedBrand]);
 
   return {
     handlers: {
@@ -238,14 +665,35 @@ export const useCK_setup_brands_handlers = ({
       handleFormChange,
       handleCreateSubmit,
       handleCancelAdd,
-      handleEditFull,
-      handleFullFormChange,
+      handleViewBrand,
+      handleUpdateBrandFromList,
+      handleDeleteBrandRequest,
+      handleDeleteConfirm,
+      handleDeleteCancel,
+      handleBackToList,
+      handleGlobalUpdateClick,
+      handleGlobalCancel,
+      handleGlobalConfirmClick,
+      handleFieldUpdateClick,
+      handleFieldCancel,
+      handleFieldConfirmClick,
+      handleDraftChange,
       handleAddSocial,
       handleRemoveSocial,
       handleAddCuisineTag,
       handleRemoveCuisineTag,
-      handleUpdateSubmit,
-      handleCancelFull,
+      handleLogoVariantChange,
+      handleLogoVariantFieldChange,
+      handleOtherFileChange,
+      handleAddOtherFiles,
+      handleConfirmUpdateConfirm,
+      handleConfirmUpdateCancel,
+      handleRequestNavigation,
+      handleUnsavedConfirm,
+      handleUnsavedCancel,
+      hasUnsavedDetailChanges,
+      resetDetailState: () => resetDetailState(setters),
+      brandDisplayName,
     },
   };
 };

@@ -25,6 +25,13 @@
   color: var(--primary-error-border);
 }
 
+.cK_setup_form_muted {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  font-style: italic;
+}
+
 .cK_setup_form_input {
   width: 100%;
   box-sizing: border-box;

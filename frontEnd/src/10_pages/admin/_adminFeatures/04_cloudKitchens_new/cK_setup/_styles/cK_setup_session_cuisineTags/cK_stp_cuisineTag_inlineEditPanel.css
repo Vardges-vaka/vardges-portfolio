@@ -44,8 +44,55 @@
 
 .cK_stp_cuisineTag_inlineEdit__bar {
   position: static;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   padding: 0.35rem 0 0.65rem;
   margin-bottom: 0.15rem;
+}
+
+.cK_stp_cuisineTag_inlineEdit__barTitle {
+  flex-shrink: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cK_stp_cuisineTag_inlineEdit__barRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  min-width: 0;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+.cK_stp_cuisineTag_inlineEdit__barRight .cK_stp_cuisineTag_auditFields {
+  margin: 0;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.cK_stp_cuisineTag_inlineEdit__barRight .cK_setup_cuisineTag_edit_actions {
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .cK_stp_cuisineTag_inlineEdit__bar {
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .cK_stp_cuisineTag_inlineEdit__barRight {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.65rem;
+  }
+
+  .cK_stp_cuisineTag_inlineEdit__barRight .cK_setup_cuisineTag_edit_actions {
+    margin-left: auto;
+  }
 }
 
 .cK_stp_cuisineTag_inlineEdit__form .select_static,
@@ -62,6 +109,14 @@
 .cK_stp_cuisineTag_inlineEdit__form .select_static__menu,
 .cK_stp_cuisineTag_inlineEdit__form .select_field__menu {
   z-index: 50;
+}
+
+.cK_stp_cuisineTag_inlineEdit--readOnly .cK_stp_cuisineTag_inlineEdit__form {
+  background-color: color-mix(
+    in srgb,
+    var(--bg-secondary-color) 70%,
+    var(--bg-primary-color)
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

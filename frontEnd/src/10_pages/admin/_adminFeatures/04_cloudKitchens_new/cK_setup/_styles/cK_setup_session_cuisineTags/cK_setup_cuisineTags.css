@@ -64,3 +64,13 @@
   color: var(--btn-primary-text-color-HOV);
   background-color: var(--btn-primary-bg-color-HOV);
 }
+
+.cK_setup_cuisineTag_edit_btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cK_setup_cuisineTag_edit_btn:disabled:hover {
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+}
