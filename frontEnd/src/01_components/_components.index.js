@@ -82,3 +82,4 @@ export * from "./inputs/_components_inputs.js";
 export * from "./selects/_selects.index.js";
 export * from "./cards/_cards.index.js";
 export * from "./togglers/_togglers.index.js";
+export * from "./icons/_icons.index.js";

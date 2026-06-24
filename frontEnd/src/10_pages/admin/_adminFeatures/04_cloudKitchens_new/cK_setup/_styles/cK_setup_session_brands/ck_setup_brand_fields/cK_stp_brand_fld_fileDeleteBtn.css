@@ -1,0 +1,17 @@
+.cK_stp_brand_fld_fileDeleteBtn {
+  flex-shrink: 0;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--danger-color, #c0392b) 55%, var(--border-primary-color));
+  border-radius: 999px;
+  background-color: color-mix(in srgb, var(--danger-color, #c0392b) 8%, var(--bg-secondary-color));
+  color: var(--danger-color, #c0392b);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.cK_stp_brand_fld_fileDeleteBtn:hover {
+  border-color: var(--danger-color, #c0392b);
+  background-color: color-mix(in srgb, var(--danger-color, #c0392b) 14%, var(--bg-secondary-color));
+}

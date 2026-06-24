@@ -1,3 +1,5 @@
+import { INTEGRATION_DETAIL_FIELD_LABELS } from "../integrationDetail_helpers.js";
+
 export const integrations_propsComposer = (states, handlers, t) => {
   const stp_empty_integrations_props = {
     states: {},
@@ -22,12 +24,17 @@ export const integrations_propsComposer = (states, handlers, t) => {
 
   const stp_integrations_viewOne_props = {
     states: {
+      integration: states.selectedIntegration,
       integrationDraft: states.integrationDraft,
+      integrationFilesDraft: states.integrationFilesDraft,
       detailMode: states.detailMode,
       editingField: states.editingField,
       confirmUpdateModalOpen: states.confirmUpdateModalOpen,
-      confirmUpdateFieldKeys: states.confirmUpdateFieldKeys,
+      confirmUpdateLabels: states.confirmUpdateFieldKeys.map(
+        (key) => INTEGRATION_DETAIL_FIELD_LABELS[key] || key,
+      ),
       isSaving: states.isSaving,
+      detailExpandedSections: states.detailExpandedSections,
     },
     handlers: {
       onBackToList: handlers.handleBackToList,
@@ -38,6 +45,15 @@ export const integrations_propsComposer = (states, handlers, t) => {
       onFieldConfirm: handlers.handleFieldConfirmClick,
       onFieldCancel: handlers.handleFieldCancel,
       onDraftChange: handlers.handleDraftChange,
+      onLoginCredentialsPersist: handlers.handleLoginCredentialsPersist,
+      onSupportContactsPersist: handlers.handleSupportContactsPersist,
+      onLogoVariantChange: handlers.handleLogoVariantChange,
+      onLogoVariantFieldChange: handlers.handleLogoVariantFieldChange,
+      onLogoVariantDelete: handlers.handleLogoVariantDelete,
+      onOtherFileChange: handlers.handleOtherFileChange,
+      onOtherFileFieldChange: handlers.handleOtherFileFieldChange,
+      onOtherFileDelete: handlers.handleOtherFileDelete,
+      onAddOtherFiles: handlers.handleAddOtherFiles,
       onConfirmUpdateConfirm: handlers.handleConfirmUpdateConfirm,
       onConfirmUpdateCancel: handlers.handleConfirmUpdateCancel,
       itemDisplayName: handlers.itemDisplayName,
@@ -50,6 +66,12 @@ export const integrations_propsComposer = (states, handlers, t) => {
     states: {
       integrations: states.integrations,
       deleteModalOpen: states.deleteModalOpen,
+      kamPopoverIntegration: states.kamPopoverIntegration,
+      kamPopoverAnchorEl: states.kamPopoverAnchorEl,
+      credentialsPopoverIntegration: states.credentialsPopoverIntegration,
+      credentialsPopoverAnchorEl: states.credentialsPopoverAnchorEl,
+      supportPopoverIntegration: states.supportPopoverIntegration,
+      supportPopoverAnchorEl: states.supportPopoverAnchorEl,
       isSaving: states.isSaving,
     },
     handlers: {
@@ -58,6 +80,16 @@ export const integrations_propsComposer = (states, handlers, t) => {
       onDelete: handlers.handleDeleteRequest,
       onDeleteConfirm: handlers.handleDeleteConfirm,
       onDeleteCancel: handlers.handleDeleteCancel,
+      onKamPopoverToggle: handlers.handleKamPopoverToggle,
+      onKamPopoverClose: handlers.handleKamPopoverClose,
+      onOpenKam: handlers.handleOpenKam,
+      onCredentialsPopoverToggle: handlers.handleCredentialsPopoverToggle,
+      onCredentialsPopoverClose: handlers.handleCredentialsPopoverClose,
+      onCredentialsPopoverFetch: handlers.handleCredentialsPopoverFetch,
+      onOpenLoginCredentials: handlers.handleOpenLoginCredentials,
+      onSupportPopoverToggle: handlers.handleSupportPopoverToggle,
+      onSupportPopoverClose: handlers.handleSupportPopoverClose,
+      onOpenSupportContacts: handlers.handleOpenSupportContacts,
       itemDisplayName: handlers.itemDisplayName,
     },
     childComps: {},

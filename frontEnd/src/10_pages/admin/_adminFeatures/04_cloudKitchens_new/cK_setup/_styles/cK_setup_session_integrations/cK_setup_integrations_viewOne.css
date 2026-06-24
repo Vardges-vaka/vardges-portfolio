@@ -1,1 +1,38 @@
-/* cK_setup_integrations_viewOne */
+/* Integration detail — extends shared brand detail layout tokens */
+.cK_setup_integrations_viewOne .cK_setup_brands_viewOne__title {
+  max-width: 100%;
+}
+
+/* Hero: files tall on the left — right column sections use natural height (no stretch clip) */
+.cK_setup_integrations_viewOne .cK_setup_brands_viewOne__heroRow {
+  align-items: start;
+}
+
+.cK_setup_integrations_viewOne
+  .cK_setup_brands_viewOne__primaryColumn
+  .cK_setup_brands_viewOne__section {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.cK_setup_integrations_viewOne__identitySection {
+  min-height: 0;
+}
+
+.cK_setup_integrations_viewOne__lifecycleSection {
+  flex: 0 0 auto;
+}
+
+.cK_setup_integrations_viewOne__lifecycleBody {
+  padding-bottom: 0.65rem;
+}
+
+.cK_setup_integrations_viewOne
+  .cK_setup_integrations_viewOne__lifecycleSection
+  .cK_stp_integ_fld--lifecycle {
+  gap: 0.5rem;
+}
+
+.cK_setup_integrations_viewOne .cK_stp_brand_collapsibleSection__toggle {
+  flex-shrink: 0;
+}

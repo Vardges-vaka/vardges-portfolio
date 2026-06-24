@@ -26,6 +26,25 @@ export const useCK_setup_salesPlatforms_states = () => {
   const [pendingNavigation, setPendingNavigation] = useState(null);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [salesPlatformToDelete, setSalesPlatformToDelete] = useState(null);
+  const [logoUploadModalOpen, setLogoUploadModalOpen] = useState(false);
+  const [logoUploadPlatform, setLogoUploadPlatform] = useState(null);
+  const [logoUploadPendingFile, setLogoUploadPendingFile] = useState(null);
+  const [logoUploadPreviewUrl, setLogoUploadPreviewUrl] = useState("");
+  const [kamPopoverPlatform, setKamPopoverPlatform] = useState(null);
+  const [kamPopoverAnchorEl, setKamPopoverAnchorEl] = useState(null);
+  const [kamUpdateModalOpen, setKamUpdateModalOpen] = useState(false);
+  const [kamUpdatePlatform, setKamUpdatePlatform] = useState(null);
+  const [kamUpdateDraft, setKamUpdateDraft] = useState(null);
+  const [linksPopoverPlatform, setLinksPopoverPlatform] = useState(null);
+  const [linksPopoverAnchorEl, setLinksPopoverAnchorEl] = useState(null);
+  const [linksUpdateModalOpen, setLinksUpdateModalOpen] = useState(false);
+  const [linksUpdatePlatform, setLinksUpdatePlatform] = useState(null);
+  const [linksUpdateDraft, setLinksUpdateDraft] = useState(null);
+  const [credentialsPopoverPlatform, setCredentialsPopoverPlatform] = useState(null);
+  const [credentialsPopoverAnchorEl, setCredentialsPopoverAnchorEl] = useState(null);
+  const [supportPopoverPlatform, setSupportPopoverPlatform] = useState(null);
+  const [supportPopoverAnchorEl, setSupportPopoverAnchorEl] = useState(null);
+  const [detailExpandedSections, setDetailExpandedSections] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
 
   return {
@@ -46,6 +65,25 @@ export const useCK_setup_salesPlatforms_states = () => {
       pendingNavigation,
       deleteModalOpen,
       salesPlatformToDelete,
+      logoUploadModalOpen,
+      logoUploadPlatform,
+      logoUploadPendingFile,
+      logoUploadPreviewUrl,
+      kamPopoverPlatform,
+      kamPopoverAnchorEl,
+      kamUpdateModalOpen,
+      kamUpdatePlatform,
+      kamUpdateDraft,
+      linksPopoverPlatform,
+      linksPopoverAnchorEl,
+      linksUpdateModalOpen,
+      linksUpdatePlatform,
+      linksUpdateDraft,
+      credentialsPopoverPlatform,
+      credentialsPopoverAnchorEl,
+      supportPopoverPlatform,
+      supportPopoverAnchorEl,
+      detailExpandedSections,
       isSaving,
     },
     setters: {
@@ -65,6 +103,25 @@ export const useCK_setup_salesPlatforms_states = () => {
       setPendingNavigation,
       setDeleteModalOpen,
       setSalesPlatformToDelete,
+      setLogoUploadModalOpen,
+      setLogoUploadPlatform,
+      setLogoUploadPendingFile,
+      setLogoUploadPreviewUrl,
+      setKamPopoverPlatform,
+      setKamPopoverAnchorEl,
+      setKamUpdateModalOpen,
+      setKamUpdatePlatform,
+      setKamUpdateDraft,
+      setLinksPopoverPlatform,
+      setLinksPopoverAnchorEl,
+      setLinksUpdateModalOpen,
+      setLinksUpdatePlatform,
+      setLinksUpdateDraft,
+      setCredentialsPopoverPlatform,
+      setCredentialsPopoverAnchorEl,
+      setSupportPopoverPlatform,
+      setSupportPopoverAnchorEl,
+      setDetailExpandedSections,
       setIsSaving,
     },
     refs: {},

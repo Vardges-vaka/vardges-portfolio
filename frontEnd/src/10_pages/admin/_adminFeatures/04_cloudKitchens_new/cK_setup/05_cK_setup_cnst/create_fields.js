@@ -51,3 +51,54 @@ export const CONTRACT_OWNER_TYPE_OPTIONS = [
   { value: "Menu", label: "Menu" },
   { value: "Other", label: "Other" },
 ];
+
+const formatEnumLabel = (value = "") =>
+  String(value)
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+
+const toEnumOptions = (values = []) =>
+  values.map((value) => ({ value, label: formatEnumLabel(value) }));
+
+export const INTEGRATION_KIND_OPTIONS = toEnumOptions([
+  "inventory",
+  "sales-manager",
+  "other",
+]);
+
+export const INTEGRATION_STATUS_OPTIONS = toEnumOptions([
+  "onboarding",
+  "active",
+  "paused",
+  "terminated",
+]);
+
+export const INTEGRATION_PAYMENT_CYCLE_OPTIONS = toEnumOptions([
+  "one-time",
+  "monthly",
+  "yearly",
+  "other",
+]);
+
+export const INTEGRATION_PAYMENT_STATUS_OPTIONS = toEnumOptions([
+  "paid",
+  "due",
+  "overdue",
+]);
+
+export const INTEGRATION_PAYMENT_METHOD_OPTIONS = toEnumOptions([
+  "bank-transfer",
+  "card",
+  "cash",
+  "cheque",
+  "other",
+]);
+
+export const INTEGRATION_MAINTENANCE_STATUS_OPTIONS = toEnumOptions([
+  "upcoming",
+  "in-progress",
+  "completed",
+]);
+
+export const INTEGRATION_LOGIN_TYPE_OPTIONS = toEnumOptions(["email", "phone"]);

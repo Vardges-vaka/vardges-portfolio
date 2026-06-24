@@ -38,11 +38,13 @@ const CK_setup_integrations = ({ states, handlers, childProps, t }) => {
           <CK_setup_integrations_viewOne
             states={stp_integrations_viewOne_props.states}
             handlers={stp_integrations_viewOne_props.handlers}
+            t={stp_integrations_viewOne_props.t}
           />
         ) : (
           <CK_setup_integrations_viewAll
             states={stp_integrations_viewAll_props.states}
             handlers={stp_integrations_viewAll_props.handlers}
+            t={stp_integrations_viewAll_props.t}
           />
         ))}
 
@@ -55,3 +57,137 @@ const CK_setup_integrations = ({ states, handlers, childProps, t }) => {
 };
 
 export default CK_setup_integrations;
+
+const integrationSchema = {
+  // ── Identity ─────────────────────────────────────────────
+  provider: "", // "Supy", "Sapaad", "GrabTech"
+  kind: "", //enum: INTEGRATION_KINDS
+  accountLabel: "", // "Supy — Vkusno entity"
+  description: "",
+  notes: "",
+
+  // ── Lifecycle ────────────────────────────────INTEGRATION_STATUSES────────────
+  status: "onboarding", //enum: INTEGRATION_STATUSES
+  lifecycle: {
+    startAt: "",
+    restartedAt: "",
+    endAt: "",
+  },
+
+  // ── Links ────────────────────────────────────────────────
+  links: {
+    websiteUrl: "",
+    portalUrl: "",
+    other: [{ label: "", url: "" }],
+  },
+
+  // ── Payment (what YOU pay the vendor) ───────────────PAYMENT_CYCLES─────PAYMENT_METHODS - PAYMENT_STATUSES
+  payment: {
+    cycle: "",
+    amount: 0,
+    currency: "AED",
+    method: "",
+    status: "",
+    lastPaidOn: "",
+    nextDueOn: "",
+    notes: "",
+  },
+
+  // ── Credentials (Tier 3 — select: false inside helper) ───
+  loginCredentials: [
+    {
+      label: "", // "Vardges main", "Cashier — Arjan"
+      username: "",
+      password: "",
+      email: "",
+      phone: "",
+      loginType: "", //enum: ["email", "phone"]
+      belongsTo: {
+        name: "",
+        employee: "",
+      },
+      accessSites: [
+        {
+          brands: [""],
+          branches: [""],
+        },
+      ],
+      requiresOtp: false,
+      notes: "",
+    },
+  ],
+
+  // ── Contacts ─────────────────────────────────────────────
+  kam: {
+    name: "",
+    email: "",
+    phone: "",
+    whatsApp: "",
+    hours: "",
+    telegram: "",
+    notes: "",
+  },
+  support: [
+    {
+      label: "", // "general", "billing", "technical"
+      email: "",
+      phone: "",
+      whatsApp: "",
+      hours: "",
+    },
+  ],
+
+  // ── Maintenance windows ────────────────────────────────── enum: MAINTENANCE_STATUSES
+  scheduledMaintenances: [
+    {
+      status: "",
+      startsAt: "",
+      endsAt: "",
+      notes: "",
+    },
+  ],
+
+  // ── Relationships ────────────────────────────────────────
+  brands: [""],
+  branches: [""],
+  contract: "",
+
+  // ── Files + notes ────────────────────────CLOUD_STORAGE_PROVIDERS────────────────
+  // files: getStorageSchema(),
+  files: {
+    cloudStorage: {
+      isDefault: true,
+      value: "",
+    },
+    items: [
+      {
+        url: "",
+        format: "",
+        sizeIn_KB: 0,
+        description: {
+          value: "",
+          short: "",
+          long: "",
+        },
+        notes: "",
+        ref: "",
+        title: "",
+        usedIn: "",
+        createdBy: "",
+        updatedBy: "",
+        deletedBy: "",
+        deletedAt: "",
+        isDeleted: true,
+        deletedReason: "",
+        isActive: true,
+      },
+    ],
+  },
+  createdBy: "",
+  updatedBy: "",
+  deletedBy: "",
+  deletedAt: "",
+  isDeleted: false,
+  deletedReason: "",
+  isActive: true,
+};

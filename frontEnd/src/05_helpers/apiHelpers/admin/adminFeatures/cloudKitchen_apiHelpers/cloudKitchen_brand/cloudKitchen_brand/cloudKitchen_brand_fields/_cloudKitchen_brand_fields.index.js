@@ -1,6 +1,7 @@
 export { default as CK_brnd_brand_update_name } from "./CK_brnd_brand_update_name.js";
 export { default as CK_brnd_brand_update_tagline } from "./CK_brnd_brand_update_tagline.js";
 export { default as CK_brnd_brand_update_files } from "./CK_brnd_brand_update_files.js";
+export { default as CK_brnd_brand_get_fileReadUrl } from "./CK_brnd_brand_get_fileReadUrl.js";
 export { default as CK_brnd_brand_update_socials } from "./CK_brnd_brand_update_socials.js";
 export { default as CK_brnd_brand_update_registeredIn } from "./CK_brnd_brand_update_registeredIn.js";
 export { default as CK_brnd_brand_update_description } from "./CK_brnd_brand_update_description.js";

@@ -1,11 +1,20 @@
 import {
   LOGO_FORMAT_SLOTS,
+  buildFilePreviewUrl,
   countPresentLogoVariants,
 } from "../../../02_cK_setup_hlpr/brandFiles_hlpr.js";
+import CK_stp_brand_fld_fileActions from "./CK_stp_brand_fld_fileActions.jsx";
 import CK_stp_brand_fld_logoFormatEdit from "./CK_stp_brand_fld_logoFormatEdit.jsx";
 import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_logoFormats.css";
+import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_fileItemFields.css";
+import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_fileActions.css";
 
-const CK_stp_brand_fld_logoFormatsRead = ({ logoVariantMap }) => {
+const CK_stp_brand_fld_logoFormatsRead = ({
+  brandId,
+  integrationId = "",
+  logoVariantMap,
+  resolveFileUrl,
+}) => {
   const { present, total } = countPresentLogoVariants(logoVariantMap);
 
   return (
@@ -21,6 +30,7 @@ const CK_stp_brand_fld_logoFormatsRead = ({ logoVariantMap }) => {
         {LOGO_FORMAT_SLOTS.map((slot) => {
           const item = logoVariantMap[slot.key];
           const isPresent = Boolean(item?.url);
+          const previewUrl = buildFilePreviewUrl(item, resolveFileUrl);
 
           return (
             <li
@@ -46,14 +56,21 @@ const CK_stp_brand_fld_logoFormatsRead = ({ logoVariantMap }) => {
               </span>
 
               <div className="cK_stp_brand_fld_logoFormats__actions">
-                {isPresent && item.url ? (
-                  <a
-                    className="cK_stp_brand_fld_logoFormats__openLink"
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer">
-                    Open
-                  </a>
+                {isPresent && previewUrl ? (
+                  <CK_stp_brand_fld_fileActions
+                    brandId={brandId}
+                    integrationId={integrationId}
+                    item={item}
+                    resolveFileUrl={resolveFileUrl}
+                    previewUrl={previewUrl}
+                  />
+                ) : isPresent ? (
+                  <CK_stp_brand_fld_fileActions
+                    brandId={brandId}
+                    integrationId={integrationId}
+                    item={item}
+                    resolveFileUrl={resolveFileUrl}
+                  />
                 ) : null}
               </div>
             </li>
@@ -65,22 +82,37 @@ const CK_stp_brand_fld_logoFormatsRead = ({ logoVariantMap }) => {
 };
 
 const CK_stp_brand_fld_logoFormats = ({
+  brandId,
+  integrationId = "",
   logoVariantMap,
   editMode = false,
+  resolveFileUrl,
   onVariantChange,
   onVariantFieldChange,
+  onVariantDelete,
 }) => {
   if (editMode) {
     return (
       <CK_stp_brand_fld_logoFormatEdit
+        brandId={brandId}
+        integrationId={integrationId}
         logoVariantMap={logoVariantMap}
+        resolveFileUrl={resolveFileUrl}
         onVariantChange={onVariantChange}
         onVariantFieldChange={onVariantFieldChange}
+        onVariantDelete={onVariantDelete}
       />
     );
   }
 
-  return <CK_stp_brand_fld_logoFormatsRead logoVariantMap={logoVariantMap} />;
+  return (
+    <CK_stp_brand_fld_logoFormatsRead
+      brandId={brandId}
+      integrationId={integrationId}
+      logoVariantMap={logoVariantMap}
+      resolveFileUrl={resolveFileUrl}
+    />
+  );
 };
 
 export default CK_stp_brand_fld_logoFormats;

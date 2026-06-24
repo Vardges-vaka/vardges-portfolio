@@ -1,4 +1,5 @@
 import { Modal } from "../../../../../../../01_components/_components.index.js";
+import CK_stp_brand_fieldHeader from "../cK_setup_session_brands/ck_setup_brand_fields/CK_stp_brand_fieldHeader.jsx";
 import "../../_styles/cK_setup_session_brands/cK_setup_brands_viewOne.css";
 
 const getSectionEditState = (
@@ -53,51 +54,24 @@ const CK_setup_entity_viewOne = ({
     (key) => fieldLabels[key] || key,
   );
 
-  const fieldActions = (fieldKey, edit) => (
-    <>
-      {edit.showFieldUpdateBtn ? (
-        <button
-          type="button"
-          className="cK_setup_brands_viewOne__sectionBtn cK_setup_brands_viewOne__sectionBtn_primary"
-          onClick={() => handlers.onFieldUpdate(fieldKey)}
-          disabled={isSaving}>
-          Update
-        </button>
-      ) : null}
-      {edit.showFieldConfirmCancel ? (
-        <>
-          <button
-            type="button"
-            className="cK_setup_brands_viewOne__sectionBtn cK_setup_brands_viewOne__sectionBtn_secondary"
-            onClick={handlers.onFieldCancel}
-            disabled={isSaving}>
-            Cancel
-          </button>
-          <button
-            type="button"
-            className="cK_setup_brands_viewOne__sectionBtn cK_setup_brands_viewOne__sectionBtn_primary"
-            onClick={handlers.onFieldConfirm}
-            disabled={isSaving}>
-            Confirm
-          </button>
-        </>
-      ) : null}
-    </>
-  );
+  const editableHeaderProps = (fieldKey, edit) => ({
+    showUpdate: edit.showFieldUpdateBtn,
+    showConfirmCancel: edit.showFieldConfirmCancel,
+    onUpdate: () => handlers.onFieldUpdate(fieldKey),
+    onCancel: handlers.onFieldCancel,
+    onConfirm: handlers.onFieldConfirm,
+    isSaving,
+  });
 
   const renderDetailSection = ({ key, Component }) => {
     const edit = getSectionEditState(key, editCtx);
 
     return (
       <section key={key} className={edit.className}>
-        <header className="cK_setup_brands_viewOne__sectionHeader">
-          <h4 className="cK_setup_brands_viewOne__sectionTitle">
-            {fieldLabels[key]}
-          </h4>
-          <div className="cK_setup_brands_viewOne__sectionActions">
-            {fieldActions(key, edit)}
-          </div>
-        </header>
+        <CK_stp_brand_fieldHeader
+          title={fieldLabels[key]}
+          {...editableHeaderProps(key, edit)}
+        />
         <fieldset
           className="cK_setup_brands_viewOne__sectionBody"
           disabled={edit.fieldsetDisabled}>

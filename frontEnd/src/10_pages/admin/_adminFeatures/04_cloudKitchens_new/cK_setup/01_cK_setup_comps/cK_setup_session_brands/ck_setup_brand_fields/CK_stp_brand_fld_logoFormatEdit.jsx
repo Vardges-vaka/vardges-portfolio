@@ -1,23 +1,25 @@
 import { useCallback, useState } from "react";
 import {
-  Input_file,
-  Input_text,
-  Input_textArea,
-  Select_static,
-} from "../../../../../../../../01_components/_components.index.js";
-import { FILES_USED_IN_OPTIONS } from "../../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
-import {
   LOGO_FORMAT_SLOTS,
+  buildFilePreviewUrl,
   buildLogoVariantTitle,
   countPresentLogoVariants,
-  getFileItemUsedIn,
+  hasRemovableFileContent,
 } from "../../../02_cK_setup_hlpr/brandFiles_hlpr.js";
+import CK_stp_brand_fld_fileDeleteBtn from "./CK_stp_brand_fld_fileDeleteBtn.jsx";
+import CK_stp_brand_fld_fileItemFields from "./CK_stp_brand_fld_fileItemFields.jsx";
 import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_logoFormats.css";
+import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_fileItemFields.css";
+import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_fileDeleteBtn.css";
 
 const CK_stp_brand_fld_logoFormatEdit = ({
+  brandId,
+  integrationId = "",
   logoVariantMap,
+  resolveFileUrl,
   onVariantChange,
   onVariantFieldChange,
+  onVariantDelete,
 }) => {
   const [expandedKeys, setExpandedKeys] = useState(() => new Set());
   const { present, total } = countPresentLogoVariants(logoVariantMap);
@@ -31,9 +33,6 @@ const CK_stp_brand_fld_logoFormatEdit = ({
     });
   }, []);
 
-  const setField = (slotKey, path) => (event) =>
-    onVariantFieldChange?.(slotKey, path, event.target.value);
-
   return (
     <div className="cK_stp_brand_fld_logoFormats cK_stp_brand_fld_logoFormats--edit">
       <div className="cK_stp_brand_fld_logoFormats__header">
@@ -46,9 +45,10 @@ const CK_stp_brand_fld_logoFormatEdit = ({
       <ul className="cK_stp_brand_fld_logoFormats__list">
         {LOGO_FORMAT_SLOTS.map((slot) => {
           const item = logoVariantMap[slot.key];
-          const isPresent = Boolean(item?.url);
+          const isPresent = hasRemovableFileContent(item);
           const isOpen = expandedKeys.has(slot.key);
           const defaultTitle = buildLogoVariantTitle(slot.key);
+          const previewUrl = buildFilePreviewUrl(item, resolveFileUrl);
 
           return (
             <li
@@ -77,118 +77,55 @@ const CK_stp_brand_fld_logoFormatEdit = ({
               </button>
 
               <div className="cK_stp_brand_fld_logoFormats__summary">
-                <span className="cK_stp_brand_fld_logoFormats__label">
-                  {slot.label}
-                </span>
-                <span
-                  className={[
-                    "cK_stp_brand_fld_logoFormats__status",
-                    isPresent
-                      ? "cK_stp_brand_fld_logoFormats__status--present"
-                      : "cK_stp_brand_fld_logoFormats__status--missing",
-                  ].join(" ")}>
-                  {isPresent ? "Present" : "Missing"}
-                </span>
+                <div className="cK_stp_brand_fld_logoFormats__summaryMain">
+                  <span className="cK_stp_brand_fld_logoFormats__label">
+                    {slot.label}
+                  </span>
+                  <span
+                    className={[
+                      "cK_stp_brand_fld_logoFormats__status",
+                      isPresent
+                        ? "cK_stp_brand_fld_logoFormats__status--present"
+                        : "cK_stp_brand_fld_logoFormats__status--missing",
+                    ].join(" ")}>
+                    {isPresent ? "Present" : "Missing"}
+                  </span>
+                </div>
+
+                {isPresent ? (
+                  <CK_stp_brand_fld_fileDeleteBtn
+                    label={`Delete ${slot.label} logo`}
+                    onDelete={() => onVariantDelete?.(slot.key)}
+                  />
+                ) : null}
               </div>
 
               {isOpen ? (
                 <div className="cK_stp_brand_fld_logoFormats__panel">
-                  <Input_file
-                    accept={slot.accept}
-                    labelProps={{ isActive: true, message: "File" }}
-                    hintsProps={{
-                      isActive: true,
-                      type: "hint",
-                      message: isPresent
+                  <CK_stp_brand_fld_fileItemFields
+                    item={item}
+                    brandId={brandId}
+                    integrationId={integrationId}
+                    showMediaPreview={false}
+                    defaultTitle={defaultTitle}
+                    defaultFormat={slot.key}
+                    resolveFileUrl={resolveFileUrl}
+                    onFieldChange={(path, value) =>
+                      onVariantFieldChange?.(slot.key, path, value)
+                    }
+                    fileInput={{
+                      accept: slot.accept,
+                      previewUrl,
+                      previewFileName: slot.label,
+                      hint: isPresent
                         ? "Upload a new file to replace this format."
                         : "Upload the file for this logo format.",
+                      onChange: (event) =>
+                        onVariantChange?.(
+                          slot.key,
+                          event.target.files?.[0] ?? null,
+                        ),
                     }}
-                    showPreviewPanel
-                    previewUrl={item?.url || ""}
-                    previewFileName={slot.label}
-                    simulateUpload
-                    onChange={(event) =>
-                      onVariantChange?.(
-                        slot.key,
-                        event.target.files?.[0] ?? null,
-                      )
-                    }
-                  />
-
-                  <Input_text
-                    labelProps={{ isActive: true, message: "Title" }}
-                    value={item?.title || defaultTitle}
-                    onChange={setField(slot.key, "title")}
-                    placeholder={defaultTitle}
-                  />
-
-                  <div className="cK_stp_brand_fld_logoFormats__fieldRow">
-                    <Input_text
-                      labelProps={{ isActive: true, message: "Format" }}
-                      value={item?.format || slot.key}
-                      onChange={setField(slot.key, "format")}
-                      placeholder={slot.key}
-                    />
-                    <Input_text
-                      labelProps={{ isActive: true, message: "Size (KB)" }}
-                      value={item?.sizeIn_KB ?? ""}
-                      onChange={setField(slot.key, "sizeIn_KB")}
-                      placeholder="0"
-                    />
-                  </div>
-
-                  <Input_text
-                    labelProps={{ isActive: true, message: "URL" }}
-                    value={item?.url || ""}
-                    onChange={setField(slot.key, "url")}
-                    placeholder="https://…"
-                  />
-
-                  <Select_static
-                    labelProps={{ isActive: true, message: "Used in" }}
-                    options={FILES_USED_IN_OPTIONS}
-                    placeholder="Pick usage…"
-                    value={getFileItemUsedIn(item)}
-                    onChange={setField(slot.key, "usedIn")}
-                  />
-
-                  <Input_text
-                    labelProps={{ isActive: true, message: "Ref" }}
-                    value={item?.ref || ""}
-                    onChange={setField(slot.key, "ref")}
-                    placeholder="ObjectId or reference"
-                  />
-
-                  <Input_textArea
-                    labelProps={{
-                      isActive: true,
-                      message: "Description",
-                    }}
-                    rows={2}
-                    value={item?.description?.value ?? ""}
-                    onChange={setField(slot.key, "description.value")}
-                    placeholder="Short description"
-                  />
-
-                  <div className="cK_stp_brand_fld_logoFormats__fieldRow">
-                    <Input_text
-                      labelProps={{ isActive: true, message: "Description short" }}
-                      value={item?.description?.short ?? ""}
-                      onChange={setField(slot.key, "description.short")}
-                    />
-                    <Input_text
-                      labelProps={{ isActive: true, message: "Description long" }}
-                      value={item?.description?.long ?? ""}
-                      onChange={setField(slot.key, "description.long")}
-                    />
-                  </div>
-
-                  <Input_textArea
-                    labelProps={{ isActive: true, message: "Notes" }}
-                    rows={2}
-                    value={item?.notes ?? ""}
-                    onChange={setField(slot.key, "notes")}
-                    placeholder="Internal notes"
                   />
                 </div>
               ) : null}

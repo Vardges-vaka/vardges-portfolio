@@ -1,27 +1,34 @@
+import {
+  Input_text,
+  Input_textArea,
+} from "../../../../../../../../01_components/_components.index.js";
+import "../../../_styles/cK_setup_session_salesPlatforms/ck_setup_salesPlatform_fields/cK_stp_slsPltf_fld.css";
+
 const CK_stp_slsPltf_fld_basic = ({ states, handlers }) => {
   const v = states.values ?? {};
   const set = (name) => (e) => handlers.onChange?.(name, e.target.value);
 
   return (
-    <section className="cK_setup_form_section">
-      <label className="cK_setup_form_field">
-        <span className="cK_setup_form_label">Platform name</span>
-        <input
-          className="cK_setup_form_input"
-          type="text"
-          value={v.name ?? ""}
-          onChange={set("name")}
-        />
-      </label>
-      <label className="cK_setup_form_field">
-        <span className="cK_setup_form_label">Notes</span>
-        <textarea
-          className="cK_setup_form_input cK_setup_form_textarea"
-          rows={3}
-          value={v.notes ?? ""}
-          onChange={set("notes")}
-        />
-      </label>
+    <section className="cK_stp_slsPltf_fld cK_stp_slsPltf_fld--basic">
+      <Input_text
+        required
+        labelProps={{ isActive: true, message: "Platform name" }}
+        value={v.name ?? ""}
+        onChange={set("name")}
+        placeholder="e.g. Talabat"
+        maxLength={80}
+        lengthProps={{ isActive: true }}
+      />
+
+      <Input_textArea
+        labelProps={{ isActive: true, message: "Notes" }}
+        rows={2}
+        value={v.notes ?? ""}
+        onChange={set("notes")}
+        placeholder="Internal notes about this platform"
+        maxLength={500}
+        lengthProps={{ isActive: true }}
+      />
     </section>
   );
 };

@@ -14,4 +14,5 @@ export { default as cK_gen_integration_update_brands_cntrl } from "./cK_gen_inte
 export { default as cK_gen_integration_update_branches_cntrl } from "./cK_gen_integration_update_branches_cntrl.js";
 export { default as cK_gen_integration_update_contract_cntrl } from "./cK_gen_integration_update_contract_cntrl.js";
 export { default as cK_gen_integration_update_files_cntrl } from "./cK_gen_integration_update_files_cntrl.js";
+export { default as cK_gen_integration_get_fileReadUrl_cntrl } from "./cK_gen_integration_get_fileReadUrl_cntrl.js";
 export { default as cK_gen_integration_update_notes_cntrl } from "./cK_gen_integration_update_notes_cntrl.js";

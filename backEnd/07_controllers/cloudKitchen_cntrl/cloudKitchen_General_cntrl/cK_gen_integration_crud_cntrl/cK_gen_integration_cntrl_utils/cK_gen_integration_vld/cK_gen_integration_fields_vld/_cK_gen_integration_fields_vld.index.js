@@ -14,4 +14,5 @@ export { cK_gen_integration_update_brands_vld } from "./cK_gen_integration_updat
 export { cK_gen_integration_update_branches_vld } from "./cK_gen_integration_update_branches_vld.js";
 export { cK_gen_integration_update_contract_vld } from "./cK_gen_integration_update_contract_vld.js";
 export { cK_gen_integration_update_files_vld } from "./cK_gen_integration_update_files_vld.js";
+export { cK_gen_integration_get_fileReadUrl_vld } from "./cK_gen_integration_get_fileReadUrl_vld.js";
 export { cK_gen_integration_update_notes_vld } from "./cK_gen_integration_update_notes_vld.js";

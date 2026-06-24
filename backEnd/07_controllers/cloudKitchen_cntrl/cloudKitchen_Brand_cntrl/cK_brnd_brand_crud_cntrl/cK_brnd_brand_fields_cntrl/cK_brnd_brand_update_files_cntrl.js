@@ -3,6 +3,7 @@ import {
   catch_errorHandler_cntrl,
   validRespond,
 } from "../../../../../03_services/_services.index.js";
+import { cleanupTempFiles } from "../../../../../02_utils/_utils.index.js";
 
 const isDebug = true;
 const displayName = " | cK_brnd_brand_update_files_cntrl.js | ";
@@ -10,11 +11,15 @@ const displayName = " | cK_brnd_brand_update_files_cntrl.js | ";
 const cK_brnd_brand_update_files_cntrl = async (req, res) => {
   isDebug && console.log(`🛑 ↘️ 🏃‍➡️ ${displayName} [STARTED]`);
   try {
-    const { success, message, data } = await cK_brnd_brand_update_files_srv(req, isDebug);
+    const { success, message, data } = await cK_brnd_brand_update_files_srv(
+      req,
+      isDebug,
+    );
     return validRespond(res, isDebug, displayName, success, message, data);
   } catch (error) {
     return catch_errorHandler_cntrl(res, displayName, isDebug, error);
   } finally {
+    await cleanupTempFiles(req.files, isDebug);
     isDebug && console.log(`🚩🚩🚩${displayName}[COMPLETED]`);
   }
 };

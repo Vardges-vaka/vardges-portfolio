@@ -5,6 +5,7 @@ export { default as Input_email } from "./Input_email.jsx";
 export { default as Input_tel } from "./Input_tel.jsx";
 export { default as Input_number } from "./Input_number.jsx";
 export { default as Input_date } from "./Input_date.jsx";
+export { default as Input_workingHours } from "./Input_workingHours.jsx";
 export { default as Input_search } from "./Input_Search.jsx";
 export { default as Input_url } from "./Input_url.jsx";
 export { default as Input_textArea } from "./Input_textArea.jsx";

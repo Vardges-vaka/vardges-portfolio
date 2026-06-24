@@ -1,0 +1,151 @@
+/* Input_number — same shell as input_text; native spinners hidden */
+.input_number {
+  display: flex;
+  flex-direction: column;
+  gap: var(--input-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_number__fieldWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  background-color: var(--input-bg);
+  box-shadow: var(--input-shadow);
+  transition: var(--input-transition);
+  box-sizing: border-box;
+}
+
+.input_number__fieldWrap:hover:not(.input_number__fieldWrap--disabled) {
+  border: var(--input-border-hov);
+  background-color: var(--input-bg-hov);
+  box-shadow: var(--input-shadow-hov);
+}
+
+.input_number__fieldWrap:focus-within:not(.input_number__fieldWrap--disabled) {
+  border: var(--input-border-foc);
+  background-color: var(--input-bg-foc);
+  box-shadow: var(--input-shadow-foc);
+}
+
+.input_number__fieldWrap--disabled {
+  border: var(--input-border-dis);
+  background-color: var(--input-bg-dis);
+  box-shadow: var(--input-shadow-dis);
+  opacity: 0.72;
+}
+
+.input_number__fieldWrap--error {
+  border: 1px solid var(--input-error-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-error-border) 18%, transparent);
+}
+
+.input_number__fieldWrap--success {
+  border: 1px solid var(--input-success-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--input-success-border) 18%, transparent);
+}
+
+.input_number__input {
+  flex: 1;
+  min-width: 0;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.input_number__input::-webkit-outer-spin-button,
+.input_number__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input_number__inlineRow {
+  display: flex;
+  align-items: center;
+  gap: var(--input-inline-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input_number__inlineRow .input_number__fieldWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.input_number--labelInline {
+  gap: var(--input-gap);
+}
+
+.input_number--sm .input_number__fieldWrap {
+  min-height: 2rem;
+}
+
+.input_number--sm .input_number__input {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+}
+
+.input_number--md .input_number__fieldWrap {
+  min-height: 2.35rem;
+}
+
+.input_number--md .input_number__input {
+  font-size: 0.875rem;
+  padding: 0.42rem 0.7rem;
+}
+
+.input_number--lg .input_number__fieldWrap {
+  min-height: 2.75rem;
+}
+
+.input_number--lg .input_number__input {
+  font-size: 1rem;
+  padding: 0.52rem 0.85rem;
+}
+
+.input_number--sm .input_number__fieldWrap--withLeftIcon .input_number__input {
+  padding-left: 0.15rem;
+}
+
+.input_number--sm .input_number__fieldWrap--withRightIcon .input_number__input {
+  padding-right: 0.15rem;
+}
+
+.input_number--md .input_number__fieldWrap--withLeftIcon .input_number__input {
+  padding-left: 0.2rem;
+}
+
+.input_number--md .input_number__fieldWrap--withRightIcon .input_number__input {
+  padding-right: 0.2rem;
+}
+
+.input_number--lg .input_number__fieldWrap--withLeftIcon .input_number__input {
+  padding-left: 0.25rem;
+}
+
+.input_number--lg .input_number__fieldWrap--withRightIcon .input_number__input {
+  padding-right: 0.25rem;
+}
+
+.input_number__fieldWrap--withLength .input_number__input {
+  padding-right: 0.2rem;
+}
+
+.input_number--sm .input_number__fieldWrap--withLength .field_length--inline {
+  padding-right: 0.45rem;
+}
+
+.input_number--md .input_number__fieldWrap--withLength .field_length--inline {
+  padding-right: 0.55rem;
+}
+
+.input_number--lg .input_number__fieldWrap--withLength .field_length--inline {
+  padding-right: 0.65rem;
+}
+
+.input_number__fieldWrap--withLength.input_number__fieldWrap--withRightIcon
+  .field_length--inline {
+  padding-right: 0.15rem;
+}

@@ -1,0 +1,17 @@
+const Payment_statuses_due = () => {
+  const svgString = `
+<svg width="64px" height="64px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#000000">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <circle style="fill:#777777;" cx="50" cy="50" r="48"/> <circle style="fill:#777777;" cx="50" cy="50" r="44"/> <path style="stroke:none;fill:#12C61C;" d="M 40 8 50 50 90 40 C 90 40 80 1 38 8 "/> <circle style=";stroke-width:6pt;stroke:#222222;fill:none;" cx="50" cy="50" r="42"/> <g style="fill:#aaaaaa;"> <circle cx="50" cy="9" r="3"/> <circle cx="91" cy="50" r="3"/> <circle cx="50" cy="91" r="3"/> <circle cx="9" cy="50" r="3"/> </g> <path style="stroke:#ffffff;stroke-width:5;fill:none;" d="M 50 50 45 24"/> <path style="stroke:#ffffff;stroke-width:4;fill:none;" d="M 50 50 28 73"/> <circle style="fill:#ffffff;" cx="50" cy="50" r="4.5"/> <g transform="scale(0.4)"> <path style="fill:#FF8500;stroke:#825B0A;stroke-width:4" d="M 98,43 74,66 79,99 49,84 19,99 25,66 1,42 34,37 49,7 64,37 z"/> </g> </g>
+
+</svg>
+`;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
+};
+
+export default Payment_statuses_due;

@@ -3,6 +3,7 @@ import {
   DFLT_F_D_INTEGRATION,
   DFLT_F_D_INTEGRATION_FULL,
 } from "../../05_cK_setup_cnst/_cK_setup_cnst.index.js";
+import { normalizeIntegrationFiles } from "../../02_cK_setup_hlpr/integrationFiles_hlpr.js";
 
 export const useCK_setup_integrations_states = () => {
   const [integrations, setIntegrations] = useState([]);
@@ -16,6 +17,11 @@ export const useCK_setup_integrations_states = () => {
   );
   const [integrationDraftBaseline, setIntegrationDraftBaseline] =
     useState(null);
+  const [integrationFilesDraft, setIntegrationFilesDraft] = useState(
+    normalizeIntegrationFiles(),
+  );
+  const [integrationFilesBaseline, setIntegrationFilesBaseline] =
+    useState(null);
   const [detailMode, setDetailMode] = useState("read");
   const [editingField, setEditingField] = useState(null);
   const [confirmUpdateModalOpen, setConfirmUpdateModalOpen] = useState(false);
@@ -25,6 +31,16 @@ export const useCK_setup_integrations_states = () => {
   const [pendingNavigation, setPendingNavigation] = useState(null);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [integrationToDelete, setIntegrationToDelete] = useState(null);
+  const [kamPopoverIntegration, setKamPopoverIntegration] = useState(null);
+  const [kamPopoverAnchorEl, setKamPopoverAnchorEl] = useState(null);
+  const [credentialsPopoverIntegration, setCredentialsPopoverIntegration] =
+    useState(null);
+  const [credentialsPopoverAnchorEl, setCredentialsPopoverAnchorEl] =
+    useState(null);
+  const [supportPopoverIntegration, setSupportPopoverIntegration] =
+    useState(null);
+  const [supportPopoverAnchorEl, setSupportPopoverAnchorEl] = useState(null);
+  const [detailExpandedSections, setDetailExpandedSections] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
 
   return {
@@ -36,6 +52,8 @@ export const useCK_setup_integrations_states = () => {
       integrationFormData,
       integrationDraft,
       integrationDraftBaseline,
+      integrationFilesDraft,
+      integrationFilesBaseline,
       detailMode,
       editingField,
       confirmUpdateModalOpen,
@@ -45,6 +63,13 @@ export const useCK_setup_integrations_states = () => {
       pendingNavigation,
       deleteModalOpen,
       integrationToDelete,
+      kamPopoverIntegration,
+      kamPopoverAnchorEl,
+      credentialsPopoverIntegration,
+      credentialsPopoverAnchorEl,
+      supportPopoverIntegration,
+      supportPopoverAnchorEl,
+      detailExpandedSections,
       isSaving,
     },
     setters: {
@@ -55,6 +80,8 @@ export const useCK_setup_integrations_states = () => {
       setIntegrationFormData,
       setIntegrationDraft,
       setIntegrationDraftBaseline,
+      setIntegrationFilesDraft,
+      setIntegrationFilesBaseline,
       setDetailMode,
       setEditingField,
       setConfirmUpdateModalOpen,
@@ -64,6 +91,13 @@ export const useCK_setup_integrations_states = () => {
       setPendingNavigation,
       setDeleteModalOpen,
       setIntegrationToDelete,
+      setKamPopoverIntegration,
+      setKamPopoverAnchorEl,
+      setCredentialsPopoverIntegration,
+      setCredentialsPopoverAnchorEl,
+      setSupportPopoverIntegration,
+      setSupportPopoverAnchorEl,
+      setDetailExpandedSections,
       setIsSaving,
     },
     refs: {},

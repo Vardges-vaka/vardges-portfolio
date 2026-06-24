@@ -14,4 +14,5 @@ export { default as CK_gen_integration_update_brands } from "./CK_gen_integratio
 export { default as CK_gen_integration_update_branches } from "./CK_gen_integration_update_branches.js";
 export { default as CK_gen_integration_update_contract } from "./CK_gen_integration_update_contract.js";
 export { default as CK_gen_integration_update_files } from "./CK_gen_integration_update_files.js";
+export { default as CK_gen_integration_get_fileReadUrl } from "./CK_gen_integration_get_fileReadUrl.js";
 export { default as CK_gen_integration_update_notes } from "./CK_gen_integration_update_notes.js";

@@ -14,4 +14,5 @@ export { cK_gen_integration_update_brands_srv } from "./cK_gen_integration_updat
 export { cK_gen_integration_update_branches_srv } from "./cK_gen_integration_update_branches_srv.js";
 export { cK_gen_integration_update_contract_srv } from "./cK_gen_integration_update_contract_srv.js";
 export { cK_gen_integration_update_files_srv } from "./cK_gen_integration_update_files_srv.js";
+export { cK_gen_integration_get_fileReadUrl_srv } from "./cK_gen_integration_get_fileReadUrl_srv.js";
 export { cK_gen_integration_update_notes_srv } from "./cK_gen_integration_update_notes_srv.js";

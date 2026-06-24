@@ -185,6 +185,8 @@ const DFLT_F_D_INTEGRATION_FULL = {
     currency: "AED",
     method: "",
     status: "",
+    lastPaidOn: "",
+    nextDueOn: "",
     notes: "",
   },
   loginCredentials: [],

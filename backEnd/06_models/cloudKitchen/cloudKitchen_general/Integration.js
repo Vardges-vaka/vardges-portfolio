@@ -66,6 +66,10 @@ const integrationSchema = new mongoose.Schema(
       },
     ],
 
+    /*
+
+    */
+
     // ── Relationships ────────────────────────────────────────
     brands: [{ type: mongoose.Schema.Types.ObjectId, ref: "Brand" }],
     branches: [{ type: mongoose.Schema.Types.ObjectId, ref: "Branch" }],

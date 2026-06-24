@@ -14,10 +14,14 @@ import {
   buildEmptyFileItem,
   buildLogoVariantTitle,
   findLogoVariantIndex,
+  getOtherFileIndices,
   isBrandFilesChanged,
-  isLogoVariantItem,
+  prepareBrandFilesForSubmit,
   seedFilesFromBrand,
-  stripPendingFiles,
+  removeLogoVariantFromItems,
+  removeOtherFileFromItems,
+  revokeFilePreviewUrl,
+  upsertLogoVariantInItems,
   normalizeBrandFiles,
 } from "../../02_cK_setup_hlpr/brandFiles_hlpr.js";
 import {
@@ -387,7 +391,7 @@ export const useCK_setup_brands_handlers = ({
       if (fieldKey === "files") {
         return fn({
           id,
-          files: stripPendingFiles(states.brandFilesDraft),
+          files: prepareBrandFilesForSubmit(states.brandFilesDraft),
         });
       }
 
@@ -571,18 +575,13 @@ export const useCK_setup_brands_handlers = ({
       if (!file || !slotKey) return;
 
       setters.setBrandFilesDraft((prev) => {
-        const items = [...(prev.items || [])];
         const variantTitle = buildLogoVariantTitle(slotKey);
-        const variantIndex = findLogoVariantIndex(items, slotKey);
         const nextItem = fileItemFromPicker(file, variantTitle, slotKey);
 
-        if (variantIndex >= 0) {
-          items[variantIndex] = { ...items[variantIndex], ...nextItem };
-        } else {
-          items.unshift(nextItem);
-        }
-
-        return { ...prev, items };
+        return {
+          ...prev,
+          items: upsertLogoVariantInItems(prev.items || [], slotKey, nextItem),
+        };
       });
     },
     [setters.setBrandFilesDraft],
@@ -593,19 +592,9 @@ export const useCK_setup_brands_handlers = ({
       if (!slotKey || !path) return;
 
       setters.setBrandFilesDraft((prev) => {
-        const items = [...(prev.items || [])];
-        let variantIndex = findLogoVariantIndex(items, slotKey);
-        const variantTitle = buildLogoVariantTitle(slotKey);
-
-        if (variantIndex < 0) {
-          items.unshift({
-            ...buildEmptyFileItem(variantTitle),
-            title: variantTitle,
-            format: slotKey,
-            usedIn: "branding",
-          });
-          variantIndex = 0;
-        }
+        const items = upsertLogoVariantInItems(prev.items || [], slotKey, {});
+        const variantIndex = findLogoVariantIndex(items, slotKey);
+        if (variantIndex < 0) return prev;
 
         items[variantIndex] = setByPath(items[variantIndex], path, value);
         return { ...prev, items };
@@ -619,9 +608,7 @@ export const useCK_setup_brands_handlers = ({
       if (!file) return;
       setters.setBrandFilesDraft((prev) => {
         const items = [...(prev.items || [])];
-        const otherIndices = items
-          .map((_, index) => index)
-          .filter((index) => !isLogoVariantItem(items[index]));
+        const otherIndices = getOtherFileIndices(items);
         const targetIndex = otherIndices[otherIndex];
 
         if (targetIndex == null) return prev;
@@ -631,6 +618,66 @@ export const useCK_setup_brands_handlers = ({
           items[targetIndex]?.title || file.name,
         );
         return { ...prev, items };
+      });
+    },
+    [setters.setBrandFilesDraft],
+  );
+
+  const handleOtherFileFieldChange = useCallback(
+    (otherIndex, path, value) => {
+      if (otherIndex == null || !path) return;
+
+      setters.setBrandFilesDraft((prev) => {
+        const items = [...(prev.items || [])];
+        const otherIndices = getOtherFileIndices(items);
+        const targetIndex = otherIndices[otherIndex];
+
+        if (targetIndex == null) return prev;
+
+        items[targetIndex] = setByPath(items[targetIndex], path, value);
+        return { ...prev, items };
+      });
+    },
+    [setters.setBrandFilesDraft],
+  );
+
+  const handleLogoVariantDelete = useCallback(
+    (slotKey) => {
+      if (!slotKey) return;
+
+      setters.setBrandFilesDraft((prev) => {
+        const items = prev.items || [];
+        const variantIndex = findLogoVariantIndex(items, slotKey);
+        if (variantIndex >= 0) {
+          revokeFilePreviewUrl(items[variantIndex]);
+        }
+
+        return {
+          ...prev,
+          items: removeLogoVariantFromItems(items, slotKey),
+        };
+      });
+    },
+    [setters.setBrandFilesDraft],
+  );
+
+  const handleOtherFileDelete = useCallback(
+    (otherIndex) => {
+      if (otherIndex == null) return;
+
+      setters.setBrandFilesDraft((prev) => {
+        const items = prev.items || [];
+        const otherIndices = getOtherFileIndices(items);
+        const targetIndex = otherIndices[otherIndex];
+
+        if (targetIndex != null) {
+          revokeFilePreviewUrl(items[targetIndex]);
+        }
+
+        return {
+          ...prev,
+          items: removeOtherFileFromItems(items, otherIndex),
+        };
       });
     },
     [setters.setBrandFilesDraft],
@@ -684,7 +731,10 @@ export const useCK_setup_brands_handlers = ({
       handleRemoveCuisineTag,
       handleLogoVariantChange,
       handleLogoVariantFieldChange,
+      handleLogoVariantDelete,
       handleOtherFileChange,
+      handleOtherFileFieldChange,
+      handleOtherFileDelete,
       handleAddOtherFiles,
       handleConfirmUpdateConfirm,
       handleConfirmUpdateCancel,

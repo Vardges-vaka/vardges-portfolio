@@ -1,18 +1,23 @@
-import { Input_file } from "../../../../../../../../01_components/_components.index.js";
-import { splitBrandFileItems } from "../../../02_cK_setup_hlpr/brandFiles_hlpr.js";
+import { splitBrandFileItems, buildFilePreviewUrl } from "../../../02_cK_setup_hlpr/brandFiles_hlpr.js";
+import { useBrandFileReadUrls } from "../../../03_cK_setup_hooks/cK_setup_brands_hooks/useBrandFileReadUrls.js";
 import CK_stp_brand_fld_fileAudit from "./CK_stp_brand_fld_fileAudit.jsx";
+import CK_stp_brand_fld_fileActions from "./CK_stp_brand_fld_fileActions.jsx";
+import CK_stp_brand_fld_fileMediaPreview from "./CK_stp_brand_fld_fileMediaPreview.jsx";
 import CK_stp_brand_fld_logoFormats from "./CK_stp_brand_fld_logoFormats.jsx";
+import CK_stp_brand_fld_otherFiles from "./CK_stp_brand_fld_otherFiles.jsx";
 import "../../../_styles/cK_setup_session_brands/ck_setup_brand_fields/cK_stp_brand_fld_files.css";
 
-const CK_stp_brand_fld_files = ({ states, handlers }) => {
+const CK_stp_brand_fld_files = ({ brandId, states, handlers }) => {
   const files = states.files ?? { items: [] };
   const disabled = Boolean(states.disabled);
+  const { resolveFileUrl } = useBrandFileReadUrls(brandId, files);
   const { logoVariantMap, displayLogoItem, primaryAuditItem, otherItems } =
     splitBrandFileItems(files.items);
 
-  const heroUrl = displayLogoItem?.url || "";
+  const heroPreviewUrl = buildFilePreviewUrl(displayLogoItem, resolveFileUrl);
   const pdfItem = logoVariantMap.pdf;
-  const hasPdfOnly = !heroUrl && Boolean(pdfItem?.url);
+  const pdfPreviewUrl = buildFilePreviewUrl(pdfItem, resolveFileUrl);
+  const hasPdfOnly = !heroPreviewUrl && Boolean(pdfPreviewUrl);
 
   return (
     <section className="cK_stp_brand_fld_files">
@@ -25,22 +30,35 @@ const CK_stp_brand_fld_files = ({ states, handlers }) => {
           .join(" ")}>
         {disabled ? (
           <div className="cK_stp_brand_fld_files__logoVisual">
-            {heroUrl ? (
-              <img
-                className="cK_stp_brand_fld_files__logoImg"
-                src={heroUrl}
-                alt="Brand logo preview"
-              />
+            {heroPreviewUrl ? (
+              <>
+                <img
+                  className="cK_stp_brand_fld_files__logoImg"
+                  src={heroPreviewUrl}
+                  alt="Brand logo preview"
+                />
+                <CK_stp_brand_fld_fileActions
+                  brandId={brandId}
+                  item={displayLogoItem}
+                  resolveFileUrl={resolveFileUrl}
+                  previewUrl={heroPreviewUrl}
+                  className="cK_stp_brand_fld_files__heroActions"
+                />
+              </>
             ) : hasPdfOnly ? (
               <div className="cK_stp_brand_fld_files__logoPlaceholder cK_stp_brand_fld_files__logoPlaceholder--pdf">
-                <span>PDF logo available</span>
-                <a
-                  className="cK_stp_brand_fld_files__pdfLink"
-                  href={pdfItem.url}
-                  target="_blank"
-                  rel="noreferrer">
-                  Open PDF
-                </a>
+                <CK_stp_brand_fld_fileMediaPreview
+                  item={pdfItem}
+                  previewUrl={pdfPreviewUrl}
+                  label="PDF logo"
+                />
+                <CK_stp_brand_fld_fileActions
+                  brandId={brandId}
+                  item={pdfItem}
+                  resolveFileUrl={resolveFileUrl}
+                  previewUrl={pdfPreviewUrl}
+                  className="cK_stp_brand_fld_files__heroActions"
+                />
               </div>
             ) : (
               <div
@@ -58,100 +76,34 @@ const CK_stp_brand_fld_files = ({ states, handlers }) => {
         ) : (
           <CK_stp_brand_fld_logoFormats
             editMode
+            brandId={brandId}
             logoVariantMap={logoVariantMap}
+            resolveFileUrl={resolveFileUrl}
             onVariantChange={handlers.onLogoVariantChange}
             onVariantFieldChange={handlers.onLogoVariantFieldChange}
+            onVariantDelete={handlers.onLogoVariantDelete}
           />
         )}
       </div>
 
       {disabled ? (
-        <CK_stp_brand_fld_logoFormats logoVariantMap={logoVariantMap} />
+        <CK_stp_brand_fld_logoFormats
+          brandId={brandId}
+          logoVariantMap={logoVariantMap}
+          resolveFileUrl={resolveFileUrl}
+        />
       ) : null}
 
-      <div className="cK_stp_brand_fld_files__otherList">
-        <h5 className="cK_stp_brand_fld_files__otherTitle">Other files</h5>
-
-        {otherItems.length === 0 ? (
-          <p className="cK_stp_brand_fld_files__emptyHint">
-            No other files attached yet.
-          </p>
-        ) : null}
-
-        {disabled && otherItems.length > 0 ? (
-          <ul className="cK_stp_brand_fld_files__readList">
-            {otherItems.map((item, index) => (
-              <li
-                key={`${item.title || "file"}-${item.url || "empty"}-${index}`}
-                className="cK_stp_brand_fld_files__readItem">
-                <span className="cK_stp_brand_fld_files__readItemName">
-                  {item.title || `File ${index + 1}`}
-                </span>
-                {item.format ? (
-                  <span className="cK_stp_brand_fld_files__readItemMeta">
-                    {item.format}
-                  </span>
-                ) : null}
-                {item.url ? (
-                  <a
-                    className="cK_stp_brand_fld_files__readItemLink"
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer">
-                    Open
-                  </a>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        ) : null}
-
-        {!disabled
-          ? otherItems.map((item, index) => (
-              <Input_file
-                key={`${item.title || "file"}-${item.url || "empty"}-${index}`}
-                labelProps={{
-                  isActive: true,
-                  message: item.title || `File ${index + 1}`,
-                }}
-                hintsProps={{
-                  isActive: Boolean(item.notes),
-                  type: "hint",
-                  message: item.notes || item.format || "",
-                }}
-                showPreviewPanel
-                previewUrl={item.url || ""}
-                previewFileName={item.title || ""}
-                simulateUpload
-                onChange={(event) =>
-                  handlers.onOtherFileChange?.(
-                    index,
-                    event.target.files?.[0] ?? null,
-                  )
-                }
-              />
-            ))
-          : null}
-
-        {!disabled ? (
-          <div className="cK_stp_brand_fld_files__addBlock">
-            <Input_file
-              multiple
-              labelProps={{ isActive: true, message: "Add files" }}
-              hintsProps={{
-                isActive: true,
-                type: "hint",
-                message: "New files are saved when you confirm this section.",
-              }}
-              showPreviewPanel
-              simulateUpload
-              onChange={(event) =>
-                handlers.onAddOtherFiles?.([...(event.target.files ?? [])])
-              }
-            />
-          </div>
-        ) : null}
-      </div>
+      <CK_stp_brand_fld_otherFiles
+        brandId={brandId}
+        items={otherItems}
+        editMode={!disabled}
+        resolveFileUrl={resolveFileUrl}
+        onOtherFileChange={handlers.onOtherFileChange}
+        onOtherFileFieldChange={handlers.onOtherFileFieldChange}
+        onOtherFileDelete={handlers.onOtherFileDelete}
+        onAddOtherFiles={handlers.onAddOtherFiles}
+      />
     </section>
   );
 };

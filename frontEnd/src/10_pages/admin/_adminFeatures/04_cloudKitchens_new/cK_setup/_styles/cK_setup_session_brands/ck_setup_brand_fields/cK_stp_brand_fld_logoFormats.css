@@ -177,6 +177,14 @@
   min-width: 0;
 }
 
+.cK_stp_brand_fld_logoFormats__summaryMain {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
 .cK_stp_brand_fld_logoFormats__panel {
   grid-row: 2;
   grid-column: 1 / -1;

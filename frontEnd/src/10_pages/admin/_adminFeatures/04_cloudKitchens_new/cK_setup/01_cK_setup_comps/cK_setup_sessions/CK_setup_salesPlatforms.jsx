@@ -39,6 +39,7 @@ const CK_setup_salesPlatforms = ({ states, handlers, childProps, t }) => {
           <CK_setup_salesPlatforms_viewOne
             states={stp_salesPlatforms_viewOne_props.states}
             handlers={stp_salesPlatforms_viewOne_props.handlers}
+            t={stp_salesPlatforms_viewOne_props.t}
           />
         ) : (
           <CK_setup_salesPlatforms_viewAll

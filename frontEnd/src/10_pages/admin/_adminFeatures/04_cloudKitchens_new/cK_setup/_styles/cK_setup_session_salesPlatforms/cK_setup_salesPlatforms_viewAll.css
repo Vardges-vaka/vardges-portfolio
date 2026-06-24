@@ -1,6 +1,397 @@
-.cK_setup_salesPlatforms_viewAll,
-.cK_setup_integrations_viewAll {
-  list-style: none;
+.cK_setup_salesPlatforms_viewAll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.cK_setup_salesPlatforms_viewAll__empty {
   margin: 0;
+  padding: 1.25rem 0.85rem;
+  border: 1px dashed var(--border-primary-color);
+  border-radius: 0.65rem;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--text-secondary-color);
+  background-color: var(--bg-secondary-color);
+}
+
+.cK_setup_salesPlatforms_viewAll__tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.75rem;
+  background-color: var(--bg-secondary-color);
+}
+
+.cK_setup_salesPlatforms_viewAll__table {
+  width: 100%;
+  min-width: 58rem;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.cK_setup_salesPlatforms_viewAll__head {
+  background-color: color-mix(
+    in srgb,
+    var(--title-secondary-color) 8%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border-primary-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--title-secondary-color);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell--center,
+.cK_setup_salesPlatforms_viewAll__headCell--iconOnly {
+  text-align: center;
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell--index {
+  width: 1.75rem;
+  padding-inline: 0.35rem;
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell--logo {
+  width: 4.25rem;
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell--name {
+  width: 6rem;
+  min-width: 5.5rem;
+  max-width: 7rem;
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell--metric {
+  min-width: 6.5rem;
+  text-align: center;
+  font-size: 0.66rem;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell--iconOnly {
+  width: 4rem;
+}
+
+.cK_setup_salesPlatforms_viewAll__headCell--actions {
+  width: 6.5rem;
+  text-align: center;
+}
+
+.cK_setup_salesPlatforms_viewAll__row {
+  transition: background-color 0.15s ease;
+}
+
+.cK_setup_salesPlatforms_viewAll__row:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--btn-primary-bg-color) 6%,
+    var(--bg-secondary-color)
+  );
+}
+
+.cK_setup_salesPlatforms_viewAll__cell {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border-primary-color);
+  vertical-align: middle;
+  font-size: 0.82rem;
+  color: var(--text-primary-color);
+}
+
+.cK_setup_salesPlatforms_viewAll__body
+  tr:last-child
+  .cK_setup_salesPlatforms_viewAll__cell {
+  border-bottom: 0;
+}
+
+.cK_setup_salesPlatforms_viewAll__cell--index,
+.cK_setup_salesPlatforms_viewAll__cell--stat {
+  text-align: center;
+  color: var(--text-secondary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.cK_setup_salesPlatforms_viewAll__cell--index {
+  width: 1.75rem;
+  padding-inline: 0.35rem;
+}
+
+.cK_setup_salesPlatforms_viewAll__cell--logo {
+  text-align: center;
+}
+
+.cK_setup_salesPlatforms_viewAll__cell--name {
+  width: 6rem;
+  min-width: 5.5rem;
+  max-width: 7rem;
+  text-align: center;
+}
+
+.cK_setup_salesPlatforms_viewAll__cell--metric {
+  text-align: center;
+  color: var(--text-secondary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.cK_setup_salesPlatforms_viewAll__metricPlaceholder {
+  font-size: 0.78rem;
+  font-style: italic;
+  opacity: 0.72;
+}
+
+.cK_setup_salesPlatforms_viewAll__cell--actions {
+  text-align: right;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoSlot {
+  --slsPltf-list-logo-size: 2.5rem;
+  --slsPltf-list-logo-radius: 0.55rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--slsPltf-list-logo-size);
+  height: var(--slsPltf-list-logo-size);
+  min-width: var(--slsPltf-list-logo-size);
+  min-height: var(--slsPltf-list-logo-size);
+  border-radius: var(--slsPltf-list-logo-radius);
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: inherit;
   padding: 0;
+  background-color: transparent;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoFallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--slsPltf-list-logo-size, 2.5rem);
+  height: var(--slsPltf-list-logo-size, 2.5rem);
+  min-width: var(--slsPltf-list-logo-size, 2.5rem);
+  min-height: var(--slsPltf-list-logo-size, 2.5rem);
+  border-radius: var(--slsPltf-list-logo-radius, 0.55rem);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-bg-color);
+}
+
+.cK_setup_salesPlatforms_viewAll__logoUploadBtn {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: var(--slsPltf-list-logo-radius);
+  background-color: transparent;
+  color: var(--btn-primary-bg-color);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoUploadIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoUploadBtn:hover:not(:disabled) {
+  color: var(--btn-primary-bg-color-HOV, var(--btn-primary-bg-color));
+  opacity: 0.82;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoUploadBtn:focus-visible {
+  outline: 2px solid var(--btn-primary-border-color);
+  outline-offset: 1px;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoUploadBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cK_setup_salesPlatforms_viewAll__logoUploadModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-primary-color);
+}
+
+.cK_setup_salesPlatforms_viewAll__logoUploadModalIntro {
+  margin: 0;
+}
+
+.cK_setup_salesPlatforms_viewAll__name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--title-secondary-color);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cK_setup_salesPlatforms_viewAll__stat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.45rem;
+  color: var(--text-secondary-color);
+  background-color: color-mix(
+    in srgb,
+    var(--border-primary-color) 35%,
+    transparent
+  );
+  opacity: 0.55;
+}
+
+.cK_setup_salesPlatforms_viewAll__stat--active {
+  color: var(--btn-primary-bg-color);
+  opacity: 1;
+  background-color: color-mix(
+    in srgb,
+    var(--btn-primary-bg-color) 12%,
+    transparent
+  );
+}
+
+.cK_setup_salesPlatforms_viewAll__statBtn {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.cK_setup_salesPlatforms_viewAll__statBtn:hover:not(:disabled) {
+  opacity: 1;
+  background-color: color-mix(
+    in srgb,
+    var(--btn-primary-bg-color) 18%,
+    transparent
+  );
+}
+
+.cK_setup_salesPlatforms_viewAll__statBtn--open {
+  color: var(--btn-primary-bg-color);
+  opacity: 1;
+  background-color: color-mix(
+    in srgb,
+    var(--btn-primary-bg-color) 20%,
+    transparent
+  );
+}
+
+.cK_setup_salesPlatforms_viewAll__statBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cK_setup_salesPlatforms_viewAll__statBtn:focus-visible {
+  outline: 2px solid var(--btn-primary-border-color);
+  outline-offset: 2px;
+}
+
+.cK_setup_salesPlatforms_viewAll__statCount {
+  position: absolute;
+  top: -0.15rem;
+  right: -0.2rem;
+  min-width: 0.95rem;
+  height: 0.95rem;
+  padding: 0 0.18rem;
+  border-radius: 999px;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  line-height: 0.95rem;
+  text-align: center;
+  color: var(--btn-primary-text-color, #fff);
+  background-color: var(--btn-primary-bg-color);
+  pointer-events: none;
+}
+
+.cK_setup_salesPlatforms_viewAll__actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.cK_setup_salesPlatforms_viewAll__actionBtn {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 0.45rem;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cK_setup_salesPlatforms_viewAll__actionBtn:hover:not(:disabled) {
+  border-color: var(--btn-primary-border-color);
+  color: var(--btn-primary-bg-color);
+}
+
+.cK_setup_salesPlatforms_viewAll__actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cK_setup_salesPlatforms_viewAll__deleteModalBody {
+  color: var(--text-primary-color);
+}
+
+.cK_setup_salesPlatforms_viewAll__deleteModalBody p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .cK_setup_salesPlatforms_viewAll__headCell,
+  .cK_setup_salesPlatforms_viewAll__cell {
+    padding: 0.55rem 0.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cK_setup_salesPlatforms_viewAll__row {
+    transition: none;
+  }
 }

@@ -1,0 +1,56 @@
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow {
+  align-items: stretch;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow > .cK_setup_brands_viewOne__section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: visible;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow .cK_setup_brands_viewOne__sectionBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__section {
+  overflow: visible;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__sectionBody {
+  overflow: visible;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow .cK_stp_slsPltf_fld_links,
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow .cK_stp_slsPltf_fld--basic {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow .cK_stp_slsPltf_fld_links__layout {
+  flex: 1;
+  gap: 1.35rem;
+  column-gap: 1.35rem;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow .cK_stp_slsPltf_fld_links__fieldsCol {
+  flex: 1;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow .cK_stp_slsPltf_fld--basic {
+  gap: 0.85rem;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_setup_brands_viewOne__heroRow .cK_stp_slsPltf_fld--basic > :last-child {
+  flex: 1;
+}
+
+.cK_setup_salesPlatforms_viewOne .cK_stp_slsPltf_fld--kam {
+  gap: 0.65rem;
+  padding-bottom: 0.15rem;
+}

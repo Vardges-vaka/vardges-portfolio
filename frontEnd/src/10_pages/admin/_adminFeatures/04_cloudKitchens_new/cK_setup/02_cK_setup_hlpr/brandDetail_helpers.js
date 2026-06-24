@@ -84,6 +84,19 @@ export const BRAND_VIEW_ONLY_FIELD_KEYS = [
   "menus",
 ];
 
+export const BRAND_COLLAPSIBLE_FIELD_KEYS = [
+  "socials",
+  "integrations",
+  "siblings",
+  "cuisineTags",
+  "contracts",
+  "employees",
+  "equipments",
+  "branches",
+  "menus",
+  "competitors",
+];
+
 export const isBrandViewOnlyField = (fieldKey) =>
   BRAND_VIEW_ONLY_FIELD_KEYS.includes(fieldKey);
 

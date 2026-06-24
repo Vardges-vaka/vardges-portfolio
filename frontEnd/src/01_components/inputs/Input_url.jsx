@@ -56,6 +56,7 @@ const Input_url = forwardRef(function Input_url(
     readOnly = false,
     readOnlyMaxChars = 10,
     onCopy,
+    onOpen,
 
     className,
     baseStyle = true,
@@ -92,8 +93,8 @@ const Input_url = forwardRef(function Input_url(
   );
 
   const trimmedValue = String(resolvedValue ?? "").trim();
-  const showReadOnlyActions = readOnly && Boolean(trimmedValue);
   const canOpenUrl = canOpenUrlValue(trimmedValue);
+  const canCopyUrl = Boolean(trimmedValue);
 
   const displayValue = useMemo(() => {
     if (!readOnly) return resolvedValue;
@@ -174,8 +175,9 @@ const Input_url = forwardRef(function Input_url(
       event?.stopPropagation?.();
       if (!trimmedValue || !canOpenUrl) return;
       window.open(trimmedValue, "_blank", "noopener,noreferrer");
+      onOpen?.(trimmedValue);
     },
-    [trimmedValue, canOpenUrl],
+    [trimmedValue, canOpenUrl, onOpen],
   );
 
   const describedBy = resolvedHints.isActive ? hintId : undefined;
@@ -198,7 +200,7 @@ const Input_url = forwardRef(function Input_url(
     "input_url__fieldWrap",
     resolvedLeftIcon.isActive && "input_url__fieldWrap--withLeftIcon",
     resolvedRightIcon.isActive && "input_url__fieldWrap--withRightIcon",
-    showReadOnlyActions && "input_url__fieldWrap--withActions",
+    readOnly && "input_url__fieldWrap--withActions",
     readOnly && "input_url__fieldWrap--readOnly",
     disabled && "input_url__fieldWrap--disabled",
     resolvedHints.isActive &&
@@ -237,7 +239,7 @@ const Input_url = forwardRef(function Input_url(
     />
   ) : null;
 
-  const readOnlyActions = showReadOnlyActions ? (
+  const readOnlyActions = readOnly ? (
     <div className="input_url__actions">
       <Input_icon
         baseStyle
@@ -245,9 +247,15 @@ const Input_url = forwardRef(function Input_url(
         isActive
         type="lucide"
         lucidIcon="Copy"
-        title="Copy URL"
-        className="input_url__actionIcon"
-        onClick={handleCopyUrl}
+        title={canCopyUrl ? "Copy URL" : "Nothing to copy"}
+        className={[
+          "input_url__actionIcon",
+          !canCopyUrl && "input_url__actionIcon--disabled",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        decorative={!canCopyUrl}
+        onClick={canCopyUrl ? handleCopyUrl : undefined}
       />
       <Input_icon
         baseStyle
@@ -255,7 +263,11 @@ const Input_url = forwardRef(function Input_url(
         isActive
         type="lucide"
         lucidIcon="ExternalLink"
-        title={canOpenUrl ? "Open in new tab" : "Enter a valid http(s) URL to open"}
+        title={
+          canOpenUrl
+            ? "Open link in new tab"
+            : "Enter a valid http(s) URL to open"
+        }
         className={[
           "input_url__actionIcon",
           !canOpenUrl && "input_url__actionIcon--disabled",
@@ -369,6 +381,7 @@ Input_url.propTypes = {
   readOnly: PropTypes.bool,
   readOnlyMaxChars: PropTypes.number,
   onCopy: PropTypes.func,
+  onOpen: PropTypes.func,
   className: PropTypes.string,
   baseStyle: PropTypes.bool,
   sizeType: PropTypes.oneOf(INPUT_SIZE_TYPES),

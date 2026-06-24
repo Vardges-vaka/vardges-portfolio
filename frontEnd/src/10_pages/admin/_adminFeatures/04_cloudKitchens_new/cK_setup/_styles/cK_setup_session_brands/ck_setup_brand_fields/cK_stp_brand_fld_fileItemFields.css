@@ -1,0 +1,17 @@
+.cK_stp_brand_fld_fileItemFields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cK_stp_brand_fld_fileItemFields__fieldRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+@media (max-width: 640px) {
+  .cK_stp_brand_fld_fileItemFields__fieldRow {
+    grid-template-columns: 1fr;
+  }
+}

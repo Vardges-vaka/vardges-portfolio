@@ -1,5 +1,5 @@
 import express from "express";
-import { vld_sntzr_mddlwre } from "../../../05_middlewares/_mddlwre.index.js";
+import { vld_sntzr_mddlwre, upload_multi_mddlwre } from "../../../05_middlewares/_mddlwre.index.js";
 
 // ! Validators
 import {
@@ -26,6 +26,7 @@ import {
   cK_gen_integration_update_branches_vld,
   cK_gen_integration_update_contract_vld,
   cK_gen_integration_update_files_vld,
+  cK_gen_integration_get_fileReadUrl_vld,
   cK_gen_integration_update_notes_vld,
 } from "../../../07_controllers/_controllers.index.js";
 
@@ -54,6 +55,7 @@ import {
   cK_gen_integration_update_branches_cntrl,
   cK_gen_integration_update_contract_cntrl,
   cK_gen_integration_update_files_cntrl,
+  cK_gen_integration_get_fileReadUrl_cntrl,
   cK_gen_integration_update_notes_cntrl,
 } from "../../../07_controllers/_controllers.index.js";
 
@@ -182,8 +184,15 @@ router.put(
 
 router.put(
   "/update/files/:id",
+  upload_multi_mddlwre,
   vld_sntzr_mddlwre(cK_gen_integration_update_files_vld),
   cK_gen_integration_update_files_cntrl,
+);
+
+router.get(
+  "/getFileReadUrl/:id",
+  vld_sntzr_mddlwre(cK_gen_integration_get_fileReadUrl_vld),
+  cK_gen_integration_get_fileReadUrl_cntrl,
 );
 
 router.put(

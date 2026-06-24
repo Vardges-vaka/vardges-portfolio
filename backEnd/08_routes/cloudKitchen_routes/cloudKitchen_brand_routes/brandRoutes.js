@@ -1,5 +1,8 @@
 import express from "express";
-import { vld_sntzr_mddlwre } from "../../../05_middlewares/_mddlwre.index.js";
+import {
+  vld_sntzr_mddlwre,
+  upload_multi_mddlwre,
+} from "../../../05_middlewares/_mddlwre.index.js";
 
 // ! Validators
 import {
@@ -13,6 +16,7 @@ import {
   cK_brnd_brand_update_name_vld,
   cK_brnd_brand_update_tagline_vld,
   cK_brnd_brand_update_files_vld,
+  cK_brnd_brand_get_fileReadUrl_vld,
   cK_brnd_brand_update_socials_vld,
   cK_brnd_brand_update_registeredIn_vld,
   cK_brnd_brand_update_description_vld,
@@ -41,6 +45,7 @@ import {
   cK_brnd_brand_update_name_cntrl,
   cK_brnd_brand_update_tagline_cntrl,
   cK_brnd_brand_update_files_cntrl,
+  cK_brnd_brand_get_fileReadUrl_cntrl,
   cK_brnd_brand_update_socials_cntrl,
   cK_brnd_brand_update_registeredIn_cntrl,
   cK_brnd_brand_update_description_cntrl,
@@ -101,8 +106,14 @@ router.put(
 );
 router.put(
   "/update/files/:id",
+  upload_multi_mddlwre,
   vld_sntzr_mddlwre(cK_brnd_brand_update_files_vld),
   cK_brnd_brand_update_files_cntrl,
+);
+router.get(
+  "/getFileReadUrl/:id",
+  vld_sntzr_mddlwre(cK_brnd_brand_get_fileReadUrl_vld),
+  cK_brnd_brand_get_fileReadUrl_cntrl,
 );
 router.put(
   "/update/socials/:id",

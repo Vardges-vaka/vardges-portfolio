@@ -48,9 +48,17 @@
   align-items: stretch;
 }
 
+.cK_stp_brand_fld_files__heroActions {
+  margin-top: 0.55rem;
+}
+
 .cK_stp_brand_fld_files__logoPlaceholder--pdf {
   flex-direction: column;
   gap: 0.55rem;
+  align-items: stretch;
+  max-width: 100%;
+  aspect-ratio: auto;
+  min-height: auto;
 }
 
 .cK_stp_brand_fld_files__pdfLink {

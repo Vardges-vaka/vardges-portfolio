@@ -58,6 +58,7 @@ const Select_static = forwardRef(function Select_static(
 
     id: idProp,
     disabled,
+    readOnly = false,
     required,
     value,
     defaultValue,
@@ -88,6 +89,7 @@ const Select_static = forwardRef(function Select_static(
   );
 
   const useRichPicker = isRichOptionsType(resolvedOptionsType);
+  const isInteractive = !disabled && !readOnly;
 
   const isControlled = value !== undefined;
   const [internalValue, setInternalValue] = useState(defaultValue ?? "");
@@ -136,18 +138,22 @@ const Select_static = forwardRef(function Select_static(
 
   const handleSelectOption = useCallback(
     (opt) => {
-      if (disabled || opt.disabled) return;
+      if (!isInteractive || opt.disabled) return;
       fireChange(opt.value);
       setIsOpen(false);
       hiddenInputRef.current?.focus?.();
     },
-    [disabled, fireChange],
+    [isInteractive, fireChange],
   );
 
   const toggleOpen = useCallback(() => {
-    if (disabled) return;
+    if (!isInteractive) return;
     setIsOpen((prev) => !prev);
-  }, [disabled]);
+  }, [isInteractive]);
+
+  useEffect(() => {
+    if (readOnly) setIsOpen(false);
+  }, [readOnly]);
 
   useEffect(() => {
     onOpenChange?.(isOpen);
@@ -172,9 +178,11 @@ const Select_static = forwardRef(function Select_static(
   const isLabelActive = Boolean(labelProps.isActive && labelProps.message);
   const isInlineLabel = isLabelActive && labelPosition === "inline";
 
-  const resolvedRightIcon = rightIconProps.isActive
-    ? rightIconProps
-    : DEFAULT_CHEVRON;
+  const resolvedRightIcon = readOnly
+    ? { isActive: false }
+    : rightIconProps.isActive
+      ? rightIconProps
+      : DEFAULT_CHEVRON;
 
   const rootClass = [
     baseStyle && "select_static",
@@ -189,10 +197,12 @@ const Select_static = forwardRef(function Select_static(
   const fieldWrapClass = [
     "select_static__fieldWrap",
     leftIconProps.isActive && "select_static__fieldWrap--withLeftIcon",
-    "select_static__fieldWrap--withRightIcon",
+    resolvedRightIcon.isActive &&
+      "select_static__fieldWrap--withRightIcon",
     useRichPicker && "select_static__fieldWrap--rich",
-    isOpen && "select_static__fieldWrap--open",
+    isOpen && isInteractive && "select_static__fieldWrap--open",
     disabled && "select_static__fieldWrap--disabled",
+    readOnly && "select_static__fieldWrap--readOnly",
     hintsProps.isActive &&
       hintsProps.type === "error" &&
       "select_static__fieldWrap--error",
@@ -225,13 +235,55 @@ const Select_static = forwardRef(function Select_static(
 
   const sharedFieldA11y = {
     id,
-    name,
+    name: readOnly ? undefined : name,
     disabled,
     required,
     "aria-invalid":
       hintsProps.isActive && hintsProps.type === "error" ? true : undefined,
     "aria-describedby": hintsProps.isActive ? hintId : undefined,
   };
+
+  const readOnlyValueContent = selectedOption ? (
+    <Select_optionContent
+      option={selectedOption}
+      optionsType={resolvedOptionsType}
+      sizeType={sizeType}
+      className="select_static__readOnlyContent"
+    />
+  ) : (
+    <Select_optionContent
+      placeholder
+      placeholderText={placeholder}
+      optionsType={resolvedOptionsType}
+      sizeType={sizeType}
+      className="select_static__readOnlyContent"
+    />
+  );
+
+  const readOnlyControl = (
+    <>
+      <input
+        ref={setRef}
+        type="hidden"
+        name={name}
+        value={resolvedValue ?? ""}
+        required={required}
+        tabIndex={-1}
+        aria-hidden="true"
+      />
+      <div
+        className="select_static__readOnly"
+        id={id}
+        aria-readonly="true"
+        title={
+          selectedOption?.ariaLabel ||
+          selectedOption?.label ||
+          (resolvedValue ? String(resolvedValue) : undefined)
+        }>
+        {readOnlyValueContent}
+      </div>
+    </>
+  );
 
   const nativeControl = (
     <GenericSelect
@@ -241,6 +293,7 @@ const Select_static = forwardRef(function Select_static(
       value={resolvedValue}
       defaultValue={undefined}
       onChange={(e) => {
+        if (readOnly) return;
         if (!isControlled) setInternalValue(e.target.value);
         onChange?.(e);
       }}
@@ -313,7 +366,7 @@ const Select_static = forwardRef(function Select_static(
         )}
       </button>
 
-      {isOpen && !disabled && (
+      {isOpen && isInteractive && (
         <ul
           id={listboxId}
           className="select_static__menu"
@@ -352,10 +405,16 @@ const Select_static = forwardRef(function Select_static(
     </div>
   );
 
+  const fieldControl = readOnly
+    ? readOnlyControl
+    : useRichPicker
+      ? richControl
+      : nativeControl;
+
   const fieldRow = (
     <div className={fieldWrapClass}>
       <Field_icon baseStyle {...sharedSize} {...leftIconProps} />
-      {useRichPicker ? richControl : nativeControl}
+      {fieldControl}
       <Field_icon baseStyle {...sharedSize} {...resolvedRightIcon} />
     </div>
   );
@@ -409,6 +468,7 @@ Select_static.propTypes = {
   sizeType: PropTypes.oneOf(SELECT_SIZE_TYPES),
   id: PropTypes.string,
   disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
   required: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

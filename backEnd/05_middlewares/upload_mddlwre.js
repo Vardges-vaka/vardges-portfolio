@@ -40,3 +40,12 @@ export const upload_mddlwre = (req, res, next) => {
   });
 };
 
+/** Runs single-file upload only when the request is multipart/form-data. */
+export const upload_logo_optional_mddlwre = (req, res, next) => {
+  const contentType = String(req.headers["content-type"] || "");
+  if (!contentType.includes("multipart/form-data")) {
+    return next();
+  }
+  return upload_mddlwre(req, res, next);
+};
+

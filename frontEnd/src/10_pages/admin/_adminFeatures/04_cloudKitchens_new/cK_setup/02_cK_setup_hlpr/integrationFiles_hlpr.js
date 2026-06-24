@@ -1,0 +1,16 @@
+export {
+  buildEmptyFileItem,
+  buildLogoVariantTitle,
+  buildFilePreviewUrl,
+  findLogoVariantIndex,
+  getOtherFileIndices,
+  isBrandFilesChanged as isIntegrationFilesChanged,
+  normalizeBrandFiles as normalizeIntegrationFiles,
+  prepareBrandFilesForSubmit as prepareIntegrationFilesForSubmit,
+  removeLogoVariantFromItems,
+  removeOtherFileFromItems,
+  revokeFilePreviewUrl,
+  seedFilesFromBrand as seedFilesFromIntegration,
+  splitBrandFileItems,
+  upsertLogoVariantInItems,
+} from "./brandFiles_hlpr.js";

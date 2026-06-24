@@ -1,0 +1,47 @@
+.cK_stp_brand_fld_fileActions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.cK_stp_brand_fld_fileActions__openLink,
+.cK_stp_brand_fld_fileActions__downloadBtn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.cK_stp_brand_fld_fileActions__openLink {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--btn-primary-bg-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cK_stp_brand_fld_fileActions__openLink:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.cK_stp_brand_fld_fileActions__openLink:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.cK_stp_brand_fld_fileActions__downloadBtn {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 999px;
+  background-color: var(--bg-secondary-color);
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+.cK_stp_brand_fld_fileActions__downloadBtn:hover {
+  border-color: var(--btn-primary-border-color);
+  color: var(--btn-primary-bg-color);
+}

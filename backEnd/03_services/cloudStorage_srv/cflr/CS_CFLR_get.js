@@ -12,9 +12,15 @@ const CS_CFLR_get = async (params, isDebug = false) => {
   try {
     const expiresInSeconds = await r2_getExpTime(params?.timeInHours ?? null);
 
+    const commandInput = { Bucket: resolved.bucket, Key: resolved.key };
+
+    if (params?.downloadFilename) {
+      commandInput.ResponseContentDisposition = `attachment; filename="${String(params.downloadFilename).replace(/"/g, "'")}"`;
+    }
+
     const readUrl = await getSignedUrl(
       resolved.client,
-      new GetObjectCommand({ Bucket: resolved.bucket, Key: resolved.key }),
+      new GetObjectCommand(commandInput),
       { expiresIn: expiresInSeconds },
     );
 

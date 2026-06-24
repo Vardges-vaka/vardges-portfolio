@@ -73,11 +73,25 @@ const CK_BRAND_CONFIG = {
     UPDATE_FILES: {
       ENDPOINT: (id) => `${API_BASE}/update/files/${id}`,
       DISPLAY_NAME: "CK_brnd_brand_update_files.js",
-      PROPERTIES: (body) => ({
+      PROPERTIES: (formData) => ({
         method: "PUT",
         credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+        body: formData,
+      }),
+    },
+    GET_FILE_READ_URL: {
+      ENDPOINT: (id, objectKey, { download = false, filename = "" } = {}) => {
+        const params = new URLSearchParams({ objectKey });
+        if (download) {
+          params.set("download", "1");
+          if (filename) params.set("filename", filename);
+        }
+        return `${API_BASE}/getFileReadUrl/${id}?${params.toString()}`;
+      },
+      DISPLAY_NAME: "CK_brnd_brand_get_fileReadUrl.js",
+      PROPERTIES: () => ({
+        method: "GET",
+        credentials: "include",
       }),
     },
     UPDATE_SOCIALS: {

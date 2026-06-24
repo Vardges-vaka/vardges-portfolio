@@ -26,11 +26,17 @@ const CS_GCS_get = async (params, isDebug = false) => {
 
     const file = resolveBucketKey.bucket.file(resolveBucketKey.key);
 
-    const [readUrl] = await file.getSignedUrl({
+    const signedUrlOptions = {
       version: "v4",
       action: "read",
       expires: expiresAtMs,
-    });
+    };
+
+    if (params?.downloadFilename) {
+      signedUrlOptions.responseDisposition = `attachment; filename="${String(params.downloadFilename).replace(/"/g, "'")}"`;
+    }
+
+    const [readUrl] = await file.getSignedUrl(signedUrlOptions);
 
     return {
       success: true,

@@ -1,6 +1,7 @@
 export { cK_brnd_brand_update_name_vld } from "./cK_brnd_brand_update_name_vld.js";
 export { cK_brnd_brand_update_tagline_vld } from "./cK_brnd_brand_update_tagline_vld.js";
 export { cK_brnd_brand_update_files_vld } from "./cK_brnd_brand_update_files_vld.js";
+export { cK_brnd_brand_get_fileReadUrl_vld } from "./cK_brnd_brand_get_fileReadUrl_vld.js";
 export { cK_brnd_brand_update_socials_vld } from "./cK_brnd_brand_update_socials_vld.js";
 export { cK_brnd_brand_update_registeredIn_vld } from "./cK_brnd_brand_update_registeredIn_vld.js";
 export { cK_brnd_brand_update_description_vld } from "./cK_brnd_brand_update_description_vld.js";

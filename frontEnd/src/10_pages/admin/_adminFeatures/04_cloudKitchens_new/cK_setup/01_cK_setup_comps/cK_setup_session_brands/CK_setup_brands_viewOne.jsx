@@ -1,7 +1,9 @@
+import { useCallback, useState } from "react";
 import { Modal } from "../../../../../../../01_components/_components.index.js";
 import CK_stp_brand_fld_cuisineTagsHeaderAside from "./ck_setup_brand_fields/CK_stp_brand_fld_cuisineTagsHeaderAside.jsx";
 import {
   CK_stp_brand_fieldHeader,
+  CK_stp_brand_collapsibleSection,
   CK_stp_brand_fld_files,
   CK_stp_brand_fld_basic,
   CK_stp_brand_fld_registeredIn,
@@ -17,11 +19,26 @@ import {
   CK_stp_brand_fld_competitors,
 } from "./ck_setup_brand_fields/_ck_setup_brand_fields.index.js";
 import {
+  BRAND_DETAIL_FIELD_LABELS,
   buildBrandFieldHandlers,
   buildBrandFieldStates,
+  isBrandViewOnlyField,
 } from "../../02_cK_setup_hlpr/brandDetail_helpers.js";
 import { useBrandCuisineTagsField } from "../../03_cK_setup_hooks/cK_setup_brands_hooks/useBrandCuisineTagsField.js";
 import "../../_styles/cK_setup_session_brands/cK_setup_brands_viewOne.css";
+
+const COLLAPSIBLE_SECTIONS = [
+  { key: "socials", Component: CK_stp_brand_fld_socials },
+  { key: "integrations", Component: CK_stp_brand_fld_integrations },
+  { key: "siblings", Component: CK_stp_brand_fld_siblings },
+  { key: "cuisineTags", Component: CK_stp_brand_fld_cuisineTags },
+  { key: "contracts", Component: CK_stp_brand_fld_contracts },
+  { key: "employees", Component: CK_stp_brand_fld_employees },
+  { key: "equipments", Component: CK_stp_brand_fld_equipments },
+  { key: "branches", Component: CK_stp_brand_fld_branches },
+  { key: "menus", Component: CK_stp_brand_fld_menus },
+  { key: "competitors", Component: CK_stp_brand_fld_competitors },
+];
 
 const CK_setup_brands_viewOne = ({ states, handlers, t }) => {
   const {
@@ -36,6 +53,8 @@ const CK_setup_brands_viewOne = ({ states, handlers, t }) => {
     cuisineTags,
   } = states;
 
+  const [expandedSections, setExpandedSections] = useState(() => new Set());
+
   const cuisineTagsField = useBrandCuisineTagsField({ brand, brandDraft });
 
   const fieldStates = buildBrandFieldStates(
@@ -48,14 +67,35 @@ const CK_setup_brands_viewOne = ({ states, handlers, t }) => {
   const isGlobalEdit = detailMode === "editAll";
   const isFilesSectionOpen = editingField === "files";
 
-  const isSectionOpen = (fieldKey) => isGlobalEdit || editingField === fieldKey;
+  const isFieldEditOpen = (fieldKey) =>
+    isGlobalEdit || editingField === fieldKey;
+
+  const isCollapsibleExpanded = useCallback(
+    (fieldKey) => {
+      if (isGlobalEdit) return true;
+      if (editingField === fieldKey) return true;
+      return expandedSections.has(fieldKey);
+    },
+    [editingField, expandedSections, isGlobalEdit],
+  );
+
+  const toggleCollapsibleSection = useCallback((fieldKey) => {
+    setExpandedSections((prev) => {
+      const next = new Set(prev);
+      if (next.has(fieldKey)) next.delete(fieldKey);
+      else next.add(fieldKey);
+      return next;
+    });
+  }, []);
 
   const sectionClassName = (fieldKey) =>
     [
       "cK_setup_brands_viewOne__section",
-      isSectionOpen(fieldKey) && "cK_setup_brands_viewOne__section--editable",
+      isFieldEditOpen(fieldKey) && "cK_setup_brands_viewOne__section--editable",
       editingField === fieldKey &&
         "cK_setup_brands_viewOne__section--fieldEdit",
+      isBrandViewOnlyField(fieldKey) &&
+        "cK_setup_brands_viewOne__section--readOnly",
     ]
       .filter(Boolean)
       .join(" ");
@@ -69,7 +109,11 @@ const CK_setup_brands_viewOne = ({ states, handlers, t }) => {
     .join(" ");
 
   const editableHeaderProps = (fieldKey) => ({
-    showUpdate: detailMode === "read" && !editingField && !isSaving,
+    showUpdate:
+      !isBrandViewOnlyField(fieldKey) &&
+      detailMode === "read" &&
+      !editingField &&
+      !isSaving,
     showConfirmCancel: editingField === fieldKey && !isSaving,
     onUpdate: () => handlers.onFieldUpdate(fieldKey),
     onCancel: handlers.onFieldCancel,
@@ -134,9 +178,10 @@ const CK_setup_brands_viewOne = ({ states, handlers, t }) => {
               {...editableHeaderProps("files")}
             />
             <fieldset
-              className="cK_setup_brands_viewOne__sectionBody"
-              disabled={!isFilesSectionOpen || isSaving}>
+              className="cK_setup_brands_viewOne__sectionBody cK_setup_brands_viewOne__sectionBody--files"
+              disabled={isFilesSectionOpen && isSaving}>
               <CK_stp_brand_fld_files
+                brandId={brand?._id}
                 states={{
                   files: brandFilesDraft,
                   disabled: !isFilesSectionOpen || isSaving,
@@ -144,177 +189,85 @@ const CK_setup_brands_viewOne = ({ states, handlers, t }) => {
                 handlers={{
                   onLogoVariantChange: handlers.onLogoVariantChange,
                   onLogoVariantFieldChange: handlers.onLogoVariantFieldChange,
+                  onLogoVariantDelete: handlers.onLogoVariantDelete,
                   onOtherFileChange: handlers.onOtherFileChange,
+                  onOtherFileFieldChange: handlers.onOtherFileFieldChange,
+                  onOtherFileDelete: handlers.onOtherFileDelete,
                   onAddOtherFiles: handlers.onAddOtherFiles,
                 }}
               />
             </fieldset>
           </section>
 
-          <section className={sectionClassName("basic")}>
-            <CK_stp_brand_fieldHeader
-              title="Basics"
-              {...editableHeaderProps("basic")}
-            />
-            <fieldset
-              className="cK_setup_brands_viewOne__sectionBody"
-              disabled={!isSectionOpen("basic") || isSaving}>
-              <CK_stp_brand_fld_basic
+          <div className="cK_setup_brands_viewOne__primaryColumn">
+            <section className={sectionClassName("basic")}>
+              <CK_stp_brand_fieldHeader
+                title="Basics"
+                {...editableHeaderProps("basic")}
+              />
+              <fieldset
+                className="cK_setup_brands_viewOne__sectionBody"
+                disabled={!isFieldEditOpen("basic") || isSaving}>
+                <CK_stp_brand_fld_basic
+                  states={fieldStates}
+                  handlers={fieldHandlers}
+                  t={t}
+                />
+              </fieldset>
+            </section>
+
+            <section className={sectionClassName("registeredIn")}>
+              <CK_stp_brand_fieldHeader
+                title="Registered in"
+                {...editableHeaderProps("registeredIn")}
+              />
+              <fieldset
+                className="cK_setup_brands_viewOne__sectionBody"
+                disabled={!isFieldEditOpen("registeredIn") || isSaving}>
+                <CK_stp_brand_fld_registeredIn
+                  states={fieldStates}
+                  handlers={fieldHandlers}
+                  t={t}
+                />
+              </fieldset>
+            </section>
+          </div>
+        </div>
+
+        {COLLAPSIBLE_SECTIONS.map(({ key, Component }) => {
+          const readOnly = isBrandViewOnlyField(key);
+          const title = BRAND_DETAIL_FIELD_LABELS[key] || key;
+          const isExpanded = isCollapsibleExpanded(key);
+
+          return (
+            <CK_stp_brand_collapsibleSection
+              key={key}
+              fieldKey={key}
+              title={title}
+              isExpanded={isExpanded}
+              onToggle={() => toggleCollapsibleSection(key)}
+              sectionClassName={sectionClassName(key)}
+              headerProps={
+                readOnly ? {} : editableHeaderProps(key)
+              }
+              rightChild={
+                key === "cuisineTags" ? (
+                  <CK_stp_brand_fld_cuisineTagsHeaderAside
+                    {...cuisineTagsField.headerAsideProps}
+                  />
+                ) : null
+              }
+              readOnly={readOnly}
+              isSaving={isSaving}
+              isEditOpen={isFieldEditOpen(key)}>
+              <Component
                 states={fieldStates}
                 handlers={fieldHandlers}
                 t={t}
               />
-            </fieldset>
-          </section>
-        </div>
-
-        <section className={sectionClassName("registeredIn")}>
-          <CK_stp_brand_fieldHeader
-            title="Registered in"
-            {...editableHeaderProps("registeredIn")}
-          />
-          <fieldset
-            className="cK_setup_brands_viewOne__sectionBody"
-            disabled={!isSectionOpen("registeredIn") || isSaving}>
-            <CK_stp_brand_fld_registeredIn
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className={sectionClassName("socials")}>
-          <CK_stp_brand_fieldHeader
-            title="Socials"
-            {...editableHeaderProps("socials")}
-          />
-          <fieldset
-            className="cK_setup_brands_viewOne__sectionBody"
-            disabled={!isSectionOpen("socials") || isSaving}>
-            <CK_stp_brand_fld_socials
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className={sectionClassName("integrations")}>
-          <CK_stp_brand_fieldHeader
-            title="Integrations"
-            {...editableHeaderProps("integrations")}
-          />
-          <fieldset
-            className="cK_setup_brands_viewOne__sectionBody"
-            disabled={!isSectionOpen("integrations") || isSaving}>
-            <CK_stp_brand_fld_integrations
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className={sectionClassName("siblings")}>
-          <CK_stp_brand_fieldHeader
-            title="Siblings"
-            {...editableHeaderProps("siblings")}
-          />
-          <fieldset
-            className="cK_setup_brands_viewOne__sectionBody"
-            disabled={!isSectionOpen("siblings") || isSaving}>
-            <CK_stp_brand_fld_siblings
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className="cK_setup_brands_viewOne__section cK_setup_brands_viewOne__section--readOnly">
-          <CK_stp_brand_fieldHeader
-            title="Cuisine tags"
-            rightChild={
-              <CK_stp_brand_fld_cuisineTagsHeaderAside
-                {...cuisineTagsField.headerAsideProps}
-              />
-            }
-          />
-          <fieldset className="cK_setup_brands_viewOne__sectionBody" disabled>
-            <CK_stp_brand_fld_cuisineTags
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className="cK_setup_brands_viewOne__section cK_setup_brands_viewOne__section--readOnly">
-          <CK_stp_brand_fieldHeader title="Contracts" />
-          <fieldset className="cK_setup_brands_viewOne__sectionBody" disabled>
-            <CK_stp_brand_fld_contracts
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className="cK_setup_brands_viewOne__section cK_setup_brands_viewOne__section--readOnly">
-          <CK_stp_brand_fieldHeader title="Employees" />
-          <fieldset className="cK_setup_brands_viewOne__sectionBody" disabled>
-            <CK_stp_brand_fld_employees
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className="cK_setup_brands_viewOne__section cK_setup_brands_viewOne__section--readOnly">
-          <CK_stp_brand_fieldHeader title="Equipments" />
-          <fieldset className="cK_setup_brands_viewOne__sectionBody" disabled>
-            <CK_stp_brand_fld_equipments
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className="cK_setup_brands_viewOne__section cK_setup_brands_viewOne__section--readOnly">
-          <CK_stp_brand_fieldHeader title="Branches" />
-          <fieldset className="cK_setup_brands_viewOne__sectionBody" disabled>
-            <CK_stp_brand_fld_branches
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className="cK_setup_brands_viewOne__section cK_setup_brands_viewOne__section--readOnly">
-          <CK_stp_brand_fieldHeader title="Menus" />
-          <fieldset className="cK_setup_brands_viewOne__sectionBody" disabled>
-            <CK_stp_brand_fld_menus
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
-
-        <section className="cK_setup_brands_viewOne__section cK_setup_brands_viewOne__section--readOnly">
-          <CK_stp_brand_fieldHeader title="Competitors" />
-          <fieldset className="cK_setup_brands_viewOne__sectionBody" disabled>
-            <CK_stp_brand_fld_competitors
-              states={fieldStates}
-              handlers={fieldHandlers}
-              t={t}
-            />
-          </fieldset>
-        </section>
+            </CK_stp_brand_collapsibleSection>
+          );
+        })}
       </div>
 
       <Modal

@@ -1,4 +1,10 @@
 import { DFLT_F_D_SALES_PLATFORM_FULL } from "../05_cK_setup_cnst/_cK_setup_cnst.index.js";
+import {
+  getSalesPlatformLinksDraftSignature,
+  seedLinksDraftFromPlatform,
+} from "./salesPlatformLinks_hlpr.js";
+import { seedLoginCredentialsFromPlatform } from "./salesPlatformLoginCredentials_hlpr.js";
+import { seedSupportContactsFromPlatform } from "./salesPlatformSupportContacts_hlpr.js";
 
 const isPlainObj = (v) => v && typeof v === "object" && !Array.isArray(v);
 
@@ -6,16 +12,10 @@ export const seedFullFromSalesPlatform = (item = {}) => ({
   ...DFLT_F_D_SALES_PLATFORM_FULL,
   name: item.name || "",
   notes: item.notes || "",
-  links: {
-    ...DFLT_F_D_SALES_PLATFORM_FULL.links,
-    ...(isPlainObj(item.links) ? item.links : {}),
-    other: Array.isArray(item.links?.other) ? item.links.other : [],
-  },
+  links: seedLinksDraftFromPlatform(item.links),
   kam: isPlainObj(item.kam) ? item.kam : {},
-  loginCredentials: Array.isArray(item.loginCredentials)
-    ? item.loginCredentials
-    : [],
-  support: Array.isArray(item.support) ? item.support : [],
+  loginCredentials: seedLoginCredentialsFromPlatform(item.loginCredentials),
+  support: seedSupportContactsFromPlatform(item.support),
 });
 
 export const SALES_PLATFORM_DETAIL_FIELD_LABELS = {
@@ -57,9 +57,19 @@ export const pickSalesPlatformFieldPayload = (fieldKey, draft) => {
 
 const stableStringify = (value) => JSON.stringify(value ?? null);
 
-export const isSalesPlatformFieldChanged = (fieldKey, baseline, draft) =>
-  stableStringify(pickSalesPlatformFieldPayload(fieldKey, baseline)) !==
-  stableStringify(pickSalesPlatformFieldPayload(fieldKey, draft));
+export const isSalesPlatformFieldChanged = (fieldKey, baseline, draft) => {
+  if (fieldKey === "links") {
+    return (
+      getSalesPlatformLinksDraftSignature(baseline) !==
+      getSalesPlatformLinksDraftSignature(draft)
+    );
+  }
+
+  return (
+    stableStringify(pickSalesPlatformFieldPayload(fieldKey, baseline)) !==
+    stableStringify(pickSalesPlatformFieldPayload(fieldKey, draft))
+  );
+};
 
 export const getSalesPlatformChangedFieldKeys = (
   baseline,

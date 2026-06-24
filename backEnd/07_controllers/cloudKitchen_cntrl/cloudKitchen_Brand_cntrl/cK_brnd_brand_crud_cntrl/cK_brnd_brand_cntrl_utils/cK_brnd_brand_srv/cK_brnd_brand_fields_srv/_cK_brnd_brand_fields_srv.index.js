@@ -1,6 +1,7 @@
 export { cK_brnd_brand_update_name_srv } from "./cK_brnd_brand_update_name_srv.js";
 export { cK_brnd_brand_update_tagline_srv } from "./cK_brnd_brand_update_tagline_srv.js";
 export { cK_brnd_brand_update_files_srv } from "./cK_brnd_brand_update_files_srv.js";
+export { cK_brnd_brand_get_fileReadUrl_srv } from "./cK_brnd_brand_get_fileReadUrl_srv.js";
 export { cK_brnd_brand_update_socials_srv } from "./cK_brnd_brand_update_socials_srv.js";
 export { cK_brnd_brand_update_registeredIn_srv } from "./cK_brnd_brand_update_registeredIn_srv.js";
 export { cK_brnd_brand_update_description_srv } from "./cK_brnd_brand_update_description_srv.js";

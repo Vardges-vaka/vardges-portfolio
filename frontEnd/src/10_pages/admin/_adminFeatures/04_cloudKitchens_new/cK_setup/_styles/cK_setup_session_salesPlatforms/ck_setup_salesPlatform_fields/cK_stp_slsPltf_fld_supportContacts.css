@@ -1,0 +1,525 @@
+.cK_stp_slsPltf_fld_supportContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  overflow-x: auto;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__gridRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0.85rem;
+  width: max-content;
+  max-width: 100%;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 250px;
+  height: 250px;
+  border: 1px solid
+    color-mix(in srgb, var(--border-secondary-color) 55%, var(--border-primary-color));
+  border-radius: 0.65rem;
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--bg-secondary-color) 38%, var(--bg-primary-color)) 0%,
+      color-mix(in srgb, var(--bg-tertiary-color) 22%, var(--bg-primary-color)) 100%
+    );
+  box-shadow:
+    0 2px 12px color-mix(in srgb, var(--boxShadow-primary-color) 28%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--bg-primary-color) 70%, transparent);
+  overflow: hidden;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__card:not(
+    .cK_stp_slsPltf_fld_supportContacts__card--controls
+  ):not(.cK_stp_slsPltf_fld_supportContacts__card--editing):hover {
+  border-color: color-mix(
+    in srgb,
+    var(--border-primary-color) 72%,
+    var(--border-secondary-color)
+  );
+  box-shadow:
+    0 4px 16px color-mix(in srgb, var(--boxShadow-secondary-color) 32%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--bg-primary-color) 82%, transparent);
+  transform: translateY(-1px);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__card--editing {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  margin-bottom: 0.85rem;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__card--controls {
+  border-style: dashed;
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--bg-secondary-color) 30%, var(--bg-primary-color)) 0%,
+      color-mix(in srgb, var(--bg-tertiary-color) 16%, var(--bg-primary-color)) 100%
+    );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--border-tertiary-color) 35%, transparent),
+    0 1px 8px color-mix(in srgb, var(--boxShadow-tertiary-color) 18%, transparent);
+  transform: none;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__controlsBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.55rem;
+  overflow-y: auto;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__controlsTotal {
+  margin: 0 0 0.15rem;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--title-secondary-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__controlsBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 1.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--border-primary-color);
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__controlsBtn:hover:not(:disabled) {
+  border-color: var(--btn-primary-border-color);
+  color: var(--btn-primary-bg-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__controlsBtn--primary {
+  border-color: var(--btn-primary-border-color);
+  background-color: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__controlsBtn--primary:hover:not(:disabled) {
+  background-color: var(
+    --btn-primary-bg-color-HOV,
+    var(--btn-primary-bg-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__controlsBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  padding: 0.45rem 0.5rem 0.4rem;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--border-tertiary-color) 45%, var(--border-primary-color));
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--bg-secondary-color) 52%, var(--bg-primary-color)) 0%,
+      color-mix(in srgb, var(--bg-primary-color) 88%, transparent) 100%
+    );
+  box-shadow: inset 3px 0 0 var(--title-primary-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardHeadActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardTitle {
+  margin: 0;
+  min-width: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--title-secondary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardBody {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.5rem 0.55rem 0.55rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--bg-primary-color) 18%, transparent);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardRow {
+  display: grid;
+  grid-template-columns: 1.35rem minmax(0, 1fr);
+  gap: 0.35rem;
+  align-items: center;
+  min-height: 1.15rem;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardRow--copyable {
+  grid-template-columns: 1.35rem minmax(0, 1fr) 1.4rem;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardCopyBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  padding: 0;
+  border-radius: 0.35rem;
+  border: 1px solid
+    color-mix(in srgb, var(--border-tertiary-color) 55%, var(--border-primary-color));
+  background-color: color-mix(in srgb, var(--bg-primary-color) 82%, transparent);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardCopyBtn:hover:not(:disabled) {
+  border-color: var(--icon-primary-stroke-color);
+  background-color: color-mix(
+    in srgb,
+    var(--icon-primary-stroke-color) 10%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardCopyBtn--copied {
+  border-color: var(--icon-secondary-stroke-color);
+  background-color: color-mix(
+    in srgb,
+    var(--icon-secondary-stroke-color) 12%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardCopyBtn:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardRowIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex-shrink: 0;
+  border-radius: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--border-tertiary-color) 40%, transparent);
+  background-color: color-mix(in srgb, var(--bg-primary-color) 78%, transparent);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconTone--primary {
+  color: var(--icon-primary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconTone--secondary {
+  color: var(--icon-secondary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconTone--tertiary {
+  color: var(--icon-tertiary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardRowIcon.cK_stp_slsPltf_fld_supportContacts__iconTone--primary {
+  border-color: color-mix(
+    in srgb,
+    var(--icon-primary-stroke-color) 28%,
+    var(--border-primary-color)
+  );
+  background-color: color-mix(
+    in srgb,
+    var(--icon-primary-stroke-color) 8%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardRowIcon.cK_stp_slsPltf_fld_supportContacts__iconTone--secondary {
+  border-color: color-mix(
+    in srgb,
+    var(--icon-secondary-stroke-color) 28%,
+    var(--border-primary-color)
+  );
+  background-color: color-mix(
+    in srgb,
+    var(--icon-secondary-stroke-color) 8%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardRowIcon.cK_stp_slsPltf_fld_supportContacts__iconTone--tertiary {
+  border-color: color-mix(
+    in srgb,
+    var(--icon-tertiary-stroke-color) 28%,
+    var(--border-primary-color)
+  );
+  background-color: color-mix(
+    in srgb,
+    var(--icon-tertiary-stroke-color) 8%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardValue {
+  min-width: 0;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  color: var(--text-primary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardValue--empty {
+  color: var(--text-secondary-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  padding: 0;
+  border-radius: 0.4rem;
+  border: 1px solid
+    color-mix(in srgb, var(--border-tertiary-color) 50%, var(--border-primary-color));
+  background-color: color-mix(in srgb, var(--bg-primary-color) 86%, transparent);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--primary {
+  color: var(--icon-primary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--secondary {
+  color: var(--icon-secondary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--tertiary {
+  color: var(--icon-tertiary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--primary:hover:not(
+    :disabled
+  ) {
+  border-color: var(--icon-primary-stroke-color);
+  color: var(--icon-primary-stroke-color-HOV);
+  background-color: color-mix(
+    in srgb,
+    var(--icon-primary-stroke-color) 12%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--secondary:hover:not(
+    :disabled
+  ) {
+  border-color: var(--icon-secondary-stroke-color);
+  color: var(--icon-secondary-stroke-color-HOV);
+  background-color: color-mix(
+    in srgb,
+    var(--icon-secondary-stroke-color) 12%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--tertiary:hover:not(
+    :disabled
+  ) {
+  border-color: var(--icon-tertiary-stroke-color);
+  color: var(--icon-tertiary-stroke-color-HOV);
+  background-color: color-mix(
+    in srgb,
+    var(--icon-tertiary-stroke-color) 12%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardCopyBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--primary {
+  color: var(--icon-primary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardCopyBtn.cK_stp_slsPltf_fld_supportContacts__iconTone--primary:hover:not(
+    :disabled
+  ) {
+  color: var(--icon-primary-stroke-color-HOV);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__cardCopyBtn--copied.cK_stp_slsPltf_fld_supportContacts__iconTone--primary {
+  color: var(--icon-secondary-stroke-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__iconBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__editPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.85rem;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__editActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  color: var(--text-primary-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomRow {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomRow--multiline {
+  align-items: start;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomLabel {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomValue {
+  min-width: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--text-primary-color);
+  word-break: break-word;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomValue--empty {
+  color: var(--text-secondary-color);
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomRow--multiline
+  .cK_stp_slsPltf_fld_supportContacts__zoomValue {
+  white-space: pre-wrap;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__zoomActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__actionBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  padding: 0;
+  border-radius: 0.35rem;
+  border: 1px solid
+    color-mix(in srgb, var(--border-tertiary-color) 50%, var(--border-primary-color));
+  background-color: color-mix(in srgb, var(--bg-primary-color) 86%, transparent);
+  color: var(--icon-primary-stroke-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cK_stp_slsPltf_fld_supportContacts__actionBtn:hover:not(:disabled):not(
+    .cK_stp_slsPltf_fld_supportContacts__actionBtn--disabled
+  ) {
+  border-color: var(--icon-primary-stroke-color);
+  color: var(--icon-primary-stroke-color-HOV);
+  background-color: color-mix(
+    in srgb,
+    var(--icon-primary-stroke-color) 10%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__actionBtn--copied {
+  border-color: var(--icon-secondary-stroke-color);
+  color: var(--icon-secondary-stroke-color);
+  background-color: color-mix(
+    in srgb,
+    var(--icon-secondary-stroke-color) 12%,
+    var(--bg-primary-color)
+  );
+}
+
+.cK_stp_slsPltf_fld_supportContacts__actionBtn:disabled,
+.cK_stp_slsPltf_fld_supportContacts__actionBtn--disabled {
+  opacity: 0.28;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .cK_stp_slsPltf_fld_supportContacts__card {
+    width: min(250px, 100%);
+  }
+}

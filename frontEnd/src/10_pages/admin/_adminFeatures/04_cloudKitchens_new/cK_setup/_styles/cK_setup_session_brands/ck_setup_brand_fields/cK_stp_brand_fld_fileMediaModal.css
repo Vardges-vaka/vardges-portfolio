@@ -1,0 +1,10 @@
+.cK_stp_brand_fld_fileMediaModal_dialog {
+  width: min(56rem, 92vw);
+  max-width: 92vw;
+}
+
+.cK_stp_brand_fld_fileMediaModal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

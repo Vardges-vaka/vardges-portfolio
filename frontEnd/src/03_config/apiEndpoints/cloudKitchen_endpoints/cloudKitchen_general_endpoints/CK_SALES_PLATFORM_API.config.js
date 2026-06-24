@@ -73,12 +73,22 @@ const CK_SALES_PLATFORM_CONFIG = {
     UPDATE_LINKS: {
       ENDPOINT: (id) => `${API_BASE}/update/links/${id}`,
       DISPLAY_NAME: "CK_gen_salesPlatform_update_links.js",
-      PROPERTIES: (body) => ({
-  method: "PUT",
-  credentials: "include",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(body),
-}),
+      PROPERTIES: (body) => {
+        if (body instanceof FormData) {
+          return {
+            method: "PUT",
+            credentials: "include",
+            body,
+          };
+        }
+
+        return {
+          method: "PUT",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        };
+      },
     },
     UPDATE_KAM: {
       ENDPOINT: (id) => `${API_BASE}/update/kam/${id}`,
@@ -109,6 +119,21 @@ const CK_SALES_PLATFORM_CONFIG = {
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(body),
 }),
+    },
+    GET_FILE_READ_URL: {
+      ENDPOINT: (id, objectKey, { download = false, filename = "" } = {}) => {
+        const params = new URLSearchParams({ objectKey });
+        if (download) {
+          params.set("download", "1");
+          if (filename) params.set("filename", filename);
+        }
+        return `${API_BASE}/getFileReadUrl/${id}?${params.toString()}`;
+      },
+      DISPLAY_NAME: "CK_gen_salesPlatform_get_fileReadUrl.js",
+      PROPERTIES: () => ({
+        method: "GET",
+        credentials: "include",
+      }),
     },
   },
   RELATIONS: {},

@@ -102,6 +102,17 @@
   align-items: stretch;
 }
 
+.cK_setup_brands_viewOne__primaryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.cK_setup_brands_viewOne__primaryColumn .cK_setup_brands_viewOne__section {
+  flex: 1;
+}
+
 .cK_setup_brands_viewOne__section {
   border: 1px solid var(--border-primary-color);
   border-radius: 0.75rem;
@@ -162,6 +173,10 @@
   .cK_setup_brands_viewOne__row,
   .cK_setup_brands_viewOne__heroRow {
     grid-template-columns: 1fr;
+  }
+
+  .cK_setup_brands_viewOne__primaryColumn {
+    gap: 0.85rem;
   }
 
   .cK_setup_brands_viewOne__header {

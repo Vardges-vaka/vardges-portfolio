@@ -11,14 +11,20 @@ const CS_MSFT_get = async (params, isDebug = false) => {
   try {
     const expiresOn = await msft_getExpTime(params?.timeInHours ?? null);
 
+    const sasOptions = {
+      containerName: resolved.container,
+      blobName: resolved.key,
+      permissions: BlobSASPermissions.parse("r"),
+      startsOn: new Date(),
+      expiresOn,
+    };
+
+    if (params?.downloadFilename) {
+      sasOptions.contentDisposition = `attachment; filename="${String(params.downloadFilename).replace(/"/g, "'")}"`;
+    }
+
     const sasToken = generateBlobSASQueryParameters(
-      {
-        containerName: resolved.container,
-        blobName:      resolved.key,
-        permissions:   BlobSASPermissions.parse("r"),
-        startsOn:      new Date(),
-        expiresOn,
-      },
+      sasOptions,
       resolved.credential,
     ).toString();
 

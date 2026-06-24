@@ -16,11 +16,6 @@ import SkillsIcon from "./navBarIcons/projectsIcon.svg";
 import ValuesIcon from "./navBarIcons/projectsIcon.svg";
 import ContactIcon from "./navBarIcons/projectsIcon.svg";
 import placeholder from "./placeholder.png";
-import Careem_logo from "./aggrigatorLogos/Careem_logo.png";
-import Deliveroo_logo from "./aggrigatorLogos/Deliveroo_logo.png";
-import Keeta_logo from "./aggrigatorLogos/Keeta_logo.png";
-import Noon_logo from "./aggrigatorLogos/Noon_logo.png";
-import Talabat_logo from "./aggrigatorLogos/Talabat_logo.png";
 
 // Cloud-kitchen / competitors mock visuals (logos + menu item photos)
 import Beverage_Logo from "./aggrigatorLogos/Beverage_Logo.png";
@@ -94,12 +89,7 @@ export {
   ValuesIcon,
   ContactIcon,
   placeholder,
-  //
-  Careem_logo,
-  Deliveroo_logo,
-  Keeta_logo,
-  Noon_logo,
-  Talabat_logo,
+
   //
   Beverage_Logo,
   Category_Logo,
@@ -109,3 +99,7 @@ export {
   MealType_Logo,
   Other_Logo,
 };
+
+export * from "./integrationIcons/_integrationIcons.index.js";
+export * from "./aggrigatorLogos/_aggrigatorLogos.index.js";
+export * from "./cloudStorageLogos/_cloudStorageLogos.index.js";

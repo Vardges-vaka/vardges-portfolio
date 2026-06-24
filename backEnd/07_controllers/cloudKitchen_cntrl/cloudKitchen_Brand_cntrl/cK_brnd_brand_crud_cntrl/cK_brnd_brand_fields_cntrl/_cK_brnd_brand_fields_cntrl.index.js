@@ -1,6 +1,7 @@
 export { default as cK_brnd_brand_update_name_cntrl } from "./cK_brnd_brand_update_name_cntrl.js";
 export { default as cK_brnd_brand_update_tagline_cntrl } from "./cK_brnd_brand_update_tagline_cntrl.js";
 export { default as cK_brnd_brand_update_files_cntrl } from "./cK_brnd_brand_update_files_cntrl.js";
+export { default as cK_brnd_brand_get_fileReadUrl_cntrl } from "./cK_brnd_brand_get_fileReadUrl_cntrl.js";
 export { default as cK_brnd_brand_update_socials_cntrl } from "./cK_brnd_brand_update_socials_cntrl.js";
 export { default as cK_brnd_brand_update_registeredIn_cntrl } from "./cK_brnd_brand_update_registeredIn_cntrl.js";
 export { default as cK_brnd_brand_update_description_cntrl } from "./cK_brnd_brand_update_description_cntrl.js";
